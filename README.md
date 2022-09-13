@@ -8,7 +8,7 @@ The tool supports gromet extraction from a python program, put and get operation
         python mitlink.py -h
 
 
-1. Python code to gromet representation: mitlink takes python file as input and generates gromet representation.
+1. Python code to gromet representation: mitlink takes python file as input (arg0) and generates gromet representation.
 
 
 
