@@ -50,7 +50,7 @@ if __name__ == "__main__":
              }
            }
 
-    print("Result of PUT: " + str(put(testObj, objid)))
+    print("Result of PUT: " + str(put(testObj, MIT_KEY)))
 
     # Test GET
 
