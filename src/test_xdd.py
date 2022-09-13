@@ -37,22 +37,22 @@ def put(jsonObj, key):
 
 
 if __name__ == "__main__":
-
-    # Test GET
-    #objid = "b3669d32-d422-49c7-ad0b-becf1e2bc0b0"
-    #print("RESULT OF GET: " + str(get(objid)))
-
-    
+    objid = "b3669d32-d422-49c7-ad0b-becf1e2bc0b0"
 
     # TEST PUT
-    #testObj = {"data": "xyz",
-    #           "metadata": {
-    #             "documents": {
-    #              "key1": {
-    #                "title": "Some Fake Thing"
-    #              }
-    #            }
-    #          }
-    #        }
-    #
-    #print("Result of PUT: " + str(put(testObj, key)))
+    testObj = {"data": "xyz",
+              "metadata": {
+                "documents": {
+                 "key1": {
+                   "title": "Some Fake Thing"
+                 }
+               }
+             }
+           }
+
+    print("Result of PUT: " + str(put(testObj, objid)))
+
+    # Test GET
+
+    print("RESULT OF GET: " + str(get(objid)))
+
