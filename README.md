@@ -19,13 +19,11 @@ The tool supports gromet extraction from a python program, put and get operation
 
         
 
-2. Upload object in XDD: mitlink takes gromet file as input and uploads the corresponding object to XDD with an optional key. 
-If the key is not provided, the tool generates UUID automatically for users. 
-**XDD currently does not support custom UUID for upload. Need discussion to solve this issue**
+2. Upload object in XDD: mitlink takes gromet file as input and uploads the corresponding object to XDD and return XDD key. 
 
 
 
-        python mitlink.py  -p x1--Gromet-FN-auto.json [optional Key]
+        python mitlink.py  -p x1--Gromet-FN-auto.json 
 
 
 
@@ -33,7 +31,7 @@ If the key is not provided, the tool generates UUID automatically for users.
         
 
 
-3. Get XDD object with a given key: mitlink takes UUID as a key, gets the object from XDD, and save it to the local _model_ folder with file name rule _UUID---Gromet-FN-auto.json_.
+3. Get XDD object with a given key: mitlink takes UUID as a input key, gets the object from XDD, and save it to the local _model_ folder with file name rule _UUID---Gromet-FN-auto.json_.
 
 
 

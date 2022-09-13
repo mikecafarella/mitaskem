@@ -16,8 +16,8 @@ def get(reqid):
     
 
 def put(jsonObj, key):
-    if "data" not in jsonObj:
-        raise Exception("Cannot create XDD object without 'data' field")
+    # if "data" not in jsonObj:
+    #     raise Exception("Cannot create XDD object without 'data' field")
     if "metadata" not in jsonObj:
         raise Exception("Cannot create XDD object without 'metadata' field")
 
@@ -50,7 +50,7 @@ if __name__ == "__main__":
              }
            }
 
-    print("Result of PUT: " + str(put(testObj, objid)))
+    print("Result of PUT: " + str(put(testObj, MIT_KEY)))
 
     # Test GET
 
