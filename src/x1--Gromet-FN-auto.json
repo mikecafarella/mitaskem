@@ -1,0 +1,37 @@
+{
+    "name": "x1",
+    "fn": {
+        "b": [{"function_type":"MODULE","name":"module","metadata":[{"metadata_type":"source_code_reference","code_file_reference_uid":"11fb2876-546d-5a78-c9ae-2c763c2eded2","line_begin":1,"line_end":1,"provenance":{"method":"skema_code2fn_program_analysis","timestamp":"2022-09-12 22:01:27.594497"}}]}],
+        "bf": [
+            {"function_type":"EXPRESSION","contents":1,"metadata":[{"metadata_type":"source_code_reference","code_file_reference_uid":"11fb2876-546d-5a78-c9ae-2c763c2eded2","line_begin":1,"line_end":1,"col_begin":0,"col_end":3,"provenance":{"method":"skema_code2fn_program_analysis","timestamp":"2022-09-12 22:01:27.594538"}}]}
+        ],
+        "pof": [{"id":1,"name":"x","box":1}]
+    },
+    "attributes": [
+        {
+            "type": "FN",
+            "value": {
+                "b": [{"function_type":"EXPRESSION"}],
+                "opo": [{"id":1,"box":1}],
+                "bf": [
+                    {"function_type":"LITERAL","value":{"value_type":"Integer","value":1},"metadata":[{"metadata_type":"source_code_data_type","source_language":"Python","source_language_version":"3.8","data_type":"<class 'int'>","provenance":{"method":"skema_code2fn_program_analysis","timestamp":"2022-09-12 22:01:27.594562"}},{"metadata_type":"source_code_reference","code_file_reference_uid":"11fb2876-546d-5a78-c9ae-2c763c2eded2","line_begin":1,"line_end":1,"col_begin":2,"col_end":3,"provenance":{"method":"skema_code2fn_program_analysis","timestamp":"2022-09-12 22:01:27.594557"}}]}
+                ],
+                "pof": [{"id":1,"box":1}],
+                "wfopo": [{"src":1,"tgt":1}]
+            }
+        }
+    ],
+    "metadata": [
+        {
+            "metadata_type": "gromet_creation",
+            "provenance": {"method":"skema_code2fn_program_analysis","timestamp":"2022-09-12 22:01:27.594459"}
+        },
+        {
+            "metadata_type": "source_code_collection",
+            "name": "",
+            "global_reference_id": "",
+            "files": [{"uid":"11fb2876-546d-5a78-c9ae-2c763c2eded2","name":"x1","path":""}],
+            "provenance": {"method":"skema_code2fn_program_analysis","timestamp":"2022-09-12 22:01:27.594481"}
+        }
+    ]
+}
