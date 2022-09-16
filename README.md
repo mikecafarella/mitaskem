@@ -1,6 +1,6 @@
 # mitaskem
 
-This project includes MIT efforts to integrate the GroMet workflow, enable annotation and interact with XDD APIs. The project provides a simple tool and necessary test files for ASKEM TA1 MIT group workflow test.
+This project includes MIT efforts to integrate the GroMet ([howto install](https://github.com/ml4ai/automates/blob/master/README.md)) workflow, enable annotation and interact with XDD APIs. The project provides a simple tool and necessary test files for ASKEM TA1 MIT group workflow test.
 The tool supports gromet extraction from a python program, put and get operation of json object interacting with XDD, annotation gromet represention with lineage tracing. Please refer to usage by  
 
 
