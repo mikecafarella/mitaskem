@@ -1,0 +1,146 @@
+We have a list of function in a Python program:
+
+def get_beta(intrinsic_growth_rate, gamma,
+             susceptible, relative_contact_rate):
+    inv_contact_rate = 1.0 - relative_contact_rate
+    updated_growth_rate = intrinsic_growth_rate + gamma
+    beta = updated_growth_rate / susceptible * inv_contact_rate
+
+    return beta
+
+def get_growth_rate(doubling_time):
+    if doubling_time == 0:
+        growth_rate = 0
+    else:
+        growth_rate = 2.0 ** (1.0 / doubling_time) - 1.0
+    return growth_rate
+
+def sir(s, i, r, beta, gamma, n):
+    s_n = (-beta * s * i) + s
+    i_n = (beta * s * i - gamma * i) + i
+    r_n = gamma * i + r
+
+    scale = n / (s_n + i_n + r_n)
+
+    s = s_n * scale
+    i = i_n * scale
+    r = r_n * scale
+    return s, i, r
+
+def sim_sir(s, i, r, gamma, i_day,
+            N_p, betas, days,
+            d_a, s_a, i_a, r_a, e_a
+            ):
+    n = s + i + r
+    d = i_day
+    index = 0
+    p_idx = 0
+
+    while p_idx < N_p:
+        beta = betas[p_idx]
+        n_days = days[p_idx]
+
+        d_idx = 0
+        while d_idx < n_days:
+            d_a[index] = d
+            s_a[index] = s
+            i_a[index] = i
+            r_a[index] = r
+            e_a[index] = i + r
+            index = index + 1
+
+            s, i, r = sir(s, i, r, beta, gamma, n)
+            d = d + 1
+            d_idx = d_idx + 1
+        p_idx = p_idx +  1
+
+    d_a[index] = d
+    s_a[index] = s
+    i_a[index] = i
+    r_a[index] = r
+    e_a[index] = i + r
+
+    return s, i, r, d_a, s_a, i_a, r_a, e_a
+
+def main():
+    i_day = 17.0
+    n_days = 20
+    N_p = 3
+    N_t = 121
+    infections_days = 14.0
+    relative_contact_rate = 0.05
+    gamma = 1.0 / infections_days
+
+    policys_betas = [0.0] * N_p
+    policy_days = [0] * N_p
+    d_a = [0.0] * N_t
+    s_a = [0.0] * N_t
+    i_a = [0.0] * N_t
+    r_a = [0.0] * N_t
+    e_a = [0.0] * N_t
+
+
+    s_n = 1000
+    i_n = 1
+    r_n = 1
+
+    p_idx = 0
+    while p_idx < N_p:
+        doubling_time = (p_idx - 1.0) * 5.0
+
+        growth_rate = get_growth_rate(doubling_time)
+        beta = get_beta(growth_rate, gamma, s_n,
+                        relative_contact_rate)
+        policys_betas[p_idx] = beta
+        policy_days[p_idx] = n_days * p_idx
+        p_idx = p_idx + 1
+
+    s_n, i_n, r_n, d_a, s_a, i_a, r_a, e_a \
+        = sim_sir(s_n, i_n, r_n, gamma, i_day,
+                  N_p, policys_betas, policy_days,
+                  d_a, s_a, i_a, r_a, e_a)
+
+    #print("s_n: " + str(s_n))
+    #print("i_n: " + str(i_n))
+    #print("r_n: " + str(r_n))
+    #print("E: " + str(e_a))
+
+    return d_a, s_a, i_a, r_a, e_a
+
+# main()
+
+There is also a text description of the code labeled with line numbers as follows:
+     1	Discrete-time SIR modeling of infections/recovery
+     2	The model consists of individuals who are either Susceptible (S), Infected (I), or Recovered (R).
+     3	The epidemic proceeds via a growth and decline process. This is the core model of infectious disease spread and has been in use in epidemiology for many years.
+     4	The dynamics are given by the following 3 equations.
+     5	St+1 = St−βStIt
+     6	It+1 =It +βStIt−γIt
+     7	Rt+1 = Rt + γIt
+     8	To project the expected impact to Penn Medicine, we estimate the terms of the model.
+     9	To do this, we use a combination of estimates from other locations, informed estimates based on logical reasoning, and best guesses from the American Hospital Association.
+    10	Parameters
+    11	The model's parameters, β and γ , determine the severity of the epidemic. β can be interpreted as the effective contact rate: β=τ×c
+    12	which is the transmissibility τ multiplied by the average number of people exposed c. The transmissibility is the basic virulence of the pathogen. The number of people exposed c is the parameter that can be changed through social distancing.
+    13	γ is the inverse of the mean recovery time, in days. i.e.: if γ=1/14 then the average infection will clear in 14 days.
+    14	An important descriptive parameter is the basic reproduction number, or R0 . This represents the average number of people who will be infected by any given infected person. When R0 is greater than 1, it means that a disease will
+    15	grow. A higher R0 implies more rapid transmission and a more rapid growth of the epidemic. It is defined as R0 =β/γ
+    16	R0 is larger when
+    17	the pathogen is more infectious
+    18	people are infectious for longer periods of time the number susceptible people is higher
+    19	A doubling time of 6 days and a recovery time of 14.0 days imply an R0 of 2.71. Effect of social distancing
+    20	After the beginning of the outbreak, actions to reduce social contact will lower the parameter c . If this happens at time t , then the effective reproduction rate is Rt , which will be lower than R0 .
+    21	For example, in the model, a 50% reduction in social contact would increase the time it takes for the outbreak to double, to 27.5 days from 6.00 days, with a Rt of 1.36.
+    22	Using the model
+    23	We need to express the two parameters β and γ in terms of quantities we can estimate.
+    24	γ : the CDC recommends 14 days of self-quarantine, we'll use γ = 1/14 .
+    25	To estimate β directly, we'd need to know transmissibility and social contact rates. Since we don't know these things, we can extract it from known doubling times. The AHA says to expect a doubling time Td of 7-10 days. That means an early-phase rate of growth can be computed by using the doubling time formula:
+    26	g = 21/Td −1
+    27	Since the rate of new infections in the SIR model is g = βS − γ and we've already computed γ , β becomes
+    28	a function of the initial population size of susceptible individuals β = (g + γ) . Initial Conditions
+    29	The default value for the total size of the susceptible population defaults to the entire catchment area for Penn Medicine entities (HUP, PAH, PMC, CCH)
+    30	Delaware = 564696 Chester = 519293 Montgomery = 826075 Bucks = 628341
+    31	Philly = 1581000
+    32	For other default values, please consult the Data Inputs section.
+
+Which lines in the text description are the best match for python function get_beta?
