@@ -56,17 +56,6 @@ def get_match(vars, terms, target):
     val = match.split("(")[1].split(",")[0]
     return val
 
-def match_targets(targets, code_path, terms):
-    vars = get_variables(code_path)
-    vdict = {}
-    connection = [];
-    for idx, v in enumerate(vars):
-        vdict[v[1]] = idx
-    for t in targets:
-        val = get_match(vars, terms, t)
-        connection.append((t,{val: "grometSubObject"}, float(vars[vdict[val]][2]),  vars[vdict[val]][0]))
-    return connection
-
 # terms = ['population', 'doubling time', 'recovery time', 'infectious time']
 # code = "CHIME_SIR_default_model.py"
 # targets = ['population', 'doubling time', 'recovery time', 'infectious time']

@@ -4,6 +4,14 @@ import openai
 from openai import OpenAIError
 
 
+def index_text(text_path: str) -> str:
+    fw = open(text_path+"_idx", "w")
+    with open(text_path) as fp:
+        for i, line in enumerate(fp):
+            fw.write('%d\t%s' % (i, line))
+    fw.close()
+    return text_path+"_idx"
+
 
 def get_gpt_match(prompt):
     mykey = b'Z1QFxceGL_s6karbgfNFyuOdQ__m5TfHR7kuLPJChgs='
@@ -16,11 +24,12 @@ def get_gpt_match(prompt):
     result = response.choices[0].text.strip()
     # print(result)
     return result
-def get_plain_prompt():
-    text_file = open("model/code_paper_prompt.txt", "r")
+def read_text_from_file(text_path):
+    text_file = open(text_path, "r")
     prompt = text_file.read()
     return prompt
 
+# Get gpt-3 prompt with variables, ontology terms and match targets
 def get_prompt(vars, terms, target):
     text_file = open("model/prompt.txt", "r")
     prompt = text_file.read()
@@ -44,6 +53,33 @@ def get_prompt(vars, terms, target):
     # print(prompt)
     return prompt
 
+
+
+# Get gpt-3 prompt with formula, code terms and match formula targets
+def get_formula_code_prompt(code, formula, target):
+    text_file = open("model/formula_code_prompt.txt", "r")
+    prompt = text_file.read()
+    text_file.close()
+
+    prompt = prompt.replace("[CODE]", code)
+    prompt = prompt.replace("[FORMULA]", formula)
+    prompt = prompt.replace("[TARGET]", target)
+    # print(prompt)
+    return prompt
+
+# Get gpt-3 prompt with formula, code terms and match formula targets
+def get_code_text_prompt(code, text, target):
+    text_file = open("model/code_text_prompt.txt", "r")
+    prompt = text_file.read()
+    text_file.close()
+
+    prompt = prompt.replace("[CODE]", code)
+    prompt = prompt.replace("[TEXT]", text)
+    prompt = prompt.replace("[TARGET]", target)
+    # print(prompt)
+    return prompt
+
+
 def get_variables(path):
     list = []
     with open(path) as myFile:
@@ -54,7 +90,7 @@ def get_variables(path):
                 val = match.group(2)
                 # print(num, ",", para, ",", val)
                 list.append((num, para, val))
-    # print(len(list))
+    print(len(list))
     return list
 
 def get_match(vars, terms, target):
@@ -66,7 +102,7 @@ def get_match(vars, terms, target):
 def match_code_targets(targets, code_path, terms):
     vars = get_variables(code_path)
     vdict = {}
-    connection = [];
+    connection = []
     for idx, v in enumerate(vars):
         vdict[v[1]] = idx
     for t in targets:
@@ -88,19 +124,33 @@ def match_gromet_targets(targets, vars, vdict, terms):
     return connection
 
 
-#
-# terms = ['population', 'doubling time', 'recovery time', 'infectious time']
-# code = "model/CHIME_SIR_while_loop.py"
-# targets = ['population', 'doubling time', 'recovery time', 'infectious time']
-# val = []
-# try:
-#     val = match_targets(targets, code, terms)
-# except OpenAIError as err:
-#     print("OpenAI connection error:", err)
-#     print("Using hard-coded connections")
-#     val = [("infectious time", {"name": "grometSubObject"}, 14.0, 67),("population", {"name": "grometSubObject"}, 1000, 80)]
-#
-# print(val)
-#
+def ontology_code_connection():
+    terms = ['population', 'doubling time', 'recovery time', 'infectious time']
+    code = "model/SIR/CHIME_SIR_while_loop.py"
+    targets = ['population', 'infectious time']
+    val = []
+    try:
+        val = match_code_targets(targets, code, terms)
+    except OpenAIError as err:
+        print("OpenAI connection error:", err)
+        print("Using hard-coded connections")
+        val = [("infectious time", {"name": "grometSubObject"}, 14.0, 67),("population", {"name": "grometSubObject"}, 1000, 80)]
+    print(val)
 
-# print(get_gpt_match(get_plain_prompt()))
+def code_text_connection():
+    code = "model/SIR/CHIME_SIR_while_loop.py"
+    code_str = read_text_from_file(code)
+    text = "model/SIR/description.txt"
+    idx_text = read_text_from_file(index_text(text));
+    targets = ['get_growth_rate', 'get_beta']
+    try:
+        for t in targets:
+            prompt = get_code_text_prompt(code_str, idx_text, t)
+            match = get_gpt_match(prompt)
+            # val = match.split("(")[1].split(",")[0]
+            print("Best description for python function {} is in lines {}".format(t, match))
+    except OpenAIError as err:
+        print("OpenAI connection error:", err)
+code_text_connection()
+# ontology_code_connection()
+# print(get_gpt_match(read_text_from_file("model/code_paper_prompt.txt")))

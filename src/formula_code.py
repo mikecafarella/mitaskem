@@ -17,12 +17,6 @@ import os
 import requests
 
 
-def index_text(text_path: str):
-    fw = open(text_path+"_idx", "w")
-    with open(text_path) as fp:
-        for i, line in enumerate(fp):
-            fw.write('%d\t%s' % (i, line))
-    fw.close()
 
 def get_mml(image_path: str) -> str:
     with open(image_path, 'rb') as f:

@@ -1,0 +1,32 @@
+Discrete-time SIR modeling of infections/recovery
+The model consists of individuals who are either Susceptible (S), Infected (I), or Recovered (R).
+The epidemic proceeds via a growth and decline process. This is the core model of infectious disease spread and has been in use in epidemiology for many years.
+The dynamics are given by the following 3 equations.
+St+1 = St−βStIt
+It+1 =It +βStIt−γIt
+Rt+1 = Rt + γIt
+To project the expected impact to Penn Medicine, we estimate the terms of the model.
+To do this, we use a combination of estimates from other locations, informed estimates based on logical reasoning, and best guesses from the American Hospital Association.
+Parameters
+The model's parameters, β and γ , determine the severity of the epidemic. β can be interpreted as the effective contact rate: β=τ×c
+which is the transmissibility τ multiplied by the average number of people exposed c. The transmissibility is the basic virulence of the pathogen. The number of people exposed c is the parameter that can be changed through social distancing.
+γ is the inverse of the mean recovery time, in days. i.e.: if γ=1/14 then the average infection will clear in 14 days.
+An important descriptive parameter is the basic reproduction number, or R0 . This represents the average number of people who will be infected by any given infected person. When R0 is greater than 1, it means that a disease will
+grow. A higher R0 implies more rapid transmission and a more rapid growth of the epidemic. It is defined as R0 =β/γ
+R0 is larger when
+the pathogen is more infectious
+people are infectious for longer periods of time the number susceptible people is higher
+A doubling time of 6 days and a recovery time of 14.0 days imply an R0 of 2.71. Effect of social distancing
+After the beginning of the outbreak, actions to reduce social contact will lower the parameter c . If this happens at time t , then the effective reproduction rate is Rt , which will be lower than R0 .
+For example, in the model, a 50% reduction in social contact would increase the time it takes for the outbreak to double, to 27.5 days from 6.00 days, with a Rt of 1.36.
+Using the model
+We need to express the two parameters β and γ in terms of quantities we can estimate.
+γ : the CDC recommends 14 days of self-quarantine, we'll use γ = 1/14 .
+To estimate β directly, we'd need to know transmissibility and social contact rates. Since we don't know these things, we can extract it from known doubling times. The AHA says to expect a doubling time Td of 7-10 days. That means an early-phase rate of growth can be computed by using the doubling time formula:
+g = 21/Td −1
+Since the rate of new infections in the SIR model is g = βS − γ and we've already computed γ , β becomes
+a function of the initial population size of susceptible individuals β = (g + γ) . Initial Conditions
+The default value for the total size of the susceptible population defaults to the entire catchment area for Penn Medicine entities (HUP, PAH, PMC, CCH)
+Delaware = 564696 Chester = 519293 Montgomery = 826075 Bucks = 628341
+Philly = 1581000
+For other default values, please consult the Data Inputs section.
