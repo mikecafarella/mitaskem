@@ -4,4 +4,4 @@ We have a Python file labeled with line numbers:
 There is also a list of formula labeled with numbers as follows:
 [FORMULA]
 
-Which lines in the Python code are the best match for the formula [TARGET]?
+Which python code section is the best match for the formula [TARGET]?

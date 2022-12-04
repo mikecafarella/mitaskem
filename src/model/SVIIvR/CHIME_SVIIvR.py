@@ -1,40 +1,6 @@
 import sys
 from csv import DictWriter, QUOTE_NONNUMERIC
 
-
-### =============================================================================
-### NOTATIONAL CONVENTIONS:
-###   Comments starting with single hash - '#' - are "normal" comments
-###   Comments starting with double hash - '##' - represent name corresponding
-###       named component in hand-developed GroMEt representation
-###   Comments starting with triple_hash - '###' - represent comment about differences
-###       from original CHIME sir.py:
-###       https://github.com/CodeForPhilly/chime/blob/develop/src/penn_chime/model/sir.py
-### =============================================================================
-
-
-# ===============================================================================
-# get_beta
-# Calculates a rate of exposure given an intrinsic growth rate for COVID-19
-# -------------------------------------------------------------------------------
-#     Input Variables:
-#     intrinsic_growth_rate   Rate of spread of COVID-19 cases
-#     gamma                   The expected recovery rate from COVID-19 for infected individuals
-#     susceptible             Current amount of individuals that are susceptible
-#     relative_contact_rate   The relative contact rate amongst individuals in the population
-#
-#
-#     State Variables:
-#     inv_contact_rate      The inverse rate of contact between individuals in the population
-#     updated_growth_rate   The intrinsic growth rate adjusted for the recovery rate from infection
-#
-#     Output Variables:
-#     beta              The rate of exposure of individuals to persons infected with COVID-19
-#
-# -------------------------------------------------------------------------------
-#  Called by:   main
-#  Calls:       None
-# ==============================================================================
 def get_beta(intrinsic_growth_rate, gamma, susceptible, relative_contact_rate):
     """
     Calculates a rate of exposure given an intrinsic growth rate for COVID-19
@@ -51,20 +17,6 @@ def get_beta(intrinsic_growth_rate, gamma, susceptible, relative_contact_rate):
     return beta
 
 
-# ===============================================================================
-# GET_GROWTH_RATE, subroutine, by P. Hein
-# Calculate the expected growth rate of COVID-19 infections given a doubling time
-# -------------------------------------------------------------------------------
-#     Input Variables:
-#     doubling_time     The time required for the amount of COVID-19 cases to double
-#
-#     Output Variables:
-#     growth_rate       Rate of spread of COVID-19 cases
-#
-# -------------------------------------------------------------------------------
-#  Called by:   main
-#  Calls:       None
-# ==============================================================================
 def get_growth_rate(doubling_time):
     """
     Calculate the expected growth rate of COVID-19 infections given a doubling time
@@ -80,35 +32,6 @@ def get_growth_rate(doubling_time):
     return growth_rate
 
 
-# ===============================================================================
-#  SIR, Subroutine, P. Hein
-#  Updates all disease states given the current state values
-# -------------------------------------------------------------------------------
-#     Input/Output Variables:
-#     s           Current amount of individuals that are susceptible
-#     v           Current amount of individuals that are vaccinated
-#     i           Current amount of individuals that are infectious
-#     i_v         Current amount of vaccinated individuals that are infectious
-#     r           Current amount of individuals that are recovered
-#     beta        The rate of exposure of individuals to persons infected with COVID-19
-#     gamma_unvaccinated     Rate of recovery for infected unvaccinated individuals
-#     gamma_vaccinated       Rate of recovery for infected vaccinated individuals
-#     vaccination_rate       The rate of vaccination of susceptible individuals
-#     vaccine_efficacy       The efficacy of the vaccine
-#     n           Total population size
-#
-#     State Variables:
-#     s_n         Update to the amount of individuals that are susceptible
-#     v_n         Update to the amount of individuals that are vaccinated
-#     i_n         Update to the amount of individuals that are infectious
-#     i_v_n       Update to the amount of vaccinated individuals that are infectious
-#     r_n         Update to the amount of individuals that are recovered
-#     scale       A scaling factor to compute updated disease variables
-#
-# -------------------------------------------------------------------------------
-#  Called by:   sim_sir
-#  Calls:        None
-# ==============================================================================
 def sir(s, v, i, i_v, r, vaccination_rate, beta, gamma_unvaccinated, gamma_vaccinated, vaccine_efficacy, n):
     """
     The SIR model, one time step
@@ -146,48 +69,6 @@ def sir(s, v, i, i_v, r, vaccination_rate, beta, gamma_unvaccinated, gamma_vacci
     return s, v, i, i_v, r
 
 
-# ===============================================================================
-# SIM_SIR, subroutine, by P. Hein
-# Simulates a COVID-19 outbreak where a policy intervention is attempted in
-# order to lower the relative contact rate amongst individuals.
-# -------------------------------------------------------------------------------
-#     Input/Output Variables:
-#     s           Current amount of individuals that are susceptible
-#     v           Current amount of individuals that are vaccinated
-#     i           Current amount of individuals that are infectious
-#     i_v         Current amount of vaccinated individuals that are infectious
-#     r           Current amount of individuals that are recovered
-#     d_a         An array (list) used to record the current day during the simulation
-#     s_a         An array (list) used to record the susceptible population changes during the simulation
-#     v_a         An array (list) used to record the vaccinated population changes during the simulation
-#     i_a         An array (list) used to record the currently infected population changes during the simulation
-#     i_v_a       An array (list) used to record the currently vaccinated and infected population changes during the simulation
-#     r_a         An array (list) used to record the recovered population changes during the simulation
-#     e_a         An array (list) used to record the total (ever) infected (i + i_v + r) population changes during the simulation
-#
-#     Input Variables:
-#     vaccination_rate The current rate of vaccination of susceptible individuals
-#     gamma_unvaccinated       The expected recovery rate from COVID-19 for infected unvaccinated individuals
-#     gamma_vaccinated       The expected recovery rate from COVID-19 for infected vaccinated individuals
-#     i_day       Start day of COVID-19 infections
-#     N_p         Number of policies to use for the simulation
-#     betas       An array of beta values with one entry per beta
-#     days        An array of time periods with one entry per policy
-#
-#     State Variables:
-#     n           Total population size
-#     beta        The rate of exposure of individuals to persons infected with COVID-19
-#     n_days      The amount of days for for the current policy to be simulated
-#     d           Tracks the current day in the simulation
-#     p_idx       Index to use for accessing policy variables
-#     d_idx       Index to be used for days in the current policy
-#     idx         Index to be used to access arrays for storing simulated outputs
-#     total_inf   The total population that is ever infected at a timestep during the simulation
-#
-# -------------------------------------------------------------------------------
-#  Called by:   main
-#  Calls:       sir
-# ==============================================================================
 def sim_sir(s, v, i, i_v, r, vaccination_rate, gamma_unvaccinated, gamma_vaccinated, vaccine_efficacy, i_day,
             ### original inputs
             N_p, betas, days,  ### changes to original CHIME sim_sir to simplify policy bookkeeping

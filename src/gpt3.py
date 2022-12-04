@@ -141,7 +141,7 @@ def code_text_connection():
     code = "model/SIR/CHIME_SIR_while_loop.py"
     code_str = read_text_from_file(code)
     text = "model/SIR/description.txt"
-    idx_text = read_text_from_file(index_text(text));
+    idx_text = read_text_from_file(index_text(text))
     targets = ['get_growth_rate', 'get_beta']
     try:
         for t in targets:
@@ -151,6 +151,24 @@ def code_text_connection():
             print("Best description for python function {} is in lines {}".format(t, match))
     except OpenAIError as err:
         print("OpenAI connection error:", err)
+
+
+def formula_code_connection():
+    code = "model/SVIIvR/CHIME_SVIIvR.py"
+    code_str = read_text_from_file(code)
+    formula = "model/SVIIvR/formula.tex_idx"
+    formula_text = read_text_from_file(formula)
+    targets = ['1', '2', '3', '4', '5']
+    try:
+        for t in targets:
+            prompt = get_formula_code_prompt(code_str, formula_text, t)
+            match = get_gpt_match(prompt)
+            # val = match.split("(")[1].split(",")[0]
+            print("{}\n\n".format( match))
+    except OpenAIError as err:
+        print("OpenAI connection error:", err)
+
+formula_code_connection()
 code_text_connection()
 # ontology_code_connection()
 # print(get_gpt_match(read_text_from_file("model/code_paper_prompt.txt")))
