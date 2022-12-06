@@ -90,7 +90,7 @@ def get_variables(path):
                 val = match.group(2)
                 # print(num, ",", para, ",", val)
                 list.append((num, para, val))
-    print(len(list))
+    print((list))
     return list
 
 def get_match(vars, terms, target):
@@ -114,13 +114,13 @@ def match_code_targets(targets, code_path, terms):
 def match_gromet_targets(targets, vars, vdict, terms):
     vlist = []
     for v in vars:
-        # print( type(vdict[v][2]))
-        vlist.append((vdict[v][2]['line_begin'], v, vdict[v][1]['value']))
+#         print( type(vdict[v][2]))
+        vlist.append((vdict[v][2].to_dict()['line_begin'], v, vdict[v][1].to_dict()['value']))
     connection = []
     for t in targets:
         val = get_match(vlist, terms, t)
         # print(val)
-        connection.append((t,{val: "grometSubObject"}, float(vdict[val][1]['value']),  vdict[val][2]['line_begin']))
+        connection.append((t,{val: "grometSubObject"}, float(vdict[val][1].to_dict()['value']),  vdict[val][2].to_dict()['line_begin']))
     return connection
 
 
@@ -168,7 +168,10 @@ def formula_code_connection():
     except OpenAIError as err:
         print("OpenAI connection error:", err)
 
-formula_code_connection()
-code_text_connection()
+# print("======================Formula to code matching=====================")
+# formula_code_connection()
+# print("======================Code to text matching=====================")
+# code_text_connection()
 # ontology_code_connection()
 # print(get_gpt_match(read_text_from_file("model/code_paper_prompt.txt")))
+# get_variables("/Users/chunwei/research/ASKEM-data/epidemiology/Bucky/code/bucky_simplified_v1.py")
