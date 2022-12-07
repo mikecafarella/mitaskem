@@ -1,17 +1,30 @@
 import os
 import re
+import pandas as pd
 from cryptography.fernet import Fernet
 import openai
 from openai import OpenAIError
 
 
-def index_text(text_path: str) -> str:
+def index_text_path(text_path: str) -> str:
     fw = open(text_path + "_idx", "w")
     with open(text_path) as fp:
         for i, line in enumerate(fp):
             fw.write('%d\t%s' % (i, line))
     fw.close()
     return text_path + "_idx"
+
+def index_text(text: str) -> str:
+    idx_text = ""
+    tlist = text.split('\n')
+    # print(tlist)
+    for i, line in enumerate(tlist):
+        if i==len(tlist)-1 and line== "":
+            break
+        idx_text = idx_text + ('%d\t%s\n' % (i, line))
+    return idx_text
+
+
 
 
 def get_gpt_match(prompt):
@@ -163,8 +176,9 @@ def extract_ints(str):
     return re.findall(r'\d+', str)
 
 def code_text_connection(code, text):
-    code_str = read_text_from_file(code)
-    idx_text = read_text_from_file(index_text(text))
+    code_str = code
+    idx_text = index_text(text)
+    tlist = text.split("\n")
     targets = ['get_growth_rate', 'get_beta']
     try:
         for t in targets:
@@ -173,14 +187,14 @@ def code_text_connection(code, text):
             ilist = extract_ints(match)
             # val = match.split("(")[1].split(",")[0]
             print("Best description for python function {} is in lines {}-{}:".format(t, ilist[0], ilist[-1]))
-            select_text(read_lines(text), int(ilist[0]), int(ilist[-1]), 1)
+            select_text(tlist, int(ilist[0]), int(ilist[-1]), 1)
             print("---------------------------------------")
     except OpenAIError as err:
         print("OpenAI connection error:", err)
 
 
 def code_dataset_connection(code, dataset):
-    code_str = read_text_from_file(code)
+    code_str = code
     parse_dataset(dataset)
     d_text = read_text_from_file(os.path.join(dataset, "headers.txt"))
     targets = ['estimate_chr', 'estimate_cfr']
@@ -221,9 +235,11 @@ def select_text(lines, s, t, buffer):
             print("\t{}\t{}".format(i, lines[i]))
 
 def formula_code_connection(code, formula):
-    code_str = read_text_from_file(code)
-    formula_text = read_text_from_file(formula)
-    flist = read_lines(formula)
+    code_str = code
+    formula_text = formula
+    flist = formula.split("\n")
+    if flist[-1]=="":
+        del flist[-1]
     targets = ['1', '2', '3', '4', '5']
     try:
         for t in flist:
@@ -242,8 +258,9 @@ def parse_dataset(dir):
         data_path = os.path.join(dir, filename)
         # checking if it is a png file
         if os.path.isfile(data_path) and data_path.endswith(".csv"):
-            fw.write("{}:\t{}\n".format(filename, read_text_from_file(data_path)))
+            fw.write("{}:\t{}\n".format(filename, read_text_from_file(data_path).split('\n')[0]))
     fw.close()
+
 
 def print_list(dir):
     print("ls ", dir)
@@ -252,7 +269,24 @@ def print_list(dir):
             print("\t",filename)
 
 
-# print_list("./model/Bucky/data_sample/")
+DATASET_INFO = {
+    "nychealth.csv": "NYC Health Covid data with 1011 rows x 67 columns",
+    "covid_confirmed_usafacts.csv": "USA Covid confirmed cases with 3194 rows x 557 columns",
+    "covid_deaths_usafacts.csv": "USA Covid death cases with 3194 rows x 557 columns",
+    "covid_tracking.csv": "Covid tracking data with 20781 rows x 56 columns",
+    "usafacts_hist.csv": "Fact Covid data (adm2) with 1800367 rows x 9 columns"
+}
+def print_df(dir):
+    print("We have a set of datasets:")
+    print("---------------------------------------")
+    for filename in os.listdir(dir):
+        if filename.endswith(".csv"):
+            print(DATASET_INFO[filename]+". Schema and data sample:")
+            df = pd.read_csv (os.path.join(dir, filename))
+            print(df)
+            print("---------------------------------------")
+# parse_dataset("./model/Bucky/data_sample/")
+# print_df("./model/Bucky/data_sample/")
 # code_dataset_connection("./model/Bucky/bucky_sample.py", "./model/Bucky/data_sample/")
 # print("======================Formula to code matching=====================")
 # formula_code_connection()
@@ -266,3 +300,4 @@ def print_list(dir):
 # code = "model/SIR/CHIME_SIR_while_loop.py"
 # text = "model/SIR/description.txt"
 # code_text_connection(code,text)
+# print(index_text("line1\nline2\nline3"))
