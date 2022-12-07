@@ -1,3 +1,4 @@
+import os
 import re
 from cryptography.fernet import Fernet
 import openai
@@ -5,12 +6,12 @@ from openai import OpenAIError
 
 
 def index_text(text_path: str) -> str:
-    fw = open(text_path+"_idx", "w")
+    fw = open(text_path + "_idx", "w")
     with open(text_path) as fp:
         for i, line in enumerate(fp):
             fw.write('%d\t%s' % (i, line))
     fw.close()
-    return text_path+"_idx"
+    return text_path + "_idx"
 
 
 def get_gpt_match(prompt):
@@ -24,10 +25,13 @@ def get_gpt_match(prompt):
     result = response.choices[0].text.strip()
     # print(result)
     return result
+
+
 def read_text_from_file(text_path):
     text_file = open(text_path, "r")
     prompt = text_file.read()
     return prompt
+
 
 # Get gpt-3 prompt with variables, ontology terms and match targets
 def get_prompt(vars, terms, target):
@@ -39,10 +43,10 @@ def get_prompt(vars, terms, target):
     vlen = len(vars)
     i = 1;
     for v in vars:
-        vstr += str(i) + " (" + str(v[1])+", "+str(v[2])+")\n"
-        i+=1;
+        vstr += str(i) + " (" + str(v[1]) + ", " + str(v[2]) + ")\n"
+        i += 1;
     # print(vstr)
-    tstr = '['+', '.join(terms)+']'
+    tstr = '[' + ', '.join(terms) + ']'
     tlen = len(terms)
     # print(tstr)
     prompt = prompt.replace("[VAR]", vstr)
@@ -52,7 +56,6 @@ def get_prompt(vars, terms, target):
     prompt = prompt.replace("[TARGET]", target)
     # print(prompt)
     return prompt
-
 
 
 # Get gpt-3 prompt with formula, code terms and match formula targets
@@ -67,6 +70,7 @@ def get_formula_code_prompt(code, formula, target):
     # print(prompt)
     return prompt
 
+
 # Get gpt-3 prompt with formula, code terms and match formula targets
 def get_code_text_prompt(code, text, target):
     text_file = open("model/code_text_prompt.txt", "r")
@@ -80,6 +84,20 @@ def get_code_text_prompt(code, text, target):
     return prompt
 
 
+# Get gpt-3 prompt with code, dataset and match function targets
+def get_code_dataset_prompt(code, dataset, target):
+    text_file = open("model/code_dataset_prompt.txt", "r")
+    prompt = text_file.read()
+    text_file.close()
+
+    prompt = prompt.replace("[CODE]", code)
+    prompt = prompt.replace("[DATASET]", dataset)
+    prompt = prompt.replace("[TARGET]", target)
+    # print(prompt)
+    return prompt
+
+
+
 def get_variables(path):
     list = []
     with open(path) as myFile:
@@ -90,14 +108,16 @@ def get_variables(path):
                 val = match.group(2)
                 # print(num, ",", para, ",", val)
                 list.append((num, para, val))
-    print((list))
+    print("Extracted variables: ", list)
     return list
+
 
 def get_match(vars, terms, target):
     prompt = get_prompt(vars, terms, target)
     match = get_gpt_match(prompt)
     val = match.split("(")[1].split(",")[0]
     return val
+
 
 def match_code_targets(targets, code_path, terms):
     vars = get_variables(code_path)
@@ -107,20 +127,21 @@ def match_code_targets(targets, code_path, terms):
         vdict[v[1]] = idx
     for t in targets:
         val = get_match(vars, terms, t)
-        connection.append((t,{val: "grometSubObject"}, float(vars[vdict[val]][2]),  vars[vdict[val]][0]))
+        connection.append((t, {val: "grometSubObject"}, float(vars[vdict[val]][2]), vars[vdict[val]][0]))
     return connection
 
 
 def match_gromet_targets(targets, vars, vdict, terms):
     vlist = []
     for v in vars:
-#         print( type(vdict[v][2]))
+        #         print( type(vdict[v][2]))
         vlist.append((vdict[v][2].to_dict()['line_begin'], v, vdict[v][1].to_dict()['value']))
     connection = []
     for t in targets:
         val = get_match(vlist, terms, t)
         # print(val)
-        connection.append((t,{val: "grometSubObject"}, float(vdict[val][1].to_dict()['value']),  vdict[val][2].to_dict()['line_begin']))
+        connection.append((t, {val: "grometSubObject"}, float(vdict[val][1].to_dict()['value']),
+                           vdict[val][2].to_dict()['line_begin']))
     return connection
 
 
@@ -134,40 +155,105 @@ def ontology_code_connection():
     except OpenAIError as err:
         print("OpenAI connection error:", err)
         print("Using hard-coded connections")
-        val = [("infectious time", {"name": "grometSubObject"}, 14.0, 67),("population", {"name": "grometSubObject"}, 1000, 80)]
+        val = [("infectious time", {"name": "grometSubObject"}, 14.0, 67),
+               ("population", {"name": "grometSubObject"}, 1000, 80)]
     print(val)
 
-def code_text_connection():
-    code = "model/SIR/CHIME_SIR_while_loop.py"
+def extract_ints(str):
+    return re.findall(r'\d+', str)
+
+def code_text_connection(code, text):
     code_str = read_text_from_file(code)
-    text = "model/SIR/description.txt"
     idx_text = read_text_from_file(index_text(text))
     targets = ['get_growth_rate', 'get_beta']
     try:
         for t in targets:
             prompt = get_code_text_prompt(code_str, idx_text, t)
             match = get_gpt_match(prompt)
+            ilist = extract_ints(match)
             # val = match.split("(")[1].split(",")[0]
-            print("Best description for python function {} is in lines {}".format(t, match))
+            print("Best description for python function {} is in lines {}-{}:".format(t, ilist[0], ilist[-1]))
+            select_text(read_lines(text), int(ilist[0]), int(ilist[-1]), 1)
+            print("---------------------------------------")
     except OpenAIError as err:
         print("OpenAI connection error:", err)
 
 
-def formula_code_connection():
-    code = "model/SVIIvR/CHIME_SVIIvR.py"
+def code_dataset_connection(code, dataset):
     code_str = read_text_from_file(code)
-    formula = "model/SVIIvR/formula.tex_idx"
-    formula_text = read_text_from_file(formula)
-    targets = ['1', '2', '3', '4', '5']
+    parse_dataset(dataset)
+    d_text = read_text_from_file(os.path.join(dataset, "headers.txt"))
+    targets = ['estimate_chr', 'estimate_cfr']
     try:
         for t in targets:
+            prompt = get_code_dataset_prompt(code_str, d_text, t)
+            match = get_gpt_match(prompt)
+            print(match)
+            print("---------------------------------------")
+            # ilist = extract_ints(match)
+            # val = match.split("(")[1].split(",")[0]
+            # print("Best description for python function {} is in lines {}-{}:".format(t, ilist[0], ilist[-1]))
+            # select_text(read_lines(text), int(ilist[0]), int(ilist[-1]), 1)
+    except OpenAIError as err:
+        print("OpenAI connection error:", err)
+
+
+def read_lines(filename):
+    lines = []
+    with open(filename) as file:
+        for line in file:
+            # print(line)
+            lines.append(line.rstrip())
+    return lines
+
+
+def select_text(lines, s, t, buffer):
+    start = s - buffer
+    end = t + buffer
+    if start < 0:
+        start = 0
+    if end >= len(lines):
+        end = len(lines) - 1
+    for i in range(start, end+1):
+        if i<=t and i>=s:
+            print(">>\t{}\t{}".format(i,lines[i]))
+        else:
+            print("\t{}\t{}".format(i, lines[i]))
+
+def formula_code_connection(code, formula):
+    code_str = read_text_from_file(code)
+    formula_text = read_text_from_file(formula)
+    flist = read_lines(formula)
+    targets = ['1', '2', '3', '4', '5']
+    try:
+        for t in flist:
             prompt = get_formula_code_prompt(code_str, formula_text, t)
             match = get_gpt_match(prompt)
             # val = match.split("(")[1].split(",")[0]
-            print("{}\n\n".format( match))
+            print("{}\n---------------------------------------\n".format(match))
     except OpenAIError as err:
         print("OpenAI connection error:", err)
 
+
+def parse_dataset(dir):
+    mml = os.path.join(dir, 'headers.txt')
+    fw = open(mml, "w")
+    for filename in os.listdir(dir):
+        data_path = os.path.join(dir, filename)
+        # checking if it is a png file
+        if os.path.isfile(data_path) and data_path.endswith(".csv"):
+            fw.write("{}:\t{}\n".format(filename, read_text_from_file(data_path)))
+    fw.close()
+
+def print_list(dir):
+    print("ls ", dir)
+    for filename in os.listdir(dir):
+        if filename.endswith(".csv"):
+            print("\t",filename)
+
+
+# print_list("./model/Bucky/data_sample/")
+# code_dataset_connection("./model/Bucky/bucky_sample.py", "./model/Bucky/data_sample/")
 # print("======================Formula to code matching=====================")
 # formula_code_connection()
 # print("======================Code to text matching=====================")
@@ -175,3 +261,8 @@ def formula_code_connection():
 # ontology_code_connection()
 # print(get_gpt_match(read_text_from_file("model/code_paper_prompt.txt")))
 # get_variables("/Users/chunwei/research/ASKEM-data/epidemiology/Bucky/code/bucky_simplified_v1.py")
+# lines = read_lines("./model/SIR/description.txt")
+# select_text(lines, 7, 27, 5)
+# code = "model/SIR/CHIME_SIR_while_loop.py"
+# text = "model/SIR/description.txt"
+# code_text_connection(code,text)

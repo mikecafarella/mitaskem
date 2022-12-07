@@ -1,4 +1,4 @@
-import gpt3 as gpt
+import connect
 nops=[('inv_contact_rate',
   None,
   {'code_file_reference_uid': '09a64930-e9e4-8ae5-f825-bdf7c1e729f9',
@@ -647,5 +647,5 @@ for nop in nops:
         parameters.add(nop[0])
         var_dict[nop[0]] = nop
 #         print((nop))
-discoveredParameterConnections = gpt.match_gromet_targets(targets, list(parameters), var_dict, terms)
+discoveredParameterConnections = connect.match_gromet_targets(targets, list(parameters), var_dict, terms)
 print(discoveredParameterConnections)

@@ -1,5 +1,5 @@
 import sys
-import gpt3 as gpt
+import connect
 
 # targets = ['population', 'infectious time']
 # terms = ['population', 'doubling time', 'recovery time', 'infectious time']
@@ -11,7 +11,7 @@ import gpt3 as gpt
 #         parameters.add(nop[0])
 #         var_dict[nop[0]] = nop
 # #         print((nop))
-# discoveredParameterConnections = gpt.match_gromet_targets(targets, list(parameters), var_dict, terms)
+# discoveredParameterConnections = connect.match_gromet_targets(targets, list(parameters), var_dict, terms)
 # print(discoveredParameterConnections)
 import os
 import requests
