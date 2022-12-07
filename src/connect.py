@@ -202,7 +202,7 @@ def code_dataset_connection(code, dataset):
         for t in targets:
             prompt = get_code_dataset_prompt(code_str, d_text, t)
             match = get_gpt_match(prompt)
-            print(match)
+            print(match.split("dataset. ")[0]+"dataset. ")
             print("---------------------------------------")
             # ilist = extract_ints(match)
             # val = match.split("(")[1].split(",")[0]
@@ -301,3 +301,4 @@ def print_df(dir):
 # text = "model/SIR/description.txt"
 # code_text_connection(code,text)
 # print(index_text("line1\nline2\nline3"))
+# print("this is a dataset. while this is antoher.".split("dataset. ")[0] + "dataset.")
