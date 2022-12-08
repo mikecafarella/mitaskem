@@ -202,7 +202,10 @@ def code_dataset_connection(code, dataset):
         for t in targets:
             prompt = get_code_dataset_prompt(code_str, d_text, t)
             match = get_gpt_match(prompt)
-            print(match.split("dataset.")[0]+"dataset.")
+            if len(match.split("dataset.")) == 1:
+                print(match)
+            else:
+                print(match.split("dataset.")[0]+"dataset.")
             print("---------------------------------------")
             # ilist = extract_ints(match)
             # val = match.split("(")[1].split(",")[0]
