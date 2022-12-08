@@ -202,7 +202,7 @@ def code_dataset_connection(code, dataset):
         for t in targets:
             prompt = get_code_dataset_prompt(code_str, d_text, t)
             match = get_gpt_match(prompt)
-            print(match.split("dataset. ")[0]+"dataset. ")
+            print(match.split("dataset.")[0]+"dataset.")
             print("---------------------------------------")
             # ilist = extract_ints(match)
             # val = match.split("(")[1].split(",")[0]
@@ -285,8 +285,19 @@ def print_df(dir):
             df = pd.read_csv (os.path.join(dir, filename))
             print(df)
             print("---------------------------------------")
+
+
+def get_df(dir):
+    dfs = []
+    for filename in os.listdir(dir):
+        if filename.endswith(".csv"):
+            df = pd.read_csv (os.path.join(dir, filename))
+            dfs.append((DATASET_INFO[filename], df))
+    return dfs
 # parse_dataset("./model/Bucky/data_sample/")
-# print_df("./model/Bucky/data_sample/")
+# dfs = get_df("./model/Bucky/data_sample/")
+# print(dfs[0][0])
+# print(dfs[0][1])
 # code_dataset_connection("./model/Bucky/bucky_sample.py", "./model/Bucky/data_sample/")
 # print("======================Formula to code matching=====================")
 # formula_code_connection()
