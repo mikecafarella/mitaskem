@@ -5,6 +5,7 @@ from cryptography.fernet import Fernet
 import openai
 from openai import OpenAIError
 
+GKEY = "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"
 
 def index_text_path(text_path: str) -> str:
     fw = open(text_path + "_idx", "w")
@@ -32,7 +33,7 @@ def get_gpt_match(prompt):
     enc = b'gAAAAABjRh0iNbsVb6_DKSHPmlg3jc4svMDEmKuYd-DcoTxEbESYI9F8tm8anjbsTsZYHz_avZudJDBdOXSHYZqKmhdoBcJd919hCffSMg6WFYP12hpvI7EeNppGFNoZsLGnDM5d6AOUeRVeIc2FbmB_j0vvcIwuEQ=='
     fernet = Fernet(mykey)
     # openai.api_key = fernet.decrypt(enc).decode()
-    openai.api_key = "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"
+    openai.api_key = GKEY
     # prompt = "Please write me a sentence\n\n"
     response = openai.Completion.create(model="text-davinci-002", prompt=prompt, temperature=0.0, max_tokens=256)
     result = response.choices[0].text.strip()
