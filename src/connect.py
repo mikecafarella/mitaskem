@@ -175,7 +175,7 @@ def ontology_code_connection():
 def extract_ints(str):
     return re.findall(r'\d+', str)
 
-def code_text_connection(code, text):
+def code_text_connection(code, text, interactive = False):
     code_str = code
     idx_text = index_text(text)
     tlist = text.split("\n")
@@ -186,14 +186,18 @@ def code_text_connection(code, text):
             match = get_gpt_match(prompt)
             ilist = extract_ints(match)
             # val = match.split("(")[1].split(",")[0]
-            print("Best description for python function {} is in lines {}-{}:".format(t, ilist[0], ilist[-1]))
-            select_text(tlist, int(ilist[0]), int(ilist[-1]), 1)
-            print("---------------------------------------")
+            if interactive: 
+                print("Best description for python function {} is in lines {}-{}:".format(t, ilist[0], ilist[-1]))
+                select_text(tlist, int(ilist[0]), int(ilist[-1]), 1)
+                print("---------------------------------------")
+            else:
+                return tlist, int(ilist[0]), int(ilist[-1])
     except OpenAIError as err:
         print("OpenAI connection error:", err)
+        return ""
 
 
-def code_dataset_connection(code, dataset):
+def code_dataset_connection(code, dataset, interactive=False):
     code_str = code
     parse_dataset(dataset)
     d_text = read_text_from_file(os.path.join(dataset, "headers.txt"))
@@ -202,17 +206,24 @@ def code_dataset_connection(code, dataset):
         for t in targets:
             prompt = get_code_dataset_prompt(code_str, d_text, t)
             match = get_gpt_match(prompt)
+            returnable = ""
             if len(match.split("dataset.")) == 1:
-                print(match)
+                returnable = match
             else:
-                print(match.split("dataset.")[0]+"dataset.")
-            print("---------------------------------------")
+                returnable = match.split("dataset.")[0]+"dataset."
+
+            if interactive:
+                print(returnable)
+                print("---------------------------------------")
+            else:
+                return returnable
             # ilist = extract_ints(match)
             # val = match.split("(")[1].split(",")[0]
             # print("Best description for python function {} is in lines {}-{}:".format(t, ilist[0], ilist[-1]))
             # select_text(read_lines(text), int(ilist[0]), int(ilist[-1]), 1)
     except OpenAIError as err:
         print("OpenAI connection error:", err)
+        return ""
 
 
 def read_lines(filename):
@@ -237,7 +248,7 @@ def select_text(lines, s, t, buffer):
         else:
             print("\t{}\t{}".format(i, lines[i]))
 
-def formula_code_connection(code, formula):
+def formula_code_connection(code, formula, interactive = False):
     code_str = code
     formula_text = formula
     flist = formula.split("\n")
@@ -249,9 +260,13 @@ def formula_code_connection(code, formula):
             prompt = get_formula_code_prompt(code_str, formula_text, t)
             match = get_gpt_match(prompt)
             # val = match.split("(")[1].split(",")[0]
-            print("{}\n---------------------------------------\n".format(match))
+            if interactive:
+                print("{}\n---------------------------------------\n".format(match))
+            else:
+                return match
     except OpenAIError as err:
         print("OpenAI connection error:", err)
+        return ""
 
 
 def parse_dataset(dir):
