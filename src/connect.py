@@ -72,8 +72,8 @@ def get_prompt(vars, terms, target):
 
 
 # Get gpt-3 prompt with formula, code terms and match formula targets
-def get_formula_code_prompt(code, formula, target):
-    text_file = open("model/formula_code_prompt.txt", "r")
+def get_code_formula_prompt(code, formula, target):
+    text_file = open("model/code_formula_prompt.txt", "r")
     prompt = text_file.read()
     text_file.close()
 
@@ -248,7 +248,7 @@ def select_text(lines, s, t, buffer):
         else:
             print("\t{}\t{}".format(i, lines[i]))
 
-def formula_code_connection(code, formula, interactive = False):
+def code_formula_connection(code, formula, interactive = False):
     code_str = code
     formula_text = formula
     flist = formula.split("\n")
@@ -257,7 +257,7 @@ def formula_code_connection(code, formula, interactive = False):
     targets = ['1', '2', '3', '4', '5']
     try:
         for t in flist:
-            prompt = get_formula_code_prompt(code_str, formula_text, t)
+            prompt = get_code_formula_prompt(code_str, formula_text, t)
             match = get_gpt_match(prompt)
             # val = match.split("(")[1].split(",")[0]
             if interactive:
@@ -318,7 +318,7 @@ def get_df(dir):
 # print(dfs[0][1])
 # code_dataset_connection("./model/Bucky/bucky_sample.py", "./model/Bucky/data_sample/")
 # print("======================Formula to code matching=====================")
-# formula_code_connection()
+# code_formula_connection()
 # print("======================Code to text matching=====================")
 # code_text_connection()
 # ontology_code_connection()
