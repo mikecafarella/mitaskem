@@ -1,0 +1,15 @@
+version: "3.9"
+networks:
+  mit-api:
+    driver: bridge
+    name: mit-api
+services:
+  api:
+    container_name: mit-annotation-api
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    networks:
+      - mit-api

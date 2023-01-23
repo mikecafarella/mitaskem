@@ -1,0 +1,6 @@
+cryptography==39.0.0
+fastapi==0.89.1
+openai==0.26.1
+pandas==1.5.3
+pydantic==1.10.4
+uvicorn==0.20.0
