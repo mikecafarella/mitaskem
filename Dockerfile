@@ -13,8 +13,8 @@ WORKDIR /automates
 RUN pip install -e .
 
 # Copy src code in and start API
-COPY . /MITASKEM
-WORKDIR /MITASKEM
+COPY . /
+WORKDIR /
 RUN pip install -r requirements.txt
-WORKDIR /MITASKEM/api
+WORKDIR /api
 CMD ["uvicorn", "server:app", "--reload", "--host", "0.0.0.0", "--port", "8000"]

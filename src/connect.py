@@ -86,7 +86,7 @@ def get_formula_code_prompt(code, formula, target):
 
 # Get gpt-3 prompt with formula, code terms and match formula targets
 def get_code_text_prompt(code, text, target):
-    text_file = open("model/code_text_prompt.txt", "r")
+    text_file = open(os.path.join(os.path.dirname(__file__), 'model/code_text_prompt.txt'), "r")
     prompt = text_file.read()
     text_file.close()
 
