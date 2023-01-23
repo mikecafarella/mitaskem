@@ -191,10 +191,12 @@ def code_text_connection(code, text, interactive = False):
                 select_text(tlist, int(ilist[0]), int(ilist[-1]), 1)
                 print("---------------------------------------")
             else:
-                return tlist, int(ilist[0]), int(ilist[-1])
+                return (tlist, int(ilist[0]), int(ilist[-1])), True
     except OpenAIError as err:
-        print("OpenAI connection error:", err)
-        return ""
+        if interactive:
+            print("OpenAI connection error:", err)
+        else:
+            return f"OpenAI connection error: {err}", False
 
 
 def code_dataset_connection(code, dataset, interactive=False):
@@ -216,14 +218,16 @@ def code_dataset_connection(code, dataset, interactive=False):
                 print(returnable)
                 print("---------------------------------------")
             else:
-                return returnable
+                return returnable, True
             # ilist = extract_ints(match)
             # val = match.split("(")[1].split(",")[0]
             # print("Best description for python function {} is in lines {}-{}:".format(t, ilist[0], ilist[-1]))
             # select_text(read_lines(text), int(ilist[0]), int(ilist[-1]), 1)
     except OpenAIError as err:
-        print("OpenAI connection error:", err)
-        return ""
+        if interactive:
+            print("OpenAI connection error:", err)
+        else:
+            return f"OpenAI connection error: {err}",False
 
 
 def read_lines(filename):
@@ -263,10 +267,12 @@ def code_formula_connection(code, formula, interactive = False):
             if interactive:
                 print("{}\n---------------------------------------\n".format(match))
             else:
-                return match
+                return match, True
     except OpenAIError as err:
-        print("OpenAI connection error:", err)
-        return ""
+        if interactive:
+            print("OpenAI connection error:", err)
+        else:
+            return f"OpenAI connection error: {err}", False
 
 
 def parse_dataset(dir):
