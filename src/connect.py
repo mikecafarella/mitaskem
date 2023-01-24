@@ -114,11 +114,7 @@ def code_dataset_connection(code, schema, gpt_key, interactive=False):
         for t in targets:
             prompt = get_code_dataset_prompt(code, schema, t)
             match = get_gpt_match(prompt, gpt_key)
-            returnable = ""
-            if len(match.split("dataset.")) == 1:
-                returnable = match
-            else:
-                returnable = match.split("dataset.")[0]+"dataset."
+            returnable = match.split("function are the ")[1].split(" columns.")[0].split(" and ")
 
             if interactive:
                 print(returnable)

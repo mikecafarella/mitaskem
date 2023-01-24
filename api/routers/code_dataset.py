@@ -15,7 +15,7 @@ router = APIRouter()
 @router.post("/run", tags=["Code-to-format"])
 def run_code_dataset(input_code: str, input_dataset: str, gpt_key: str):
 
-    s, success = code_dataset_connection(code=input_code, dataset=input_dataset, gpt_key=gpt_key)
+    s, success = code_dataset_connection(code=input_code, schema=input_dataset, gpt_key=gpt_key)
 
     if not success:
         return JSONResponse(status_code=status.HTTP_401_UNAUTHORIZED, content=s)
