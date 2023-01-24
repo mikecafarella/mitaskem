@@ -17,11 +17,19 @@ import os
 import requests
 
 
-
-def get_mml(image_path: str) -> str:
-    with open(image_path, 'rb') as f:
-        r = requests.put("http://127.0.0.1:8000/get_mml", files = {"file": f})
+def get_mml(image_path: str, url: str) -> str:
+    """
+    It sends the http requests to put in an image to translate it into MathML.
+    """
+    with open(image_path, "rb") as f:
+        r = requests.put(url, files={"file": f})
     return r.text
+
+
+# def get_mml(image_path: str) -> str:
+#     with open(image_path, 'rb') as f:
+#         r = requests.put("http://localhost:8000/get-mml", files = {"file": f})
+#     return r.text
 
 # Convert formula into MathML representation with image2MathML translator
 def parse_model_formula(model_path: str):
@@ -34,14 +42,13 @@ def parse_model_formula(model_path: str):
         # checking if it is a png file
         if os.path.isfile(image_path) and image_path.endswith(".png"):
             print(image_path)
-            with open(image_path, 'rb') as f:
-                r = requests.put("http://127.0.0.1:8000/get_mml", files={"file": f})
-            fw.write("{}\t{}\n".format(idx, r.text))
+            mml = get_mml( image_path, "http://localhost:8000/get-mml")
+            fw.write("{}\t{}\n".format(idx, mml))
 
     fw.close()
 
 
-# parse_model_formula("images/SVIIvR/")
-# mml = get_mml("images/10.png")
+parse_model_formula("images/SVIIvR/")
+# mml = get_mml( "images/SVIIvR/1.png", "http://localhost:8000/get-mml")
 # print(mml)
 # index_text("./model/CHIME_SIR_while_loop.py")
