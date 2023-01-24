@@ -4,7 +4,6 @@ import pandas as pd
 from cryptography.fernet import Fernet
 import openai
 from openai import OpenAIError
-import gpt
 
 def index_text_path(text_path: str) -> str:
     fw = open(text_path + "_idx", "w")
@@ -98,7 +97,7 @@ def get_code_text_prompt(code, text, target):
 
 # Get gpt-3 prompt with code, dataset and match function targets
 def get_code_dataset_prompt(code, dataset, target):
-    text_file = open("model/code_dataset_prompt.txt", "r")
+    text_file = open(os.path.join(os.path.dirname(__file__), "model/code_dataset_prompt.txt"), "r")
     prompt = text_file.read()
     text_file.close()
 
@@ -208,9 +207,11 @@ def code_text_connection(code, text, gpt_key, interactive = False):
 
 def code_dataset_connection(code, dataset, gpt_key, interactive=False):
     code_str = code
-    parse_dataset(dataset)
-    d_text = read_text_from_file(os.path.join(dataset, "headers.txt"))
-    targets = ['estimate_chr', 'estimate_cfr']
+    #parse_dataset(dataset)
+    #d_text = read_text_from_file(os.path.join(dataset, "headers.txt"))
+    d_text = dataset
+    targets = extract_func_names(code)
+    tups = []
     try:
         for t in targets:
             prompt = get_code_dataset_prompt(code_str, d_text, t)
@@ -225,11 +226,8 @@ def code_dataset_connection(code, dataset, gpt_key, interactive=False):
                 print(returnable)
                 print("---------------------------------------")
             else:
-                return returnable, True
-            # ilist = extract_ints(match)
-            # val = match.split("(")[1].split(",")[0]
-            # print("Best description for python function {} is in lines {}-{}:".format(t, ilist[0], ilist[-1]))
-            # select_text(read_lines(text), int(ilist[0]), int(ilist[-1]), 1)
+                tups.append((t, returnable))
+        return tups, True
     except OpenAIError as err:
         if interactive:
             print("OpenAI connection error:", err)
@@ -289,8 +287,7 @@ def code_formula_connection(code, formula, gpt_key, interactive = False):
 
 
 def parse_dataset(dir):
-    mml = os.path.join(dir, 'headers.txt')
-    fw = open(mml, "w")
+    fw = open(os.path.join(os.path.dirname(__file__), dir, 'headers.txt'), "w+")
     for filename in os.listdir(dir):
         data_path = os.path.join(dir, filename)
         # checking if it is a png file
@@ -331,22 +328,3 @@ def get_df(dir):
             df = pd.read_csv (os.path.join(dir, filename))
             dfs.append((DATASET_INFO[filename], df))
     return dfs
-# parse_dataset("./model/Bucky/data_sample/")
-# dfs = get_df("./model/Bucky/data_sample/")
-# print(dfs[0][0])
-# print(dfs[0][1])
-# code_dataset_connection("./model/Bucky/bucky_sample.py", "./model/Bucky/data_sample/")
-# print("======================Formula to code matching=====================")
-# code_formula_connection()
-# print("======================Code to text matching=====================")
-# code_text_connection()
-# ontology_code_connection()
-# print(get_gpt_match(read_text_from_file("model/code_paper_prompt.txt")))
-# get_variables("/Users/chunwei/research/ASKEM-data/epidemiology/Bucky/code/bucky_simplified_v1.py")
-# lines = read_lines("./model/SIR/description.txt")
-# select_text(lines, 7, 27, 5)
-# code = "model/SIR/CHIME_SIR_while_loop.py"
-# text = "model/SIR/description.txt"
-# code_text_connection(code,text)
-# print(index_text("line1\nline2\nline3"))
-# print("this is a dataset. while this is antoher.".split("dataset. ")[0] + "dataset.")
