@@ -27,12 +27,12 @@ def index_text(text: str) -> str:
 
 
 
-def get_gpt_match(prompt):
+def get_gpt_match(prompt, key):
     # mykey = b'Z1QFxceGL_s6karbgfNFyuOdQ__m5TfHR7kuLPJChgs='
     # enc = b'gAAAAABjRh0iNbsVb6_DKSHPmlg3jc4svMDEmKuYd-DcoTxEbESYI9F8tm8anjbsTsZYHz_avZudJDBdOXSHYZqKmhdoBcJd919hCffSMg6WFYP12hpvI7EeNppGFNoZsLGnDM5d6AOUeRVeIc2FbmB_j0vvcIwuEQ=='
     # fernet = Fernet(mykey)
     # openai.api_key = fernet.decrypt(enc).decode()
-    openai.api_key = gpt.key
+    openai.api_key = key
     response = openai.Completion.create(model="text-davinci-002", prompt=prompt, temperature=0.0, max_tokens=256)
     result = response.choices[0].text.strip()
     # print(result)
@@ -178,7 +178,7 @@ def extract_func_names(code):
     tups = re.findall(r'(def)\s(\w+)\([a-zA-Z0-9_:\[\]=, ]*\)', code)
     return [x[1] for x in tups]
 
-def code_text_connection(code, text, interactive = False):
+def code_text_connection(code, text, gpt_key, interactive = False):
     code_str = code
     idx_text = index_text(text)
     tlist = text.split("\n")
@@ -187,7 +187,7 @@ def code_text_connection(code, text, interactive = False):
     try:
         for t in targets:
             prompt = get_code_text_prompt(code_str, idx_text, t)
-            match = get_gpt_match(prompt)
+            match = get_gpt_match(prompt, gpt_key)
             ilist = extract_ints(match)
             # val = match.split("(")[1].split(",")[0]
             ret_s = select_text(tlist, int(ilist[0]), int(ilist[-1]), 1)
@@ -204,7 +204,7 @@ def code_text_connection(code, text, interactive = False):
             return f"OpenAI connection error: {err}", False
 
 
-def code_dataset_connection(code, dataset, interactive=False):
+def code_dataset_connection(code, dataset, gpt_key, interactive=False):
     code_str = code
     parse_dataset(dataset)
     d_text = read_text_from_file(os.path.join(dataset, "headers.txt"))
@@ -212,7 +212,7 @@ def code_dataset_connection(code, dataset, interactive=False):
     try:
         for t in targets:
             prompt = get_code_dataset_prompt(code_str, d_text, t)
-            match = get_gpt_match(prompt)
+            match = get_gpt_match(prompt, gpt_key)
             returnable = ""
             if len(match.split("dataset.")) == 1:
                 returnable = match
@@ -259,7 +259,7 @@ def select_text(lines, s, t, buffer):
             ret_s += "\t{}\t{}".format(i, lines[i])
     return ret_s
 
-def code_formula_connection(code, formula, interactive = False):
+def code_formula_connection(code, formula, gpt_key, interactive = False):
     code_str = code
     formula_text = formula
     flist = formula.split("\n")
@@ -269,7 +269,7 @@ def code_formula_connection(code, formula, interactive = False):
     try:
         for t in flist:
             prompt = get_code_formula_prompt(code_str, formula_text, t)
-            match = get_gpt_match(prompt)
+            match = get_gpt_match(prompt, gpt_key)
             # val = match.split("(")[1].split(",")[0]
             if interactive:
                 print("{}\n---------------------------------------\n".format(match))

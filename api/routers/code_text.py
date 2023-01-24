@@ -13,9 +13,9 @@ router = APIRouter()
 
 
 @router.post("/run")
-def run_code_text(input_code: str, input_text: str):
+def run_code_text(input_code: str, input_text: str, gpt_key: str):
 
-    s, success = code_text_connection(code=input_code, text=input_text)
+    s, success = code_text_connection(code=input_code, text=input_text, gpt_key=gpt_key)
 
     if not success:
         return JSONResponse(status_code=status.HTTP_401_UNAUTHORIZED, content=s)
