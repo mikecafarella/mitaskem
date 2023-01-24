@@ -1,0 +1,4 @@
+The average of three variables is their sum divided by 3.
+To project the expected impact to Penn Medicine, we estimate the terms of the model.
+To do this, we use a combination of estimates from other locations, informed estimates based on logical reasoning, and best guesses from the American Hospital Association.
+Parameters

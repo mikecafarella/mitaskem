@@ -72,7 +72,7 @@ def get_prompt(vars, terms, target):
 
 # Get gpt-3 prompt with formula, code terms and match formula targets
 def get_code_formula_prompt(code, formula, target):
-    text_file = open("model/code_formula_prompt.txt", "r")
+    text_file = open(os.path.join(os.path.dirname(__file__), 'model/code_formula_prompt.txt'), "r")
     prompt = text_file.read()
     text_file.close()
 
@@ -175,7 +175,7 @@ def extract_ints(str):
     return re.findall(r'\d+', str)
 
 def extract_func_names(code):
-    tups = re.findall(r'(def)\s(\w+)\([a-zA-Z0-9_:\[\]=, ]*\)', code)
+    tups = re.findall(r'(def)\s(\w+)\([a-zA-Z0-9_:\[\]=,\s]*\):', code)
     return [x[1] for x in tups]
 
 def code_text_connection(code, text, gpt_key, interactive = False):
@@ -184,19 +184,21 @@ def code_text_connection(code, text, gpt_key, interactive = False):
     tlist = text.split("\n")
     targets = extract_func_names(code_str)
     print(f"TARGETS: {targets}")
+    tups = []
     try:
         for t in targets:
             prompt = get_code_text_prompt(code_str, idx_text, t)
             match = get_gpt_match(prompt, gpt_key)
             ilist = extract_ints(match)
             # val = match.split("(")[1].split(",")[0]
-            ret_s = select_text(tlist, int(ilist[0]), int(ilist[-1]), 1)
+            ret_s = select_text(tlist, int(ilist[0]), int(ilist[-1]), 1, interactive)
             if interactive: 
                 print("Best description for python function {} is in lines {}-{}:".format(t, ilist[0], ilist[-1]))
                 print(ret_s)
                 print("---------------------------------------")
             else:
-                return ret_s, True
+                tups.append((t, int(ilist[0]), int(ilist[-1]), ret_s))
+        return tups, True
     except OpenAIError as err:
         if interactive:
             print("OpenAI connection error:", err)
@@ -244,7 +246,7 @@ def read_lines(filename):
     return lines
 
 
-def select_text(lines, s, t, buffer):
+def select_text(lines, s, t, buffer, interactive=True):
     ret_s = ""
     start = s - buffer
     end = t + buffer
@@ -254,8 +256,11 @@ def select_text(lines, s, t, buffer):
         end = len(lines) - 1
     for i in range(start, end+1):
         if i<=t and i>=s:
-            ret_s += ">>\t{}\t{}".format(i,lines[i])
-        else:
+            if interactive:
+                ret_s += ">>\t{}\t{}".format(i,lines[i])
+            else:
+                ret_s += lines[i]
+        elif interactive:
             ret_s += "\t{}\t{}".format(i, lines[i])
     return ret_s
 
@@ -263,9 +268,9 @@ def code_formula_connection(code, formula, gpt_key, interactive = False):
     code_str = code
     formula_text = formula
     flist = formula.split("\n")
+    matches = []
     if flist[-1]=="":
         del flist[-1]
-    targets = ['1', '2', '3', '4', '5']
     try:
         for t in flist:
             prompt = get_code_formula_prompt(code_str, formula_text, t)
@@ -274,7 +279,8 @@ def code_formula_connection(code, formula, gpt_key, interactive = False):
             if interactive:
                 print("{}\n---------------------------------------\n".format(match))
             else:
-                return match, True
+                matches.append(match)
+        return matches, True
     except OpenAIError as err:
         if interactive:
             print("OpenAI connection error:", err)
