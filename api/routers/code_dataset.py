@@ -12,8 +12,8 @@ from src.connect import code_dataset_connection
 router = APIRouter()
 
 
-@router.post("/run")
-def run_code_text(input_code: str, input_dataset: str, gpt_key: str):
+@router.post("/run", tags=["Code-to-format"])
+def run_code_dataset(input_code: str, input_dataset: str, gpt_key: str):
 
     s, success = code_dataset_connection(code=input_code, dataset=input_dataset, gpt_key=gpt_key)
 

@@ -12,8 +12,8 @@ from src.connect import code_formula_connection
 router = APIRouter()
 
 
-@router.post("/run")
-def run_code_text(input_code: str, input_formula: str, gpt_key: str):
+@router.post("/run", tags=["Code-to-format"])
+def run_code_formula(input_code: str, input_formula: str, gpt_key: str):
 
     s, success = code_formula_connection(code=input_code, formula=input_formula, gpt_key=gpt_key)
 

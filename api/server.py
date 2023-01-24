@@ -3,12 +3,26 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from routers import code_dataset, code_formula, code_text, avail_check
 
+tags_metadata = [
+    {
+        "name": "Debugging",
+        "description": "Use the following request to test availability.",
+    },
+    {
+        "name": "Code-to-format",
+        "description": "Requests for mapping code to data in different formats.",
+    },
+]
+
+
 def build_api(*args) -> FastAPI:
 
     api = FastAPI(
         title="Annotation API",
         description="MIT annotation API",
         docs_url="/",
+        version="0.0.1", 
+        openapi_tags=tags_metadata
     )
     origins = [
         "http://localhost",
@@ -23,7 +37,6 @@ def build_api(*args) -> FastAPI:
     )
 
     return api
-
 
 app = build_api()
 
