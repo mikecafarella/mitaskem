@@ -4,8 +4,7 @@ import pandas as pd
 from cryptography.fernet import Fernet
 import openai
 from openai import OpenAIError
-
-GKEY = "GIVEN_GPT_KEY"
+import gpt
 
 def index_text_path(text_path: str) -> str:
     fw = open(text_path + "_idx", "w")
@@ -33,7 +32,7 @@ def get_gpt_match(prompt):
     # enc = b'gAAAAABjRh0iNbsVb6_DKSHPmlg3jc4svMDEmKuYd-DcoTxEbESYI9F8tm8anjbsTsZYHz_avZudJDBdOXSHYZqKmhdoBcJd919hCffSMg6WFYP12hpvI7EeNppGFNoZsLGnDM5d6AOUeRVeIc2FbmB_j0vvcIwuEQ=='
     # fernet = Fernet(mykey)
     # openai.api_key = fernet.decrypt(enc).decode()
-    openai.api_key = GKEY
+    openai.api_key = gpt.key
     response = openai.Completion.create(model="text-davinci-002", prompt=prompt, temperature=0.0, max_tokens=256)
     result = response.choices[0].text.strip()
     # print(result)
@@ -175,23 +174,29 @@ def ontology_code_connection():
 def extract_ints(str):
     return re.findall(r'\d+', str)
 
+def extract_func_names(code):
+    tups = re.findall(r'(def)\s(\w+)\([a-zA-Z0-9_:\[\]=, ]*\)', code)
+    return [x[1] for x in tups]
+
 def code_text_connection(code, text, interactive = False):
     code_str = code
     idx_text = index_text(text)
     tlist = text.split("\n")
-    targets = ['get_growth_rate', 'get_beta']
+    targets = extract_func_names(code_str)
+    print(f"TARGETS: {targets}")
     try:
         for t in targets:
             prompt = get_code_text_prompt(code_str, idx_text, t)
             match = get_gpt_match(prompt)
             ilist = extract_ints(match)
             # val = match.split("(")[1].split(",")[0]
+            ret_s = select_text(tlist, int(ilist[0]), int(ilist[-1]), 1)
             if interactive: 
                 print("Best description for python function {} is in lines {}-{}:".format(t, ilist[0], ilist[-1]))
-                select_text(tlist, int(ilist[0]), int(ilist[-1]), 1)
+                print(ret_s)
                 print("---------------------------------------")
             else:
-                return (tlist, int(ilist[0]), int(ilist[-1])), True
+                return ret_s, True
     except OpenAIError as err:
         if interactive:
             print("OpenAI connection error:", err)
@@ -240,6 +245,7 @@ def read_lines(filename):
 
 
 def select_text(lines, s, t, buffer):
+    ret_s = ""
     start = s - buffer
     end = t + buffer
     if start < 0:
@@ -248,9 +254,10 @@ def select_text(lines, s, t, buffer):
         end = len(lines) - 1
     for i in range(start, end+1):
         if i<=t and i>=s:
-            print(">>\t{}\t{}".format(i,lines[i]))
+            ret_s += ">>\t{}\t{}".format(i,lines[i])
         else:
-            print("\t{}\t{}".format(i, lines[i]))
+            ret_s += "\t{}\t{}".format(i, lines[i])
+    return ret_s
 
 def code_formula_connection(code, formula, interactive = False):
     code_str = code
