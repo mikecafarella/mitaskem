@@ -12,7 +12,6 @@ def main():
 
     dict= {"input_code": code, "input_text": text, "gpt_key": gpt_key}
 
-    print("About to send the post request")
     r = requests.post(path, params=dict)
     print(r.text)
 

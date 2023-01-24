@@ -13,6 +13,6 @@ from src.connect import code_dataset_connection
 router = APIRouter()
 
 
-@router.post("/run")
+@router.post("/run", tags=["Debugging"])
 def run_avail_check(input: str):
     return f"You sent us {input}"
