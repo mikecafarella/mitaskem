@@ -72,7 +72,7 @@ def get_prompt(vars, terms, target):
 
 # Get gpt-3 prompt with formula, code terms and match formula targets
 def get_code_formula_prompt(code, formula, target):
-    text_file = open("model/code_formula_prompt.txt", "r")
+    text_file = open(os.path.join(os.path.dirname(__file__), 'model/code_formula_prompt.txt'), "r")
     prompt = text_file.read()
     text_file.close()
 
@@ -268,9 +268,9 @@ def code_formula_connection(code, formula, gpt_key, interactive = False):
     code_str = code
     formula_text = formula
     flist = formula.split("\n")
+    matches = []
     if flist[-1]=="":
         del flist[-1]
-    targets = ['1', '2', '3', '4', '5']
     try:
         for t in flist:
             prompt = get_code_formula_prompt(code_str, formula_text, t)
@@ -279,7 +279,8 @@ def code_formula_connection(code, formula, gpt_key, interactive = False):
             if interactive:
                 print("{}\n---------------------------------------\n".format(match))
             else:
-                return match, True
+                matches.append(match)
+        return matches, True
     except OpenAIError as err:
         if interactive:
             print("OpenAI connection error:", err)
