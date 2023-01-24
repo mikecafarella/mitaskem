@@ -1,0 +1,5 @@
+1	S^\prime &=& - \beta S I - \beta S I_{v} - v_{r} S
+2	V^\prime &=& v_{r} S - v_{s} V I - v_{s} V I_{v}
+3	I^\prime &=& \beta S I + \beta S I_{v} - \gamma I
+4	I_{v}^\prime &=& v_{s} V I + v_{s} V I_{v} - \gamma I_{v}
+5	R^\prime &=& \gamma I + \gamma I_v
