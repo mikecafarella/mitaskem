@@ -3,9 +3,9 @@ import requests
 
 def main():
     path="http://localhost:8000/code_text/run"
-    with open("code.py", "r") as f:
+    with open("CHIME_SIR_while_loop.py", "r") as f:
         code = f.read()
-    with open("text.txt", "r") as f:
+    with open("description.txt", "r") as f:
         text = f.read()
 
     gpt_key = "YOUR KEY HERE"
