@@ -4,8 +4,7 @@ import pandas as pd
 from cryptography.fernet import Fernet
 import openai
 from openai import OpenAIError
-
-GKEY = "GIVEN_GPT_KEY"
+import gpt
 
 def index_text_path(text_path: str) -> str:
     fw = open(text_path + "_idx", "w")
@@ -33,7 +32,7 @@ def get_gpt_match(prompt):
     # enc = b'gAAAAABjRh0iNbsVb6_DKSHPmlg3jc4svMDEmKuYd-DcoTxEbESYI9F8tm8anjbsTsZYHz_avZudJDBdOXSHYZqKmhdoBcJd919hCffSMg6WFYP12hpvI7EeNppGFNoZsLGnDM5d6AOUeRVeIc2FbmB_j0vvcIwuEQ=='
     # fernet = Fernet(mykey)
     # openai.api_key = fernet.decrypt(enc).decode()
-    openai.api_key = GKEY
+    openai.api_key = gpt.key
     response = openai.Completion.create(model="text-davinci-002", prompt=prompt, temperature=0.0, max_tokens=256)
     result = response.choices[0].text.strip()
     # print(result)
@@ -72,8 +71,8 @@ def get_prompt(vars, terms, target):
 
 
 # Get gpt-3 prompt with formula, code terms and match formula targets
-def get_formula_code_prompt(code, formula, target):
-    text_file = open("model/formula_code_prompt.txt", "r")
+def get_code_formula_prompt(code, formula, target):
+    text_file = open("model/code_formula_prompt.txt", "r")
     prompt = text_file.read()
     text_file.close()
 
@@ -86,7 +85,7 @@ def get_formula_code_prompt(code, formula, target):
 
 # Get gpt-3 prompt with formula, code terms and match formula targets
 def get_code_text_prompt(code, text, target):
-    text_file = open("model/code_text_prompt.txt", "r")
+    text_file = open(os.path.join(os.path.dirname(__file__), 'model/code_text_prompt.txt'), "r")
     prompt = text_file.read()
     text_file.close()
 
@@ -175,25 +174,37 @@ def ontology_code_connection():
 def extract_ints(str):
     return re.findall(r'\d+', str)
 
-def code_text_connection(code, text):
+def extract_func_names(code):
+    tups = re.findall(r'(def)\s(\w+)\([a-zA-Z0-9_:\[\]=, ]*\)', code)
+    return [x[1] for x in tups]
+
+def code_text_connection(code, text, interactive = False):
     code_str = code
     idx_text = index_text(text)
     tlist = text.split("\n")
-    targets = ['get_growth_rate', 'get_beta']
+    targets = extract_func_names(code_str)
+    print(f"TARGETS: {targets}")
     try:
         for t in targets:
             prompt = get_code_text_prompt(code_str, idx_text, t)
             match = get_gpt_match(prompt)
             ilist = extract_ints(match)
             # val = match.split("(")[1].split(",")[0]
-            print("Best description for python function {} is in lines {}-{}:".format(t, ilist[0], ilist[-1]))
-            select_text(tlist, int(ilist[0]), int(ilist[-1]), 1)
-            print("---------------------------------------")
+            ret_s = select_text(tlist, int(ilist[0]), int(ilist[-1]), 1)
+            if interactive: 
+                print("Best description for python function {} is in lines {}-{}:".format(t, ilist[0], ilist[-1]))
+                print(ret_s)
+                print("---------------------------------------")
+            else:
+                return ret_s, True
     except OpenAIError as err:
-        print("OpenAI connection error:", err)
+        if interactive:
+            print("OpenAI connection error:", err)
+        else:
+            return f"OpenAI connection error: {err}", False
 
 
-def code_dataset_connection(code, dataset):
+def code_dataset_connection(code, dataset, interactive=False):
     code_str = code
     parse_dataset(dataset)
     d_text = read_text_from_file(os.path.join(dataset, "headers.txt"))
@@ -202,17 +213,26 @@ def code_dataset_connection(code, dataset):
         for t in targets:
             prompt = get_code_dataset_prompt(code_str, d_text, t)
             match = get_gpt_match(prompt)
+            returnable = ""
             if len(match.split("dataset.")) == 1:
-                print(match)
+                returnable = match
             else:
-                print(match.split("dataset.")[0]+"dataset.")
-            print("---------------------------------------")
+                returnable = match.split("dataset.")[0]+"dataset."
+
+            if interactive:
+                print(returnable)
+                print("---------------------------------------")
+            else:
+                return returnable, True
             # ilist = extract_ints(match)
             # val = match.split("(")[1].split(",")[0]
             # print("Best description for python function {} is in lines {}-{}:".format(t, ilist[0], ilist[-1]))
             # select_text(read_lines(text), int(ilist[0]), int(ilist[-1]), 1)
     except OpenAIError as err:
-        print("OpenAI connection error:", err)
+        if interactive:
+            print("OpenAI connection error:", err)
+        else:
+            return f"OpenAI connection error: {err}",False
 
 
 def read_lines(filename):
@@ -225,6 +245,7 @@ def read_lines(filename):
 
 
 def select_text(lines, s, t, buffer):
+    ret_s = ""
     start = s - buffer
     end = t + buffer
     if start < 0:
@@ -233,11 +254,12 @@ def select_text(lines, s, t, buffer):
         end = len(lines) - 1
     for i in range(start, end+1):
         if i<=t and i>=s:
-            print(">>\t{}\t{}".format(i,lines[i]))
+            ret_s += ">>\t{}\t{}".format(i,lines[i])
         else:
-            print("\t{}\t{}".format(i, lines[i]))
+            ret_s += "\t{}\t{}".format(i, lines[i])
+    return ret_s
 
-def formula_code_connection(code, formula):
+def code_formula_connection(code, formula, interactive = False):
     code_str = code
     formula_text = formula
     flist = formula.split("\n")
@@ -246,12 +268,18 @@ def formula_code_connection(code, formula):
     targets = ['1', '2', '3', '4', '5']
     try:
         for t in flist:
-            prompt = get_formula_code_prompt(code_str, formula_text, t)
+            prompt = get_code_formula_prompt(code_str, formula_text, t)
             match = get_gpt_match(prompt)
             # val = match.split("(")[1].split(",")[0]
-            print("{}\n---------------------------------------\n".format(match))
+            if interactive:
+                print("{}\n---------------------------------------\n".format(match))
+            else:
+                return match, True
     except OpenAIError as err:
-        print("OpenAI connection error:", err)
+        if interactive:
+            print("OpenAI connection error:", err)
+        else:
+            return f"OpenAI connection error: {err}", False
 
 
 def parse_dataset(dir):
@@ -303,7 +331,7 @@ def get_df(dir):
 # print(dfs[0][1])
 # code_dataset_connection("./model/Bucky/bucky_sample.py", "./model/Bucky/data_sample/")
 # print("======================Formula to code matching=====================")
-# formula_code_connection()
+# code_formula_connection()
 # print("======================Code to text matching=====================")
 # code_text_connection()
 # ontology_code_connection()

@@ -1,7 +1,16 @@
 # mitaskem
 
-### Update
-Dec 2022. We updated the dec demo in [src/mit-dec-demo.ipynb](src/mit-dec-demo.ipynb).
+
+### Update (Jan 2023)
+
+We have updated our code to provide a REST API to the functions of interest. For the moment, this API is still not deployed anywhere on the cloud, so one has to deploy it locally by cloning our repo and running:
+
+    docker compose up
+    
+You can then inspect/test the API at `localhost:8000` in your web browser.
+
+### Update (Dec 2022)
+We updated the dec demo in [src/mit-dec-demo.ipynb](src/mit-dec-demo.ipynb).
 
 ### Overview
 This project includes MIT efforts to integrate the GroMet ([howto install](https://github.com/ml4ai/automates/blob/master/README.md)) workflow, enable annotation and interact with XDD APIs. The project provides a simple tool and necessary test files for ASKEM TA1 MIT group workflow test.
