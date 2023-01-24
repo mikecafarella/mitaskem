@@ -46,7 +46,7 @@ def read_text_from_file(text_path):
 
 # Get gpt-3 prompt with variables, ontology terms and match targets
 def get_prompt(vars, terms, target):
-    text_file = open("model/prompt.txt", "r")
+    text_file = open("prompts/prompt.txt", "r")
     prompt = text_file.read()
     text_file.close()
 
@@ -71,7 +71,7 @@ def get_prompt(vars, terms, target):
 
 # Get gpt-3 prompt with formula, code terms and match formula targets
 def get_code_formula_prompt(code, formula, target):
-    text_file = open(os.path.join(os.path.dirname(__file__), 'model/code_formula_prompt.txt'), "r")
+    text_file = open(os.path.join(os.path.dirname(__file__), 'prompts/code_formula_prompt.txt'), "r")
     prompt = text_file.read()
     text_file.close()
 
@@ -84,7 +84,7 @@ def get_code_formula_prompt(code, formula, target):
 
 # Get gpt-3 prompt with formula, code terms and match formula targets
 def get_code_text_prompt(code, text, target):
-    text_file = open(os.path.join(os.path.dirname(__file__), 'model/code_text_prompt.txt'), "r")
+    text_file = open(os.path.join(os.path.dirname(__file__), 'prompts/code_text_prompt.txt'), "r")
     prompt = text_file.read()
     text_file.close()
 
@@ -97,7 +97,7 @@ def get_code_text_prompt(code, text, target):
 
 # Get gpt-3 prompt with code, dataset and match function targets
 def get_code_dataset_prompt(code, dataset, target):
-    text_file = open(os.path.join(os.path.dirname(__file__), "model/code_dataset_prompt.txt"), "r")
+    text_file = open(os.path.join(os.path.dirname(__file__), "prompts/code_dataset_prompt.txt"), "r")
     prompt = text_file.read()
     text_file.close()
 
