@@ -147,26 +147,18 @@ def select_text(lines, s, t, buffer, interactive=True):
             ret_s += "\t{}\t{}".format(i, lines[i])
     return ret_s
 
-def code_formula_connection(code, formula, gpt_key, interactive = False):
-    code_str = code
-    formula_text = formula
-    flist = formula.split("\n")
+def code_formula_connection(code, formulas, gpt_key):
+    flist = formulas.split("\n")
     matches = []
     if flist[-1]=="":
         del flist[-1]
     try:
         for t in flist:
-            prompt = get_code_formula_prompt(code_str, formula_text, t)
+            prompt = get_code_formula_prompt(code, formulas, t)
             match = get_gpt_match(prompt, gpt_key)
-            # val = match.split("(")[1].split(",")[0]
-            if interactive:
-                print("{}\n---------------------------------------\n".format(match))
-            else:
-                matches.append(match)
+            
+            matches.append([t, match.split(":")[1]])
         return matches, True
-    except OpenAIError as err:
-        if interactive:
-            print("OpenAI connection error:", err)
-        else:
-            return f"OpenAI connection error: {err}", False
+    except OpenAIError as err:   
+        return f"OpenAI connection error: {err}", False
 
