@@ -27,19 +27,19 @@ def parse_gromet_from_xdd(js):
 def upload_gromet_path(path):
     f = open(path)
     data = json.load(f)
-    json_obj = test_xdd.put(data, MIT_KEY)
+    json_obj = xdd_interface.put(data, MIT_KEY)
     msg = json.dumps(json_obj)
     print("Result of PUT: " + msg)
     return parse_key_from_xdd_msg(msg)
 
 
 def upload_gromet_json(jsonobj):
-    msg_json = test_xdd.put(jsonobj, MIT_KEY)
+    msg_json = xdd_interface.put(jsonobj, MIT_KEY)
     msg = json.dumps(msg_json)
     return parse_key_from_xdd_msg(msg)
 
 def get_xdd_cache(key):
-    js = test_xdd.get(key)
+    js = xdd_interface.get(key)
     gromet = parse_gromet_from_xdd(js)
     print(type(gromet))
     path = get_path_from_key(key)
