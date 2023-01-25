@@ -91,7 +91,7 @@ def save_gromet_to_file(gromet_object, path):
         f.write(dictionary_to_gromet_json(del_nulls(gromet_collection_dict)))
 
 
-def run_pipeline_export_gromet(python_source_file):
+def run_pipeline_export_gromet(python_source_file, output_path = "."):
     """ Runs the two functions in the previous cells to generate CAST and then generate GroMEt
         It then serializes the GroMEt and exports it as a JSON file.
         
@@ -102,9 +102,9 @@ def run_pipeline_export_gromet(python_source_file):
 
     cast = run_python_to_cast(python_source_file)
     gromet_object = run_cast_to_gromet_pipeline(cast)
-    program_name = python_source_file.rsplit(".")[0].rsplit("/")[-1]
-    save_gromet_to_file(gromet_object, f"{program_name}--Gromet-FN-auto.json")
-    print("Generate gormet file " + f"{program_name}--Gromet-FN-auto.json")
+    program_name = python_source_file.rsplit("/")[-1].rsplit(".")[0]
+    save_gromet_to_file(gromet_object, f"{output_path}/{program_name}--Gromet-FN-auto.json")
+    print("Generate gromet file " + f"{program_name}--Gromet-FN-auto.json")
 
 # In[13]:
 
