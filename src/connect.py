@@ -184,4 +184,4 @@ def code_dkg_connection(dkg_targets, gpt_key, ontology_terms=DEFAULT_TERMS, onto
     return connection
 
 if __name__ == "__main__":
-    code_dkg_connection("population", "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")
+    code_dkg_connection("population", "") # GPT key
