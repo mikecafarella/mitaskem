@@ -21,7 +21,7 @@ def build_api(*args) -> FastAPI:
         title="Annotation API",
         description="MIT annotation API",
         docs_url="/",
-        version="0.0.1", 
+        version="0.0.2", 
         openapi_tags=tags_metadata
     )
     origins = [
