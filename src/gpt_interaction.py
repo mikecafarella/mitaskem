@@ -57,6 +57,14 @@ def get_petri_places_prompt(text):
     prompt = prompt.replace("[TEXT]", text)
     return prompt
 
+def get_petri_transitions_prompt(text):
+    text_file = open(os.path.join(os.path.dirname(__file__), 'prompts/petri_transitions_prompt.txt'), "r")
+    prompt = text_file.read()
+    text_file.close()
+
+    prompt = prompt.replace("[TEXT]", text)
+    return prompt
+
 
 # Get gpt-3 prompt with formula, code terms and match formula targets
 def get_code_text_prompt(code, text, target):
