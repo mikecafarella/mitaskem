@@ -13,17 +13,17 @@ def get_gpt_match(prompt, key):
     return result
 
 # Get gpt-3 prompt with variables, ontology terms and match targets
-def get_prompt(vars, terms, target):
+def get_code_dkg_prompt(vars, terms, target):
     text_file = open("prompts/prompt.txt", "r")
     prompt = text_file.read()
     text_file.close()
 
     vstr = ''
     vlen = len(vars)
-    i = 1;
+    i = 1
     for v in vars:
         vstr += str(i) + " (" + str(v[1]) + ", " + str(v[2]) + ")\n"
-        i += 1;
+        i += 1
     # print(vstr)
     tstr = '[' + ', '.join(terms) + ']'
     tlen = len(terms)
@@ -75,9 +75,5 @@ def get_code_dataset_prompt(code, dataset, target):
     # print(prompt)
     return prompt
 
-def get_match(vars, terms, target):
-    prompt = get_prompt(vars, terms, target)
-    match = get_gpt_match(prompt)
-    val = match.split("(")[1].split(",")[0]
-    return val
+
 

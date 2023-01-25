@@ -6,6 +6,9 @@ import openai
 from openai import OpenAIError
 from util import *
 from gpt_interaction import *
+from mira_dkg_interface import *
+from automates.program_analysis.JSON2GroMEt.json2gromet import json_to_gromet
+from automates.gromet.query import query
 
 def index_text_path(text_path: str) -> str:
     fw = open(text_path + "_idx", "w")
@@ -47,20 +50,6 @@ def match_code_targets(targets, code_path, terms):
     for t in targets:
         val = get_match(vars, terms, t)
         connection.append((t, {val: "grometSubObject"}, float(vars[vdict[val]][2]), vars[vdict[val]][0]))
-    return connection
-
-
-def match_gromet_targets(targets, vars, vdict, terms):
-    vlist = []
-    for v in vars:
-        #         print( type(vdict[v][2]))
-        vlist.append((vdict[v][2].to_dict()['line_begin'], v, vdict[v][1].to_dict()['value']))
-    connection = []
-    for t in targets:
-        val = get_match(vlist, terms, t)
-        # print(val)
-        connection.append((t, {val: "grometSubObject"}, float(vdict[val][1].to_dict()['value']),
-                           vdict[val][2].to_dict()['line_begin']))
     return connection
 
 
@@ -162,3 +151,37 @@ def code_formula_connection(code, formulas, gpt_key):
     except OpenAIError as err:   
         return f"OpenAI connection error: {err}", False
 
+DEFAULT_TERMS = ['population', 'doubling time', 'recovery time', 'infectious time']
+DEFAULT_ATTRIBS = ['description', 'synonyms', 'xrefs', 'suggested_unit', 'suggested_data_type',
+           'physical_min', 'physical_max', 'typical_min', 'typical_max']
+
+def code_dkg_connection(dkg_targets, gpt_key, ontology_terms=DEFAULT_TERMS, ontology_attribs=DEFAULT_ATTRIBS):
+
+    gromet_fn_module = json_to_gromet("gromet/CHIME_SIR_while_loop--Gromet-FN-auto.json")
+    nops = query.collect_named_output_ports(gromet_fn_module)
+
+    terms = list(build_local_ontology(ontology_terms, ontology_attribs).keys())
+    variables = set()
+    var_dict = {}
+    for nop in nops:
+        if nop[1] is not None:
+            variables.add(nop[0])
+            var_dict[nop[0]] = nop
+
+    vlist = []
+    for v in list(variables):
+        vlist.append((var_dict[v][2].to_dict()['line_begin'], v, var_dict[v][1].to_dict()['value']))
+    connection = []
+    for t in dkg_targets:
+        prompt = get_code_dkg_prompt(vlist, terms, t)
+        match = get_gpt_match(prompt, gpt_key)
+        val = match.split("(")[1].split(",")[0]
+
+        connection.append((t, {val: "grometSubObject"}, float(var_dict[val][1].to_dict()['value']),
+                           var_dict[val][2].to_dict()['line_begin']))
+
+    print(connection)
+    return connection
+
+if __name__ == "__main__":
+    code_dkg_connection("population", "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")
