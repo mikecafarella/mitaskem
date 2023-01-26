@@ -38,3 +38,12 @@ def run_transitions(code: str, gpt_key: str):
         return JSONResponse(status_code=status.HTTP_401_UNAUTHORIZED, content=s)
 
     return s
+
+@router.post("/match_place_to_text", tags=["Petri net"])
+def run_transitions(text: str, place: str, gpt_key: str):
+    s, success = match_place_to_text(text=text, place=place, gpt_key=gpt_key)
+
+    if not success:
+        return JSONResponse(status_code=status.HTTP_401_UNAUTHORIZED, content=s)
+
+    return s
