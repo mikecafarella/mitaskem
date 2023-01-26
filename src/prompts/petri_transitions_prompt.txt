@@ -1,0 +1,6 @@
+Here is a text description of a model:
+
+[TEXT]
+
+Represent this model as a Petri net and print the transitions, one per line, on successive lines.
+
