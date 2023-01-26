@@ -1,3 +1,4 @@
 src/gpt.py
 api_use_examples/
 src/__pycache__/
+resources/table_extraction_samples/
