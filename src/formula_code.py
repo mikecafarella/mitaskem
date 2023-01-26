@@ -48,7 +48,7 @@ def parse_model_formula(model_path: str):
     fw.close()
 
 
-parse_model_formula("images/SVIIvR/")
+# parse_model_formula("images/SVIIvR/")
 # mml = get_mml( "images/SVIIvR/1.png", "http://localhost:8000/get-mml")
 # print(mml)
 # index_text("./model/CHIME_SIR_while_loop.py")
