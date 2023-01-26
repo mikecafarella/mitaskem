@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from routers import code_dataset, code_formula, code_text, avail_check
+from routers import code_dataset, code_formula, code_text, avail_check, petri
 
 tags_metadata = [
     {
@@ -12,6 +12,10 @@ tags_metadata = [
         "name": "Code-to-format",
         "description": "Requests for mapping code to data in different formats.",
     },
+    {
+        "name": "Petri net",
+        "description": "Requests replated to extracting Petri nets and grounding their terms."
+    }
 ]
 
 
@@ -21,7 +25,7 @@ def build_api(*args) -> FastAPI:
         title="Annotation API",
         description="MIT annotation API",
         docs_url="/",
-        version="0.0.2", 
+        version="0.0.3", 
         openapi_tags=tags_metadata
     )
     origins = [
@@ -44,4 +48,5 @@ app.include_router(code_dataset.router, prefix="/code_dataset")
 app.include_router(code_formula.router, prefix="/code_formula")
 app.include_router(code_text.router, prefix="/code_text")
 app.include_router(avail_check.router, prefix="/avail_check")
+app.include_router(petri.router, prefix="/petri")
 

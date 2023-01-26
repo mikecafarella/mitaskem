@@ -6,10 +6,10 @@ import pandas as pd
 from cryptography.fernet import Fernet
 import openai
 from openai import OpenAIError
-import pix2tex.api.app as p2t
+#import pix2tex.api.app as p2t
 from PIL import Image
 # from pix2text import Pix2Text
-import gpt
+import gpt_interaction
 
 from util import *
 from gpt_interaction import *
