@@ -6,8 +6,7 @@ MIRA_DKG_URL = 'http://34.230.33.149:8771'
 
 def get_mira_dkg_term(term, attribs):
     res = requests.get(MIRA_DKG_URL + '/api/search', params={'q': term})
-    term = [entity for entity in res.json() if entity['id'].startswith('askemo')][0]
-    res = {attrib: term.get(attrib) for attrib in attribs if term.get(attrib) is not None}
+    res = [[t[attrib] for attrib in attribs if t[attrib] is not None] for t in res.json()]
     return res
 
 def build_local_ontology(terms, attribs):
