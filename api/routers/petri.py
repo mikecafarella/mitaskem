@@ -32,7 +32,7 @@ def run_places(code: str, gpt_key: str):
 
 @router.post("/get_transitions", tags=["Petri net"])
 def run_transitions(code: str, gpt_key: str):
-    s, success = run_transitions(text=code, gpt_key=gpt_key)
+    s, success = get_transitions(text=code, gpt_key=gpt_key)
 
     if not success:
         return JSONResponse(status_code=status.HTTP_401_UNAUTHORIZED, content=s)
