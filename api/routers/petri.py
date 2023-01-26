@@ -48,7 +48,7 @@ def run_match_place_to_text(text: str, place: str, gpt_key: str):
 
     return s
 
-@router.post("/match_place_to_text", tags=["Petri net"])
+@router.post("/init_param_from_text", tags=["Petri net"])
 def run_init_param_from_text(text: str, param: str, gpt_key: str):
     s, success = init_param_from_text(text=text, param=param, gpt_key=gpt_key)
 
