@@ -2,27 +2,39 @@ import io
 import requests
 from PIL import Image
 import re
-def post_latex_clean(string, char):
+def post_latex_clean(string):
+    """
+    Post-processing of the latex sentences with step 1 removing the "\\" and step remove the weird ";"
+    :param string: Latex string from the model
+    :return: clear latex result
+    """
+    char = '\\\\'
     pattern = char + '{2,}'
     string = re.sub(pattern, char, string)
     string = string.replace("\\;","")
     return string
 
-def img2latex(url,file):
+def img2latex(url,file, nx=200):
+    """
+    Send image thought restful API and reture the latex result
+    :param url: restful API url
+    :param file: image file
+    :param nx: the target size after shrinking the picture
+    :return: the model prediction
+    """
     uploaded_file = file
     im = Image.open(uploaded_file)
     (x, y) = im.size
-    nx = 200
-    ny = y*200/x
-    # im_resize = im.convert("RGB")
-    im_resize = im.resize((int(nx),int(ny)))
+    ny = y * nx/x
+    # shrink the image to smaller size for better prediction
+    im_resize = im.convert("RGB").resize((int(nx),int(ny)))
     buf = io.BytesIO()
     im_resize.save(buf, format='JPEG')
     byte_im = buf.getvalue()
     r = requests.post(url, files={'file': byte_im})
-    rs = replace( r.text, '\\\\')
+    rs = post_latex_clean( r.text)
     return rs
 
 
 if __name__ == "__main__":
-    print(img2latex('http://127.0.0.1:8502/bytes/', '/Users/chunwei/Downloads/3.jpg'))
+    print(img2latex('http://127.0.0.1:8502/bytes/', '../resources/images/SVIIvR/4.png'))
