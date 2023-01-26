@@ -1,4 +1,5 @@
 src/gpt.py
 api_use_examples/
 src/__pycache__/
-resources/table_extraction_samples/
+resources/xdd_example_pdfs/
+resources/xdd_extracts/
