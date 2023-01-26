@@ -25,7 +25,7 @@ def build_api(*args) -> FastAPI:
         title="Annotation API",
         description="MIT annotation API",
         docs_url="/",
-        version="0.0.3", 
+        version="0.0.4", 
         openapi_tags=tags_metadata
     )
     origins = [
@@ -44,9 +44,9 @@ def build_api(*args) -> FastAPI:
 
 app = build_api()
 
-app.include_router(code_dataset.router, prefix="/code_dataset")
-app.include_router(code_formula.router, prefix="/code_formula")
-app.include_router(code_text.router, prefix="/code_text")
+#app.include_router(code_dataset.router, prefix="/code_dataset")
+#app.include_router(code_formula.router, prefix="/code_formula")
+#app.include_router(code_text.router, prefix="/code_text")
 app.include_router(avail_check.router, prefix="/avail_check")
 app.include_router(petri.router, prefix="/petri")
 

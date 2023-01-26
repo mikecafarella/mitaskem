@@ -66,6 +66,15 @@ def get_petri_match_place_prompt(text, place):
     prompt = prompt.replace("[PLACE]", place)
     return prompt
 
+def get_petri_init_param_prompt(text, param):
+    text_file = open(os.path.join(os.path.dirname(__file__), 'prompts/petri_init_param_prompt.txt'), "r")
+    prompt = text_file.read()
+    text_file.close()
+
+    prompt = prompt.replace("[TEXT]", text)
+    prompt = prompt.replace("[PARAM]", param)
+    return prompt
+
 def get_petri_parameters_prompt(text):
     text_file = open(os.path.join(os.path.dirname(__file__), 'prompts/petri_parameters_prompt.txt'), "r")
     prompt = text_file.read()
