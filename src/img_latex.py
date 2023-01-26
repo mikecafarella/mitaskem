@@ -2,9 +2,10 @@ import io
 import requests
 from PIL import Image
 import re
-def replace(string, char):
+def post_latex_clean(string, char):
     pattern = char + '{2,}'
     string = re.sub(pattern, char, string)
+    string = string.replace("\\;","")
     return string
 
 def img2latex(url,file):
