@@ -1,0 +1,1 @@
+In the ABC model, individuals can be Argumentative (A), Bored (B) or Carefree (C). When an argumentative person meets a bored person, they both end up bored. A bored person can become carefree after some time.

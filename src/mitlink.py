@@ -2,12 +2,12 @@ import argparse
 import json
 import os.path
 import uuid
-import gromet
-import test_xdd
+import gromet_interface
+import xdd_interface
 
 MIT_KEY = "81622ba9-b82d-4128-8eb3-bec123d03979"
 def get_path_from_key(key):
-    file = f"model/{key}--Gromet-FN-auto.json"
+    file = f"{key}--Gromet-FN-auto.json"
     return file
 
 def get_key_from_path(path):
@@ -17,36 +17,29 @@ def parse_key_from_xdd_msg(json_obj):
     js = json.loads(json_obj)
     if "success" not in js:
         raise Exception("Upload to XDD failed"+ json_obj)
-    return js['success']['data']['success']['registered_ids'][0]
+    return js['success']['success']['registered_ids'][0]
 
 def parse_gromet_from_xdd(js):
     if "success" not in js:
         raise Exception("Get file from XDD failed"+ js)
     return js['success']['data'][0]
+
 def upload_gromet_path(path):
     f = open(path)
     data = json.load(f)
-    json_obj = test_xdd.put(data, MIT_KEY)
+    json_obj = xdd_interface.put(data, MIT_KEY)
     msg = json.dumps(json_obj)
     print("Result of PUT: " + msg)
     return parse_key_from_xdd_msg(msg)
 
 
 def upload_gromet_json(jsonobj):
-    msg_json = test_xdd.put(jsonobj, MIT_KEY)
+    msg_json = xdd_interface.put(jsonobj, MIT_KEY)
     msg = json.dumps(msg_json)
-    # print("Result of PUT: " + msg)
     return parse_key_from_xdd_msg(msg)
 
-    # if "success" not in js:
-    #     return js['success']['data']['success']['registered_ids']
-    # else:
-    #     return "error"
-
-
-
 def get_xdd_cache(key):
-    js = test_xdd.get(key)
+    js = xdd_interface.get(key)
     gromet = parse_gromet_from_xdd(js)
     print(type(gromet))
     path = get_path_from_key(key)
@@ -90,6 +83,7 @@ def annotate_cache_upadte(key, att, value):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("-i", "--input", type=str, help="Parse python program path (arg0) to gromet representation")
+    parser.add_argument("-o", "--output_path", type=str, help="Output path for parsed gromet", default=".")
     # parser.add_argument("-p", "--put", nargs='+',
     #                     help="Uplaod gromet file path (arg0) to xDD with optional uuid (arg1), automatically generate if not provided")
     parser.add_argument("-p", "--put", nargs='+', help="Uplaod gromet file path (arg0)")
@@ -101,7 +95,7 @@ def main():
 
     if args["input"]:
         print("Input file is " + args["input"])
-        gromet.run_pipeline_export_gromet(args["input"])
+        gromet_interface.run_pipeline_export_gromet(args["input"], args["output_path"])
     elif args["put"]:
         kv = list(args["put"])
         if len(kv) == 1:
@@ -122,13 +116,6 @@ def main():
         att = kv[1]
         value = kv[2]
         annotate_cache_upadte(key, att, value)
-
-
-
-
-
-
-
 
 
 if __name__ == "__main__":
