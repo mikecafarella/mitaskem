@@ -56,3 +56,12 @@ def run_init_param_from_text(text: str, param: str, gpt_key: str):
         return JSONResponse(status_code=status.HTTP_401_UNAUTHORIZED, content=s)
 
     return s
+
+@router.post("/match_place_and_text_to_columns", tags=["Petri net"])
+def run_match_place_and_text_to_columns(text: str, place: str, columns: str, gpt_key: str):
+    s, success = match_place_and_text_to_columns(text=text, place=place, columns=columns, gpt_key=gpt_key)
+
+    if not success:
+        return JSONResponse(status_code=status.HTTP_401_UNAUTHORIZED, content=s)
+
+    return s
