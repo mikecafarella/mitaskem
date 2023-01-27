@@ -56,6 +56,17 @@ def init_param_from_text(text, param, gpt_key):
     except OpenAIError as err:   
         return f"OpenAI connection error: {err}", False
 
+
+def match_place_and_text_to_columns(place, text, columns, gpt_key):
+    try:
+        prompt = get_petri_match_dataset_prompt(place, text, columns)
+        match = get_gpt_match(prompt, gpt_key)
+        #print(match)
+        #places = match.split(":")[-1].split(",")
+        return match, True
+    except OpenAIError as err:   
+        return f"OpenAI connection error: {err}", False
+
 if __name__ == "__main__":
     gpt_key = ""
     with open("../resources/jan_hackathon_scenario_1/SEIRD/seird.py", "r") as f:
@@ -64,6 +75,8 @@ if __name__ == "__main__":
         text = f.read()
     with open("../resources/jan_hackathon_scenario_1/SEIRD/sections34.txt", "r") as f:
         text2 = f.read()
+    with open("../resources/dataset/headers.txt", "r") as f:
+        columns = f.read()[:3000]
 
 
     places, s = get_places(code, gpt_key)
@@ -77,6 +90,8 @@ if __name__ == "__main__":
     for place in places:
         desc, s = match_place_to_text(text, place, gpt_key)
         print(f"description of {place}: {desc}\n------\n")
+        cols, s = match_place_and_text_to_columns(place, text, columns, gpt_key)
+        print(f"Columns for {place}: {cols}\n------\n")
 
     for param in parameters:
         val, s = init_param_from_text(text2, param, gpt_key)
