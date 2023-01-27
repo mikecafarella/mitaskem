@@ -5,3 +5,4 @@ src/gpt.py
 src/__pycache__/
 resources/xdd_example_pdfs/
 resources/xdd_extracts/
+examples/
