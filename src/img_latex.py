@@ -2,6 +2,7 @@ import io
 import requests
 from PIL import Image
 import re
+import argparse
 def post_latex_clean(string):
     """
     Post-processing of the latex sentences with step 1 removing the "\\" and step remove the weird ";"
@@ -37,4 +38,9 @@ def img2latex(url,file, nx=200):
 
 
 if __name__ == "__main__":
-    print(img2latex('http://127.0.0.1:8502/bytes/', '../resources/images/SVIIvR/4.png'))
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-p", "--path", type=str, default="../resources/images/SVIIvR/4.png")
+    args = parser.parse_args()
+
+
+    print(img2latex('http://100.26.10.46:8502/bytes/', args.path))
