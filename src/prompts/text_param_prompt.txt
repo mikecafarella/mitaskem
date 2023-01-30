@@ -2,4 +2,4 @@ Here is some text:
 
 [TEXT]
 
-This text may contain variables and their values. If it does, print them, printing one variable and its value on each line. If it doesn't, print "None".
+This text may contain numbers. If it does, print them together with what they refer to, printing one number and its reference on each line. If it doesn't, print "None".
