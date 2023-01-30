@@ -1,0 +1,101 @@
+5, 44, 47, 48 - Yellow fever symptoms
+6, 47, 48 - Jungle YF transmission
+18th and 19th centuries - Spread of YF in North American and European port cities
+None
+47 - countries are either YF endemic or have some regions that are YF endemic
+34 - countries are in Africa
+13 - countries in South and Central America
+84,000 to 170,000 - severe cases of YF in the year 2013
+29,000 to 60,000 - deaths from YF in the year 2013
+1997 - first evidence of vertical transmission of YF virus
+1 - US dollar for one vaccine dose
+123 - Int. J. Appl. Comput. Math (2020) 6 :105 Page 3 of 34
+105 - Int. J. Appl. Comput. Math (2020) 6 :105 Page 3 of 34
+105 Page 4 of 34 Int. J. Appl. Comput. Math (2020) 6 :105
+βV H (NH , NV )NH = βH V NV
+NV = βV H (NH , NV ) NH
+βH V NH
+(1− rB B )λH
+(1− rB B )(1− )λH
+ωH
+μH
+cV
+
+γH
+None
+N0 = (bV + μA + cL )(μV + cA)
+It is defined as the average number of offspring produced by a female mosquito in her entire lifespan in the absence of interaction with humans.
+bV: Rate at which aquatic mosquitoes mature into an adult mosquito
+μA: Natural death rate of mosquitoes
+cL: Mosquito death rate due to larvicides
+μV: Mosquito death rate due to adulticides
+cA: Mosquito oviposition rate
+φV: Vertical transmission rate
+None
+1000 IU/dose
+3000 international units (IU)/dose
+V (V ≤ 1)
+N H
+R0v = 1
+N0 - basic offspring number
+R0v - vaccinated reproduction number
+1.0 - Partial rank correlation coefficient plots of the various parameters of the model (5) using N0 as the output function
+0.5 - Partial rank correlation coefficient plots of the various parameters of the model (5) using N0 as the output function
+0.0 - Partial rank correlation coefficient plots of the various parameters of the model (5) using N0 as the output function
+-0.5 - Partial rank correlation coefficient plots of the various parameters of the model (5) using N0 as the output function
+-1.0 - Partial rank correlation coefficient plots of the various parameters of the model (5) using N0 as the output function
+bH - 50
+βHV - 0.375
+cB - 0.5
+ωH - 0.01
+μH - 0.0000421
+cV - 0.3
+ - 0.95
+γH - 0.3
+δH - 0.0001
+τH - 0.143
+bV - 0.1
+φV - 50
+κ - 800,000
+ηV - 0.01
+μA - 0.22
+AI (0) = 200
+SV (0) = 1000
+IV (0) = 500
+B1 = 0.1
+B2 = 0.1
+B3 = 0.001
+B4 = 0.005
+B5 = 0.1
+D1 = 500
+D2 = 500
+D3 = 500
+D4 = 500
+B1 = 0.01
+B2 = 0.01
+B3 = 0.0001
+B4 = 0.0005
+B5 = 0.1
+D1 = 50
+D2 = 50
+D3 = 50
+D4 = 50
+B1 = 0.1; B2 = 0.1; B3 = 0.001;
+B4 = 0.005; B5 = 0.1; D1 = 500; D2 = 500; D3 = 500; D4 = 500
+B1 = 0.01; B2 = 0.01; B3 = 0.0001; B4 = 0.0005; B5 = 0.1; D1 = 50; D2 = 50; D3 = 50; D4 = 50
+None
+1. Andraud, M., Hens, N., Marais, C., Beutels, P.: Dynamic epidemiological models for dengue transmission: a systematic review of structural approaches. PLoS ONE 7(11), e49085 (2012)
+2. Anguelov, R., Dumont, Y., Lubuma, J.: Mathematical modeling of sterile insect technology for control of anopheles mosquito. Comput Math Appl 64(3), 374–389 (2012)
+3. Anguelov, R., Garba, S.M., Usaini, S.: Backward bifurcation analysis of epidemiological model with partial immunity. Comput Math Appl 68(9), 931–940 (2014)
+4. Agusto, F.B., Gumel, A.B., Parham, P.E.: Qualitative assessment of the role of temperature variations on malaria transmission dynamics. J Biol Syst 23(04), 1550030 (2015)
+5. Barnett, E.D.: Yellow fever: epidemiology and prevention. Clin Infect Dis 44(6), 850–856 (2007)
+6. Barrett, A.D., Monath, T.P.: Epidemiology and ecology
+22. Garba, S.M., Saﬁ, M.A.: Mathematical analysis of West Nile virus model with discrete delays. Acta Math Sci 33B(5), 1439–1462 (2013)
+23. Garba, S.M., Gumel, A.B., Hussaini, N.: Mathematical analysis of an age-structured vaccination model for measles. J Niger Math Soc 33, 41–76 (2013)
+24. Gotuzzo, E., Yactayo, S., Córdova, E.: Efﬁcacy and duration of immunity after yellow fever vaccination: systematic review on the need for a booster every 10 years. Am J Trop Med Hyg 89(3), 434–444 (2013)
+25. Heesterbeek, J.A., Roberts, M.G.: The type-reproduction number T in models for infectious disease control. Math Biosci 206(1), 3–10 (2007)
+26. Johansson, M.A., Arana-Vizcarrondo, N., Biggerstaff, B.J., Staples, J.E.: Incubation periods of yellow fever virus. Am J
+43. Sharomi, O., Malik, T.: Optimal control in epidemiology. Ann Oper Res 251(1–2), 55–71 (2017)
+44. Shearer, F.M., Moyes, C.L., Pigott, D.M., Brady, O.J., Marinho, F., Deshpande, A., Longbottom, J., Browne, A.J., Kraemer, M.U., O’Reilly, K.M., Hombach, J.: Global yellow fever vaccination coverage from 1970 to 2016: an adjusted retrospective analysis. Lancet Infect Dis 17(11), 1209–1217 (2017)
+45. Stock, N.K., Laraway, H., Faye, O., Diallo, M., Niedrig, M., Sall, A.A.: Biological and phylogenetic characteristics of yellow fever virus lineages from West Africa. J Virol 87(5), 2895–2907 (2013)
+46. Van den Driessche, P., Watmough, J.: Reproduction numbers and sub-threshold endemic equilibria for compartmental models of disease transmission. Math Biosci 180(1–2), 29–48 (

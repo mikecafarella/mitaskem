@@ -1,0 +1,50 @@
+11 - show that many new patients which are asymptomatic or have only mild symptoms can transmit the virus
+12 - Researches both in [12]
+4 - Researches both in [12] and [4]
+10 - [10] reported that 13 evacuees from Wuhan, China on chartered ﬂights were infected
+3 - estimated asymptomatic proportion in [3] is at 17.9%
+13 - team in China [13] suggests that by February 18, there were 37,400 people with the virus in Wuhan whom authorities didn’t know about
+5 - Research in [5] estimates 86% of all infections were undocumented
+6 - previous works [6, 7, 8]
+7 - previous works [6, 7, 8]
+8 - previous works [6, 7, 8]
+15 - National Health Commission of the People’s Republic of China
+16 - Chinese center for disease control and prevention [15, 16]
+17,409 clinically diagnosed cases from February 10 to February 15
+ν1 = f ν
+ν2 = (1 − f ) ν
+τ0
+N
+µ
+None
+Table 3
+Figures 4 and 5
+Figure 2
+Figure 3
+Figure 6
+Figure 7
+None
+5.2
+5.4
+5.5
+Figure 8
+Figure 9
+Figure 10
+Figure 11
+Table 4
+Table 6
+None
+I0 = 93
+U0 = 5
+S0 = 1.40005 x 10^9 - (I0 + U0)
+7
+η = 1/7
+R0 = 0
+RR0 = 0
+CR0 = 0
+f = 0.8
+τ0 = 3.3655 x 10^-10
+N = 26
+µ = 0.148
+ν = 1
+t0 = 13.3617

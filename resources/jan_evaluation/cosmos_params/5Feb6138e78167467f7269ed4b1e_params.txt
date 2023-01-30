@@ -1,0 +1,121 @@
+1984: de Jong et al.
+1995: Tiefelsdorf and Boots
+1996: Griffith
+2002: Griffith
+2004: Griffith
+2012: Legendre and Legendre
+2015: Murakami and Griffith
+2019: Griffith, Chun, and Li
+2020: Giuliani et al.
+None
+31 - number of areal units for China
+49 - number of areal units for the US
+2 - number of sub-segments
+T - number of points in time (e.g. days for COVID-19)
+11T - matrix transpose operation
+1 - n-by-1 vector of ones
+None
+3) eHihβHh þ SUREi þ LN Pið h¼1
+4) eHithβHh þ SUREi þ LN Pið h¼1 
+5) þ LN Pið Þ þ REi; LN μit ¼ α þ βdayLN μday
+None
+M-4 X X X X 6
+ESTF+SSREESTF+SUREESTF
+M-4a X X X
+ESTF+SSREESTF
+6
+None
+2.4.1 China Mainland Datasets:
+Harvard calculation of cases of COVID-19 per 100,000 people
+8 National Bureau of Statistics of China 2010 population census web site
+
+2.4.2 US Datasets:
+Johns Hopkins U. Center for Systems Science and Engineering (CSSE)
+US Census Bureau 9
+20,388 (total number of cases on the Chinese mainland)
+9-fold increase in Hubei Province on day 28 (2/12/2020)
+138 (ones in the China Cs)
+72 (ones in the China CH)
+220 (ones in the US Cs)
+102 (ones in the US CH)
+None
+R2 = 0.810 (with one contagion and six hierarchical eigenvectors)
+R2 = 0.429 (with three hierarchical eigenvectors)
+R2 = 0.862 (with two contagions and four hierarchical eigenvectors)
+MC = 0.757 (SSRE)
+MC = -0.004 (SURE)
+MC = 0.640 (SSREESTF)
+MC = -0.048 (SUREESTF)
+MC = -0.057 (day 1)
+MC = -0.010 (day 14)
+None
+14 D. GRIFFITH AND B. LI
+Table 5. Spatial autocorrelation index and linear regression R2  values
+Table 6. Selected Poisson regression results for the simple US space-time RE specification.
+Table 7.
+None
+14 days for China
+33 days for the US
+20,388 for China
+111 for the US
+80,763 for China
+551,563 for the US
+4% for China
+25% for the US
+50 - 50 split for China
+2/3-1/3 split for the US
+15.8% for the US
+41.4% for China
+76.1% for the US
+2018 population for the US
+2019 rate of influenza deaths for the US
+2019 national percentage of retail income for the US
+Ratio of non-agricultural to agricultural population for China
+Ratio of males to females for China
+None
+97% - Space-time variance in new cases
+7 - Remaining overdispersion for US M-4 model
+1.515 - R2 value for M-2 model on day 20
+0.649 - R2 value for M-2 model without Hubei Province on day 20
+1.449 - R2 value for M-2 model on day 21
+0.720 - R2 value for M-2 model without Hubei Province on day 21
+1.198 - R2 value for M-2 model on day 22
+0.617 - R2 value for M-2 model without Hubei Province on day 22
+1.411 - R2 value for M-2 model on day 23
+0.596 - R2 value for M-2 model without Hubei Province on day 23
+1.031 - R2 value for M-2 model on day 24
+0.447 - R2 value for M-2 model without Hubei Province on day 24
+1.328 - R2 value for M-2 model on day 25
+0.504 - R2 value for M-2 model without Hubei Province on day 25
+1.074 - R2
+157 - 0.030: Refer to 0.002 25
+0.00005: Refer to 0.193 - 0.064
+0.003 26: Refer to 0.00007
+0.155 - 0.056: Refer to 0.003 27
+0.01457: Refer to 0.133 - 0.070
+0.005 All: Refer to 0.130 0.256 0.048
+59: 8 days of new cases forecasted by the two space-time models for the US
+60: 8 days of new cases forecasted by the two space-time models for the US
+61: 8 days of new cases forecasted by the two space-time models for the US
+62: 8 days of new cases forecasted by the two space-time models for the US
+63: 8 days of new cases forecasted by the two space-time models for the US
+64: 8 days of new cases forecasted by the two space-time models for the US
+65: 8 days of new cases forecasted by the two space-time models for the US
+66: 8 days of new cases forecasted by the two space-time models for the US
+None
+50 data collection points in time
+2013 Hanke and Wichern
+2 M-2
+4 M-4
+2 (Table 3 and Table 7)
+12 (Equation 9)
+None
+38: 100443
+1818–1831
+9th ed
+1975
+2020.04.21.20074732
+35 (4): 423–432
+66(2): 199–211
+2020.04.07.20056739
+74 (4): 967–1012

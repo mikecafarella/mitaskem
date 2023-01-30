@@ -1,0 +1,43 @@
+N0 - initial number of cases
+Nm - maximum values, where cumulative case N (t) will be saturated
+Np - Nm/2
+tp - peak time tp, when daily cases reach its highest value
+Nm1 - first wave maximum values
+N01 - first wave initial number of cases
+Nm2 - second wave maximum values
+Np2 - second wave Nm/2
+Fig. (4): redrawn in left panel of Fig. (5)
+Fig. (5): from where reader can guess the fearing point
+Nm1: 1 (cid:2) 107 
+Nm2: 2 (cid:2) 107 
+Nm3: 4 (cid:2) 107 
+tp1: 192 Days 
+tp2: 96 Days 
+tp3: 48 Days 
+dN: 1 (cid:2) 105 
+p1: 1 (cid:2) 105 
+p2: 4 (cid:2) 105 
+p3: 16 (cid:2) 105
+1 - sankar 1
+19 - A. Gowrisankar, R. Lamberto, S. Banerjee
+20 - D. Ra(cid:12)q, S.A. Suhail, M.A. Bazaz
+21 - C. Pai, A. Bhaskar, V. Rawoot
+22 - P. Arora, H. Kumar, B.K. Panigrahi
+23 - B.K. Sahoo, B.K. Sapra
+24 - R. Ranjan Aryan, S. Mahendra, K. Verma
+25 - R. Ranjan
+26 - R. Ranjan
+27 - A. Padhi et al.
+28 - S. Roy
+29 - D.K. Bagal, A. Rath, A. Barua, D. Patnaik
+30 - W. O. Kermack and A. G McKendrick
+31 - H.W. Hethcote
+32 - R.M. Anderson, B. Anderson, and R.M. May
+33 - N. Hussain, B. Li
+34 - Wikipedia : Sigmoid function
+35 - M. Batista
+[37] M. Merzoukia, M. Bentahirb, M. Najimia, F. Chigra, J-L Gala, The Modeling of the capacity of the Moroccan Health Care System in the context of COVID-19: the relevance of the logistic approach Bulletin of the World Health Organisation (2020), DOI: 10.2471/BLT.20.25868
+[38] https://www.cdc.gov/coronavirus/2019-ncov/variants/variant-info.html
+[39] https://www.thehindu.com/news/international/who-says-covid-variant-in-india-of-concern/article34529654.ece
+[40] https://www.hindustantimes.com/india-news/delta-plus-in-india-40-cases-1st-specimen-found-in-april-sample-what-we-know-so-far-101624448444003.html
+[41] https://www.hindustantimes.com/india-news/govt-

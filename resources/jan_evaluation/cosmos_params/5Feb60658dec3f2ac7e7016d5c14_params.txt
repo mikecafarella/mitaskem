@@ -1,0 +1,68 @@
+D614G spike mutation
+B.1.1.7
+1 NOTE: This preprint reports new research that has not been certified by peer review and should not be used to guide clinical practice.
+4 [4]
+5 [5]
+6 [6, 7, 8]
+1, 2, 3, 9 - Refers to methods and software designed to facilitate the analysis of pathogen genetic sequence data
+10 - Korber et al.
+11 - ACE2 receptor binding
+12 - England using a highly detailed deterministic epidemic model
+13 - Increased mortality
+14 - Center for Systems Science and Engineering (CSSE) at Johns Hopkins University
+10 - Los Alamos COVID-19 Viral Genome Analysis Pipeline
+15 - Los Alamos COVID-19 Viral Genome Analysis Pipeline
+16 - GISAID
+17 - GISAID
+18 - cgam package in R 3.6.3
+1a: N*mt = WmtNmt = β (1 + s)Np
+1b: N*wt = WwtNwt = β Nq
+1c: p* = (1 + s)p/(1 + sp)
+1d: q* = (1 - p)/(1 + sp)
+2a: p(cid:48) = p*(1 - m) + ¯pm
+2b: p(cid:48) = p* + (1 - p*)m
+3: p(cid:48) = (1 + s)p + (1 - p)m/(1 + sp)
+None
+90% CrI: [−0.16,0.68]
+Fig. 2C
+90% CrI: [−0.07,0.60]
+Fig. 2F
+Fig. 3
+Fig. S2
+Fig. S3
+Fig. S4
+Fig. S5
+Fig. S6
+None
+2: Estimated global distribution of selection coefﬁcients for the D614G and B.1.1.7 variants from the population genetics model
+10: medRxiv preprint doi: https://doi.org/10.1101/2021.03.29.21254233 
+11: medRxiv preprint doi: https://doi.org/10.1101/2021.03.29.21254233 
+None
+UK: 0.55 (95% CI: [0.50,0.60])
+Netherlands: 0.28 (95% CI: [0.20,0.38])
+None
+25 - simple models
+12 - extremely detailed models
+36 - methods that allow for more efficient Bayesian inference with stochastic models
+89233218CNA000001 - U.S. Department of Energy contract
+P01-AI131365 - National Institutes of Health grant
+R01-OD011095 - National Institutes of Health grant
+R01-AI028433 - National Institutes of Health grant
+PHY-2031756 - US National Science Foundation RAPID grant
+None
+12 - Davies, N. G. et al. Estimated transmissibility and impact of SARS-CoV-2 lineage B.1.1.7 in England. Science (2021).
+13 - Davies, N. G. et al. Increased mortality in community-tested cases of SARS-CoV-2 lineage B.1.1.7. Nature (2021).
+14 - Dong, E., Du, H. & Gardner, L. An interactive web-based dashboard to track COVID-19 in real time. The Lancet Infectious Diseases 20, 533–534 (2020).
+15 - COVID-19 Viral Genome Analysis Pipeline. https://cov.lanl.gov (2020).
+16 - Elbe, S. & Buckland-Merrett, G. Data, disease and diplomacy: GISAID’s innovative contribution to global health. Glob Chall 1, 33–46 (2017).
+17 - Global Initiative on Sharing All Inﬂuenza Data. http://www.gisaid.org/ (2008).
+18 - Liao, X. & Meyer, M. C. cgam: An r package for the constrained generalized additive
+34 Hale, T., Webster, S., Petherick, A., Phillips, T. & Kira, B. Oxford COVID-19 Government Response Tracker (2020).
+35 van Dorp, L. et al. No evidence for increased transmissibility from recurrent mutations in SARS-CoV-2. Nature Communications 11, 5986 (2020).
+36 Fintzi, J. et al. Using multiple data streams to estimate and forecast SARS-CoV-2 transmission dynamics, with application to the virus spread in Orange County, California (2020).
+37 Mumford, D., Series, C. & Wright, D. Indra’s Pearls: The Vision of Felix Klein. Cambridge University Press (2002).
+38 Douc, R. & Cappe, O. Comparison of resampling schemes for particle ﬁltering. In ISPA 2005. Proceedings of the 4th International Symposium on Image and Signal Processing and Analysis, 2005., 64–69 (2005).
+B-8: hmax = 1d
+B-9: J = 104
+B-10: N = 200
+None

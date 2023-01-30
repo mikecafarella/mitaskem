@@ -1,0 +1,54 @@
+1 Introduction
+SIR model [1] [2] 
+3 SIR Model
+84 simulated functions 
+21 counties in New Jersey
+4 Results
+None
+5 - (5)
+6 - (6)
+40 - (7)
+60 - (8)
+65 - (9)
+45 - (10)
+70 - (11)
+75 - (12)
+2 - None
+50 - None
+55 - None
+21 - total number of counties in New Jersey
+84 - differential equations for New Jersey
+180 - days after onset of COVID-19 in New Jersey
+None
+150 - observed new cases
+155 - observed new cases
+130 - observed new cases
+160 - observed new cases
+135 - observed new cases
+140 - observed new cases
+4 - Figure 4
+145 - observed new cases
+190 - Counties with large observed new cases
+195 - Counties with large observed new cases
+165 - observed new cases
+200 - observed new cases
+175 - observed new cases
+180 - observed new cases
+205 - observed new cases
+5 - Figure 5
+185 - observed new cases
+α 8.2967e-07
+β 1.7601
+γ 0.0063
+λ 0.0462
+Bergen Aﬀecting Passaic 0.0379
+Essex Aﬀecting Passaic 0.0410
+Morris Aﬀecting Passaic 0.0407
+Sussex Aﬀecting Passaic 0.0318
+shift 85 (days)
+[1] Kermack, W. O.; McKendrick, A. G. (1927). ”A Contribution to the Mathematical Theory of Epidemics”. Proceedings of the Royal Society A. 115 (772): 700–721. Bibcode:1927RSPSA.115..700K. doi:10.1098/rspa.1927.0118.
+[2] David Smith and Lang Moore, ”The SIR Model for Spread of Disease”, Convergence (December 2004)
+[5] Lee, C. and Liu, F. ”Effect of control measure on the development of new COVID-19 cases through SIR model simulation”, medRxiv 2020.10.27.20220590
+[6] Lee, K. and Liu, F. ”Auto tuning SIR model parameters using genetic algorithm”, medRxiv 2021.07.19.21260722
+[7] Copper I., et al (2020), ”A SIR model assumption for the spread of COVID-19 in different communities”, Chaos, Solitons and Fractals 139 (2020) 110057
+[8
