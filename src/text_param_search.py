@@ -3,8 +3,8 @@ from openai import OpenAIError
 from connect import *
 import re
 import argparse
+from gpt_key import *
 
-GPT_KEY=""
 
 def text_param_search(text, gpt_key):
     try:
