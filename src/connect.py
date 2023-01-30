@@ -36,13 +36,13 @@ def index_text(text: str) -> str:
 
 
 
-def get_gpt_match(prompt, key):
+def get_gpt_match(prompt, key, model="text-davinci-002"):
     # mykey = b'Z1QFxceGL_s6karbgfNFyuOdQ__m5TfHR7kuLPJChgs='
     # enc = b'gAAAAABjRh0iNbsVb6_DKSHPmlg3jc4svMDEmKuYd-DcoTxEbESYI9F8tm8anjbsTsZYHz_avZudJDBdOXSHYZqKmhdoBcJd919hCffSMg6WFYP12hpvI7EeNppGFNoZsLGnDM5d6AOUeRVeIc2FbmB_j0vvcIwuEQ=='
     # fernet = Fernet(mykey)
     # openai.api_key = fernet.decrypt(enc).decode()
     openai.api_key = key
-    response = openai.Completion.create(model="text-davinci-002", prompt=prompt, temperature=0.0, max_tokens=256)
+    response = openai.Completion.create(model=model, prompt=prompt, temperature=0.0, max_tokens=256)
     result = response.choices[0].text.strip()
     # print(result)
     return result
