@@ -1,0 +1,5 @@
+Here is some text:
+
+[TEXT]
+
+This text may contain variables and their values. If it does, print them, printing one variable and its value on each line. If it doesn't, print "None".
