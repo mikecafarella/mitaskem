@@ -6,3 +6,4 @@ src/__pycache__/
 resources/xdd_example_pdfs/
 resources/xdd_extracts/
 examples/
+src/gpt_key.py
