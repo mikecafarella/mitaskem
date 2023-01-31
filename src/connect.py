@@ -112,6 +112,14 @@ def get_text_param_prompt(text):
     prompt = prompt.replace("[TEXT]", text)
     return prompt
 
+def get_text_var_prompt(text):
+    text_file = open(os.path.join(os.path.dirname(__file__), 'prompts/text_var_prompt.txt'), "r")
+    prompt = text_file.read()
+    text_file.close()
+
+    prompt = prompt.replace("[TEXT]", text)
+    return prompt
+
 
 # Get gpt-3 prompt with code, dataset and match function targets
 def get_code_dataset_prompt(code, dataset, target):
