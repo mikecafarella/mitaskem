@@ -1,0 +1,1917 @@
+[
+{
+    "identifier": [
+        {
+            "type": "_xddid",
+            "id": "5e834fbd998e17af8269f8ff"
+        },
+        {
+            "type": "doi",
+            "id": "10.1101/2020.03.01.20029629"
+        }
+    ],
+    "title": "Risk estimation and prediction by modeling the transmission of the novel coronavirus (COVID-19) in mainland China excluding Hubei province",
+    "type": "article",
+    "journal": {
+        "name": "Cold Spring Harbor Laboratory Press"
+    },
+    "link": [
+        {
+            "url": "https://www.medrxiv.org/content/10.1101/2020.03.01.20029629v2",
+            "type": "publisher"
+        }
+    ],
+    "author": [
+        {
+            "name": "Hui Wan"
+        },
+        {
+            "name": "Jing-an Cui"
+        },
+        {
+            "name": "Guo-Jing Yang"
+        }
+    ],
+    "publisher": "bioRxiv",
+    "year": "2020"
+},
+{
+    "identifier": [
+        {
+            "type": "_xddid",
+            "id": "5e9afc3d998e17af826ae83f"
+        },
+        {
+            "type": "doi",
+            "id": "10.1101/2020.04.14.20064824"
+        }
+    ],
+    "title": "Estimating the last day for COVID-19 outbreak in mainland China",
+    "type": "article",
+    "journal": {
+        "name": "Cold Spring Harbor Laboratory Press"
+    },
+    "link": [
+        {
+            "url": "https://www.medrxiv.org/content/10.1101/2020.04.14.20064824v1",
+            "type": "publisher"
+        }
+    ],
+    "author": [
+        {
+            "name": "Quentin Griette"
+        },
+        {
+            "name": "Zhihua Liu"
+        },
+        {
+            "name": "pierre magal"
+        }
+    ],
+    "publisher": "bioRxiv",
+    "year": "2020"
+},
+{
+    "identifier": [
+        {
+            "type": "_xddid",
+            "id": "5f2c396ea58f1dfd5210a483"
+        },
+        {
+            "type": "doi",
+            "id": "10.1101/2020.08.04.20168443"
+        }
+    ],
+    "title": "Inhomogeneous mixing and asynchronic transmission between local outbreaks account for the spread of COVID-19 epidemics",
+    "type": "article",
+    "journal": {
+        "name": "Cold Spring Harbor Laboratory Press"
+    },
+    "link": [
+        {
+            "url": "https://www.medrxiv.org/content/10.1101/2020.08.04.20168443v1",
+            "type": "publisher"
+        }
+    ],
+    "author": [
+        {
+            "name": "Carlos I Mendoza"
+        }
+    ],
+    "publisher": "bioRxiv",
+    "year": "2020"
+},
+{
+    "identifier": [
+        {
+            "type": "_xddid",
+            "id": "5f4fd1f6a58f1dfd5213de29"
+        },
+        {
+            "type": "doi",
+            "id": "10.1101/2020.09.01.20182642"
+        }
+    ],
+    "title": "Covid-19 SEIDRD Modelling for Pakistan with implementation of seasonality, healthcare capacity and behavioral risk reduction",
+    "type": "article",
+    "journal": {
+        "name": "Cold Spring Harbor Laboratory Press"
+    },
+    "link": [
+        {
+            "url": "https://www.medrxiv.org/content/10.1101/2020.09.01.20182642v1",
+            "type": "publisher"
+        }
+    ],
+    "author": [
+        {
+            "name": "Shoab Saadat"
+        },
+        {
+            "name": "Salman Mansoor"
+        },
+        {
+            "name": "Ammad Fahim"
+        }
+    ],
+    "publisher": "bioRxiv",
+    "year": "2020"
+},
+{
+    "identifier": [
+        {
+            "type": "_xddid",
+            "id": "5fbc1724d76fca4a3fdc9a5b"
+        },
+        {
+            "type": "doi",
+            "id": "10.1101/2020.11.20.20235648"
+        }
+    ],
+    "title": "Distribution of Incubation Period of COVID-19 in the Canadian Context: Modeling and Computational Study",
+    "type": "article",
+    "journal": {
+        "name": "Cold Spring Harbor Laboratory Press"
+    },
+    "link": [
+        {
+            "url": "https://www.medrxiv.org/content/10.1101/2020.11.20.20235648v1",
+            "type": "publisher"
+        }
+    ],
+    "author": [
+        {
+            "name": "Subhendu Paul"
+        },
+        {
+            "name": "Emmanuel Lorin"
+        }
+    ],
+    "publisher": "bioRxiv",
+    "year": "2020"
+},
+{
+    "identifier": [
+        {
+            "type": "_xddid",
+            "id": "604fdb653f2ac7e70121dedb"
+        },
+        {
+            "type": "doi",
+            "id": "10.1016/j.idm.2021.02.001"
+        }
+    ],
+    "title": "Assessing effects of reopening policies on COVID-19 pandemic in Texas with a data-driven transmission model",
+    "type": "article",
+    "journal": {
+        "name": "Infectious Disease Modelling"
+    },
+    "link": [
+        {
+            "url": "https://www.sciencedirect.com/science/article/pii/S2468042721000166",
+            "type": "publisher"
+        }
+    ],
+    "author": [
+        {
+            "name": ""
+        }
+    ],
+    "publisher": "Elsevier",
+    "volume": "6",
+    "pages": "461--473",
+    "year": "2021"
+},
+{
+    "identifier": [
+        {
+            "type": "_xddid",
+            "id": "60658dec3f2ac7e7016d5c14"
+        },
+        {
+            "type": "doi",
+            "id": "10.1101/2021.03.29.21254233"
+        }
+    ],
+    "title": "Estimating the strength of selection for new SARS-CoV-2 variants",
+    "type": "article",
+    "journal": {
+        "name": "Cold Spring Harbor Laboratory Press"
+    },
+    "link": [
+        {
+            "url": "https://www.medrxiv.org/content/10.1101/2021.03.29.21254233v1",
+            "type": "publisher"
+        }
+    ],
+    "author": [
+        {
+            "name": "Christiaan H van Dorp"
+        },
+        {
+            "name": "Emma E Goldberg"
+        },
+        {
+            "name": "Nicolas Hengartner"
+        },
+        {
+            "name": "Ruian Ke"
+        },
+        {
+            "name": "Ethan Obie Romero-Severson"
+        }
+    ],
+    "publisher": "bioRxiv",
+    "year": "2021"
+},
+{
+    "identifier": [
+        {
+            "type": "_xddid",
+            "id": "60c0ce2c3f2ac7e70172d61d"
+        },
+        {
+            "type": "doi",
+            "id": "10.1016/j.inffus.2021.05.016"
+        }
+    ],
+    "title": "Editorial: Advances in multi-source information fusion for epidemic diseases",
+    "type": "article",
+    "journal": {
+        "name": "Information Fusion"
+    },
+    "link": [
+        {
+            "url": "https://www.sciencedirect.com/science/article/pii/S1566253521001238?v=s5",
+            "type": "publisher"
+        }
+    ],
+    "author": [
+        {
+            "name": ""
+        }
+    ],
+    "publisher": "Elsevier",
+    "year": "2021"
+},
+{
+    "identifier": [
+        {
+            "type": "_xddid",
+            "id": "60c2d40d3f2ac7e7017778af"
+        },
+        {
+            "type": "doi",
+            "id": "10.1101/2021.06.07.21258492"
+        }
+    ],
+    "title": "Evaluating the utility of high-resolution proximity metrics in predicting the spread of COVID-19",
+    "type": "article",
+    "journal": {
+        "name": "Cold Spring Harbor Laboratory Press"
+    },
+    "link": [
+        {
+            "url": "https://www.medrxiv.org/content/10.1101/2021.06.07.21258492v1",
+            "type": "publisher"
+        }
+    ],
+    "author": [
+        {
+            "name": "Zakaria Mehrab"
+        },
+        {
+            "name": "Aniruddha Adiga"
+        },
+        {
+            "name": "Madhav Marathe"
+        },
+        {
+            "name": "Srinivasan Venkatramanan"
+        },
+        {
+            "name": "Samarth Swarup"
+        }
+    ],
+    "publisher": "bioRxiv",
+    "year": "2021"
+},
+{
+    "identifier": [
+        {
+            "type": "_xddid",
+            "id": "60d0abd13f2ac7e701976294"
+        },
+        {
+            "type": "doi",
+            "id": "10.1101/2021.06.18.21259137"
+        }
+    ],
+    "title": "Comparative performance of between-population allocation strategies for SARS-CoV-2 vaccines.",
+    "type": "article",
+    "journal": {
+        "name": "Cold Spring Harbor Laboratory Press"
+    },
+    "link": [
+        {
+            "url": "https://www.medrxiv.org/content/10.1101/2021.06.18.21259137v1",
+            "type": "publisher"
+        }
+    ],
+    "author": [
+        {
+            "name": "Keya Joshi"
+        },
+        {
+            "name": "Eva Rumpler"
+        },
+        {
+            "name": "Lee Kennedy-Shaffer"
+        },
+        {
+            "name": "Rafia Bosan"
+        },
+        {
+            "name": "Marc Lipsitch"
+        }
+    ],
+    "publisher": "bioRxiv",
+    "year": "2021"
+},
+{
+    "identifier": [
+        {
+            "type": "_xddid",
+            "id": "60d6462af7f6fdf73f7c8bd1"
+        },
+        {
+            "type": "doi",
+            "id": "10.1101/2021.06.20.21259214"
+        }
+    ],
+    "title": "Microsimulation based quantitative analysis of COVID-19 management strategies",
+    "type": "article",
+    "journal": {
+        "name": "Cold Spring Harbor Laboratory Press"
+    },
+    "link": [
+        {
+            "url": "https://www.medrxiv.org/content/10.1101/2021.06.20.21259214v1",
+            "type": "publisher"
+        }
+    ],
+    "author": [
+        {
+            "name": "Istvan Z Reguly"
+        },
+        {
+            "name": "David Csercsik"
+        },
+        {
+            "name": "Janos Juhasz"
+        },
+        {
+            "name": "Kalman Tornai"
+        },
+        {
+            "name": "Zsofia Bujtar"
+        },
+        {
+            "name": "Gergely Horvath"
+        },
+        {
+            "name": "Bence Keomley-Horvath"
+        },
+        {
+            "name": "Tamas Kos"
+        },
+        {
+            "name": "Gyorgy Cserey"
+        },
+        {
+            "name": "Kristof Ivan"
+        },
+        {
+            "name": "Sandor Pongor"
+        },
+        {
+            "name": "Gabor Szederkenyi"
+        },
+        {
+            "name": "Gergely Rost"
+        },
+        {
+            "name": "Attila Csikasz-Nagy"
+        }
+    ],
+    "publisher": "bioRxiv",
+    "year": "2021"
+},
+{
+    "identifier": [
+        {
+            "type": "_xddid",
+            "id": "60ee012c67467f7269d3dbf0"
+        },
+        {
+            "type": "doi",
+            "id": "10.1101/2021.07.07.21260167"
+        }
+    ],
+    "title": "Indications that Stockholm has reached herd immunity, given limited restrictions, against several variants of SARS-CoV-2",
+    "type": "article",
+    "journal": {
+        "name": "Cold Spring Harbor Laboratory Press"
+    },
+    "link": [
+        {
+            "url": "https://www.medrxiv.org/content/10.1101/2021.07.07.21260167v1",
+            "type": "publisher"
+        }
+    ],
+    "author": [
+        {
+            "name": "Marcus Carlsson"
+        },
+        {
+            "name": "Cecilia Soderberg-Naucler"
+        }
+    ],
+    "publisher": "bioRxiv",
+    "year": "2021"
+},
+{
+    "identifier": [
+        {
+            "type": "_xddid",
+            "id": "60ef52b167467f7269d80905"
+        },
+        {
+            "type": "doi",
+            "id": "10.1101/2021.07.11.21260325"
+        }
+    ],
+    "title": "Mapping First to Second wave transition of covid19 Indian data via Sigmoid function and prediction of Third wave",
+    "type": "article",
+    "journal": {
+        "name": "Cold Spring Harbor Laboratory Press"
+    },
+    "link": [
+        {
+            "url": "https://www.medrxiv.org/content/10.1101/2021.07.11.21260325v1",
+            "type": "publisher"
+        }
+    ],
+    "author": [
+        {
+            "name": "SUPRIYA MONDAL"
+        },
+        {
+            "name": "Sabyasachi Ghosh"
+        }
+    ],
+    "publisher": "bioRxiv",
+    "year": "2021"
+},
+{
+    "identifier": [
+        {
+            "type": "_xddid",
+            "id": "60f9deaf67467f7269fafd3f"
+        },
+        {
+            "type": "doi",
+            "id": "10.1101/2021.07.19.21260746"
+        }
+    ],
+    "title": "Global predictions of short- to medium-term COVID-19 transmission trends : a retrospective assessment",
+    "type": "article",
+    "journal": {
+        "name": "Cold Spring Harbor Laboratory Press"
+    },
+    "link": [
+        {
+            "url": "https://www.medrxiv.org/content/10.1101/2021.07.19.21260746v1",
+            "type": "publisher"
+        }
+    ],
+    "author": [
+        {
+            "name": "Sangeeta Bhatia"
+        },
+        {
+            "name": "Kris V Parag"
+        },
+        {
+            "name": "Jack Wardle"
+        },
+        {
+            "name": "Natsuko Imai"
+        },
+        {
+            "name": "Sabine L Van Elsland"
+        },
+        {
+            "name": "Britta Lassmann"
+        },
+        {
+            "name": "Gina Cuomo-Dannenburg"
+        },
+        {
+            "name": "Elita Jauneikaite"
+        },
+        {
+            "name": "H. Juliette T Unwin"
+        },
+        {
+            "name": "Steven Riley"
+        },
+        {
+            "name": "Neil Ferguson"
+        },
+        {
+            "name": "Christl A Donnelly"
+        },
+        {
+            "name": "Anne Cori"
+        },
+        {
+            "name": "Pierre Nouvellet"
+        }
+    ],
+    "publisher": "bioRxiv",
+    "year": "2021"
+},
+{
+    "identifier": [
+        {
+            "type": "_xddid",
+            "id": "60fd2a6c67467f72690ef895"
+        },
+        {
+            "type": "doi",
+            "id": "10.1101/2021.07.19.21260773"
+        }
+    ],
+    "title": "A Wastewater-Based Epidemic Model for SARS-CoV-2 with Application to Three Canadian Cities",
+    "type": "article",
+    "journal": {
+        "name": "Cold Spring Harbor Laboratory Press"
+    },
+    "link": [
+        {
+            "url": "https://www.medrxiv.org/content/10.1101/2021.07.19.21260773v1",
+            "type": "publisher"
+        }
+    ],
+    "author": [
+        {
+            "name": "Shokoofeh Nourbakhsh"
+        },
+        {
+            "name": "Aamir Fazil"
+        },
+        {
+            "name": "Michael Li"
+        },
+        {
+            "name": "Chand S. Mangat"
+        },
+        {
+            "name": "Shelley W Peterson"
+        },
+        {
+            "name": "Jade Daigle"
+        },
+        {
+            "name": "Stacie Langner"
+        },
+        {
+            "name": "Jayson Shurgold"
+        },
+        {
+            "name": "Patrick M D'Aoust"
+        },
+        {
+            "name": "Robert Delatolla"
+        },
+        {
+            "name": "Elisabeth Mercier"
+        },
+        {
+            "name": "Xiao-Li Pang"
+        },
+        {
+            "name": "Bonita E. Lee"
+        },
+        {
+            "name": "Rebecca Stuart"
+        },
+        {
+            "name": "Shinthuja Wijayasri"
+        },
+        {
+            "name": "David CHAMPREDON"
+        }
+    ],
+    "publisher": "bioRxiv",
+    "year": "2021"
+},
+{
+    "identifier": [
+        {
+            "type": "_xddid",
+            "id": "60fdb70d67467f726910b5d4"
+        },
+        {
+            "type": "doi",
+            "id": "10.1101/2021.07.23.21260992"
+        }
+    ],
+    "title": "A cluster randomised trial of the impact of a policy of daily testing for contacts of COVID-19 cases on attendance and COVID-19 transmission in English secondary schools and colleges",
+    "type": "article",
+    "journal": {
+        "name": "Cold Spring Harbor Laboratory Press"
+    },
+    "link": [
+        {
+            "url": "https://www.medrxiv.org/content/10.1101/2021.07.23.21260992v1",
+            "type": "publisher"
+        }
+    ],
+    "author": [
+        {
+            "name": "Bernadette C Young"
+        },
+        {
+            "name": "David W Eyre"
+        },
+        {
+            "name": "Saroj Kendrick"
+        },
+        {
+            "name": "Chris White"
+        },
+        {
+            "name": "Sylvester Smith"
+        },
+        {
+            "name": "George Beveridge"
+        },
+        {
+            "name": "Toby Nonnenmacher"
+        },
+        {
+            "name": "Fegor Ichofu"
+        },
+        {
+            "name": "Joseph Hillier"
+        },
+        {
+            "name": "Ian Diamond"
+        },
+        {
+            "name": "Emma Rourke"
+        },
+        {
+            "name": "Fiona Dawe"
+        },
+        {
+            "name": "Ieuan Day"
+        },
+        {
+            "name": "Lisa Davies"
+        },
+        {
+            "name": "Paul Staite"
+        },
+        {
+            "name": "Andrea Lacey"
+        },
+        {
+            "name": "James McCrae"
+        },
+        {
+            "name": "Ffion Jones"
+        },
+        {
+            "name": "Joseph Kelly"
+        },
+        {
+            "name": "Urszula Bankiewicz"
+        },
+        {
+            "name": "Sarah Tunkel"
+        },
+        {
+            "name": "Richard Ovens"
+        },
+        {
+            "name": "David Chapman"
+        },
+        {
+            "name": "Peter Marks"
+        },
+        {
+            "name": "Nick Hicks"
+        },
+        {
+            "name": "Tom Fowler"
+        },
+        {
+            "name": "Susan Hopkins"
+        },
+        {
+            "name": "Lucy Yardley"
+        },
+        {
+            "name": "Tim EA Peto"
+        }
+    ],
+    "publisher": "bioRxiv",
+    "year": "2021"
+},
+{
+    "identifier": [
+        {
+            "type": "_xddid",
+            "id": "611d772e67467f72698b7249"
+        },
+        {
+            "type": "doi",
+            "id": "10.1101/2021.08.16.21262153"
+        }
+    ],
+    "title": "The Impact of COVID-19 Testing on College Campuses",
+    "type": "article",
+    "journal": {
+        "name": "Cold Spring Harbor Laboratory Press"
+    },
+    "link": [
+        {
+            "url": "https://www.medrxiv.org/content/10.1101/2021.08.16.21262153v1",
+            "type": "publisher"
+        }
+    ],
+    "author": [
+        {
+            "name": "Zhuoting Yu"
+        },
+        {
+            "name": "Akane B. Fujimoto"
+        },
+        {
+            "name": "Pinar Keskinocak"
+        },
+        {
+            "name": "Julie L Swann"
+        }
+    ],
+    "publisher": "bioRxiv",
+    "year": "2021"
+},
+{
+    "identifier": [
+        {
+            "type": "_xddid",
+            "id": "6138e78167467f7269ed4b1e"
+        },
+        {
+            "type": "doi",
+            "id": "10.1080/10095020.2021.1937338"
+        }
+    ],
+    "title": "Spatial-temporal modeling of initial COVID-19 diffusion: The cases of the Chinese Mainland and Conterminous United States",
+    "type": "article",
+    "journal": {
+        "name": "Geo-spatial Information Science"
+    },
+    "link": [
+        {
+            "url": "https://www.tandfonline.com/doi/full/10.1080/10095020.2021.1937338",
+            "type": "publisher"
+        }
+    ],
+    "author": [
+        {
+            "name": "Griffith, Daniel"
+        },
+        {
+            "name": "Li, Bin"
+        }
+    ],
+    "publisher": "Taylor and Francis",
+    "pages": "1--23"
+},
+{
+    "identifier": [
+        {
+            "type": "_xddid",
+            "id": "616c4d4c67467f7269ca4997"
+        },
+        {
+            "type": "doi",
+            "id": "10.1007/s40819-020-00860-z"
+        }
+    ],
+    "title": "Stability Analysis and Optimal Control for Yellow Fever Model with Vertical Transmission",
+    "type": "article",
+    "journal": {
+        "name": "International Journal of Applied and Computational Mathematics"
+    },
+    "link": [
+        {
+            "url": "https://link.springer.com/10.1007/s40819-020-00860-z",
+            "type": "publisher"
+        }
+    ],
+    "author": [
+        {
+            "name": "Danbaba, UA"
+        },
+        {
+            "name": "Garba, SM"
+        }
+    ],
+    "publisher": "Springer",
+    "volume": "6",
+    "number": "4",
+    "year": "2020"
+},
+{
+    "identifier": [
+        {
+            "type": "_xddid",
+            "id": "616e372467467f7269d2de14"
+        },
+        {
+            "type": "doi",
+            "id": "10.1007/s11538-020-00778-z"
+        }
+    ],
+    "title": "Agent-Based Modeling and Simulation in Mathematics and Biology Education",
+    "type": "article",
+    "journal": {
+        "name": "Bulletin of Mathematical Biology"
+    },
+    "link": [
+        {
+            "url": "https://link.springer.com/10.1007/s11538-020-00778-z",
+            "type": "publisher"
+        }
+    ],
+    "author": [
+        {
+            "name": "Bodine, Erin N."
+        },
+        {
+            "name": "Panoff, Robert M."
+        },
+        {
+            "name": "Voit, Eberhard O."
+        },
+        {
+            "name": "Weisstein, Anton E."
+        }
+    ],
+    "publisher": "Springer",
+    "volume": "82",
+    "number": "8",
+    "year": "2020"
+},
+{
+    "identifier": [
+        {
+            "type": "_xddid",
+            "id": "616e615867467f7269d39592"
+        },
+        {
+            "type": "doi",
+            "id": "10.1038/423585a"
+        }
+    ],
+    "title": "SARS, a challenge from the South",
+    "type": "article",
+    "journal": {
+        "name": "Nature"
+    },
+    "link": [
+        {
+            "url": "http://www.nature.com/articles/423585a",
+            "type": "publisher"
+        }
+    ],
+    "author": [
+        {
+            "name": "Singh, Jerome. A."
+        }
+    ],
+    "publisher": "Springer",
+    "volume": "423",
+    "number": "6940",
+    "pages": "585--585",
+    "year": "2003"
+},
+{
+    "identifier": [
+        {
+            "type": "_xddid",
+            "id": "616e7fcd67467f7269d41897"
+        },
+        {
+            "type": "doi",
+            "id": "10.1038/s41598-017-07824-2"
+        }
+    ],
+    "title": "Egyptian rousette bats maintain long-term protective immunity against Marburg virus infection despite diminished antibody levels",
+    "type": "article",
+    "journal": {
+        "name": "Scientific Reports"
+    },
+    "link": [
+        {
+            "url": "http://www.nature.com/articles/s41598-017-07824-2",
+            "type": "publisher"
+        }
+    ],
+    "author": [
+        {
+            "name": "Schuh, Amy J."
+        },
+        {
+            "name": "Amman, Brian R."
+        },
+        {
+            "name": "Sealy, Tara K."
+        },
+        {
+            "name": "Spengler, Jessica R."
+        },
+        {
+            "name": "Nichol, Stuart T."
+        },
+        {
+            "name": "Towner, Jonathan S."
+        }
+    ],
+    "publisher": "Springer",
+    "volume": "7",
+    "number": "1",
+    "year": "2017"
+},
+{
+    "identifier": [
+        {
+            "type": "_xddid",
+            "id": "616ecd2567467f7269d56d11"
+        },
+        {
+            "type": "doi",
+            "id": "10.1186/s40249-020-00704-4"
+        }
+    ],
+    "title": "Basic reproduction number and predicted trends of coronavirus disease 2019 epidemic in the mainland of China",
+    "type": "article",
+    "journal": {
+        "name": "Infectious Diseases of Poverty"
+    },
+    "link": [
+        {
+            "url": "https://idpjournal.biomedcentral.com/articles/10.1186/s40249-020-00704-4",
+            "type": "publisher"
+        }
+    ],
+    "author": [
+        {
+            "name": "Li, Yong"
+        },
+        {
+            "name": "Wang, Lian-Wen"
+        },
+        {
+            "name": "Peng, Zhi-Hang"
+        },
+        {
+            "name": "Shen, Hong-Bing"
+        }
+    ],
+    "publisher": "Springer",
+    "volume": "9",
+    "number": "1",
+    "year": "2020"
+},
+{
+    "identifier": [
+        {
+            "type": "_xddid",
+            "id": "616fd5fb67467f7269d9e04c"
+        },
+        {
+            "type": "doi",
+            "id": "10.1186/s40249-020-00683-6"
+        }
+    ],
+    "title": "Risk estimation and prediction of the transmission of coronavirus disease-2019 (COVID-19) in the mainland of China excluding Hubei province",
+    "type": "article",
+    "journal": {
+        "name": "Infectious Diseases of Poverty"
+    },
+    "link": [
+        {
+            "url": "https://idpjournal.biomedcentral.com/articles/10.1186/s40249-020-00683-6",
+            "type": "publisher"
+        }
+    ],
+    "author": [
+        {
+            "name": "Wan, Hui"
+        },
+        {
+            "name": "Cui, Jing-An"
+        },
+        {
+            "name": "Yang, Guo-Jing"
+        }
+    ],
+    "publisher": "Springer",
+    "volume": "9",
+    "number": "1",
+    "year": "2020"
+},
+{
+    "identifier": [
+        {
+            "type": "_xddid",
+            "id": "618d53fc67467f726960ca7d"
+        },
+        {
+            "type": "doi",
+            "id": "10.1101/2021.09.19.21263799"
+        }
+    ],
+    "title": "Spatial simulation of COVID-19 new cases development",
+    "type": "article",
+    "journal": {
+        "name": "Cold Spring Harbor Laboratory Press"
+    },
+    "link": [
+        {
+            "url": "https://www.medrxiv.org/content/10.1101/2021.09.19.21263799v1",
+            "type": "publisher"
+        }
+    ],
+    "author": [
+        {
+            "name": "Isaac Chen"
+        },
+        {
+            "name": "F. Liu"
+        }
+    ],
+    "publisher": "bioRxiv",
+    "year": "2021"
+},
+{
+    "identifier": [
+        {
+            "type": "_xddid",
+            "id": "618d53fd67467f726960cde5"
+        },
+        {
+            "type": "doi",
+            "id": "10.1101/2021.09.28.21263801"
+        }
+    ],
+    "title": "Analysis of overdispersion in airborne transmission of Covid-19",
+    "type": "article",
+    "journal": {
+        "name": "Cold Spring Harbor Laboratory Press"
+    },
+    "link": [
+        {
+            "url": "https://www.medrxiv.org/content/10.1101/2021.09.28.21263801v1",
+            "type": "publisher"
+        }
+    ],
+    "author": [
+        {
+            "name": "Swetaprovo Chaudhuri"
+        },
+        {
+            "name": "Prasad Kasibhatla"
+        },
+        {
+            "name": "Arnab Mukherjee"
+        },
+        {
+            "name": "William Pan"
+        },
+        {
+            "name": "Glenn Morrison"
+        },
+        {
+            "name": "Sharmistha Mishra"
+        },
+        {
+            "name": "Vijaya Kumar Murty"
+        }
+    ],
+    "publisher": "bioRxiv",
+    "year": "2021"
+},
+{
+    "identifier": [
+        {
+            "type": "_xddid",
+            "id": "618d53fe67467f726960d003"
+        },
+        {
+            "type": "doi",
+            "id": "10.1101/2021.10.04.21262827"
+        }
+    ],
+    "title": "A twelve-month projection to September 2022 of the Covid-19 epidemic in the UK using a Dynamic Causal Model",
+    "type": "article",
+    "journal": {
+        "name": "Cold Spring Harbor Laboratory Press"
+    },
+    "link": [
+        {
+            "url": "https://www.medrxiv.org/content/10.1101/2021.10.04.21262827v1",
+            "type": "publisher"
+        }
+    ],
+    "author": [
+        {
+            "name": "Cam Bowie"
+        },
+        {
+            "name": "Karl Friston"
+        }
+    ],
+    "publisher": "bioRxiv",
+    "year": "2021"
+},
+{
+    "identifier": [
+        {
+            "type": "_xddid",
+            "id": "618d540067467f726960d26f"
+        },
+        {
+            "type": "doi",
+            "id": "10.1101/2021.10.10.21264753"
+        }
+    ],
+    "title": "Inferring age-specific differences in susceptibility to and infectiousness upon SARS-CoV-2 infection based on Belgian social contact data",
+    "type": "article",
+    "journal": {
+        "name": "Cold Spring Harbor Laboratory Press"
+    },
+    "link": [
+        {
+            "url": "https://www.medrxiv.org/content/10.1101/2021.10.10.21264753v1",
+            "type": "publisher"
+        }
+    ],
+    "author": [
+        {
+            "name": "Nicolas Franco"
+        },
+        {
+            "name": "Pietro Coletti"
+        },
+        {
+            "name": "Lander Willem"
+        },
+        {
+            "name": "Leonardo Angeli"
+        },
+        {
+            "name": "Adrien Lajot"
+        },
+        {
+            "name": "Steven Abrams"
+        },
+        {
+            "name": "Philippe Beutels"
+        },
+        {
+            "name": "Christel Faes"
+        },
+        {
+            "name": "Niel Hens"
+        }
+    ],
+    "publisher": "bioRxiv",
+    "year": "2021"
+},
+{
+    "identifier": [
+        {
+            "type": "_xddid",
+            "id": "618d540067467f726960d357"
+        },
+        {
+            "type": "doi",
+            "id": "10.1101/2021.10.12.21264904"
+        }
+    ],
+    "title": "The impact of heating, ventilation, and air conditioning design features on the transmission of viruses, including the 2019 novel coronavirus: a systematic review of ultraviolet radiation",
+    "type": "article",
+    "journal": {
+        "name": "Cold Spring Harbor Laboratory Press"
+    },
+    "link": [
+        {
+            "url": "https://www.medrxiv.org/content/10.1101/2021.10.12.21264904v1",
+            "type": "publisher"
+        }
+    ],
+    "author": [
+        {
+            "name": "Gail M. Thornton"
+        },
+        {
+            "name": "Brian A. Fleck"
+        },
+        {
+            "name": "Natalie Fleck"
+        },
+        {
+            "name": "Emily Kroeker"
+        },
+        {
+            "name": "Dhyey Dandnayak"
+        },
+        {
+            "name": "Lexuan Zhong"
+        },
+        {
+            "name": "Lisa Hartling"
+        }
+    ],
+    "publisher": "bioRxiv",
+    "year": "2021"
+},
+{
+    "identifier": [
+        {
+            "type": "_xddid",
+            "id": "618d540167467f726960d490"
+        },
+        {
+            "type": "doi",
+            "id": "10.1101/2021.10.15.21265037"
+        }
+    ],
+    "title": "Extreme COVID-19 waves reveal hyperexponential growth and finite-time singularity",
+    "type": "article",
+    "journal": {
+        "name": "Cold Spring Harbor Laboratory Press"
+    },
+    "link": [
+        {
+            "url": "https://www.medrxiv.org/content/10.1101/2021.10.15.21265037v1",
+            "type": "publisher"
+        }
+    ],
+    "author": [
+        {
+            "name": "Induja Pavithran"
+        },
+        {
+            "name": "R. I. Sujith"
+        }
+    ],
+    "publisher": "bioRxiv",
+    "year": "2021"
+},
+{
+    "identifier": [
+        {
+            "type": "_xddid",
+            "id": "618d94bf67467f726962a534"
+        },
+        {
+            "type": "doi",
+            "id": "10.1101/2021.11.06.21266002"
+        }
+    ],
+    "title": "A prototype vaccination model for endemic Covid-19 under waning immunity and imperfect vaccine take-up",
+    "type": "article",
+    "journal": {
+        "name": "Cold Spring Harbor Laboratory Press"
+    },
+    "link": [
+        {
+            "url": "https://www.medrxiv.org/content/10.1101/2021.11.06.21266002v1",
+            "type": "publisher"
+        }
+    ],
+    "author": [
+        {
+            "name": "John S Dagpunar"
+        },
+        {
+            "name": "ChenChen Wu"
+        }
+    ],
+    "publisher": "bioRxiv",
+    "year": "2021"
+},
+{
+    "identifier": [
+        {
+            "type": "_xddid",
+            "id": "61b0140067467f72698cb274"
+        },
+        {
+            "type": "doi",
+            "id": "10.1101/2021.12.07.21267405"
+        }
+    ],
+    "title": "SIR Modeling the Dual Disaster Impacts of Omicron B.1.1.529 and Natural Disaster Events on Simulated 6 Months (from December 2021 to May 2022) Healthcare System Resiliences in Fragile SE Asia Ring of Fire Ecosystems",
+    "type": "article",
+    "journal": {
+        "name": "Cold Spring Harbor Laboratory Press"
+    },
+    "link": [
+        {
+            "url": "https://www.medrxiv.org/content/10.1101/2021.12.07.21267405v1",
+            "type": "publisher"
+        }
+    ],
+    "author": [
+        {
+            "name": "Andri A Wibowo"
+        }
+    ],
+    "publisher": "bioRxiv",
+    "year": "2021"
+},
+{
+    "identifier": [
+        {
+            "type": "_xddid",
+            "id": "61b5761c67467f7269a47f70"
+        },
+        {
+            "type": "doi",
+            "id": "10.1101/2021.12.09.21267544"
+        }
+    ],
+    "title": "SARS-CoV-2 variant dynamics across US states show consistent differences in effective reproduction numbers",
+    "type": "article",
+    "journal": {
+        "name": "Cold Spring Harbor Laboratory Press"
+    },
+    "link": [
+        {
+            "url": "https://www.medrxiv.org/content/10.1101/2021.12.09.21267544v1",
+            "type": "publisher"
+        }
+    ],
+    "author": [
+        {
+            "name": "Marlin D Figgins"
+        },
+        {
+            "name": "Trevor Bedford"
+        }
+    ],
+    "publisher": "bioRxiv",
+    "year": "2021"
+},
+{
+    "identifier": [
+        {
+            "type": "_xddid",
+            "id": "61bf757e03cbbf5cb75dec89"
+        },
+        {
+            "type": "doi",
+            "id": "10.1101/2021.12.18.21268002"
+        }
+    ],
+    "title": "COVID-19 endgame: from pandemic to endemic? Vaccination, reopening and evolution in a well-vaccinated population",
+    "type": "article",
+    "journal": {
+        "name": "Cold Spring Harbor Laboratory Press"
+    },
+    "link": [
+        {
+            "url": "https://www.medrxiv.org/content/10.1101/2021.12.18.21268002v1",
+            "type": "publisher"
+        }
+    ],
+    "author": [
+        {
+            "name": "Elisha B. Are"
+        },
+        {
+            "name": "Yexuan Song"
+        },
+        {
+            "name": "Jessica E. Stockdale"
+        },
+        {
+            "name": "Paul Tupper"
+        },
+        {
+            "name": "Caroline Colijn"
+        }
+    ],
+    "publisher": "bioRxiv",
+    "year": "2021"
+},
+{
+    "identifier": [
+        {
+            "type": "_xddid",
+            "id": "61cc501c03cbbf5cb78d8044"
+        },
+        {
+            "type": "doi",
+            "id": "10.1101/2021.12.24.21268384"
+        }
+    ],
+    "title": "Estimating the impact of implementation and timing of COVID-19 vaccination program in Brazil: a counterfactual analysis",
+    "type": "article",
+    "journal": {
+        "name": "Cold Spring Harbor Laboratory Press"
+    },
+    "link": [
+        {
+            "url": "https://www.medrxiv.org/content/10.1101/2021.12.24.21268384v1",
+            "type": "publisher"
+        }
+    ],
+    "author": [
+        {
+            "name": "Leonardo Souto Ferreira"
+        },
+        {
+            "name": "Flávia Maria Darcie Marquitti"
+        },
+        {
+            "name": "Rafael Lopes Paixão da Silva"
+        },
+        {
+            "name": "Marcelo Eduardo Borges"
+        },
+        {
+            "name": "Marcelo F C Gomes"
+        },
+        {
+            "name": "Oswaldo G Cruz"
+        },
+        {
+            "name": "Roberto André Kraenkel"
+        },
+        {
+            "name": "Renato Mendes Coutinho"
+        },
+        {
+            "name": "Paulo Inácio Prado"
+        },
+        {
+            "name": "Leonardo S Bastos"
+        }
+    ],
+    "publisher": "bioRxiv",
+    "year": "2021"
+},
+{
+    "identifier": [
+        {
+            "type": "_xddid",
+            "id": "6261e44c2688b71135af64fc"
+        },
+        {
+            "type": "doi",
+            "id": "10.1101/2022.04.20.22274097"
+        }
+    ],
+    "title": "Accuracy of US CDC COVID-19 Forecasting Models",
+    "type": "article",
+    "journal": {
+        "name": "Cold Spring Harbor Laboratory Press"
+    },
+    "link": [
+        {
+            "url": "https://www.medrxiv.org/content/10.1101/2022.04.20.22274097v1",
+            "type": "publisher"
+        }
+    ],
+    "author": [
+        {
+            "name": "Aviral Chharia"
+        },
+        {
+            "name": "Govind Jeevan"
+        },
+        {
+            "name": "Rajat Aayush Jha"
+        },
+        {
+            "name": "Meng Liu"
+        },
+        {
+            "name": "Jonathan M Berman"
+        },
+        {
+            "name": "Christin A Glorioso"
+        }
+    ],
+    "publisher": "bioRxiv",
+    "year": "2022"
+},
+{
+    "identifier": [
+        {
+            "type": "_xddid",
+            "id": "626e97362688b711350f7f20"
+        },
+        {
+            "type": "doi",
+            "id": "10.1007/s11538-020-00747-6"
+        }
+    ],
+    "title": "Modeling the Effects of Meteorological Factors and Unreported Cases on Seasonal Influenza Outbreaks in Gansu Province, China",
+    "type": "article",
+    "journal": {
+        "name": "Bulletin of Mathematical Biology"
+    },
+    "link": [
+        {
+            "url": "https://link.springer.com/10.1007/s11538-020-00747-6",
+            "type": "publisher"
+        }
+    ],
+    "author": [
+        {
+            "name": "Jing, Shuang-Lin"
+        },
+        {
+            "name": "Huo, Hai-Feng"
+        },
+        {
+            "name": "Xiang, Hong"
+        }
+    ],
+    "publisher": "Springer",
+    "volume": "82",
+    "number": "6",
+    "year": "2020"
+},
+{
+    "identifier": [
+        {
+            "type": "_xddid",
+            "id": "627f97852688b71135c308c1"
+        },
+        {
+            "type": "doi",
+            "id": "10.1007/s00508-020-01746-2"
+        }
+    ],
+    "title": "Immunotherapy and vaccination against infectious diseases",
+    "type": "article",
+    "journal": {
+        "name": "Wiener klinische Wochenschrift"
+    },
+    "link": [
+        {
+            "url": "https://link.springer.com/10.1007/s00508-020-01746-2",
+            "type": "publisher"
+        }
+    ],
+    "author": [
+        {
+            "name": "Ebbers, Meinolf"
+        },
+        {
+            "name": "Hemmer, Christoph J."
+        },
+        {
+            "name": "Müller-Hilke, Brigitte"
+        },
+        {
+            "name": "Reisinger, Emil C."
+        }
+    ],
+    "publisher": "Springer",
+    "volume": "133",
+    "number": "13-14",
+    "pages": "714--720",
+    "year": "2021"
+},
+{
+    "identifier": [
+        {
+            "type": "_xddid",
+            "id": "628bbfec7e0e8837a6dabc62"
+        },
+        {
+            "type": "doi",
+            "id": "10.1101/2022.05.20.22275407"
+        }
+    ],
+    "title": "Social divisions and risk perception can drive divergent epidemic dynamics and large second and third waves",
+    "type": "article",
+    "journal": {
+        "name": "Cold Spring Harbor Laboratory Press"
+    },
+    "link": [
+        {
+            "url": "https://www.medrxiv.org/content/10.1101/2022.05.20.22275407v1",
+            "type": "publisher"
+        }
+    ],
+    "author": [
+        {
+            "name": "Mallory J Harris"
+        },
+        {
+            "name": "Erin A. Mordecai"
+        }
+    ],
+    "publisher": "bioRxiv",
+    "year": "2022"
+},
+{
+    "identifier": [
+        {
+            "type": "_xddid",
+            "id": "62a8dd0e8bea6dc8235187e4"
+        },
+        {
+            "type": "doi",
+            "id": "10.1101/2022.06.11.22276248"
+        }
+    ],
+    "title": "Assessing COVID-19 vaccination strategies in varied demographics using an individual-based model",
+    "type": "article",
+    "journal": {
+        "name": "Cold Spring Harbor Laboratory Press"
+    },
+    "link": [
+        {
+            "url": "https://www.medrxiv.org/content/10.1101/2022.06.11.22276248v1",
+            "type": "publisher"
+        }
+    ],
+    "author": [
+        {
+            "name": "Noam Ben-Zuk"
+        },
+        {
+            "name": "Yair Daon"
+        },
+        {
+            "name": "Amit Sasson"
+        },
+        {
+            "name": "Dror Ben-Adi"
+        },
+        {
+            "name": "Amit Huppert"
+        },
+        {
+            "name": "Daniel Nevo"
+        },
+        {
+            "name": "Uri Obolski"
+        }
+    ],
+    "publisher": "bioRxiv",
+    "year": "2022"
+},
+{
+    "identifier": [
+        {
+            "type": "_xddid",
+            "id": "62e024b82cc8300dbb04b3a2"
+        },
+        {
+            "type": "doi",
+            "id": "10.1016/j.gr.2022.03.014"
+        }
+    ],
+    "title": "Improving performance of deep learning predictive models for COVID-19 by incorporating environmental parameters",
+    "type": "article",
+    "journal": {
+        "name": "Gondwana Research"
+    },
+    "link": [
+        {
+            "url": "https://www.sciencedirect.com/science/article/pii/S1342937X22001083",
+            "type": "publisher"
+        }
+    ],
+    "author": [
+        {
+            "name": "Rawlekar, Samyak"
+        },
+        {
+            "name": "Anjum, Saima"
+        },
+        {
+            "name": "Gupta, Ankit"
+        },
+        {
+            "name": "Bherwani, Hemant"
+        },
+        {
+            "name": "Labhasetwar, Nitin"
+        },
+        {
+            "name": "Kumar, Rakesh"
+        }
+    ],
+    "publisher": "Elsevier",
+    "year": "2022"
+},
+{
+    "identifier": [
+        {
+            "type": "_xddid",
+            "id": "632b7b731683212d9e9e5062"
+        },
+        {
+            "type": "doi",
+            "id": "10.1007/s11356-021-16600-9"
+        }
+    ],
+    "title": "Spatiotemporal cluster analysis of COVID-19 and its relationship with environmental factors at the city level in mainland China",
+    "type": "article",
+    "journal": {
+        "name": "Environmental Science and Pollution Research"
+    },
+    "link": [
+        {
+            "url": "https://link.springer.com/10.1007/s11356-021-16600-9",
+            "type": "publisher"
+        }
+    ],
+    "author": [
+        {
+            "name": "Yang, Shu-qin"
+        },
+        {
+            "name": "Fang, Zheng-gang"
+        },
+        {
+            "name": "Lv, Cai-xia"
+        },
+        {
+            "name": "An, Shu-yi"
+        },
+        {
+            "name": "Guan, Peng"
+        },
+        {
+            "name": "Huang, De-sheng"
+        },
+        {
+            "name": "Wu, Wei"
+        }
+    ],
+    "publisher": "Springer",
+    "volume": "29",
+    "number": "9",
+    "pages": "13386--13395",
+    "year": "2022"
+},
+{
+    "identifier": [
+        {
+            "type": "_xddid",
+            "id": "636949fd74bed2df5c06e621"
+        },
+        {
+            "type": "doi",
+            "id": "10.1101/2022.11.06.22281984"
+        }
+    ],
+    "title": "The relationship between controllability, optimal testing resource allocation, and incubation-latent period mismatch as revealed by COVID-19",
+    "type": "article",
+    "journal": {
+        "name": "Cold Spring Harbor Laboratory Press"
+    },
+    "link": [
+        {
+            "url": "https://www.medrxiv.org/content/10.1101/2022.11.06.22281984v1",
+            "type": "publisher"
+        }
+    ],
+    "author": [
+        {
+            "name": "Jeffery Demers"
+        },
+        {
+            "name": "William F Fagan"
+        },
+        {
+            "name": "Sryia Potluri"
+        },
+        {
+            "name": "Justin M Calabrese"
+        }
+    ],
+    "publisher": "bioRxiv",
+    "year": "2022"
+},
+{
+    "identifier": [
+        {
+            "type": "_xddid",
+            "id": "63b97b0974bed2df5c41a271"
+        },
+        {
+            "type": "doi",
+            "id": "10.1007/s12190-021-01627-5"
+        }
+    ],
+    "title": "Periodicity and stationary distribution of two novel stochastic epidemic models with infectivity in the latent period and household quarantine",
+    "type": "article",
+    "journal": {
+        "name": "Journal of Applied Mathematics and Computing"
+    },
+    "link": [
+        {
+            "url": "https://link.springer.com/10.1007/s12190-021-01627-5",
+            "type": "publisher"
+        }
+    ],
+    "author": [
+        {
+            "name": "Shangguan, Dongchen"
+        },
+        {
+            "name": "Liu, Zhijun"
+        },
+        {
+            "name": "Wang, Lianwen"
+        },
+        {
+            "name": "Tan, Ronghua"
+        }
+    ],
+    "publisher": "Springer"
+},
+{
+    "identifier": [
+        {
+            "type": "_xddid",
+            "id": "63c9f7fd74bed2df5ca834d4"
+        },
+        {
+            "type": "doi",
+            "id": "10.1101/2023.01.19.23284768"
+        }
+    ],
+    "title": "Trajectories of COVID-19: a longitudinal analysis of many nations and subnational regions",
+    "type": "article",
+    "journal": {
+        "name": "Cold Spring Harbor Laboratory Press"
+    },
+    "link": [
+        {
+            "url": "https://www.medrxiv.org/content/10.1101/2023.01.19.23284768v1",
+            "type": "publisher"
+        }
+    ],
+    "author": [
+        {
+            "name": "David Burg"
+        },
+        {
+            "name": "Jesse  H. Ausubel"
+        }
+    ],
+    "publisher": "bioRxiv",
+    "year": "2023"
+}
+]
