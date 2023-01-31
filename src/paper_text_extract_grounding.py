@@ -17,11 +17,11 @@ def ground(text_path:str) -> str:
                 continue
 
             for tok in toks: 
-                if str.isdigit(toks[0]) or re.search("table", tok, re.IGNORECASE):
+                if str.isdigit(toks[0]):
                     continue
                 if re.search("^[A-Za-z]{2,}\s[A-Za-z]{2,}$|^[A-Za-z]{2,}$", tok):
                     print(f"looking up {tok}")
-                    print(get_mira_dkg_term(tok, ['id', 'name']))
+                    print(get_mira_dkg_term(tok, ['id', 'name'], True))
 
     return ""
 
