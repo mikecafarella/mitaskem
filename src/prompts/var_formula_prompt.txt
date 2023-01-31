@@ -1,4 +1,4 @@
-We have a latex formula as follows:
-[FORMULA]
+We have a variable description as follows:
+[DESC]
 
-Which latex formula section is the best match for the variable [TARGET]? Print the answer on a new line, without space, after ANSWER:.
+Does the description match the variable [TARGET]? Print YES or NO on a new line, without space, after ANSWER:.

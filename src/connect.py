@@ -8,6 +8,7 @@ import openai
 from openai import OpenAIError
 from PIL import Image
 import gpt_interaction
+from tqdm import tqdm
 
 from util import *
 from gpt_interaction import *
@@ -93,13 +94,23 @@ def get_code_formula_prompt(code, formula, target):
     return prompt
 
 # Get gpt-3 prompt with formula, and match variable targets
-def get_var_formula_prompt(formula, var):
+def get_var_formula_prompt(desc, var):
     text_file = open(os.path.join(os.path.dirname(__file__), 'prompts/var_formula_prompt.txt'), "r")
     prompt = text_file.read()
     text_file.close()
 
-    prompt = prompt.replace("[FORMULA]", formula)
+    prompt = prompt.replace("[DESC]", desc)
     prompt = prompt.replace("[TARGET]", var)
+    # print(prompt)
+    return prompt
+
+# Get gpt-3 prompt with formula, and match variable targets
+def get_formula_var_prompt(formula):
+    text_file = open(os.path.join(os.path.dirname(__file__), 'prompts/formula_var_prompt.txt'), "r")
+    prompt = text_file.read()
+    text_file.close()
+
+    prompt = prompt.replace("[FORMULA]", formula)
     # print(prompt)
     return prompt
 
@@ -288,19 +299,31 @@ def code_formula_connection(code, formulas, gpt_key):
         return f"OpenAI connection error: {err}", False
 
 def vars_formula_connection(vars, formula, gpt_key):
-    var_list = vars.split("\n")
-    matches = []
-    if var_list[-1] == "":
-        del var_list[-1]
+    prompt = get_formula_var_prompt(formula)
+    latex_vars = get_gpt_match(prompt, gpt_key, model="text-davinci-003")
+    latex_vars = latex_vars.split(':')[1].split(',')
+
+    latex_var_set = {}
+    var_list = vars.split("\n")[:50]
+
     try:
-        for var in var_list:
-            prompt = get_var_formula_prompt(formula, var)
-            match = get_gpt_match(prompt, gpt_key, model="text-davinci-003")
+        for latex_var in latex_vars:
+            for desc in tqdm(var_list):
+                # var = var.split(':')[0]
+                prompt = get_var_formula_prompt(desc, latex_var)
+                ans = get_gpt_match(prompt, gpt_key, model="text-davinci-003")
+                ans = ans.split(':')[1]
 
-            print(match)
+                # print(ans)
 
-            matches.append([var, match.split(":")[1]])
-        return matches, True
+                if ans == 'YES':
+                    if latex_var not in latex_var_set:
+                        latex_var_set[latex_var] = {desc}
+                    else:
+                        latex_var_set[latex_var].add(desc)
+
+            # matches.append([var, latex_var])
+        return latex_var_set, True
     except OpenAIError as err:
         return f"OpenAI connection error: {err}", False
 
@@ -338,4 +361,9 @@ def code_dkg_connection(dkg_targets, gpt_key, ontology_terms=DEFAULT_TERMS, onto
 
 if __name__ == "__main__":
     # code_dkg_connection("population", "") # GPT key
-    print(vars_formula_connection("time\ndisease", "\dot{D}(t)\,=\,\varepsilon I(t)\,-\,(\eta\,+\,\rho)D(t)", GPT_KEY))
+    vars = read_text_from_file('../resources/jan_evaluation/scenario_2_sidarthe/sidarthe_vars_deduped.txt')
+    match, _ = vars_formula_connection(vars, "\dot{\bf S}(t)=-\bf S(t)(\alpha{\cal I}(t)+\beta D(t)+\gamma A(t)+\delta R(t))", GPT_KEY)
+    
+    for latex_var in match:
+        print(latex_var, match[latex_var])
+        print('\n')
