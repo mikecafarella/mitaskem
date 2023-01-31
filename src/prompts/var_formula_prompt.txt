@@ -1,0 +1,4 @@
+We have a latex formula as follows:
+[FORMULA]
+
+Which latex formula section is the best match for the variable [TARGET]? Print the answer on a new line, without space, after ANSWER:.

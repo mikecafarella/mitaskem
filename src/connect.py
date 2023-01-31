@@ -12,6 +12,7 @@ import gpt_interaction
 from util import *
 from gpt_interaction import *
 from mira_dkg_interface import *
+from gpt_key import *
 # from automates.program_analysis.JSON2GroMEt.json2gromet import json_to_gromet
 # from automates.gromet.query import query
 
@@ -337,4 +338,4 @@ def code_dkg_connection(dkg_targets, gpt_key, ontology_terms=DEFAULT_TERMS, onto
 
 if __name__ == "__main__":
     # code_dkg_connection("population", "") # GPT key
-    vars_formula_connection("time\ndisease", "\dot{D}(t)\,=\,\varepsilon I(t)\,-\,(\eta\,+\,\rho)D(t)",)
+    print(vars_formula_connection("time\ndisease", "\dot{D}(t)\,=\,\varepsilon I(t)\,-\,(\eta\,+\,\rho)D(t)", GPT_KEY))
