@@ -125,6 +125,16 @@ def get_code_dataset_prompt(code, dataset, target):
     # print(prompt)
     return prompt
 
+def get_text_column_prompt(text, column):
+    text_file = open(os.path.join(os.path.dirname(__file__), "prompts/text_column_prompt.txt"), "r")
+    prompt = text_file.read()
+    text_file.close()
+
+    prompt = prompt.replace("[TEXT]", text)
+    prompt = prompt.replace("[COLUMN]", column)
+
+    return prompt
+
 
 
 def get_variables(path):
@@ -215,6 +225,14 @@ def code_dataset_connection(code, schema, gpt_key, interactive=False):
             print("OpenAI connection error:", err)
         else:
             return f"OpenAI connection error: {err}",False
+
+def text_column_connection(text, column, gpt_key):
+    try:
+        prompt = get_text_column_prompt(text, column)
+        match = get_gpt_match(prompt, gpt_key, model="text-davinci-003")
+        return match, True
+    except OpenAIError as err:
+        return f"OpenAI connection error: {err}",False
 
 
 def select_text(lines, s, t, buffer, interactive=True):
