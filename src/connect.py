@@ -294,7 +294,7 @@ def vars_formula_connection(vars, formula, gpt_key):
     try:
         for var in var_list:
             prompt = get_var_formula_prompt(formula, var)
-            match = get_gpt_match(prompt, gpt_key)
+            match = get_gpt_match(prompt, gpt_key, model="text-davinci-003")
 
             print(match)
 
@@ -337,4 +337,4 @@ def code_dkg_connection(dkg_targets, gpt_key, ontology_terms=DEFAULT_TERMS, onto
 
 if __name__ == "__main__":
     # code_dkg_connection("population", "") # GPT key
-    vars_formula_connection("time\ndisease", "\dot{D}(t)\,=\,\varepsilon I(t)\,-\,(\eta\,+\,\rho)D(t)", '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')
+    vars_formula_connection("time\ndisease", "\dot{D}(t)\,=\,\varepsilon I(t)\,-\,(\eta\,+\,\rho)D(t)",)
