@@ -12,8 +12,8 @@ import gpt_interaction
 from util import *
 from gpt_interaction import *
 from mira_dkg_interface import *
-from automates.program_analysis.JSON2GroMEt.json2gromet import json_to_gromet
-from automates.gromet.query import query
+# from automates.program_analysis.JSON2GroMEt.json2gromet import json_to_gromet
+# from automates.gromet.query import query
 
 def index_text_path(text_path: str) -> str:
     fw = open(text_path + "_idx", "w")
@@ -91,6 +91,16 @@ def get_code_formula_prompt(code, formula, target):
     # print(prompt)
     return prompt
 
+# Get gpt-3 prompt with formula, and match variable targets
+def get_var_formula_prompt(formula, var):
+    text_file = open(os.path.join(os.path.dirname(__file__), 'prompts/var_formula_prompt.txt'), "r")
+    prompt = text_file.read()
+    text_file.close()
+
+    prompt = prompt.replace("[FORMULA]", formula)
+    prompt = prompt.replace("[TARGET]", var)
+    # print(prompt)
+    return prompt
 
 # Get gpt-3 prompt with formula, code terms and match formula targets
 def get_code_text_prompt(code, text, target):
@@ -250,6 +260,23 @@ def code_formula_connection(code, formulas, gpt_key):
     except OpenAIError as err:
         return f"OpenAI connection error: {err}", False
 
+def vars_formula_connection(vars, formula, gpt_key):
+    var_list = vars.split("\n")
+    matches = []
+    if var_list[-1] == "":
+        del var_list[-1]
+    try:
+        for var in var_list:
+            prompt = get_var_formula_prompt(formula, var)
+            match = get_gpt_match(prompt, gpt_key)
+
+            print(match)
+
+            matches.append([var, match.split(":")[1]])
+        return matches, True
+    except OpenAIError as err:
+        return f"OpenAI connection error: {err}", False
+
 DEFAULT_TERMS = ['population', 'doubling time', 'recovery time', 'infectious time']
 DEFAULT_ATTRIBS = ['description', 'synonyms', 'xrefs', 'suggested_unit', 'suggested_data_type',
            'physical_min', 'physical_max', 'typical_min', 'typical_max']
@@ -283,4 +310,5 @@ def code_dkg_connection(dkg_targets, gpt_key, ontology_terms=DEFAULT_TERMS, onto
     return connection
 
 if __name__ == "__main__":
-    code_dkg_connection("population", "") # GPT key
+    # code_dkg_connection("population", "") # GPT key
+    vars_formula_connection("time\ndisease", "\dot{D}(t)\,=\,\varepsilon I(t)\,-\,(\eta\,+\,\rho)D(t)", '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')
