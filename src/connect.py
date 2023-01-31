@@ -36,13 +36,13 @@ def index_text(text: str) -> str:
 
 
 
-def get_gpt_match(prompt, key):
+def get_gpt_match(prompt, key, model="text-davinci-002"):
     # mykey = b'Z1QFxceGL_s6karbgfNFyuOdQ__m5TfHR7kuLPJChgs='
     # enc = b'gAAAAABjRh0iNbsVb6_DKSHPmlg3jc4svMDEmKuYd-DcoTxEbESYI9F8tm8anjbsTsZYHz_avZudJDBdOXSHYZqKmhdoBcJd919hCffSMg6WFYP12hpvI7EeNppGFNoZsLGnDM5d6AOUeRVeIc2FbmB_j0vvcIwuEQ=='
     # fernet = Fernet(mykey)
     # openai.api_key = fernet.decrypt(enc).decode()
     openai.api_key = key
-    response = openai.Completion.create(model="text-davinci-002", prompt=prompt, temperature=0.0, max_tokens=256)
+    response = openai.Completion.create(model=model, prompt=prompt, temperature=0.0, max_tokens=256)
     result = response.choices[0].text.strip()
     # print(result)
     return result
@@ -122,6 +122,14 @@ def get_text_param_prompt(text):
     prompt = prompt.replace("[TEXT]", text)
     return prompt
 
+def get_text_var_prompt(text):
+    text_file = open(os.path.join(os.path.dirname(__file__), 'prompts/text_var_prompt.txt'), "r")
+    prompt = text_file.read()
+    text_file.close()
+
+    prompt = prompt.replace("[TEXT]", text)
+    return prompt
+
 
 # Get gpt-3 prompt with code, dataset and match function targets
 def get_code_dataset_prompt(code, dataset, target):
@@ -133,6 +141,16 @@ def get_code_dataset_prompt(code, dataset, target):
     prompt = prompt.replace("[DATASET]", dataset)
     prompt = prompt.replace("[TARGET]", target)
     # print(prompt)
+    return prompt
+
+def get_text_column_prompt(text, column):
+    text_file = open(os.path.join(os.path.dirname(__file__), "prompts/text_column_prompt.txt"), "r")
+    prompt = text_file.read()
+    text_file.close()
+
+    prompt = prompt.replace("[TEXT]", text)
+    prompt = prompt.replace("[COLUMN]", column)
+
     return prompt
 
 
@@ -225,6 +243,14 @@ def code_dataset_connection(code, schema, gpt_key, interactive=False):
             print("OpenAI connection error:", err)
         else:
             return f"OpenAI connection error: {err}",False
+
+def text_column_connection(text, column, gpt_key):
+    try:
+        prompt = get_text_column_prompt(text, column)
+        match = get_gpt_match(prompt, gpt_key, model="text-davinci-003")
+        return match, True
+    except OpenAIError as err:
+        return f"OpenAI connection error: {err}",False
 
 
 def select_text(lines, s, t, buffer, interactive=True):

@@ -1,0 +1,226 @@
+1 Assessing COVID-19 vaccination strategies
+2 in varied demographics using an individual-based model
+3 Noam Ben-Zuk1,2, Yair Daon1,2, Amit Sasson3, Dror Ben-Adi1,2,3, Amit Huppert1,4, Daniel 5 Nevo3, Uri Obolski1,2,*
+6 1School of Public Health, Tel Aviv University, Tel Aviv, Israel.
+7 2Porter School of the Environment and Earth Sciences, Tel Aviv University, Tel Aviv, Israel.
+8 3Department of Statistics and Operations Research, Tel Aviv University, Tel Aviv, Israel.
+9 4The Bio-statistical and Bio-mathematical Unit, The Gertner Institute for Epidemiology and 10 Health Policy Research, Tel Hashomer, Israel.
+33 - SARS-CoV-2
+34 - WHO
+35 - COVID-19
+36 - NPIs
+37 - December 2019
+38 - Wuhan, China
+39 - January 2020
+40 - home isolation
+41 - workplaces
+42 - schools
+43 - kindergartens
+44 - Food and Drug Administration (FDA)
+45 - SARS-CoV-2 vaccine
+46 - 4.6 billion people
+47 - 11.8 billion doses
+48 - different vaccination strategies
+49 - rollout rates
+50 - prioritization of sub-groups
+51 - age
+52 - comorbidities
+53 - essential workers
+54 - Israel
+55 - 69%
+56 - 81%
+57 - new variants
+58 - SARS-CoV-2
+59 - Delta variant
+60 - India
+61 - April 2021
+62 - Food and Drug Administration (FDA)
+63 - two doses
+64 - waning vaccine immunity
+65 - third dose
+66 - mathematical models
+67 - compartmental models
+68 - SEIR
+69 - differential equation-based
+70 - Susceptible
+71 - Exposed
+72 - Infected - Recovered/ Removed
+1. Demographics: Each individual in the simulated synthetic population is assigned a certain age, neighborhood, and household. 
+2. Infection dynamics: Daily contact between individuals in the described social setting is simulated (29). 
+3. Disease states (figure 1): At any given time-point, each individual is classified into one of 
+None
+109 - Each susceptible individual
+110 - Latent period (E to IP/Is; in days)
+111 - Duration of preclinical infectiousness
+112 - Disease progression and immunity states
+113 - Contacts between different age groups and settings
+114 - Infectiousness probability
+115 - Duration distribution in each state
+116 - Susceptibility to infection on contact
+117 - Relative infectiousness of subclinical cases
+118 - Illustration of the IBM framework
+119 - Synthetic population
+120 - Hierarchy of social circles
+121 - Contact matrices
+122 - Orange rectangles represent exposed and infectious states
+123 - Purple rectangles represent removed states
+124 - Transition rates between the states
+125 - Simulation parameters
+126 - Table 1
+127 - Table S1
+None
+70% (40) 
+Reduction in contacts due to social distancing contacts increase (41) by 25%
+Workplace contacts reduce by 25%
+Within neighborhood contacts reduce by 25%
+Vaccine efficacy (VE) of 90% in preventing infections and hospitalizations (37-39)
+Minimum vaccination age (set at 18)
+N randomly chosen individuals (who meet the criteria for vaccination)
+157 - Neighborhood strategy - each day, the neighborhood (defined as housing approximately
+158 - Neighborhood strategy - each day, the neighborhood (defined as housing approximately
+159 - Neighborhood strategy - each day, the neighborhood (defined as housing approximately
+160 - Neighborhood strategy - each day, the neighborhood (defined as housing approximately
+161 - Neighborhood strategy - each day, the neighborhood (defined as housing approximately
+162 - Neighborhood strategy - each day, the neighborhood (defined as housing approximately
+163 - Neighborhood strategy - each day, the neighborhood (defined as housing approximately
+164 - Neighborhood strategy - each day, the neighborhood (defined as housing approximately
+165 - Neighborhood strategy - each day, the neighborhood (defined as housing approximately
+166 - Neighborhood strategy - each day, the neighborhood (defined as housing approximately
+167 - Neighborhood strategy - each day, the neighborhood (defined as housing approximately
+168 - Neighborhood strategy - each day, the neighborhood (defined as housing approximately
+169 - Neighborhood strategy - each day, the neighborhood (defined as housing approximately
+170 - Neighborhood strategy - each day, the neighborhood (defined as housing approximately
+171 - Neighborhood strategy - each day, the neighborhood (defined as housing approximately
+172 - Neighborhood strategy - each day, the neighborhood (defined as housing approximately
+197 simulations.
+198 These metrics.
+199 150 days.
+200 95% confidence intervals.
+201 Figure 2.
+202 The left- and right-hand columns.
+203 500 simulations.
+204 The mean differences.
+205 Central limit theorem.
+206 95% confidence intervals.
+207 Results.
+208 Figure 2.
+209 The cumulative number of new infections per 100k.
+210 Hospitalizations per 100k.
+211 Rt.
+212 Figure 2.
+213 The left- and right-hand columns.
+214 500 simulations.
+215 The shaded regions.
+216 Neighborhood vaccination strategies.
+217 High transmission rates.
+218 Neighborhood Descending strategy.
+219 Simulating Holon’s demographics.
+220 Neighborhood Descending strategy.
+221 Lowest number of infections.
+222 General Descending strategy.
+223 1.6-fold infections.
+224 Bnei Brak.
+225 Neighborhood Descending strategy.
+226 Reasonable trade-off.
+227 Total infections.
+228 Total hospitalizations.
+229 Both cities.
+None
+figure 2 e to f: 235
+figure S5, S6: 236
+figure 3: 237
+95% CI [-74.3, -21.9]: 238
+95% CI [-64.5, -10.7]: 239
+95% CI [-221.3, -162.3]: 240
+95% CI [-35.6, 14.6]: 241
+95% CI [5.3, 14.3]: 242
+95% CI [-13.6, -4.0]: 243
+95% CI [-78.8, -66.5]: 244
+95% CI [-70.5, -57.5]: 245
+95% CI [-508.8, -167.1]: 246
+95% CI [-975.3, -625.6]: 247
+95% CI [-498.4, -158.8]: 248
+95% CI [-964.9, -617.4]: 249
+None
+-9.3, 95% CI [-185.6, 167.0] for the difference between the Neighborhood Ascending and the Neighborhood Descending strategies 
+-93.4, 95% CI [-109.5, -77.3] for the difference between the Neighborhood Descending and Neighborhood Ascending strategies 
+-619.25, 95% CI [-641.1, -597.4] for the difference between the General strategies 
+73.6, 95% CI [64.5, 82.8] for the difference between the Neighborhood Descending and the General Descending strategy 
+-13.3, 95% CI [-31.3, 4.6] for the difference between the Neighborhood Ascending and the General Ascending strategies 
+-333.9, 95% CI [-363.2, -304.5] for the difference between the Neighborhood Ascending and the General Descending strategies 
+-238.9, 95% CI [-270.6, -207.2] for the difference between the Neighborhood Descending and the General Descending strategies 
+-56.0, 95% CI [-66.2, -45.8] for the difference between the Neighborhood Descending and the
+336 - interventions and vaccination strategies
+337 - selected population structures
+338 - number of infections
+339 - Rt values
+340 - NPIs
+341 - Asymptomatic Detection
+342 - Household Isolation
+343 - younger individuals
+344 - more mobile
+345 - more contacts per day
+346 - secondary infections
+347 - less prone to present symptoms
+348 - NPIs targeting symptomatic cases
+349 - actively testing to detect asymptomatic infections
+350 - compliance from parents
+351 - use of testing kits
+352 - number of infections
+353 - hospitalizations
+354 - Neighborhood strategies
+355 - order of vaccination
+356 - single neighborhood
+357 - shift from prioritized age group
+358 - General Descending strategy
+359 - most used vaccination strategy
+360 - total hospitalizations
+361 - infections
+362 - Neighborhood Descending strategy
+363 - General Descending strategy
+364 - reducing hospitalizations
+365 - worst at reducing infections
+366 - trade-off between total hospitalizations
+367 - infections
+368 - Neighborhood Descending strategy
+369 - alternative
+370 - good trade-off
+371 - total hospitalizations
+372 - infections
+373 - General Descending strategy
+None
+50 - infection rates
+51 - Ebola outbreak in Chow in South Kivu
+52 - mass and ring vaccination
+53 - side effects
+54 - discriminated against
+37 - SARS-CoV-2 variants
+38 - SARS-CoV-2 variants
+39 - SARS-CoV-2 variants
+1. World Health Organization. Origin of SARS-CoV-2. 2020 Mar 26;
+2. Daon Y, Thompson RN, Obolski U. Estimating COVID-19 outbreak risk through air travel. J Travel Med. 2020 Aug 20;27(5):taaa093.
+3. Perra N. Non-pharmaceutical interventions during the COVID-19 pandemic: A review. Phys Rep. 2021 May 23;913:1–52.
+4. Ritchie H, Mathieu E, Rodés-Guirao L, Appel C, Giattino C, Ortiz-Ospina E, et al. Ritchie H, Mathieu E, Rodés-Guirao L, Appel C, Giattino C, Ortiz-Ospina E, Hasell J, Macdonald B, Beltekian D, Roser M. Coronavirus pandemic (COVID-19). Our world in data. 2020 Mar 5. Our World Data. 2020 Mar 5;
+5. Rosen B, Waitzberg R, Israeli A. Israel’s rapid rollout of vaccinations for COVID-19. Isr J Health Policy Res.
+447 Science. 2021 Nov 19;374(6570):995–9.
+448 10. Goldberg Y, Mandel M, Bar-On YM, Bodenheimer O, Freedman L, Haas EJ, et al. Waning Immunity after the BNT162b2 Vaccine in Israel. N Engl J Med. 2021 Dec 9;385(24):e85.
+450 11. Gavish N, Yaari R, Huppert A, Katriel G. Population-level implications of the Israeli booster campaign to curtail COVID-19 resurgence. Sci Transl Med. 0(0):eabn9836.
+452 12. Barda N, Dagan N, Cohen C, Hernán MA, Lipsitch M, Kohane IS, et al. Effectiveness of a third dose of the BNT162b2 mRNA COVID-19 vaccine for preventing severe outcomes in Israel: an observational study. The Lancet. 2021 Dec 4;398(10316):2093–100.
+455 13. Feng A, Obolski U, Stone L, He D. Modelling COVID-19 Vaccine Breakthrough Infections in Highly Vaccinated Israel – the effects of waning immunity
+25. Aleta A, Martín-Corral D, Pastore y Piontti A, Ajelli M, Litvinova M, Chinazzi M, et al. Modelling the impact of testing, contact tracing and household quarantine on second waves of COVID-19. Nat Hum Behav. 2020 Sep;4(9):964–71.
+26. Català M, Li X, Prats C, Prieto-Alhambra D. The impact of prioritisation and dosing intervals on the effects of COVID-19 vaccination in Europe: an agent-based cohort model. Sci Rep. 2021 Dec;11(1):18812.
+27. Davies NG, Klepac P, Liu Y, Prem K, Jit M, CMMID COVID-19 working group, et al. Age-dependent effects in the transmission and control of COVID-19 epidemics. Nat Med. 2020 Aug;26(8):1205–11.
+28. Dowd JB, Andriano L, Brazel DM, Rotondi V, Block P, Ding X, et al. Demographic science aids in understanding the spread and fatality rates of COVID-19. Proc
+38. Katz MA, Harlev EB, Chazan B, Chowers M, Greenberg D, Peretz A, et al. Early effectiveness of BNT162b2 Covid-19 vaccine in preventing SARS-CoV-2 infection in healthcare personnel in six Israeli hospitals (CoVEHPI). Vaccine. 2022 Jan 24;40(3):512– 20.
+39. Dagan N, Barda N, Kepten E, Miron O, Perchik S, Katz MA, et al. BNT162b2 mRNA Covid-19 Vaccine in a Nationwide Mass Vaccination Setting. N Engl J Med. 2021 Apr 15;384(15):1412–23.
+40. Kucirka LM, Lauer SA, Laeyendecker O, Boon D, Lessler J. Variation in False-Negative Rate of Reverse Transcriptase Polymerase Chain Reaction–Based SARS-CoV-2 Tests by Time Since Exposure. Ann Intern Med. 2020 Aug 18;173(4):262–7.
+41. Ferguson N, Laydon D, Nedjati Gilani G, Imai N, Ainslie K, Baguelin M,
+567 strategies and deployment plans in the EU/EEA.
+21 April 2022.
+568 Vaccine. 2019 Nov;37(48):7190–200.
+569 World Health Organization. Second Ebola vaccine to complement “ring vaccination” given 570 green light in DRC.
+571 Merler S, Ajelli M, Fumanelli L, Parlamento S, Piontti AP y, Dean NE, et al. Containing 572 Ebola at the Source with Ring Vaccination.
+573 Bullock J, Lane JE, Shults FL. What causes COVID-19 vaccine hesitancy? Ignorance and 574 the lack of bliss in the United Kingdom.
+54 Willis DE, Andersen JA, Bryant-Moore K, Selig JP, Long CR, Felix HC, et al. COVID-19 vaccine hesitancy: Race/ethnicity, trust, and fear.
+54 Willis DE, Andersen JA, Bryant-Moore K, Selig JP, Long CR, Felix HC, et al. COVID-19
+None

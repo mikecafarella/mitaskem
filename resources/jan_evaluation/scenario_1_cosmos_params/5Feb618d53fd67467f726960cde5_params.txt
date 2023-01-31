@@ -1,0 +1,81 @@
+1Institute for Aerospace Studies, University of Toronto
+2Nicholas School of Environment, Duke University
+3Global Institute of Health, Duke University
+4Gillings School of Global Public Health, University of North Carolina
+5Department of Medicine, Division of Infectious Diseases, University of Toronto
+6The Fields Institute for Research in Mathematical Sciences
+7Department of Mathematics, University of Toronto
+2 ≤ R0 ≤ 3.6
+1 - expectation
+2 - greater variability
+8 - non-random pattern of clustering
+10 - 10-20% of index cases responsible for 80% of secondary cases
+11 - Agent based modeling by Sneppen et al.
+12 - Chen et al.
+13 - airborne transmission of SARS-CoV-2 by respiratory aerosols
+14 - airborne transmission of SARS-CoV-2 by respiratory aerosols
+15 - airborne transmission of SARS-CoV-2 by respiratory aerosols
+16 - airborne transmission of SARS-CoV-2 by respiratory aerosols
+17 - airborne transmission of SARS-CoV-2 by respiratory aerosols
+18 - Prather et al.
+19 - encapsulating the SARS-CoV-2 virus
+20 - infectious within the aerosols
+21 - Bourouiba et al.
+22 - Abkarian et al.
+23 - Chen et al.
+19 - Chaudhuri et al.
+24, Wells-Riley model
+25, Wells-Riley model
+26, Buonanno et al.
+27, Bazant and Bush
+28, Schijven et al.
+29, Bond et al.
+30, Recent review and opinion articles
+31, Recent review and opinion articles
+32, Recent review and opinion articles
+33, Recent review and opinion articles
+34, Recent review and opinion articles
+10 - DT = A × (0.52 × ACH + 0.32)/3600
+11 - Nv(x, y, z0, τ ) = ∫τ 0 c(x, y, z0, t ) ˙Vbdt 
+None
+1. Lloyd-Smith et al. [1]
+2. Figure 8
+3. Figure 9
+4. Eqn. 12
+5. Eqn. 15
+6. Eqn. 16
+
+None
+24 - viral load
+25 - Eqn. 22
+None
+g(µ = 20.67, σ = 3.63, α = 1.123 × 10−10, ν = 7.71)
+ACH = 5 hr−1
+50% reduction by volume of exhaled aerosols
+50% reduction in the correspondingly inhaled aerosols
+α = 2.36 × 10−11
+α = 2.81 × 10−11
+νv = 4.01
+νv = 2.00
+Z = 0.04
+Z = 1.69
+Z = 2.64
+None
+Mean viral load, mean occupancy, and mean ventilation rates: 0.6, 0.8, 4.01
+Vaccine efficacy ηvac: 0.6
+Vaccination coverage efficiency ηcov: 0.8
+Reduced occupancy: 50%
+Masks that can reduce both emission and inhalation of aerosol volumes by 50%: 50%
+[9] G. Großmann, M. Backenk¨ohler, and V. Wolf, “Heterogeneity matters: Contact struc- ture and individual variation shape epidemic dynamics,” Plos one, vol. 16, no. 7, p. e0250050, 2021.
+[10] P. Z. Chen, N. Bobrovitz, Z. Premji, M. Koopmans, D. N. Fisman, and F. X. Gu, “Heterogeneity in transmissibility and shedding sars-cov-2 via droplets and aerosols,”
+Elife, vol. 10, p. e65774, 2021.
+[11] K. Sneppen, B. F. Nielsen, R. J. Taylor, and L. Simonsen, “Overdispersion in covid-19 increases the eﬀectiveness of limiting nonrepetitive contacts for transmission control,”
+Proceedings of the National Academy of Sciences, vol. 118, no. 14, 2021.
+[12] P. Z. Chen, M. Koopmans, D. N. Fisman,
+24 E. Riley, G. Murphy, and R. Riley, “Airborne spread of measles in a suburban elementary school,” American journal of epidemiology, vol. 107, no. 5, pp. 421–432, 1978.
+25 S. Rudnick and D. Milton, “Risk of indoor airborne infection transmission estimated from carbon dioxide concentration,” Indoor air, vol. 13, no. 3, pp. 237–245, 2003.
+26 G. Buonanno, L. Morawska, and L. Stabile, “Quantitative assessment of the risk of air- borne transmission of sars-cov-2 infection: prospective and retrospective applications,” Environment international, vol. 145, p. 106112, 2020.
+27 M. Z. Bazant and J. W. Bush, “A guideline to limit indoor airborne transmission of covid-19,” Proceedings of the National Academy of Sciences, vol. 118, no. 17, 2021.
+28 J. Schijven, L. C. Vermeulen, A. Swart, A. Meijer, E. Duizer, and A. M. de Rod
+35 - Xiong, Z. Liu, Q. Guo, L. Zou, H. Zhang, M. Zhang, F. Ouyang, J. Su, W. Su, J. Xu, H. Lin, J. Sun, J. Peng, H. Jiang, P. Zhou, T. Hu, M. Luo, Y. Zhang, H. Zheng, J. Xiao, T. Liu, R. Che, H. Zeng, Z. Zheng, Y. Huang, J. Yu, L. Yi, J. Wu, J. Chen, H. Zhong, X. Deng, M. Kang, O. G. Pybus, M. Hall, K. A. Lythgoe, Y. Li, J. Yuan, J. He, and J. Lu, “Viral infection and transmis- sion in a large, well-traced outbreak caused by the sars-cov-2 delta variant,” medRxiv, 2021.
+36 - M. C. Shamier, A. Tostmann, S. Bogers, J. De Wilde, J. IJpelaar, W. A. van der

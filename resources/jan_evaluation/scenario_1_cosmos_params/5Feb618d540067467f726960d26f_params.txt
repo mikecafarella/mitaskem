@@ -1,0 +1,251 @@
+1. Susceptibility to SARS-CoV-2 infection 
+2. Influenza A/H1N1 
+3. Social contact surveys 
+4. Basic (and effective) reproduction number 
+5. POLYMOD 
+6. CoMix survey 
+7. The Netherlands 
+8. Belgium 
+9. Mechanistic models 
+10. December 2020 
+11. May 2021
+0-6 years
+6-12 years
+12-18 years
+18-30 years
+80+ years
+22 December 2020
+26 May 2021
+15 June 2021
+0.182 (95% percentile bootstrap-based CI: 0.146-0.230)
+0.550 (95% CI: 0.427-0.629)
+0.603 (95% CI: 0.536-0.700)
+1 (95% CI: 0.829-1.252)
+0.54
+0.55
+0.56
+0.59
+0.7
+0.76
+0.9
+0.99
+Wave 12
+Two weeks
+0-6
+6-12
+12-18
+18+
+80+
+Fig 4: Exact values of the estimates
+Fig 5: Time varying reproduction number
+None
+December 2020 - May 2021
+7, 8
+21, 22
+4.0 International license
+4 March 2020
+27 July 2020
+11 November 2020
+7
+8
+23
+22
+24
+None
+None.
+Wave 1 20 April 2020
+Wave 9 11 November 2020
+Wave 12 22 December 2020
+Wave 2 5 May 2020
+Wave 10 25 November 2020
+Wave 13 6 January 2021
+Wave 3 18 May 2020
+Wave 11 9 December 2020
+Wave 14 20 January 2021
+Wave 4 1 June 2020
+Wave 15 3 February 2021
+Wave 5 15 June 2020
+Wave 16 17 February 2021
+Wave 6 29 June 2020
+Wave 17 3 March 2021
+Wave 7 13 July 2020
+Wave 18 17 March 2021
+Wave 8 27 July 2020
+Wave 19 31 March 2021
+Wave 20 14 April 2021
+Wave 21 28 April 2021
+Wave 22 12 May 2021
+Wave 23 26 May 2021
+None
+0.540: mean [18,30)
+0.535: median [18,30)
+0.039: sd [18,30)
+0.478: lower [18,30)
+0.619: upper [18,30)
+1.000: mean [30,40)
+0.993: median [30,40)
+0.103: sd [30,40)
+0.825: lower [30,40)
+1.238: upper [30,40)
+1.161: mean [40,50)
+1.149: median [40,50)
+0.122: sd [40,50)
+0.973: lower [40,50)
+1.443: upper [40,50)
+1.003: mean [50,60)
+0.992: median [50,60)
+0.100: sd [50,60)
+0.846: lower [50,60)
+1.256: upper [50,60)
+0.897: mean [60,70)
+0.889: median [60,70)
+0.083: sd [60,
+[0,6) 0.133
+Refer to: mean
+[0,6) 0.131
+Refer to: median
+[0,6) 0.025
+Refer to: sd
+[0,6) 0.089
+Refer to: lower
+[0,6) 0.186
+Refer to: upper
+[6,12) 0.419
+Refer to: mean
+[6,12) 0.424
+Refer to: median
+[6,12) 0.073
+Refer to: sd
+[6,12) 0.270
+Refer to: lower
+[6,12) 0.556
+Refer to: upper
+[12,18) 0.572
+Refer to: mean
+[12,18) 0.568
+Refer to: median
+[12,18) 0.084
+Refer to: sd
+[12,18) 0.409
+Refer to: lower
+[12,18) 0.735
+Refer to: upper
+[18,30) 0.775
+Refer to: mean
+[18,30) 0.761
+Refer to: median
+[18,30) 0.218
+Refer to: sd
+0.54, 0.55, 0.56, 0.59, 0.7, 0.76, 0.9, 0.99, 0.99, 0.99 - Assumption on infectiousness 
+0.51 - Proportion of asymptomatic cases in the Belgian population 
+0.182, 0.180, 0.020, 0.146, 0.230 - Mean q-susceptibility among children age classes [0,6), [6,12) and [12,18) 
+1.000 - Mean of the first adult age class [18,30) 
+0.134, 0.134, 0.018, 0.103, 0.172 - Relative q-susceptibility using assumption on infectiousness (0.54, 0.55, 0.56, 0.59, 0.7, 0.76, 0.9, 0.99, 0.99, 0.99) 
+0.151, 0.148, 0.027, 0.103, 0.212 - Relative q-susceptibility using assumption on infectiousness (0.54, 0.55, 0.56, 0.59
+[0,6) 0.157
+[0,6) 0.189
+[6,12) 0.506
+[6,12) 0.516
+[12,18) 0.639
+[12,18) 0.597
+[18,30) 0.789
+[18,30) 0.763
+[30,40) 1.113
+[30,40) 0.927
+[40,50) 0.968
+[40,50) 0.779
+[50,60) 0.834
+[50,60) 0.654
+[60,70) 0.853
+[60,70) 0.699
+[70,80) 1.060
+[70,80) 0.632
+80+ 0.765
+80+ 0.578
+[0,6) 0.206
+[0,6) 0.211
+[6,12) 0.511
+[6,12) 0.545
+[12,18) 0.585
+[12,18) 0.546
+[18,30) 0.946
+[18,30) 0.948
+[30
+[0,6) 0.134
+[0,6) 0.151
+[6,12) 0.555
+[6,12) 0.660
+[12,18) 0.613
+[12,18) 0.491
+[18,30) 1.000
+[18,30) 0.911
+[30,40) 1.387
+[30,40) 1.205
+[40,50) 1.157
+[40,50) 0.896
+[50,60) 0.853
+[50,60) 0.895
+[60,70) 1.096
+[60,70) 0.975
+[70,80) 0.999
+[70,80) 1.258
+80+ 1.844
+80+ 1.222
+(a) Waves 12 13 (b) Waves 14 15
+(c) Waves 16 17 (d) Waves 18 19
+[0,6) 0.105 0.001 0.268 0.000 0.971
+[6,12) 0.031 0.000 0.112 0.000 0.263
+[12,18) 0.158 0.026 0.254 0.000 0.826
+[18,30) 1.088 0.833 0.897 0.000 2.888
+[30,40) 1.928 1.887 0.924 0.336 4.407
+[40,50) 9.128 9.524 1.643 5.465 12.172
+[50,60) 6.266 6.296 1.093 4.218 8.278
+[60,70) 0.338 0.178 0.386 0.000 1.188
+[70,80) 0.285 0.156 0.307 0.000 1.093
+80+ 0.113 0.029 0.263 0.000 0.675
+(a) Waves 12 13
+(b) Waves 14 15
+(c) Waves 16 17
+(d) Waves 18 19
+0.672: mean
+0.992: median
+0.007: sd
+3.578: upper
+80+: ageclass
+0.113: mean
+0.029: median
+0.263: sd
+0.000: lower
+0.675: upper
+80+: ageclass
+0.214: mean
+0.104: median
+0.274: sd
+0.000: lower
+1.010: upper
+0.4, 0.39, 0.38, 0.79, 0.86, 0.8, 0.82, 0.88, 0.74, 0.74: Assumption on susceptibility 
+[0,6): 0.346, 0.034, 0.461, 0.000, 1.483 
+[6,12): 0.892, 0.957, 0.404, 0.000, 1.549 
+[12,18): 1.310, 1.326, 0.231, 0.870, 1.710 
+[18,30): 1.000, 0.967, 0.544, 0.000, 2.051 
+[30,40): 0.645, 0.375, 0.811, 0.000, 2.512 
+[40,50): 3.783, 3.541, 1.586, 1.672, 7.443 
+[50,60): 1.320, 1.257, 0.741, 0.000, 2.705 
+[60,70): 0.266, 0.000, 0.445, 0.000
+60,70: 0.014 0.000 0.042 0.000 0.123
+70,80: 0.104 0.053 0.144 0.000 0.507
+80+: 0.016 0.004 0.033 0.000 0.105
+0.4: Susceptibility corresponding to Figure P
+0.39: Susceptibility corresponding to Figure P
+0.38: Susceptibility corresponding to Figure P
+0.79: Susceptibility corresponding to Figure P
+0.86: Susceptibility corresponding to Figure P
+0.8: Susceptibility corresponding to Figure P
+0.82: Susceptibility corresponding to Figure P
+0.88: Susceptibility corresponding to Figure P
+0.74: Susceptibility corresponding to Figure P
+20: Wave 20
+21: Wave 21
+22: Wave 22
+23: Wave 23
+None

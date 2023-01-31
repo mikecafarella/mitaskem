@@ -1,0 +1,92 @@
+1 Amy J. Schuh
+2 Jonathan S. Towner
+None
+2.4% PCR prevalence
+21.5% seroprevalence
+2-17 d
+14-56 d
+2-16 d
+3-14 d
+5-18 d
+3-8 d
+7-8 m
+7 m
+8 m
+14-42 d
+17-24 months
+14 days
+21 days
+24 months
+17-18 months
+5 bats
+2 negative control bats
+0.95
+3 months
+2.05
+1.21-3.35
+2.58
+1.07-3.52
+None
+11, 100%, 6.0 d, 91.7%, 4.6 d, 66.7%, 7 DPI, 9 DPI, 14-28 DPI, 24 months, 17-18 months, 14 DPC, 21 DPC, 7 DPC, 6 months, 10 months, 3 months, 48 days, 0.43, 0.53, 0.43, 0.83
+23 - straw-colored fruit bat (Eidolon helvum)
+24 - common fruit bat (Artibeus jamaicensis)
+16,000 - captures of ~9,000 A. jamaicensis
+1.6 years - average lifespan of this bat in the wild
+24 months - average lifespan of wild ERBs
+25 - wildlife diseases
+13 - rabies virus maintenance
+26 - Hendra virus infection
+19 - longitudinal ecological investigation of ERB colonies at Python Cave and Kitaka Mine, Uganda
+27 - peak of the rainy season
+14 - SEIR model of marburgvirus infection
+28 - pathogen persistence increases gradually with population size
+29, 30 - measles virus
+19 - ERB colonies in tropical Africa
+31 - ERB colonies in the Palearctic Region
+32 - measles virus in demo-graphically heterogeneous human populations
+15 - Hendra virus in flying foxes (Pteropus spp.) in Australia
+33 - Nipah virus in large flying foxes (P. vampyrus) and variable flying foxes (Pteropus hypomelanus) in Malaysia
+34 - ERBs geographic range
+35 - local migration between roosts
+2 -
+19 - Homologous marburgvirus sequences from bats and humans throughout sub-Saharan Africa
+20 - Homologous marburgvirus sequences from bats and humans throughout sub-Saharan Africa
+36 - Coronavirus detection in Myotis spp. and Pipistrellus spp.
+37 - Hendra virus neutralizing antibodies in longitudinally-sampled spectacled flying foxes (Pteropus conspicillatus)
+26 - Hendra virus neutralizing antibodies in longitudinally-sampled little red flying foxes (P. scapulatus)
+2 - Uganda 371Bat2007, GenBank accession #: FJ750958
+8 - Wild-caught ERBs imported from Uganda
+Group 1: 5 bats (3 males, 2 females)
+Group 2: 5 bats (2 males, 3 females)
+Group 3: 2 negative control bats (1 male, 1 female)
+4 log10TCID50 of the 371 bat strain of MARV
+31 m of age
+6 males and 6 females
+Average weight of 164.0 g
+0 DPC
+14 DPC
+21 DPC
+1) study group
+1) study group and time
+2) sex and time
+3) MARV IgG levels
+4) two-tailed P ≥ 0.05
+5) χ2 = 12.479, d.f. = 5, two-tailed P = 0.030
+6) χ2 = 13.309, d.f. = 5, two-tailed P = 0.022
+7) ε = 0.563
+8) ε = 0.578
+15. Plowright, R. K. et al.
+16. Turmelle, A. S., Jackson, F. R., Green, D., McCracken, G. F. & Rupprecht, C. E.
+17. Sohayati, A. R. et al.
+18. Hartman, A. L., Towner, J. S. & Nichol, S. T.
+19. Amman, B. R. et al.
+20. Swanepoel, R. et al.
+21. van den Hurk, A. F. et al.
+22. Vardon, M. J. & Tidemann, C. R.
+23. Hayman, D. T. et al.
+24. Leigh Jr., E. G. & Handley Jr., C. O.
+25. Altizer, S. et al.
+26. Plowright, R. K. et al.
+27. Mutere, F. A.
+28. Lloyd-Smith, J. O. et al.
+29. Grenfell, B. T., Bjørnstad, O. N. & Fink
