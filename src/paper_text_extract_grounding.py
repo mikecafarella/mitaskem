@@ -21,15 +21,9 @@ def ground(text_path:str) -> str:
                     continue
                 if re.search("^[A-Za-z]{2,}\s[A-Za-z]{2,}$|^[A-Za-z]{2,}$", tok):
                     print(f"looking up {tok}")
-                    print(get_mira_dkg_term(tok, ['id', 'name'], True))
+                    print(get_mira_dkg_term(tok, ['id', 'name']))
 
     return ""
-
-
-
-
-
-
 
 if __name__=="__main__":
     print(ground("../resources/jan_evaluation/scenario_2_sidarthe/sidarthe_vars.txt"))
