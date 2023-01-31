@@ -39,7 +39,7 @@ def run_transitions(code: str, gpt_key: str):
 
     return s
 
-@router.post("/match_place_to_text", tags=["Code-2-Petri-net"])
+#@router.post("/match_place_to_text", tags=["Code-2-Petri-net"])
 def run_match_place_to_text(text: str, place: str, gpt_key: str):
     s, success = match_place_to_text(text=text, place=place, gpt_key=gpt_key)
 
@@ -48,7 +48,7 @@ def run_match_place_to_text(text: str, place: str, gpt_key: str):
 
     return s
 
-@router.post("/init_param_from_text", tags=["Code-2-Petri-net"])
+#@router.post("/init_param_from_text", tags=["Code-2-Petri-net"])
 def run_init_param_from_text(text: str, param: str, gpt_key: str):
     s, success = init_param_from_text(text=text, param=param, gpt_key=gpt_key)
 
@@ -57,7 +57,7 @@ def run_init_param_from_text(text: str, param: str, gpt_key: str):
 
     return s
 
-@router.post("/match_place_and_text_to_columns", tags=["Code-2-Petri-net"])
+#@router.post("/match_place_and_text_to_columns", tags=["Code-2-Petri-net"])
 def run_match_place_and_text_to_columns(text: str, place: str, columns: str, gpt_key: str):
     s, success = match_place_and_text_to_columns(text=text, place=place, columns=columns, gpt_key=gpt_key)
 
