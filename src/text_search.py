@@ -23,7 +23,7 @@ def text_var_search(text, gpt_key):
     except OpenAIError as err:   
         return f"OpenAI connection error: {err}", False
 
-def vars_dedup(text:str) -> str:
+def vars_dedup(text:str) -> dict:
     var_dict = {}
 
     lines = text.split("\n")
@@ -43,32 +43,16 @@ def vars_dedup(text:str) -> str:
 
         var_dict[var_name] = desc_list
 
-    # Write dictionary out
-    s_out = ""
-    
-    for var_name in var_dict:
-        s_out += f"{var_name}: "
+    return var_dict
 
-        for desc in var_dict[var_name]:
-            s_out += f"{desc}; "
-        
-        s_out +="\n"
-
-    return s_out
-
-def vars_to_json(text:str) -> str:
-    lines = text.split("\n")
+def vars_to_json(var_dict: dict) -> str:
 
     s_out = "["
     is_first = True
     id = 0
 
-    for line in lines:
-        toks = line.split(":")
-
-        var_name = toks[0]
-        var_defs = ":".join(toks[i] for i in range(1, len(toks))).split(";")
-        var_defs_s = "[" + ','.join(i for i in var_defs) + "]"
+    for var_name in var_dict:
+        var_defs_s = "[" + ','.join(i for i in var_dict[var_name]) + "]"
         var_ground = get_mira_dkg_term(var_name, ['id', 'name'])
         var_ground_s = "[" + ",".join([("[" + ",".join([str(item) for item in sublist]) + "]") for sublist in var_ground]) + "]"
 
