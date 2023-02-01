@@ -14,12 +14,12 @@ def convert_to_pyacset(places_s, transitions_s, arcs_s):
     sir.add_parts(trans, len(transitions))
 
     i = 0
-    while i < range(len(places)): 
+    while i < len(places): 
         sir.set_subpart(i, petris.attr_sname, places[i])
         sir.set_subpart(i, petris.attr_suid, i)
     
     j = 0
-    while j < range(len(transitions)): 
+    while j < len(transitions): 
         sir.set_subpart(j, petris.attr_tname, transitions[j])
         sir.set_subpart(j, petris.attr_tuid, i+j+1)
     
