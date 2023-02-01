@@ -16,9 +16,9 @@ def convert_to_pyacset(places_s, transitions_s, arcs_s):
     i = 0
     place_dict = {}
     while i < len(places): 
-        sir.set_subpart(i, petris.attr_sname, places[i])
+        sir.set_subpart(i, petris.attr_sname, places[i].strip())
         sir.set_subpart(i, petris.attr_suid, i)
-        place_dict[places[i]] = i
+        place_dict[places[i].strip()] = i
         i += 1
     
     j = 0
@@ -30,21 +30,27 @@ def convert_to_pyacset(places_s, transitions_s, arcs_s):
     k = 0
     while k < len(arcs): 
         arc = arcs[k]
-        ins = arc[0]
-        outs = arc[1]
-        print("ins: ", ins)
-        print("outs: ", outs)
-        for s in ins:
-            arc = sir.add_part(petris.Input)
-            sir.set_subpart(arc, petris.hom_it, k)
-            sir.set_subpart(arc, petris.hom_is, place_dict[s])
-        for r in outs:
-            arc = sir.add_part(petris.Output)
-            sir.set_subpart(arc, petris.hom_ot, k)
-            sir.set_subpart(arc, petris.hom_os, place_dict[r])
+        print(arc)
+        print(place_dict)
+        
+        print("ins: ", arc[0])
+        print("outs: ", arc[1])
+        pt1 = sir.add_part(petris.Input)
+        sir.set_subpart(pt1, petris.hom_it, k)
+        sir.set_subpart(pt1, petris.hom_is, place_dict[arc[0].strip()])
+        pt2 = sir.add_part(petris.Output)
+        sir.set_subpart(pt2, petris.hom_ot, k)
+        sir.set_subpart(pt2, petris.hom_os, place_dict[arc[1].strip()])
         k += 1
 
     serialized = sir.write_json()
 
     print(serialized)
     return serialized
+
+if __name__=="__main__":
+    places_str = '["S"," I"," D"," A"," R"," T"," H"," E"]'
+    transitions_str = '["alpha"," beta"," gamma"," delta"," epsilon"," mu"," zeta"," lamda"," eta"," rho"," theta"," kappa"," nu"," xi"," sigma"," tau"]'
+    arcs_str = '[["S"," I"],["I"," D"],["I"," A"],["I"," R"],["D"," E"],["A"," R"],["A"," T"],["R"," H"],["T"," H"],["I"," H"],["D"," H"],["A"," H"],["R"," H"],["T"," E"]]'
+
+    convert_to_pyacset(places_str, transitions_str, arcs_str)
