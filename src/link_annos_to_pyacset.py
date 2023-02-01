@@ -5,10 +5,11 @@ import unicodedata as ud
 import ast
 
 
-def gen_metadata(pyacset_s, annos_s, info_s):
+def link_annos_to_pyacset(pyacset_s, annos_s, info_s=""):
     pyacset = ast.literal_eval(pyacset_s)
     annos = ast.literal_eval(annos_s)
-    info = ast.literal_eval(info_s)
+    if info_s != "":
+        info = ast.literal_eval(info_s)
 
     # Build dictionary of variables
     var_d = {}
@@ -50,11 +51,12 @@ def gen_metadata(pyacset_s, annos_s, info_s):
         d[uid] = var_d.get(ud.lookup(f"GREEK SMALL LETTER {name.upper()}"), {})
     
     # Add in paper and doi info
-    for item in d:
-        contents = d[item]
-        contents["file"] = info["pdf_name"]
-        contents["doi"] = info["DOI"]
-        d[item] = contents
+    if info != "":
+        for item in d:
+            contents = d[item]
+            contents["file"] = info["pdf_name"]
+            contents["doi"] = info["DOI"]
+            d[item] = contents
 
     # Write out
     return json.dumps(d)
@@ -86,7 +88,7 @@ if __name__=="__main__":
     info_s = json.dumps(info)
     jsonFile3.close()
 
-    s = gen_metadata(pyacset_s, annos_s, info_s)
+    s = link_annos_to_pyacset(pyacset_s, annos_s, info_s)
 
     with open(out_filename, "w") as f:
         f.write(s)
