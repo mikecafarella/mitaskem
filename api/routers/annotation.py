@@ -47,4 +47,4 @@ def link_latex_formulas_to_extracted_variables(json_str: str, formula: str, gpt_
 def link_annotation_to_pyacset_and_paper_info(pyacset_str: str, annotations_str: str, info_str: str = ""):
     s = link_annos_to_pyacset(pyacset_s = pyacset_str, annos_s = annotations_str, info_s = info_str)
 
-    return s
+    return ast.literal_eval(s)
