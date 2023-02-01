@@ -15,12 +15,22 @@ router = APIRouter()
 
 @router.post("/find_text_vars", tags=["Paper-2-annotated-vars"])
 def find_variables_from_text(text: str, gpt_key: str):
-    s, success = text_var_search(text=text, gpt_key=gpt_key)
 
-    if not success:
-        return JSONResponse(status_code=status.HTTP_401_UNAUTHORIZED, content=s)
+    length = len(text)
+    segments = int(length/3500 + 1)
 
-    return vars_to_json(vars_dedup(s))
+    outputs = ""
+
+    for i in range(segments):
+        snippet = text[i * 3500: (i+1) * 3500]
+        s, success = text_var_search(text=snippet, gpt_key=gpt_key)
+
+        if not success:
+            return JSONResponse(status_code=status.HTTP_401_UNAUTHORIZED, content=s)
+        
+        outputs += s
+
+    return vars_to_json(vars_dedup(outputs))
 
 @router.post("/link_latex_to_vars", tags=["Paper-2-annotated-vars"])
 def link_latex_formulas_to_extracted_variables(json_str: str, formula: str, gpt_key: str):
