@@ -16,8 +16,6 @@ def post_latex_clean(string):
     string = re.sub(pattern, char, string)
     string = string.replace("\\;","")
 
-    string = "[{\"type\":\"equation\", \"latex\":" + string + ", \"id\":\"e" + str(hash(string)%((sys.maxsize + 1) * 2))+"\"}]"
-
     return string
 
 def img2latex(url,file, nx=200):

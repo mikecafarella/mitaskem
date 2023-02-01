@@ -9,6 +9,8 @@ from openai import OpenAIError
 from PIL import Image
 import gpt_interaction
 from tqdm import tqdm
+import ast
+import sys
 
 from util import *
 from gpt_interaction import *
@@ -298,32 +300,41 @@ def code_formula_connection(code, formulas, gpt_key):
     except OpenAIError as err:
         return f"OpenAI connection error: {err}", False
 
-def vars_formula_connection(vars, formula, gpt_key):
+def vars_formula_connection(json_str, formula, gpt_key):
+
+    json_list = ast.literal_eval(json_str)
+    
+    var_list = list(filter(lambda x: x["type"]=="variable", json_list))
+
     prompt = get_formula_var_prompt(formula)
     latex_vars = get_gpt_match(prompt, gpt_key, model="text-davinci-003")
     latex_vars = latex_vars.split(':')[1].split(',')
 
     latex_var_set = {}
-    var_list = vars.split("\n")[:50]
 
     try:
         for latex_var in latex_vars:
             for desc in tqdm(var_list):
-                # var = var.split(':')[0]
-                prompt = get_var_formula_prompt(desc, latex_var)
+                prompt = get_var_formula_prompt(desc["name"], latex_var)
                 ans = get_gpt_match(prompt, gpt_key, model="text-davinci-003")
                 ans = ans.split(':')[1]
 
-                # print(ans)
 
                 if ans == 'YES':
-                    if latex_var not in latex_var_set:
-                        latex_var_set[latex_var] = {desc}
-                    else:
-                        latex_var_set[latex_var].add(desc)
+                    current_matches = latex_var_set.get(latex_var, [])
+                    current_matches.append(desc["id"])
+                    latex_var_set[latex_var] = current_matches
+                    
 
-            # matches.append([var, latex_var])
-        return latex_var_set, True
+        matches_str = ",".join([("\"" + var + "\" : [\"" + "\",\"".join([str(item) for item in latex_var_set[var]]) + "\"]") for var in latex_var_set])
+
+        s = ", {\"type\":\"equation\", \"latex\":\"" + formula + \
+            "\", \"id\":\"e" + str(hash(formula)%((sys.maxsize + 1) * 2))+\
+            "\", \"matches\": {" + matches_str + "} }]"
+
+        new_json_str = json_str[:-1] + s
+
+        return new_json_str, True
     except OpenAIError as err:
         return f"OpenAI connection error: {err}", False
 
