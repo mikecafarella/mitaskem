@@ -53,7 +53,7 @@ def vars_to_json(var_dict: dict) -> str:
 
     for var_name in var_dict:
         var_defs_s = "[\"" + '\",\"'.join(i for i in var_dict[var_name]) + "\"]"
-        var_ground = get_mira_dkg_term(var_name, ['id', 'name'])
+        var_ground = get_mira_dkg_term(var_name, ['id', 'name'])[:2]
         var_ground_s = "[" + ",".join([("[\"" + "\",\"".join([str(item) for item in sublist]) + "\"]") for sublist in var_ground]) + "]"
 
         if is_first:
