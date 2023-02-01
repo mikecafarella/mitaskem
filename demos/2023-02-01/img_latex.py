@@ -36,8 +36,8 @@ def img2latex(url,file, nx=200):
     im_resize.save(buf, format='JPEG')
     byte_im = buf.getvalue()
     r = requests.post(url, files={'file': byte_im})
-    rs = post_latex_clean( r.text)
-    return rs
+    #rs = post_latex_clean( r.text)
+    return r.text
 
 
 if __name__ == "__main__":
