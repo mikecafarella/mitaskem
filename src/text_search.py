@@ -6,6 +6,9 @@ import argparse
 from gpt_key import *
 from mira_dkg_interface import *
 
+MAX_TEXT_MATCHES = 2
+MAX_DKG_MATCHES = 2
+
 
 def text_param_search(text, gpt_key):
     try:
@@ -52,8 +55,8 @@ def vars_to_json(var_dict: dict) -> str:
     id = 0
 
     for var_name in var_dict:
-        var_defs_s = "[\"" + '\",\"'.join(i for i in var_dict[var_name]) + "\"]"
-        var_ground = get_mira_dkg_term(var_name, ['id', 'name'])[:2]
+        var_defs_s = "[\"" + '\",\"'.join(i for i in var_dict[var_name][:MAX_TEXT_MATCHES]) + "\"]"
+        var_ground = get_mira_dkg_term(var_name, ['id', 'name'])[:MAX_DKG_MATCHES]
         var_ground_s = "[" + ",".join([("[\"" + "\",\"".join([str(item) for item in sublist]) + "\"]") for sublist in var_ground]) + "]"
 
         if is_first:
