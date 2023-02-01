@@ -2,20 +2,12 @@
 import argparse
 import json
 import unicodedata as ud
+import ast
 
 
-def main(args):
-
-    out_filename = args.out_dir + "/" + args.anno_path.split("/")[-1].split(".")[0] + "_annotations_dict.json"
-
-    # Get inputs
-    jsonFile1 = open(args.pyacset_path, 'r')
-    pyacset = json.load(jsonFile1)
-    jsonFile1.close()
-
-    jsonFile2 = open(args.anno_path, 'r')
-    annos = json.load(jsonFile2)
-    jsonFile2.close()
+def gen_metadata(pyacset_s, annos_s):
+    pyacset = ast.literal_eval(pyacset_s)
+    annos = ast.literal_eval(annos_s)
 
     # Build dictionary of variables
     var_d = {}
@@ -57,8 +49,7 @@ def main(args):
         d[uid] = var_d.get(ud.lookup(f"GREEK SMALL LETTER {name.upper()}"), {})
 
     # Write out
-    with open(out_filename, "w") as f:
-        json.dump(d, f)
+    return json.dumps(d)
 
 
 if __name__=="__main__":
@@ -68,4 +59,21 @@ if __name__=="__main__":
     parser.add_argument("-o", "--out_dir", type=str)
     args = parser.parse_args()
 
-    main(args)
+    out_filename = args.out_dir + "/" + args.anno_path.split("/")[-1].split(".")[0] + "_annotations_dict.json"
+
+    # Get inputs
+    jsonFile1 = open(args.pyacset_path, 'r')
+    pyacset = json.load(jsonFile1)
+    pyacset_s = json.dumps(pyacset)
+    jsonFile1.close()
+
+    jsonFile2 = open(args.anno_path, 'r')
+    annos = json.load(jsonFile2)
+    annos_s = json.dumps(annos)
+    jsonFile2.close()
+
+    s = gen_metadata(pyacset_s, annos_s)
+
+    with open(out_filename, "w") as f:
+        f.write(s)
+
