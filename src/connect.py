@@ -1,5 +1,6 @@
 import asyncio
 import io
+import json
 import os
 import re
 import pandas as pd
@@ -94,6 +95,20 @@ def get_code_formula_prompt(code, formula, target):
     prompt = prompt.replace("[TARGET]", target)
     # print(prompt)
     return prompt
+
+
+# Get gpt-3 prompt with variable and datasets, and match variable target with the best data columns
+def get_var_dataset_prompt(vars, dataset, target):
+    text_file = open(os.path.join(os.path.dirname(__file__), 'prompts/var_dataset_prompt.txt'), "r")
+    prompt = text_file.read()
+    text_file.close()
+
+    prompt = prompt.replace("[DESC]", vars)
+    prompt = prompt.replace("[DATASET]", dataset)
+    prompt = prompt.replace("[TARGET]", target)
+    # print(prompt)
+    return prompt
+
 
 # Get gpt-3 prompt with formula, and match variable targets
 def get_var_formula_prompt(desc, var):
@@ -309,6 +324,83 @@ def code_formula_connection(code, formulas, gpt_key):
     except OpenAIError as err:
         return f"OpenAI connection error: {err}", False
 
+
+def vars_dataset_connection(json_str, formula, gpt_key):
+    json_list = ast.literal_eval(json_str)
+
+    var_list = list(filter(lambda x: x["type"] == "variable", json_list))
+
+    prompt = get_formula_var_prompt(formula)
+    latex_vars = get_gpt_match(prompt, gpt_key, model="text-davinci-003")
+    latex_vars = latex_vars.split(':')[1].split(',')
+
+    latex_var_set = {}
+
+    all_desc_ls = [var['name'] for var in var_list]
+    all_desc = '\n'.join(all_desc_ls)
+
+    try:
+        for latex_var in tqdm(latex_vars):
+            prompt = get_all_desc_formula_prompt(all_desc, latex_var)
+            ans = get_gpt_match(prompt, gpt_key, model="text-davinci-003")
+            ans = ans.split('\n')
+
+            matches = []
+            for a in ans:
+                if a in all_desc_ls:
+                    a_idx = all_desc_ls.index(a)
+                    matches.append(var_list[a_idx]['id'])
+            latex_var_set[latex_var] = matches
+
+        matches_str = ",".join(
+            [("\"" + var + "\" : [\"" + "\",\"".join([str(item) for item in latex_var_set[var]]) + "\"]") for var in
+             latex_var_set])
+
+        s = ", {\"type\":\"equation\", \"latex\":" + formula + \
+            ", \"id\":\"e" + str(hash(formula) % ((sys.maxsize + 1) * 2)) + \
+            "\", \"matches\": {" + matches_str + "} }]"
+
+        new_json_str = json_str[:-1] + s
+
+        return new_json_str, True
+    except OpenAIError as err:
+        return f"OpenAI connection error: {err}", False
+
+
+def vars_dataset_connection(json_str, dataset, gpt_key):
+    json_list = ast.literal_eval(json_str)
+
+    var_list = list(filter(lambda x: x["type"] == "variable", json_list))
+
+    all_desc_ls = [(var['name']+": "+var['text_annotations'][0]) for var in var_list]
+    all_desc = '\n'.join(all_desc_ls)
+
+    all_vs = [var['name'] for var in var_list]
+
+    vs_data = {}
+
+    try:
+        for target in tqdm(all_vs):
+            a_idx = all_vs.index(target)
+            prompt = get_var_dataset_prompt(all_desc, dataset, all_desc_ls[a_idx])
+            ans = get_gpt_match(prompt, gpt_key, model="text-davinci-003")
+            ans = ans.split('\n')
+            vs_data[var_list[a_idx]['id']] = ans
+
+        matches_str = ",".join(
+            [("\"" + var + "\":[\"" + "\",\"".join([str(item) for item in vs_data[var]]) + "\"]") for var in
+             vs_data])
+
+        s = ", {\"type\":\"datasetmap\""+ \
+            ", \"id\":\"e" + str(hash(matches_str) % ((sys.maxsize + 1) * 2)) + \
+            "\", \"matches\": " + json.dumps(vs_data) + " }]"
+
+        new_json_str = json_str[:-1] + s
+
+        return new_json_str, True
+    except OpenAIError as err:
+        return f"OpenAI connection error: {err}", False
+
 def vars_formula_connection(json_str, formula, gpt_key):
     json_list = ast.literal_eval(json_str)
     
@@ -394,8 +486,9 @@ def code_dkg_connection(dkg_targets, gpt_key, ontology_terms=DEFAULT_TERMS, onto
 
 if __name__ == "__main__":
     # code_dkg_connection("population", "") # GPT key
-    vars = read_text_from_file('/Users/peterchan/Desktop/example.json')
-    match, _ = vars_formula_connection(vars, "\dot{\bf S}(t)=-\bf S(t)(\alpha{\cal I}(t)+\beta D(t)+\gamma A(t)+\delta R(t))", GPT_KEY)
+    vars = read_text_from_file('/Users/chunwei/Downloads/example.json')
+    dataset = read_text_from_file('../resources/dataset/headers.txt')
+    match, _ = vars_dataset_connection(vars, dataset, GPT_KEY)
     print(match)
 
     # for latex_var in match:

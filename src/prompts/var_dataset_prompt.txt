@@ -1,0 +1,7 @@
+We have several variable names and descriptions as follows, each on a newline:
+[DESC]
+
+We also have a list of datasets with column names as follows:
+[DATASET]
+
+From the dataset columns stated above, print up to two that match the following variable name: "[TARGET]", each one a newline.
