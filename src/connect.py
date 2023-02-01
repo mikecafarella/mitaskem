@@ -116,6 +116,15 @@ def get_formula_var_prompt(formula):
     # print(prompt)
     return prompt
 
+def get_all_desc_formula_prompt(all_dsec, latex_var):
+    text_file = open(os.path.join(os.path.dirname(__file__), 'prompts/all_desc_formula_prompt.txt'), "r")
+    prompt = text_file.read()
+    text_file.close()
+
+    prompt = prompt.replace("[DESC]", all_dsec)
+    prompt = prompt.replace("[TARGET]", latex_var)
+    return prompt
+
 # Get gpt-3 prompt with formula, code terms and match formula targets
 def get_code_text_prompt(code, text, target):
     text_file = open(os.path.join(os.path.dirname(__file__), 'prompts/code_text_prompt.txt'), "r")
@@ -301,10 +310,9 @@ def code_formula_connection(code, formulas, gpt_key):
         return f"OpenAI connection error: {err}", False
 
 def vars_formula_connection(json_str, formula, gpt_key):
-
     json_list = ast.literal_eval(json_str)
     
-    var_list = list(filter(lambda x: x["type"]=="variable", json_list))
+    var_list = list(filter(lambda x: x["type"] == "variable", json_list))
 
     prompt = get_formula_var_prompt(formula)
     latex_vars = get_gpt_match(prompt, gpt_key, model="text-davinci-003")
@@ -312,18 +320,31 @@ def vars_formula_connection(json_str, formula, gpt_key):
 
     latex_var_set = {}
 
+    all_desc_ls = [var['name'] for var in var_list]
+    all_desc = '\n'.join(all_desc_ls)
+
     try:
-        for latex_var in latex_vars:
-            for desc in tqdm(var_list):
-                prompt = get_var_formula_prompt(desc["name"], latex_var)
-                ans = get_gpt_match(prompt, gpt_key, model="text-davinci-003")
-                ans = ans.split(':')[1]
+        for latex_var in tqdm(latex_vars):
+            prompt = get_all_desc_formula_prompt(all_desc, latex_var)
+            ans = get_gpt_match(prompt, gpt_key, model="text-davinci-003")
+            ans = ans.split('\n')
+
+            matches = []
+            for a in ans:
+                if a in all_desc_ls:
+                    matches.append(a)
+            latex_var_set[latex_var] = matches
+
+            # for desc in tqdm(var_list):
+            #     prompt = get_var_formula_prompt(desc["name"], latex_var)
+            #     ans = get_gpt_match(prompt, gpt_key, model="text-davinci-003")
+            #     ans = ans.split(':')[1]
 
 
-                if ans == 'YES':
-                    current_matches = latex_var_set.get(latex_var, [])
-                    current_matches.append(desc["id"])
-                    latex_var_set[latex_var] = current_matches
+            #     if ans == 'YES':
+            #         current_matches = latex_var_set.get(latex_var, [])
+            #         current_matches.append(desc["id"])
+            #         latex_var_set[latex_var] = current_matches
                     
 
         matches_str = ",".join([("\"" + var + "\" : [\"" + "\",\"".join([str(item) for item in latex_var_set[var]]) + "\"]") for var in latex_var_set])
@@ -372,9 +393,10 @@ def code_dkg_connection(dkg_targets, gpt_key, ontology_terms=DEFAULT_TERMS, onto
 
 if __name__ == "__main__":
     # code_dkg_connection("population", "") # GPT key
-    vars = read_text_from_file('../resources/jan_evaluation/scenario_2_sidarthe/sidarthe_vars_deduped.txt')
+    vars = read_text_from_file('/Users/peterchan/Desktop/example.json')
     match, _ = vars_formula_connection(vars, "\dot{\bf S}(t)=-\bf S(t)(\alpha{\cal I}(t)+\beta D(t)+\gamma A(t)+\delta R(t))", GPT_KEY)
-    
-    for latex_var in match:
-        print(latex_var, match[latex_var])
-        print('\n')
+    print(match)
+
+    # for latex_var in match:
+    #     print(latex_var, match[latex_var])
+    #     print('\n')
