@@ -6,64 +6,51 @@ import unicodedata as ud
 
 def main(args):
 
-    out_filename = args.out_dir + "/" + "metadata_real.json"
+    out_filename = args.out_dir + "/" + args.anno_path.split("/")[-1].split(".")[0] + "_annotations_dict.json"
 
-    # Get states
-    jsonFile = open(args.in_path, 'r')
-    values = json.load(jsonFile)
-    jsonFile.close()
+    # Get inputs
+    jsonFile1 = open(args.pyacset_path, 'r')
+    pyacset = json.load(jsonFile1)
+    jsonFile1.close()
 
-    # Get dict of annotations
-    f = open(args.anno_path, "r")
-    anno_dict = {}
-    for line in f:
-        toks = line.split(":")
-        anno_dict[toks[0]] = toks[1].rstrip()
-    f.close
+    jsonFile2 = open(args.anno_path, 'r')
+    annos = json.load(jsonFile2)
+    jsonFile2.close()
 
-    # Produce output
-    f = open(out_filename, "w+")
-    f.write("{")
-    flag = False
+    # Build dictionary of variables
+    var_d = {}
+    for anno in annos:
+        if anno["type"] != "variable":
+            continue
+        var_d[anno["name"]] = anno
 
-    states = values["S"]
+    d = {}
+
+    # Process states
+    states = pyacset["S"]
     for state in states:
         name = state["sname"].lstrip().rstrip()
         uid = state["uid"]
+        d[uid] = var_d.get(name, {})
 
-        if flag:
-            f.write(",")
-        else: 
-            flag = True
-
-        metadata = anno_dict[name]
-
-        f.write(f"\"{uid}\": \"{metadata}\"")
-
-    transitions = values["T"]
+    # Process transitions
+    transitions = pyacset["T"]
     for tr in transitions:
         name = tr["tname"].lstrip().rstrip()
         uid = tr["uid"]
 
-        f.write(",")
-        
-        metadata = anno_dict[ud.lookup(f"GREEK SMALL LETTER {name.upper()}")]
+        d[uid] = var_d.get(ud.lookup(f"GREEK SMALL LETTER {name.upper()}"), {})
 
-        f.write(f"\"{uid}\": \"{metadata}\"")
-
-
-
-
-    f.write("}")
-
-
+    # Write out
+    with open(out_filename, "w") as f:
+        json.dump(d, f)
 
 
 if __name__=="__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("-i", "--in_path", type=str)
+    parser.add_argument("-p", "--pyacset_path", type=str)
     parser.add_argument("-a", "--anno_path", type=str)
-    parser.add_argument("-o", "--out_dir", type=str, default="resources/jan_evaluation/cosmos_params")
+    parser.add_argument("-o", "--out_dir", type=str)
     args = parser.parse_args()
 
     main(args)
