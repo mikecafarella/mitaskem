@@ -1,5 +1,6 @@
 import os
 import sys
+import ast
 
 from fastapi import APIRouter,status
 from fastapi.responses import JSONResponse
@@ -30,7 +31,7 @@ def find_variables_from_text(text: str, gpt_key: str):
         
         outputs += s
 
-    return vars_to_json(vars_dedup(outputs))
+    return ast.literal_eval(vars_to_json(vars_dedup(outputs)))
 
 @router.post("/link_latex_to_vars", tags=["Paper-2-annotated-vars"])
 def link_latex_formulas_to_extracted_variables(json_str: str, formula: str, gpt_key: str):
