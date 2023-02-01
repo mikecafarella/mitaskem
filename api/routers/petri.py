@@ -1,5 +1,6 @@
 import os
 import sys
+import ast
 
 from fastapi import APIRouter,status
 from fastapi.responses import JSONResponse
@@ -44,7 +45,7 @@ def get_petri_net_arcs(code: str, gpt_key: str):
 def get_pyacset_from_components(places_str:str, transitions_str: str, arcs_str: str):
     s = convert_to_pyacset(places_s = places_str, transitions_s = transitions_str, arcs_s = arcs_str)
 
-    return s
+    return ast.literal_eval(s)
 
 #@router.post("/match_place_to_text", tags=["Code-2-Petri-net"])
 def run_match_place_to_text(text: str, place: str, gpt_key: str):
