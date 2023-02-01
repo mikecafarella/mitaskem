@@ -8,6 +8,7 @@ sys.path.append(
     os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 )
 from src.gen_petri import *
+from src.pyacset_gen.convert_to_pyacset import *
 
 router = APIRouter()
 
@@ -36,6 +37,12 @@ def get_petri_net_arcs(code: str, gpt_key: str):
 
     if not success:
         return JSONResponse(status_code=status.HTTP_401_UNAUTHORIZED, content=s)
+
+    return s
+
+@router.post("/get_pyacset", tags=["Code-2-Petri-net"])
+def get_pyacset_from_components(places_str:str, transitions_str: str, arcs_str: str):
+    s = convert_to_pyacset(places_s = places_str, transitions_s = transitions_str, arcs_s = arcs_str)
 
     return s
 
