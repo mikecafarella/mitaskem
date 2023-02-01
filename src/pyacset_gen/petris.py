@@ -1,4 +1,4 @@
-from acsets import Ob, Hom, Attr, AttrType, Schema, ACSet
+from .acsets import Ob, Hom, Attr, AttrType, Schema, ACSet
 
 Species = Ob("S")
 Transition = Ob("T")
