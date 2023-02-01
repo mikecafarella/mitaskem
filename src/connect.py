@@ -328,8 +328,8 @@ def vars_formula_connection(json_str, formula, gpt_key):
 
         matches_str = ",".join([("\"" + var + "\" : [\"" + "\",\"".join([str(item) for item in latex_var_set[var]]) + "\"]") for var in latex_var_set])
 
-        s = ", {\"type\":\"equation\", \"latex\":\"" + formula + \
-            "\", \"id\":\"e" + str(hash(formula)%((sys.maxsize + 1) * 2))+\
+        s = ", {\"type\":\"equation\", \"latex\":" + formula + \
+            ", \"id\":\"e" + str(hash(formula)%((sys.maxsize + 1) * 2))+\
             "\", \"matches\": {" + matches_str + "} }]"
 
         new_json_str = json_str[:-1] + s
