@@ -1,4 +1,4 @@
-import acsets, petris
+from . import acsets, petris
 import ast
 
 
