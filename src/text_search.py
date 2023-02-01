@@ -22,6 +22,34 @@ def text_var_search(text, gpt_key):
     except OpenAIError as err:   
         return f"OpenAI connection error: {err}", False
 
+def vars_to_json(text:str) -> str:
+    lines = text.split("\n")
+
+    s_out = "["
+    is_first = True
+    id = 0
+
+    for line in lines:
+        toks = line.split(":")
+
+        var_name = toks[0]
+        var_defs = ":".join(toks[i] for i in range(1, len(toks)))
+        var_ground = get_mira_dkg_term(var_name, ['id', 'name'])
+
+        if is_first:
+            is_first = False
+        else:
+            s_out += ","
+
+        s_out += "{\"type\" : \"variable\", \"name\": \"" + var_name
+        + "\", \"id\" : \"v" + id + "\", \"text_annotations\": " + var_defs 
+        + "\", \"dkg_annotations\" : \"" + var_ground + "\"}"
+
+        id += 1
+    
+    s_out += "]"
+
+    return s_out
 
 def main(args):
 

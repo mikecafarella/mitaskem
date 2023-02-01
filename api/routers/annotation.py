@@ -7,7 +7,7 @@ from fastapi.responses import JSONResponse
 sys.path.append(
     os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 )
-from src.text_search import text_var_search
+from src.text_search import text_var_search, vars_to_json
 
 router = APIRouter()
 
@@ -19,4 +19,5 @@ def find_variables_from_text(text: str, gpt_key: str):
     if not success:
         return JSONResponse(status_code=status.HTTP_401_UNAUTHORIZED, content=s)
 
-    return s
+
+    return vars_to_json(s)
