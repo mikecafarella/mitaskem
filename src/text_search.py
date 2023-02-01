@@ -41,8 +41,8 @@ def vars_to_json(text:str) -> str:
         else:
             s_out += ","
 
-        s_out += "{\"type\" : \"variable\", \"name\": \"" + var_name
-        + "\", \"id\" : \"v" + id + "\", \"text_annotations\": " + var_defs 
+        s_out += "{\"type\" : \"variable\", \"name\": \"" + var_name \
+        + "\", \"id\" : \"v" + id + "\", \"text_annotations\": " + var_defs \
         + "\", \"dkg_annotations\" : \"" + var_ground + "\"}"
 
         id += 1
