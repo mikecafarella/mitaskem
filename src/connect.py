@@ -325,48 +325,6 @@ def code_formula_connection(code, formulas, gpt_key):
         return f"OpenAI connection error: {err}", False
 
 
-def vars_dataset_connection(json_str, formula, gpt_key):
-    json_list = ast.literal_eval(json_str)
-
-    var_list = list(filter(lambda x: x["type"] == "variable", json_list))
-
-    prompt = get_formula_var_prompt(formula)
-    latex_vars = get_gpt_match(prompt, gpt_key, model="text-davinci-003")
-    latex_vars = latex_vars.split(':')[1].split(',')
-
-    latex_var_set = {}
-
-    all_desc_ls = [var['name'] for var in var_list]
-    all_desc = '\n'.join(all_desc_ls)
-
-    try:
-        for latex_var in tqdm(latex_vars):
-            prompt = get_all_desc_formula_prompt(all_desc, latex_var)
-            ans = get_gpt_match(prompt, gpt_key, model="text-davinci-003")
-            ans = ans.split('\n')
-
-            matches = []
-            for a in ans:
-                if a in all_desc_ls:
-                    a_idx = all_desc_ls.index(a)
-                    matches.append(var_list[a_idx]['id'])
-            latex_var_set[latex_var] = matches
-
-        matches_str = ",".join(
-            [("\"" + var + "\" : [\"" + "\",\"".join([str(item) for item in latex_var_set[var]]) + "\"]") for var in
-             latex_var_set])
-
-        s = ", {\"type\":\"equation\", \"latex\":" + formula + \
-            ", \"id\":\"e" + str(hash(formula) % ((sys.maxsize + 1) * 2)) + \
-            "\", \"matches\": {" + matches_str + "} }]"
-
-        new_json_str = json_str[:-1] + s
-
-        return new_json_str, True
-    except OpenAIError as err:
-        return f"OpenAI connection error: {err}", False
-
-
 def vars_dataset_connection(json_str, dataset, gpt_key):
     json_list = ast.literal_eval(json_str)
 
