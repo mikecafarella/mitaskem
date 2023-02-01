@@ -5,9 +5,10 @@ import unicodedata as ud
 import ast
 
 
-def gen_metadata(pyacset_s, annos_s):
+def gen_metadata(pyacset_s, annos_s, info_s):
     pyacset = ast.literal_eval(pyacset_s)
     annos = ast.literal_eval(annos_s)
+    info = ast.literal_eval(info_s)
 
     # Build dictionary of variables
     var_d = {}
@@ -47,6 +48,13 @@ def gen_metadata(pyacset_s, annos_s):
         uid = tr["uid"]
 
         d[uid] = var_d.get(ud.lookup(f"GREEK SMALL LETTER {name.upper()}"), {})
+    
+    # Add in paper and doi info
+    for item in d:
+        contents = d[item]
+        contents["file"] = info["pdf_name"]
+        contents["doi"] = info["DOI"]
+        d[item] = contents
 
     # Write out
     return json.dumps(d)
@@ -56,6 +64,7 @@ if __name__=="__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("-p", "--pyacset_path", type=str)
     parser.add_argument("-a", "--anno_path", type=str)
+    parser.add_argument("-i", "--info_path", type=str)
     parser.add_argument("-o", "--out_dir", type=str)
     args = parser.parse_args()
 
@@ -72,7 +81,12 @@ if __name__=="__main__":
     annos_s = json.dumps(annos)
     jsonFile2.close()
 
-    s = gen_metadata(pyacset_s, annos_s)
+    jsonFile3 = open(args.info_path, 'r')
+    info = json.load(jsonFile3)
+    info_s = json.dumps(info)
+    jsonFile3.close()
+
+    s = gen_metadata(pyacset_s, annos_s, info_s)
 
     with open(out_filename, "w") as f:
         f.write(s)
