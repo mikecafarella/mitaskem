@@ -15,6 +15,7 @@ def post_latex_clean(string):
     pattern = char + '{2,}'
     string = re.sub(pattern, char, string)
     string = string.replace("\\;","")
+    string = string.replace("\\x", "\\\\x")
 
     return string
 
