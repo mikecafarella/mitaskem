@@ -42,3 +42,4 @@ def convert_to_pyacset(places_s, transitions_s, arcs_s):
     serialized = sir.write_json()
 
     print(serialized)
+    return serialized
