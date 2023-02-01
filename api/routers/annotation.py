@@ -10,6 +10,7 @@ sys.path.append(
 )
 from src.text_search import text_var_search, vars_to_json, vars_dedup
 from src.connect import vars_formula_connection
+from src.link_annos_to_pyacset import link_annos_to_pyacset
 
 router = APIRouter()
 
@@ -41,3 +42,9 @@ def link_latex_formulas_to_extracted_variables(json_str: str, formula: str, gpt_
         return JSONResponse(status_code=status.HTTP_401_UNAUTHORIZED, content=s)
 
     return ast.literal_eval(s)
+
+@router.post("/link_annos_to_pyacset", tags=["Paper-2-annotated-vars"])
+def link_annotation_to_pyacset_and_paper_info(pyacset_str: str, annotations_str: str, info_str: str = ""):
+    s = link_annos_to_pyacset(pyacset_s = pyacset_str, annos_s = annotations_str, info_s = info_str)
+
+    return s
