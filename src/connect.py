@@ -486,7 +486,7 @@ def code_dkg_connection(dkg_targets, gpt_key, ontology_terms=DEFAULT_TERMS, onto
 
 if __name__ == "__main__":
     # code_dkg_connection("population", "") # GPT key
-    vars = read_text_from_file('/Users/chunwei/Downloads/example.json')
+    vars = read_text_from_file('../demos/2023-02-01/jan_demo_full.json')
     dataset = read_text_from_file('../resources/dataset/headers.txt')
     match, _ = vars_dataset_connection(vars, dataset, GPT_KEY)
     print(match)
