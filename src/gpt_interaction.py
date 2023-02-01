@@ -7,7 +7,7 @@ def get_gpt_match(prompt, key, model="text-davinci-002"):
     # fernet = Fernet(mykey)
     # openai.api_key = fernet.decrypt(enc).decode()
     openai.api_key = key
-    response = openai.Completion.create(model=model, prompt=prompt, temperature=0.0, max_tokens=256)
+    response = openai.Completion.create(model=model, prompt=prompt, temperature=0.0, max_tokens=1024)
     result = response.choices[0].text.strip()
     # print(result)
     return result
