@@ -86,16 +86,16 @@ def get_petri_init_param_prompt(text, param):
     prompt = prompt.replace("[PARAM]", param)
     return prompt
 
-def get_petri_parameters_prompt(text):
-    text_file = open(os.path.join(os.path.dirname(__file__), 'prompts/petri_parameters_prompt.txt'), "r")
+def get_petri_transitions_prompt(text):
+    text_file = open(os.path.join(os.path.dirname(__file__), 'prompts/petri_transitions_prompt.txt'), "r")
     prompt = text_file.read()
     text_file.close()
 
     prompt = prompt.replace("[TEXT]", text)
     return prompt
 
-def get_petri_transitions_prompt(text):
-    text_file = open(os.path.join(os.path.dirname(__file__), 'prompts/petri_transitions_prompt.txt'), "r")
+def get_petri_arcs_prompt(text):
+    text_file = open(os.path.join(os.path.dirname(__file__), 'prompts/petri_arcs_prompt.txt'), "r")
     prompt = text_file.read()
     text_file.close()
 

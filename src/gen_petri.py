@@ -12,9 +12,9 @@ def get_places(text, gpt_key):
     except OpenAIError as err:   
         return f"OpenAI connection error: {err}", False
 
-def get_parameters(text, gpt_key):
+def get_transitions(text, gpt_key):
     try:
-        prompt = get_petri_parameters_prompt(text)
+        prompt = get_petri_transitions_prompt(text)
         match = get_gpt_match(prompt, gpt_key)
         #print(match)
         places = match.split(":")[-1].split(",")
@@ -22,9 +22,9 @@ def get_parameters(text, gpt_key):
     except OpenAIError as err:   
         return f"OpenAI connection error: {err}", False
 
-def get_transitions(text, gpt_key):
+def get_arcs(text, gpt_key):
     try:
-        prompt = get_petri_transitions_prompt(text)
+        prompt = get_petri_arcs_prompt(text)
         match = get_gpt_match(prompt, gpt_key, "text-davinci-003")
         #print(match)
         lines = match.split("\n")

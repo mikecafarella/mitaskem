@@ -13,7 +13,7 @@ router = APIRouter()
 
 
 @router.post("/get_places", tags=["Code-2-Petri-net"])
-def run_places(code: str, gpt_key: str):
+def get_petri_net_places(code: str, gpt_key: str):
     s, success = get_places(text=code, gpt_key=gpt_key)
 
     if not success:
@@ -21,18 +21,18 @@ def run_places(code: str, gpt_key: str):
 
     return s
 
-@router.post("/get_parameters", tags=["Code-2-Petri-net"])
-def run_places(code: str, gpt_key: str):
-    s, success = get_parameters(text=code, gpt_key=gpt_key)
+@router.post("/get_transitions", tags=["Code-2-Petri-net"])
+def get_petri_net_transitions(code: str, gpt_key: str):
+    s, success = get_transitions(text=code, gpt_key=gpt_key)
 
     if not success:
         return JSONResponse(status_code=status.HTTP_401_UNAUTHORIZED, content=s)
 
     return s
 
-@router.post("/get_transitions", tags=["Code-2-Petri-net"])
-def run_transitions(code: str, gpt_key: str):
-    s, success = get_transitions(text=code, gpt_key=gpt_key)
+@router.post("/get_arcs", tags=["Code-2-Petri-net"])
+def get_petri_net_arcs(code: str, gpt_key: str):
+    s, success = get_arcs(text=code, gpt_key=gpt_key)
 
     if not success:
         return JSONResponse(status_code=status.HTTP_401_UNAUTHORIZED, content=s)
