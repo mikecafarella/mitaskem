@@ -18,12 +18,12 @@ router = APIRouter()
 def find_variables_from_text(text: str, gpt_key: str):
 
     length = len(text)
-    segments = int(length/3000 + 1)
+    segments = int(length/1000 + 1)
 
     outputs = ""
 
     for i in range(segments):
-        snippet = text[i * 3000: (i+1) * 3000]
+        snippet = text[i * 1000: (i+1) * 1000]
         s, success = text_var_search(text=snippet, gpt_key=gpt_key)
 
         if not success:
