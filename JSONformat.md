@@ -13,15 +13,8 @@
     { 
         "type" : "equation", 
         "latex" : "\alphaS = \beta",
-        "id" : "e456"
-    },
-    ...
-    {
-        "type" : "symbol",
-        "latex" : "S",
-        "id" : "s789",
-        "origin" : "e456",
-        "matches" : ["v123"]
+        "id" : "e456", 
+        "matches" : {"S":["v123"], ...}
     },
     ...
 ]
