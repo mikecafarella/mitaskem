@@ -332,7 +332,8 @@ def vars_formula_connection(json_str, formula, gpt_key):
             matches = []
             for a in ans:
                 if a in all_desc_ls:
-                    matches.append(a)
+                    a_idx = all_desc_ls.index(a)
+                    matches.append(var_list[a_idx]['id'])
             latex_var_set[latex_var] = matches
 
             # for desc in tqdm(var_list):
