@@ -3,6 +3,8 @@ import requests
 from PIL import Image
 import re
 import argparse
+import sys
+
 def post_latex_clean(string):
     """
     Post-processing of the latex sentences with step 1 removing the "\\" and step remove the weird ";"
@@ -13,6 +15,9 @@ def post_latex_clean(string):
     pattern = char + '{2,}'
     string = re.sub(pattern, char, string)
     string = string.replace("\\;","")
+
+    string = "[{\"type\":\"equation\", \"latex\":" + string + ", \"id\":\"e" + str(hash(string)%((sys.maxsize + 1) * 2))+"\"}]"
+
     return string
 
 def img2latex(url,file, nx=200):
