@@ -4,6 +4,7 @@ from connect import *
 import re
 import argparse
 from gpt_key import *
+from mira_dkg_interface import *
 
 
 def text_param_search(text, gpt_key):
@@ -34,7 +35,9 @@ def vars_to_json(text:str) -> str:
 
         var_name = toks[0]
         var_defs = ":".join(toks[i] for i in range(1, len(toks)))
+        var_defs_s = "[" + ','.join(i for i in var_defs) + "]"
         var_ground = get_mira_dkg_term(var_name, ['id', 'name'])
+        var_ground_s = "[" + ",".join([("[" + ",".join([str(item) for item in sublist]) + "]") for sublist in var_ground]) + "]"
 
         if is_first:
             is_first = False
@@ -42,8 +45,8 @@ def vars_to_json(text:str) -> str:
             s_out += ","
 
         s_out += "{\"type\" : \"variable\", \"name\": \"" + var_name \
-        + "\", \"id\" : \"v" + str(id) + "\", \"text_annotations\": " + var_defs \
-        + "\", \"dkg_annotations\" : \"" + var_ground + "\"}"
+        + "\", \"id\" : \"v" + str(id) + "\", \"text_annotations\": " + var_defs_s \
+        + ", \"dkg_annotations\" : " + var_ground_s + "}"
 
         id += 1
     
