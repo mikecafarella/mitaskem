@@ -9,3 +9,4 @@ examples/
 .DS_Store
 env/
 src/gpt_key.py
+src/pyacset_gen/__pycache__/
