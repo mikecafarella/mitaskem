@@ -7,7 +7,7 @@
         "name": "S", 
         "id" : "v123"
         "text_annotations": ["susceptible", "people that are susceptible"],
-        "dkg_annotations" : ["id123", "id456"]
+        "dkg_annotations" : [["id123", "Term 1"], ["id456", "Term 2"]]
     }, 
     ...
     { 
