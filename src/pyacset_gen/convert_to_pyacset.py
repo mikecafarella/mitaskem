@@ -14,9 +14,11 @@ def convert_to_pyacset(places_s, transitions_s, arcs_s):
     sir.add_parts(trans, len(transitions))
 
     i = 0
+    place_dict = {}
     while i < len(places): 
         sir.set_subpart(i, petris.attr_sname, places[i])
         sir.set_subpart(i, petris.attr_suid, i)
+        place_dict[places[i]] = i
         i += 1
     
     j = 0
@@ -35,11 +37,11 @@ def convert_to_pyacset(places_s, transitions_s, arcs_s):
         for s in ins:
             arc = sir.add_part(petris.Input)
             sir.set_subpart(arc, petris.hom_it, k)
-            sir.set_subpart(arc, petris.hom_is, s)
+            sir.set_subpart(arc, petris.hom_is, place_dict[s])
         for r in outs:
             arc = sir.add_part(petris.Output)
             sir.set_subpart(arc, petris.hom_ot, k)
-            sir.set_subpart(arc, petris.hom_os, r)
+            sir.set_subpart(arc, petris.hom_os, place_dict[r])
         k += 1
 
     serialized = sir.write_json()
