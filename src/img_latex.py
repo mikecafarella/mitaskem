@@ -15,7 +15,6 @@ def post_latex_clean(string):
     pattern = char + '{2,}'
     string = re.sub(pattern, char, string)
     string = string.replace("\\;","")
-    string = string.replace("\\x", "\\\\x")
 
     return string
 
@@ -37,8 +36,8 @@ def img2latex(url,file, nx=200):
     im_resize.save(buf, format='JPEG')
     byte_im = buf.getvalue()
     r = requests.post(url, files={'file': byte_im})
-    #rs = post_latex_clean( r.text)
-    return r.text
+    rs = post_latex_clean( r.text)
+    return rs
 
 
 if __name__ == "__main__":

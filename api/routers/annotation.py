@@ -40,4 +40,4 @@ def link_latex_formulas_to_extracted_variables(json_str: str, formula: str, gpt_
     if not success:
         return JSONResponse(status_code=status.HTTP_401_UNAUTHORIZED, content=s)
 
-    return ast.literal_eval(s)
+    return s
