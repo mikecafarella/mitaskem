@@ -20,12 +20,27 @@ def main(args):
     # Build dictionary of variables
     var_d = {}
     for anno in annos:
-        if anno["type"] != "variable":
-            continue
-        var_d[anno["name"]] = anno
+        if anno["type"] == "variable":
+            var_d[anno["name"]] = anno
+
+    # Add equation annotations
+    for anno in annos:
+        if anno["type"] == "equation":
+            matches = anno["matches"]
+            for match in matches:
+                if match in var_d:
+                    var_anno = var_d[match]
+                    equations = var_anno.get("equation_annotations", {})
+                    equations[anno["latex"]] = []
+
+                    for v in matches[match]:
+                        if v == var_anno["id"]:
+                            equations[anno["latex"]].append(match)
+
+                    var_anno["equation_annotations"] = equations
+                    var_d[match] = var_anno
 
     d = {}
-
     # Process states
     states = pyacset["S"]
     for state in states:
