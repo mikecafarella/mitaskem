@@ -350,7 +350,7 @@ def vars_dataset_connection(json_str, dataset, gpt_key):
              vs_data])
 
         s = ", {\"type\":\"datasetmap\""+ \
-            ", \"id\":\"e" + str(hash(matches_str) % ((sys.maxsize + 1) * 2)) + \
+            ", \"id\":\"d" + str(hash(matches_str) % ((sys.maxsize + 1) * 2)) + \
             "\", \"matches\": " + json.dumps(vs_data) + " }]"
 
         new_json_str = json_str[:-1] + s
