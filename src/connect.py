@@ -333,31 +333,65 @@ def vars_dataset_connection(json_str, dataset, gpt_key):
     all_desc_ls = [(var['name']+": "+var['text_annotations'][0]) for var in var_list]
     all_desc = '\n'.join(all_desc_ls)
 
-    all_vs = [var['name'] for var in var_list]
-
     vs_data = {}
 
+    dataset_str = ""
+    datasets = dataset.split("\n")
+    dataset_name_dict = {}
+    i = 0
+    for d in tqdm(datasets):
+        toks = d.split(":")
+        if len(toks) != 2:
+            continue
+        name, cols = toks
+        cols = cols.split(",")
+        dataset_name_dict[i] = name
+        for col in cols:
+            dataset_str += str(i) + "_" + col.strip() + "\n"
+        i += 1
+
     try:
-        for target in tqdm(all_vs):
-            a_idx = all_vs.index(target)
-            prompt = get_var_dataset_prompt(all_desc, dataset, all_desc_ls[a_idx])
+        for i in tqdm(range(len(all_desc_ls))):
+            prompt = get_var_dataset_prompt(all_desc, dataset_str, all_desc_ls[i])
             ans = get_gpt_match(prompt, gpt_key, model="text-davinci-003")
             ans = ans.split('\n')
-            vs_data[var_list[a_idx]['id']] = ans
 
-        matches_str = ",".join(
-            [("\"" + var + "\":[\"" + "\",\"".join([str(item) for item in vs_data[var]]) + "\"]") for var in
-             vs_data])
+            for j in range(len(ans)):
+                toks = ans[j].split("_")
+                if len(toks) < 2:
+                    ans[j] = ""
+                else:
+                    d_name = dataset_name_dict[int(toks[0])]
+                    col_name = "_".join(toks[k] for k in range(1, len(toks)))
+                    ans[j] = [d_name, col_name]
 
-        s = ", {\"type\":\"datasetmap\""+ \
-            ", \"id\":\"d" + str(hash(matches_str) % ((sys.maxsize + 1) * 2)) + \
-            "\", \"matches\": " + json.dumps(vs_data) + " }]"
+            vs_data[var_list[i]['id']] = ans
+            #print(f"assigned value {ans} to key {var_list[i]['id']}")
 
-        new_json_str = json_str[:-1] + s
-
-        return new_json_str, True
     except OpenAIError as err:
         return f"OpenAI connection error: {err}", False
+
+    for item in json_list:
+        if item["type"] != "variable":
+            continue
+        
+        id = item["id"]
+        item["data_annotations"] = vs_data[id]
+
+    # matches_str = ",".join(
+    #     [("\"" + var + "\":[\"" + "\",\"".join([str(item) for item in vs_data[var]]) + "\"]") for var in
+    #         vs_data])
+
+    # s = ", {\"type\":\"datasetmap\""+ \
+    #     ", \"id\":\"d" + str(hash(matches_str) % ((sys.maxsize + 1) * 2)) + \
+    #     "\", \"matches\": " + json.dumps(vs_data) + " }]"
+
+    # new_json_str = json_str[:-1] + s
+
+    new_json_str = json.dumps(json_list)
+
+    return new_json_str, True
+    
 
 def vars_formula_connection(json_str, formula, gpt_key):
     json_list = ast.literal_eval(json_str)
@@ -444,7 +478,7 @@ def code_dkg_connection(dkg_targets, gpt_key, ontology_terms=DEFAULT_TERMS, onto
 
 if __name__ == "__main__":
     # code_dkg_connection("population", "") # GPT key
-    vars = read_text_from_file('../demos/2023-02-01/jan_demo_full.json')
+    vars = read_text_from_file('../demos/2023-02-01/jan_demo_intermediate.json')
     dataset = read_text_from_file('../resources/dataset/headers.txt')
     match, _ = vars_dataset_connection(vars, dataset, GPT_KEY)
     print(match)
