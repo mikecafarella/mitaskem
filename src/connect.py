@@ -325,7 +325,7 @@ def code_formula_connection(code, formulas, gpt_key):
         return f"OpenAI connection error: {err}", False
 
 
-def vars_dataset_connection(json_str, dataset, gpt_key):
+def vars_dataset_connection(json_str, dataset_str, gpt_key):
     json_list = ast.literal_eval(json_str)
 
     var_list = list(filter(lambda x: x["type"] == "variable", json_list))
@@ -335,8 +335,8 @@ def vars_dataset_connection(json_str, dataset, gpt_key):
 
     vs_data = {}
 
-    dataset_str = ""
-    datasets = dataset.split("\n")
+    dataset_s = ""
+    datasets = dataset_str.split("\n")
     dataset_name_dict = {}
     i = 0
     for d in tqdm(datasets):
@@ -347,12 +347,12 @@ def vars_dataset_connection(json_str, dataset, gpt_key):
         cols = cols.split(",")
         dataset_name_dict[i] = name
         for col in cols:
-            dataset_str += str(i) + "_" + col.strip() + "\n"
+            dataset_s += str(i) + "_" + col.strip() + "\n"
         i += 1
 
     try:
         for i in tqdm(range(len(all_desc_ls))):
-            prompt = get_var_dataset_prompt(all_desc, dataset_str, all_desc_ls[i])
+            prompt = get_var_dataset_prompt(all_desc, dataset_s, all_desc_ls[i])
             ans = get_gpt_match(prompt, gpt_key, model="text-davinci-003")
             ans = ans.split('\n')
 
