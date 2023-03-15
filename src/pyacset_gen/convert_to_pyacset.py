@@ -14,33 +14,34 @@ def convert_to_pyacset(places_s, transitions_s, arcs_s):
     sir.add_parts(trans, len(transitions))
 
     i = 0
-    place_dict = {}
+    node_dict = {}
     while i < len(places): 
         sir.set_subpart(i, petris.attr_sname, places[i].strip())
         sir.set_subpart(i, petris.attr_suid, i+1)
-        place_dict[places[i].strip()] = i
+        node_dict[places[i].strip()] = i
         i += 1
     
     j = 0
     while j < len(transitions): 
-        sir.set_subpart(j, petris.attr_tname, transitions[j])
-        sir.set_subpart(j, petris.attr_tuid, i+j+2)
+        sir.set_subpart(j, petris.attr_tname, transitions[j].strip())
+        sir.set_subpart(j, petris.attr_tuid, i+j+1)
+        node_dict[transitions[j].strip()] = i+j
         j += 1
     
     k = 0
     while k < len(arcs): 
         arc = arcs[k]
         print(arc)
-        print(place_dict)
+        print(node_dict)
         
         print("ins: ", arc[0])
         print("outs: ", arc[1])
         pt1 = sir.add_part(petris.Input)
         sir.set_subpart(pt1, petris.hom_it, k)
-        sir.set_subpart(pt1, petris.hom_is, place_dict[arc[0].strip()])
+        sir.set_subpart(pt1, petris.hom_is, node_dict[arc[0].strip()])
         pt2 = sir.add_part(petris.Output)
         sir.set_subpart(pt2, petris.hom_ot, k)
-        sir.set_subpart(pt2, petris.hom_os, place_dict[arc[1].strip()])
+        sir.set_subpart(pt2, petris.hom_os, node_dict[arc[1].strip()])
         k += 1
 
     serialized = sir.write_json()
@@ -51,6 +52,6 @@ def convert_to_pyacset(places_s, transitions_s, arcs_s):
 if __name__=="__main__":
     places_str = '["S"," I"," D"," A"," R"," T"," H"," E"]'
     transitions_str = '["alpha"," beta"," gamma"," delta"," epsilon"," mu"," zeta"," lamda"," eta"," rho"," theta"," kappa"," nu"," xi"," sigma"," tau"]'
-    arcs_str = '[["S"," I"],["I"," D"],["I"," A"],["I"," R"],["D"," E"],["A"," R"],["A"," T"],["R"," H"],["T"," H"],["I"," H"],["D"," H"],["A"," H"],["R"," H"],["T"," E"]]'
+    arcs_str = '[["S"," I"],["I"," D"],["I"," A"],["I"," R"],["D"," E"],["A"," R"],["A"," T"],["R"," H"],["T"," H"],["I"," H"],["D"," H"],["A"," H"],["R"," H"],["T"," E"],["alpha", "S"]]'
 
     convert_to_pyacset(places_str, transitions_str, arcs_str)
