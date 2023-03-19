@@ -310,8 +310,11 @@ def dataset_header_dkg(header, gpt_key=''):
             seen.add(res[0])
 
         ans = get_gpt_match(f"What's the top 2 similar terms of \"{col}\" in epidemiology? Please list these terms separated by comma.", gpt_key, model="text-davinci-003")
+        # print(ans)
         for e in ans.split(","):
-            for res in get_mira_dkg_term(e, ['id', 'name']):
+            # print(e)
+            for res in get_mira_dkg_term(e, ['id', 'name'],True):
+                # print(res)
                 if not res[0] in seen:
                     results.append(res)
                     seen.add(res[0])
@@ -512,8 +515,8 @@ if __name__ == "__main__":
     # match, _ = vars_dataset_connection(vars, dataset, GPT_KEY)
     # print(match)
 
-    res, yes = dataset_header_dkg("demographic category,demographic value,total cases,percent cases,deaths,percent deaths,percent_of_ca_population,report_date",GPT_KEY)
-    print(res)
+    # res, yes = dataset_header_dkg("countyFIPS,County Name,State,StateFIPS,2020-01-22",GPT_KEY)
+    # print(res)
     # for latex_var in match:
     #     print(latex_var, match[latex_var])
     #     print('\n')
