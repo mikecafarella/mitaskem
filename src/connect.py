@@ -40,7 +40,6 @@ def index_text(text: str) -> str:
 
 
 
-
 def get_gpt_match(prompt, key, model="text-davinci-002"):
     # mykey = b'Z1QFxceGL_s6karbgfNFyuOdQ__m5TfHR7kuLPJChgs='
     # enc = b'gAAAAABjRh0iNbsVb6_DKSHPmlg3jc4svMDEmKuYd-DcoTxEbESYI9F8tm8anjbsTsZYHz_avZudJDBdOXSHYZqKmhdoBcJd919hCffSMg6WFYP12hpvI7EeNppGFNoZsLGnDM5d6AOUeRVeIc2FbmB_j0vvcIwuEQ=='
@@ -290,6 +289,36 @@ def text_column_connection(text, column, gpt_key):
     except OpenAIError as err:
         return f"OpenAI connection error: {err}",False
 
+def dataset_header_dkg(header, gpt_key=''):
+    """
+    Grounding the column header to DKG terms
+    :param header: Dataset header string seperated with comma
+    :return: Matches column name to DKG
+    """
+    if header=="":
+        return f"Empty dataset input", False
+    row1 = header.split("\n")[0]
+    cols = row1.split(",")
+    col_ant = {}
+
+    for col in cols:
+        # print(f"looking up {col}")
+        results = []
+        results.extend(get_mira_dkg_term(col, ['id', 'name'],True))
+        seen = set()
+        for res in results:
+            seen.add(res[0])
+
+        ans = get_gpt_match(f"What's the top 2 similar terms of \"{col}\" in epidemiology? Please list these terms separated by comma.", gpt_key, model="text-davinci-003")
+        for e in ans.split(","):
+            for res in get_mira_dkg_term(e, ['id', 'name']):
+                if not res[0] in seen:
+                    results.append(res)
+                    seen.add(res[0])
+        col_ant[col] = results
+    return json.dumps(col_ant), True
+
+
 
 def select_text(lines, s, t, buffer, interactive=True):
     ret_s = ""
@@ -478,11 +507,13 @@ def code_dkg_connection(dkg_targets, gpt_key, ontology_terms=DEFAULT_TERMS, onto
 
 if __name__ == "__main__":
     # code_dkg_connection("population", "") # GPT key
-    vars = read_text_from_file('../demos/2023-02-01/jan_demo_intermediate.json')
-    dataset = read_text_from_file('../resources/dataset/headers.txt')
-    match, _ = vars_dataset_connection(vars, dataset, GPT_KEY)
-    print(match)
+    # vars = read_text_from_file('../demos/2023-02-01/jan_demo_intermediate.json')
+    # dataset = read_text_from_file('../resources/dataset/headers.txt')
+    # match, _ = vars_dataset_connection(vars, dataset, GPT_KEY)
+    # print(match)
 
+    res, yes = dataset_header_dkg("demographic category,demographic value,total cases,percent cases,deaths,percent deaths,percent_of_ca_population,report_date",GPT_KEY)
+    print(res)
     # for latex_var in match:
     #     print(latex_var, match[latex_var])
     #     print('\n')
