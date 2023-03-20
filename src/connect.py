@@ -246,7 +246,7 @@ def code_text_connection(code, text, gpt_key, interactive = False):
             match = get_gpt_match(prompt, gpt_key)
             ilist = extract_ints(match)
             ret_s = select_text(tlist, int(ilist[0]), int(ilist[-1]), 1, interactive)
-            if interactive: 
+            if interactive:
                 print("Best description for python function {} is in lines {}-{}:".format(t, ilist[0], ilist[-1]))
                 print(ret_s)
                 print("---------------------------------------")
@@ -302,19 +302,22 @@ def dataset_header_dkg(header, gpt_key=''):
     col_ant = {}
 
     for col in cols:
-        # print(f"looking up {col}")
+        print(f"looking up {col}")
         results = []
         results.extend(get_mira_dkg_term(col, ['id', 'name'],True))
+        # print(results)
         seen = set()
         for res in results:
             seen.add(res[0])
 
         ans = get_gpt_match(f"What's the top 2 similar terms of \"{col}\" in epidemiology? Please list these terms separated by comma.", gpt_key, model="text-davinci-003")
-        # print(ans)
+        print(f"relevant items found from GPT: {ans}")
         for e in ans.split(","):
             # print(e)
             for res in get_mira_dkg_term(e, ['id', 'name'],True):
                 # print(res)
+                if not res:
+                    break
                 if not res[0] in seen:
                     results.append(res)
                     seen.add(res[0])
@@ -379,7 +382,7 @@ def vars_dataset_connection(json_str, dataset_str, gpt_key):
         cols = cols.split(",")
         dataset_name_dict[i] = name
         for col in cols:
-            dataset_s += str(i) + "_" + col.strip() + "\n"
+            dataset_s += str(i) + "___" + col.strip() + "\n"
         i += 1
 
     try:
@@ -389,16 +392,17 @@ def vars_dataset_connection(json_str, dataset_str, gpt_key):
             ans = ans.split('\n')
 
             for j in range(len(ans)):
-                toks = ans[j].split("_")
+                toks = ans[j].split("___")
+                # print(toks)
                 if len(toks) < 2:
                     ans[j] = ""
                 else:
                     d_name = dataset_name_dict[int(toks[0])]
-                    col_name = "_".join(toks[k] for k in range(1, len(toks)))
+                    col_name = "___".join(toks[k] for k in range(1, len(toks)))
                     ans[j] = [d_name, col_name]
 
             vs_data[var_list[i]['id']] = ans
-            #print(f"assigned value {ans} to key {var_list[i]['id']}")
+            # print(f"assigned value {ans} to key {var_list[i]['id']}")
 
     except OpenAIError as err:
         return f"OpenAI connection error: {err}", False
@@ -406,7 +410,7 @@ def vars_dataset_connection(json_str, dataset_str, gpt_key):
     for item in json_list:
         if item["type"] != "variable":
             continue
-        
+
         id = item["id"]
         item["data_annotations"] = vs_data[id]
 
@@ -423,11 +427,11 @@ def vars_dataset_connection(json_str, dataset_str, gpt_key):
     new_json_str = json.dumps(json_list)
 
     return new_json_str, True
-    
+
 
 def vars_formula_connection(json_str, formula, gpt_key):
     json_list = ast.literal_eval(json_str)
-    
+
     var_list = list(filter(lambda x: x["type"] == "variable", json_list))
 
     prompt = get_formula_var_prompt(formula)
@@ -462,7 +466,7 @@ def vars_formula_connection(json_str, formula, gpt_key):
             #         current_matches = latex_var_set.get(latex_var, [])
             #         current_matches.append(desc["id"])
             #         latex_var_set[latex_var] = current_matches
-                    
+
 
         matches_str = ",".join([("\"" + var + "\" : [\"" + "\",\"".join([str(item) for item in latex_var_set[var]]) + "\"]") for var in latex_var_set])
 
@@ -510,13 +514,19 @@ def code_dkg_connection(dkg_targets, gpt_key, ontology_terms=DEFAULT_TERMS, onto
 
 if __name__ == "__main__":
     # code_dkg_connection("population", "") # GPT key
-    # vars = read_text_from_file('../demos/2023-02-01/jan_demo_intermediate.json')
+    # vars = read_text_from_file('../demos/2023-03-19/mar_demo_intermediate.json')
     # dataset = read_text_from_file('../resources/dataset/headers.txt')
     # match, _ = vars_dataset_connection(vars, dataset, GPT_KEY)
     # print(match)
 
-    # res, yes = dataset_header_dkg("countyFIPS,County Name,State,StateFIPS,2020-01-22",GPT_KEY)
-    # print(res)
+    res, yes = dataset_header_dkg("demographic_category,demographic_value,total_cases",GPT_KEY)
+    print(res)
+
+    # col = "people"
+    # ans = get_gpt_match(
+    #     f"What's the top 2 similar terms of \"{col}\" in epidemiology? Please list these terms separated by comma.",
+    #     GPT_KEY, model="text-davinci-003")
+    # print(ans)
     # for latex_var in match:
     #     print(latex_var, match[latex_var])
     #     print('\n')

@@ -1,6 +1,5 @@
 resources/jan_hackathon_scenario_1/tables/
 resources/jan_hackathon_scenario_1/.ipynb_checkpoints/
-api_use_examples/
 src/gpt.py
 src/__pycache__/
 resources/xdd_example_pdfs/
@@ -10,3 +9,5 @@ examples/
 env/
 src/gpt_key.py
 src/pyacset_gen/__pycache__/
+/demos/2023-03-19/gpt_key.py
+/demos/2023-02-01/gpt_key.py
