@@ -1,0 +1,89 @@
+R:190348269, Bucky: time 
+R:159895595, SEIR: spatially distributed 
+E:-337831219, S: fraction of the population 
+E:-1921441554, asym frac: percentage of infections 
+E:392549189, asym frac: percentage of infections 
+E:-1790112729, asym frac: percentage of infections 
+R:1852131141, frac: onset 
+E:-1699720124, sym: fraction of transmission prior to symptom onset frac trans before sym 
+E:1004272435, OT20: upper bound of [PTC 
+E:-919484541, OT20: midpoint between the lower bound of [BCB 
+E:-1986634077, OT20: midpoint between the lower bound of [BCB 
+E:2056796685, PTC: midpoint between the lower bound of [BCB 
+E:908668097, PTC: upper bound of [PTC 
+E:-778648429, PTC: upper bound of [PTC 
+E:794209735, BCB: midpoint between the lower bound of [BCB 
+E:-1015169584, BCB: upper bound of [PTC 
+E:1628974361, BCB: upper bound of [PTC 
+E:-154444734, asym: relative infectiousness of asymptomatic individuals 
+R:-1574038365, asym: rel inf 
+E:-792400196, asym: rel inf 
+E:1705111281, Ts: time in days from exposure to onset of symptoms 
+E:1933623000, Severity: time in days from exposure to onset of symptoms 
+E:-870819115, D REPORT TIME: number of days between death and reporting 
+E:-1832746855, Tg: period of time (in days 
+E:1065347612, Tg: mean generation interval 
+E:149379061, Tg: mean generation interval 
+R:1017467073, Response (DCIPHER): CDC's Data Collation and Integration for Public Health Event Response 
+E:371302679, H TIME: number of days 
+E:352362914, HLW: value 
+E:1806172056, value: +20 
+E:-358159169, CHR: number of individuals 
+R:-1701961284, CHR: hospitalization-severity ratio 
+E:1875304339, CHR: case 
+E:-348336884, CHR: case 
+E:1881460677, CFR: case fatality ratio 
+E:1234594209, CFR: number of individuals 
+E:-1776223755, CFR: number of individuals 
+R:332363993, Mobility: country 
+E:-1974911268, matrix: 16 x 16 
+E:1791754575, NPIs: effect of NPIs 
+R:622447771, NPIs: model 
+R:-1225449041, Reduction: mask wearing  Reduction of size of public gatherings Closing businesses 
+E:-366044198, Hopkins University: Center for Systems Science and Engineering 
+E:-485241326, Hopkins University: Center for Systems Science and Engineering 
+E:-1080012907, Hopkins University: Center for Systems Science and Engineering 
+E:-1334255455, Engineering (CSSE): Center for Systems Science and Engineering 
+E:1360514627, E: fraction of the population 
+E:-1448492043, E: fraction of the population 
+R:-506465753, E: exposed 
+E:1491480210, E: exposed 
+E:-754456012, S: fraction of the population 
+E:1082544296, I: fraction of the population 
+R:1173208709, E: exposed 
+E:-1853256299, R: fraction of the population 
+E:-662247115, R: fraction of the population 
+E:812107482, R: fraction of the population 
+E:1572319907, I: fraction of the population 
+E:1453214595, I: fraction of the population 
+E:-1443404403, I: fraction of the population 
+E:-653097281, R: fraction of the population 
+E:-605902488, I: compartments E 
+R:1214187488, sigma alpha: Viral latent period 
+R:-499529494, SEIR: stratified 
+R:855559718, j betai: location j 
+R:960004975, gamma: mild symptoms recover from the virus at a rate gamma 
+R:2082097276, gamma: virus at a rate 
+E:-2117473741, gamma: population 
+R:-1775407602, gamma: population 
+E:415297888, Modeling: important component in accurately modeling non-pharmaceutical Interventions 
+R:1972177188, Interventions (NPIs): accurately modeling non-pharmaceutical Interventions 
+R:-805734678, Interventions (NPIs): modeling non-pharmaceutical 
+R:-1355572949, Interventions (NPIs): modeling non-pharmaceutical 
+R:1741682726, Interventions (NPIs): modeling non-pharmaceutical 
+E:592467200, COVID: spatial dynamics of COVID spread 
+E:737294122, Bucky: parameterization of the model 
+R:-1676483649, j.: index 
+R:1340323145, i: index 
+E:-79999377, Bucky: susceptible and exposed populations, followed by one of three possible infected states 
+E:-1397447272, I: susceptible and exposed populations, followed by one of three possible infected states 
+E:-2087133106, I: susceptible and exposed populations, followed by one of three possible infected states 
+R:1218866417, R0: basic reproductive number 
+E:-2072614022, NPI: ratios relating the components of the contact matrices 
+E:1772689243, NPI: School Closure 
+E:1511867659, NPI: classification 
+E:182588837, NPI: classification 
+E:930780346, NPI: Social distancing 
+E:1197920639, California: are shown below for the United States, California 
+R:1733093926, Dingel: Green 
+E:-82795796, Infection: journal of Infection 
