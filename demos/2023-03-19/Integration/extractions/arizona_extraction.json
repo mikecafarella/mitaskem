@@ -1,0 +1,2073 @@
+[
+    {
+        "id": "R:190348269",
+        "statement_text": "time ",
+        "variable": {
+            "text": "Bucky",
+            "dkg_annotations": [
+                [
+                    "Bahamian",
+                    "ncit:C67271",
+                    0.7038567066192627
+                ]
+            ]
+        },
+        "description": {
+            "text": "time",
+            "dkg_annotations": [
+                [
+                    "time since time scale zero",
+                    "apollosv:00000272",
+                    0.8945620059967041
+                ]
+            ]
+        }
+    },
+    {
+        "id": "R:159895595",
+        "statement_text": "spatially distributed ",
+        "variable": {
+            "text": "SEIR",
+            "dkg_annotations": [
+                [
+                    "two-strain Susceptible-Infectious-Resistant model",
+                    "apollosv:00000553",
+                    0.6902380585670471
+                ]
+            ]
+        },
+        "description": {
+            "text": "spatially distributed",
+            "dkg_annotations": [
+                [
+                    "triangular distribution",
+                    "apollosv:00000081",
+                    0.7112079858779907
+                ]
+            ]
+        }
+    },
+    {
+        "id": "E:-337831219",
+        "statement_text": "fraction of the population that could be potentially",
+        "variable": {
+            "text": "S",
+            "dkg_annotations": [
+                [
+                    "Meruvax I",
+                    "vo:0003109",
+                    0.7847759127616882
+                ]
+            ]
+        },
+        "description": {
+            "text": "fraction of the population",
+            "dkg_annotations": [
+                [
+                    "count of simulated population",
+                    "apollosv:00000022",
+                    0.8330355286598206
+                ]
+            ]
+        },
+        "context": "that could be potentially"
+    },
+    {
+        "id": "E:-1921441554",
+        "statement_text": "percentage of infections that are asymptomatic",
+        "variable": {
+            "text": "asym frac",
+            "dkg_annotations": [
+                [
+                    "M-M-R I",
+                    "vo:0003118",
+                    0.5871734023094177
+                ]
+            ]
+        },
+        "description": {
+            "text": "percentage of infections",
+            "dkg_annotations": [
+                [
+                    "percentage of cases",
+                    "cemo:percentage_of_cases",
+                    0.8812347650527954
+                ]
+            ]
+        },
+        "context": "that are asymptomatic"
+    },
+    {
+        "id": "E:392549189",
+        "statement_text": "percentage of infections that are asymptomatic",
+        "variable": {
+            "text": "asym frac",
+            "dkg_annotations": [
+                [
+                    "M-M-R I",
+                    "vo:0003118",
+                    0.5871734023094177
+                ]
+            ]
+        },
+        "description": {
+            "text": "percentage of infections",
+            "dkg_annotations": [
+                [
+                    "percentage of cases",
+                    "cemo:percentage_of_cases",
+                    0.8812347650527954
+                ]
+            ]
+        },
+        "context": "that are asymptomatic"
+    },
+    {
+        "id": "E:-1790112729",
+        "statement_text": "percentage of infections that are asymptomatic",
+        "variable": {
+            "text": "asym frac",
+            "dkg_annotations": [
+                [
+                    "M-M-R I",
+                    "vo:0003118",
+                    0.5871734023094177
+                ]
+            ]
+        },
+        "description": {
+            "text": "percentage of infections",
+            "dkg_annotations": [
+                [
+                    "percentage of cases",
+                    "cemo:percentage_of_cases",
+                    0.8812347650527954
+                ]
+            ]
+        },
+        "context": "that are asymptomatic"
+    },
+    {
+        "id": "R:1852131141",
+        "statement_text": "onset ",
+        "variable": {
+            "text": "frac",
+            "dkg_annotations": [
+                [
+                    "Mowa Band of Choctaw",
+                    "ncit:C43943",
+                    0.524211049079895
+                ]
+            ]
+        },
+        "description": {
+            "text": "onset",
+            "dkg_annotations": [
+                [
+                    "prodromal period duration",
+                    "apollosv:00000482",
+                    0.6986603140830994
+                ]
+            ]
+        }
+    },
+    {
+        "id": "E:-1699720124",
+        "statement_text": "fraction of transmission prior to symptom onset frac trans before sym before they become symptomatic",
+        "variable": {
+            "text": "sym",
+            "dkg_annotations": [
+                [
+                    "Meruvax I",
+                    "vo:0003109",
+                    0.6507763862609863
+                ]
+            ]
+        },
+        "description": {
+            "text": "fraction of transmission prior to symptom onset frac trans before sym",
+            "dkg_annotations": [
+                [
+                    "onset of symptom to hospitalization",
+                    "cemo:onset_of_symptom_to_hospitalization",
+                    0.7746953368186951
+                ]
+            ]
+        },
+        "context": "before they become symptomatic"
+    },
+    {
+        "id": "E:1004272435",
+        "statement_text": "upper bound of [PTC which corresponds to the estimates",
+        "variable": {
+            "text": "OT20"
+        },
+        "description": {
+            "text": "upper bound of [PTC",
+            "dkg_annotations": [
+                [
+                    "upper bound",
+                    "apollosv:00000447",
+                    0.8260549902915955
+                ]
+            ]
+        },
+        "context": "which corresponds to the estimates"
+    },
+    {
+        "id": "E:-919484541",
+        "statement_text": "midpoint between the lower bound of [BCB for this parameter",
+        "variable": {
+            "text": "OT20"
+        },
+        "description": {
+            "text": "midpoint between the lower bound of [BCB",
+            "dkg_annotations": [
+                [
+                    "Sponsor-Investigator",
+                    "ncit:C142695",
+                    0.7594632506370544
+                ]
+            ]
+        },
+        "context": "for this parameter"
+    },
+    {
+        "id": "E:-1986634077",
+        "statement_text": "midpoint between the lower bound of [BCB for this parameter",
+        "variable": {
+            "text": "OT20"
+        },
+        "description": {
+            "text": "midpoint between the lower bound of [BCB",
+            "dkg_annotations": [
+                [
+                    "Sponsor-Investigator",
+                    "ncit:C142695",
+                    0.7594632506370544
+                ]
+            ]
+        },
+        "context": "for this parameter"
+    },
+    {
+        "id": "E:2056796685",
+        "statement_text": "midpoint between the lower bound of [BCB which corresponds to the estimates",
+        "variable": {
+            "text": "PTC",
+            "dkg_annotations": [
+                [
+                    "Prostate cancer DNA vaccine psig-3P-Fc encoding 3P(hPSM, hPAP, or hPSA)-Fc fusion protein",
+                    "vo:0004449",
+                    0.5465795993804932
+                ]
+            ]
+        },
+        "description": {
+            "text": "midpoint between the lower bound of [BCB",
+            "dkg_annotations": [
+                [
+                    "Sponsor-Investigator",
+                    "ncit:C142695",
+                    0.7594632506370544
+                ]
+            ]
+        },
+        "context": "which corresponds to the estimates"
+    },
+    {
+        "id": "E:908668097",
+        "statement_text": "upper bound of [PTC which corresponds to the estimates",
+        "variable": {
+            "text": "PTC",
+            "dkg_annotations": [
+                [
+                    "Prostate cancer DNA vaccine psig-3P-Fc encoding 3P(hPSM, hPAP, or hPSA)-Fc fusion protein",
+                    "vo:0004449",
+                    0.5465795993804932
+                ]
+            ]
+        },
+        "description": {
+            "text": "upper bound of [PTC",
+            "dkg_annotations": [
+                [
+                    "upper bound",
+                    "apollosv:00000447",
+                    0.8260549902915955
+                ]
+            ]
+        },
+        "context": "which corresponds to the estimates"
+    },
+    {
+        "id": "E:-778648429",
+        "statement_text": "upper bound of [PTC which corresponds to the estimates",
+        "variable": {
+            "text": "PTC",
+            "dkg_annotations": [
+                [
+                    "Prostate cancer DNA vaccine psig-3P-Fc encoding 3P(hPSM, hPAP, or hPSA)-Fc fusion protein",
+                    "vo:0004449",
+                    0.5465795993804932
+                ]
+            ]
+        },
+        "description": {
+            "text": "upper bound of [PTC",
+            "dkg_annotations": [
+                [
+                    "upper bound",
+                    "apollosv:00000447",
+                    0.8260549902915955
+                ]
+            ]
+        },
+        "context": "which corresponds to the estimates"
+    },
+    {
+        "id": "E:794209735",
+        "statement_text": "midpoint between the lower bound of [BCB for this parameter",
+        "variable": {
+            "text": "BCB",
+            "dkg_annotations": [
+                [
+                    "LpnA",
+                    "vo:0011079",
+                    0.5031335353851318
+                ]
+            ]
+        },
+        "description": {
+            "text": "midpoint between the lower bound of [BCB",
+            "dkg_annotations": [
+                [
+                    "Sponsor-Investigator",
+                    "ncit:C142695",
+                    0.7594632506370544
+                ]
+            ]
+        },
+        "context": "for this parameter"
+    },
+    {
+        "id": "E:-1015169584",
+        "statement_text": "upper bound of [PTC which corresponds to the estimates",
+        "variable": {
+            "text": "BCB",
+            "dkg_annotations": [
+                [
+                    "LpnA",
+                    "vo:0011079",
+                    0.5031335353851318
+                ]
+            ]
+        },
+        "description": {
+            "text": "upper bound of [PTC",
+            "dkg_annotations": [
+                [
+                    "upper bound",
+                    "apollosv:00000447",
+                    0.8260549902915955
+                ]
+            ]
+        },
+        "context": "which corresponds to the estimates"
+    },
+    {
+        "id": "E:1628974361",
+        "statement_text": "upper bound of [PTC which corresponds to the estimates",
+        "variable": {
+            "text": "BCB",
+            "dkg_annotations": [
+                [
+                    "LpnA",
+                    "vo:0011079",
+                    0.5031335353851318
+                ]
+            ]
+        },
+        "description": {
+            "text": "upper bound of [PTC",
+            "dkg_annotations": [
+                [
+                    "upper bound",
+                    "apollosv:00000447",
+                    0.8260549902915955
+                ]
+            ]
+        },
+        "context": "which corresponds to the estimates"
+    },
+    {
+        "id": "E:-154444734",
+        "statement_text": "relative infectiousness of asymptomatic individuals ",
+        "variable": {
+            "text": "asym",
+            "dkg_annotations": [
+                [
+                    "Gnd",
+                    "vo:0011206",
+                    0.5487262010574341
+                ]
+            ]
+        },
+        "description": {
+            "text": "relative infectiousness of asymptomatic individuals",
+            "dkg_annotations": [
+                [
+                    "average rate of infectious contacts",
+                    "cemo:average_rate_of_infectious_contacts",
+                    0.8055423498153687
+                ]
+            ]
+        }
+    },
+    {
+        "id": "R:-1574038365",
+        "statement_text": "rel inf ",
+        "variable": {
+            "text": "asym",
+            "dkg_annotations": [
+                [
+                    "Gnd",
+                    "vo:0011206",
+                    0.5487262010574341
+                ]
+            ]
+        },
+        "description": {
+            "text": "rel inf",
+            "dkg_annotations": [
+                [
+                    "SII B.1.351",
+                    "vo:0005333",
+                    0.5281997919082642
+                ]
+            ]
+        }
+    },
+    {
+        "id": "E:-792400196",
+        "statement_text": "rel inf ",
+        "variable": {
+            "text": "asym",
+            "dkg_annotations": [
+                [
+                    "Gnd",
+                    "vo:0011206",
+                    0.5487262010574341
+                ]
+            ]
+        },
+        "description": {
+            "text": "rel inf",
+            "dkg_annotations": [
+                [
+                    "SII B.1.351",
+                    "vo:0005333",
+                    0.5281997919082642
+                ]
+            ]
+        }
+    },
+    {
+        "id": "E:1705111281",
+        "statement_text": "time in days from exposure to onset of symptoms in days",
+        "variable": {
+            "text": "Ts",
+            "dkg_annotations": [
+                [
+                    "pcDNA3-MCC/ST",
+                    "vo:0004615",
+                    0.5528414845466614
+                ]
+            ]
+        },
+        "description": {
+            "text": "time in days from exposure to onset of symptoms",
+            "dkg_annotations": [
+                [
+                    "onset of symptom to hospitalization",
+                    "cemo:onset_of_symptom_to_hospitalization",
+                    0.8577179908752441
+                ]
+            ]
+        },
+        "context": "in days"
+    },
+    {
+        "id": "E:1933623000",
+        "statement_text": "time in days from exposure to onset of symptoms in days",
+        "variable": {
+            "text": "Severity",
+            "dkg_annotations": [
+                [
+                    "Death due to Disease Progression",
+                    "ncit:C168970",
+                    0.6269740462303162
+                ]
+            ]
+        },
+        "description": {
+            "text": "time in days from exposure to onset of symptoms",
+            "dkg_annotations": [
+                [
+                    "onset of symptom to hospitalization",
+                    "cemo:onset_of_symptom_to_hospitalization",
+                    0.8577179908752441
+                ]
+            ]
+        },
+        "context": "in days"
+    },
+    {
+        "id": "E:-870819115",
+        "statement_text": "number of days between death and reporting ",
+        "variable": {
+            "text": "D REPORT TIME",
+            "dkg_annotations": [
+                [
+                    "time since time scale zero",
+                    "apollosv:00000272",
+                    0.7092307209968567
+                ]
+            ]
+        },
+        "description": {
+            "text": "number of days between death and reporting"
+        }
+    },
+    {
+        "id": "E:-1832746855",
+        "statement_text": "period of time (in days for a person",
+        "variable": {
+            "text": "Tg",
+            "dkg_annotations": [
+                [
+                    "WD",
+                    "vo:0011290",
+                    0.5086898803710938
+                ]
+            ]
+        },
+        "description": {
+            "text": "period of time (in days",
+            "dkg_annotations": [
+                [
+                    "vaccination-challenge interval in days",
+                    "vo:0001203",
+                    0.794806182384491
+                ]
+            ]
+        },
+        "context": "for a person"
+    },
+    {
+        "id": "E:1065347612",
+        "statement_text": "mean generation interval ",
+        "variable": {
+            "text": "Tg",
+            "dkg_annotations": [
+                [
+                    "WD",
+                    "vo:0011290",
+                    0.5086898803710938
+                ]
+            ]
+        },
+        "description": {
+            "text": "mean generation interval",
+            "dkg_annotations": [
+                [
+                    "generation interval",
+                    "cemo:generation_interval",
+                    0.913025975227356
+                ]
+            ]
+        }
+    },
+    {
+        "id": "E:149379061",
+        "statement_text": "mean generation interval for a person",
+        "variable": {
+            "text": "Tg",
+            "dkg_annotations": [
+                [
+                    "WD",
+                    "vo:0011290",
+                    0.5086898803710938
+                ]
+            ]
+        },
+        "description": {
+            "text": "mean generation interval",
+            "dkg_annotations": [
+                [
+                    "generation interval",
+                    "cemo:generation_interval",
+                    0.913025975227356
+                ]
+            ]
+        },
+        "context": "for a person"
+    },
+    {
+        "id": "R:1017467073",
+        "statement_text": "CDC's Data Collation and Integration for Public Health Event Response ",
+        "variable": {
+            "text": "Response (DCIPHER)",
+            "dkg_annotations": [
+                [
+                    "immune response profile",
+                    "vo:0005308",
+                    0.8189837336540222
+                ]
+            ]
+        },
+        "description": {
+            "text": "CDC's Data Collation and Integration for Public Health Event Response"
+        }
+    },
+    {
+        "id": "E:371302679",
+        "statement_text": "number of days ",
+        "variable": {
+            "text": "H TIME",
+            "dkg_annotations": [
+                [
+                    "time since time scale zero",
+                    "apollosv:00000272",
+                    0.7241774201393127
+                ]
+            ]
+        },
+        "description": {
+            "text": "number of days",
+            "dkg_annotations": [
+                [
+                    "number of tests",
+                    "cemo:number_of_tests",
+                    0.8280848860740662
+                ]
+            ]
+        }
+    },
+    {
+        "id": "E:352362914",
+        "statement_text": "value ",
+        "variable": {
+            "text": "HLW",
+            "dkg_annotations": [
+                [
+                    "Gnd",
+                    "vo:0011206",
+                    0.6764112114906311
+                ]
+            ]
+        },
+        "description": {
+            "text": "value",
+            "dkg_annotations": [
+                [
+                    "maximum value",
+                    "apollosv:00000433",
+                    0.8762068152427673
+                ]
+            ]
+        }
+    },
+    {
+        "id": "E:1806172056",
+        "statement_text": "+20 ",
+        "variable": {
+            "text": "value",
+            "dkg_annotations": [
+                [
+                    "maximum value",
+                    "apollosv:00000433",
+                    0.8762068152427673
+                ]
+            ]
+        },
+        "value": {
+            "text": "+20",
+            "dkg_annotations": [
+                [
+                    "CP15/60",
+                    "vo:0011309",
+                    0.6704511642456055
+                ]
+            ]
+        }
+    },
+    {
+        "id": "E:-358159169",
+        "statement_text": "number of individuals that are severe and necessitate hospitalization",
+        "variable": {
+            "text": "CHR",
+            "dkg_annotations": [
+                [
+                    "GatA",
+                    "vo:0010879",
+                    0.6231651306152344
+                ]
+            ]
+        },
+        "description": {
+            "text": "number of individuals",
+            "dkg_annotations": [
+                [
+                    "number of cases by testing",
+                    "cemo:number_of_cases_by_testing",
+                    0.8549768328666687
+                ]
+            ]
+        },
+        "context": "that are severe and necessitate hospitalization"
+    },
+    {
+        "id": "R:-1701961284",
+        "statement_text": "hospitalization-severity ratio ",
+        "variable": {
+            "text": "CHR",
+            "dkg_annotations": [
+                [
+                    "GatA",
+                    "vo:0010879",
+                    0.6231651306152344
+                ]
+            ]
+        },
+        "description": {
+            "text": "hospitalization-severity ratio",
+            "dkg_annotations": [
+                [
+                    "male-to-female ratio",
+                    "cemo:male-to-female_ratio",
+                    0.8008677959442139
+                ]
+            ]
+        }
+    },
+    {
+        "id": "E:1875304339",
+        "statement_text": "case ",
+        "variable": {
+            "text": "CHR",
+            "dkg_annotations": [
+                [
+                    "GatA",
+                    "vo:0010879",
+                    0.6231651306152344
+                ]
+            ]
+        },
+        "description": {
+            "text": "case",
+            "dkg_annotations": [
+                [
+                    "case series",
+                    "apollosv:00000558",
+                    0.8418106436729431
+                ]
+            ]
+        }
+    },
+    {
+        "id": "E:-348336884",
+        "statement_text": "case that are severe and necessitate hospitalization",
+        "variable": {
+            "text": "CHR",
+            "dkg_annotations": [
+                [
+                    "GatA",
+                    "vo:0010879",
+                    0.6231651306152344
+                ]
+            ]
+        },
+        "description": {
+            "text": "case",
+            "dkg_annotations": [
+                [
+                    "case series",
+                    "apollosv:00000558",
+                    0.8418106436729431
+                ]
+            ]
+        },
+        "context": "that are severe and necessitate hospitalization"
+    },
+    {
+        "id": "E:1881460677",
+        "statement_text": "case fatality ratio ",
+        "variable": {
+            "text": "CFR",
+            "dkg_annotations": [
+                [
+                    "mortality rate",
+                    "apollosv:00000445",
+                    0.6657055020332336
+                ]
+            ]
+        },
+        "description": {
+            "text": "case fatality ratio",
+            "dkg_annotations": [
+                [
+                    "Case Fatality Rate",
+                    "ncit:C173779",
+                    0.9195195436477661
+                ]
+            ]
+        }
+    },
+    {
+        "id": "E:1234594209",
+        "statement_text": "number of individuals that are severe and necessitate hospitalization",
+        "variable": {
+            "text": "CFR",
+            "dkg_annotations": [
+                [
+                    "mortality rate",
+                    "apollosv:00000445",
+                    0.6657055020332336
+                ]
+            ]
+        },
+        "description": {
+            "text": "number of individuals",
+            "dkg_annotations": [
+                [
+                    "number of cases by testing",
+                    "cemo:number_of_cases_by_testing",
+                    0.8549768328666687
+                ]
+            ]
+        },
+        "context": "that are severe and necessitate hospitalization"
+    },
+    {
+        "id": "E:-1776223755",
+        "statement_text": "number of individuals that are severe and necessitate hospitalization",
+        "variable": {
+            "text": "CFR",
+            "dkg_annotations": [
+                [
+                    "mortality rate",
+                    "apollosv:00000445",
+                    0.6657055020332336
+                ]
+            ]
+        },
+        "description": {
+            "text": "number of individuals",
+            "dkg_annotations": [
+                [
+                    "number of cases by testing",
+                    "cemo:number_of_cases_by_testing",
+                    0.8549768328666687
+                ]
+            ]
+        },
+        "context": "that are severe and necessitate hospitalization"
+    },
+    {
+        "id": "R:332363993",
+        "statement_text": "country ",
+        "variable": {
+            "text": "Mobility",
+            "dkg_annotations": [
+                [
+                    "per capita mobility",
+                    "cemo:per_capita_mobility",
+                    0.6922377943992615
+                ]
+            ]
+        },
+        "description": {
+            "text": "country",
+            "dkg_annotations": [
+                [
+                    "country",
+                    "vo:0010632",
+                    1
+                ]
+            ]
+        }
+    },
+    {
+        "id": "E:-1974911268",
+        "statement_text": "16 x 16 ",
+        "variable": {
+            "text": "matrix",
+            "dkg_annotations": [
+                [
+                    "M matrix protein",
+                    "vo:0011170",
+                    0.7306210398674011
+                ]
+            ]
+        },
+        "value": {
+            "text": "16 x 16",
+            "dkg_annotations": [
+                [
+                    "CP15/60",
+                    "vo:0011309",
+                    0.6713216304779053
+                ]
+            ]
+        }
+    },
+    {
+        "id": "E:1791754575",
+        "statement_text": "effect of NPIs ",
+        "variable": {
+            "text": "NPIs",
+            "dkg_annotations": [
+                [
+                    "Social Distancing",
+                    "ncit:C173636",
+                    0.6251343488693237
+                ]
+            ]
+        },
+        "description": {
+            "text": "effect of NPIs",
+            "dkg_annotations": [
+                [
+                    "simulation of organism awaiting effect of control measure",
+                    "apollosv:00000059",
+                    0.8064908385276794
+                ]
+            ]
+        }
+    },
+    {
+        "id": "R:622447771",
+        "statement_text": "model ",
+        "variable": {
+            "text": "NPIs",
+            "dkg_annotations": [
+                [
+                    "Social Distancing",
+                    "ncit:C173636",
+                    0.6251343488693237
+                ]
+            ]
+        },
+        "description": {
+            "text": "model",
+            "dkg_annotations": [
+                [
+                    "Susceptible-Infected-Resistant model",
+                    "apollosv:00000549",
+                    0.9977449774742126
+                ]
+            ]
+        }
+    },
+    {
+        "id": "R:-1225449041",
+        "statement_text": "mask wearing  Reduction of size of public gatherings Closing businesses ",
+        "variable": {
+            "text": "Reduction",
+            "dkg_annotations": [
+                [
+                    "CFU reduction assay",
+                    "vo:0000242",
+                    0.7115188837051392
+                ]
+            ]
+        },
+        "description": {
+            "text": "mask wearing  Reduction of size of public gatherings Closing businesses",
+            "dkg_annotations": [
+                [
+                    "number of schools with exposure events",
+                    "cemo:number_of_schools_with_exposure_events",
+                    0.8104686737060547
+                ]
+            ]
+        }
+    },
+    {
+        "id": "E:-366044198",
+        "statement_text": "Center for Systems Science and Engineering ",
+        "variable": {
+            "text": "Hopkins University",
+            "dkg_annotations": [
+                [
+                    "University",
+                    "ncit:C48647",
+                    0.7616034746170044
+                ]
+            ]
+        },
+        "description": {
+            "text": "Center for Systems Science and Engineering"
+        }
+    },
+    {
+        "id": "E:-485241326",
+        "statement_text": "Center for Systems Science and Engineering ",
+        "variable": {
+            "text": "Hopkins University",
+            "dkg_annotations": [
+                [
+                    "University",
+                    "ncit:C48647",
+                    0.7616034746170044
+                ]
+            ]
+        },
+        "description": {
+            "text": "Center for Systems Science and Engineering"
+        }
+    },
+    {
+        "id": "E:-1080012907",
+        "statement_text": "Center for Systems Science and Engineering ",
+        "variable": {
+            "text": "Hopkins University",
+            "dkg_annotations": [
+                [
+                    "University",
+                    "ncit:C48647",
+                    0.7616034746170044
+                ]
+            ]
+        },
+        "description": {
+            "text": "Center for Systems Science and Engineering"
+        }
+    },
+    {
+        "id": "E:-1334255455",
+        "statement_text": "Center for Systems Science and Engineering ",
+        "variable": {
+            "text": "Engineering (CSSE)",
+            "dkg_annotations": [
+                [
+                    "Center for Genetic Engineering and Biotechnology",
+                    "vo:0005218",
+                    0.5307190418243408
+                ]
+            ]
+        },
+        "description": {
+            "text": "Center for Systems Science and Engineering"
+        }
+    },
+    {
+        "id": "E:1360514627",
+        "statement_text": "fraction of the population that has been infected",
+        "variable": {
+            "text": "E",
+            "dkg_annotations": [
+                [
+                    "LolC/E",
+                    "vo:0010921",
+                    1.0000001192092896
+                ]
+            ]
+        },
+        "description": {
+            "text": "fraction of the population",
+            "dkg_annotations": [
+                [
+                    "count of simulated population",
+                    "apollosv:00000022",
+                    0.8330355286598206
+                ]
+            ]
+        },
+        "context": "that has been infected"
+    },
+    {
+        "id": "E:-1448492043",
+        "statement_text": "fraction of the population that has been infected",
+        "variable": {
+            "text": "E",
+            "dkg_annotations": [
+                [
+                    "LolC/E",
+                    "vo:0010921",
+                    1.0000001192092896
+                ]
+            ]
+        },
+        "description": {
+            "text": "fraction of the population",
+            "dkg_annotations": [
+                [
+                    "count of simulated population",
+                    "apollosv:00000022",
+                    0.8330355286598206
+                ]
+            ]
+        },
+        "context": "that has been infected"
+    },
+    {
+        "id": "R:-506465753",
+        "statement_text": "exposed ",
+        "variable": {
+            "text": "E",
+            "dkg_annotations": [
+                [
+                    "LolC/E",
+                    "vo:0010921",
+                    1.0000001192092896
+                ]
+            ]
+        },
+        "description": {
+            "text": "exposed",
+            "dkg_annotations": [
+                [
+                    "exposed contacts",
+                    "cemo:exposed_contacts",
+                    0.8402270674705505
+                ]
+            ]
+        }
+    },
+    {
+        "id": "E:1491480210",
+        "statement_text": "exposed that has been infected",
+        "variable": {
+            "text": "E",
+            "dkg_annotations": [
+                [
+                    "LolC/E",
+                    "vo:0010921",
+                    1.0000001192092896
+                ]
+            ]
+        },
+        "description": {
+            "text": "exposed",
+            "dkg_annotations": [
+                [
+                    "exposed contacts",
+                    "cemo:exposed_contacts",
+                    0.8402270674705505
+                ]
+            ]
+        },
+        "context": "that has been infected"
+    },
+    {
+        "id": "E:-754456012",
+        "statement_text": "fraction of the population that has been infected",
+        "variable": {
+            "text": "S",
+            "dkg_annotations": [
+                [
+                    "Meruvax I",
+                    "vo:0003109",
+                    0.7847759127616882
+                ]
+            ]
+        },
+        "description": {
+            "text": "fraction of the population",
+            "dkg_annotations": [
+                [
+                    "count of simulated population",
+                    "apollosv:00000022",
+                    0.8330355286598206
+                ]
+            ]
+        },
+        "context": "that has been infected"
+    },
+    {
+        "id": "E:1082544296",
+        "statement_text": "fraction of the population that is infective",
+        "variable": {
+            "text": "I",
+            "dkg_annotations": [
+                [
+                    "Meruvax I",
+                    "vo:0003109",
+                    0.994598925113678
+                ]
+            ]
+        },
+        "description": {
+            "text": "fraction of the population",
+            "dkg_annotations": [
+                [
+                    "count of simulated population",
+                    "apollosv:00000022",
+                    0.8330355286598206
+                ]
+            ]
+        },
+        "context": "that is infective"
+    },
+    {
+        "id": "R:1173208709",
+        "statement_text": "exposed ",
+        "variable": {
+            "text": "E",
+            "dkg_annotations": [
+                [
+                    "LolC/E",
+                    "vo:0010921",
+                    1.0000001192092896
+                ]
+            ]
+        },
+        "description": {
+            "text": "exposed",
+            "dkg_annotations": [
+                [
+                    "exposed contacts",
+                    "cemo:exposed_contacts",
+                    0.8402270674705505
+                ]
+            ]
+        }
+    },
+    {
+        "id": "E:-1853256299",
+        "statement_text": "fraction of the population after the latent period",
+        "variable": {
+            "text": "R"
+        },
+        "description": {
+            "text": "fraction of the population",
+            "dkg_annotations": [
+                [
+                    "count of simulated population",
+                    "apollosv:00000022",
+                    0.8330355286598206
+                ]
+            ]
+        },
+        "context": "after the latent period"
+    },
+    {
+        "id": "E:-662247115",
+        "statement_text": "fraction of the population that have been infected",
+        "variable": {
+            "text": "R"
+        },
+        "description": {
+            "text": "fraction of the population",
+            "dkg_annotations": [
+                [
+                    "count of simulated population",
+                    "apollosv:00000022",
+                    0.8330355286598206
+                ]
+            ]
+        },
+        "context": "that have been infected"
+    },
+    {
+        "id": "E:812107482",
+        "statement_text": "fraction of the population that have been infected",
+        "variable": {
+            "text": "R"
+        },
+        "description": {
+            "text": "fraction of the population",
+            "dkg_annotations": [
+                [
+                    "count of simulated population",
+                    "apollosv:00000022",
+                    0.8330355286598206
+                ]
+            ]
+        },
+        "context": "that have been infected"
+    },
+    {
+        "id": "E:1572319907",
+        "statement_text": "fraction of the population that have been infected",
+        "variable": {
+            "text": "I",
+            "dkg_annotations": [
+                [
+                    "Meruvax I",
+                    "vo:0003109",
+                    0.994598925113678
+                ]
+            ]
+        },
+        "description": {
+            "text": "fraction of the population",
+            "dkg_annotations": [
+                [
+                    "count of simulated population",
+                    "apollosv:00000022",
+                    0.8330355286598206
+                ]
+            ]
+        },
+        "context": "that have been infected"
+    },
+    {
+        "id": "E:1453214595",
+        "statement_text": "fraction of the population after the latent period",
+        "variable": {
+            "text": "I",
+            "dkg_annotations": [
+                [
+                    "Meruvax I",
+                    "vo:0003109",
+                    0.994598925113678
+                ]
+            ]
+        },
+        "description": {
+            "text": "fraction of the population",
+            "dkg_annotations": [
+                [
+                    "count of simulated population",
+                    "apollosv:00000022",
+                    0.8330355286598206
+                ]
+            ]
+        },
+        "context": "after the latent period"
+    },
+    {
+        "id": "E:-1443404403",
+        "statement_text": "fraction of the population after the latent period",
+        "variable": {
+            "text": "I",
+            "dkg_annotations": [
+                [
+                    "Meruvax I",
+                    "vo:0003109",
+                    0.994598925113678
+                ]
+            ]
+        },
+        "description": {
+            "text": "fraction of the population",
+            "dkg_annotations": [
+                [
+                    "count of simulated population",
+                    "apollosv:00000022",
+                    0.8330355286598206
+                ]
+            ]
+        },
+        "context": "after the latent period"
+    },
+    {
+        "id": "E:-653097281",
+        "statement_text": "fraction of the population from the infection",
+        "variable": {
+            "text": "R"
+        },
+        "description": {
+            "text": "fraction of the population",
+            "dkg_annotations": [
+                [
+                    "count of simulated population",
+                    "apollosv:00000022",
+                    0.8330355286598206
+                ]
+            ]
+        },
+        "context": "from the infection"
+    },
+    {
+        "id": "E:-605902488",
+        "statement_text": "compartments E in the configuration file",
+        "variable": {
+            "text": "I",
+            "dkg_annotations": [
+                [
+                    "Meruvax I",
+                    "vo:0003109",
+                    0.994598925113678
+                ]
+            ]
+        },
+        "description": {
+            "text": "compartments E",
+            "dkg_annotations": [
+                [
+                    "LolC/E",
+                    "vo:0010921",
+                    0.7746883630752563
+                ]
+            ]
+        },
+        "context": "in the configuration file"
+    },
+    {
+        "id": "R:1214187488",
+        "statement_text": "Viral latent period ",
+        "variable": {
+            "text": "sigma alpha",
+            "dkg_annotations": [
+                [
+                    "beta distribution",
+                    "apollosv:00000078",
+                    0.5320796370506287
+                ]
+            ]
+        },
+        "description": {
+            "text": "Viral latent period",
+            "dkg_annotations": [
+                [
+                    "latent period",
+                    "apollosv:00000118",
+                    0.9029107093811035
+                ]
+            ]
+        }
+    },
+    {
+        "id": "R:-499529494",
+        "statement_text": "stratified ",
+        "variable": {
+            "text": "SEIR",
+            "dkg_annotations": [
+                [
+                    "two-strain Susceptible-Infectious-Resistant model",
+                    "apollosv:00000553",
+                    0.6902380585670471
+                ]
+            ]
+        },
+        "description": {
+            "text": "stratified",
+            "dkg_annotations": [
+                [
+                    "weighted prevalence",
+                    "cemo:weighted_prevalence",
+                    0.5465989112854004
+                ]
+            ]
+        }
+    },
+    {
+        "id": "R:855559718",
+        "statement_text": "location j ",
+        "variable": {
+            "text": "j betai"
+        },
+        "description": {
+            "text": "location j",
+            "dkg_annotations": [
+                [
+                    "location definition",
+                    "apollosv:00000377",
+                    0.6156049370765686
+                ]
+            ]
+        }
+    },
+    {
+        "id": "R:960004975",
+        "statement_text": "mild symptoms recover from the virus at a rate gamma ",
+        "variable": {
+            "text": "gamma",
+            "dkg_annotations": [
+                [
+                    "gamma distribution",
+                    "apollosv:00000255",
+                    0.8174800872802734
+                ]
+            ]
+        },
+        "description": {
+            "text": "mild symptoms recover from the virus at a rate gamma",
+            "dkg_annotations": [
+                [
+                    "rate of cases with at least one comorbidity",
+                    "cemo:rate_of_cases_with_at_least_one_comorbidity",
+                    0.7921196818351746
+                ]
+            ]
+        }
+    },
+    {
+        "id": "R:2082097276",
+        "statement_text": "virus at a rate ",
+        "variable": {
+            "text": "gamma",
+            "dkg_annotations": [
+                [
+                    "gamma distribution",
+                    "apollosv:00000255",
+                    0.8174800872802734
+                ]
+            ]
+        },
+        "description": {
+            "text": "virus at a rate",
+            "dkg_annotations": [
+                [
+                    "rate of cases with at least one comorbidity",
+                    "cemo:rate_of_cases_with_at_least_one_comorbidity",
+                    0.7438991665840149
+                ]
+            ]
+        }
+    },
+    {
+        "id": "E:-2117473741",
+        "statement_text": "population who are",
+        "variable": {
+            "text": "gamma",
+            "dkg_annotations": [
+                [
+                    "gamma distribution",
+                    "apollosv:00000255",
+                    0.8174800872802734
+                ]
+            ]
+        },
+        "description": {
+            "text": "population",
+            "dkg_annotations": [
+                [
+                    "Population Group",
+                    "ncit:C17005",
+                    0.8704078197479248
+                ]
+            ]
+        },
+        "context": "who are"
+    },
+    {
+        "id": "R:-1775407602",
+        "statement_text": "population who are",
+        "variable": {
+            "text": "gamma",
+            "dkg_annotations": [
+                [
+                    "gamma distribution",
+                    "apollosv:00000255",
+                    0.8174800872802734
+                ]
+            ]
+        },
+        "description": {
+            "text": "population",
+            "dkg_annotations": [
+                [
+                    "Population Group",
+                    "ncit:C17005",
+                    0.8704078197479248
+                ]
+            ]
+        },
+        "context": "who are"
+    },
+    {
+        "id": "E:415297888",
+        "statement_text": "important component in accurately modeling non-pharmaceutical Interventions ",
+        "variable": {
+            "text": "Modeling",
+            "dkg_annotations": [
+                [
+                    "computational modeling toolkit",
+                    "apollosv:00000565",
+                    0.807548999786377
+                ]
+            ]
+        },
+        "description": {
+            "text": "important component in accurately modeling non-pharmaceutical Interventions",
+            "dkg_annotations": [
+                [
+                    "non-pharmaceutical interventions",
+                    "cemo:non-pharmaceutical_interventions",
+                    0.7777820229530334
+                ]
+            ]
+        }
+    },
+    {
+        "id": "R:1972177188",
+        "statement_text": "accurately modeling non-pharmaceutical Interventions ",
+        "variable": {
+            "text": "Interventions (NPIs)",
+            "dkg_annotations": [
+                [
+                    "Findings About Events or Interventions Evaluator",
+                    "ncit:C113362",
+                    0.6719470024108887
+                ]
+            ]
+        },
+        "description": {
+            "text": "accurately modeling non-pharmaceutical Interventions",
+            "dkg_annotations": [
+                [
+                    "non-pharmaceutical interventions",
+                    "cemo:non-pharmaceutical_interventions",
+                    0.8553909659385681
+                ]
+            ]
+        }
+    },
+    {
+        "id": "R:-805734678",
+        "statement_text": "modeling non-pharmaceutical ",
+        "variable": {
+            "text": "Interventions (NPIs)",
+            "dkg_annotations": [
+                [
+                    "Findings About Events or Interventions Evaluator",
+                    "ncit:C113362",
+                    0.6719470024108887
+                ]
+            ]
+        },
+        "description": {
+            "text": "modeling non-pharmaceutical",
+            "dkg_annotations": [
+                [
+                    "non-pharmaceutical interventions",
+                    "cemo:non-pharmaceutical_interventions",
+                    0.8080005049705505
+                ]
+            ]
+        }
+    },
+    {
+        "id": "R:-1355572949",
+        "statement_text": "modeling non-pharmaceutical ",
+        "variable": {
+            "text": "Interventions (NPIs)",
+            "dkg_annotations": [
+                [
+                    "Findings About Events or Interventions Evaluator",
+                    "ncit:C113362",
+                    0.6719470024108887
+                ]
+            ]
+        },
+        "description": {
+            "text": "modeling non-pharmaceutical",
+            "dkg_annotations": [
+                [
+                    "non-pharmaceutical interventions",
+                    "cemo:non-pharmaceutical_interventions",
+                    0.8080005049705505
+                ]
+            ]
+        }
+    },
+    {
+        "id": "R:1741682726",
+        "statement_text": "modeling non-pharmaceutical ",
+        "variable": {
+            "text": "Interventions (NPIs)",
+            "dkg_annotations": [
+                [
+                    "Findings About Events or Interventions Evaluator",
+                    "ncit:C113362",
+                    0.6719470024108887
+                ]
+            ]
+        },
+        "description": {
+            "text": "modeling non-pharmaceutical",
+            "dkg_annotations": [
+                [
+                    "non-pharmaceutical interventions",
+                    "cemo:non-pharmaceutical_interventions",
+                    0.8080005049705505
+                ]
+            ]
+        }
+    },
+    {
+        "id": "E:592467200",
+        "statement_text": "spatial dynamics of COVID spread ",
+        "variable": {
+            "text": "COVID",
+            "dkg_annotations": [
+                [
+                    "COVID-19 Infection",
+                    "ncit:C171133",
+                    0.7247472405433655
+                ]
+            ]
+        },
+        "description": {
+            "text": "spatial dynamics of COVID spread",
+            "dkg_annotations": [
+                [
+                    "rate of community transmission",
+                    "cemo:rate_of_community_transmission",
+                    0.7588566541671753
+                ]
+            ]
+        }
+    },
+    {
+        "id": "E:737294122",
+        "statement_text": "parameterization of the model ",
+        "variable": {
+            "text": "Bucky",
+            "dkg_annotations": [
+                [
+                    "Bahamian",
+                    "ncit:C67271",
+                    0.7038567066192627
+                ]
+            ]
+        },
+        "description": {
+            "text": "parameterization of the model",
+            "dkg_annotations": [
+                [
+                    "Semantic_Type",
+                    "ncit:P106",
+                    0.797522783279419
+                ]
+            ]
+        }
+    },
+    {
+        "id": "R:-1676483649",
+        "statement_text": "index ",
+        "variable": {
+            "text": "j."
+        },
+        "description": {
+            "text": "index",
+            "dkg_annotations": [
+                [
+                    "Breteau Index",
+                    "apollosv:00000311",
+                    0.9970840811729431
+                ]
+            ]
+        }
+    },
+    {
+        "id": "R:1340323145",
+        "statement_text": "index ",
+        "variable": {
+            "text": "i",
+            "dkg_annotations": [
+                [
+                    "Meruvax I",
+                    "vo:0003109",
+                    0.994598925113678
+                ]
+            ]
+        },
+        "description": {
+            "text": "index",
+            "dkg_annotations": [
+                [
+                    "Breteau Index",
+                    "apollosv:00000311",
+                    0.9970840811729431
+                ]
+            ]
+        }
+    },
+    {
+        "id": "E:-79999377",
+        "statement_text": "susceptible and exposed populations, followed by one of three possible infected states by one of three possible infected states",
+        "variable": {
+            "text": "Bucky",
+            "dkg_annotations": [
+                [
+                    "Bahamian",
+                    "ncit:C67271",
+                    0.7038567066192627
+                ]
+            ]
+        },
+        "description": {
+            "text": "susceptible and exposed populations, followed by one of three possible infected states",
+            "dkg_annotations": [
+                [
+                    "number of cases exposed by local (one or cluster) case",
+                    "cemo:number_of_cases_exposed_by_local_one_or_cluster_case",
+                    0.8509573936462402
+                ]
+            ]
+        },
+        "context": "by one of three possible infected states"
+    },
+    {
+        "id": "E:-1397447272",
+        "statement_text": "susceptible and exposed populations, followed by one of three possible infected states by one of three possible infected states",
+        "variable": {
+            "text": "I",
+            "dkg_annotations": [
+                [
+                    "Meruvax I",
+                    "vo:0003109",
+                    0.994598925113678
+                ]
+            ]
+        },
+        "description": {
+            "text": "susceptible and exposed populations, followed by one of three possible infected states",
+            "dkg_annotations": [
+                [
+                    "number of cases exposed by local (one or cluster) case",
+                    "cemo:number_of_cases_exposed_by_local_one_or_cluster_case",
+                    0.8509573936462402
+                ]
+            ]
+        },
+        "context": "by one of three possible infected states"
+    },
+    {
+        "id": "E:-2087133106",
+        "statement_text": "susceptible and exposed populations, followed by one of three possible infected states by one of three possible infected states",
+        "variable": {
+            "text": "I",
+            "dkg_annotations": [
+                [
+                    "Meruvax I",
+                    "vo:0003109",
+                    0.994598925113678
+                ]
+            ]
+        },
+        "description": {
+            "text": "susceptible and exposed populations, followed by one of three possible infected states",
+            "dkg_annotations": [
+                [
+                    "number of cases exposed by local (one or cluster) case",
+                    "cemo:number_of_cases_exposed_by_local_one_or_cluster_case",
+                    0.8509573936462402
+                ]
+            ]
+        },
+        "context": "by one of three possible infected states"
+    },
+    {
+        "id": "R:1218866417",
+        "statement_text": "basic reproductive number ",
+        "variable": {
+            "text": "R0",
+            "dkg_annotations": [
+                [
+                    "infectiousness",
+                    "apollosv:00000404",
+                    0.6776172518730164
+                ]
+            ]
+        },
+        "description": {
+            "text": "basic reproductive number",
+            "dkg_annotations": [
+                [
+                    "basic reproduction number",
+                    "apollosv:00000002",
+                    0.9315255880355835
+                ]
+            ]
+        }
+    },
+    {
+        "id": "E:-2072614022",
+        "statement_text": "ratios relating the components of the contact matrices ",
+        "variable": {
+            "text": "NPI",
+            "dkg_annotations": [
+                [
+                    "epidemic threshold",
+                    "apollosv:00000531",
+                    0.596771776676178
+                ]
+            ]
+        },
+        "description": {
+            "text": "ratios relating the components of the contact matrices",
+            "dkg_annotations": [
+                [
+                    "simulating of process of type X",
+                    "apollosv:00000005",
+                    0.8087502717971802
+                ]
+            ]
+        }
+    },
+    {
+        "id": "E:1772689243",
+        "statement_text": "School Closure ",
+        "variable": {
+            "text": "NPI",
+            "dkg_annotations": [
+                [
+                    "epidemic threshold",
+                    "apollosv:00000531",
+                    0.596771776676178
+                ]
+            ]
+        },
+        "description": {
+            "text": "School Closure",
+            "dkg_annotations": [
+                [
+                    "school closure duration",
+                    "apollosv:00000124",
+                    0.8902280330657959
+                ]
+            ]
+        }
+    },
+    {
+        "id": "E:1511867659",
+        "statement_text": "classification ",
+        "variable": {
+            "text": "NPI",
+            "dkg_annotations": [
+                [
+                    "epidemic threshold",
+                    "apollosv:00000531",
+                    0.596771776676178
+                ]
+            ]
+        },
+        "description": {
+            "text": "classification",
+            "dkg_annotations": [
+                [
+                    "location definition",
+                    "apollosv:00000377",
+                    0.6232886910438538
+                ]
+            ]
+        }
+    },
+    {
+        "id": "E:182588837",
+        "statement_text": "classification ",
+        "variable": {
+            "text": "NPI",
+            "dkg_annotations": [
+                [
+                    "epidemic threshold",
+                    "apollosv:00000531",
+                    0.596771776676178
+                ]
+            ]
+        },
+        "description": {
+            "text": "classification",
+            "dkg_annotations": [
+                [
+                    "location definition",
+                    "apollosv:00000377",
+                    0.6232886910438538
+                ]
+            ]
+        }
+    },
+    {
+        "id": "E:930780346",
+        "statement_text": "Social distancing ",
+        "variable": {
+            "text": "NPI",
+            "dkg_annotations": [
+                [
+                    "epidemic threshold",
+                    "apollosv:00000531",
+                    0.596771776676178
+                ]
+            ]
+        },
+        "description": {
+            "text": "Social distancing",
+            "dkg_annotations": [
+                [
+                    "Social Distancing",
+                    "ncit:C173636",
+                    0.9971168637275696
+                ]
+            ]
+        }
+    },
+    {
+        "id": "E:1197920639",
+        "statement_text": "are shown below for the United States, California ",
+        "variable": {
+            "text": "California",
+            "dkg_annotations": [
+                [
+                    "California Tribes",
+                    "ncit:C43915",
+                    0.836229145526886
+                ]
+            ]
+        },
+        "description": {
+            "text": "are shown below for the United States, California",
+            "dkg_annotations": [
+                [
+                    "Chuukese",
+                    "ncit:C43846",
+                    0.733534574508667
+                ]
+            ]
+        }
+    },
+    {
+        "id": "R:1733093926",
+        "statement_text": "Green ",
+        "variable": {
+            "text": "Dingel",
+            "dkg_annotations": [
+                [
+                    "Torres-Martinez",
+                    "ncit:C43914",
+                    0.7248883247375488
+                ]
+            ]
+        },
+        "description": {
+            "text": "Green",
+            "dkg_annotations": [
+                [
+                    "Red Wood",
+                    "ncit:C44513",
+                    0.7394129037857056
+                ]
+            ]
+        }
+    },
+    {
+        "id": "E:-82795796",
+        "statement_text": "journal of Infection ",
+        "variable": {
+            "text": "Infection",
+            "dkg_annotations": [
+                [
+                    "infection",
+                    "apollosv:00000114",
+                    0.9989686012268066
+                ]
+            ]
+        },
+        "description": {
+            "text": "journal of Infection",
+            "dkg_annotations": [
+                [
+                    "line of infection",
+                    "cemo:line_of_infection",
+                    0.7453475594520569
+                ]
+            ]
+        }
+    }
+]
