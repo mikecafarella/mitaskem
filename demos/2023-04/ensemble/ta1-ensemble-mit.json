@@ -1,0 +1,2603 @@
+{
+  "variable_statements": [
+    {
+      "id": "v0",
+      "variable": {
+        "id": "v0",
+        "name": "VE",
+        "metadata": [
+          {
+            "type": "text_annotation",
+            "value": " Vaccine Effectiveness"
+          },
+          {
+            "type": "text_annotation",
+            "value": " Vaccine Effectiveness"
+          }
+        ],
+        "dkg_groundings": [],
+        "column": [
+          {
+            "id": "9-2",
+            "name": "new_persons_vaccinated",
+            "dataset": {
+              "id": "9",
+              "name": "usa-vaccinations.csv",
+              "metadata": "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-vaccinations.csv"
+            }
+          },
+          {
+            "id": "9-3",
+            "name": "cumulative_persons_vaccinated",
+            "dataset": {
+              "id": "9",
+              "name": "usa-vaccinations.csv",
+              "metadata": "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-vaccinations.csv"
+            }
+          }
+        ],
+        "paper": {
+          "id": "COVID-19 Vaccine Effectiveness by Product and Timing in New York State",
+          "file_directory": "https://www.medrxiv.org/content/10.1101/2021.10.08.21264595v1",
+          "doi": "10.1101/2021.10.08.21264595"
+        },
+        "equations": []
+      },
+      "value": null,
+      "metadata": []
+    },
+    {
+      "id": "v1",
+      "variable": {
+        "id": "v1",
+        "name": "Pfizer-BioNTech",
+        "metadata": [
+          {
+            "type": "text_annotation",
+            "value": " Vaccine Product"
+          },
+          {
+            "type": "text_annotation",
+            "value": " Vaccine primarily distributed to NYS"
+          }
+        ],
+        "dkg_groundings": [],
+        "column": [
+          {
+            "id": "9-8",
+            "name": "new_persons_vaccinated_pfizer",
+            "dataset": {
+              "id": "9",
+              "name": "usa-vaccinations.csv",
+              "metadata": "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-vaccinations.csv"
+            }
+          },
+          {
+            "id": "9-9",
+            "name": "cumulative_persons_vaccinated_pfizer",
+            "dataset": {
+              "id": "9",
+              "name": "usa-vaccinations.csv",
+              "metadata": "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-vaccinations.csv"
+            }
+          }
+        ],
+        "paper": {
+          "id": "COVID-19 Vaccine Effectiveness by Product and Timing in New York State",
+          "file_directory": "https://www.medrxiv.org/content/10.1101/2021.10.08.21264595v1",
+          "doi": "10.1101/2021.10.08.21264595"
+        },
+        "equations": []
+      },
+      "value": null,
+      "metadata": []
+    },
+    {
+      "id": "v2",
+      "variable": {
+        "id": "v2",
+        "name": "Moderna",
+        "metadata": [
+          {
+            "type": "text_annotation",
+            "value": " Vaccine Product"
+          },
+          {
+            "type": "text_annotation",
+            "value": " Vaccine product"
+          }
+        ],
+        "dkg_groundings": [
+          {
+            "id": "ncit:C177124",
+            "name": "Moderna",
+            "score": null
+          },
+          {
+            "id": "vo:0004953",
+            "name": "Moderna",
+            "score": null
+          }
+        ],
+        "column": [
+          {
+            "id": "9-14",
+            "name": "new_persons_vaccinated_moderna",
+            "dataset": {
+              "id": "9",
+              "name": "usa-vaccinations.csv",
+              "metadata": "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-vaccinations.csv"
+            }
+          },
+          {
+            "id": "9-15",
+            "name": "cumulative_persons_vaccinated_moderna",
+            "dataset": {
+              "id": "9",
+              "name": "usa-vaccinations.csv",
+              "metadata": "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-vaccinations.csv"
+            }
+          }
+        ],
+        "paper": {
+          "id": "COVID-19 Vaccine Effectiveness by Product and Timing in New York State",
+          "file_directory": "https://www.medrxiv.org/content/10.1101/2021.10.08.21264595v1",
+          "doi": "10.1101/2021.10.08.21264595"
+        },
+        "equations": []
+      },
+      "value": null,
+      "metadata": []
+    },
+    {
+      "id": "v3",
+      "variable": {
+        "id": "v3",
+        "name": "Janssen",
+        "metadata": [
+          {
+            "type": "text_annotation",
+            "value": " Vaccine Product"
+          },
+          {
+            "type": "text_annotation",
+            "value": " Vaccine product"
+          }
+        ],
+        "dkg_groundings": [
+          {
+            "id": "vo:0004932",
+            "name": "Janssen Pharmaceutica",
+            "score": null
+          },
+          {
+            "id": "ncit:C164191",
+            "name": "Janssen Pharmaceuticals",
+            "score": null
+          }
+        ],
+        "column": [
+          {
+            "id": "9-20",
+            "name": "new_persons_vaccinated_janssen",
+            "dataset": {
+              "id": "9",
+              "name": "usa-vaccinations.csv",
+              "metadata": "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-vaccinations.csv"
+            }
+          },
+          {
+            "id": "9-21",
+            "name": "cumulative_persons_vaccinated_janssen",
+            "dataset": {
+              "id": "9",
+              "name": "usa-vaccinations.csv",
+              "metadata": "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-vaccinations.csv"
+            }
+          }
+        ],
+        "paper": {
+          "id": "COVID-19 Vaccine Effectiveness by Product and Timing in New York State",
+          "file_directory": "https://www.medrxiv.org/content/10.1101/2021.10.08.21264595v1",
+          "doi": "10.1101/2021.10.08.21264595"
+        },
+        "equations": []
+      },
+      "value": null,
+      "metadata": []
+    },
+    {
+      "id": "v4",
+      "variable": {
+        "id": "v4",
+        "name": "Delta variant",
+        "metadata": [
+          {
+            "type": "text_annotation",
+            "value": " Variant of the virus"
+          },
+          {
+            "type": "text_annotation",
+            "value": " Percentage of the population that has the Delta variant of the virus.VE for cases"
+          }
+        ],
+        "dkg_groundings": [
+          {
+            "id": "cido:0000376",
+            "name": "SARS-CoV-2 Delta variant",
+            "score": null
+          },
+          {
+            "id": "cido:0000063",
+            "name": "Delta variant COVID-19 disease process",
+            "score": null
+          }
+        ],
+        "column": [],
+        "paper": {
+          "id": "COVID-19 Vaccine Effectiveness by Product and Timing in New York State",
+          "file_directory": "https://www.medrxiv.org/content/10.1101/2021.10.08.21264595v1",
+          "doi": "10.1101/2021.10.08.21264595"
+        },
+        "equations": []
+      },
+      "value": null,
+      "metadata": []
+    },
+    {
+      "id": "v5",
+      "variable": {
+        "id": "v5",
+        "name": "NYS",
+        "metadata": [
+          {
+            "type": "text_annotation",
+            "value": " New York State"
+          }
+        ],
+        "dkg_groundings": [
+          {
+            "id": "geonames:2990440",
+            "name": "Nice",
+            "score": null
+          },
+          {
+            "id": "geonames:2147714",
+            "name": "Sydney",
+            "score": null
+          }
+        ],
+        "column": [
+          {
+            "id": "7-2",
+            "name": "state",
+            "dataset": {
+              "id": "7",
+              "name": "us-counties-2023.csv",
+              "metadata": "https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties-2023.csv"
+            }
+          },
+          {
+            "id": "4-2",
+            "name": "RegionName",
+            "dataset": {
+              "id": "4",
+              "name": "OxCGRT_nat_latest.csv",
+              "metadata": "https://raw.githubusercontent.com/OxCGRT/covid-policy-tracker/master/data/OxCGRT_nat_latest.csv"
+            }
+          }
+        ],
+        "paper": {
+          "id": "COVID-19 Vaccine Effectiveness by Product and Timing in New York State",
+          "file_directory": "https://www.medrxiv.org/content/10.1101/2021.10.08.21264595v1",
+          "doi": "10.1101/2021.10.08.21264595"
+        },
+        "equations": []
+      },
+      "value": null,
+      "metadata": []
+    },
+    {
+      "id": "v6",
+      "variable": {
+        "id": "v6",
+        "name": "Cohort",
+        "metadata": [
+          {
+            "type": "text_annotation",
+            "value": " Group of persons remaining unvaccinated or fully vaccinated as of May 1, 2021."
+          }
+        ],
+        "dkg_groundings": [
+          {
+            "id": "ncit:C61512",
+            "name": "Cohort",
+            "score": null
+          },
+          {
+            "id": "stato:0000203",
+            "name": "cohort",
+            "score": null
+          }
+        ],
+        "column": [
+          {
+            "id": "9-4",
+            "name": "new_persons_fully_vaccinated",
+            "dataset": {
+              "id": "9",
+              "name": "usa-vaccinations.csv",
+              "metadata": "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-vaccinations.csv"
+            }
+          },
+          {
+            "id": "9-5",
+            "name": "cumulative_persons_fully_vaccinated",
+            "dataset": {
+              "id": "9",
+              "name": "usa-vaccinations.csv",
+              "metadata": "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-vaccinations.csv"
+            }
+          }
+        ],
+        "paper": {
+          "id": "COVID-19 Vaccine Effectiveness by Product and Timing in New York State",
+          "file_directory": "https://www.medrxiv.org/content/10.1101/2021.10.08.21264595v1",
+          "doi": "10.1101/2021.10.08.21264595"
+        },
+        "equations": []
+      },
+      "value": null,
+      "metadata": []
+    },
+    {
+      "id": "v7",
+      "variable": {
+        "id": "v7",
+        "name": "CIR",
+        "metadata": [
+          {
+            "type": "text_annotation",
+            "value": " Citywide Immunization Registry."
+          }
+        ],
+        "dkg_groundings": [],
+        "column": [],
+        "paper": {
+          "id": "COVID-19 Vaccine Effectiveness by Product and Timing in New York State",
+          "file_directory": "https://www.medrxiv.org/content/10.1101/2021.10.08.21264595v1",
+          "doi": "10.1101/2021.10.08.21264595"
+        },
+        "equations": []
+      },
+      "value": null,
+      "metadata": []
+    },
+    {
+      "id": "v8",
+      "variable": {
+        "id": "v8",
+        "name": "NYSIIS",
+        "metadata": [
+          {
+            "type": "text_annotation",
+            "value": " New York State Immunization Information System."
+          }
+        ],
+        "dkg_groundings": [],
+        "column": [],
+        "paper": {
+          "id": "COVID-19 Vaccine Effectiveness by Product and Timing in New York State",
+          "file_directory": "https://www.medrxiv.org/content/10.1101/2021.10.08.21264595v1",
+          "doi": "10.1101/2021.10.08.21264595"
+        },
+        "equations": []
+      },
+      "value": null,
+      "metadata": []
+    },
+    {
+      "id": "v9",
+      "variable": {
+        "id": "v9",
+        "name": "ECLRS",
+        "metadata": [
+          {
+            "type": "text_annotation",
+            "value": " Electronic Clinical Laboratory Reporting System."
+          }
+        ],
+        "dkg_groundings": [],
+        "column": [],
+        "paper": {
+          "id": "COVID-19 Vaccine Effectiveness by Product and Timing in New York State",
+          "file_directory": "https://www.medrxiv.org/content/10.1101/2021.10.08.21264595v1",
+          "doi": "10.1101/2021.10.08.21264595"
+        },
+        "equations": []
+      },
+      "value": null,
+      "metadata": []
+    },
+    {
+      "id": "v10",
+      "variable": {
+        "id": "v10",
+        "name": "HERDS",
+        "metadata": [
+          {
+            "type": "text_annotation",
+            "value": " Health Electronic Response Data System."
+          }
+        ],
+        "dkg_groundings": [],
+        "column": [
+          {
+            "id": "6-3",
+            "name": "cumulative_hospitalized_patients",
+            "dataset": {
+              "id": "6",
+              "name": "usa-hospitalizations.csv",
+              "metadata": "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-hospitalizations.csv"
+            }
+          },
+          {
+            "id": "6-4",
+            "name": "current_hospitalized_patients",
+            "dataset": {
+              "id": "6",
+              "name": "usa-hospitalizations.csv",
+              "metadata": "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-hospitalizations.csv"
+            }
+          }
+        ],
+        "paper": {
+          "id": "COVID-19 Vaccine Effectiveness by Product and Timing in New York State",
+          "file_directory": "https://www.medrxiv.org/content/10.1101/2021.10.08.21264595v1",
+          "doi": "10.1101/2021.10.08.21264595"
+        },
+        "equations": []
+      },
+      "value": null,
+      "metadata": []
+    },
+    {
+      "id": "v11",
+      "variable": {
+        "id": "v11",
+        "name": "Age Groups",
+        "metadata": [
+          {
+            "type": "text_annotation",
+            "value": " 18-49, 50-64, and ≥65 years."
+          }
+        ],
+        "dkg_groundings": [],
+        "column": [
+          {
+            "id": "5-142",
+            "name": "age_bin_0",
+            "dataset": {
+              "id": "5",
+              "name": "usa-cases-hospitalized-by-age.csv",
+              "metadata": "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-cases-hospitalized-by-age.csv"
+            }
+          }
+        ],
+        "paper": {
+          "id": "COVID-19 Vaccine Effectiveness by Product and Timing in New York State",
+          "file_directory": "https://www.medrxiv.org/content/10.1101/2021.10.08.21264595v1",
+          "doi": "10.1101/2021.10.08.21264595"
+        },
+        "equations": []
+      },
+      "value": null,
+      "metadata": []
+    },
+    {
+      "id": "v12",
+      "variable": {
+        "id": "v12",
+        "name": "Timing of Full-Vaccination",
+        "metadata": [
+          {
+            "type": "text_annotation",
+            "value": " January-February, March, April 2021."
+          }
+        ],
+        "dkg_groundings": [],
+        "column": [],
+        "paper": {
+          "id": "COVID-19 Vaccine Effectiveness by Product and Timing in New York State",
+          "file_directory": "https://www.medrxiv.org/content/10.1101/2021.10.08.21264595v1",
+          "doi": "10.1101/2021.10.08.21264595"
+        },
+        "equations": []
+      },
+      "value": null,
+      "metadata": []
+    },
+    {
+      "id": "v13",
+      "variable": {
+        "id": "v13",
+        "name": "VE for hospitalization",
+        "metadata": [
+          {
+            "type": "text_annotation",
+            "value": " Percentage of vaccine effectiveness for hospitalization"
+          }
+        ],
+        "dkg_groundings": [],
+        "column": [],
+        "paper": {
+          "id": "COVID-19 Vaccine Effectiveness by Product and Timing in New York State",
+          "file_directory": "https://www.medrxiv.org/content/10.1101/2021.10.08.21264595v1",
+          "doi": "10.1101/2021.10.08.21264595"
+        },
+        "equations": []
+      },
+      "value": null,
+      "metadata": []
+    },
+    {
+      "id": "v14",
+      "variable": {
+        "id": "v14",
+        "name": "Delta variant prevalence",
+        "metadata": [
+          {
+            "type": "text_annotation",
+            "value": " Percentage of Delta variant prevalence"
+          }
+        ],
+        "dkg_groundings": [],
+        "column": [],
+        "paper": {
+          "id": "COVID-19 Vaccine Effectiveness by Product and Timing in New York State",
+          "file_directory": "https://www.medrxiv.org/content/10.1101/2021.10.08.21264595v1",
+          "doi": "10.1101/2021.10.08.21264595"
+        },
+        "equations": []
+      },
+      "value": null,
+      "metadata": []
+    },
+    {
+      "id": "v15",
+      "variable": {
+        "id": "v15",
+        "name": "Census uncertainty",
+        "metadata": [
+          {
+            "type": "text_annotation",
+            "value": " Uncertainty in population size estimates"
+          }
+        ],
+        "dkg_groundings": [],
+        "column": [
+          {
+            "id": "8-5",
+            "name": "\"Population\"",
+            "dataset": {
+              "id": "8",
+              "name": "usa-2021-population-age-stratified.csv",
+              "metadata": "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/usa-2021-population-age-stratified.csv"
+            }
+          },
+          {
+            "id": "8-6",
+            "name": "\"% of Population\"",
+            "dataset": {
+              "id": "8",
+              "name": "usa-2021-population-age-stratified.csv",
+              "metadata": "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/usa-2021-population-age-stratified.csv"
+            }
+          }
+        ],
+        "paper": {
+          "id": "COVID-19 Vaccine Effectiveness by Product and Timing in New York State",
+          "file_directory": "https://www.medrxiv.org/content/10.1101/2021.10.08.21264595v1",
+          "doi": "10.1101/2021.10.08.21264595"
+        },
+        "equations": []
+      },
+      "value": null,
+      "metadata": []
+    },
+    {
+      "id": "v16",
+      "variable": {
+        "id": "v16",
+        "name": "CDC guidance",
+        "metadata": [
+          {
+            "type": "text_annotation",
+            "value": " Policy changes adopted by NYS"
+          }
+        ],
+        "dkg_groundings": [],
+        "column": [
+          {
+            "id": "4-5",
+            "name": "Date",
+            "dataset": {
+              "id": "4",
+              "name": "OxCGRT_nat_latest.csv",
+              "metadata": "https://raw.githubusercontent.com/OxCGRT/covid-policy-tracker/master/data/OxCGRT_nat_latest.csv"
+            }
+          }
+        ],
+        "paper": {
+          "id": "COVID-19 Vaccine Effectiveness by Product and Timing in New York State",
+          "file_directory": "https://www.medrxiv.org/content/10.1101/2021.10.08.21264595v1",
+          "doi": "10.1101/2021.10.08.21264595"
+        },
+        "equations": []
+      },
+      "value": null,
+      "metadata": []
+    },
+    {
+      "id": "v17",
+      "variable": {
+        "id": "v17",
+        "name": "Time-cohort",
+        "metadata": [
+          {
+            "type": "text_annotation",
+            "value": " Gradients by time-cohort in August"
+          }
+        ],
+        "dkg_groundings": [],
+        "column": [],
+        "paper": {
+          "id": "COVID-19 Vaccine Effectiveness by Product and Timing in New York State",
+          "file_directory": "https://www.medrxiv.org/content/10.1101/2021.10.08.21264595v1",
+          "doi": "10.1101/2021.10.08.21264595"
+        },
+        "equations": []
+      },
+      "value": null,
+      "metadata": []
+    },
+    {
+      "id": "v18",
+      "variable": {
+        "id": "v18",
+        "name": "unmeasured confounding",
+        "metadata": [
+          {
+            "type": "text_annotation",
+            "value": " behavioral, medical, or exposure differences between fully-vaccinated and unvaccinated adults"
+          }
+        ],
+        "dkg_groundings": [],
+        "column": [],
+        "paper": {
+          "id": "COVID-19 Vaccine Effectiveness by Product and Timing in New York State",
+          "file_directory": "https://www.medrxiv.org/content/10.1101/2021.10.08.21264595v1",
+          "doi": "10.1101/2021.10.08.21264595"
+        },
+        "equations": []
+      },
+      "value": null,
+      "metadata": []
+    },
+    {
+      "id": "v19",
+      "variable": {
+        "id": "v19",
+        "name": "indirect effects",
+        "metadata": [
+          {
+            "type": "text_annotation",
+            "value": " herd-immunity-type"
+          }
+        ],
+        "dkg_groundings": [],
+        "column": [],
+        "paper": {
+          "id": "COVID-19 Vaccine Effectiveness by Product and Timing in New York State",
+          "file_directory": "https://www.medrxiv.org/content/10.1101/2021.10.08.21264595v1",
+          "doi": "10.1101/2021.10.08.21264595"
+        },
+        "equations": []
+      },
+      "value": null,
+      "metadata": []
+    },
+    {
+      "id": "v20",
+      "variable": {
+        "id": "v20",
+        "name": "non-FDA authorized vaccines",
+        "metadata": [
+          {
+            "type": "text_annotation",
+            "value": " persons who received non-FDA authorized vaccines"
+          }
+        ],
+        "dkg_groundings": [],
+        "column": [
+          {
+            "id": "9-26",
+            "name": "new_persons_vaccinated_sinovac",
+            "dataset": {
+              "id": "9",
+              "name": "usa-vaccinations.csv",
+              "metadata": "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-vaccinations.csv"
+            }
+          },
+          {
+            "id": "9-27",
+            "name": "total_persons_vaccinated_sinovac",
+            "dataset": {
+              "id": "9",
+              "name": "usa-vaccinations.csv",
+              "metadata": "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-vaccinations.csv"
+            }
+          }
+        ],
+        "paper": {
+          "id": "COVID-19 Vaccine Effectiveness by Product and Timing in New York State",
+          "file_directory": "https://www.medrxiv.org/content/10.1101/2021.10.08.21264595v1",
+          "doi": "10.1101/2021.10.08.21264595"
+        },
+        "equations": []
+      },
+      "value": null,
+      "metadata": []
+    },
+    {
+      "id": "v21",
+      "variable": {
+        "id": "v21",
+        "name": "FDA",
+        "metadata": [
+          {
+            "type": "text_annotation",
+            "value": " Federal Drug Administration"
+          }
+        ],
+        "dkg_groundings": [
+          {
+            "id": "ndfrt:FDA_UNII",
+            "name": "FDA_UNII",
+            "score": null
+          },
+          {
+            "id": "ncit:P317",
+            "name": "FDA_Table",
+            "score": null
+          }
+        ],
+        "column": [],
+        "paper": {
+          "id": "COVID-19 Vaccine Effectiveness by Product and Timing in New York State",
+          "file_directory": "https://www.medrxiv.org/content/10.1101/2021.10.08.21264595v1",
+          "doi": "10.1101/2021.10.08.21264595"
+        },
+        "equations": []
+      },
+      "value": null,
+      "metadata": []
+    },
+    {
+      "id": "v22",
+      "variable": {
+        "id": "v22",
+        "name": "mRNA-1273",
+        "metadata": [
+          {
+            "type": "text_annotation",
+            "value": " Vaccine Sponsor Briefing Document"
+          }
+        ],
+        "dkg_groundings": [
+          {
+            "id": "vo:0005233",
+            "name": "mRNA-1273.351",
+            "score": null
+          },
+          {
+            "id": "vo:0005277",
+            "name": "mRNA-1273.211",
+            "score": null
+          }
+        ],
+        "column": [],
+        "paper": {
+          "id": "COVID-19 Vaccine Effectiveness by Product and Timing in New York State",
+          "file_directory": "https://www.medrxiv.org/content/10.1101/2021.10.08.21264595v1",
+          "doi": "10.1101/2021.10.08.21264595"
+        },
+        "equations": []
+      },
+      "value": null,
+      "metadata": []
+    },
+    {
+      "id": "v23",
+      "variable": {
+        "id": "v23",
+        "name": "COVID-19 Vaccine Ad26.COV2.S VA",
+        "metadata": [
+          {
+            "type": "text_annotation",
+            "value": " Vaccine primarily distributed to NYSC31518 (JNJ-78436735)"
+          }
+        ],
+        "dkg_groundings": [],
+        "column": [
+          {
+            "id": "9-20",
+            "name": "new_persons_vaccinated_janssen",
+            "dataset": {
+              "id": "9",
+              "name": "usa-vaccinations.csv",
+              "metadata": "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-vaccinations.csv"
+            }
+          },
+          {
+            "id": "9-21",
+            "name": "cumulative_persons_vaccinated_janssen",
+            "dataset": {
+              "id": "9",
+              "name": "usa-vaccinations.csv",
+              "metadata": "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-vaccinations.csv"
+            }
+          }
+        ],
+        "paper": {
+          "id": "COVID-19 Vaccine Effectiveness by Product and Timing in New York State",
+          "file_directory": "https://www.medrxiv.org/content/10.1101/2021.10.08.21264595v1",
+          "doi": "10.1101/2021.10.08.21264595"
+        },
+        "equations": []
+      },
+      "value": null,
+      "metadata": []
+    },
+    {
+      "id": "v24",
+      "variable": {
+        "id": "v24",
+        "name": "CDC",
+        "metadata": [
+          {
+            "type": "text_annotation",
+            "value": " Centers for Disease Control and Prevention"
+          }
+        ],
+        "dkg_groundings": [
+          {
+            "id": "ncit:A23",
+            "name": "Has_PCDC_Data_Type",
+            "score": null
+          },
+          {
+            "id": "ncit:A38",
+            "name": "Has_PCDC_OS_Permissible_Value",
+            "score": null
+          }
+        ],
+        "column": [],
+        "paper": {
+          "id": "COVID-19 Vaccine Effectiveness by Product and Timing in New York State",
+          "file_directory": "https://www.medrxiv.org/content/10.1101/2021.10.08.21264595v1",
+          "doi": "10.1101/2021.10.08.21264595"
+        },
+        "equations": []
+      },
+      "value": null,
+      "metadata": []
+    },
+    {
+      "id": "v25",
+      "variable": {
+        "id": "v25",
+        "name": "BNT162b2",
+        "metadata": [
+          {
+            "type": "text_annotation",
+            "value": " Vaccine"
+          }
+        ],
+        "dkg_groundings": [],
+        "column": [
+          {
+            "id": "9-8",
+            "name": "new_persons_vaccinated_pfizer",
+            "dataset": {
+              "id": "9",
+              "name": "usa-vaccinations.csv",
+              "metadata": "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-vaccinations.csv"
+            }
+          },
+          {
+            "id": "9-9",
+            "name": "cumulative_persons_vaccinated_pfizer",
+            "dataset": {
+              "id": "9",
+              "name": "usa-vaccinations.csv",
+              "metadata": "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-vaccinations.csv"
+            }
+          }
+        ],
+        "paper": {
+          "id": "COVID-19 Vaccine Effectiveness by Product and Timing in New York State",
+          "file_directory": "https://www.medrxiv.org/content/10.1101/2021.10.08.21264595v1",
+          "doi": "10.1101/2021.10.08.21264595"
+        },
+        "equations": []
+      },
+      "value": null,
+      "metadata": []
+    },
+    {
+      "id": "v26",
+      "variable": {
+        "id": "v26",
+        "name": "Ad26.COV2.S VAC31518 (JNJ-78436735)",
+        "metadata": [
+          {
+            "type": "text_annotation",
+            "value": " Vaccine"
+          }
+        ],
+        "dkg_groundings": [],
+        "column": [
+          {
+            "id": "9-20",
+            "name": "new_persons_vaccinated_janssen",
+            "dataset": {
+              "id": "9",
+              "name": "usa-vaccinations.csv",
+              "metadata": "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-vaccinations.csv"
+            }
+          },
+          {
+            "id": "9-21",
+            "name": "cumulative_persons_vaccinated_janssen",
+            "dataset": {
+              "id": "9",
+              "name": "usa-vaccinations.csv",
+              "metadata": "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-vaccinations.csv"
+            }
+          }
+        ],
+        "paper": {
+          "id": "COVID-19 Vaccine Effectiveness by Product and Timing in New York State",
+          "file_directory": "https://www.medrxiv.org/content/10.1101/2021.10.08.21264595v1",
+          "doi": "10.1101/2021.10.08.21264595"
+        },
+        "equations": []
+      },
+      "value": null,
+      "metadata": []
+    },
+    {
+      "id": "v27",
+      "variable": {
+        "id": "v27",
+        "name": "Persons",
+        "metadata": [
+          {
+            "type": "text_annotation",
+            "value": " Total persons in cohorts of fully-vaccinated and unvaccinated adults in New York State"
+          }
+        ],
+        "dkg_groundings": [
+          {
+            "id": "vo:0001100",
+            "name": "persons aged 6 months--24 years",
+            "score": null
+          },
+          {
+            "id": "vo:0001098",
+            "name": "persons living with or providing care for infants aged <6 months",
+            "score": null
+          }
+        ],
+        "column": [
+          {
+            "id": "9-3",
+            "name": "cumulative_persons_vaccinated",
+            "dataset": {
+              "id": "9",
+              "name": "usa-vaccinations.csv",
+              "metadata": "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-vaccinations.csv"
+            }
+          },
+          {
+            "id": "9-5",
+            "name": "cumulative_persons_fully_vaccinated",
+            "dataset": {
+              "id": "9",
+              "name": "usa-vaccinations.csv",
+              "metadata": "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-vaccinations.csv"
+            }
+          }
+        ],
+        "paper": {
+          "id": "COVID-19 Vaccine Effectiveness by Product and Timing in New York State",
+          "file_directory": "https://www.medrxiv.org/content/10.1101/2021.10.08.21264595v1",
+          "doi": "10.1101/2021.10.08.21264595"
+        },
+        "equations": []
+      },
+      "value": null,
+      "metadata": []
+    },
+    {
+      "id": "v28",
+      "variable": {
+        "id": "v28",
+        "name": "Cases",
+        "metadata": [
+          {
+            "type": "text_annotation",
+            "value": " Total new laboratory-confirmed COVID-19 cases"
+          }
+        ],
+        "dkg_groundings": [
+          {
+            "id": "hp:0003745",
+            "name": "Sporadic",
+            "score": null
+          },
+          {
+            "id": "cemo:daily_cases",
+            "name": "daily cases",
+            "score": null
+          }
+        ],
+        "column": [
+          {
+            "id": "7-4",
+            "name": "cases",
+            "dataset": {
+              "id": "7",
+              "name": "us-counties-2023.csv",
+              "metadata": "https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties-2023.csv"
+            }
+          },
+          {
+            "id": "1-2",
+            "name": "num_cases_month",
+            "dataset": {
+              "id": "1",
+              "name": "hospitalization-rate-by-month.csv",
+              "metadata": "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/hospitalization-rate-by-month.csv"
+            }
+          }
+        ],
+        "paper": {
+          "id": "COVID-19 Vaccine Effectiveness by Product and Timing in New York State",
+          "file_directory": "https://www.medrxiv.org/content/10.1101/2021.10.08.21264595v1",
+          "doi": "10.1101/2021.10.08.21264595"
+        },
+        "equations": []
+      },
+      "value": null,
+      "metadata": []
+    },
+    {
+      "id": "v29",
+      "variable": {
+        "id": "v29",
+        "name": "Hospitalizations",
+        "metadata": [
+          {
+            "type": "text_annotation",
+            "value": " Total hospitalizations during follow-up"
+          }
+        ],
+        "dkg_groundings": [],
+        "column": [
+          {
+            "id": "6-2",
+            "name": "new_hospitalized_patients",
+            "dataset": {
+              "id": "6",
+              "name": "usa-hospitalizations.csv",
+              "metadata": "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-hospitalizations.csv"
+            }
+          },
+          {
+            "id": "6-3",
+            "name": "cumulative_hospitalized_patients",
+            "dataset": {
+              "id": "6",
+              "name": "usa-hospitalizations.csv",
+              "metadata": "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-hospitalizations.csv"
+            }
+          }
+        ],
+        "paper": {
+          "id": "COVID-19 Vaccine Effectiveness by Product and Timing in New York State",
+          "file_directory": "https://www.medrxiv.org/content/10.1101/2021.10.08.21264595v1",
+          "doi": "10.1101/2021.10.08.21264595"
+        },
+        "equations": []
+      },
+      "value": null,
+      "metadata": []
+    },
+    {
+      "id": "v30",
+      "variable": {
+        "id": "v30",
+        "name": "VE (95% CI)",
+        "metadata": [
+          {
+            "type": "text_annotation",
+            "value": " Vaccine effectiveness with 95% confidence interval"
+          },
+          {
+            "type": "text_annotation",
+            "value": " Vaccine effectiveness with 95% confidence interval."
+          }
+        ],
+        "dkg_groundings": [],
+        "column": [],
+        "paper": {
+          "id": "COVID-19 Vaccine Effectiveness by Product and Timing in New York State",
+          "file_directory": "https://www.medrxiv.org/content/10.1101/2021.10.08.21264595v1",
+          "doi": "10.1101/2021.10.08.21264595"
+        },
+        "equations": []
+      },
+      "value": null,
+      "metadata": []
+    },
+    {
+      "id": "v31",
+      "variable": {
+        "id": "v31",
+        "name": "March",
+        "metadata": [
+          {
+            "type": "text_annotation",
+            "value": " Time period"
+          }
+        ],
+        "dkg_groundings": [
+          {
+            "id": "geonames:445408",
+            "name": "Nomarchía Athínas",
+            "score": null
+          },
+          {
+            "id": "doid:0050475",
+            "name": "Weill-Marchesani syndrome",
+            "score": null
+          }
+        ],
+        "column": [],
+        "paper": {
+          "id": "COVID-19 Vaccine Effectiveness by Product and Timing in New York State",
+          "file_directory": "https://www.medrxiv.org/content/10.1101/2021.10.08.21264595v1",
+          "doi": "10.1101/2021.10.08.21264595"
+        },
+        "equations": []
+      },
+      "value": null,
+      "metadata": []
+    },
+    {
+      "id": "v32",
+      "variable": {
+        "id": "v32",
+        "name": "April",
+        "metadata": [
+          {
+            "type": "text_annotation",
+            "value": " Time period"
+          }
+        ],
+        "dkg_groundings": [
+          {
+            "id": "pr:Q92688",
+            "name": "acidic leucine-rich nuclear phosphoprotein 32 family member B (human)",
+            "score": null
+          }
+        ],
+        "column": [],
+        "paper": {
+          "id": "COVID-19 Vaccine Effectiveness by Product and Timing in New York State",
+          "file_directory": "https://www.medrxiv.org/content/10.1101/2021.10.08.21264595v1",
+          "doi": "10.1101/2021.10.08.21264595"
+        },
+        "equations": []
+      },
+      "value": null,
+      "metadata": []
+    },
+    {
+      "id": "v33",
+      "variable": {
+        "id": "v33",
+        "name": "18-49 years",
+        "metadata": [
+          {
+            "type": "text_annotation",
+            "value": " Age group."
+          }
+        ],
+        "dkg_groundings": [],
+        "column": [
+          {
+            "id": "5-142",
+            "name": "age_bin_0",
+            "dataset": {
+              "id": "5",
+              "name": "usa-cases-hospitalized-by-age.csv",
+              "metadata": "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-cases-hospitalized-by-age.csv"
+            }
+          }
+        ],
+        "paper": {
+          "id": "COVID-19 Vaccine Effectiveness by Product and Timing in New York State",
+          "file_directory": "https://www.medrxiv.org/content/10.1101/2021.10.08.21264595v1",
+          "doi": "10.1101/2021.10.08.21264595"
+        },
+        "equations": []
+      },
+      "value": null,
+      "metadata": []
+    },
+    {
+      "id": "v34",
+      "variable": {
+        "id": "v34",
+        "name": "50-64 years",
+        "metadata": [
+          {
+            "type": "text_annotation",
+            "value": " Age group."
+          }
+        ],
+        "dkg_groundings": [],
+        "column": [
+          {
+            "id": "3-1",
+            "name": "Age Group",
+            "dataset": {
+              "id": "3",
+              "name": "vaccination-hazard-rates-age-month.csv",
+              "metadata": "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/vaccination-hazard-rates-age-month.csv"
+            }
+          }
+        ],
+        "paper": {
+          "id": "COVID-19 Vaccine Effectiveness by Product and Timing in New York State",
+          "file_directory": "https://www.medrxiv.org/content/10.1101/2021.10.08.21264595v1",
+          "doi": "10.1101/2021.10.08.21264595"
+        },
+        "equations": []
+      },
+      "value": null,
+      "metadata": []
+    },
+    {
+      "id": "v35",
+      "variable": {
+        "id": "v35",
+        "name": "Vaccine cohort",
+        "metadata": [
+          {
+            "type": "text_annotation",
+            "value": " Percentage of vaccine effectiveness by product and timing in New York State"
+          }
+        ],
+        "dkg_groundings": [],
+        "column": [
+          {
+            "id": "3-4",
+            "name": "Vaccinated Cases",
+            "dataset": {
+              "id": "3",
+              "name": "vaccination-hazard-rates-age-month.csv",
+              "metadata": "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/vaccination-hazard-rates-age-month.csv"
+            }
+          }
+        ],
+        "paper": {
+          "id": "COVID-19 Vaccine Effectiveness by Product and Timing in New York State",
+          "file_directory": "https://www.medrxiv.org/content/10.1101/2021.10.08.21264595v1",
+          "doi": "10.1101/2021.10.08.21264595"
+        },
+        "equations": []
+      },
+      "value": null,
+      "metadata": []
+    },
+    {
+      "id": "v0",
+      "variable": {
+        "id": "v0",
+        "name": "VE",
+        "metadata": [
+          {
+            "type": "text_annotation",
+            "value": " Vaccine Effectiveness"
+          },
+          {
+            "type": "text_annotation",
+            "value": " Vaccine Effectiveness"
+          }
+        ],
+        "dkg_groundings": [],
+        "column": [
+          {
+            "id": "9-2",
+            "name": "new_persons_vaccinated",
+            "dataset": {
+              "id": "9",
+              "name": "usa-vaccinations.csv",
+              "metadata": "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-vaccinations.csv"
+            }
+          },
+          {
+            "id": "9-3",
+            "name": "cumulative_persons_vaccinated",
+            "dataset": {
+              "id": "9",
+              "name": "usa-vaccinations.csv",
+              "metadata": "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-vaccinations.csv"
+            }
+          }
+        ],
+        "paper": {
+          "id": "Time-Varying COVID-19 Reproduction Number in the United States",
+          "file_directory": "https://www.medrxiv.org/content/10.1101/2020.04.10.20060863v1",
+          "doi": "10.1101/2020.04.10.20060863"
+        },
+        "equations": []
+      },
+      "value": null,
+      "metadata": []
+    },
+    {
+      "id": "v1",
+      "variable": {
+        "id": "v1",
+        "name": "Pfizer-BioNTech",
+        "metadata": [
+          {
+            "type": "text_annotation",
+            "value": " Vaccine Product"
+          },
+          {
+            "type": "text_annotation",
+            "value": " Vaccine primarily distributed to NYS"
+          }
+        ],
+        "dkg_groundings": [],
+        "column": [
+          {
+            "id": "9-8",
+            "name": "new_persons_vaccinated_pfizer",
+            "dataset": {
+              "id": "9",
+              "name": "usa-vaccinations.csv",
+              "metadata": "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-vaccinations.csv"
+            }
+          },
+          {
+            "id": "9-9",
+            "name": "cumulative_persons_vaccinated_pfizer",
+            "dataset": {
+              "id": "9",
+              "name": "usa-vaccinations.csv",
+              "metadata": "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-vaccinations.csv"
+            }
+          }
+        ],
+        "paper": {
+          "id": "Time-Varying COVID-19 Reproduction Number in the United States",
+          "file_directory": "https://www.medrxiv.org/content/10.1101/2020.04.10.20060863v1",
+          "doi": "10.1101/2020.04.10.20060863"
+        },
+        "equations": []
+      },
+      "value": null,
+      "metadata": []
+    },
+    {
+      "id": "v2",
+      "variable": {
+        "id": "v2",
+        "name": "Moderna",
+        "metadata": [
+          {
+            "type": "text_annotation",
+            "value": " Vaccine Product"
+          },
+          {
+            "type": "text_annotation",
+            "value": " Vaccine product"
+          }
+        ],
+        "dkg_groundings": [
+          {
+            "id": "ncit:C177124",
+            "name": "Moderna",
+            "score": null
+          },
+          {
+            "id": "vo:0004953",
+            "name": "Moderna",
+            "score": null
+          }
+        ],
+        "column": [
+          {
+            "id": "9-14",
+            "name": "new_persons_vaccinated_moderna",
+            "dataset": {
+              "id": "9",
+              "name": "usa-vaccinations.csv",
+              "metadata": "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-vaccinations.csv"
+            }
+          },
+          {
+            "id": "9-15",
+            "name": "cumulative_persons_vaccinated_moderna",
+            "dataset": {
+              "id": "9",
+              "name": "usa-vaccinations.csv",
+              "metadata": "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-vaccinations.csv"
+            }
+          }
+        ],
+        "paper": {
+          "id": "Time-Varying COVID-19 Reproduction Number in the United States",
+          "file_directory": "https://www.medrxiv.org/content/10.1101/2020.04.10.20060863v1",
+          "doi": "10.1101/2020.04.10.20060863"
+        },
+        "equations": []
+      },
+      "value": null,
+      "metadata": []
+    },
+    {
+      "id": "v3",
+      "variable": {
+        "id": "v3",
+        "name": "Janssen",
+        "metadata": [
+          {
+            "type": "text_annotation",
+            "value": " Vaccine Product"
+          },
+          {
+            "type": "text_annotation",
+            "value": " Vaccine product"
+          }
+        ],
+        "dkg_groundings": [
+          {
+            "id": "vo:0004932",
+            "name": "Janssen Pharmaceutica",
+            "score": null
+          },
+          {
+            "id": "ncit:C164191",
+            "name": "Janssen Pharmaceuticals",
+            "score": null
+          }
+        ],
+        "column": [
+          {
+            "id": "9-20",
+            "name": "new_persons_vaccinated_janssen",
+            "dataset": {
+              "id": "9",
+              "name": "usa-vaccinations.csv",
+              "metadata": "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-vaccinations.csv"
+            }
+          },
+          {
+            "id": "9-21",
+            "name": "cumulative_persons_vaccinated_janssen",
+            "dataset": {
+              "id": "9",
+              "name": "usa-vaccinations.csv",
+              "metadata": "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-vaccinations.csv"
+            }
+          }
+        ],
+        "paper": {
+          "id": "Time-Varying COVID-19 Reproduction Number in the United States",
+          "file_directory": "https://www.medrxiv.org/content/10.1101/2020.04.10.20060863v1",
+          "doi": "10.1101/2020.04.10.20060863"
+        },
+        "equations": []
+      },
+      "value": null,
+      "metadata": []
+    },
+    {
+      "id": "v4",
+      "variable": {
+        "id": "v4",
+        "name": "Delta variant",
+        "metadata": [
+          {
+            "type": "text_annotation",
+            "value": " Variant of the virus"
+          },
+          {
+            "type": "text_annotation",
+            "value": " Percentage of the population that has the Delta variant of the virus.VE for cases"
+          }
+        ],
+        "dkg_groundings": [
+          {
+            "id": "cido:0000376",
+            "name": "SARS-CoV-2 Delta variant",
+            "score": null
+          },
+          {
+            "id": "cido:0000063",
+            "name": "Delta variant COVID-19 disease process",
+            "score": null
+          }
+        ],
+        "column": [],
+        "paper": {
+          "id": "Time-Varying COVID-19 Reproduction Number in the United States",
+          "file_directory": "https://www.medrxiv.org/content/10.1101/2020.04.10.20060863v1",
+          "doi": "10.1101/2020.04.10.20060863"
+        },
+        "equations": []
+      },
+      "value": null,
+      "metadata": []
+    },
+    {
+      "id": "v5",
+      "variable": {
+        "id": "v5",
+        "name": "NYS",
+        "metadata": [
+          {
+            "type": "text_annotation",
+            "value": " New York State"
+          }
+        ],
+        "dkg_groundings": [
+          {
+            "id": "geonames:2990440",
+            "name": "Nice",
+            "score": null
+          },
+          {
+            "id": "geonames:2147714",
+            "name": "Sydney",
+            "score": null
+          }
+        ],
+        "column": [
+          {
+            "id": "7-2",
+            "name": "state",
+            "dataset": {
+              "id": "7",
+              "name": "us-counties-2023.csv",
+              "metadata": "https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties-2023.csv"
+            }
+          },
+          {
+            "id": "4-2",
+            "name": "RegionName",
+            "dataset": {
+              "id": "4",
+              "name": "OxCGRT_nat_latest.csv",
+              "metadata": "https://raw.githubusercontent.com/OxCGRT/covid-policy-tracker/master/data/OxCGRT_nat_latest.csv"
+            }
+          }
+        ],
+        "paper": {
+          "id": "Time-Varying COVID-19 Reproduction Number in the United States",
+          "file_directory": "https://www.medrxiv.org/content/10.1101/2020.04.10.20060863v1",
+          "doi": "10.1101/2020.04.10.20060863"
+        },
+        "equations": []
+      },
+      "value": null,
+      "metadata": []
+    },
+    {
+      "id": "v6",
+      "variable": {
+        "id": "v6",
+        "name": "Cohort",
+        "metadata": [
+          {
+            "type": "text_annotation",
+            "value": " Group of persons remaining unvaccinated or fully vaccinated as of May 1, 2021."
+          }
+        ],
+        "dkg_groundings": [
+          {
+            "id": "ncit:C61512",
+            "name": "Cohort",
+            "score": null
+          },
+          {
+            "id": "stato:0000203",
+            "name": "cohort",
+            "score": null
+          }
+        ],
+        "column": [],
+        "paper": {
+          "id": "Time-Varying COVID-19 Reproduction Number in the United States",
+          "file_directory": "https://www.medrxiv.org/content/10.1101/2020.04.10.20060863v1",
+          "doi": "10.1101/2020.04.10.20060863"
+        },
+        "equations": []
+      },
+      "value": null,
+      "metadata": []
+    },
+    {
+      "id": "v7",
+      "variable": {
+        "id": "v7",
+        "name": "CIR",
+        "metadata": [
+          {
+            "type": "text_annotation",
+            "value": " Citywide Immunization Registry."
+          }
+        ],
+        "dkg_groundings": [],
+        "column": [],
+        "paper": {
+          "id": "Time-Varying COVID-19 Reproduction Number in the United States",
+          "file_directory": "https://www.medrxiv.org/content/10.1101/2020.04.10.20060863v1",
+          "doi": "10.1101/2020.04.10.20060863"
+        },
+        "equations": []
+      },
+      "value": null,
+      "metadata": []
+    },
+    {
+      "id": "v8",
+      "variable": {
+        "id": "v8",
+        "name": "NYSIIS",
+        "metadata": [
+          {
+            "type": "text_annotation",
+            "value": " New York State Immunization Information System."
+          }
+        ],
+        "dkg_groundings": [],
+        "column": [],
+        "paper": {
+          "id": "Time-Varying COVID-19 Reproduction Number in the United States",
+          "file_directory": "https://www.medrxiv.org/content/10.1101/2020.04.10.20060863v1",
+          "doi": "10.1101/2020.04.10.20060863"
+        },
+        "equations": []
+      },
+      "value": null,
+      "metadata": []
+    },
+    {
+      "id": "v9",
+      "variable": {
+        "id": "v9",
+        "name": "ECLRS",
+        "metadata": [
+          {
+            "type": "text_annotation",
+            "value": " Electronic Clinical Laboratory Reporting System."
+          }
+        ],
+        "dkg_groundings": [],
+        "column": [],
+        "paper": {
+          "id": "Time-Varying COVID-19 Reproduction Number in the United States",
+          "file_directory": "https://www.medrxiv.org/content/10.1101/2020.04.10.20060863v1",
+          "doi": "10.1101/2020.04.10.20060863"
+        },
+        "equations": []
+      },
+      "value": null,
+      "metadata": []
+    },
+    {
+      "id": "v10",
+      "variable": {
+        "id": "v10",
+        "name": "HERDS",
+        "metadata": [
+          {
+            "type": "text_annotation",
+            "value": " Health Electronic Response Data System."
+          }
+        ],
+        "dkg_groundings": [],
+        "column": [
+          {
+            "id": "6-3",
+            "name": "cumulative_hospitalized_patients",
+            "dataset": {
+              "id": "6",
+              "name": "usa-hospitalizations.csv",
+              "metadata": "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-hospitalizations.csv"
+            }
+          },
+          {
+            "id": "6-4",
+            "name": "current_hospitalized_patients",
+            "dataset": {
+              "id": "6",
+              "name": "usa-hospitalizations.csv",
+              "metadata": "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-hospitalizations.csv"
+            }
+          }
+        ],
+        "paper": {
+          "id": "Time-Varying COVID-19 Reproduction Number in the United States",
+          "file_directory": "https://www.medrxiv.org/content/10.1101/2020.04.10.20060863v1",
+          "doi": "10.1101/2020.04.10.20060863"
+        },
+        "equations": []
+      },
+      "value": null,
+      "metadata": []
+    },
+    {
+      "id": "v11",
+      "variable": {
+        "id": "v11",
+        "name": "Age Groups",
+        "metadata": [
+          {
+            "type": "text_annotation",
+            "value": " 18-49, 50-64, and ≥65 years."
+          }
+        ],
+        "dkg_groundings": [],
+        "column": [
+          {
+            "id": "5-142",
+            "name": "age_bin_0",
+            "dataset": {
+              "id": "5",
+              "name": "usa-cases-hospitalized-by-age.csv",
+              "metadata": "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-cases-hospitalized-by-age.csv"
+            }
+          }
+        ],
+        "paper": {
+          "id": "Time-Varying COVID-19 Reproduction Number in the United States",
+          "file_directory": "https://www.medrxiv.org/content/10.1101/2020.04.10.20060863v1",
+          "doi": "10.1101/2020.04.10.20060863"
+        },
+        "equations": []
+      },
+      "value": null,
+      "metadata": []
+    },
+    {
+      "id": "v12",
+      "variable": {
+        "id": "v12",
+        "name": "Timing of Full-Vaccination",
+        "metadata": [
+          {
+            "type": "text_annotation",
+            "value": " January-February, March, April 2021."
+          }
+        ],
+        "dkg_groundings": [],
+        "column": [],
+        "paper": {
+          "id": "Time-Varying COVID-19 Reproduction Number in the United States",
+          "file_directory": "https://www.medrxiv.org/content/10.1101/2020.04.10.20060863v1",
+          "doi": "10.1101/2020.04.10.20060863"
+        },
+        "equations": []
+      },
+      "value": null,
+      "metadata": []
+    },
+    {
+      "id": "v13",
+      "variable": {
+        "id": "v13",
+        "name": "VE for hospitalization",
+        "metadata": [
+          {
+            "type": "text_annotation",
+            "value": " Percentage of vaccine effectiveness for hospitalization"
+          }
+        ],
+        "dkg_groundings": [],
+        "column": [],
+        "paper": {
+          "id": "Time-Varying COVID-19 Reproduction Number in the United States",
+          "file_directory": "https://www.medrxiv.org/content/10.1101/2020.04.10.20060863v1",
+          "doi": "10.1101/2020.04.10.20060863"
+        },
+        "equations": []
+      },
+      "value": null,
+      "metadata": []
+    },
+    {
+      "id": "v14",
+      "variable": {
+        "id": "v14",
+        "name": "Delta variant prevalence",
+        "metadata": [
+          {
+            "type": "text_annotation",
+            "value": " Percentage of Delta variant prevalence"
+          }
+        ],
+        "dkg_groundings": [],
+        "column": [],
+        "paper": {
+          "id": "Time-Varying COVID-19 Reproduction Number in the United States",
+          "file_directory": "https://www.medrxiv.org/content/10.1101/2020.04.10.20060863v1",
+          "doi": "10.1101/2020.04.10.20060863"
+        },
+        "equations": []
+      },
+      "value": null,
+      "metadata": []
+    },
+    {
+      "id": "v15",
+      "variable": {
+        "id": "v15",
+        "name": "Census uncertainty",
+        "metadata": [
+          {
+            "type": "text_annotation",
+            "value": " Uncertainty in population size estimates"
+          }
+        ],
+        "dkg_groundings": [],
+        "column": [
+          {
+            "id": "8-5",
+            "name": "\"Population\"",
+            "dataset": {
+              "id": "8",
+              "name": "usa-2021-population-age-stratified.csv",
+              "metadata": "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/usa-2021-population-age-stratified.csv"
+            }
+          },
+          {
+            "id": "8-6",
+            "name": "\"% of Population\"",
+            "dataset": {
+              "id": "8",
+              "name": "usa-2021-population-age-stratified.csv",
+              "metadata": "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/usa-2021-population-age-stratified.csv"
+            }
+          }
+        ],
+        "paper": {
+          "id": "Time-Varying COVID-19 Reproduction Number in the United States",
+          "file_directory": "https://www.medrxiv.org/content/10.1101/2020.04.10.20060863v1",
+          "doi": "10.1101/2020.04.10.20060863"
+        },
+        "equations": []
+      },
+      "value": null,
+      "metadata": []
+    },
+    {
+      "id": "v16",
+      "variable": {
+        "id": "v16",
+        "name": "CDC guidance",
+        "metadata": [
+          {
+            "type": "text_annotation",
+            "value": " Policy changes adopted by NYS"
+          }
+        ],
+        "dkg_groundings": [],
+        "column": [
+          {
+            "id": "4-5",
+            "name": "Date",
+            "dataset": {
+              "id": "4",
+              "name": "OxCGRT_nat_latest.csv",
+              "metadata": "https://raw.githubusercontent.com/OxCGRT/covid-policy-tracker/master/data/OxCGRT_nat_latest.csv"
+            }
+          }
+        ],
+        "paper": {
+          "id": "Time-Varying COVID-19 Reproduction Number in the United States",
+          "file_directory": "https://www.medrxiv.org/content/10.1101/2020.04.10.20060863v1",
+          "doi": "10.1101/2020.04.10.20060863"
+        },
+        "equations": []
+      },
+      "value": null,
+      "metadata": []
+    },
+    {
+      "id": "v17",
+      "variable": {
+        "id": "v17",
+        "name": "Time-cohort",
+        "metadata": [
+          {
+            "type": "text_annotation",
+            "value": " Gradients by time-cohort in August"
+          }
+        ],
+        "dkg_groundings": [],
+        "column": [],
+        "paper": {
+          "id": "Time-Varying COVID-19 Reproduction Number in the United States",
+          "file_directory": "https://www.medrxiv.org/content/10.1101/2020.04.10.20060863v1",
+          "doi": "10.1101/2020.04.10.20060863"
+        },
+        "equations": []
+      },
+      "value": null,
+      "metadata": []
+    },
+    {
+      "id": "v18",
+      "variable": {
+        "id": "v18",
+        "name": "unmeasured confounding",
+        "metadata": [
+          {
+            "type": "text_annotation",
+            "value": " behavioral, medical, or exposure differences between fully-vaccinated and unvaccinated adults"
+          }
+        ],
+        "dkg_groundings": [],
+        "column": [],
+        "paper": {
+          "id": "Time-Varying COVID-19 Reproduction Number in the United States",
+          "file_directory": "https://www.medrxiv.org/content/10.1101/2020.04.10.20060863v1",
+          "doi": "10.1101/2020.04.10.20060863"
+        },
+        "equations": []
+      },
+      "value": null,
+      "metadata": []
+    },
+    {
+      "id": "v19",
+      "variable": {
+        "id": "v19",
+        "name": "indirect effects",
+        "metadata": [
+          {
+            "type": "text_annotation",
+            "value": " herd-immunity-type"
+          }
+        ],
+        "dkg_groundings": [],
+        "column": [],
+        "paper": {
+          "id": "Time-Varying COVID-19 Reproduction Number in the United States",
+          "file_directory": "https://www.medrxiv.org/content/10.1101/2020.04.10.20060863v1",
+          "doi": "10.1101/2020.04.10.20060863"
+        },
+        "equations": []
+      },
+      "value": null,
+      "metadata": []
+    },
+    {
+      "id": "v20",
+      "variable": {
+        "id": "v20",
+        "name": "non-FDA authorized vaccines",
+        "metadata": [
+          {
+            "type": "text_annotation",
+            "value": " persons who received non-FDA authorized vaccines"
+          }
+        ],
+        "dkg_groundings": [],
+        "column": [
+          {
+            "id": "9-26",
+            "name": "new_persons_vaccinated_sinovac",
+            "dataset": {
+              "id": "9",
+              "name": "usa-vaccinations.csv",
+              "metadata": "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-vaccinations.csv"
+            }
+          },
+          {
+            "id": "9-27",
+            "name": "total_persons_vaccinated_sinovac",
+            "dataset": {
+              "id": "9",
+              "name": "usa-vaccinations.csv",
+              "metadata": "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-vaccinations.csv"
+            }
+          }
+        ],
+        "paper": {
+          "id": "Time-Varying COVID-19 Reproduction Number in the United States",
+          "file_directory": "https://www.medrxiv.org/content/10.1101/2020.04.10.20060863v1",
+          "doi": "10.1101/2020.04.10.20060863"
+        },
+        "equations": []
+      },
+      "value": null,
+      "metadata": []
+    },
+    {
+      "id": "v21",
+      "variable": {
+        "id": "v21",
+        "name": "FDA",
+        "metadata": [
+          {
+            "type": "text_annotation",
+            "value": " Federal Drug Administration"
+          }
+        ],
+        "dkg_groundings": [
+          {
+            "id": "ndfrt:FDA_UNII",
+            "name": "FDA_UNII",
+            "score": null
+          },
+          {
+            "id": "ncit:P317",
+            "name": "FDA_Table",
+            "score": null
+          }
+        ],
+        "column": [],
+        "paper": {
+          "id": "Time-Varying COVID-19 Reproduction Number in the United States",
+          "file_directory": "https://www.medrxiv.org/content/10.1101/2020.04.10.20060863v1",
+          "doi": "10.1101/2020.04.10.20060863"
+        },
+        "equations": []
+      },
+      "value": null,
+      "metadata": []
+    },
+    {
+      "id": "v22",
+      "variable": {
+        "id": "v22",
+        "name": "mRNA-1273",
+        "metadata": [
+          {
+            "type": "text_annotation",
+            "value": " Vaccine Sponsor Briefing Document"
+          }
+        ],
+        "dkg_groundings": [
+          {
+            "id": "vo:0005233",
+            "name": "mRNA-1273.351",
+            "score": null
+          },
+          {
+            "id": "vo:0005277",
+            "name": "mRNA-1273.211",
+            "score": null
+          }
+        ],
+        "column": [],
+        "paper": {
+          "id": "Time-Varying COVID-19 Reproduction Number in the United States",
+          "file_directory": "https://www.medrxiv.org/content/10.1101/2020.04.10.20060863v1",
+          "doi": "10.1101/2020.04.10.20060863"
+        },
+        "equations": []
+      },
+      "value": null,
+      "metadata": []
+    },
+    {
+      "id": "v23",
+      "variable": {
+        "id": "v23",
+        "name": "COVID-19 Vaccine Ad26.COV2.S VA",
+        "metadata": [
+          {
+            "type": "text_annotation",
+            "value": " Vaccine primarily distributed to NYSC31518 (JNJ-78436735)"
+          }
+        ],
+        "dkg_groundings": [],
+        "column": [
+          {
+            "id": "9-20",
+            "name": "new_persons_vaccinated_janssen",
+            "dataset": {
+              "id": "9",
+              "name": "usa-vaccinations.csv",
+              "metadata": "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-vaccinations.csv"
+            }
+          },
+          {
+            "id": "9-21",
+            "name": "cumulative_persons_vaccinated_janssen",
+            "dataset": {
+              "id": "9",
+              "name": "usa-vaccinations.csv",
+              "metadata": "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-vaccinations.csv"
+            }
+          }
+        ],
+        "paper": {
+          "id": "Time-Varying COVID-19 Reproduction Number in the United States",
+          "file_directory": "https://www.medrxiv.org/content/10.1101/2020.04.10.20060863v1",
+          "doi": "10.1101/2020.04.10.20060863"
+        },
+        "equations": []
+      },
+      "value": null,
+      "metadata": []
+    },
+    {
+      "id": "v24",
+      "variable": {
+        "id": "v24",
+        "name": "CDC",
+        "metadata": [
+          {
+            "type": "text_annotation",
+            "value": " Centers for Disease Control and Prevention"
+          }
+        ],
+        "dkg_groundings": [
+          {
+            "id": "ncit:A23",
+            "name": "Has_PCDC_Data_Type",
+            "score": null
+          },
+          {
+            "id": "ncit:A38",
+            "name": "Has_PCDC_OS_Permissible_Value",
+            "score": null
+          }
+        ],
+        "column": [],
+        "paper": {
+          "id": "Time-Varying COVID-19 Reproduction Number in the United States",
+          "file_directory": "https://www.medrxiv.org/content/10.1101/2020.04.10.20060863v1",
+          "doi": "10.1101/2020.04.10.20060863"
+        },
+        "equations": []
+      },
+      "value": null,
+      "metadata": []
+    },
+    {
+      "id": "v25",
+      "variable": {
+        "id": "v25",
+        "name": "BNT162b2",
+        "metadata": [
+          {
+            "type": "text_annotation",
+            "value": " Vaccine"
+          }
+        ],
+        "dkg_groundings": [],
+        "column": [
+          {
+            "id": "9-12",
+            "name": "new_vaccine_doses_administered_pfizer",
+            "dataset": {
+              "id": "9",
+              "name": "usa-vaccinations.csv",
+              "metadata": "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-vaccinations.csv"
+            }
+          },
+          {
+            "id": "9-13",
+            "name": "cumulative_vaccine_doses_administered_pfizer",
+            "dataset": {
+              "id": "9",
+              "name": "usa-vaccinations.csv",
+              "metadata": "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-vaccinations.csv"
+            }
+          }
+        ],
+        "paper": {
+          "id": "Time-Varying COVID-19 Reproduction Number in the United States",
+          "file_directory": "https://www.medrxiv.org/content/10.1101/2020.04.10.20060863v1",
+          "doi": "10.1101/2020.04.10.20060863"
+        },
+        "equations": []
+      },
+      "value": null,
+      "metadata": []
+    },
+    {
+      "id": "v26",
+      "variable": {
+        "id": "v26",
+        "name": "Ad26.COV2.S VAC31518 (JNJ-78436735)",
+        "metadata": [
+          {
+            "type": "text_annotation",
+            "value": " Vaccine"
+          }
+        ],
+        "dkg_groundings": [],
+        "column": [
+          {
+            "id": "9-20",
+            "name": "new_persons_vaccinated_janssen",
+            "dataset": {
+              "id": "9",
+              "name": "usa-vaccinations.csv",
+              "metadata": "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-vaccinations.csv"
+            }
+          },
+          {
+            "id": "9-21",
+            "name": "cumulative_persons_vaccinated_janssen",
+            "dataset": {
+              "id": "9",
+              "name": "usa-vaccinations.csv",
+              "metadata": "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-vaccinations.csv"
+            }
+          }
+        ],
+        "paper": {
+          "id": "Time-Varying COVID-19 Reproduction Number in the United States",
+          "file_directory": "https://www.medrxiv.org/content/10.1101/2020.04.10.20060863v1",
+          "doi": "10.1101/2020.04.10.20060863"
+        },
+        "equations": []
+      },
+      "value": null,
+      "metadata": []
+    },
+    {
+      "id": "v27",
+      "variable": {
+        "id": "v27",
+        "name": "Persons",
+        "metadata": [
+          {
+            "type": "text_annotation",
+            "value": " Total persons in cohorts of fully-vaccinated and unvaccinated adults in New York State"
+          }
+        ],
+        "dkg_groundings": [
+          {
+            "id": "vo:0001100",
+            "name": "persons aged 6 months--24 years",
+            "score": null
+          },
+          {
+            "id": "vo:0001098",
+            "name": "persons living with or providing care for infants aged <6 months",
+            "score": null
+          }
+        ],
+        "column": [
+          {
+            "id": "9-5",
+            "name": "cumulative_persons_fully_vaccinated",
+            "dataset": {
+              "id": "9",
+              "name": "usa-vaccinations.csv",
+              "metadata": "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-vaccinations.csv"
+            }
+          },
+          {
+            "id": "9-3",
+            "name": "cumulative_persons_vaccinated",
+            "dataset": {
+              "id": "9",
+              "name": "usa-vaccinations.csv",
+              "metadata": "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-vaccinations.csv"
+            }
+          }
+        ],
+        "paper": {
+          "id": "Time-Varying COVID-19 Reproduction Number in the United States",
+          "file_directory": "https://www.medrxiv.org/content/10.1101/2020.04.10.20060863v1",
+          "doi": "10.1101/2020.04.10.20060863"
+        },
+        "equations": []
+      },
+      "value": null,
+      "metadata": []
+    },
+    {
+      "id": "v28",
+      "variable": {
+        "id": "v28",
+        "name": "Cases",
+        "metadata": [
+          {
+            "type": "text_annotation",
+            "value": " Total new laboratory-confirmed COVID-19 cases"
+          }
+        ],
+        "dkg_groundings": [
+          {
+            "id": "hp:0003745",
+            "name": "Sporadic",
+            "score": null
+          },
+          {
+            "id": "cemo:daily_cases",
+            "name": "daily cases",
+            "score": null
+          }
+        ],
+        "column": [
+          {
+            "id": "7-4",
+            "name": "cases",
+            "dataset": {
+              "id": "7",
+              "name": "us-counties-2023.csv",
+              "metadata": "https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties-2023.csv"
+            }
+          },
+          {
+            "id": "1-2",
+            "name": "num_cases_month",
+            "dataset": {
+              "id": "1",
+              "name": "hospitalization-rate-by-month.csv",
+              "metadata": "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/hospitalization-rate-by-month.csv"
+            }
+          }
+        ],
+        "paper": {
+          "id": "Time-Varying COVID-19 Reproduction Number in the United States",
+          "file_directory": "https://www.medrxiv.org/content/10.1101/2020.04.10.20060863v1",
+          "doi": "10.1101/2020.04.10.20060863"
+        },
+        "equations": []
+      },
+      "value": null,
+      "metadata": []
+    },
+    {
+      "id": "v29",
+      "variable": {
+        "id": "v29",
+        "name": "Hospitalizations",
+        "metadata": [
+          {
+            "type": "text_annotation",
+            "value": " Total hospitalizations during follow-up"
+          }
+        ],
+        "dkg_groundings": [],
+        "column": [
+          {
+            "id": "6-2",
+            "name": "new_hospitalized_patients",
+            "dataset": {
+              "id": "6",
+              "name": "usa-hospitalizations.csv",
+              "metadata": "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-hospitalizations.csv"
+            }
+          },
+          {
+            "id": "6-3",
+            "name": "cumulative_hospitalized_patients",
+            "dataset": {
+              "id": "6",
+              "name": "usa-hospitalizations.csv",
+              "metadata": "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-hospitalizations.csv"
+            }
+          }
+        ],
+        "paper": {
+          "id": "Time-Varying COVID-19 Reproduction Number in the United States",
+          "file_directory": "https://www.medrxiv.org/content/10.1101/2020.04.10.20060863v1",
+          "doi": "10.1101/2020.04.10.20060863"
+        },
+        "equations": []
+      },
+      "value": null,
+      "metadata": []
+    },
+    {
+      "id": "v30",
+      "variable": {
+        "id": "v30",
+        "name": "VE (95% CI)",
+        "metadata": [
+          {
+            "type": "text_annotation",
+            "value": " Vaccine effectiveness with 95% confidence interval"
+          },
+          {
+            "type": "text_annotation",
+            "value": " Vaccine effectiveness with 95% confidence interval."
+          }
+        ],
+        "dkg_groundings": [],
+        "column": [],
+        "paper": {
+          "id": "Time-Varying COVID-19 Reproduction Number in the United States",
+          "file_directory": "https://www.medrxiv.org/content/10.1101/2020.04.10.20060863v1",
+          "doi": "10.1101/2020.04.10.20060863"
+        },
+        "equations": []
+      },
+      "value": null,
+      "metadata": []
+    },
+    {
+      "id": "v31",
+      "variable": {
+        "id": "v31",
+        "name": "March",
+        "metadata": [
+          {
+            "type": "text_annotation",
+            "value": " Time period"
+          }
+        ],
+        "dkg_groundings": [
+          {
+            "id": "geonames:445408",
+            "name": "Nomarchía Athínas",
+            "score": null
+          },
+          {
+            "id": "doid:0050475",
+            "name": "Weill-Marchesani syndrome",
+            "score": null
+          }
+        ],
+        "column": [],
+        "paper": {
+          "id": "Time-Varying COVID-19 Reproduction Number in the United States",
+          "file_directory": "https://www.medrxiv.org/content/10.1101/2020.04.10.20060863v1",
+          "doi": "10.1101/2020.04.10.20060863"
+        },
+        "equations": []
+      },
+      "value": null,
+      "metadata": []
+    },
+    {
+      "id": "v32",
+      "variable": {
+        "id": "v32",
+        "name": "April",
+        "metadata": [
+          {
+            "type": "text_annotation",
+            "value": " Time period"
+          }
+        ],
+        "dkg_groundings": [
+          {
+            "id": "pr:Q92688",
+            "name": "acidic leucine-rich nuclear phosphoprotein 32 family member B (human)",
+            "score": null
+          }
+        ],
+        "column": [],
+        "paper": {
+          "id": "Time-Varying COVID-19 Reproduction Number in the United States",
+          "file_directory": "https://www.medrxiv.org/content/10.1101/2020.04.10.20060863v1",
+          "doi": "10.1101/2020.04.10.20060863"
+        },
+        "equations": []
+      },
+      "value": null,
+      "metadata": []
+    },
+    {
+      "id": "v33",
+      "variable": {
+        "id": "v33",
+        "name": "18-49 years",
+        "metadata": [
+          {
+            "type": "text_annotation",
+            "value": " Age group."
+          }
+        ],
+        "dkg_groundings": [],
+        "column": [
+          {
+            "id": "5-142",
+            "name": "age_bin_0",
+            "dataset": {
+              "id": "5",
+              "name": "usa-cases-hospitalized-by-age.csv",
+              "metadata": "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-cases-hospitalized-by-age.csv"
+            }
+          }
+        ],
+        "paper": {
+          "id": "Time-Varying COVID-19 Reproduction Number in the United States",
+          "file_directory": "https://www.medrxiv.org/content/10.1101/2020.04.10.20060863v1",
+          "doi": "10.1101/2020.04.10.20060863"
+        },
+        "equations": []
+      },
+      "value": null,
+      "metadata": []
+    },
+    {
+      "id": "v34",
+      "variable": {
+        "id": "v34",
+        "name": "50-64 years",
+        "metadata": [
+          {
+            "type": "text_annotation",
+            "value": " Age group."
+          }
+        ],
+        "dkg_groundings": [],
+        "column": [
+          {
+            "id": "3-1",
+            "name": "Age Group",
+            "dataset": {
+              "id": "3",
+              "name": "vaccination-hazard-rates-age-month.csv",
+              "metadata": "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/vaccination-hazard-rates-age-month.csv"
+            }
+          }
+        ],
+        "paper": {
+          "id": "Time-Varying COVID-19 Reproduction Number in the United States",
+          "file_directory": "https://www.medrxiv.org/content/10.1101/2020.04.10.20060863v1",
+          "doi": "10.1101/2020.04.10.20060863"
+        },
+        "equations": []
+      },
+      "value": null,
+      "metadata": []
+    },
+    {
+      "id": "v35",
+      "variable": {
+        "id": "v35",
+        "name": "Vaccine cohort",
+        "metadata": [
+          {
+            "type": "text_annotation",
+            "value": " Percentage of vaccine effectiveness by product and timing in New York State"
+          }
+        ],
+        "dkg_groundings": [],
+        "column": [],
+        "paper": {
+          "id": "Time-Varying COVID-19 Reproduction Number in the United States",
+          "file_directory": "https://www.medrxiv.org/content/10.1101/2020.04.10.20060863v1",
+          "doi": "10.1101/2020.04.10.20060863"
+        },
+        "equations": []
+      },
+      "value": null,
+      "metadata": []
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+vaccination-hazard-rates-age-month.csv, https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/vaccination-hazard-rates-age-month.csv
+usa-2021-population-age-stratified.csv, https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/usa-2021-population-age-stratified.csv
+hospitalization-rate-by-month.csv, https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/hospitalization-rate-by-month.csv
+age-stratified-by-month-hosp-cases-deaths.csv, https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/age-stratified-by-month-hosp-cases-deaths.csv
+usa-vaccinations.csv, https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-vaccinations.csv
+usa-cases-deaths.csv, https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-cases-deaths.csv
+usa-cases-hospitalized-by-age.csv, https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-cases-hospitalized-by-age.csv
+usa-hospitalizations.csv, https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-hospitalizations.csv
+OxCGRT_nat_latest.csv, https://raw.githubusercontent.com/OxCGRT/covid-policy-tracker/master/data/OxCGRT_nat_latest.csv
+us-counties-2023.csv, https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties-2023.csv

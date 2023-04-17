@@ -51,6 +51,13 @@ def get_gpt_match(prompt, key, model="text-davinci-002"):
     # print(result)
     return result
 
+def get_gpt4_match(prompt, key, model="gpt-4"):
+    openai.api_key = key
+    completion = openai.ChatCompletion.create(model=model, messages=[{"role": "user", "content": prompt}], temperature=0.0)
+    result = completion.choices[0].message.content
+    # print(result)
+    return result
+
 
 def read_text_from_file(text_path):
     text_file = open(text_path, "r")
@@ -388,7 +395,7 @@ def vars_dataset_connection(json_str, dataset_str, gpt_key):
     try:
         for i in tqdm(range(len(all_desc_ls))):
             prompt = get_var_dataset_prompt(all_desc, dataset_s, all_desc_ls[i])
-            ans = get_gpt_match(prompt, gpt_key, model="text-davinci-003")
+            ans = get_gpt4_match(prompt, gpt_key)
             ans = ans.split('\n')
 
             for j in range(len(ans)):
