@@ -1,0 +1,4185 @@
+[
+  {
+    "file_name": "zoltar-truth copy.csv",
+    "file_directory": "https://github.com/reichlab/covid19-forecast-hub/tree/master/data-truth",
+    "annotation": {
+      "timezero": [
+        [
+          "wikidata:Q4051490",
+          "TimeZero"
+        ],
+        [
+          "idocovid19:0001277",
+          "COVID-19 incidence"
+        ],
+        [
+          "ido:0000480",
+          "infection incidence"
+        ],
+        [
+          "idocovid19:0001283",
+          "SARS-CoV-2 incidence"
+        ],
+        [
+          "hp:0001402",
+          "Hepatocellular carcinoma"
+        ],
+        [
+          "oae:0000178",
+          "AE incidence rate"
+        ],
+        [
+          "orphanet.ordo:409966",
+          "point prevalence"
+        ],
+        [
+          "obcs:0000064",
+          "period prevalence"
+        ],
+        [
+          "cemo:weighted_prevalence",
+          "weighted prevalence"
+        ],
+        [
+          "idocovid19:0001272",
+          "COVID-19 prevalence"
+        ],
+        [
+          "ido:0000486",
+          "infection prevalence"
+        ]
+      ],
+      "unit": [
+        [
+          "ncit:C53511",
+          "Intensive Care Unit"
+        ],
+        [
+          "ido:0000621",
+          "acquired immunity to infectious agent"
+        ],
+        [
+          "uo:0000000",
+          "unit"
+        ],
+        [
+          "idomal:0000012",
+          "immunity"
+        ],
+        [
+          "ncit:C16453",
+          "Community"
+        ],
+        [
+          "symp:0020025",
+          "caseation"
+        ],
+        [
+          "wikidata:Q1040401",
+          "decasecond"
+        ],
+        [
+          "ncbitaxon:1003877",
+          "Benincaseae"
+        ],
+        [
+          "geonames:11281879",
+          "Casablanca-Settat"
+        ],
+        [
+          "pr:000005942",
+          "kappa-casein"
+        ],
+        [
+          "ncit:C71550",
+          "Age Cohort"
+        ],
+        [
+          "ncit:C53205",
+          "Birth Cohort"
+        ],
+        [
+          "ncit:C71548",
+          "Historical Cohort"
+        ],
+        [
+          "ncit:C71551",
+          "Exposed Population"
+        ],
+        [
+          "ncit:C71552",
+          "Unexposed Population"
+        ]
+      ],
+      "target": [
+        [
+          "owl:targetValue",
+          "targetValue"
+        ],
+        [
+          "owl:annotatedTarget",
+          "annotatedTarget"
+        ],
+        [
+          "owl:targetIndividual",
+          "targetIndividual"
+        ],
+        [
+          "vo:0001173",
+          "pTargeTomp31"
+        ],
+        [
+          "hp:0034280",
+          "Target cells"
+        ],
+        [
+          "ido:0000597",
+          "host exposure to environment containing infectious agent"
+        ],
+        [
+          "cemo:exposure",
+          "exposure"
+        ],
+        [
+          "opmi:0000572",
+          "drug exposure"
+        ],
+        [
+          "hp:4000110",
+          "Exposure history"
+        ],
+        [
+          "opmi:0000554",
+          "device exposure"
+        ],
+        [
+          "apollosv:00000204",
+          "disease outcome"
+        ],
+        [
+          "oae:0003232",
+          "adverse event outcome"
+        ],
+        [
+          "apollosv:00000290",
+          "treatment preventable outcome"
+        ],
+        [
+          "apollosv:00000218",
+          "vaccination preventable outcome"
+        ],
+        [
+          "cemo:incidence_of_sever_outcomes",
+          "incidence of sever outcomes"
+        ]
+      ],
+      "value": [
+        [
+          "owl:hasValue",
+          "hasValue"
+        ],
+        [
+          "owl:targetValue",
+          "targetValue"
+        ],
+        [
+          "ncit:A31",
+          "Has_GDC_Value"
+        ],
+        [
+          "owl:allValuesFrom",
+          "allValuesFrom"
+        ],
+        [
+          "ncit:A27",
+          "Has_CTDC_Value"
+        ],
+        [
+          "apollosv:00000204",
+          "disease outcome"
+        ],
+        [
+          "oae:0003232",
+          "adverse event outcome"
+        ],
+        [
+          "apollosv:00000290",
+          "treatment preventable outcome"
+        ],
+        [
+          "apollosv:00000218",
+          "vaccination preventable outcome"
+        ],
+        [
+          "cemo:incidence_of_sever_outcomes",
+          "incidence of sever outcomes"
+        ],
+        [
+          "doid:8448",
+          "intestinal impaction"
+        ],
+        [
+          "oae:0008095",
+          "tooth impacted AE"
+        ],
+        [
+          "hp:0001571",
+          "Multiple impacted teeth"
+        ],
+        [
+          "hp:0031984",
+          "Esophageal food impaction"
+        ]
+      ]
+    },
+    "source": "MIT data profiling tool http://100.26.10.46"
+  },
+  {
+    "file_name": "truth-Incident Hospitalizations.csv",
+    "file_directory": "https://github.com/reichlab/covid19-forecast-hub/tree/master/data-truth",
+    "annotation": {
+      "date": [
+        [
+          "apollosv:00000429",
+          "date"
+        ],
+        [
+          "oboinowl:date",
+          "date"
+        ],
+        [
+          "dc:date",
+          "Date"
+        ],
+        [
+          "geonames:2130188",
+          "Hakodate"
+        ],
+        [
+          "oboinowl:hasDate",
+          "has_date"
+        ],
+        [
+          "idocovid19:0001277",
+          "COVID-19 incidence"
+        ],
+        [
+          "ido:0000480",
+          "infection incidence"
+        ],
+        [
+          "idocovid19:0001283",
+          "SARS-CoV-2 incidence"
+        ],
+        [
+          "hp:0001402",
+          "Hepatocellular carcinoma"
+        ],
+        [
+          "oae:0000178",
+          "AE incidence rate"
+        ],
+        [
+          "orphanet.ordo:409966",
+          "point prevalence"
+        ],
+        [
+          "obcs:0000064",
+          "period prevalence"
+        ],
+        [
+          "cemo:weighted_prevalence",
+          "weighted prevalence"
+        ],
+        [
+          "idocovid19:0001272",
+          "COVID-19 prevalence"
+        ],
+        [
+          "ido:0000486",
+          "infection prevalence"
+        ]
+      ],
+      "location": [
+        [
+          "so:0000199",
+          "translocation"
+        ],
+        [
+          "so:0001885",
+          "TFBS_translocation"
+        ],
+        [
+          "so:0001881",
+          "feature_translocation"
+        ],
+        [
+          "so:0001883",
+          "transcript_translocation"
+        ],
+        [
+          "so:1000044",
+          "chromosomal_translocation"
+        ],
+        [
+          "wikidata:Q4257161",
+          "range"
+        ],
+        [
+          "wikidata:Q7574061",
+          "spatial distribution"
+        ],
+        [
+          "wikidata:Q51482895",
+          "Geographic distribution of the pines of the world"
+        ],
+        [
+          "wikidata:Q29010408",
+          "Geographic distribution of oil production worker exposures reported to Texas poison centers"
+        ],
+        [
+          "wikidata:Q33525004",
+          "Geographic distribution of Staphylococcus aureus causing invasive infections in Europe: a molecular-epidemiological analysis"
+        ]
+      ],
+      "location_name": [
+        [
+          "wikidata:Q1714800",
+          "locational surname"
+        ],
+        [
+          "wikidata:Q82794",
+          "geographic region"
+        ],
+        [
+          "wikidata:Q4835091",
+          "territory"
+        ],
+        [
+          "wikidata:Q5535051",
+          "Geographic areas of Houston"
+        ],
+        [
+          "wikidata:Q111867462",
+          "geographic area of the United States of America"
+        ],
+        [
+          "wikidata:Q5535052",
+          "Geographic areas of Sugar Land, Texas"
+        ],
+        [
+          "wikidata:Q47933460",
+          "Place of residence and risk of fracture in older people: a population-based study of over 65-year-olds in Cardiff."
+        ],
+        [
+          "wikidata:Q39831605",
+          "Place of residence and obesity in 1,578,694 young Swedish men between 1969 and 2005."
+        ],
+        [
+          "wikidata:Q37662044",
+          "Place of residence and outcomes of patients with heart failure: analysis from the telemonitoring to improve heart failure outcomes trial"
+        ],
+        [
+          "wikidata:Q39743023",
+          "Place of residence and distance to medical care influence the diagnosis of hepatitis C: a population-based study"
+        ],
+        [
+          "wikidata:Q34248327",
+          "Place of residence affects routine dental care in the intellectually and developmentally disabled adult population on Medicaid"
+        ]
+      ],
+      "value": [
+        [
+          "owl:hasValue",
+          "hasValue"
+        ],
+        [
+          "owl:targetValue",
+          "targetValue"
+        ],
+        [
+          "ncit:A31",
+          "Has_GDC_Value"
+        ],
+        [
+          "owl:allValuesFrom",
+          "allValuesFrom"
+        ],
+        [
+          "ncit:A27",
+          "Has_CTDC_Value"
+        ],
+        [
+          "apollosv:00000204",
+          "disease outcome"
+        ],
+        [
+          "oae:0003232",
+          "adverse event outcome"
+        ],
+        [
+          "apollosv:00000290",
+          "treatment preventable outcome"
+        ],
+        [
+          "apollosv:00000218",
+          "vaccination preventable outcome"
+        ],
+        [
+          "cemo:incidence_of_sever_outcomes",
+          "incidence of sever outcomes"
+        ],
+        [
+          "doid:8448",
+          "intestinal impaction"
+        ],
+        [
+          "oae:0008095",
+          "tooth impacted AE"
+        ],
+        [
+          "hp:0001571",
+          "Multiple impacted teeth"
+        ],
+        [
+          "hp:0031984",
+          "Esophageal food impaction"
+        ]
+      ]
+    },
+    "source": "MIT data profiling tool http://100.26.10.46"
+  },
+  {
+    "file_name": "Dates_edit_evaluation.csv",
+    "file_directory": "https://github.com/reichlab/covid19-forecast-hub/tree/master/data-truth",
+    "annotation": {
+      "\ufeffReport_date": [],
+      "date_of_error": [],
+      "first_fcast_date": [
+        [
+          "idomal:0000147",
+          "sporogony"
+        ],
+        [
+          "apollosv:00000317",
+          "incubation period"
+        ],
+        [
+          "ido:0000519",
+          "incubation period"
+        ],
+        [
+          "idomal:0000355",
+          "incubation period"
+        ],
+        [
+          "askemo:0000010",
+          "incubation time"
+        ]
+      ],
+      "target ": [
+        [
+          "hp:0034280",
+          "Target cells"
+        ],
+        [
+          "apollosv:00000195",
+          "target population"
+        ],
+        [
+          "ncit:C97050",
+          "Target Audience"
+        ],
+        [
+          "chebi:68481",
+          "mTOR inhibitor"
+        ],
+        [
+          "ro:0002463",
+          "target participant in"
+        ],
+        [
+          "ido:0000597",
+          "host exposure to environment containing infectious agent"
+        ],
+        [
+          "cemo:exposure",
+          "exposure"
+        ],
+        [
+          "opmi:0000572",
+          "drug exposure"
+        ],
+        [
+          "hp:4000110",
+          "Exposure history"
+        ],
+        [
+          "opmi:0000554",
+          "device exposure"
+        ],
+        [
+          "apollosv:00000204",
+          "disease outcome"
+        ],
+        [
+          "oae:0003232",
+          "adverse event outcome"
+        ],
+        [
+          "apollosv:00000290",
+          "treatment preventable outcome"
+        ],
+        [
+          "apollosv:00000218",
+          "vaccination preventable outcome"
+        ],
+        [
+          "cemo:incidence_of_sever_outcomes",
+          "incidence of sever outcomes"
+        ]
+      ],
+      "location_name": [
+        [
+          "wikidata:Q1714800",
+          "locational surname"
+        ],
+        [
+          "wikidata:Q82794",
+          "geographic region"
+        ],
+        [
+          "wikidata:Q4835091",
+          "territory"
+        ],
+        [
+          "wikidata:Q5535051",
+          "Geographic areas of Houston"
+        ],
+        [
+          "wikidata:Q111867462",
+          "geographic area of the United States of America"
+        ],
+        [
+          "wikidata:Q5535052",
+          "Geographic areas of Sugar Land, Texas"
+        ],
+        [
+          "wikidata:Q47933460",
+          "Place of residence and risk of fracture in older people: a population-based study of over 65-year-olds in Cardiff."
+        ],
+        [
+          "wikidata:Q39831605",
+          "Place of residence and obesity in 1,578,694 young Swedish men between 1969 and 2005."
+        ],
+        [
+          "wikidata:Q37662044",
+          "Place of residence and outcomes of patients with heart failure: analysis from the telemonitoring to improve heart failure outcomes trial"
+        ],
+        [
+          "wikidata:Q39743023",
+          "Place of residence and distance to medical care influence the diagnosis of hepatitis C: a population-based study"
+        ],
+        [
+          "wikidata:Q34248327",
+          "Place of residence affects routine dental care in the intellectually and developmentally disabled adult population on Medicaid"
+        ]
+      ],
+      "Error_message": [
+        [
+          "wikidata:Q1332193",
+          "error message"
+        ],
+        [
+          "wikidata:Q51998889",
+          "Error message."
+        ],
+        [
+          "wikidata:Q52000208",
+          "Error messages when calculating chi-square statistics with microsoft EXCEL."
+        ],
+        [
+          "wikidata:Q109285574",
+          "Error messages in relational database management systems: A comparison of effectiveness, usefulness, and user confidence"
+        ],
+        [
+          "wikidata:Q1313852",
+          "error code"
+        ],
+        [
+          "wikidata:Q18614926",
+          "Error Code"
+        ],
+        [
+          "wikidata:Q105858287",
+          "Error Code Modeler"
+        ]
+      ]
+    },
+    "source": "MIT data profiling tool http://100.26.10.46"
+  },
+  {
+    "file_name": "zoltar-truth.csv",
+    "file_directory": "https://github.com/reichlab/covid19-forecast-hub/tree/master/data-truth",
+    "annotation": {
+      "timezero": [
+        [
+          "wikidata:Q4051490",
+          "TimeZero"
+        ],
+        [
+          "idocovid19:0001277",
+          "COVID-19 incidence"
+        ],
+        [
+          "ido:0000480",
+          "infection incidence"
+        ],
+        [
+          "idocovid19:0001283",
+          "SARS-CoV-2 incidence"
+        ],
+        [
+          "hp:0001402",
+          "Hepatocellular carcinoma"
+        ],
+        [
+          "oae:0000178",
+          "AE incidence rate"
+        ],
+        [
+          "orphanet.ordo:409966",
+          "point prevalence"
+        ],
+        [
+          "obcs:0000064",
+          "period prevalence"
+        ],
+        [
+          "cemo:weighted_prevalence",
+          "weighted prevalence"
+        ],
+        [
+          "idocovid19:0001272",
+          "COVID-19 prevalence"
+        ],
+        [
+          "ido:0000486",
+          "infection prevalence"
+        ]
+      ],
+      "unit": [
+        [
+          "ncit:C53511",
+          "Intensive Care Unit"
+        ],
+        [
+          "ido:0000621",
+          "acquired immunity to infectious agent"
+        ],
+        [
+          "uo:0000000",
+          "unit"
+        ],
+        [
+          "idomal:0000012",
+          "immunity"
+        ],
+        [
+          "ncit:C16453",
+          "Community"
+        ],
+        [
+          "symp:0020025",
+          "caseation"
+        ],
+        [
+          "wikidata:Q1040401",
+          "decasecond"
+        ],
+        [
+          "ncbitaxon:1003877",
+          "Benincaseae"
+        ],
+        [
+          "geonames:11281879",
+          "Casablanca-Settat"
+        ],
+        [
+          "pr:000005942",
+          "kappa-casein"
+        ],
+        [
+          "ncit:C71550",
+          "Age Cohort"
+        ],
+        [
+          "ncit:C53205",
+          "Birth Cohort"
+        ],
+        [
+          "ncit:C71548",
+          "Historical Cohort"
+        ],
+        [
+          "ncit:C71551",
+          "Exposed Population"
+        ],
+        [
+          "ncit:C71552",
+          "Unexposed Population"
+        ]
+      ],
+      "target": [
+        [
+          "owl:targetValue",
+          "targetValue"
+        ],
+        [
+          "owl:annotatedTarget",
+          "annotatedTarget"
+        ],
+        [
+          "owl:targetIndividual",
+          "targetIndividual"
+        ],
+        [
+          "vo:0001173",
+          "pTargeTomp31"
+        ],
+        [
+          "hp:0034280",
+          "Target cells"
+        ],
+        [
+          "ido:0000597",
+          "host exposure to environment containing infectious agent"
+        ],
+        [
+          "cemo:exposure",
+          "exposure"
+        ],
+        [
+          "opmi:0000572",
+          "drug exposure"
+        ],
+        [
+          "hp:4000110",
+          "Exposure history"
+        ],
+        [
+          "opmi:0000554",
+          "device exposure"
+        ],
+        [
+          "apollosv:00000204",
+          "disease outcome"
+        ],
+        [
+          "oae:0003232",
+          "adverse event outcome"
+        ],
+        [
+          "apollosv:00000290",
+          "treatment preventable outcome"
+        ],
+        [
+          "apollosv:00000218",
+          "vaccination preventable outcome"
+        ],
+        [
+          "cemo:incidence_of_sever_outcomes",
+          "incidence of sever outcomes"
+        ]
+      ],
+      "value": [
+        [
+          "owl:hasValue",
+          "hasValue"
+        ],
+        [
+          "owl:targetValue",
+          "targetValue"
+        ],
+        [
+          "ncit:A31",
+          "Has_GDC_Value"
+        ],
+        [
+          "owl:allValuesFrom",
+          "allValuesFrom"
+        ],
+        [
+          "ncit:A27",
+          "Has_CTDC_Value"
+        ],
+        [
+          "apollosv:00000204",
+          "disease outcome"
+        ],
+        [
+          "oae:0003232",
+          "adverse event outcome"
+        ],
+        [
+          "apollosv:00000290",
+          "treatment preventable outcome"
+        ],
+        [
+          "apollosv:00000218",
+          "vaccination preventable outcome"
+        ],
+        [
+          "cemo:incidence_of_sever_outcomes",
+          "incidence of sever outcomes"
+        ],
+        [
+          "doid:8448",
+          "intestinal impaction"
+        ],
+        [
+          "oae:0008095",
+          "tooth impacted AE"
+        ],
+        [
+          "hp:0001571",
+          "Multiple impacted teeth"
+        ],
+        [
+          "hp:0031984",
+          "Esophageal food impaction"
+        ]
+      ]
+    },
+    "source": "MIT data profiling tool http://100.26.10.46"
+  },
+  {
+    "file_name": "Error_messages.csv",
+    "file_directory": "https://github.com/reichlab/covid19-forecast-hub/tree/master/data-truth",
+    "annotation": {
+      "\ufeffError_message": [
+        [
+          "wikidata:Q1332193",
+          "error message"
+        ],
+        [
+          "wikidata:Q51998889",
+          "Error message."
+        ],
+        [
+          "wikidata:Q52000208",
+          "Error messages when calculating chi-square statistics with microsoft EXCEL."
+        ],
+        [
+          "wikidata:Q109285574",
+          "Error messages in relational database management systems: A comparison of effectiveness, usefulness, and user confidence"
+        ],
+        [
+          "wikidata:Q1313852",
+          "error code"
+        ],
+        [
+          "wikidata:Q18614926",
+          "Error Code"
+        ],
+        [
+          "wikidata:Q105858287",
+          "Error Code Modeler"
+        ],
+        [
+          "wikidata:Q116494",
+          "clinical coder"
+        ],
+        [
+          "wikidata:Q37000032",
+          "Diagnostic codes for sudden cardiac death and ventricular arrhythmia functioned poorly to identify outpatient events in EPIC's General Practice Research Database"
+        ],
+        [
+          "wikidata:Q74464931",
+          "Diagnostic codes in dentistry--definition, utility and developments to date"
+        ],
+        [
+          "wikidata:Q70776384",
+          "Diagnostic code for congenital heart disease"
+        ],
+        [
+          "wikidata:Q44182554",
+          "Diagnostic code for congenital heart disease, supplement."
+        ]
+      ],
+      "Brief Description": [
+        [
+          "wikidata:Q106642990",
+          "A Brief Description of Nuremberg"
+        ],
+        [
+          "wikidata:Q106643132",
+          "A Brief Description of Nuremberg"
+        ],
+        [
+          "wikidata:Q66231332",
+          "Brief Descriptions of Buildings and Utilities at Various Posts (NAID 4693949)"
+        ],
+        [
+          "wikidata:Q106487394",
+          "Brief description of the PSE sensor exciter"
+        ],
+        [
+          "wikidata:Q50619077",
+          "Brief description of the Multiple Risk Factor Intervention Trial."
+        ],
+        [
+          "iao:0000315",
+          "abstract"
+        ],
+        [
+          "iao:0000707",
+          "graphical abstract"
+        ],
+        [
+          "iao:0000609",
+          "author summary section"
+        ],
+        [
+          "iao:0000610",
+          "author summary textual entity"
+        ],
+        [
+          "apollosv:00000462",
+          "mean median minimum maximum summary statistics data structure"
+        ]
+      ]
+    },
+    "source": "MIT data profiling tool http://100.26.10.46"
+  },
+  {
+    "file_name": "truth-Incident Cases.csv",
+    "file_directory": "https://github.com/reichlab/covid19-forecast-hub/tree/master/data-truth",
+    "annotation": {
+      "date": [
+        [
+          "apollosv:00000429",
+          "date"
+        ],
+        [
+          "oboinowl:date",
+          "date"
+        ],
+        [
+          "dc:date",
+          "Date"
+        ],
+        [
+          "geonames:2130188",
+          "Hakodate"
+        ],
+        [
+          "oboinowl:hasDate",
+          "has_date"
+        ],
+        [
+          "idocovid19:0001277",
+          "COVID-19 incidence"
+        ],
+        [
+          "ido:0000480",
+          "infection incidence"
+        ],
+        [
+          "idocovid19:0001283",
+          "SARS-CoV-2 incidence"
+        ],
+        [
+          "hp:0001402",
+          "Hepatocellular carcinoma"
+        ],
+        [
+          "oae:0000178",
+          "AE incidence rate"
+        ],
+        [
+          "orphanet.ordo:409966",
+          "point prevalence"
+        ],
+        [
+          "obcs:0000064",
+          "period prevalence"
+        ],
+        [
+          "cemo:weighted_prevalence",
+          "weighted prevalence"
+        ],
+        [
+          "idocovid19:0001272",
+          "COVID-19 prevalence"
+        ],
+        [
+          "ido:0000486",
+          "infection prevalence"
+        ]
+      ],
+      "location": [
+        [
+          "so:0000199",
+          "translocation"
+        ],
+        [
+          "so:0001885",
+          "TFBS_translocation"
+        ],
+        [
+          "so:0001881",
+          "feature_translocation"
+        ],
+        [
+          "so:0001883",
+          "transcript_translocation"
+        ],
+        [
+          "so:1000044",
+          "chromosomal_translocation"
+        ],
+        [
+          "wikidata:Q4257161",
+          "range"
+        ],
+        [
+          "wikidata:Q7574061",
+          "spatial distribution"
+        ],
+        [
+          "wikidata:Q51482895",
+          "Geographic distribution of the pines of the world"
+        ],
+        [
+          "wikidata:Q29010408",
+          "Geographic distribution of oil production worker exposures reported to Texas poison centers"
+        ],
+        [
+          "wikidata:Q33525004",
+          "Geographic distribution of Staphylococcus aureus causing invasive infections in Europe: a molecular-epidemiological analysis"
+        ]
+      ],
+      "location_name": [
+        [
+          "wikidata:Q1714800",
+          "locational surname"
+        ],
+        [
+          "wikidata:Q82794",
+          "geographic region"
+        ],
+        [
+          "wikidata:Q4835091",
+          "territory"
+        ],
+        [
+          "wikidata:Q5535051",
+          "Geographic areas of Houston"
+        ],
+        [
+          "wikidata:Q111867462",
+          "geographic area of the United States of America"
+        ],
+        [
+          "wikidata:Q5535052",
+          "Geographic areas of Sugar Land, Texas"
+        ],
+        [
+          "wikidata:Q47933460",
+          "Place of residence and risk of fracture in older people: a population-based study of over 65-year-olds in Cardiff."
+        ],
+        [
+          "wikidata:Q39831605",
+          "Place of residence and obesity in 1,578,694 young Swedish men between 1969 and 2005."
+        ],
+        [
+          "wikidata:Q37662044",
+          "Place of residence and outcomes of patients with heart failure: analysis from the telemonitoring to improve heart failure outcomes trial"
+        ],
+        [
+          "wikidata:Q39743023",
+          "Place of residence and distance to medical care influence the diagnosis of hepatitis C: a population-based study"
+        ],
+        [
+          "wikidata:Q34248327",
+          "Place of residence affects routine dental care in the intellectually and developmentally disabled adult population on Medicaid"
+        ]
+      ],
+      "value": [
+        [
+          "owl:hasValue",
+          "hasValue"
+        ],
+        [
+          "owl:targetValue",
+          "targetValue"
+        ],
+        [
+          "ncit:A31",
+          "Has_GDC_Value"
+        ],
+        [
+          "owl:allValuesFrom",
+          "allValuesFrom"
+        ],
+        [
+          "ncit:A27",
+          "Has_CTDC_Value"
+        ],
+        [
+          "apollosv:00000204",
+          "disease outcome"
+        ],
+        [
+          "oae:0003232",
+          "adverse event outcome"
+        ],
+        [
+          "apollosv:00000290",
+          "treatment preventable outcome"
+        ],
+        [
+          "apollosv:00000218",
+          "vaccination preventable outcome"
+        ],
+        [
+          "cemo:incidence_of_sever_outcomes",
+          "incidence of sever outcomes"
+        ],
+        [
+          "doid:8448",
+          "intestinal impaction"
+        ],
+        [
+          "oae:0008095",
+          "tooth impacted AE"
+        ],
+        [
+          "hp:0001571",
+          "Multiple impacted teeth"
+        ],
+        [
+          "hp:0031984",
+          "Esophageal food impaction"
+        ]
+      ]
+    },
+    "source": "MIT data profiling tool http://100.26.10.46"
+  },
+  {
+    "file_name": "truth-Cumulative Hospitalizations.csv",
+    "file_directory": "https://github.com/reichlab/covid19-forecast-hub/tree/master/data-truth",
+    "annotation": {
+      "date": [
+        [
+          "apollosv:00000429",
+          "date"
+        ],
+        [
+          "oboinowl:date",
+          "date"
+        ],
+        [
+          "dc:date",
+          "Date"
+        ],
+        [
+          "geonames:2130188",
+          "Hakodate"
+        ],
+        [
+          "oboinowl:hasDate",
+          "has_date"
+        ],
+        [
+          "idocovid19:0001277",
+          "COVID-19 incidence"
+        ],
+        [
+          "ido:0000480",
+          "infection incidence"
+        ],
+        [
+          "idocovid19:0001283",
+          "SARS-CoV-2 incidence"
+        ],
+        [
+          "hp:0001402",
+          "Hepatocellular carcinoma"
+        ],
+        [
+          "oae:0000178",
+          "AE incidence rate"
+        ],
+        [
+          "orphanet.ordo:409966",
+          "point prevalence"
+        ],
+        [
+          "obcs:0000064",
+          "period prevalence"
+        ],
+        [
+          "cemo:weighted_prevalence",
+          "weighted prevalence"
+        ],
+        [
+          "idocovid19:0001272",
+          "COVID-19 prevalence"
+        ],
+        [
+          "ido:0000486",
+          "infection prevalence"
+        ]
+      ],
+      "location": [
+        [
+          "so:0000199",
+          "translocation"
+        ],
+        [
+          "so:0001885",
+          "TFBS_translocation"
+        ],
+        [
+          "so:0001881",
+          "feature_translocation"
+        ],
+        [
+          "so:0001883",
+          "transcript_translocation"
+        ],
+        [
+          "so:1000044",
+          "chromosomal_translocation"
+        ],
+        [
+          "wikidata:Q4257161",
+          "range"
+        ],
+        [
+          "wikidata:Q7574061",
+          "spatial distribution"
+        ],
+        [
+          "wikidata:Q51482895",
+          "Geographic distribution of the pines of the world"
+        ],
+        [
+          "wikidata:Q29010408",
+          "Geographic distribution of oil production worker exposures reported to Texas poison centers"
+        ],
+        [
+          "wikidata:Q33525004",
+          "Geographic distribution of Staphylococcus aureus causing invasive infections in Europe: a molecular-epidemiological analysis"
+        ]
+      ],
+      "location_name": [
+        [
+          "wikidata:Q1714800",
+          "locational surname"
+        ],
+        [
+          "wikidata:Q82794",
+          "geographic region"
+        ],
+        [
+          "wikidata:Q4835091",
+          "territory"
+        ],
+        [
+          "wikidata:Q5535051",
+          "Geographic areas of Houston"
+        ],
+        [
+          "wikidata:Q111867462",
+          "geographic area of the United States of America"
+        ],
+        [
+          "wikidata:Q5535052",
+          "Geographic areas of Sugar Land, Texas"
+        ],
+        [
+          "wikidata:Q47933460",
+          "Place of residence and risk of fracture in older people: a population-based study of over 65-year-olds in Cardiff."
+        ],
+        [
+          "wikidata:Q39831605",
+          "Place of residence and obesity in 1,578,694 young Swedish men between 1969 and 2005."
+        ],
+        [
+          "wikidata:Q37662044",
+          "Place of residence and outcomes of patients with heart failure: analysis from the telemonitoring to improve heart failure outcomes trial"
+        ],
+        [
+          "wikidata:Q39743023",
+          "Place of residence and distance to medical care influence the diagnosis of hepatitis C: a population-based study"
+        ],
+        [
+          "wikidata:Q34248327",
+          "Place of residence affects routine dental care in the intellectually and developmentally disabled adult population on Medicaid"
+        ]
+      ],
+      "value": [
+        [
+          "owl:hasValue",
+          "hasValue"
+        ],
+        [
+          "owl:targetValue",
+          "targetValue"
+        ],
+        [
+          "ncit:A31",
+          "Has_GDC_Value"
+        ],
+        [
+          "owl:allValuesFrom",
+          "allValuesFrom"
+        ],
+        [
+          "ncit:A27",
+          "Has_CTDC_Value"
+        ],
+        [
+          "apollosv:00000204",
+          "disease outcome"
+        ],
+        [
+          "oae:0003232",
+          "adverse event outcome"
+        ],
+        [
+          "apollosv:00000290",
+          "treatment preventable outcome"
+        ],
+        [
+          "apollosv:00000218",
+          "vaccination preventable outcome"
+        ],
+        [
+          "cemo:incidence_of_sever_outcomes",
+          "incidence of sever outcomes"
+        ],
+        [
+          "doid:8448",
+          "intestinal impaction"
+        ],
+        [
+          "oae:0008095",
+          "tooth impacted AE"
+        ],
+        [
+          "hp:0001571",
+          "Multiple impacted teeth"
+        ],
+        [
+          "hp:0031984",
+          "Esophageal food impaction"
+        ]
+      ]
+    },
+    "source": "MIT data profiling tool http://100.26.10.46"
+  },
+  {
+    "file_name": "truth-Incident Deaths.csv",
+    "file_directory": "https://github.com/reichlab/covid19-forecast-hub/tree/master/data-truth",
+    "annotation": {
+      "date": [
+        [
+          "apollosv:00000429",
+          "date"
+        ],
+        [
+          "oboinowl:date",
+          "date"
+        ],
+        [
+          "dc:date",
+          "Date"
+        ],
+        [
+          "geonames:2130188",
+          "Hakodate"
+        ],
+        [
+          "oboinowl:hasDate",
+          "has_date"
+        ],
+        [
+          "idocovid19:0001277",
+          "COVID-19 incidence"
+        ],
+        [
+          "ido:0000480",
+          "infection incidence"
+        ],
+        [
+          "idocovid19:0001283",
+          "SARS-CoV-2 incidence"
+        ],
+        [
+          "hp:0001402",
+          "Hepatocellular carcinoma"
+        ],
+        [
+          "oae:0000178",
+          "AE incidence rate"
+        ],
+        [
+          "orphanet.ordo:409966",
+          "point prevalence"
+        ],
+        [
+          "obcs:0000064",
+          "period prevalence"
+        ],
+        [
+          "cemo:weighted_prevalence",
+          "weighted prevalence"
+        ],
+        [
+          "idocovid19:0001272",
+          "COVID-19 prevalence"
+        ],
+        [
+          "ido:0000486",
+          "infection prevalence"
+        ]
+      ],
+      "location": [
+        [
+          "so:0000199",
+          "translocation"
+        ],
+        [
+          "so:0001885",
+          "TFBS_translocation"
+        ],
+        [
+          "so:0001881",
+          "feature_translocation"
+        ],
+        [
+          "so:0001883",
+          "transcript_translocation"
+        ],
+        [
+          "so:1000044",
+          "chromosomal_translocation"
+        ],
+        [
+          "wikidata:Q4257161",
+          "range"
+        ],
+        [
+          "wikidata:Q7574061",
+          "spatial distribution"
+        ],
+        [
+          "wikidata:Q51482895",
+          "Geographic distribution of the pines of the world"
+        ],
+        [
+          "wikidata:Q29010408",
+          "Geographic distribution of oil production worker exposures reported to Texas poison centers"
+        ],
+        [
+          "wikidata:Q33525004",
+          "Geographic distribution of Staphylococcus aureus causing invasive infections in Europe: a molecular-epidemiological analysis"
+        ]
+      ],
+      "location_name": [
+        [
+          "wikidata:Q1714800",
+          "locational surname"
+        ],
+        [
+          "wikidata:Q82794",
+          "geographic region"
+        ],
+        [
+          "wikidata:Q4835091",
+          "territory"
+        ],
+        [
+          "wikidata:Q5535051",
+          "Geographic areas of Houston"
+        ],
+        [
+          "wikidata:Q111867462",
+          "geographic area of the United States of America"
+        ],
+        [
+          "wikidata:Q5535052",
+          "Geographic areas of Sugar Land, Texas"
+        ],
+        [
+          "wikidata:Q47933460",
+          "Place of residence and risk of fracture in older people: a population-based study of over 65-year-olds in Cardiff."
+        ],
+        [
+          "wikidata:Q39831605",
+          "Place of residence and obesity in 1,578,694 young Swedish men between 1969 and 2005."
+        ],
+        [
+          "wikidata:Q37662044",
+          "Place of residence and outcomes of patients with heart failure: analysis from the telemonitoring to improve heart failure outcomes trial"
+        ],
+        [
+          "wikidata:Q39743023",
+          "Place of residence and distance to medical care influence the diagnosis of hepatitis C: a population-based study"
+        ],
+        [
+          "wikidata:Q34248327",
+          "Place of residence affects routine dental care in the intellectually and developmentally disabled adult population on Medicaid"
+        ]
+      ],
+      "value": [
+        [
+          "owl:hasValue",
+          "hasValue"
+        ],
+        [
+          "owl:targetValue",
+          "targetValue"
+        ],
+        [
+          "ncit:A31",
+          "Has_GDC_Value"
+        ],
+        [
+          "owl:allValuesFrom",
+          "allValuesFrom"
+        ],
+        [
+          "ncit:A27",
+          "Has_CTDC_Value"
+        ],
+        [
+          "apollosv:00000204",
+          "disease outcome"
+        ],
+        [
+          "oae:0003232",
+          "adverse event outcome"
+        ],
+        [
+          "apollosv:00000290",
+          "treatment preventable outcome"
+        ],
+        [
+          "apollosv:00000218",
+          "vaccination preventable outcome"
+        ],
+        [
+          "cemo:incidence_of_sever_outcomes",
+          "incidence of sever outcomes"
+        ],
+        [
+          "doid:8448",
+          "intestinal impaction"
+        ],
+        [
+          "oae:0008095",
+          "tooth impacted AE"
+        ],
+        [
+          "hp:0001571",
+          "Multiple impacted teeth"
+        ],
+        [
+          "hp:0031984",
+          "Esophageal food impaction"
+        ]
+      ]
+    },
+    "source": "MIT data profiling tool http://100.26.10.46"
+  },
+  {
+    "file_name": "truth-Cumulative Deaths.csv",
+    "file_directory": "https://github.com/reichlab/covid19-forecast-hub/tree/master/data-truth",
+    "annotation": {
+      "date": [
+        [
+          "apollosv:00000429",
+          "date"
+        ],
+        [
+          "oboinowl:date",
+          "date"
+        ],
+        [
+          "dc:date",
+          "Date"
+        ],
+        [
+          "geonames:2130188",
+          "Hakodate"
+        ],
+        [
+          "oboinowl:hasDate",
+          "has_date"
+        ],
+        [
+          "idocovid19:0001277",
+          "COVID-19 incidence"
+        ],
+        [
+          "ido:0000480",
+          "infection incidence"
+        ],
+        [
+          "idocovid19:0001283",
+          "SARS-CoV-2 incidence"
+        ],
+        [
+          "hp:0001402",
+          "Hepatocellular carcinoma"
+        ],
+        [
+          "oae:0000178",
+          "AE incidence rate"
+        ],
+        [
+          "orphanet.ordo:409966",
+          "point prevalence"
+        ],
+        [
+          "obcs:0000064",
+          "period prevalence"
+        ],
+        [
+          "cemo:weighted_prevalence",
+          "weighted prevalence"
+        ],
+        [
+          "idocovid19:0001272",
+          "COVID-19 prevalence"
+        ],
+        [
+          "ido:0000486",
+          "infection prevalence"
+        ]
+      ],
+      "location": [
+        [
+          "so:0000199",
+          "translocation"
+        ],
+        [
+          "so:0001885",
+          "TFBS_translocation"
+        ],
+        [
+          "so:0001881",
+          "feature_translocation"
+        ],
+        [
+          "so:0001883",
+          "transcript_translocation"
+        ],
+        [
+          "so:1000044",
+          "chromosomal_translocation"
+        ],
+        [
+          "wikidata:Q4257161",
+          "range"
+        ],
+        [
+          "wikidata:Q7574061",
+          "spatial distribution"
+        ],
+        [
+          "wikidata:Q51482895",
+          "Geographic distribution of the pines of the world"
+        ],
+        [
+          "wikidata:Q29010408",
+          "Geographic distribution of oil production worker exposures reported to Texas poison centers"
+        ],
+        [
+          "wikidata:Q33525004",
+          "Geographic distribution of Staphylococcus aureus causing invasive infections in Europe: a molecular-epidemiological analysis"
+        ]
+      ],
+      "location_name": [
+        [
+          "wikidata:Q1714800",
+          "locational surname"
+        ],
+        [
+          "wikidata:Q82794",
+          "geographic region"
+        ],
+        [
+          "wikidata:Q4835091",
+          "territory"
+        ],
+        [
+          "wikidata:Q5535051",
+          "Geographic areas of Houston"
+        ],
+        [
+          "wikidata:Q111867462",
+          "geographic area of the United States of America"
+        ],
+        [
+          "wikidata:Q5535052",
+          "Geographic areas of Sugar Land, Texas"
+        ],
+        [
+          "wikidata:Q47933460",
+          "Place of residence and risk of fracture in older people: a population-based study of over 65-year-olds in Cardiff."
+        ],
+        [
+          "wikidata:Q39831605",
+          "Place of residence and obesity in 1,578,694 young Swedish men between 1969 and 2005."
+        ],
+        [
+          "wikidata:Q37662044",
+          "Place of residence and outcomes of patients with heart failure: analysis from the telemonitoring to improve heart failure outcomes trial"
+        ],
+        [
+          "wikidata:Q39743023",
+          "Place of residence and distance to medical care influence the diagnosis of hepatitis C: a population-based study"
+        ],
+        [
+          "wikidata:Q34248327",
+          "Place of residence affects routine dental care in the intellectually and developmentally disabled adult population on Medicaid"
+        ]
+      ],
+      "value": [
+        [
+          "owl:hasValue",
+          "hasValue"
+        ],
+        [
+          "owl:targetValue",
+          "targetValue"
+        ],
+        [
+          "ncit:A31",
+          "Has_GDC_Value"
+        ],
+        [
+          "owl:allValuesFrom",
+          "allValuesFrom"
+        ],
+        [
+          "ncit:A27",
+          "Has_CTDC_Value"
+        ],
+        [
+          "apollosv:00000204",
+          "disease outcome"
+        ],
+        [
+          "oae:0003232",
+          "adverse event outcome"
+        ],
+        [
+          "apollosv:00000290",
+          "treatment preventable outcome"
+        ],
+        [
+          "apollosv:00000218",
+          "vaccination preventable outcome"
+        ],
+        [
+          "cemo:incidence_of_sever_outcomes",
+          "incidence of sever outcomes"
+        ],
+        [
+          "doid:8448",
+          "intestinal impaction"
+        ],
+        [
+          "oae:0008095",
+          "tooth impacted AE"
+        ],
+        [
+          "hp:0001571",
+          "Multiple impacted teeth"
+        ],
+        [
+          "hp:0031984",
+          "Esophageal food impaction"
+        ]
+      ]
+    },
+    "source": "MIT data profiling tool http://100.26.10.46"
+  },
+  {
+    "file_name": "truth-Cumulative Cases.csv",
+    "file_directory": "https://github.com/reichlab/covid19-forecast-hub/tree/master/data-truth",
+    "annotation": {
+      "date": [
+        [
+          "apollosv:00000429",
+          "date"
+        ],
+        [
+          "oboinowl:date",
+          "date"
+        ],
+        [
+          "dc:date",
+          "Date"
+        ],
+        [
+          "geonames:2130188",
+          "Hakodate"
+        ],
+        [
+          "oboinowl:hasDate",
+          "has_date"
+        ],
+        [
+          "idocovid19:0001277",
+          "COVID-19 incidence"
+        ],
+        [
+          "ido:0000480",
+          "infection incidence"
+        ],
+        [
+          "idocovid19:0001283",
+          "SARS-CoV-2 incidence"
+        ],
+        [
+          "hp:0001402",
+          "Hepatocellular carcinoma"
+        ],
+        [
+          "oae:0000178",
+          "AE incidence rate"
+        ],
+        [
+          "orphanet.ordo:409966",
+          "point prevalence"
+        ],
+        [
+          "obcs:0000064",
+          "period prevalence"
+        ],
+        [
+          "cemo:weighted_prevalence",
+          "weighted prevalence"
+        ],
+        [
+          "idocovid19:0001272",
+          "COVID-19 prevalence"
+        ],
+        [
+          "ido:0000486",
+          "infection prevalence"
+        ]
+      ],
+      "location": [
+        [
+          "so:0000199",
+          "translocation"
+        ],
+        [
+          "so:0001885",
+          "TFBS_translocation"
+        ],
+        [
+          "so:0001881",
+          "feature_translocation"
+        ],
+        [
+          "so:0001883",
+          "transcript_translocation"
+        ],
+        [
+          "so:1000044",
+          "chromosomal_translocation"
+        ],
+        [
+          "wikidata:Q4257161",
+          "range"
+        ],
+        [
+          "wikidata:Q7574061",
+          "spatial distribution"
+        ],
+        [
+          "wikidata:Q51482895",
+          "Geographic distribution of the pines of the world"
+        ],
+        [
+          "wikidata:Q29010408",
+          "Geographic distribution of oil production worker exposures reported to Texas poison centers"
+        ],
+        [
+          "wikidata:Q33525004",
+          "Geographic distribution of Staphylococcus aureus causing invasive infections in Europe: a molecular-epidemiological analysis"
+        ]
+      ],
+      "location_name": [
+        [
+          "wikidata:Q1714800",
+          "locational surname"
+        ],
+        [
+          "wikidata:Q82794",
+          "geographic region"
+        ],
+        [
+          "wikidata:Q4835091",
+          "territory"
+        ],
+        [
+          "wikidata:Q5535051",
+          "Geographic areas of Houston"
+        ],
+        [
+          "wikidata:Q111867462",
+          "geographic area of the United States of America"
+        ],
+        [
+          "wikidata:Q5535052",
+          "Geographic areas of Sugar Land, Texas"
+        ],
+        [
+          "wikidata:Q47933460",
+          "Place of residence and risk of fracture in older people: a population-based study of over 65-year-olds in Cardiff."
+        ],
+        [
+          "wikidata:Q39831605",
+          "Place of residence and obesity in 1,578,694 young Swedish men between 1969 and 2005."
+        ],
+        [
+          "wikidata:Q37662044",
+          "Place of residence and outcomes of patients with heart failure: analysis from the telemonitoring to improve heart failure outcomes trial"
+        ],
+        [
+          "wikidata:Q39743023",
+          "Place of residence and distance to medical care influence the diagnosis of hepatitis C: a population-based study"
+        ],
+        [
+          "wikidata:Q34248327",
+          "Place of residence affects routine dental care in the intellectually and developmentally disabled adult population on Medicaid"
+        ]
+      ],
+      "value": [
+        [
+          "owl:hasValue",
+          "hasValue"
+        ],
+        [
+          "owl:targetValue",
+          "targetValue"
+        ],
+        [
+          "ncit:A31",
+          "Has_GDC_Value"
+        ],
+        [
+          "owl:allValuesFrom",
+          "allValuesFrom"
+        ],
+        [
+          "ncit:A27",
+          "Has_CTDC_Value"
+        ],
+        [
+          "apollosv:00000204",
+          "disease outcome"
+        ],
+        [
+          "oae:0003232",
+          "adverse event outcome"
+        ],
+        [
+          "apollosv:00000290",
+          "treatment preventable outcome"
+        ],
+        [
+          "apollosv:00000218",
+          "vaccination preventable outcome"
+        ],
+        [
+          "cemo:incidence_of_sever_outcomes",
+          "incidence of sever outcomes"
+        ],
+        [
+          "doid:8448",
+          "intestinal impaction"
+        ],
+        [
+          "oae:0008095",
+          "tooth impacted AE"
+        ],
+        [
+          "hp:0001571",
+          "Multiple impacted teeth"
+        ],
+        [
+          "hp:0031984",
+          "Esophageal food impaction"
+        ]
+      ]
+    },
+    "source": "MIT data profiling tool http://100.26.10.46"
+  },
+  {
+    "file_name": "truth_nytimes-Incident Deaths.csv",
+    "file_directory": "https://github.com/reichlab/covid19-forecast-hub/tree/master/data-truth/nytimes",
+    "annotation": {
+      "date": [
+        [
+          "apollosv:00000429",
+          "date"
+        ],
+        [
+          "oboinowl:date",
+          "date"
+        ],
+        [
+          "dc:date",
+          "Date"
+        ],
+        [
+          "geonames:2130188",
+          "Hakodate"
+        ],
+        [
+          "oboinowl:hasDate",
+          "has_date"
+        ],
+        [
+          "idocovid19:0001277",
+          "COVID-19 incidence"
+        ],
+        [
+          "ido:0000480",
+          "infection incidence"
+        ],
+        [
+          "idocovid19:0001283",
+          "SARS-CoV-2 incidence"
+        ],
+        [
+          "hp:0001402",
+          "Hepatocellular carcinoma"
+        ],
+        [
+          "oae:0000178",
+          "AE incidence rate"
+        ],
+        [
+          "orphanet.ordo:409966",
+          "point prevalence"
+        ],
+        [
+          "obcs:0000064",
+          "period prevalence"
+        ],
+        [
+          "cemo:weighted_prevalence",
+          "weighted prevalence"
+        ],
+        [
+          "idocovid19:0001272",
+          "COVID-19 prevalence"
+        ],
+        [
+          "ido:0000486",
+          "infection prevalence"
+        ]
+      ],
+      "location": [
+        [
+          "so:0000199",
+          "translocation"
+        ],
+        [
+          "so:0001885",
+          "TFBS_translocation"
+        ],
+        [
+          "so:0001881",
+          "feature_translocation"
+        ],
+        [
+          "so:0001883",
+          "transcript_translocation"
+        ],
+        [
+          "so:1000044",
+          "chromosomal_translocation"
+        ],
+        [
+          "wikidata:Q4257161",
+          "range"
+        ],
+        [
+          "wikidata:Q7574061",
+          "spatial distribution"
+        ],
+        [
+          "wikidata:Q51482895",
+          "Geographic distribution of the pines of the world"
+        ],
+        [
+          "wikidata:Q29010408",
+          "Geographic distribution of oil production worker exposures reported to Texas poison centers"
+        ],
+        [
+          "wikidata:Q33525004",
+          "Geographic distribution of Staphylococcus aureus causing invasive infections in Europe: a molecular-epidemiological analysis"
+        ]
+      ],
+      "value": [
+        [
+          "owl:hasValue",
+          "hasValue"
+        ],
+        [
+          "owl:targetValue",
+          "targetValue"
+        ],
+        [
+          "ncit:A31",
+          "Has_GDC_Value"
+        ],
+        [
+          "owl:allValuesFrom",
+          "allValuesFrom"
+        ],
+        [
+          "ncit:A27",
+          "Has_CTDC_Value"
+        ],
+        [
+          "apollosv:00000204",
+          "disease outcome"
+        ],
+        [
+          "oae:0003232",
+          "adverse event outcome"
+        ],
+        [
+          "apollosv:00000290",
+          "treatment preventable outcome"
+        ],
+        [
+          "apollosv:00000218",
+          "vaccination preventable outcome"
+        ],
+        [
+          "cemo:incidence_of_sever_outcomes",
+          "incidence of sever outcomes"
+        ],
+        [
+          "doid:8448",
+          "intestinal impaction"
+        ],
+        [
+          "oae:0008095",
+          "tooth impacted AE"
+        ],
+        [
+          "hp:0001571",
+          "Multiple impacted teeth"
+        ],
+        [
+          "hp:0031984",
+          "Esophageal food impaction"
+        ]
+      ]
+    },
+    "source": "MIT data profiling tool http://100.26.10.46"
+  },
+  {
+    "file_name": "truth_nytimes-Cumulative Cases.csv",
+    "file_directory": "https://github.com/reichlab/covid19-forecast-hub/tree/master/data-truth/nytimes",
+    "annotation": {
+      "date": [
+        [
+          "apollosv:00000429",
+          "date"
+        ],
+        [
+          "oboinowl:date",
+          "date"
+        ],
+        [
+          "dc:date",
+          "Date"
+        ],
+        [
+          "geonames:2130188",
+          "Hakodate"
+        ],
+        [
+          "oboinowl:hasDate",
+          "has_date"
+        ],
+        [
+          "idocovid19:0001277",
+          "COVID-19 incidence"
+        ],
+        [
+          "ido:0000480",
+          "infection incidence"
+        ],
+        [
+          "idocovid19:0001283",
+          "SARS-CoV-2 incidence"
+        ],
+        [
+          "hp:0001402",
+          "Hepatocellular carcinoma"
+        ],
+        [
+          "oae:0000178",
+          "AE incidence rate"
+        ],
+        [
+          "orphanet.ordo:409966",
+          "point prevalence"
+        ],
+        [
+          "obcs:0000064",
+          "period prevalence"
+        ],
+        [
+          "cemo:weighted_prevalence",
+          "weighted prevalence"
+        ],
+        [
+          "idocovid19:0001272",
+          "COVID-19 prevalence"
+        ],
+        [
+          "ido:0000486",
+          "infection prevalence"
+        ]
+      ],
+      "location": [
+        [
+          "so:0000199",
+          "translocation"
+        ],
+        [
+          "so:0001885",
+          "TFBS_translocation"
+        ],
+        [
+          "so:0001881",
+          "feature_translocation"
+        ],
+        [
+          "so:0001883",
+          "transcript_translocation"
+        ],
+        [
+          "so:1000044",
+          "chromosomal_translocation"
+        ],
+        [
+          "wikidata:Q4257161",
+          "range"
+        ],
+        [
+          "wikidata:Q7574061",
+          "spatial distribution"
+        ],
+        [
+          "wikidata:Q51482895",
+          "Geographic distribution of the pines of the world"
+        ],
+        [
+          "wikidata:Q29010408",
+          "Geographic distribution of oil production worker exposures reported to Texas poison centers"
+        ],
+        [
+          "wikidata:Q33525004",
+          "Geographic distribution of Staphylococcus aureus causing invasive infections in Europe: a molecular-epidemiological analysis"
+        ]
+      ],
+      "value": [
+        [
+          "owl:hasValue",
+          "hasValue"
+        ],
+        [
+          "owl:targetValue",
+          "targetValue"
+        ],
+        [
+          "ncit:A31",
+          "Has_GDC_Value"
+        ],
+        [
+          "owl:allValuesFrom",
+          "allValuesFrom"
+        ],
+        [
+          "ncit:A27",
+          "Has_CTDC_Value"
+        ],
+        [
+          "apollosv:00000204",
+          "disease outcome"
+        ],
+        [
+          "oae:0003232",
+          "adverse event outcome"
+        ],
+        [
+          "apollosv:00000290",
+          "treatment preventable outcome"
+        ],
+        [
+          "apollosv:00000218",
+          "vaccination preventable outcome"
+        ],
+        [
+          "cemo:incidence_of_sever_outcomes",
+          "incidence of sever outcomes"
+        ],
+        [
+          "doid:8448",
+          "intestinal impaction"
+        ],
+        [
+          "oae:0008095",
+          "tooth impacted AE"
+        ],
+        [
+          "hp:0001571",
+          "Multiple impacted teeth"
+        ],
+        [
+          "hp:0031984",
+          "Esophageal food impaction"
+        ]
+      ]
+    },
+    "source": "MIT data profiling tool http://100.26.10.46"
+  },
+  {
+    "file_name": "truth_nytimes-Cumulative Deaths.csv",
+    "file_directory": "https://github.com/reichlab/covid19-forecast-hub/tree/master/data-truth/nytimes",
+    "annotation": {
+      "date": [
+        [
+          "apollosv:00000429",
+          "date"
+        ],
+        [
+          "oboinowl:date",
+          "date"
+        ],
+        [
+          "dc:date",
+          "Date"
+        ],
+        [
+          "geonames:2130188",
+          "Hakodate"
+        ],
+        [
+          "oboinowl:hasDate",
+          "has_date"
+        ],
+        [
+          "idocovid19:0001277",
+          "COVID-19 incidence"
+        ],
+        [
+          "ido:0000480",
+          "infection incidence"
+        ],
+        [
+          "idocovid19:0001283",
+          "SARS-CoV-2 incidence"
+        ],
+        [
+          "hp:0001402",
+          "Hepatocellular carcinoma"
+        ],
+        [
+          "oae:0000178",
+          "AE incidence rate"
+        ],
+        [
+          "orphanet.ordo:409966",
+          "point prevalence"
+        ],
+        [
+          "obcs:0000064",
+          "period prevalence"
+        ],
+        [
+          "cemo:weighted_prevalence",
+          "weighted prevalence"
+        ],
+        [
+          "idocovid19:0001272",
+          "COVID-19 prevalence"
+        ],
+        [
+          "ido:0000486",
+          "infection prevalence"
+        ]
+      ],
+      "location": [
+        [
+          "so:0000199",
+          "translocation"
+        ],
+        [
+          "so:0001885",
+          "TFBS_translocation"
+        ],
+        [
+          "so:0001881",
+          "feature_translocation"
+        ],
+        [
+          "so:0001883",
+          "transcript_translocation"
+        ],
+        [
+          "so:1000044",
+          "chromosomal_translocation"
+        ],
+        [
+          "wikidata:Q4257161",
+          "range"
+        ],
+        [
+          "wikidata:Q7574061",
+          "spatial distribution"
+        ],
+        [
+          "wikidata:Q51482895",
+          "Geographic distribution of the pines of the world"
+        ],
+        [
+          "wikidata:Q29010408",
+          "Geographic distribution of oil production worker exposures reported to Texas poison centers"
+        ],
+        [
+          "wikidata:Q33525004",
+          "Geographic distribution of Staphylococcus aureus causing invasive infections in Europe: a molecular-epidemiological analysis"
+        ]
+      ],
+      "value": [
+        [
+          "owl:hasValue",
+          "hasValue"
+        ],
+        [
+          "owl:targetValue",
+          "targetValue"
+        ],
+        [
+          "ncit:A31",
+          "Has_GDC_Value"
+        ],
+        [
+          "owl:allValuesFrom",
+          "allValuesFrom"
+        ],
+        [
+          "ncit:A27",
+          "Has_CTDC_Value"
+        ],
+        [
+          "apollosv:00000204",
+          "disease outcome"
+        ],
+        [
+          "oae:0003232",
+          "adverse event outcome"
+        ],
+        [
+          "apollosv:00000290",
+          "treatment preventable outcome"
+        ],
+        [
+          "apollosv:00000218",
+          "vaccination preventable outcome"
+        ],
+        [
+          "cemo:incidence_of_sever_outcomes",
+          "incidence of sever outcomes"
+        ],
+        [
+          "doid:8448",
+          "intestinal impaction"
+        ],
+        [
+          "oae:0008095",
+          "tooth impacted AE"
+        ],
+        [
+          "hp:0001571",
+          "Multiple impacted teeth"
+        ],
+        [
+          "hp:0031984",
+          "Esophageal food impaction"
+        ]
+      ]
+    },
+    "source": "MIT data profiling tool http://100.26.10.46"
+  },
+  {
+    "file_name": "truth_nytimes-Incident Cases.csv",
+    "file_directory": "https://github.com/reichlab/covid19-forecast-hub/tree/master/data-truth/nytimes",
+    "annotation": {
+      "date": [
+        [
+          "apollosv:00000429",
+          "date"
+        ],
+        [
+          "oboinowl:date",
+          "date"
+        ],
+        [
+          "dc:date",
+          "Date"
+        ],
+        [
+          "geonames:2130188",
+          "Hakodate"
+        ],
+        [
+          "oboinowl:hasDate",
+          "has_date"
+        ],
+        [
+          "idocovid19:0001277",
+          "COVID-19 incidence"
+        ],
+        [
+          "ido:0000480",
+          "infection incidence"
+        ],
+        [
+          "idocovid19:0001283",
+          "SARS-CoV-2 incidence"
+        ],
+        [
+          "hp:0001402",
+          "Hepatocellular carcinoma"
+        ],
+        [
+          "oae:0000178",
+          "AE incidence rate"
+        ],
+        [
+          "orphanet.ordo:409966",
+          "point prevalence"
+        ],
+        [
+          "obcs:0000064",
+          "period prevalence"
+        ],
+        [
+          "cemo:weighted_prevalence",
+          "weighted prevalence"
+        ],
+        [
+          "idocovid19:0001272",
+          "COVID-19 prevalence"
+        ],
+        [
+          "ido:0000486",
+          "infection prevalence"
+        ]
+      ],
+      "location": [
+        [
+          "so:0000199",
+          "translocation"
+        ],
+        [
+          "so:0001885",
+          "TFBS_translocation"
+        ],
+        [
+          "so:0001881",
+          "feature_translocation"
+        ],
+        [
+          "so:0001883",
+          "transcript_translocation"
+        ],
+        [
+          "so:1000044",
+          "chromosomal_translocation"
+        ],
+        [
+          "wikidata:Q4257161",
+          "range"
+        ],
+        [
+          "wikidata:Q7574061",
+          "spatial distribution"
+        ],
+        [
+          "wikidata:Q51482895",
+          "Geographic distribution of the pines of the world"
+        ],
+        [
+          "wikidata:Q29010408",
+          "Geographic distribution of oil production worker exposures reported to Texas poison centers"
+        ],
+        [
+          "wikidata:Q33525004",
+          "Geographic distribution of Staphylococcus aureus causing invasive infections in Europe: a molecular-epidemiological analysis"
+        ]
+      ],
+      "value": [
+        [
+          "owl:hasValue",
+          "hasValue"
+        ],
+        [
+          "owl:targetValue",
+          "targetValue"
+        ],
+        [
+          "ncit:A31",
+          "Has_GDC_Value"
+        ],
+        [
+          "owl:allValuesFrom",
+          "allValuesFrom"
+        ],
+        [
+          "ncit:A27",
+          "Has_CTDC_Value"
+        ],
+        [
+          "apollosv:00000204",
+          "disease outcome"
+        ],
+        [
+          "oae:0003232",
+          "adverse event outcome"
+        ],
+        [
+          "apollosv:00000290",
+          "treatment preventable outcome"
+        ],
+        [
+          "apollosv:00000218",
+          "vaccination preventable outcome"
+        ],
+        [
+          "cemo:incidence_of_sever_outcomes",
+          "incidence of sever outcomes"
+        ],
+        [
+          "doid:8448",
+          "intestinal impaction"
+        ],
+        [
+          "oae:0008095",
+          "tooth impacted AE"
+        ],
+        [
+          "hp:0001571",
+          "Multiple impacted teeth"
+        ],
+        [
+          "hp:0031984",
+          "Esophageal food impaction"
+        ]
+      ]
+    },
+    "source": "MIT data profiling tool http://100.26.10.46"
+  },
+  {
+    "file_name": "us-counties.csv",
+    "file_directory": "https://github.com/reichlab/covid19-forecast-hub/tree/master/data-truth/nytimes/raw",
+    "annotation": {
+      "date": [
+        [
+          "apollosv:00000429",
+          "date"
+        ],
+        [
+          "oboinowl:date",
+          "date"
+        ],
+        [
+          "dc:date",
+          "Date"
+        ],
+        [
+          "geonames:2130188",
+          "Hakodate"
+        ],
+        [
+          "oboinowl:hasDate",
+          "has_date"
+        ],
+        [
+          "idocovid19:0001277",
+          "COVID-19 incidence"
+        ],
+        [
+          "ido:0000480",
+          "infection incidence"
+        ],
+        [
+          "idocovid19:0001283",
+          "SARS-CoV-2 incidence"
+        ],
+        [
+          "hp:0001402",
+          "Hepatocellular carcinoma"
+        ],
+        [
+          "oae:0000178",
+          "AE incidence rate"
+        ],
+        [
+          "orphanet.ordo:409966",
+          "point prevalence"
+        ],
+        [
+          "obcs:0000064",
+          "period prevalence"
+        ],
+        [
+          "cemo:weighted_prevalence",
+          "weighted prevalence"
+        ],
+        [
+          "idocovid19:0001272",
+          "COVID-19 prevalence"
+        ],
+        [
+          "ido:0000486",
+          "infection prevalence"
+        ]
+      ],
+      "county": [
+        [
+          "geonames:11694038",
+          "Huocheng"
+        ],
+        [
+          "geonames:5110302",
+          "Brooklyn"
+        ],
+        [
+          "geonames:4297999",
+          "Lexington-Fayette"
+        ],
+        [
+          "geonames:4299276",
+          "Louisville"
+        ],
+        [
+          "geonames:5419384",
+          "Denver"
+        ],
+        [
+          "geonames:1259184",
+          "Puri"
+        ],
+        [
+          "geonames:1675393",
+          "Xizhi"
+        ],
+        [
+          "geonames:6544495",
+          "Retiro"
+        ],
+        [
+          "geonames:6544104",
+          "Sants-Montju\u00efc"
+        ],
+        [
+          "geonames:1275701",
+          "Bijapur"
+        ]
+      ],
+      "state": [
+        [
+          "geonames:2938913",
+          "Darmstadt"
+        ],
+        [
+          "hp:0000024",
+          "Prostatitis"
+        ],
+        [
+          "doid:2452",
+          "thrombophilia"
+        ],
+        [
+          "geonames:6690108",
+          "Panchkula"
+        ],
+        [
+          "uberon:0003820",
+          "prostate bud"
+        ],
+        [
+          "ido:0000511",
+          "infected population"
+        ],
+        [
+          "ido:0000514",
+          "susceptible population"
+        ],
+        [
+          "askemo:0000001",
+          "population"
+        ],
+        [
+          "obi:0000181",
+          "population"
+        ],
+        [
+          "pco:0000001",
+          "population"
+        ],
+        [
+          "ncit:C133265",
+          "Non-Hospital Community Blood Bank"
+        ],
+        [
+          "cemo:rate_of_community_transmission",
+          "rate of community transmission"
+        ],
+        [
+          "ncit:C156646",
+          "American Health Information Community"
+        ],
+        [
+          "ncit:C39326",
+          "Association of Community Cancer Centers"
+        ],
+        [
+          "ncit:C177659",
+          "Veterans Affairs Community-Based Outpatient Clinic"
+        ]
+      ],
+      "fips": [
+        [
+          "wikidata:Q917824",
+          "Federal Information Processing Standard"
+        ],
+        [
+          "wikidata:Q1388631",
+          "FIPS"
+        ],
+        [
+          "wikidata:Q20745899",
+          "Philipp Burger"
+        ],
+        [
+          "wikidata:Q3063249",
+          "FIPS 10-4"
+        ],
+        [
+          "wikidata:Q55740211",
+          "FIPS 10-4 Change Notice 1"
+        ],
+        [
+          "wikidata:Q80184504",
+          "ICD-10 codes are a valid tool for identification of pneumonia in hospitalized patients aged > or = 65 years"
+        ],
+        [
+          "wikidata:Q35039980",
+          "ICD-10 codes used to identify adverse drug events in administrative data: a systematic review"
+        ],
+        [
+          "wikidata:Q48187850",
+          "ICD-10 codes detect only a proportion of all head injury admissions."
+        ],
+        [
+          "wikidata:Q53397416",
+          "ICD-10 codes: more specificity with more characters."
+        ],
+        [
+          "wikidata:Q91070090",
+          "ICD-10 coded hospitalizations due to drug hypersensitivity: A nationwide study from Chile"
+        ]
+      ],
+      "cases": [
+        [
+          "hp:0003745",
+          "Sporadic"
+        ],
+        [
+          "cemo:daily_cases",
+          "daily cases"
+        ],
+        [
+          "cemo:suspected_cases",
+          "suspected cases"
+        ],
+        [
+          "cemo:cumulative_cases",
+          "cumulative cases"
+        ],
+        [
+          "cemo:undetected_cases",
+          "undetected cases"
+        ],
+        [
+          "wikidata:Q28247083",
+          "Outbreaks of renal failure associated with melamine and cyanuric acid in dogs and cats in 2004 and 2007"
+        ],
+        [
+          "wikidata:Q54713875",
+          "Outbreaks of acute gastroenteritis on cruise ships and on land: identification of a predominant circulating strain of norovirus--United States, 2002."
+        ],
+        [
+          "wikidata:Q35114725",
+          "Outbreaks of hand, foot, and mouth disease by enterovirus 71. High incidence of complication disorders of central nervous system"
+        ],
+        [
+          "wikidata:Q44316280",
+          "Outbreaks of community-associated methicillin-resistant Staphylococcus aureus skin infections--Los Angeles County, California, 2002-2003."
+        ],
+        [
+          "wikidata:Q24533189",
+          "Outbreaks of disease suspected of being due to human monkeypox virus infection in the Democratic Republic of Congo in 2001."
+        ],
+        [
+          "idocovid19:0001277",
+          "COVID-19 incidence"
+        ],
+        [
+          "ido:0000480",
+          "infection incidence"
+        ],
+        [
+          "idocovid19:0001283",
+          "SARS-CoV-2 incidence"
+        ],
+        [
+          "hp:0001402",
+          "Hepatocellular carcinoma"
+        ],
+        [
+          "oae:0000178",
+          "AE incidence rate"
+        ]
+      ],
+      "deaths": [
+        [
+          "cemo:daily_deaths",
+          "daily deaths"
+        ],
+        [
+          "cemo:number_of_deaths_new_this_week",
+          "number of deaths new this week"
+        ],
+        [
+          "hp:0040006",
+          "Mortality/Aging"
+        ],
+        [
+          "ncit:C16729",
+          "Infant Mortality"
+        ],
+        [
+          "apollosv:00000445",
+          "mortality rate"
+        ],
+        [
+          "apollosv:00000542",
+          "mortality data"
+        ],
+        [
+          "stato:0000414",
+          "mortality rate"
+        ],
+        [
+          "wikidata:Q4",
+          "death"
+        ],
+        [
+          "wikidata:Q1367554",
+          "morbidity"
+        ],
+        [
+          "wikidata:Q65169293",
+          "morbidity"
+        ],
+        [
+          "wikidata:Q32905284",
+          "Morbidity"
+        ],
+        [
+          "wikidata:Q1763668",
+          "Morbidity and Mortality Weekly Report"
+        ]
+      ]
+    },
+    "source": "MIT data profiling tool http://100.26.10.46"
+  },
+  {
+    "file_name": "us-states.csv",
+    "file_directory": "https://github.com/reichlab/covid19-forecast-hub/tree/master/data-truth/nytimes/raw",
+    "annotation": {
+      "date": [
+        [
+          "apollosv:00000429",
+          "date"
+        ],
+        [
+          "oboinowl:date",
+          "date"
+        ],
+        [
+          "dc:date",
+          "Date"
+        ],
+        [
+          "geonames:2130188",
+          "Hakodate"
+        ],
+        [
+          "oboinowl:hasDate",
+          "has_date"
+        ],
+        [
+          "idocovid19:0001277",
+          "COVID-19 incidence"
+        ],
+        [
+          "ido:0000480",
+          "infection incidence"
+        ],
+        [
+          "idocovid19:0001283",
+          "SARS-CoV-2 incidence"
+        ],
+        [
+          "hp:0001402",
+          "Hepatocellular carcinoma"
+        ],
+        [
+          "oae:0000178",
+          "AE incidence rate"
+        ],
+        [
+          "orphanet.ordo:409966",
+          "point prevalence"
+        ],
+        [
+          "obcs:0000064",
+          "period prevalence"
+        ],
+        [
+          "cemo:weighted_prevalence",
+          "weighted prevalence"
+        ],
+        [
+          "idocovid19:0001272",
+          "COVID-19 prevalence"
+        ],
+        [
+          "ido:0000486",
+          "infection prevalence"
+        ]
+      ],
+      "state": [
+        [
+          "geonames:2938913",
+          "Darmstadt"
+        ],
+        [
+          "hp:0000024",
+          "Prostatitis"
+        ],
+        [
+          "doid:2452",
+          "thrombophilia"
+        ],
+        [
+          "geonames:6690108",
+          "Panchkula"
+        ],
+        [
+          "uberon:0003820",
+          "prostate bud"
+        ],
+        [
+          "ido:0000511",
+          "infected population"
+        ],
+        [
+          "ido:0000514",
+          "susceptible population"
+        ],
+        [
+          "askemo:0000001",
+          "population"
+        ],
+        [
+          "obi:0000181",
+          "population"
+        ],
+        [
+          "pco:0000001",
+          "population"
+        ],
+        [
+          "ncit:C133265",
+          "Non-Hospital Community Blood Bank"
+        ],
+        [
+          "cemo:rate_of_community_transmission",
+          "rate of community transmission"
+        ],
+        [
+          "ncit:C156646",
+          "American Health Information Community"
+        ],
+        [
+          "ncit:C39326",
+          "Association of Community Cancer Centers"
+        ],
+        [
+          "ncit:C177659",
+          "Veterans Affairs Community-Based Outpatient Clinic"
+        ]
+      ],
+      "fips": [
+        [
+          "wikidata:Q917824",
+          "Federal Information Processing Standard"
+        ],
+        [
+          "wikidata:Q1388631",
+          "FIPS"
+        ],
+        [
+          "wikidata:Q20745899",
+          "Philipp Burger"
+        ],
+        [
+          "wikidata:Q3063249",
+          "FIPS 10-4"
+        ],
+        [
+          "wikidata:Q55740211",
+          "FIPS 10-4 Change Notice 1"
+        ],
+        [
+          "wikidata:Q80184504",
+          "ICD-10 codes are a valid tool for identification of pneumonia in hospitalized patients aged > or = 65 years"
+        ],
+        [
+          "wikidata:Q35039980",
+          "ICD-10 codes used to identify adverse drug events in administrative data: a systematic review"
+        ],
+        [
+          "wikidata:Q48187850",
+          "ICD-10 codes detect only a proportion of all head injury admissions."
+        ],
+        [
+          "wikidata:Q53397416",
+          "ICD-10 codes: more specificity with more characters."
+        ],
+        [
+          "wikidata:Q91070090",
+          "ICD-10 coded hospitalizations due to drug hypersensitivity: A nationwide study from Chile"
+        ]
+      ],
+      "cases": [
+        [
+          "hp:0003745",
+          "Sporadic"
+        ],
+        [
+          "cemo:daily_cases",
+          "daily cases"
+        ],
+        [
+          "cemo:suspected_cases",
+          "suspected cases"
+        ],
+        [
+          "cemo:cumulative_cases",
+          "cumulative cases"
+        ],
+        [
+          "cemo:undetected_cases",
+          "undetected cases"
+        ],
+        [
+          "wikidata:Q28247083",
+          "Outbreaks of renal failure associated with melamine and cyanuric acid in dogs and cats in 2004 and 2007"
+        ],
+        [
+          "wikidata:Q54713875",
+          "Outbreaks of acute gastroenteritis on cruise ships and on land: identification of a predominant circulating strain of norovirus--United States, 2002."
+        ],
+        [
+          "wikidata:Q35114725",
+          "Outbreaks of hand, foot, and mouth disease by enterovirus 71. High incidence of complication disorders of central nervous system"
+        ],
+        [
+          "wikidata:Q44316280",
+          "Outbreaks of community-associated methicillin-resistant Staphylococcus aureus skin infections--Los Angeles County, California, 2002-2003."
+        ],
+        [
+          "wikidata:Q24533189",
+          "Outbreaks of disease suspected of being due to human monkeypox virus infection in the Democratic Republic of Congo in 2001."
+        ],
+        [
+          "idocovid19:0001277",
+          "COVID-19 incidence"
+        ],
+        [
+          "ido:0000480",
+          "infection incidence"
+        ],
+        [
+          "idocovid19:0001283",
+          "SARS-CoV-2 incidence"
+        ],
+        [
+          "hp:0001402",
+          "Hepatocellular carcinoma"
+        ],
+        [
+          "oae:0000178",
+          "AE incidence rate"
+        ]
+      ],
+      "deaths": [
+        [
+          "cemo:daily_deaths",
+          "daily deaths"
+        ],
+        [
+          "cemo:number_of_deaths_new_this_week",
+          "number of deaths new this week"
+        ],
+        [
+          "hp:0040006",
+          "Mortality/Aging"
+        ],
+        [
+          "ncit:C16729",
+          "Infant Mortality"
+        ],
+        [
+          "apollosv:00000445",
+          "mortality rate"
+        ],
+        [
+          "apollosv:00000542",
+          "mortality data"
+        ],
+        [
+          "stato:0000414",
+          "mortality rate"
+        ],
+        [
+          "wikidata:Q4",
+          "death"
+        ],
+        [
+          "wikidata:Q1367554",
+          "morbidity"
+        ],
+        [
+          "wikidata:Q65169293",
+          "morbidity"
+        ],
+        [
+          "wikidata:Q32905284",
+          "Morbidity"
+        ],
+        [
+          "wikidata:Q1763668",
+          "Morbidity and Mortality Weekly Report"
+        ]
+      ]
+    },
+    "source": "MIT data profiling tool http://100.26.10.46"
+  },
+  {
+    "file_name": "us.csv",
+    "file_directory": "https://github.com/reichlab/covid19-forecast-hub/tree/master/data-truth/nytimes/raw",
+    "annotation": {
+      "date": [
+        [
+          "apollosv:00000429",
+          "date"
+        ],
+        [
+          "oboinowl:date",
+          "date"
+        ],
+        [
+          "dc:date",
+          "Date"
+        ],
+        [
+          "geonames:2130188",
+          "Hakodate"
+        ],
+        [
+          "oboinowl:hasDate",
+          "has_date"
+        ],
+        [
+          "idocovid19:0001277",
+          "COVID-19 incidence"
+        ],
+        [
+          "ido:0000480",
+          "infection incidence"
+        ],
+        [
+          "idocovid19:0001283",
+          "SARS-CoV-2 incidence"
+        ],
+        [
+          "hp:0001402",
+          "Hepatocellular carcinoma"
+        ],
+        [
+          "oae:0000178",
+          "AE incidence rate"
+        ],
+        [
+          "orphanet.ordo:409966",
+          "point prevalence"
+        ],
+        [
+          "obcs:0000064",
+          "period prevalence"
+        ],
+        [
+          "cemo:weighted_prevalence",
+          "weighted prevalence"
+        ],
+        [
+          "idocovid19:0001272",
+          "COVID-19 prevalence"
+        ],
+        [
+          "ido:0000486",
+          "infection prevalence"
+        ]
+      ],
+      "cases": [
+        [
+          "hp:0003745",
+          "Sporadic"
+        ],
+        [
+          "cemo:daily_cases",
+          "daily cases"
+        ],
+        [
+          "cemo:suspected_cases",
+          "suspected cases"
+        ],
+        [
+          "cemo:cumulative_cases",
+          "cumulative cases"
+        ],
+        [
+          "cemo:undetected_cases",
+          "undetected cases"
+        ],
+        [
+          "wikidata:Q28247083",
+          "Outbreaks of renal failure associated with melamine and cyanuric acid in dogs and cats in 2004 and 2007"
+        ],
+        [
+          "wikidata:Q54713875",
+          "Outbreaks of acute gastroenteritis on cruise ships and on land: identification of a predominant circulating strain of norovirus--United States, 2002."
+        ],
+        [
+          "wikidata:Q35114725",
+          "Outbreaks of hand, foot, and mouth disease by enterovirus 71. High incidence of complication disorders of central nervous system"
+        ],
+        [
+          "wikidata:Q44316280",
+          "Outbreaks of community-associated methicillin-resistant Staphylococcus aureus skin infections--Los Angeles County, California, 2002-2003."
+        ],
+        [
+          "wikidata:Q24533189",
+          "Outbreaks of disease suspected of being due to human monkeypox virus infection in the Democratic Republic of Congo in 2001."
+        ],
+        [
+          "idocovid19:0001277",
+          "COVID-19 incidence"
+        ],
+        [
+          "ido:0000480",
+          "infection incidence"
+        ],
+        [
+          "idocovid19:0001283",
+          "SARS-CoV-2 incidence"
+        ],
+        [
+          "hp:0001402",
+          "Hepatocellular carcinoma"
+        ],
+        [
+          "oae:0000178",
+          "AE incidence rate"
+        ]
+      ],
+      "deaths": [
+        [
+          "cemo:daily_deaths",
+          "daily deaths"
+        ],
+        [
+          "cemo:number_of_deaths_new_this_week",
+          "number of deaths new this week"
+        ],
+        [
+          "hp:0040006",
+          "Mortality/Aging"
+        ],
+        [
+          "ncit:C16729",
+          "Infant Mortality"
+        ],
+        [
+          "apollosv:00000445",
+          "mortality rate"
+        ],
+        [
+          "apollosv:00000542",
+          "mortality data"
+        ],
+        [
+          "stato:0000414",
+          "mortality rate"
+        ],
+        [
+          "wikidata:Q4",
+          "death"
+        ],
+        [
+          "wikidata:Q1367554",
+          "morbidity"
+        ],
+        [
+          "wikidata:Q65169293",
+          "morbidity"
+        ],
+        [
+          "wikidata:Q32905284",
+          "Morbidity"
+        ],
+        [
+          "wikidata:Q1763668",
+          "Morbidity and Mortality Weekly Report"
+        ]
+      ]
+    },
+    "source": "MIT data profiling tool http://100.26.10.46"
+  },
+  {
+    "file_name": "truth_usafacts-Incident Cases.csv",
+    "file_directory": "https://github.com/reichlab/covid19-forecast-hub/tree/master/data-truth/usafacts",
+    "annotation": {
+      "date": [
+        [
+          "apollosv:00000429",
+          "date"
+        ],
+        [
+          "oboinowl:date",
+          "date"
+        ],
+        [
+          "dc:date",
+          "Date"
+        ],
+        [
+          "geonames:2130188",
+          "Hakodate"
+        ],
+        [
+          "oboinowl:hasDate",
+          "has_date"
+        ],
+        [
+          "idocovid19:0001277",
+          "COVID-19 incidence"
+        ],
+        [
+          "ido:0000480",
+          "infection incidence"
+        ],
+        [
+          "idocovid19:0001283",
+          "SARS-CoV-2 incidence"
+        ],
+        [
+          "hp:0001402",
+          "Hepatocellular carcinoma"
+        ],
+        [
+          "oae:0000178",
+          "AE incidence rate"
+        ],
+        [
+          "orphanet.ordo:409966",
+          "point prevalence"
+        ],
+        [
+          "obcs:0000064",
+          "period prevalence"
+        ],
+        [
+          "cemo:weighted_prevalence",
+          "weighted prevalence"
+        ],
+        [
+          "idocovid19:0001272",
+          "COVID-19 prevalence"
+        ],
+        [
+          "ido:0000486",
+          "infection prevalence"
+        ]
+      ],
+      "location": [
+        [
+          "so:0000199",
+          "translocation"
+        ],
+        [
+          "so:0001885",
+          "TFBS_translocation"
+        ],
+        [
+          "so:0001881",
+          "feature_translocation"
+        ],
+        [
+          "so:0001883",
+          "transcript_translocation"
+        ],
+        [
+          "so:1000044",
+          "chromosomal_translocation"
+        ],
+        [
+          "wikidata:Q4257161",
+          "range"
+        ],
+        [
+          "wikidata:Q7574061",
+          "spatial distribution"
+        ],
+        [
+          "wikidata:Q51482895",
+          "Geographic distribution of the pines of the world"
+        ],
+        [
+          "wikidata:Q29010408",
+          "Geographic distribution of oil production worker exposures reported to Texas poison centers"
+        ],
+        [
+          "wikidata:Q33525004",
+          "Geographic distribution of Staphylococcus aureus causing invasive infections in Europe: a molecular-epidemiological analysis"
+        ]
+      ],
+      "value": [
+        [
+          "owl:hasValue",
+          "hasValue"
+        ],
+        [
+          "owl:targetValue",
+          "targetValue"
+        ],
+        [
+          "ncit:A31",
+          "Has_GDC_Value"
+        ],
+        [
+          "owl:allValuesFrom",
+          "allValuesFrom"
+        ],
+        [
+          "ncit:A27",
+          "Has_CTDC_Value"
+        ],
+        [
+          "apollosv:00000204",
+          "disease outcome"
+        ],
+        [
+          "oae:0003232",
+          "adverse event outcome"
+        ],
+        [
+          "apollosv:00000290",
+          "treatment preventable outcome"
+        ],
+        [
+          "apollosv:00000218",
+          "vaccination preventable outcome"
+        ],
+        [
+          "cemo:incidence_of_sever_outcomes",
+          "incidence of sever outcomes"
+        ],
+        [
+          "doid:8448",
+          "intestinal impaction"
+        ],
+        [
+          "oae:0008095",
+          "tooth impacted AE"
+        ],
+        [
+          "hp:0001571",
+          "Multiple impacted teeth"
+        ],
+        [
+          "hp:0031984",
+          "Esophageal food impaction"
+        ]
+      ]
+    },
+    "source": "MIT data profiling tool http://100.26.10.46"
+  },
+  {
+    "file_name": "truth_usafacts-Cumulative Deaths.csv",
+    "file_directory": "https://github.com/reichlab/covid19-forecast-hub/tree/master/data-truth/usafacts",
+    "annotation": {
+      "date": [
+        [
+          "apollosv:00000429",
+          "date"
+        ],
+        [
+          "oboinowl:date",
+          "date"
+        ],
+        [
+          "dc:date",
+          "Date"
+        ],
+        [
+          "geonames:2130188",
+          "Hakodate"
+        ],
+        [
+          "oboinowl:hasDate",
+          "has_date"
+        ],
+        [
+          "idocovid19:0001277",
+          "COVID-19 incidence"
+        ],
+        [
+          "ido:0000480",
+          "infection incidence"
+        ],
+        [
+          "idocovid19:0001283",
+          "SARS-CoV-2 incidence"
+        ],
+        [
+          "hp:0001402",
+          "Hepatocellular carcinoma"
+        ],
+        [
+          "oae:0000178",
+          "AE incidence rate"
+        ],
+        [
+          "orphanet.ordo:409966",
+          "point prevalence"
+        ],
+        [
+          "obcs:0000064",
+          "period prevalence"
+        ],
+        [
+          "cemo:weighted_prevalence",
+          "weighted prevalence"
+        ],
+        [
+          "idocovid19:0001272",
+          "COVID-19 prevalence"
+        ],
+        [
+          "ido:0000486",
+          "infection prevalence"
+        ]
+      ],
+      "location": [
+        [
+          "so:0000199",
+          "translocation"
+        ],
+        [
+          "so:0001885",
+          "TFBS_translocation"
+        ],
+        [
+          "so:0001881",
+          "feature_translocation"
+        ],
+        [
+          "so:0001883",
+          "transcript_translocation"
+        ],
+        [
+          "so:1000044",
+          "chromosomal_translocation"
+        ],
+        [
+          "wikidata:Q4257161",
+          "range"
+        ],
+        [
+          "wikidata:Q7574061",
+          "spatial distribution"
+        ],
+        [
+          "wikidata:Q51482895",
+          "Geographic distribution of the pines of the world"
+        ],
+        [
+          "wikidata:Q29010408",
+          "Geographic distribution of oil production worker exposures reported to Texas poison centers"
+        ],
+        [
+          "wikidata:Q33525004",
+          "Geographic distribution of Staphylococcus aureus causing invasive infections in Europe: a molecular-epidemiological analysis"
+        ]
+      ],
+      "value": [
+        [
+          "owl:hasValue",
+          "hasValue"
+        ],
+        [
+          "owl:targetValue",
+          "targetValue"
+        ],
+        [
+          "ncit:A31",
+          "Has_GDC_Value"
+        ],
+        [
+          "owl:allValuesFrom",
+          "allValuesFrom"
+        ],
+        [
+          "ncit:A27",
+          "Has_CTDC_Value"
+        ],
+        [
+          "apollosv:00000204",
+          "disease outcome"
+        ],
+        [
+          "oae:0003232",
+          "adverse event outcome"
+        ],
+        [
+          "apollosv:00000290",
+          "treatment preventable outcome"
+        ],
+        [
+          "apollosv:00000218",
+          "vaccination preventable outcome"
+        ],
+        [
+          "cemo:incidence_of_sever_outcomes",
+          "incidence of sever outcomes"
+        ],
+        [
+          "doid:8448",
+          "intestinal impaction"
+        ],
+        [
+          "oae:0008095",
+          "tooth impacted AE"
+        ],
+        [
+          "hp:0001571",
+          "Multiple impacted teeth"
+        ],
+        [
+          "hp:0031984",
+          "Esophageal food impaction"
+        ]
+      ]
+    },
+    "source": "MIT data profiling tool http://100.26.10.46"
+  },
+  {
+    "file_name": "truth_usafacts-Cumulative Cases.csv",
+    "file_directory": "https://github.com/reichlab/covid19-forecast-hub/tree/master/data-truth/usafacts",
+    "annotation": {
+      "date": [
+        [
+          "apollosv:00000429",
+          "date"
+        ],
+        [
+          "oboinowl:date",
+          "date"
+        ],
+        [
+          "dc:date",
+          "Date"
+        ],
+        [
+          "geonames:2130188",
+          "Hakodate"
+        ],
+        [
+          "oboinowl:hasDate",
+          "has_date"
+        ],
+        [
+          "idocovid19:0001277",
+          "COVID-19 incidence"
+        ],
+        [
+          "ido:0000480",
+          "infection incidence"
+        ],
+        [
+          "idocovid19:0001283",
+          "SARS-CoV-2 incidence"
+        ],
+        [
+          "hp:0001402",
+          "Hepatocellular carcinoma"
+        ],
+        [
+          "oae:0000178",
+          "AE incidence rate"
+        ],
+        [
+          "orphanet.ordo:409966",
+          "point prevalence"
+        ],
+        [
+          "obcs:0000064",
+          "period prevalence"
+        ],
+        [
+          "cemo:weighted_prevalence",
+          "weighted prevalence"
+        ],
+        [
+          "idocovid19:0001272",
+          "COVID-19 prevalence"
+        ],
+        [
+          "ido:0000486",
+          "infection prevalence"
+        ]
+      ],
+      "location": [
+        [
+          "so:0000199",
+          "translocation"
+        ],
+        [
+          "so:0001885",
+          "TFBS_translocation"
+        ],
+        [
+          "so:0001881",
+          "feature_translocation"
+        ],
+        [
+          "so:0001883",
+          "transcript_translocation"
+        ],
+        [
+          "so:1000044",
+          "chromosomal_translocation"
+        ],
+        [
+          "wikidata:Q4257161",
+          "range"
+        ],
+        [
+          "wikidata:Q7574061",
+          "spatial distribution"
+        ],
+        [
+          "wikidata:Q51482895",
+          "Geographic distribution of the pines of the world"
+        ],
+        [
+          "wikidata:Q29010408",
+          "Geographic distribution of oil production worker exposures reported to Texas poison centers"
+        ],
+        [
+          "wikidata:Q33525004",
+          "Geographic distribution of Staphylococcus aureus causing invasive infections in Europe: a molecular-epidemiological analysis"
+        ]
+      ],
+      "value": [
+        [
+          "owl:hasValue",
+          "hasValue"
+        ],
+        [
+          "owl:targetValue",
+          "targetValue"
+        ],
+        [
+          "ncit:A31",
+          "Has_GDC_Value"
+        ],
+        [
+          "owl:allValuesFrom",
+          "allValuesFrom"
+        ],
+        [
+          "ncit:A27",
+          "Has_CTDC_Value"
+        ],
+        [
+          "apollosv:00000204",
+          "disease outcome"
+        ],
+        [
+          "oae:0003232",
+          "adverse event outcome"
+        ],
+        [
+          "apollosv:00000290",
+          "treatment preventable outcome"
+        ],
+        [
+          "apollosv:00000218",
+          "vaccination preventable outcome"
+        ],
+        [
+          "cemo:incidence_of_sever_outcomes",
+          "incidence of sever outcomes"
+        ],
+        [
+          "doid:8448",
+          "intestinal impaction"
+        ],
+        [
+          "oae:0008095",
+          "tooth impacted AE"
+        ],
+        [
+          "hp:0001571",
+          "Multiple impacted teeth"
+        ],
+        [
+          "hp:0031984",
+          "Esophageal food impaction"
+        ]
+      ]
+    },
+    "source": "MIT data profiling tool http://100.26.10.46"
+  },
+  {
+    "file_name": "truth_usafacts-Incident Deaths.csv",
+    "file_directory": "https://github.com/reichlab/covid19-forecast-hub/tree/master/data-truth/usafacts",
+    "annotation": {
+      "date": [
+        [
+          "apollosv:00000429",
+          "date"
+        ],
+        [
+          "oboinowl:date",
+          "date"
+        ],
+        [
+          "dc:date",
+          "Date"
+        ],
+        [
+          "geonames:2130188",
+          "Hakodate"
+        ],
+        [
+          "oboinowl:hasDate",
+          "has_date"
+        ],
+        [
+          "idocovid19:0001277",
+          "COVID-19 incidence"
+        ],
+        [
+          "ido:0000480",
+          "infection incidence"
+        ],
+        [
+          "idocovid19:0001283",
+          "SARS-CoV-2 incidence"
+        ],
+        [
+          "hp:0001402",
+          "Hepatocellular carcinoma"
+        ],
+        [
+          "oae:0000178",
+          "AE incidence rate"
+        ],
+        [
+          "orphanet.ordo:409966",
+          "point prevalence"
+        ],
+        [
+          "obcs:0000064",
+          "period prevalence"
+        ],
+        [
+          "cemo:weighted_prevalence",
+          "weighted prevalence"
+        ],
+        [
+          "idocovid19:0001272",
+          "COVID-19 prevalence"
+        ],
+        [
+          "ido:0000486",
+          "infection prevalence"
+        ]
+      ],
+      "location": [
+        [
+          "so:0000199",
+          "translocation"
+        ],
+        [
+          "so:0001885",
+          "TFBS_translocation"
+        ],
+        [
+          "so:0001881",
+          "feature_translocation"
+        ],
+        [
+          "so:0001883",
+          "transcript_translocation"
+        ],
+        [
+          "so:1000044",
+          "chromosomal_translocation"
+        ],
+        [
+          "wikidata:Q4257161",
+          "range"
+        ],
+        [
+          "wikidata:Q7574061",
+          "spatial distribution"
+        ],
+        [
+          "wikidata:Q51482895",
+          "Geographic distribution of the pines of the world"
+        ],
+        [
+          "wikidata:Q29010408",
+          "Geographic distribution of oil production worker exposures reported to Texas poison centers"
+        ],
+        [
+          "wikidata:Q33525004",
+          "Geographic distribution of Staphylococcus aureus causing invasive infections in Europe: a molecular-epidemiological analysis"
+        ]
+      ],
+      "value": [
+        [
+          "owl:hasValue",
+          "hasValue"
+        ],
+        [
+          "owl:targetValue",
+          "targetValue"
+        ],
+        [
+          "ncit:A31",
+          "Has_GDC_Value"
+        ],
+        [
+          "owl:allValuesFrom",
+          "allValuesFrom"
+        ],
+        [
+          "ncit:A27",
+          "Has_CTDC_Value"
+        ],
+        [
+          "apollosv:00000204",
+          "disease outcome"
+        ],
+        [
+          "oae:0003232",
+          "adverse event outcome"
+        ],
+        [
+          "apollosv:00000290",
+          "treatment preventable outcome"
+        ],
+        [
+          "apollosv:00000218",
+          "vaccination preventable outcome"
+        ],
+        [
+          "cemo:incidence_of_sever_outcomes",
+          "incidence of sever outcomes"
+        ],
+        [
+          "doid:8448",
+          "intestinal impaction"
+        ],
+        [
+          "oae:0008095",
+          "tooth impacted AE"
+        ],
+        [
+          "hp:0001571",
+          "Multiple impacted teeth"
+        ],
+        [
+          "hp:0031984",
+          "Esophageal food impaction"
+        ]
+      ]
+    },
+    "source": "MIT data profiling tool http://100.26.10.46"
+  },
+  {
+    "file_name": "covid_deaths_usafacts.csv",
+    "file_directory": "https://github.com/reichlab/covid19-forecast-hub/tree/master/data-truth/usafacts/raw",
+    "annotation": "too many date columns"
+  },
+  {
+    "file_name": "covid_confirmed_usafacts.csv",
+    "file_directory": "https://github.com/reichlab/covid19-forecast-hub/tree/master/data-truth/usafacts/raw",
+    "annotation": "too many date columns"
+  }
+]
