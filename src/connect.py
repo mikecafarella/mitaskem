@@ -321,7 +321,7 @@ def dataset_header_dkg(header, gpt_key=''):
         print(f"relevant items found from GPT: {ans}")
         for e in ans.split(","):
             # print(e)
-            for res in get_mira_dkg_term(e, ['id', 'name'],True):
+            for res in get_mira_dkg_term(e, ['id', 'name', 'type'],True):
                 # print(res)
                 if not res:
                     break

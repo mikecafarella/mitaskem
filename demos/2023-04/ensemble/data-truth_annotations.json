@@ -10,43 +10,53 @@
         ],
         [
           "idocovid19:0001277",
-          "COVID-19 incidence"
+          "COVID-19 incidence",
+          "class"
         ],
         [
           "ido:0000480",
-          "infection incidence"
+          "infection incidence",
+          "class"
         ],
         [
           "idocovid19:0001283",
-          "SARS-CoV-2 incidence"
+          "SARS-CoV-2 incidence",
+          "class"
         ],
         [
           "hp:0001402",
-          "Hepatocellular carcinoma"
+          "Hepatocellular carcinoma",
+          "class"
         ],
         [
           "oae:0000178",
-          "AE incidence rate"
+          "AE incidence rate",
+          "class"
         ],
         [
           "orphanet.ordo:409966",
-          "point prevalence"
+          "point prevalence",
+          "class"
         ],
         [
           "obcs:0000064",
-          "period prevalence"
+          "period prevalence",
+          "class"
         ],
         [
           "cemo:weighted_prevalence",
-          "weighted prevalence"
+          "weighted prevalence",
+          "class"
         ],
         [
           "idocovid19:0001272",
-          "COVID-19 prevalence"
+          "COVID-19 prevalence",
+          "class"
         ],
         [
           "ido:0000486",
-          "infection prevalence"
+          "infection prevalence",
+          "class"
         ]
       ],
       "unit": [
@@ -72,43 +82,53 @@
         ],
         [
           "symp:0020025",
-          "caseation"
+          "caseation",
+          "class"
         ],
         [
           "wikidata:Q1040401",
-          "decasecond"
+          "decasecond",
+          "class"
         ],
         [
           "ncbitaxon:1003877",
-          "Benincaseae"
+          "Benincaseae",
+          "class"
         ],
         [
           "geonames:11281879",
-          "Casablanca-Settat"
+          "Casablanca-Settat",
+          "individual"
         ],
         [
           "pr:000005942",
-          "kappa-casein"
+          "kappa-casein",
+          "class"
         ],
         [
           "ncit:C71550",
-          "Age Cohort"
+          "Age Cohort",
+          "class"
         ],
         [
           "ncit:C53205",
-          "Birth Cohort"
+          "Birth Cohort",
+          "class"
         ],
         [
           "ncit:C71548",
-          "Historical Cohort"
+          "Historical Cohort",
+          "class"
         ],
         [
           "ncit:C71551",
-          "Exposed Population"
+          "Exposed Population",
+          "class"
         ],
         [
           "ncit:C71552",
-          "Unexposed Population"
+          "Unexposed Population",
+          "class"
         ]
       ],
       "target": [
@@ -134,43 +154,53 @@
         ],
         [
           "ido:0000597",
-          "host exposure to environment containing infectious agent"
+          "host exposure to environment containing infectious agent",
+          "class"
         ],
         [
           "cemo:exposure",
-          "exposure"
+          "exposure",
+          "class"
         ],
         [
           "opmi:0000572",
-          "drug exposure"
+          "drug exposure",
+          "class"
         ],
         [
           "hp:4000110",
-          "Exposure history"
+          "Exposure history",
+          "class"
         ],
         [
           "opmi:0000554",
-          "device exposure"
+          "device exposure",
+          "class"
         ],
         [
           "apollosv:00000204",
-          "disease outcome"
+          "disease outcome",
+          "class"
         ],
         [
           "oae:0003232",
-          "adverse event outcome"
+          "adverse event outcome",
+          "property"
         ],
         [
           "apollosv:00000290",
-          "treatment preventable outcome"
+          "treatment preventable outcome",
+          "class"
         ],
         [
           "apollosv:00000218",
-          "vaccination preventable outcome"
+          "vaccination preventable outcome",
+          "class"
         ],
         [
           "cemo:incidence_of_sever_outcomes",
-          "incidence of sever outcomes"
+          "incidence of sever outcomes",
+          "class"
         ]
       ],
       "value": [
@@ -196,39 +226,48 @@
         ],
         [
           "apollosv:00000204",
-          "disease outcome"
+          "disease outcome",
+          "class"
         ],
         [
           "oae:0003232",
-          "adverse event outcome"
+          "adverse event outcome",
+          "property"
         ],
         [
           "apollosv:00000290",
-          "treatment preventable outcome"
+          "treatment preventable outcome",
+          "class"
         ],
         [
           "apollosv:00000218",
-          "vaccination preventable outcome"
+          "vaccination preventable outcome",
+          "class"
         ],
         [
           "cemo:incidence_of_sever_outcomes",
-          "incidence of sever outcomes"
+          "incidence of sever outcomes",
+          "class"
         ],
         [
           "doid:8448",
-          "intestinal impaction"
+          "intestinal impaction",
+          "class"
         ],
         [
           "oae:0008095",
-          "tooth impacted AE"
+          "tooth impacted AE",
+          "class"
         ],
         [
           "hp:0001571",
-          "Multiple impacted teeth"
+          "Multiple impacted teeth",
+          "class"
         ],
         [
           "hp:0031984",
-          "Esophageal food impaction"
+          "Esophageal food impaction",
+          "class"
         ]
       ]
     },
@@ -261,43 +300,53 @@
         ],
         [
           "idocovid19:0001277",
-          "COVID-19 incidence"
+          "COVID-19 incidence",
+          "class"
         ],
         [
           "ido:0000480",
-          "infection incidence"
+          "infection incidence",
+          "class"
         ],
         [
           "idocovid19:0001283",
-          "SARS-CoV-2 incidence"
+          "SARS-CoV-2 incidence",
+          "class"
         ],
         [
           "hp:0001402",
-          "Hepatocellular carcinoma"
+          "Hepatocellular carcinoma",
+          "class"
         ],
         [
           "oae:0000178",
-          "AE incidence rate"
+          "AE incidence rate",
+          "class"
         ],
         [
           "orphanet.ordo:409966",
-          "point prevalence"
+          "point prevalence",
+          "class"
         ],
         [
           "obcs:0000064",
-          "period prevalence"
+          "period prevalence",
+          "class"
         ],
         [
           "cemo:weighted_prevalence",
-          "weighted prevalence"
+          "weighted prevalence",
+          "class"
         ],
         [
           "idocovid19:0001272",
-          "COVID-19 prevalence"
+          "COVID-19 prevalence",
+          "class"
         ],
         [
           "ido:0000486",
-          "infection prevalence"
+          "infection prevalence",
+          "class"
         ]
       ],
       "location": [
@@ -323,23 +372,28 @@
         ],
         [
           "wikidata:Q4257161",
-          "range"
+          "range",
+          "class"
         ],
         [
           "wikidata:Q7574061",
-          "spatial distribution"
+          "spatial distribution",
+          "class"
         ],
         [
           "wikidata:Q51482895",
-          "Geographic distribution of the pines of the world"
+          "Geographic distribution of the pines of the world",
+          "class"
         ],
         [
           "wikidata:Q29010408",
-          "Geographic distribution of oil production worker exposures reported to Texas poison centers"
+          "Geographic distribution of oil production worker exposures reported to Texas poison centers",
+          "class"
         ],
         [
           "wikidata:Q33525004",
-          "Geographic distribution of Staphylococcus aureus causing invasive infections in Europe: a molecular-epidemiological analysis"
+          "Geographic distribution of Staphylococcus aureus causing invasive infections in Europe: a molecular-epidemiological analysis",
+          "class"
         ]
       ],
       "location_name": [
@@ -349,43 +403,53 @@
         ],
         [
           "wikidata:Q82794",
-          "geographic region"
+          "geographic region",
+          "class"
         ],
         [
           "wikidata:Q4835091",
-          "territory"
+          "territory",
+          "class"
         ],
         [
           "wikidata:Q5535051",
-          "Geographic areas of Houston"
+          "Geographic areas of Houston",
+          "class"
         ],
         [
           "wikidata:Q111867462",
-          "geographic area of the United States of America"
+          "geographic area of the United States of America",
+          "class"
         ],
         [
           "wikidata:Q5535052",
-          "Geographic areas of Sugar Land, Texas"
+          "Geographic areas of Sugar Land, Texas",
+          "class"
         ],
         [
           "wikidata:Q47933460",
-          "Place of residence and risk of fracture in older people: a population-based study of over 65-year-olds in Cardiff."
+          "Place of residence and risk of fracture in older people: a population-based study of over 65-year-olds in Cardiff.",
+          "class"
         ],
         [
           "wikidata:Q39831605",
-          "Place of residence and obesity in 1,578,694 young Swedish men between 1969 and 2005."
+          "Place of residence and obesity in 1,578,694 young Swedish men between 1969 and 2005.",
+          "class"
         ],
         [
           "wikidata:Q37662044",
-          "Place of residence and outcomes of patients with heart failure: analysis from the telemonitoring to improve heart failure outcomes trial"
+          "Place of residence and outcomes of patients with heart failure: analysis from the telemonitoring to improve heart failure outcomes trial",
+          "class"
         ],
         [
           "wikidata:Q39743023",
-          "Place of residence and distance to medical care influence the diagnosis of hepatitis C: a population-based study"
+          "Place of residence and distance to medical care influence the diagnosis of hepatitis C: a population-based study",
+          "class"
         ],
         [
           "wikidata:Q34248327",
-          "Place of residence affects routine dental care in the intellectually and developmentally disabled adult population on Medicaid"
+          "Place of residence affects routine dental care in the intellectually and developmentally disabled adult population on Medicaid",
+          "class"
         ]
       ],
       "value": [
@@ -411,39 +475,48 @@
         ],
         [
           "apollosv:00000204",
-          "disease outcome"
+          "disease outcome",
+          "class"
         ],
         [
           "oae:0003232",
-          "adverse event outcome"
+          "adverse event outcome",
+          "property"
         ],
         [
           "apollosv:00000290",
-          "treatment preventable outcome"
+          "treatment preventable outcome",
+          "class"
         ],
         [
           "apollosv:00000218",
-          "vaccination preventable outcome"
+          "vaccination preventable outcome",
+          "class"
         ],
         [
           "cemo:incidence_of_sever_outcomes",
-          "incidence of sever outcomes"
+          "incidence of sever outcomes",
+          "class"
         ],
         [
           "doid:8448",
-          "intestinal impaction"
+          "intestinal impaction",
+          "class"
         ],
         [
           "oae:0008095",
-          "tooth impacted AE"
+          "tooth impacted AE",
+          "class"
         ],
         [
           "hp:0001571",
-          "Multiple impacted teeth"
+          "Multiple impacted teeth",
+          "class"
         ],
         [
           "hp:0031984",
-          "Esophageal food impaction"
+          "Esophageal food impaction",
+          "class"
         ]
       ]
     },
@@ -458,23 +531,28 @@
       "first_fcast_date": [
         [
           "idomal:0000147",
-          "sporogony"
+          "sporogony",
+          "class"
         ],
         [
           "apollosv:00000317",
-          "incubation period"
+          "incubation period",
+          "class"
         ],
         [
           "ido:0000519",
-          "incubation period"
+          "incubation period",
+          "class"
         ],
         [
           "idomal:0000355",
-          "incubation period"
+          "incubation period",
+          "class"
         ],
         [
           "askemo:0000010",
-          "incubation time"
+          "incubation time",
+          "class"
         ]
       ],
       "target ": [
@@ -500,43 +578,53 @@
         ],
         [
           "ido:0000597",
-          "host exposure to environment containing infectious agent"
+          "host exposure to environment containing infectious agent",
+          "class"
         ],
         [
           "cemo:exposure",
-          "exposure"
+          "exposure",
+          "class"
         ],
         [
           "opmi:0000572",
-          "drug exposure"
+          "drug exposure",
+          "class"
         ],
         [
           "hp:4000110",
-          "Exposure history"
+          "Exposure history",
+          "class"
         ],
         [
           "opmi:0000554",
-          "device exposure"
+          "device exposure",
+          "class"
         ],
         [
           "apollosv:00000204",
-          "disease outcome"
+          "disease outcome",
+          "class"
         ],
         [
           "oae:0003232",
-          "adverse event outcome"
+          "adverse event outcome",
+          "property"
         ],
         [
           "apollosv:00000290",
-          "treatment preventable outcome"
+          "treatment preventable outcome",
+          "class"
         ],
         [
           "apollosv:00000218",
-          "vaccination preventable outcome"
+          "vaccination preventable outcome",
+          "class"
         ],
         [
           "cemo:incidence_of_sever_outcomes",
-          "incidence of sever outcomes"
+          "incidence of sever outcomes",
+          "class"
         ]
       ],
       "location_name": [
@@ -546,43 +634,53 @@
         ],
         [
           "wikidata:Q82794",
-          "geographic region"
+          "geographic region",
+          "class"
         ],
         [
           "wikidata:Q4835091",
-          "territory"
+          "territory",
+          "class"
         ],
         [
           "wikidata:Q5535051",
-          "Geographic areas of Houston"
+          "Geographic areas of Houston",
+          "class"
         ],
         [
           "wikidata:Q111867462",
-          "geographic area of the United States of America"
+          "geographic area of the United States of America",
+          "class"
         ],
         [
           "wikidata:Q5535052",
-          "Geographic areas of Sugar Land, Texas"
+          "Geographic areas of Sugar Land, Texas",
+          "class"
         ],
         [
           "wikidata:Q47933460",
-          "Place of residence and risk of fracture in older people: a population-based study of over 65-year-olds in Cardiff."
+          "Place of residence and risk of fracture in older people: a population-based study of over 65-year-olds in Cardiff.",
+          "class"
         ],
         [
           "wikidata:Q39831605",
-          "Place of residence and obesity in 1,578,694 young Swedish men between 1969 and 2005."
+          "Place of residence and obesity in 1,578,694 young Swedish men between 1969 and 2005.",
+          "class"
         ],
         [
           "wikidata:Q37662044",
-          "Place of residence and outcomes of patients with heart failure: analysis from the telemonitoring to improve heart failure outcomes trial"
+          "Place of residence and outcomes of patients with heart failure: analysis from the telemonitoring to improve heart failure outcomes trial",
+          "class"
         ],
         [
           "wikidata:Q39743023",
-          "Place of residence and distance to medical care influence the diagnosis of hepatitis C: a population-based study"
+          "Place of residence and distance to medical care influence the diagnosis of hepatitis C: a population-based study",
+          "class"
         ],
         [
           "wikidata:Q34248327",
-          "Place of residence affects routine dental care in the intellectually and developmentally disabled adult population on Medicaid"
+          "Place of residence affects routine dental care in the intellectually and developmentally disabled adult population on Medicaid",
+          "class"
         ]
       ],
       "Error_message": [
@@ -604,15 +702,18 @@
         ],
         [
           "wikidata:Q1313852",
-          "error code"
+          "error code",
+          "class"
         ],
         [
           "wikidata:Q18614926",
-          "Error Code"
+          "Error Code",
+          "class"
         ],
         [
           "wikidata:Q105858287",
-          "Error Code Modeler"
+          "Error Code Modeler",
+          "class"
         ]
       ]
     },
@@ -629,43 +730,53 @@
         ],
         [
           "idocovid19:0001277",
-          "COVID-19 incidence"
+          "COVID-19 incidence",
+          "class"
         ],
         [
           "ido:0000480",
-          "infection incidence"
+          "infection incidence",
+          "class"
         ],
         [
           "idocovid19:0001283",
-          "SARS-CoV-2 incidence"
+          "SARS-CoV-2 incidence",
+          "class"
         ],
         [
           "hp:0001402",
-          "Hepatocellular carcinoma"
+          "Hepatocellular carcinoma",
+          "class"
         ],
         [
           "oae:0000178",
-          "AE incidence rate"
+          "AE incidence rate",
+          "class"
         ],
         [
           "orphanet.ordo:409966",
-          "point prevalence"
+          "point prevalence",
+          "class"
         ],
         [
           "obcs:0000064",
-          "period prevalence"
+          "period prevalence",
+          "class"
         ],
         [
           "cemo:weighted_prevalence",
-          "weighted prevalence"
+          "weighted prevalence",
+          "class"
         ],
         [
           "idocovid19:0001272",
-          "COVID-19 prevalence"
+          "COVID-19 prevalence",
+          "class"
         ],
         [
           "ido:0000486",
-          "infection prevalence"
+          "infection prevalence",
+          "class"
         ]
       ],
       "unit": [
@@ -691,43 +802,53 @@
         ],
         [
           "symp:0020025",
-          "caseation"
+          "caseation",
+          "class"
         ],
         [
           "wikidata:Q1040401",
-          "decasecond"
+          "decasecond",
+          "class"
         ],
         [
           "ncbitaxon:1003877",
-          "Benincaseae"
+          "Benincaseae",
+          "class"
         ],
         [
           "geonames:11281879",
-          "Casablanca-Settat"
+          "Casablanca-Settat",
+          "individual"
         ],
         [
           "pr:000005942",
-          "kappa-casein"
+          "kappa-casein",
+          "class"
         ],
         [
           "ncit:C71550",
-          "Age Cohort"
+          "Age Cohort",
+          "class"
         ],
         [
           "ncit:C53205",
-          "Birth Cohort"
+          "Birth Cohort",
+          "class"
         ],
         [
           "ncit:C71548",
-          "Historical Cohort"
+          "Historical Cohort",
+          "class"
         ],
         [
           "ncit:C71551",
-          "Exposed Population"
+          "Exposed Population",
+          "class"
         ],
         [
           "ncit:C71552",
-          "Unexposed Population"
+          "Unexposed Population",
+          "class"
         ]
       ],
       "target": [
@@ -753,43 +874,53 @@
         ],
         [
           "ido:0000597",
-          "host exposure to environment containing infectious agent"
+          "host exposure to environment containing infectious agent",
+          "class"
         ],
         [
           "cemo:exposure",
-          "exposure"
+          "exposure",
+          "class"
         ],
         [
           "opmi:0000572",
-          "drug exposure"
+          "drug exposure",
+          "class"
         ],
         [
           "hp:4000110",
-          "Exposure history"
+          "Exposure history",
+          "class"
         ],
         [
           "opmi:0000554",
-          "device exposure"
+          "device exposure",
+          "class"
         ],
         [
           "apollosv:00000204",
-          "disease outcome"
+          "disease outcome",
+          "class"
         ],
         [
           "oae:0003232",
-          "adverse event outcome"
+          "adverse event outcome",
+          "property"
         ],
         [
           "apollosv:00000290",
-          "treatment preventable outcome"
+          "treatment preventable outcome",
+          "class"
         ],
         [
           "apollosv:00000218",
-          "vaccination preventable outcome"
+          "vaccination preventable outcome",
+          "class"
         ],
         [
           "cemo:incidence_of_sever_outcomes",
-          "incidence of sever outcomes"
+          "incidence of sever outcomes",
+          "class"
         ]
       ],
       "value": [
@@ -815,39 +946,48 @@
         ],
         [
           "apollosv:00000204",
-          "disease outcome"
+          "disease outcome",
+          "class"
         ],
         [
           "oae:0003232",
-          "adverse event outcome"
+          "adverse event outcome",
+          "property"
         ],
         [
           "apollosv:00000290",
-          "treatment preventable outcome"
+          "treatment preventable outcome",
+          "class"
         ],
         [
           "apollosv:00000218",
-          "vaccination preventable outcome"
+          "vaccination preventable outcome",
+          "class"
         ],
         [
           "cemo:incidence_of_sever_outcomes",
-          "incidence of sever outcomes"
+          "incidence of sever outcomes",
+          "class"
         ],
         [
           "doid:8448",
-          "intestinal impaction"
+          "intestinal impaction",
+          "class"
         ],
         [
           "oae:0008095",
-          "tooth impacted AE"
+          "tooth impacted AE",
+          "class"
         ],
         [
           "hp:0001571",
-          "Multiple impacted teeth"
+          "Multiple impacted teeth",
+          "class"
         ],
         [
           "hp:0031984",
-          "Esophageal food impaction"
+          "Esophageal food impaction",
+          "class"
         ]
       ]
     },
@@ -876,35 +1016,43 @@
         ],
         [
           "wikidata:Q1313852",
-          "error code"
+          "error code",
+          "class"
         ],
         [
           "wikidata:Q18614926",
-          "Error Code"
+          "Error Code",
+          "class"
         ],
         [
           "wikidata:Q105858287",
-          "Error Code Modeler"
+          "Error Code Modeler",
+          "class"
         ],
         [
           "wikidata:Q116494",
-          "clinical coder"
+          "clinical coder",
+          "class"
         ],
         [
           "wikidata:Q37000032",
-          "Diagnostic codes for sudden cardiac death and ventricular arrhythmia functioned poorly to identify outpatient events in EPIC's General Practice Research Database"
+          "Diagnostic codes for sudden cardiac death and ventricular arrhythmia functioned poorly to identify outpatient events in EPIC's General Practice Research Database",
+          "class"
         ],
         [
           "wikidata:Q74464931",
-          "Diagnostic codes in dentistry--definition, utility and developments to date"
+          "Diagnostic codes in dentistry--definition, utility and developments to date",
+          "class"
         ],
         [
           "wikidata:Q70776384",
-          "Diagnostic code for congenital heart disease"
+          "Diagnostic code for congenital heart disease",
+          "class"
         ],
         [
           "wikidata:Q44182554",
-          "Diagnostic code for congenital heart disease, supplement."
+          "Diagnostic code for congenital heart disease, supplement.",
+          "class"
         ]
       ],
       "Brief Description": [
@@ -930,23 +1078,28 @@
         ],
         [
           "iao:0000315",
-          "abstract"
+          "abstract",
+          "class"
         ],
         [
           "iao:0000707",
-          "graphical abstract"
+          "graphical abstract",
+          "class"
         ],
         [
           "iao:0000609",
-          "author summary section"
+          "author summary section",
+          "class"
         ],
         [
           "iao:0000610",
-          "author summary textual entity"
+          "author summary textual entity",
+          "class"
         ],
         [
           "apollosv:00000462",
-          "mean median minimum maximum summary statistics data structure"
+          "mean median minimum maximum summary statistics data structure",
+          "class"
         ]
       ]
     },
@@ -979,43 +1132,53 @@
         ],
         [
           "idocovid19:0001277",
-          "COVID-19 incidence"
+          "COVID-19 incidence",
+          "class"
         ],
         [
           "ido:0000480",
-          "infection incidence"
+          "infection incidence",
+          "class"
         ],
         [
           "idocovid19:0001283",
-          "SARS-CoV-2 incidence"
+          "SARS-CoV-2 incidence",
+          "class"
         ],
         [
           "hp:0001402",
-          "Hepatocellular carcinoma"
+          "Hepatocellular carcinoma",
+          "class"
         ],
         [
           "oae:0000178",
-          "AE incidence rate"
+          "AE incidence rate",
+          "class"
         ],
         [
           "orphanet.ordo:409966",
-          "point prevalence"
+          "point prevalence",
+          "class"
         ],
         [
           "obcs:0000064",
-          "period prevalence"
+          "period prevalence",
+          "class"
         ],
         [
           "cemo:weighted_prevalence",
-          "weighted prevalence"
+          "weighted prevalence",
+          "class"
         ],
         [
           "idocovid19:0001272",
-          "COVID-19 prevalence"
+          "COVID-19 prevalence",
+          "class"
         ],
         [
           "ido:0000486",
-          "infection prevalence"
+          "infection prevalence",
+          "class"
         ]
       ],
       "location": [
@@ -1041,23 +1204,28 @@
         ],
         [
           "wikidata:Q4257161",
-          "range"
+          "range",
+          "class"
         ],
         [
           "wikidata:Q7574061",
-          "spatial distribution"
+          "spatial distribution",
+          "class"
         ],
         [
           "wikidata:Q51482895",
-          "Geographic distribution of the pines of the world"
+          "Geographic distribution of the pines of the world",
+          "class"
         ],
         [
           "wikidata:Q29010408",
-          "Geographic distribution of oil production worker exposures reported to Texas poison centers"
+          "Geographic distribution of oil production worker exposures reported to Texas poison centers",
+          "class"
         ],
         [
           "wikidata:Q33525004",
-          "Geographic distribution of Staphylococcus aureus causing invasive infections in Europe: a molecular-epidemiological analysis"
+          "Geographic distribution of Staphylococcus aureus causing invasive infections in Europe: a molecular-epidemiological analysis",
+          "class"
         ]
       ],
       "location_name": [
@@ -1067,43 +1235,53 @@
         ],
         [
           "wikidata:Q82794",
-          "geographic region"
+          "geographic region",
+          "class"
         ],
         [
           "wikidata:Q4835091",
-          "territory"
+          "territory",
+          "class"
         ],
         [
           "wikidata:Q5535051",
-          "Geographic areas of Houston"
+          "Geographic areas of Houston",
+          "class"
         ],
         [
           "wikidata:Q111867462",
-          "geographic area of the United States of America"
+          "geographic area of the United States of America",
+          "class"
         ],
         [
           "wikidata:Q5535052",
-          "Geographic areas of Sugar Land, Texas"
+          "Geographic areas of Sugar Land, Texas",
+          "class"
         ],
         [
           "wikidata:Q47933460",
-          "Place of residence and risk of fracture in older people: a population-based study of over 65-year-olds in Cardiff."
+          "Place of residence and risk of fracture in older people: a population-based study of over 65-year-olds in Cardiff.",
+          "class"
         ],
         [
           "wikidata:Q39831605",
-          "Place of residence and obesity in 1,578,694 young Swedish men between 1969 and 2005."
+          "Place of residence and obesity in 1,578,694 young Swedish men between 1969 and 2005.",
+          "class"
         ],
         [
           "wikidata:Q37662044",
-          "Place of residence and outcomes of patients with heart failure: analysis from the telemonitoring to improve heart failure outcomes trial"
+          "Place of residence and outcomes of patients with heart failure: analysis from the telemonitoring to improve heart failure outcomes trial",
+          "class"
         ],
         [
           "wikidata:Q39743023",
-          "Place of residence and distance to medical care influence the diagnosis of hepatitis C: a population-based study"
+          "Place of residence and distance to medical care influence the diagnosis of hepatitis C: a population-based study",
+          "class"
         ],
         [
           "wikidata:Q34248327",
-          "Place of residence affects routine dental care in the intellectually and developmentally disabled adult population on Medicaid"
+          "Place of residence affects routine dental care in the intellectually and developmentally disabled adult population on Medicaid",
+          "class"
         ]
       ],
       "value": [
@@ -1129,39 +1307,48 @@
         ],
         [
           "apollosv:00000204",
-          "disease outcome"
+          "disease outcome",
+          "class"
         ],
         [
           "oae:0003232",
-          "adverse event outcome"
+          "adverse event outcome",
+          "property"
         ],
         [
           "apollosv:00000290",
-          "treatment preventable outcome"
+          "treatment preventable outcome",
+          "class"
         ],
         [
           "apollosv:00000218",
-          "vaccination preventable outcome"
+          "vaccination preventable outcome",
+          "class"
         ],
         [
           "cemo:incidence_of_sever_outcomes",
-          "incidence of sever outcomes"
+          "incidence of sever outcomes",
+          "class"
         ],
         [
           "doid:8448",
-          "intestinal impaction"
+          "intestinal impaction",
+          "class"
         ],
         [
           "oae:0008095",
-          "tooth impacted AE"
+          "tooth impacted AE",
+          "class"
         ],
         [
           "hp:0001571",
-          "Multiple impacted teeth"
+          "Multiple impacted teeth",
+          "class"
         ],
         [
           "hp:0031984",
-          "Esophageal food impaction"
+          "Esophageal food impaction",
+          "class"
         ]
       ]
     },
@@ -1194,43 +1381,53 @@
         ],
         [
           "idocovid19:0001277",
-          "COVID-19 incidence"
+          "COVID-19 incidence",
+          "class"
         ],
         [
           "ido:0000480",
-          "infection incidence"
+          "infection incidence",
+          "class"
         ],
         [
           "idocovid19:0001283",
-          "SARS-CoV-2 incidence"
+          "SARS-CoV-2 incidence",
+          "class"
         ],
         [
           "hp:0001402",
-          "Hepatocellular carcinoma"
+          "Hepatocellular carcinoma",
+          "class"
         ],
         [
           "oae:0000178",
-          "AE incidence rate"
+          "AE incidence rate",
+          "class"
         ],
         [
           "orphanet.ordo:409966",
-          "point prevalence"
+          "point prevalence",
+          "class"
         ],
         [
           "obcs:0000064",
-          "period prevalence"
+          "period prevalence",
+          "class"
         ],
         [
           "cemo:weighted_prevalence",
-          "weighted prevalence"
+          "weighted prevalence",
+          "class"
         ],
         [
           "idocovid19:0001272",
-          "COVID-19 prevalence"
+          "COVID-19 prevalence",
+          "class"
         ],
         [
           "ido:0000486",
-          "infection prevalence"
+          "infection prevalence",
+          "class"
         ]
       ],
       "location": [
@@ -1256,23 +1453,28 @@
         ],
         [
           "wikidata:Q4257161",
-          "range"
+          "range",
+          "class"
         ],
         [
           "wikidata:Q7574061",
-          "spatial distribution"
+          "spatial distribution",
+          "class"
         ],
         [
           "wikidata:Q51482895",
-          "Geographic distribution of the pines of the world"
+          "Geographic distribution of the pines of the world",
+          "class"
         ],
         [
           "wikidata:Q29010408",
-          "Geographic distribution of oil production worker exposures reported to Texas poison centers"
+          "Geographic distribution of oil production worker exposures reported to Texas poison centers",
+          "class"
         ],
         [
           "wikidata:Q33525004",
-          "Geographic distribution of Staphylococcus aureus causing invasive infections in Europe: a molecular-epidemiological analysis"
+          "Geographic distribution of Staphylococcus aureus causing invasive infections in Europe: a molecular-epidemiological analysis",
+          "class"
         ]
       ],
       "location_name": [
@@ -1282,43 +1484,53 @@
         ],
         [
           "wikidata:Q82794",
-          "geographic region"
+          "geographic region",
+          "class"
         ],
         [
           "wikidata:Q4835091",
-          "territory"
+          "territory",
+          "class"
         ],
         [
           "wikidata:Q5535051",
-          "Geographic areas of Houston"
+          "Geographic areas of Houston",
+          "class"
         ],
         [
           "wikidata:Q111867462",
-          "geographic area of the United States of America"
+          "geographic area of the United States of America",
+          "class"
         ],
         [
           "wikidata:Q5535052",
-          "Geographic areas of Sugar Land, Texas"
+          "Geographic areas of Sugar Land, Texas",
+          "class"
         ],
         [
           "wikidata:Q47933460",
-          "Place of residence and risk of fracture in older people: a population-based study of over 65-year-olds in Cardiff."
+          "Place of residence and risk of fracture in older people: a population-based study of over 65-year-olds in Cardiff.",
+          "class"
         ],
         [
           "wikidata:Q39831605",
-          "Place of residence and obesity in 1,578,694 young Swedish men between 1969 and 2005."
+          "Place of residence and obesity in 1,578,694 young Swedish men between 1969 and 2005.",
+          "class"
         ],
         [
           "wikidata:Q37662044",
-          "Place of residence and outcomes of patients with heart failure: analysis from the telemonitoring to improve heart failure outcomes trial"
+          "Place of residence and outcomes of patients with heart failure: analysis from the telemonitoring to improve heart failure outcomes trial",
+          "class"
         ],
         [
           "wikidata:Q39743023",
-          "Place of residence and distance to medical care influence the diagnosis of hepatitis C: a population-based study"
+          "Place of residence and distance to medical care influence the diagnosis of hepatitis C: a population-based study",
+          "class"
         ],
         [
           "wikidata:Q34248327",
-          "Place of residence affects routine dental care in the intellectually and developmentally disabled adult population on Medicaid"
+          "Place of residence affects routine dental care in the intellectually and developmentally disabled adult population on Medicaid",
+          "class"
         ]
       ],
       "value": [
@@ -1344,39 +1556,48 @@
         ],
         [
           "apollosv:00000204",
-          "disease outcome"
+          "disease outcome",
+          "class"
         ],
         [
           "oae:0003232",
-          "adverse event outcome"
+          "adverse event outcome",
+          "property"
         ],
         [
           "apollosv:00000290",
-          "treatment preventable outcome"
+          "treatment preventable outcome",
+          "class"
         ],
         [
           "apollosv:00000218",
-          "vaccination preventable outcome"
+          "vaccination preventable outcome",
+          "class"
         ],
         [
           "cemo:incidence_of_sever_outcomes",
-          "incidence of sever outcomes"
+          "incidence of sever outcomes",
+          "class"
         ],
         [
           "doid:8448",
-          "intestinal impaction"
+          "intestinal impaction",
+          "class"
         ],
         [
           "oae:0008095",
-          "tooth impacted AE"
+          "tooth impacted AE",
+          "class"
         ],
         [
           "hp:0001571",
-          "Multiple impacted teeth"
+          "Multiple impacted teeth",
+          "class"
         ],
         [
           "hp:0031984",
-          "Esophageal food impaction"
+          "Esophageal food impaction",
+          "class"
         ]
       ]
     },
@@ -1409,43 +1630,53 @@
         ],
         [
           "idocovid19:0001277",
-          "COVID-19 incidence"
+          "COVID-19 incidence",
+          "class"
         ],
         [
           "ido:0000480",
-          "infection incidence"
+          "infection incidence",
+          "class"
         ],
         [
           "idocovid19:0001283",
-          "SARS-CoV-2 incidence"
+          "SARS-CoV-2 incidence",
+          "class"
         ],
         [
           "hp:0001402",
-          "Hepatocellular carcinoma"
+          "Hepatocellular carcinoma",
+          "class"
         ],
         [
           "oae:0000178",
-          "AE incidence rate"
+          "AE incidence rate",
+          "class"
         ],
         [
           "orphanet.ordo:409966",
-          "point prevalence"
+          "point prevalence",
+          "class"
         ],
         [
           "obcs:0000064",
-          "period prevalence"
+          "period prevalence",
+          "class"
         ],
         [
           "cemo:weighted_prevalence",
-          "weighted prevalence"
+          "weighted prevalence",
+          "class"
         ],
         [
           "idocovid19:0001272",
-          "COVID-19 prevalence"
+          "COVID-19 prevalence",
+          "class"
         ],
         [
           "ido:0000486",
-          "infection prevalence"
+          "infection prevalence",
+          "class"
         ]
       ],
       "location": [
@@ -1471,23 +1702,28 @@
         ],
         [
           "wikidata:Q4257161",
-          "range"
+          "range",
+          "class"
         ],
         [
           "wikidata:Q7574061",
-          "spatial distribution"
+          "spatial distribution",
+          "class"
         ],
         [
           "wikidata:Q51482895",
-          "Geographic distribution of the pines of the world"
+          "Geographic distribution of the pines of the world",
+          "class"
         ],
         [
           "wikidata:Q29010408",
-          "Geographic distribution of oil production worker exposures reported to Texas poison centers"
+          "Geographic distribution of oil production worker exposures reported to Texas poison centers",
+          "class"
         ],
         [
           "wikidata:Q33525004",
-          "Geographic distribution of Staphylococcus aureus causing invasive infections in Europe: a molecular-epidemiological analysis"
+          "Geographic distribution of Staphylococcus aureus causing invasive infections in Europe: a molecular-epidemiological analysis",
+          "class"
         ]
       ],
       "location_name": [
@@ -1497,43 +1733,53 @@
         ],
         [
           "wikidata:Q82794",
-          "geographic region"
+          "geographic region",
+          "class"
         ],
         [
           "wikidata:Q4835091",
-          "territory"
+          "territory",
+          "class"
         ],
         [
           "wikidata:Q5535051",
-          "Geographic areas of Houston"
+          "Geographic areas of Houston",
+          "class"
         ],
         [
           "wikidata:Q111867462",
-          "geographic area of the United States of America"
+          "geographic area of the United States of America",
+          "class"
         ],
         [
           "wikidata:Q5535052",
-          "Geographic areas of Sugar Land, Texas"
+          "Geographic areas of Sugar Land, Texas",
+          "class"
         ],
         [
           "wikidata:Q47933460",
-          "Place of residence and risk of fracture in older people: a population-based study of over 65-year-olds in Cardiff."
+          "Place of residence and risk of fracture in older people: a population-based study of over 65-year-olds in Cardiff.",
+          "class"
         ],
         [
           "wikidata:Q39831605",
-          "Place of residence and obesity in 1,578,694 young Swedish men between 1969 and 2005."
+          "Place of residence and obesity in 1,578,694 young Swedish men between 1969 and 2005.",
+          "class"
         ],
         [
           "wikidata:Q37662044",
-          "Place of residence and outcomes of patients with heart failure: analysis from the telemonitoring to improve heart failure outcomes trial"
+          "Place of residence and outcomes of patients with heart failure: analysis from the telemonitoring to improve heart failure outcomes trial",
+          "class"
         ],
         [
           "wikidata:Q39743023",
-          "Place of residence and distance to medical care influence the diagnosis of hepatitis C: a population-based study"
+          "Place of residence and distance to medical care influence the diagnosis of hepatitis C: a population-based study",
+          "class"
         ],
         [
           "wikidata:Q34248327",
-          "Place of residence affects routine dental care in the intellectually and developmentally disabled adult population on Medicaid"
+          "Place of residence affects routine dental care in the intellectually and developmentally disabled adult population on Medicaid",
+          "class"
         ]
       ],
       "value": [
@@ -1559,39 +1805,48 @@
         ],
         [
           "apollosv:00000204",
-          "disease outcome"
+          "disease outcome",
+          "class"
         ],
         [
           "oae:0003232",
-          "adverse event outcome"
+          "adverse event outcome",
+          "property"
         ],
         [
           "apollosv:00000290",
-          "treatment preventable outcome"
+          "treatment preventable outcome",
+          "class"
         ],
         [
           "apollosv:00000218",
-          "vaccination preventable outcome"
+          "vaccination preventable outcome",
+          "class"
         ],
         [
           "cemo:incidence_of_sever_outcomes",
-          "incidence of sever outcomes"
+          "incidence of sever outcomes",
+          "class"
         ],
         [
           "doid:8448",
-          "intestinal impaction"
+          "intestinal impaction",
+          "class"
         ],
         [
           "oae:0008095",
-          "tooth impacted AE"
+          "tooth impacted AE",
+          "class"
         ],
         [
           "hp:0001571",
-          "Multiple impacted teeth"
+          "Multiple impacted teeth",
+          "class"
         ],
         [
           "hp:0031984",
-          "Esophageal food impaction"
+          "Esophageal food impaction",
+          "class"
         ]
       ]
     },
@@ -1624,43 +1879,53 @@
         ],
         [
           "idocovid19:0001277",
-          "COVID-19 incidence"
+          "COVID-19 incidence",
+          "class"
         ],
         [
           "ido:0000480",
-          "infection incidence"
+          "infection incidence",
+          "class"
         ],
         [
           "idocovid19:0001283",
-          "SARS-CoV-2 incidence"
+          "SARS-CoV-2 incidence",
+          "class"
         ],
         [
           "hp:0001402",
-          "Hepatocellular carcinoma"
+          "Hepatocellular carcinoma",
+          "class"
         ],
         [
           "oae:0000178",
-          "AE incidence rate"
+          "AE incidence rate",
+          "class"
         ],
         [
           "orphanet.ordo:409966",
-          "point prevalence"
+          "point prevalence",
+          "class"
         ],
         [
           "obcs:0000064",
-          "period prevalence"
+          "period prevalence",
+          "class"
         ],
         [
           "cemo:weighted_prevalence",
-          "weighted prevalence"
+          "weighted prevalence",
+          "class"
         ],
         [
           "idocovid19:0001272",
-          "COVID-19 prevalence"
+          "COVID-19 prevalence",
+          "class"
         ],
         [
           "ido:0000486",
-          "infection prevalence"
+          "infection prevalence",
+          "class"
         ]
       ],
       "location": [
@@ -1686,23 +1951,28 @@
         ],
         [
           "wikidata:Q4257161",
-          "range"
+          "range",
+          "class"
         ],
         [
           "wikidata:Q7574061",
-          "spatial distribution"
+          "spatial distribution",
+          "class"
         ],
         [
           "wikidata:Q51482895",
-          "Geographic distribution of the pines of the world"
+          "Geographic distribution of the pines of the world",
+          "class"
         ],
         [
           "wikidata:Q29010408",
-          "Geographic distribution of oil production worker exposures reported to Texas poison centers"
+          "Geographic distribution of oil production worker exposures reported to Texas poison centers",
+          "class"
         ],
         [
           "wikidata:Q33525004",
-          "Geographic distribution of Staphylococcus aureus causing invasive infections in Europe: a molecular-epidemiological analysis"
+          "Geographic distribution of Staphylococcus aureus causing invasive infections in Europe: a molecular-epidemiological analysis",
+          "class"
         ]
       ],
       "location_name": [
@@ -1712,43 +1982,53 @@
         ],
         [
           "wikidata:Q82794",
-          "geographic region"
+          "geographic region",
+          "class"
         ],
         [
           "wikidata:Q4835091",
-          "territory"
+          "territory",
+          "class"
         ],
         [
           "wikidata:Q5535051",
-          "Geographic areas of Houston"
+          "Geographic areas of Houston",
+          "class"
         ],
         [
           "wikidata:Q111867462",
-          "geographic area of the United States of America"
+          "geographic area of the United States of America",
+          "class"
         ],
         [
           "wikidata:Q5535052",
-          "Geographic areas of Sugar Land, Texas"
+          "Geographic areas of Sugar Land, Texas",
+          "class"
         ],
         [
           "wikidata:Q47933460",
-          "Place of residence and risk of fracture in older people: a population-based study of over 65-year-olds in Cardiff."
+          "Place of residence and risk of fracture in older people: a population-based study of over 65-year-olds in Cardiff.",
+          "class"
         ],
         [
           "wikidata:Q39831605",
-          "Place of residence and obesity in 1,578,694 young Swedish men between 1969 and 2005."
+          "Place of residence and obesity in 1,578,694 young Swedish men between 1969 and 2005.",
+          "class"
         ],
         [
           "wikidata:Q37662044",
-          "Place of residence and outcomes of patients with heart failure: analysis from the telemonitoring to improve heart failure outcomes trial"
+          "Place of residence and outcomes of patients with heart failure: analysis from the telemonitoring to improve heart failure outcomes trial",
+          "class"
         ],
         [
           "wikidata:Q39743023",
-          "Place of residence and distance to medical care influence the diagnosis of hepatitis C: a population-based study"
+          "Place of residence and distance to medical care influence the diagnosis of hepatitis C: a population-based study",
+          "class"
         ],
         [
           "wikidata:Q34248327",
-          "Place of residence affects routine dental care in the intellectually and developmentally disabled adult population on Medicaid"
+          "Place of residence affects routine dental care in the intellectually and developmentally disabled adult population on Medicaid",
+          "class"
         ]
       ],
       "value": [
@@ -1774,39 +2054,48 @@
         ],
         [
           "apollosv:00000204",
-          "disease outcome"
+          "disease outcome",
+          "class"
         ],
         [
           "oae:0003232",
-          "adverse event outcome"
+          "adverse event outcome",
+          "property"
         ],
         [
           "apollosv:00000290",
-          "treatment preventable outcome"
+          "treatment preventable outcome",
+          "class"
         ],
         [
           "apollosv:00000218",
-          "vaccination preventable outcome"
+          "vaccination preventable outcome",
+          "class"
         ],
         [
           "cemo:incidence_of_sever_outcomes",
-          "incidence of sever outcomes"
+          "incidence of sever outcomes",
+          "class"
         ],
         [
           "doid:8448",
-          "intestinal impaction"
+          "intestinal impaction",
+          "class"
         ],
         [
           "oae:0008095",
-          "tooth impacted AE"
+          "tooth impacted AE",
+          "class"
         ],
         [
           "hp:0001571",
-          "Multiple impacted teeth"
+          "Multiple impacted teeth",
+          "class"
         ],
         [
           "hp:0031984",
-          "Esophageal food impaction"
+          "Esophageal food impaction",
+          "class"
         ]
       ]
     },
@@ -1839,43 +2128,53 @@
         ],
         [
           "idocovid19:0001277",
-          "COVID-19 incidence"
+          "COVID-19 incidence",
+          "class"
         ],
         [
           "ido:0000480",
-          "infection incidence"
+          "infection incidence",
+          "class"
         ],
         [
           "idocovid19:0001283",
-          "SARS-CoV-2 incidence"
+          "SARS-CoV-2 incidence",
+          "class"
         ],
         [
           "hp:0001402",
-          "Hepatocellular carcinoma"
+          "Hepatocellular carcinoma",
+          "class"
         ],
         [
           "oae:0000178",
-          "AE incidence rate"
+          "AE incidence rate",
+          "class"
         ],
         [
           "orphanet.ordo:409966",
-          "point prevalence"
+          "point prevalence",
+          "class"
         ],
         [
           "obcs:0000064",
-          "period prevalence"
+          "period prevalence",
+          "class"
         ],
         [
           "cemo:weighted_prevalence",
-          "weighted prevalence"
+          "weighted prevalence",
+          "class"
         ],
         [
           "idocovid19:0001272",
-          "COVID-19 prevalence"
+          "COVID-19 prevalence",
+          "class"
         ],
         [
           "ido:0000486",
-          "infection prevalence"
+          "infection prevalence",
+          "class"
         ]
       ],
       "location": [
@@ -1901,23 +2200,28 @@
         ],
         [
           "wikidata:Q4257161",
-          "range"
+          "range",
+          "class"
         ],
         [
           "wikidata:Q7574061",
-          "spatial distribution"
+          "spatial distribution",
+          "class"
         ],
         [
           "wikidata:Q51482895",
-          "Geographic distribution of the pines of the world"
+          "Geographic distribution of the pines of the world",
+          "class"
         ],
         [
           "wikidata:Q29010408",
-          "Geographic distribution of oil production worker exposures reported to Texas poison centers"
+          "Geographic distribution of oil production worker exposures reported to Texas poison centers",
+          "class"
         ],
         [
           "wikidata:Q33525004",
-          "Geographic distribution of Staphylococcus aureus causing invasive infections in Europe: a molecular-epidemiological analysis"
+          "Geographic distribution of Staphylococcus aureus causing invasive infections in Europe: a molecular-epidemiological analysis",
+          "class"
         ]
       ],
       "location_name": [
@@ -1927,43 +2231,53 @@
         ],
         [
           "wikidata:Q82794",
-          "geographic region"
+          "geographic region",
+          "class"
         ],
         [
           "wikidata:Q4835091",
-          "territory"
+          "territory",
+          "class"
         ],
         [
           "wikidata:Q5535051",
-          "Geographic areas of Houston"
+          "Geographic areas of Houston",
+          "class"
         ],
         [
           "wikidata:Q111867462",
-          "geographic area of the United States of America"
+          "geographic area of the United States of America",
+          "class"
         ],
         [
           "wikidata:Q5535052",
-          "Geographic areas of Sugar Land, Texas"
+          "Geographic areas of Sugar Land, Texas",
+          "class"
         ],
         [
           "wikidata:Q47933460",
-          "Place of residence and risk of fracture in older people: a population-based study of over 65-year-olds in Cardiff."
+          "Place of residence and risk of fracture in older people: a population-based study of over 65-year-olds in Cardiff.",
+          "class"
         ],
         [
           "wikidata:Q39831605",
-          "Place of residence and obesity in 1,578,694 young Swedish men between 1969 and 2005."
+          "Place of residence and obesity in 1,578,694 young Swedish men between 1969 and 2005.",
+          "class"
         ],
         [
           "wikidata:Q37662044",
-          "Place of residence and outcomes of patients with heart failure: analysis from the telemonitoring to improve heart failure outcomes trial"
+          "Place of residence and outcomes of patients with heart failure: analysis from the telemonitoring to improve heart failure outcomes trial",
+          "class"
         ],
         [
           "wikidata:Q39743023",
-          "Place of residence and distance to medical care influence the diagnosis of hepatitis C: a population-based study"
+          "Place of residence and distance to medical care influence the diagnosis of hepatitis C: a population-based study",
+          "class"
         ],
         [
           "wikidata:Q34248327",
-          "Place of residence affects routine dental care in the intellectually and developmentally disabled adult population on Medicaid"
+          "Place of residence affects routine dental care in the intellectually and developmentally disabled adult population on Medicaid",
+          "class"
         ]
       ],
       "value": [
@@ -1989,39 +2303,48 @@
         ],
         [
           "apollosv:00000204",
-          "disease outcome"
+          "disease outcome",
+          "class"
         ],
         [
           "oae:0003232",
-          "adverse event outcome"
+          "adverse event outcome",
+          "property"
         ],
         [
           "apollosv:00000290",
-          "treatment preventable outcome"
+          "treatment preventable outcome",
+          "class"
         ],
         [
           "apollosv:00000218",
-          "vaccination preventable outcome"
+          "vaccination preventable outcome",
+          "class"
         ],
         [
           "cemo:incidence_of_sever_outcomes",
-          "incidence of sever outcomes"
+          "incidence of sever outcomes",
+          "class"
         ],
         [
           "doid:8448",
-          "intestinal impaction"
+          "intestinal impaction",
+          "class"
         ],
         [
           "oae:0008095",
-          "tooth impacted AE"
+          "tooth impacted AE",
+          "class"
         ],
         [
           "hp:0001571",
-          "Multiple impacted teeth"
+          "Multiple impacted teeth",
+          "class"
         ],
         [
           "hp:0031984",
-          "Esophageal food impaction"
+          "Esophageal food impaction",
+          "class"
         ]
       ]
     },
@@ -2054,43 +2377,53 @@
         ],
         [
           "idocovid19:0001277",
-          "COVID-19 incidence"
+          "COVID-19 incidence",
+          "class"
         ],
         [
           "ido:0000480",
-          "infection incidence"
+          "infection incidence",
+          "class"
         ],
         [
           "idocovid19:0001283",
-          "SARS-CoV-2 incidence"
+          "SARS-CoV-2 incidence",
+          "class"
         ],
         [
           "hp:0001402",
-          "Hepatocellular carcinoma"
+          "Hepatocellular carcinoma",
+          "class"
         ],
         [
           "oae:0000178",
-          "AE incidence rate"
+          "AE incidence rate",
+          "class"
         ],
         [
           "orphanet.ordo:409966",
-          "point prevalence"
+          "point prevalence",
+          "class"
         ],
         [
           "obcs:0000064",
-          "period prevalence"
+          "period prevalence",
+          "class"
         ],
         [
           "cemo:weighted_prevalence",
-          "weighted prevalence"
+          "weighted prevalence",
+          "class"
         ],
         [
           "idocovid19:0001272",
-          "COVID-19 prevalence"
+          "COVID-19 prevalence",
+          "class"
         ],
         [
           "ido:0000486",
-          "infection prevalence"
+          "infection prevalence",
+          "class"
         ]
       ],
       "location": [
@@ -2116,23 +2449,28 @@
         ],
         [
           "wikidata:Q4257161",
-          "range"
+          "range",
+          "class"
         ],
         [
           "wikidata:Q7574061",
-          "spatial distribution"
+          "spatial distribution",
+          "class"
         ],
         [
           "wikidata:Q51482895",
-          "Geographic distribution of the pines of the world"
+          "Geographic distribution of the pines of the world",
+          "class"
         ],
         [
           "wikidata:Q29010408",
-          "Geographic distribution of oil production worker exposures reported to Texas poison centers"
+          "Geographic distribution of oil production worker exposures reported to Texas poison centers",
+          "class"
         ],
         [
           "wikidata:Q33525004",
-          "Geographic distribution of Staphylococcus aureus causing invasive infections in Europe: a molecular-epidemiological analysis"
+          "Geographic distribution of Staphylococcus aureus causing invasive infections in Europe: a molecular-epidemiological analysis",
+          "class"
         ]
       ],
       "value": [
@@ -2158,39 +2496,48 @@
         ],
         [
           "apollosv:00000204",
-          "disease outcome"
+          "disease outcome",
+          "class"
         ],
         [
           "oae:0003232",
-          "adverse event outcome"
+          "adverse event outcome",
+          "property"
         ],
         [
           "apollosv:00000290",
-          "treatment preventable outcome"
+          "treatment preventable outcome",
+          "class"
         ],
         [
           "apollosv:00000218",
-          "vaccination preventable outcome"
+          "vaccination preventable outcome",
+          "class"
         ],
         [
           "cemo:incidence_of_sever_outcomes",
-          "incidence of sever outcomes"
+          "incidence of sever outcomes",
+          "class"
         ],
         [
           "doid:8448",
-          "intestinal impaction"
+          "intestinal impaction",
+          "class"
         ],
         [
           "oae:0008095",
-          "tooth impacted AE"
+          "tooth impacted AE",
+          "class"
         ],
         [
           "hp:0001571",
-          "Multiple impacted teeth"
+          "Multiple impacted teeth",
+          "class"
         ],
         [
           "hp:0031984",
-          "Esophageal food impaction"
+          "Esophageal food impaction",
+          "class"
         ]
       ]
     },
@@ -2223,43 +2570,53 @@
         ],
         [
           "idocovid19:0001277",
-          "COVID-19 incidence"
+          "COVID-19 incidence",
+          "class"
         ],
         [
           "ido:0000480",
-          "infection incidence"
+          "infection incidence",
+          "class"
         ],
         [
           "idocovid19:0001283",
-          "SARS-CoV-2 incidence"
+          "SARS-CoV-2 incidence",
+          "class"
         ],
         [
           "hp:0001402",
-          "Hepatocellular carcinoma"
+          "Hepatocellular carcinoma",
+          "class"
         ],
         [
           "oae:0000178",
-          "AE incidence rate"
+          "AE incidence rate",
+          "class"
         ],
         [
           "orphanet.ordo:409966",
-          "point prevalence"
+          "point prevalence",
+          "class"
         ],
         [
           "obcs:0000064",
-          "period prevalence"
+          "period prevalence",
+          "class"
         ],
         [
           "cemo:weighted_prevalence",
-          "weighted prevalence"
+          "weighted prevalence",
+          "class"
         ],
         [
           "idocovid19:0001272",
-          "COVID-19 prevalence"
+          "COVID-19 prevalence",
+          "class"
         ],
         [
           "ido:0000486",
-          "infection prevalence"
+          "infection prevalence",
+          "class"
         ]
       ],
       "location": [
@@ -2285,23 +2642,28 @@
         ],
         [
           "wikidata:Q4257161",
-          "range"
+          "range",
+          "class"
         ],
         [
           "wikidata:Q7574061",
-          "spatial distribution"
+          "spatial distribution",
+          "class"
         ],
         [
           "wikidata:Q51482895",
-          "Geographic distribution of the pines of the world"
+          "Geographic distribution of the pines of the world",
+          "class"
         ],
         [
           "wikidata:Q29010408",
-          "Geographic distribution of oil production worker exposures reported to Texas poison centers"
+          "Geographic distribution of oil production worker exposures reported to Texas poison centers",
+          "class"
         ],
         [
           "wikidata:Q33525004",
-          "Geographic distribution of Staphylococcus aureus causing invasive infections in Europe: a molecular-epidemiological analysis"
+          "Geographic distribution of Staphylococcus aureus causing invasive infections in Europe: a molecular-epidemiological analysis",
+          "class"
         ]
       ],
       "value": [
@@ -2327,39 +2689,48 @@
         ],
         [
           "apollosv:00000204",
-          "disease outcome"
+          "disease outcome",
+          "class"
         ],
         [
           "oae:0003232",
-          "adverse event outcome"
+          "adverse event outcome",
+          "property"
         ],
         [
           "apollosv:00000290",
-          "treatment preventable outcome"
+          "treatment preventable outcome",
+          "class"
         ],
         [
           "apollosv:00000218",
-          "vaccination preventable outcome"
+          "vaccination preventable outcome",
+          "class"
         ],
         [
           "cemo:incidence_of_sever_outcomes",
-          "incidence of sever outcomes"
+          "incidence of sever outcomes",
+          "class"
         ],
         [
           "doid:8448",
-          "intestinal impaction"
+          "intestinal impaction",
+          "class"
         ],
         [
           "oae:0008095",
-          "tooth impacted AE"
+          "tooth impacted AE",
+          "class"
         ],
         [
           "hp:0001571",
-          "Multiple impacted teeth"
+          "Multiple impacted teeth",
+          "class"
         ],
         [
           "hp:0031984",
-          "Esophageal food impaction"
+          "Esophageal food impaction",
+          "class"
         ]
       ]
     },
@@ -2392,43 +2763,53 @@
         ],
         [
           "idocovid19:0001277",
-          "COVID-19 incidence"
+          "COVID-19 incidence",
+          "class"
         ],
         [
           "ido:0000480",
-          "infection incidence"
+          "infection incidence",
+          "class"
         ],
         [
           "idocovid19:0001283",
-          "SARS-CoV-2 incidence"
+          "SARS-CoV-2 incidence",
+          "class"
         ],
         [
           "hp:0001402",
-          "Hepatocellular carcinoma"
+          "Hepatocellular carcinoma",
+          "class"
         ],
         [
           "oae:0000178",
-          "AE incidence rate"
+          "AE incidence rate",
+          "class"
         ],
         [
           "orphanet.ordo:409966",
-          "point prevalence"
+          "point prevalence",
+          "class"
         ],
         [
           "obcs:0000064",
-          "period prevalence"
+          "period prevalence",
+          "class"
         ],
         [
           "cemo:weighted_prevalence",
-          "weighted prevalence"
+          "weighted prevalence",
+          "class"
         ],
         [
           "idocovid19:0001272",
-          "COVID-19 prevalence"
+          "COVID-19 prevalence",
+          "class"
         ],
         [
           "ido:0000486",
-          "infection prevalence"
+          "infection prevalence",
+          "class"
         ]
       ],
       "location": [
@@ -2454,23 +2835,28 @@
         ],
         [
           "wikidata:Q4257161",
-          "range"
+          "range",
+          "class"
         ],
         [
           "wikidata:Q7574061",
-          "spatial distribution"
+          "spatial distribution",
+          "class"
         ],
         [
           "wikidata:Q51482895",
-          "Geographic distribution of the pines of the world"
+          "Geographic distribution of the pines of the world",
+          "class"
         ],
         [
           "wikidata:Q29010408",
-          "Geographic distribution of oil production worker exposures reported to Texas poison centers"
+          "Geographic distribution of oil production worker exposures reported to Texas poison centers",
+          "class"
         ],
         [
           "wikidata:Q33525004",
-          "Geographic distribution of Staphylococcus aureus causing invasive infections in Europe: a molecular-epidemiological analysis"
+          "Geographic distribution of Staphylococcus aureus causing invasive infections in Europe: a molecular-epidemiological analysis",
+          "class"
         ]
       ],
       "value": [
@@ -2496,39 +2882,48 @@
         ],
         [
           "apollosv:00000204",
-          "disease outcome"
+          "disease outcome",
+          "class"
         ],
         [
           "oae:0003232",
-          "adverse event outcome"
+          "adverse event outcome",
+          "property"
         ],
         [
           "apollosv:00000290",
-          "treatment preventable outcome"
+          "treatment preventable outcome",
+          "class"
         ],
         [
           "apollosv:00000218",
-          "vaccination preventable outcome"
+          "vaccination preventable outcome",
+          "class"
         ],
         [
           "cemo:incidence_of_sever_outcomes",
-          "incidence of sever outcomes"
+          "incidence of sever outcomes",
+          "class"
         ],
         [
           "doid:8448",
-          "intestinal impaction"
+          "intestinal impaction",
+          "class"
         ],
         [
           "oae:0008095",
-          "tooth impacted AE"
+          "tooth impacted AE",
+          "class"
         ],
         [
           "hp:0001571",
-          "Multiple impacted teeth"
+          "Multiple impacted teeth",
+          "class"
         ],
         [
           "hp:0031984",
-          "Esophageal food impaction"
+          "Esophageal food impaction",
+          "class"
         ]
       ]
     },
@@ -2561,43 +2956,53 @@
         ],
         [
           "idocovid19:0001277",
-          "COVID-19 incidence"
+          "COVID-19 incidence",
+          "class"
         ],
         [
           "ido:0000480",
-          "infection incidence"
+          "infection incidence",
+          "class"
         ],
         [
           "idocovid19:0001283",
-          "SARS-CoV-2 incidence"
+          "SARS-CoV-2 incidence",
+          "class"
         ],
         [
           "hp:0001402",
-          "Hepatocellular carcinoma"
+          "Hepatocellular carcinoma",
+          "class"
         ],
         [
           "oae:0000178",
-          "AE incidence rate"
+          "AE incidence rate",
+          "class"
         ],
         [
           "orphanet.ordo:409966",
-          "point prevalence"
+          "point prevalence",
+          "class"
         ],
         [
           "obcs:0000064",
-          "period prevalence"
+          "period prevalence",
+          "class"
         ],
         [
           "cemo:weighted_prevalence",
-          "weighted prevalence"
+          "weighted prevalence",
+          "class"
         ],
         [
           "idocovid19:0001272",
-          "COVID-19 prevalence"
+          "COVID-19 prevalence",
+          "class"
         ],
         [
           "ido:0000486",
-          "infection prevalence"
+          "infection prevalence",
+          "class"
         ]
       ],
       "location": [
@@ -2623,23 +3028,28 @@
         ],
         [
           "wikidata:Q4257161",
-          "range"
+          "range",
+          "class"
         ],
         [
           "wikidata:Q7574061",
-          "spatial distribution"
+          "spatial distribution",
+          "class"
         ],
         [
           "wikidata:Q51482895",
-          "Geographic distribution of the pines of the world"
+          "Geographic distribution of the pines of the world",
+          "class"
         ],
         [
           "wikidata:Q29010408",
-          "Geographic distribution of oil production worker exposures reported to Texas poison centers"
+          "Geographic distribution of oil production worker exposures reported to Texas poison centers",
+          "class"
         ],
         [
           "wikidata:Q33525004",
-          "Geographic distribution of Staphylococcus aureus causing invasive infections in Europe: a molecular-epidemiological analysis"
+          "Geographic distribution of Staphylococcus aureus causing invasive infections in Europe: a molecular-epidemiological analysis",
+          "class"
         ]
       ],
       "value": [
@@ -2665,39 +3075,48 @@
         ],
         [
           "apollosv:00000204",
-          "disease outcome"
+          "disease outcome",
+          "class"
         ],
         [
           "oae:0003232",
-          "adverse event outcome"
+          "adverse event outcome",
+          "property"
         ],
         [
           "apollosv:00000290",
-          "treatment preventable outcome"
+          "treatment preventable outcome",
+          "class"
         ],
         [
           "apollosv:00000218",
-          "vaccination preventable outcome"
+          "vaccination preventable outcome",
+          "class"
         ],
         [
           "cemo:incidence_of_sever_outcomes",
-          "incidence of sever outcomes"
+          "incidence of sever outcomes",
+          "class"
         ],
         [
           "doid:8448",
-          "intestinal impaction"
+          "intestinal impaction",
+          "class"
         ],
         [
           "oae:0008095",
-          "tooth impacted AE"
+          "tooth impacted AE",
+          "class"
         ],
         [
           "hp:0001571",
-          "Multiple impacted teeth"
+          "Multiple impacted teeth",
+          "class"
         ],
         [
           "hp:0031984",
-          "Esophageal food impaction"
+          "Esophageal food impaction",
+          "class"
         ]
       ]
     },
@@ -2730,43 +3149,53 @@
         ],
         [
           "idocovid19:0001277",
-          "COVID-19 incidence"
+          "COVID-19 incidence",
+          "class"
         ],
         [
           "ido:0000480",
-          "infection incidence"
+          "infection incidence",
+          "class"
         ],
         [
           "idocovid19:0001283",
-          "SARS-CoV-2 incidence"
+          "SARS-CoV-2 incidence",
+          "class"
         ],
         [
           "hp:0001402",
-          "Hepatocellular carcinoma"
+          "Hepatocellular carcinoma",
+          "class"
         ],
         [
           "oae:0000178",
-          "AE incidence rate"
+          "AE incidence rate",
+          "class"
         ],
         [
           "orphanet.ordo:409966",
-          "point prevalence"
+          "point prevalence",
+          "class"
         ],
         [
           "obcs:0000064",
-          "period prevalence"
+          "period prevalence",
+          "class"
         ],
         [
           "cemo:weighted_prevalence",
-          "weighted prevalence"
+          "weighted prevalence",
+          "class"
         ],
         [
           "idocovid19:0001272",
-          "COVID-19 prevalence"
+          "COVID-19 prevalence",
+          "class"
         ],
         [
           "ido:0000486",
-          "infection prevalence"
+          "infection prevalence",
+          "class"
         ]
       ],
       "county": [
@@ -2792,23 +3221,28 @@
         ],
         [
           "geonames:1259184",
-          "Puri"
+          "Puri",
+          "individual"
         ],
         [
           "geonames:1675393",
-          "Xizhi"
+          "Xizhi",
+          "individual"
         ],
         [
           "geonames:6544495",
-          "Retiro"
+          "Retiro",
+          "individual"
         ],
         [
           "geonames:6544104",
-          "Sants-Montju\u00efc"
+          "Sants-Montju\u00efc",
+          "individual"
         ],
         [
           "geonames:1275701",
-          "Bijapur"
+          "Bijapur",
+          "individual"
         ]
       ],
       "state": [
@@ -2834,43 +3268,53 @@
         ],
         [
           "ido:0000511",
-          "infected population"
+          "infected population",
+          "class"
         ],
         [
           "ido:0000514",
-          "susceptible population"
+          "susceptible population",
+          "class"
         ],
         [
           "askemo:0000001",
-          "population"
+          "population",
+          "class"
         ],
         [
           "obi:0000181",
-          "population"
+          "population",
+          "class"
         ],
         [
           "pco:0000001",
-          "population"
+          "population",
+          "class"
         ],
         [
           "ncit:C133265",
-          "Non-Hospital Community Blood Bank"
+          "Non-Hospital Community Blood Bank",
+          "class"
         ],
         [
           "cemo:rate_of_community_transmission",
-          "rate of community transmission"
+          "rate of community transmission",
+          "class"
         ],
         [
           "ncit:C156646",
-          "American Health Information Community"
+          "American Health Information Community",
+          "class"
         ],
         [
           "ncit:C39326",
-          "Association of Community Cancer Centers"
+          "Association of Community Cancer Centers",
+          "class"
         ],
         [
           "ncit:C177659",
-          "Veterans Affairs Community-Based Outpatient Clinic"
+          "Veterans Affairs Community-Based Outpatient Clinic",
+          "class"
         ]
       ],
       "fips": [
@@ -2896,23 +3340,28 @@
         ],
         [
           "wikidata:Q80184504",
-          "ICD-10 codes are a valid tool for identification of pneumonia in hospitalized patients aged > or = 65 years"
+          "ICD-10 codes are a valid tool for identification of pneumonia in hospitalized patients aged > or = 65 years",
+          "class"
         ],
         [
           "wikidata:Q35039980",
-          "ICD-10 codes used to identify adverse drug events in administrative data: a systematic review"
+          "ICD-10 codes used to identify adverse drug events in administrative data: a systematic review",
+          "class"
         ],
         [
           "wikidata:Q48187850",
-          "ICD-10 codes detect only a proportion of all head injury admissions."
+          "ICD-10 codes detect only a proportion of all head injury admissions.",
+          "class"
         ],
         [
           "wikidata:Q53397416",
-          "ICD-10 codes: more specificity with more characters."
+          "ICD-10 codes: more specificity with more characters.",
+          "class"
         ],
         [
           "wikidata:Q91070090",
-          "ICD-10 coded hospitalizations due to drug hypersensitivity: A nationwide study from Chile"
+          "ICD-10 coded hospitalizations due to drug hypersensitivity: A nationwide study from Chile",
+          "class"
         ]
       ],
       "cases": [
@@ -2938,43 +3387,53 @@
         ],
         [
           "wikidata:Q28247083",
-          "Outbreaks of renal failure associated with melamine and cyanuric acid in dogs and cats in 2004 and 2007"
+          "Outbreaks of renal failure associated with melamine and cyanuric acid in dogs and cats in 2004 and 2007",
+          "class"
         ],
         [
           "wikidata:Q54713875",
-          "Outbreaks of acute gastroenteritis on cruise ships and on land: identification of a predominant circulating strain of norovirus--United States, 2002."
+          "Outbreaks of acute gastroenteritis on cruise ships and on land: identification of a predominant circulating strain of norovirus--United States, 2002.",
+          "class"
         ],
         [
           "wikidata:Q35114725",
-          "Outbreaks of hand, foot, and mouth disease by enterovirus 71. High incidence of complication disorders of central nervous system"
+          "Outbreaks of hand, foot, and mouth disease by enterovirus 71. High incidence of complication disorders of central nervous system",
+          "class"
         ],
         [
           "wikidata:Q44316280",
-          "Outbreaks of community-associated methicillin-resistant Staphylococcus aureus skin infections--Los Angeles County, California, 2002-2003."
+          "Outbreaks of community-associated methicillin-resistant Staphylococcus aureus skin infections--Los Angeles County, California, 2002-2003.",
+          "class"
         ],
         [
           "wikidata:Q24533189",
-          "Outbreaks of disease suspected of being due to human monkeypox virus infection in the Democratic Republic of Congo in 2001."
+          "Outbreaks of disease suspected of being due to human monkeypox virus infection in the Democratic Republic of Congo in 2001.",
+          "class"
         ],
         [
           "idocovid19:0001277",
-          "COVID-19 incidence"
+          "COVID-19 incidence",
+          "class"
         ],
         [
           "ido:0000480",
-          "infection incidence"
+          "infection incidence",
+          "class"
         ],
         [
           "idocovid19:0001283",
-          "SARS-CoV-2 incidence"
+          "SARS-CoV-2 incidence",
+          "class"
         ],
         [
           "hp:0001402",
-          "Hepatocellular carcinoma"
+          "Hepatocellular carcinoma",
+          "class"
         ],
         [
           "oae:0000178",
-          "AE incidence rate"
+          "AE incidence rate",
+          "class"
         ]
       ],
       "deaths": [
@@ -2988,43 +3447,53 @@
         ],
         [
           "hp:0040006",
-          "Mortality/Aging"
+          "Mortality/Aging",
+          "class"
         ],
         [
           "ncit:C16729",
-          "Infant Mortality"
+          "Infant Mortality",
+          "class"
         ],
         [
           "apollosv:00000445",
-          "mortality rate"
+          "mortality rate",
+          "class"
         ],
         [
           "apollosv:00000542",
-          "mortality data"
+          "mortality data",
+          "class"
         ],
         [
           "stato:0000414",
-          "mortality rate"
+          "mortality rate",
+          "class"
         ],
         [
           "wikidata:Q4",
-          "death"
+          "death",
+          "class"
         ],
         [
           "wikidata:Q1367554",
-          "morbidity"
+          "morbidity",
+          "class"
         ],
         [
           "wikidata:Q65169293",
-          "morbidity"
+          "morbidity",
+          "class"
         ],
         [
           "wikidata:Q32905284",
-          "Morbidity"
+          "Morbidity",
+          "class"
         ],
         [
           "wikidata:Q1763668",
-          "Morbidity and Mortality Weekly Report"
+          "Morbidity and Mortality Weekly Report",
+          "class"
         ]
       ]
     },
@@ -3057,43 +3526,53 @@
         ],
         [
           "idocovid19:0001277",
-          "COVID-19 incidence"
+          "COVID-19 incidence",
+          "class"
         ],
         [
           "ido:0000480",
-          "infection incidence"
+          "infection incidence",
+          "class"
         ],
         [
           "idocovid19:0001283",
-          "SARS-CoV-2 incidence"
+          "SARS-CoV-2 incidence",
+          "class"
         ],
         [
           "hp:0001402",
-          "Hepatocellular carcinoma"
+          "Hepatocellular carcinoma",
+          "class"
         ],
         [
           "oae:0000178",
-          "AE incidence rate"
+          "AE incidence rate",
+          "class"
         ],
         [
           "orphanet.ordo:409966",
-          "point prevalence"
+          "point prevalence",
+          "class"
         ],
         [
           "obcs:0000064",
-          "period prevalence"
+          "period prevalence",
+          "class"
         ],
         [
           "cemo:weighted_prevalence",
-          "weighted prevalence"
+          "weighted prevalence",
+          "class"
         ],
         [
           "idocovid19:0001272",
-          "COVID-19 prevalence"
+          "COVID-19 prevalence",
+          "class"
         ],
         [
           "ido:0000486",
-          "infection prevalence"
+          "infection prevalence",
+          "class"
         ]
       ],
       "state": [
@@ -3119,43 +3598,53 @@
         ],
         [
           "ido:0000511",
-          "infected population"
+          "infected population",
+          "class"
         ],
         [
           "ido:0000514",
-          "susceptible population"
+          "susceptible population",
+          "class"
         ],
         [
           "askemo:0000001",
-          "population"
+          "population",
+          "class"
         ],
         [
           "obi:0000181",
-          "population"
+          "population",
+          "class"
         ],
         [
           "pco:0000001",
-          "population"
+          "population",
+          "class"
         ],
         [
           "ncit:C133265",
-          "Non-Hospital Community Blood Bank"
+          "Non-Hospital Community Blood Bank",
+          "class"
         ],
         [
           "cemo:rate_of_community_transmission",
-          "rate of community transmission"
+          "rate of community transmission",
+          "class"
         ],
         [
           "ncit:C156646",
-          "American Health Information Community"
+          "American Health Information Community",
+          "class"
         ],
         [
           "ncit:C39326",
-          "Association of Community Cancer Centers"
+          "Association of Community Cancer Centers",
+          "class"
         ],
         [
           "ncit:C177659",
-          "Veterans Affairs Community-Based Outpatient Clinic"
+          "Veterans Affairs Community-Based Outpatient Clinic",
+          "class"
         ]
       ],
       "fips": [
@@ -3181,23 +3670,28 @@
         ],
         [
           "wikidata:Q80184504",
-          "ICD-10 codes are a valid tool for identification of pneumonia in hospitalized patients aged > or = 65 years"
+          "ICD-10 codes are a valid tool for identification of pneumonia in hospitalized patients aged > or = 65 years",
+          "class"
         ],
         [
           "wikidata:Q35039980",
-          "ICD-10 codes used to identify adverse drug events in administrative data: a systematic review"
+          "ICD-10 codes used to identify adverse drug events in administrative data: a systematic review",
+          "class"
         ],
         [
           "wikidata:Q48187850",
-          "ICD-10 codes detect only a proportion of all head injury admissions."
+          "ICD-10 codes detect only a proportion of all head injury admissions.",
+          "class"
         ],
         [
           "wikidata:Q53397416",
-          "ICD-10 codes: more specificity with more characters."
+          "ICD-10 codes: more specificity with more characters.",
+          "class"
         ],
         [
           "wikidata:Q91070090",
-          "ICD-10 coded hospitalizations due to drug hypersensitivity: A nationwide study from Chile"
+          "ICD-10 coded hospitalizations due to drug hypersensitivity: A nationwide study from Chile",
+          "class"
         ]
       ],
       "cases": [
@@ -3223,43 +3717,53 @@
         ],
         [
           "wikidata:Q28247083",
-          "Outbreaks of renal failure associated with melamine and cyanuric acid in dogs and cats in 2004 and 2007"
+          "Outbreaks of renal failure associated with melamine and cyanuric acid in dogs and cats in 2004 and 2007",
+          "class"
         ],
         [
           "wikidata:Q54713875",
-          "Outbreaks of acute gastroenteritis on cruise ships and on land: identification of a predominant circulating strain of norovirus--United States, 2002."
+          "Outbreaks of acute gastroenteritis on cruise ships and on land: identification of a predominant circulating strain of norovirus--United States, 2002.",
+          "class"
         ],
         [
           "wikidata:Q35114725",
-          "Outbreaks of hand, foot, and mouth disease by enterovirus 71. High incidence of complication disorders of central nervous system"
+          "Outbreaks of hand, foot, and mouth disease by enterovirus 71. High incidence of complication disorders of central nervous system",
+          "class"
         ],
         [
           "wikidata:Q44316280",
-          "Outbreaks of community-associated methicillin-resistant Staphylococcus aureus skin infections--Los Angeles County, California, 2002-2003."
+          "Outbreaks of community-associated methicillin-resistant Staphylococcus aureus skin infections--Los Angeles County, California, 2002-2003.",
+          "class"
         ],
         [
           "wikidata:Q24533189",
-          "Outbreaks of disease suspected of being due to human monkeypox virus infection in the Democratic Republic of Congo in 2001."
+          "Outbreaks of disease suspected of being due to human monkeypox virus infection in the Democratic Republic of Congo in 2001.",
+          "class"
         ],
         [
           "idocovid19:0001277",
-          "COVID-19 incidence"
+          "COVID-19 incidence",
+          "class"
         ],
         [
           "ido:0000480",
-          "infection incidence"
+          "infection incidence",
+          "class"
         ],
         [
           "idocovid19:0001283",
-          "SARS-CoV-2 incidence"
+          "SARS-CoV-2 incidence",
+          "class"
         ],
         [
           "hp:0001402",
-          "Hepatocellular carcinoma"
+          "Hepatocellular carcinoma",
+          "class"
         ],
         [
           "oae:0000178",
-          "AE incidence rate"
+          "AE incidence rate",
+          "class"
         ]
       ],
       "deaths": [
@@ -3273,43 +3777,53 @@
         ],
         [
           "hp:0040006",
-          "Mortality/Aging"
+          "Mortality/Aging",
+          "class"
         ],
         [
           "ncit:C16729",
-          "Infant Mortality"
+          "Infant Mortality",
+          "class"
         ],
         [
           "apollosv:00000445",
-          "mortality rate"
+          "mortality rate",
+          "class"
         ],
         [
           "apollosv:00000542",
-          "mortality data"
+          "mortality data",
+          "class"
         ],
         [
           "stato:0000414",
-          "mortality rate"
+          "mortality rate",
+          "class"
         ],
         [
           "wikidata:Q4",
-          "death"
+          "death",
+          "class"
         ],
         [
           "wikidata:Q1367554",
-          "morbidity"
+          "morbidity",
+          "class"
         ],
         [
           "wikidata:Q65169293",
-          "morbidity"
+          "morbidity",
+          "class"
         ],
         [
           "wikidata:Q32905284",
-          "Morbidity"
+          "Morbidity",
+          "class"
         ],
         [
           "wikidata:Q1763668",
-          "Morbidity and Mortality Weekly Report"
+          "Morbidity and Mortality Weekly Report",
+          "class"
         ]
       ]
     },
@@ -3342,43 +3856,53 @@
         ],
         [
           "idocovid19:0001277",
-          "COVID-19 incidence"
+          "COVID-19 incidence",
+          "class"
         ],
         [
           "ido:0000480",
-          "infection incidence"
+          "infection incidence",
+          "class"
         ],
         [
           "idocovid19:0001283",
-          "SARS-CoV-2 incidence"
+          "SARS-CoV-2 incidence",
+          "class"
         ],
         [
           "hp:0001402",
-          "Hepatocellular carcinoma"
+          "Hepatocellular carcinoma",
+          "class"
         ],
         [
           "oae:0000178",
-          "AE incidence rate"
+          "AE incidence rate",
+          "class"
         ],
         [
           "orphanet.ordo:409966",
-          "point prevalence"
+          "point prevalence",
+          "class"
         ],
         [
           "obcs:0000064",
-          "period prevalence"
+          "period prevalence",
+          "class"
         ],
         [
           "cemo:weighted_prevalence",
-          "weighted prevalence"
+          "weighted prevalence",
+          "class"
         ],
         [
           "idocovid19:0001272",
-          "COVID-19 prevalence"
+          "COVID-19 prevalence",
+          "class"
         ],
         [
           "ido:0000486",
-          "infection prevalence"
+          "infection prevalence",
+          "class"
         ]
       ],
       "cases": [
@@ -3404,43 +3928,53 @@
         ],
         [
           "wikidata:Q28247083",
-          "Outbreaks of renal failure associated with melamine and cyanuric acid in dogs and cats in 2004 and 2007"
+          "Outbreaks of renal failure associated with melamine and cyanuric acid in dogs and cats in 2004 and 2007",
+          "class"
         ],
         [
           "wikidata:Q54713875",
-          "Outbreaks of acute gastroenteritis on cruise ships and on land: identification of a predominant circulating strain of norovirus--United States, 2002."
+          "Outbreaks of acute gastroenteritis on cruise ships and on land: identification of a predominant circulating strain of norovirus--United States, 2002.",
+          "class"
         ],
         [
           "wikidata:Q35114725",
-          "Outbreaks of hand, foot, and mouth disease by enterovirus 71. High incidence of complication disorders of central nervous system"
+          "Outbreaks of hand, foot, and mouth disease by enterovirus 71. High incidence of complication disorders of central nervous system",
+          "class"
         ],
         [
           "wikidata:Q44316280",
-          "Outbreaks of community-associated methicillin-resistant Staphylococcus aureus skin infections--Los Angeles County, California, 2002-2003."
+          "Outbreaks of community-associated methicillin-resistant Staphylococcus aureus skin infections--Los Angeles County, California, 2002-2003.",
+          "class"
         ],
         [
           "wikidata:Q24533189",
-          "Outbreaks of disease suspected of being due to human monkeypox virus infection in the Democratic Republic of Congo in 2001."
+          "Outbreaks of disease suspected of being due to human monkeypox virus infection in the Democratic Republic of Congo in 2001.",
+          "class"
         ],
         [
           "idocovid19:0001277",
-          "COVID-19 incidence"
+          "COVID-19 incidence",
+          "class"
         ],
         [
           "ido:0000480",
-          "infection incidence"
+          "infection incidence",
+          "class"
         ],
         [
           "idocovid19:0001283",
-          "SARS-CoV-2 incidence"
+          "SARS-CoV-2 incidence",
+          "class"
         ],
         [
           "hp:0001402",
-          "Hepatocellular carcinoma"
+          "Hepatocellular carcinoma",
+          "class"
         ],
         [
           "oae:0000178",
-          "AE incidence rate"
+          "AE incidence rate",
+          "class"
         ]
       ],
       "deaths": [
@@ -3454,43 +3988,53 @@
         ],
         [
           "hp:0040006",
-          "Mortality/Aging"
+          "Mortality/Aging",
+          "class"
         ],
         [
           "ncit:C16729",
-          "Infant Mortality"
+          "Infant Mortality",
+          "class"
         ],
         [
           "apollosv:00000445",
-          "mortality rate"
+          "mortality rate",
+          "class"
         ],
         [
           "apollosv:00000542",
-          "mortality data"
+          "mortality data",
+          "class"
         ],
         [
           "stato:0000414",
-          "mortality rate"
+          "mortality rate",
+          "class"
         ],
         [
           "wikidata:Q4",
-          "death"
+          "death",
+          "class"
         ],
         [
           "wikidata:Q1367554",
-          "morbidity"
+          "morbidity",
+          "class"
         ],
         [
           "wikidata:Q65169293",
-          "morbidity"
+          "morbidity",
+          "class"
         ],
         [
           "wikidata:Q32905284",
-          "Morbidity"
+          "Morbidity",
+          "class"
         ],
         [
           "wikidata:Q1763668",
-          "Morbidity and Mortality Weekly Report"
+          "Morbidity and Mortality Weekly Report",
+          "class"
         ]
       ]
     },
@@ -3523,43 +4067,53 @@
         ],
         [
           "idocovid19:0001277",
-          "COVID-19 incidence"
+          "COVID-19 incidence",
+          "class"
         ],
         [
           "ido:0000480",
-          "infection incidence"
+          "infection incidence",
+          "class"
         ],
         [
           "idocovid19:0001283",
-          "SARS-CoV-2 incidence"
+          "SARS-CoV-2 incidence",
+          "class"
         ],
         [
           "hp:0001402",
-          "Hepatocellular carcinoma"
+          "Hepatocellular carcinoma",
+          "class"
         ],
         [
           "oae:0000178",
-          "AE incidence rate"
+          "AE incidence rate",
+          "class"
         ],
         [
           "orphanet.ordo:409966",
-          "point prevalence"
+          "point prevalence",
+          "class"
         ],
         [
           "obcs:0000064",
-          "period prevalence"
+          "period prevalence",
+          "class"
         ],
         [
           "cemo:weighted_prevalence",
-          "weighted prevalence"
+          "weighted prevalence",
+          "class"
         ],
         [
           "idocovid19:0001272",
-          "COVID-19 prevalence"
+          "COVID-19 prevalence",
+          "class"
         ],
         [
           "ido:0000486",
-          "infection prevalence"
+          "infection prevalence",
+          "class"
         ]
       ],
       "location": [
@@ -3585,23 +4139,28 @@
         ],
         [
           "wikidata:Q4257161",
-          "range"
+          "range",
+          "class"
         ],
         [
           "wikidata:Q7574061",
-          "spatial distribution"
+          "spatial distribution",
+          "class"
         ],
         [
           "wikidata:Q51482895",
-          "Geographic distribution of the pines of the world"
+          "Geographic distribution of the pines of the world",
+          "class"
         ],
         [
           "wikidata:Q29010408",
-          "Geographic distribution of oil production worker exposures reported to Texas poison centers"
+          "Geographic distribution of oil production worker exposures reported to Texas poison centers",
+          "class"
         ],
         [
           "wikidata:Q33525004",
-          "Geographic distribution of Staphylococcus aureus causing invasive infections in Europe: a molecular-epidemiological analysis"
+          "Geographic distribution of Staphylococcus aureus causing invasive infections in Europe: a molecular-epidemiological analysis",
+          "class"
         ]
       ],
       "value": [
@@ -3627,39 +4186,48 @@
         ],
         [
           "apollosv:00000204",
-          "disease outcome"
+          "disease outcome",
+          "class"
         ],
         [
           "oae:0003232",
-          "adverse event outcome"
+          "adverse event outcome",
+          "property"
         ],
         [
           "apollosv:00000290",
-          "treatment preventable outcome"
+          "treatment preventable outcome",
+          "class"
         ],
         [
           "apollosv:00000218",
-          "vaccination preventable outcome"
+          "vaccination preventable outcome",
+          "class"
         ],
         [
           "cemo:incidence_of_sever_outcomes",
-          "incidence of sever outcomes"
+          "incidence of sever outcomes",
+          "class"
         ],
         [
           "doid:8448",
-          "intestinal impaction"
+          "intestinal impaction",
+          "class"
         ],
         [
           "oae:0008095",
-          "tooth impacted AE"
+          "tooth impacted AE",
+          "class"
         ],
         [
           "hp:0001571",
-          "Multiple impacted teeth"
+          "Multiple impacted teeth",
+          "class"
         ],
         [
           "hp:0031984",
-          "Esophageal food impaction"
+          "Esophageal food impaction",
+          "class"
         ]
       ]
     },
@@ -3692,43 +4260,53 @@
         ],
         [
           "idocovid19:0001277",
-          "COVID-19 incidence"
+          "COVID-19 incidence",
+          "class"
         ],
         [
           "ido:0000480",
-          "infection incidence"
+          "infection incidence",
+          "class"
         ],
         [
           "idocovid19:0001283",
-          "SARS-CoV-2 incidence"
+          "SARS-CoV-2 incidence",
+          "class"
         ],
         [
           "hp:0001402",
-          "Hepatocellular carcinoma"
+          "Hepatocellular carcinoma",
+          "class"
         ],
         [
           "oae:0000178",
-          "AE incidence rate"
+          "AE incidence rate",
+          "class"
         ],
         [
           "orphanet.ordo:409966",
-          "point prevalence"
+          "point prevalence",
+          "class"
         ],
         [
           "obcs:0000064",
-          "period prevalence"
+          "period prevalence",
+          "class"
         ],
         [
           "cemo:weighted_prevalence",
-          "weighted prevalence"
+          "weighted prevalence",
+          "class"
         ],
         [
           "idocovid19:0001272",
-          "COVID-19 prevalence"
+          "COVID-19 prevalence",
+          "class"
         ],
         [
           "ido:0000486",
-          "infection prevalence"
+          "infection prevalence",
+          "class"
         ]
       ],
       "location": [
@@ -3754,23 +4332,28 @@
         ],
         [
           "wikidata:Q4257161",
-          "range"
+          "range",
+          "class"
         ],
         [
           "wikidata:Q7574061",
-          "spatial distribution"
+          "spatial distribution",
+          "class"
         ],
         [
           "wikidata:Q51482895",
-          "Geographic distribution of the pines of the world"
+          "Geographic distribution of the pines of the world",
+          "class"
         ],
         [
           "wikidata:Q29010408",
-          "Geographic distribution of oil production worker exposures reported to Texas poison centers"
+          "Geographic distribution of oil production worker exposures reported to Texas poison centers",
+          "class"
         ],
         [
           "wikidata:Q33525004",
-          "Geographic distribution of Staphylococcus aureus causing invasive infections in Europe: a molecular-epidemiological analysis"
+          "Geographic distribution of Staphylococcus aureus causing invasive infections in Europe: a molecular-epidemiological analysis",
+          "class"
         ]
       ],
       "value": [
@@ -3796,39 +4379,48 @@
         ],
         [
           "apollosv:00000204",
-          "disease outcome"
+          "disease outcome",
+          "class"
         ],
         [
           "oae:0003232",
-          "adverse event outcome"
+          "adverse event outcome",
+          "property"
         ],
         [
           "apollosv:00000290",
-          "treatment preventable outcome"
+          "treatment preventable outcome",
+          "class"
         ],
         [
           "apollosv:00000218",
-          "vaccination preventable outcome"
+          "vaccination preventable outcome",
+          "class"
         ],
         [
           "cemo:incidence_of_sever_outcomes",
-          "incidence of sever outcomes"
+          "incidence of sever outcomes",
+          "class"
         ],
         [
           "doid:8448",
-          "intestinal impaction"
+          "intestinal impaction",
+          "class"
         ],
         [
           "oae:0008095",
-          "tooth impacted AE"
+          "tooth impacted AE",
+          "class"
         ],
         [
           "hp:0001571",
-          "Multiple impacted teeth"
+          "Multiple impacted teeth",
+          "class"
         ],
         [
           "hp:0031984",
-          "Esophageal food impaction"
+          "Esophageal food impaction",
+          "class"
         ]
       ]
     },
@@ -3861,43 +4453,53 @@
         ],
         [
           "idocovid19:0001277",
-          "COVID-19 incidence"
+          "COVID-19 incidence",
+          "class"
         ],
         [
           "ido:0000480",
-          "infection incidence"
+          "infection incidence",
+          "class"
         ],
         [
           "idocovid19:0001283",
-          "SARS-CoV-2 incidence"
+          "SARS-CoV-2 incidence",
+          "class"
         ],
         [
           "hp:0001402",
-          "Hepatocellular carcinoma"
+          "Hepatocellular carcinoma",
+          "class"
         ],
         [
           "oae:0000178",
-          "AE incidence rate"
+          "AE incidence rate",
+          "class"
         ],
         [
           "orphanet.ordo:409966",
-          "point prevalence"
+          "point prevalence",
+          "class"
         ],
         [
           "obcs:0000064",
-          "period prevalence"
+          "period prevalence",
+          "class"
         ],
         [
           "cemo:weighted_prevalence",
-          "weighted prevalence"
+          "weighted prevalence",
+          "class"
         ],
         [
           "idocovid19:0001272",
-          "COVID-19 prevalence"
+          "COVID-19 prevalence",
+          "class"
         ],
         [
           "ido:0000486",
-          "infection prevalence"
+          "infection prevalence",
+          "class"
         ]
       ],
       "location": [
@@ -3923,23 +4525,28 @@
         ],
         [
           "wikidata:Q4257161",
-          "range"
+          "range",
+          "class"
         ],
         [
           "wikidata:Q7574061",
-          "spatial distribution"
+          "spatial distribution",
+          "class"
         ],
         [
           "wikidata:Q51482895",
-          "Geographic distribution of the pines of the world"
+          "Geographic distribution of the pines of the world",
+          "class"
         ],
         [
           "wikidata:Q29010408",
-          "Geographic distribution of oil production worker exposures reported to Texas poison centers"
+          "Geographic distribution of oil production worker exposures reported to Texas poison centers",
+          "class"
         ],
         [
           "wikidata:Q33525004",
-          "Geographic distribution of Staphylococcus aureus causing invasive infections in Europe: a molecular-epidemiological analysis"
+          "Geographic distribution of Staphylococcus aureus causing invasive infections in Europe: a molecular-epidemiological analysis",
+          "class"
         ]
       ],
       "value": [
@@ -3965,39 +4572,48 @@
         ],
         [
           "apollosv:00000204",
-          "disease outcome"
+          "disease outcome",
+          "class"
         ],
         [
           "oae:0003232",
-          "adverse event outcome"
+          "adverse event outcome",
+          "property"
         ],
         [
           "apollosv:00000290",
-          "treatment preventable outcome"
+          "treatment preventable outcome",
+          "class"
         ],
         [
           "apollosv:00000218",
-          "vaccination preventable outcome"
+          "vaccination preventable outcome",
+          "class"
         ],
         [
           "cemo:incidence_of_sever_outcomes",
-          "incidence of sever outcomes"
+          "incidence of sever outcomes",
+          "class"
         ],
         [
           "doid:8448",
-          "intestinal impaction"
+          "intestinal impaction",
+          "class"
         ],
         [
           "oae:0008095",
-          "tooth impacted AE"
+          "tooth impacted AE",
+          "class"
         ],
         [
           "hp:0001571",
-          "Multiple impacted teeth"
+          "Multiple impacted teeth",
+          "class"
         ],
         [
           "hp:0031984",
-          "Esophageal food impaction"
+          "Esophageal food impaction",
+          "class"
         ]
       ]
     },
@@ -4030,43 +4646,53 @@
         ],
         [
           "idocovid19:0001277",
-          "COVID-19 incidence"
+          "COVID-19 incidence",
+          "class"
         ],
         [
           "ido:0000480",
-          "infection incidence"
+          "infection incidence",
+          "class"
         ],
         [
           "idocovid19:0001283",
-          "SARS-CoV-2 incidence"
+          "SARS-CoV-2 incidence",
+          "class"
         ],
         [
           "hp:0001402",
-          "Hepatocellular carcinoma"
+          "Hepatocellular carcinoma",
+          "class"
         ],
         [
           "oae:0000178",
-          "AE incidence rate"
+          "AE incidence rate",
+          "class"
         ],
         [
           "orphanet.ordo:409966",
-          "point prevalence"
+          "point prevalence",
+          "class"
         ],
         [
           "obcs:0000064",
-          "period prevalence"
+          "period prevalence",
+          "class"
         ],
         [
           "cemo:weighted_prevalence",
-          "weighted prevalence"
+          "weighted prevalence",
+          "class"
         ],
         [
           "idocovid19:0001272",
-          "COVID-19 prevalence"
+          "COVID-19 prevalence",
+          "class"
         ],
         [
           "ido:0000486",
-          "infection prevalence"
+          "infection prevalence",
+          "class"
         ]
       ],
       "location": [
@@ -4092,23 +4718,28 @@
         ],
         [
           "wikidata:Q4257161",
-          "range"
+          "range",
+          "class"
         ],
         [
           "wikidata:Q7574061",
-          "spatial distribution"
+          "spatial distribution",
+          "class"
         ],
         [
           "wikidata:Q51482895",
-          "Geographic distribution of the pines of the world"
+          "Geographic distribution of the pines of the world",
+          "class"
         ],
         [
           "wikidata:Q29010408",
-          "Geographic distribution of oil production worker exposures reported to Texas poison centers"
+          "Geographic distribution of oil production worker exposures reported to Texas poison centers",
+          "class"
         ],
         [
           "wikidata:Q33525004",
-          "Geographic distribution of Staphylococcus aureus causing invasive infections in Europe: a molecular-epidemiological analysis"
+          "Geographic distribution of Staphylococcus aureus causing invasive infections in Europe: a molecular-epidemiological analysis",
+          "class"
         ]
       ],
       "value": [
@@ -4134,39 +4765,48 @@
         ],
         [
           "apollosv:00000204",
-          "disease outcome"
+          "disease outcome",
+          "class"
         ],
         [
           "oae:0003232",
-          "adverse event outcome"
+          "adverse event outcome",
+          "property"
         ],
         [
           "apollosv:00000290",
-          "treatment preventable outcome"
+          "treatment preventable outcome",
+          "class"
         ],
         [
           "apollosv:00000218",
-          "vaccination preventable outcome"
+          "vaccination preventable outcome",
+          "class"
         ],
         [
           "cemo:incidence_of_sever_outcomes",
-          "incidence of sever outcomes"
+          "incidence of sever outcomes",
+          "class"
         ],
         [
           "doid:8448",
-          "intestinal impaction"
+          "intestinal impaction",
+          "class"
         ],
         [
           "oae:0008095",
-          "tooth impacted AE"
+          "tooth impacted AE",
+          "class"
         ],
         [
           "hp:0001571",
-          "Multiple impacted teeth"
+          "Multiple impacted teeth",
+          "class"
         ],
         [
           "hp:0031984",
-          "Esophageal food impaction"
+          "Esophageal food impaction",
+          "class"
         ]
       ]
     },
