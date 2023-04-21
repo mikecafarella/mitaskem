@@ -4815,11 +4815,13 @@
   {
     "file_name": "covid_deaths_usafacts.csv",
     "file_directory": "https://github.com/reichlab/covid19-forecast-hub/tree/master/data-truth/usafacts/raw",
-    "annotation": "too many date columns"
+    "annotation": "too many date columns",
+    "source": "MIT data profiling tool http://100.26.10.46"
   },
   {
     "file_name": "covid_confirmed_usafacts.csv",
     "file_directory": "https://github.com/reichlab/covid19-forecast-hub/tree/master/data-truth/usafacts/raw",
-    "annotation": "too many date columns"
+    "annotation": "too many date columns",
+    "source": "MIT data profiling tool http://100.26.10.46"
   }
 ]
