@@ -37,7 +37,7 @@ def put(jsonObj, key):
 
 
 if __name__ == "__main__":
-    objid = "b3669d32-d422-49c7-ad0b-becf1e2bc0b0"
+    objid = "06926a58-315f-410f-a6c7-fd37536e1f6c"
 
     # TEST PUT
     testObj = {"data": "xyz",

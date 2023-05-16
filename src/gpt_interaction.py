@@ -12,7 +12,7 @@ def get_gpt_match(prompt, key, model="text-davinci-002"):
     # print(result)
     return result
 
-# Get gpt-3 prompt with variables, ontology terms and match targets
+# Get gpt-3 prompt with arizona-extraction, ontology terms and match targets
 def get_code_dkg_prompt(vars, terms, target):
     text_file = open("prompts/prompt.txt", "r")
     prompt = text_file.read()

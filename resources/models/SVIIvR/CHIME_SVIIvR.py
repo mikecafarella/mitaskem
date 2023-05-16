@@ -59,7 +59,7 @@ def sir(s, v, i, i_v, r, vaccination_rate, beta, gamma_unvaccinated, gamma_vacci
     r_n = gamma_vaccinated * i_v + gamma_unvaccinated * i + r  # Update to the amount of individuals that are recovered ## sir_r_n_exp
 
     scale = n / (
-                s_n + v_n + i_n + i_v_n + r_n)  # A scaling factor to compute updated disease variables ## sir_scale_exp
+                s_n + v_n + i_n + i_v_n + r_n)  # A scaling factor to compute updated disease arizona-extraction ## sir_scale_exp
 
     s = s_n * scale  ## sir_s_exp
     v = v_n * scale  ## sir_v_exp

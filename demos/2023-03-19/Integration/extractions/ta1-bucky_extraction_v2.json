@@ -290,7 +290,10 @@
         "metadata": [
           {
             "type": "frac_trans_before_s",
-            "value": " Percentage of transmission prior to symptom onset"
+            "value": " Percentage of transmission prior to symptom onset",
+            "provenance": {
+
+            }
           }
         ],
         "dkg_groundings": [
@@ -358,7 +361,9 @@
           "name": "buckymodel_webdocs.pdf",
           "md5": "55f3c2bed6646cf8439a3c72a45bfb20",
           "file_directory": "https://docs.buckymodel.com/en/latest/",
-          "doi": ""
+          "doi": "",
+          "offset": "page_ID-Line_ID",
+          "location": "x,y"
         },
         "equations": []
       },

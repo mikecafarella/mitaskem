@@ -1,0 +1,40 @@
+E:893150580, gamma: 0
+E:1353840589, B: 0
+E:392711689, gamma: 0
+R:-2037155812, la: la the logistic model
+R:640275677, Bx: term
+R:1757442317, Bx: conversion term
+R:-1105811393, beta: delta
+R:1212040452, beta: alpha
+R:-404164414, beta: alpha
+R:-670796360, delta: beta
+R:560429104, f (alpha: beta
+R:-196281247, f (alpha: beta
+R:-1952080858, f (alpha: beta
+E:1769905400, B: alpha
+R:-73104387, f (alpha: beta
+R:1041116773, f (alpha: beta
+R:-813355484, f (alpha: beta
+R:652032640, delta: beta
+R:240993650, beta: alpha
+R:-807663740, beta: delta
+R:-605533795, beta: delta
+R:-1215188490, B: delta
+R:-1053145315, O(103): be of order
+R:1822833426, SRPs: program
+E:266236974, a: Yifan Chen1
+E:-1736565054, SRPs: even ``nanobots
+R:-396487831, SRPs: mutated
+R:-1944027752, SRPs: prey
+E:1652362498, y: upper curve in red
+R:2133958726, SRPs: predator
+R:-229958601, SRPs: prey
+E:-1924863349, B: 0
+R:-400677115, rate2: fixed
+R:-157197924, B: coefficient
+E:-1953337847, A: coefficient of the resource term for the predator population
+E:1419739737, gamma: statement
+R:661068357, gamma: condition A >
+E:-1307525923, gamma: condition A >
+E:101666760, y: upper curve in red
+R:-1357175866, s: other rightsholder

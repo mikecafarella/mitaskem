@@ -4,7 +4,7 @@ import re
 def ground(text_path:str) -> str:
     """
     Grounding the paper text to DKG terms
-    :param text_path: File path of the variables file from extract from paper
+    :param text_path: File path of the arizona-extraction file from extract from paper
     :return: Matches from DKG
     """
     with open(text_path, "r") as f:

@@ -63,7 +63,7 @@ def link_annos_to_pyacset(pyacset_s, annos_s, info_s=""):
     if info_s != "":
         info = ast.literal_eval(info_s)
 
-    # Build dictionary of variables
+    # Build dictionary of arizona-extraction
     var_d = {}
     for anno in annos:
         if anno["type"] == "variable":

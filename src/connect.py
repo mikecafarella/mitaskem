@@ -59,13 +59,14 @@ def get_gpt4_match(prompt, key, model="gpt-4"):
     return result
 
 
+
 def read_text_from_file(text_path):
     text_file = open(text_path, "r")
     prompt = text_file.read()
     return prompt
 
 
-# Get gpt-3 prompt with variables, ontology terms and match targets
+# Get gpt-3 prompt with arizona-extraction, ontology terms and match targets
 def get_prompt(vars, terms, target):
     text_file = open("prompts/prompt.txt", "r")
     prompt = text_file.read()
@@ -115,6 +116,16 @@ def get_var_dataset_prompt(vars, dataset, target):
     # print(prompt)
     return prompt
 
+#
+def get_mit_arizona_var_prompt(mit, arizona):
+    text_file = open(os.path.join(os.path.dirname(__file__), 'prompts/mit_arizona_var_prompt.txt'), "r")
+    prompt = text_file.read()
+    text_file.close()
+
+    prompt = prompt.replace("[MIT]", mit)
+    prompt = prompt.replace("[ARIZONA]", arizona)
+    # print(prompt)
+    return prompt
 
 # Get gpt-3 prompt with formula, and match variable targets
 def get_var_formula_prompt(desc, var):
@@ -209,7 +220,7 @@ def get_variables(path):
                 val = match.group(2)
                 # print(num, ",", para, ",", val)
                 list.append((num, para, val))
-    print("Extracted variables: ", list)
+    print("Extracted arizona-extraction: ", list)
     return list
 
 def match_code_targets(targets, code_path, terms):
@@ -528,6 +539,8 @@ if __name__ == "__main__":
 
     res, yes = dataset_header_dkg("demographic_category,demographic_value,total_cases",GPT_KEY)
     print(res)
+
+
 
     # col = "people"
     # ans = get_gpt_match(

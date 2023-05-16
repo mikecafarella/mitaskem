@@ -12,10 +12,7 @@
                 "Oropsylla bruneri"
             ]
         ],
-        "data_annotations": [
-            "",
-            ""
-        ]
+        "data_annotations": []
     },
     {
         "type": "variable",
@@ -32,11 +29,15 @@
         ],
         "data_annotations": [
             [
+                3,
                 "nychealth.csv",
+                2,
                 "PROBABLE_CASE_COUNT"
             ],
             [
+                3,
                 "nychealth.csv",
+                3,
                 "HOSPITALIZED_COUNT"
             ]
         ]
@@ -51,11 +52,15 @@
         "dkg_annotations": [],
         "data_annotations": [
             [
+                3,
                 "nychealth.csv",
+                3,
                 "HOSPITALIZED_COUNT"
             ],
             [
+                3,
                 "nychealth.csv",
+                8,
                 "HOSP_COUNT_7DAY_AVG"
             ]
         ]
@@ -70,11 +75,15 @@
         "dkg_annotations": [],
         "data_annotations": [
             [
+                1,
                 "StatewideCOVID-19CasesDeathsTests.csv",
+                4,
                 "cases"
             ],
             [
+                1,
                 "StatewideCOVID-19CasesDeathsTests.csv",
+                5,
                 "cumulative_cases"
             ]
         ]
@@ -87,10 +96,7 @@
             " Proportion of individuals who are infected but asymptomatic"
         ],
         "dkg_annotations": [],
-        "data_annotations": [
-            "",
-            ""
-        ]
+        "data_annotations": []
     },
     {
         "type": "variable",
@@ -102,11 +108,9 @@
         "dkg_annotations": [],
         "data_annotations": [
             [
+                5,
                 "covid_tracking.csv",
-                "recovered"
-            ],
-            [
-                "nychealth.csv",
+                14,
                 "recovered"
             ]
         ]
@@ -121,11 +125,15 @@
         "dkg_annotations": [],
         "data_annotations": [
             [
+                9,
                 "Reported_State_Hospital_Capacity_and_COVID19_Patient_Impact.csv",
+                57,
                 "previous_day_admission_adult_covid_confirmed"
             ],
             [
+                9,
                 "Reported_State_Hospital_Capacity_and_COVID19_Patient_Impact.csv",
+                58,
                 "previous_day_admission_adult_covid_confirmed_coverage"
             ]
         ]
@@ -140,12 +148,10 @@
         "dkg_annotations": [],
         "data_annotations": [
             [
+                3,
                 "nychealth.csv",
+                4,
                 "DEATH_COUNT"
-            ],
-            [
-                "nychealth.csv",
-                "cumulative_deaths"
             ]
         ]
     },
@@ -159,11 +165,15 @@
         "dkg_annotations": [],
         "data_annotations": [
             [
+                0,
                 "COVID-19_Reported_Patient_Impact_and_Hospital_Capacity_by_State_Archive_Repository.csv",
+                9,
                 "Column Level Metadata"
             ],
             [
+                0,
                 "COVID-19_Reported_Patient_Impact_and_Hospital_Capacity_by_State_Archive_Repository.csv",
+                10,
                 "Column Level Metadata Updates"
             ]
         ]
@@ -176,10 +186,7 @@
             " Viral latent period"
         ],
         "dkg_annotations": [],
-        "data_annotations": [
-            "",
-            ""
-        ]
+        "data_annotations": []
     },
     {
         "type": "variable",
@@ -189,10 +196,7 @@
             " Rate of infections that are asymptomatic"
         ],
         "dkg_annotations": [],
-        "data_annotations": [
-            "",
-            ""
-        ]
+        "data_annotations": []
     },
     {
         "type": "variable",
@@ -204,11 +208,15 @@
         "dkg_annotations": [],
         "data_annotations": [
             [
+                4,
                 "StatewideCOVID-19CasesDeathsDemographics.csv",
+                3,
                 "percent_cases"
             ],
             [
+                4,
                 "StatewideCOVID-19CasesDeathsDemographics.csv",
+                5,
                 "percent_deaths"
             ]
         ]
@@ -221,10 +229,7 @@
             " Mild infected state"
         ],
         "dkg_annotations": [],
-        "data_annotations": [
-            "",
-            ""
-        ]
+        "data_annotations": []
     },
     {
         "type": "variable",
@@ -235,9 +240,10 @@
         ],
         "dkg_annotations": [],
         "data_annotations": [
-            "",
             [
+                3,
                 "nychealth.csv",
+                3,
                 "HOSPITALIZED_COUNT"
             ]
         ]
@@ -250,10 +256,7 @@
             " Rate of recovery from virus"
         ],
         "dkg_annotations": [],
-        "data_annotations": [
-            "",
-            ""
-        ]
+        "data_annotations": []
     },
     {
         "type": "variable",
@@ -265,11 +268,15 @@
         "dkg_annotations": [],
         "data_annotations": [
             [
+                3,
                 "nychealth.csv",
+                19,
                 "BX_HOSPITALIZED_COUNT_7DAY_AVG"
             ],
             [
+                3,
                 "nychealth.csv",
+                30,
                 "BK_HOSPITALIZED_COUNT_7DAY_AVG"
             ]
         ]
@@ -282,9 +289,7 @@
             " Rate of expiration from virus"
         ],
         "dkg_annotations": [],
-        "data_annotations": [
-            ""
-        ]
+        "data_annotations": []
     },
     {
         "type": "variable",
@@ -295,10 +300,7 @@
             " Reproduction number-based reduction in overall community transmission"
         ],
         "dkg_annotations": [],
-        "data_annotations": [
-            "",
-            ""
-        ]
+        "data_annotations": []
     },
     {
         "type": "variable",
@@ -310,11 +312,15 @@
         "dkg_annotations": [],
         "data_annotations": [
             [
+                3,
                 "nychealth.csv",
+                18,
                 "BX_ALL_CASE_COUNT_7DAY_AVG"
             ],
             [
+                3,
                 "nychealth.csv",
+                21,
                 "BX_ALL_DEATH_COUNT_7DAY_AVG"
             ]
         ]
@@ -327,11 +333,7 @@
             " Relative infectiousness of asymptomatic individuals"
         ],
         "dkg_annotations": [],
-        "data_annotations": [
-            "",
-            "",
-            ""
-        ]
+        "data_annotations": []
     },
     {
         "type": "variable",
@@ -343,11 +345,15 @@
         "dkg_annotations": [],
         "data_annotations": [
             [
+                3,
                 "nychealth.csv",
+                6,
                 "CASE_COUNT_7DAY_AVG"
             ],
             [
+                3,
                 "nychealth.csv",
+                7,
                 "ALL_CASE_COUNT_7DAY_AVG"
             ]
         ]
@@ -364,10 +370,7 @@
                 ""
             ]
         ],
-        "data_annotations": [
-            "",
-            ""
-        ]
+        "data_annotations": []
     },
     {
         "type": "variable",
@@ -381,10 +384,7 @@
                 ""
             ]
         ],
-        "data_annotations": [
-            "",
-            ""
-        ]
+        "data_annotations": []
     },
     {
         "type": "variable",
@@ -394,16 +394,7 @@
             " Time from symptom onset to hospitalization"
         ],
         "dkg_annotations": [],
-        "data_annotations": [
-            [
-                "nychealth.csv",
-                "I_TO_H_TIME"
-            ],
-            [
-                "nychealth.csv",
-                "H_TIME"
-            ]
-        ]
+        "data_annotations": []
     },
     {
         "type": "variable",
@@ -419,10 +410,7 @@
                 "protein timeless homolog (human)"
             ]
         ],
-        "data_annotations": [
-            "",
-            ""
-        ]
+        "data_annotations": []
     },
     {
         "type": "variable",
@@ -434,12 +422,10 @@
         "dkg_annotations": [],
         "data_annotations": [
             [
+                3,
                 "nychealth.csv",
+                4,
                 "DEATH_COUNT"
-            ],
-            [
-                "nychealth.csv",
-                "cumulative_deaths"
             ]
         ]
     },
@@ -455,10 +441,7 @@
                 ""
             ]
         ],
-        "data_annotations": [
-            "",
-            ""
-        ]
+        "data_annotations": []
     },
     {
         "type": "variable",
@@ -479,11 +462,15 @@
         ],
         "data_annotations": [
             [
+                3,
                 "nychealth.csv",
+                8,
                 "HOSP_COUNT_7DAY_AVG"
             ],
             [
+                3,
                 "nychealth.csv",
+                3,
                 "HOSPITALIZED_COUNT"
             ]
         ]
@@ -496,16 +483,7 @@
             " Time it takes from symptom onset to hospitalization (in days)"
         ],
         "dkg_annotations": [],
-        "data_annotations": [
-            [
-                "nychealth.csv",
-                "I_TO_H_TIME"
-            ],
-            [
-                "covid_tracking.csv",
-                "I_to_H_time"
-            ]
-        ]
+        "data_annotations": []
     },
     {
         "type": "variable",
@@ -517,11 +495,9 @@
         "dkg_annotations": [],
         "data_annotations": [
             [
+                4,
                 "StatewideCOVID-19CasesDeathsDemographics.csv",
-                "demographic_category"
-            ],
-            [
-                "StatewideCOVID-19CasesDeathsDemographics.csv",
+                1,
                 "demographic_value"
             ]
         ]
@@ -534,10 +510,7 @@
             " NPIs that lead to changes in mobility/movement between administrative districts."
         ],
         "dkg_annotations": [],
-        "data_annotations": [
-            "",
-            ""
-        ]
+        "data_annotations": []
     },
     {
         "type": "variable",
@@ -547,9 +520,6 @@
             " NPIs that have an effect on the overall scaling of transmissibility."
         ],
         "dkg_annotations": [],
-        "data_annotations": [
-            "",
-            ""
-        ]
+        "data_annotations": []
     }
 ]
