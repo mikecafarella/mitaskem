@@ -2,8 +2,11 @@ import os
 import sys
 import ast
 
-from fastapi import APIRouter,status
+from fastapi import APIRouter, status, UploadFile, File, HTTPException
 from fastapi.responses import JSONResponse
+
+from file_cache import save_file_to_cache
+from mit_extraction import mit_extraction_restAPI
 
 sys.path.append(
     os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -67,3 +70,17 @@ def link_dataset_columns_to_dkg_info(csv_str: str, gpt_key: str):
         return JSONResponse(status_code=status.HTTP_401_UNAUTHORIZED, content=s)
 
     return ast.literal_eval(s)
+
+@router.post("/upload_file_extract/", tags=["Paper-2-annotated-vars"])
+async def upload_file_annotate(gpt_key: str, file: UploadFile = File(...)):
+    try:
+        contents = await file.read()
+        key = gpt_key
+        # Assuming the file contains text, you can print it out
+        print(contents.decode())
+        res_file = save_file_to_cache(file.filename, contents, "/tmp/askem")
+        print("file exist: ", os.path.isfile("/tmp/askem/"+res_file))
+        return mit_extraction_restAPI(res_file, key, "/tmp/askem")
+        # return {"file name": res_file, "file contents": text}
+    except Exception as e:
+        raise HTTPException(status_code=400, detail=str(e))

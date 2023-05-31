@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
+from file_cache import init_cache_directory
 from routers import code_dataset, code_formula, code_text, avail_check, petri, annotation
 
 tags_metadata = [
@@ -43,6 +44,10 @@ def build_api(*args) -> FastAPI:
         allow_methods=["*"],
         allow_headers=["*"],
     )
+
+    @api.on_event("startup")
+    async def startup_event():
+        init_cache_directory("/tmp/askem")
 
     return api
 
