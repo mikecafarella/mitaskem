@@ -111,8 +111,6 @@ def mit_extraction_restAPI(file_name, gpt_key, cache_dir="/tmp/askem"):
         json_data = json.load(f)
     return json_data
 
-
-
 def mit_extraction(paper):
     extract_variables(
         "/Users/chunwei/research/mitaskem/resources/xDD/paper/" + paper["title"] + ".txt",

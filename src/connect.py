@@ -326,6 +326,8 @@ def dataset_header_dkg(header, gpt_key=''):
         # print(results)
         seen = set()
         for res in results:
+            if not res:
+                break
             seen.add(res[0])
 
         ans = get_gpt_match(f"What's the top 2 similar terms of \"{col}\" in epidemiology? Please list these terms separated by comma.", gpt_key, model="text-davinci-003")
@@ -537,7 +539,7 @@ if __name__ == "__main__":
     # match, _ = vars_dataset_connection(vars, dataset, GPT_KEY)
     # print(match)
 
-    res, yes = dataset_header_dkg("demographic_category,demographic_value,total_cases",GPT_KEY)
+    res, yes = dataset_header_dkg("date,I,R,D,V,H,I_0-9,I_10-19,I_20-29,I_30-39,I_40-49,I_50-59,I_60-69,I_70-79,N_0-9,N_10-19,N_20-29,N_30-39,N_40-49,N_50-59,N_60-69,N_70-79,N_80-89,N_90-99,N_100+",GPT_KEY)
     print(res)
 
 
