@@ -73,6 +73,9 @@ def link_dataset_columns_to_dkg_info(csv_str: str, gpt_key: str):
 
 @router.post("/upload_file_extract/", tags=["Paper-2-annotated-vars"])
 async def upload_file_annotate(gpt_key: str, file: UploadFile = File(...)):
+    """
+        This is my description of the API endpoint
+    """
     try:
         contents = await file.read()
         key = gpt_key
