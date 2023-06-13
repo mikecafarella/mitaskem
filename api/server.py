@@ -1,8 +1,9 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
+
 from file_cache import init_cache_directory
-from routers import code_dataset, code_formula, code_text, avail_check, petri, annotation
+from routers import code_dataset, code_formula, code_text, avail_check, petri, annotation, integration
 
 tags_metadata = [
     # {
@@ -20,6 +21,10 @@ tags_metadata = [
     {
         "name": "Paper-2-annotated-vars",
         "description": "Requests related to annotating LaTeX formulas with paper text and grounding them to the DKG/to dataset columns."
+    },
+    {
+        "name": "TA1-Integration",
+        "description": "Integate Arizona's output with the MIT extraction pipeline."
     }
 ]
 
@@ -59,4 +64,6 @@ app = build_api()
 #app.include_router(avail_check.router, prefix="/avail_check")
 app.include_router(petri.router, prefix="/petri")
 app.include_router(annotation.router, prefix="/annotation")
+app.include_router(integration.router, prefix="/integration")
+
 

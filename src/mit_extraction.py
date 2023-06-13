@@ -29,8 +29,33 @@ def load_concise_vars(input_file, o_file):
             # Write the extracted information to the output file
             output_file.write(output_line)
 
+def load_arizona_concise_vars(input_file, o_file):
+    # Read JSON data from the file
+    with open(input_file, 'r') as file:
+        data = json.load(file)
 
-def build_map_from_concise_vars(mit, arizona):
+    # Extract relevant information
+    output = []
+    for item in data:
+        if 'arguments' not in item:
+            continue
+        variable_id = item['id']
+        variable_name = item['arguments']['variable'][0]['text']
+        value = item['text']
+        output.append(f"{variable_id}, {variable_name}: {value}\n")
+
+
+
+    # Open a new file to write the output
+    with open(o_file, 'w') as output_file:
+        # Extract id, name, and text_annotations for each variable
+        # Print the extracted output
+        for line in output:
+            # Write the extracted information to the output file
+            output_file.write(line)
+
+
+def build_map_from_concise_vars(mit, arizona, gpt_key):
     prompt = get_mit_arizona_var_prompt(mit, arizona)
     ans = get_gpt4_match(prompt, GPT_KEY, model="gpt-4")
     return ans
@@ -181,7 +206,7 @@ if __name__ == "__main__":
     arizona_text = open('../../resources/xDD/arizona-extraction/variables_' + paper["title"] + '.txt',
                     "r").read()
 
-    mit_arizona_map = build_map_from_concise_vars(mit_text, arizona_text)
+    mit_arizona_map = build_map_from_concise_vars(mit_text, arizona_text,gpt_key.GPT_KEY)
     open('../../resources/xDD/mit-extraction/' + paper["title"] + '__map.txt', "w").write(mit_arizona_map)
 
     modify_dataset(
