@@ -198,6 +198,17 @@ def get_code_dataset_prompt(code, dataset, target):
     # print(prompt)
     return prompt
 
+
+def get_csv_doc_prompt(csv, doc):
+    text_file = open(os.path.join(os.path.dirname(__file__), "prompts/dataset_profiling_prompt.txt"), "r")
+    prompt = text_file.read()
+    text_file.close()
+
+    prompt = prompt.replace("[CSV]", csv)
+    prompt = prompt.replace("[DOC]", doc)
+    # print(prompt)
+    return prompt
+
 def get_text_column_prompt(text, column):
     text_file = open(os.path.join(os.path.dirname(__file__), "prompts/text_column_prompt.txt"), "r")
     prompt = text_file.read()
@@ -343,6 +354,60 @@ def dataset_header_dkg(header, gpt_key=''):
                     seen.add(res[0])
         col_ant[col] = results
     return json.dumps(col_ant), True
+
+
+def dataset_header_document_dkg(header, doc,  gpt_key=''):
+    """
+    Grounding the column header to DKG terms
+    :param header: Dataset header string seperated with comma
+    :return: Matches column name to DKG
+    """
+    if header=="":
+        return f"Empty dataset input", False
+    row1 = header.split("\n")[0]
+    cols = row1.split(",")
+    col_ant = {}
+
+    prompt = get_csv_doc_prompt(header,doc)
+    match = get_gpt4_match(prompt, gpt_key, model="gpt-4")
+    print(match)
+    for res in match.split("\n"):
+        if res == "":
+            continue
+        attrs = res.split("|")
+        col = attrs[0]
+        col_ant[col] = {}
+        col_ant[col]["col_name"] = attrs[0]
+        col_ant[col]["concept"] = attrs[1]
+        col_ant[col]["unit"] = attrs[2]
+        col_ant[col]["description"] = attrs[3]
+
+
+    for col in cols:
+        print(f"looking up {col}")
+        results = []
+        results.extend(get_mira_dkg_term(col, ['id', 'name'],True))
+        # print(results)
+        seen = set()
+        for res in results:
+            if not res:
+                break
+            seen.add(res[0])
+
+        ans = get_gpt_match(f"What's the top 2 similar terms of \"{col}\" in epidemiology? Please list these terms separated by comma.", gpt_key, model="text-davinci-003")
+        print(f"relevant items found from GPT: {ans}")
+        for e in ans.split(","):
+            # print(e)
+            for res in get_mira_dkg_term(e, ['id', 'name', 'type'],True):
+                print(res)
+                if not res or len(res)==0:
+                    break
+                if not res[0] in seen:
+                    results.append(res)
+                    seen.add(res[0])
+        col_ant[col]["dkg_groundings"] = results
+    return json.dumps(col_ant), True
+
 
 
 
@@ -539,7 +604,20 @@ if __name__ == "__main__":
     # match, _ = vars_dataset_connection(vars, dataset, GPT_KEY)
     # print(match)
 
-    res, yes = dataset_header_dkg("date,I,R,D,V,H,I_0-9,I_10-19,I_20-29,I_30-39,I_40-49,I_50-59,I_60-69,I_70-79,N_0-9,N_10-19,N_20-29,N_30-39,N_40-49,N_50-59,N_60-69,N_70-79,N_80-89,N_90-99,N_100+",GPT_KEY)
+    res, yes = dataset_header_document_dkg("""date,state,fips,cases,deaths
+2020-01-21,Washington,53,1,0
+2020-01-22,Washington,53,1,0
+2020-01-23,Washington,53,1,0
+2020-01-24,Illinois,17,1,0
+2020-01-24,Washington,53,1,0
+""", """
+    
+The New York Times is releasing a series of data files with cumulative counts of coronavirus cases in the United States, at the state and county level, over time. We are compiling this time series data from state and local governments and health departments in an attempt to provide a complete record of the ongoing outbreak.
+
+Since the first reported coronavirus case in Washington State on Jan. 21, 2020, The Times has tracked cases of coronavirus in real time as they were identified after testing. Because of the widespread shortage of testing, however, the data is necessarily limited in the picture it presents of the outbreak.
+
+We have used this data to power our maps and reporting tracking the outbreak, and it is now being made available to the public in response to requests from researchers, scientists and government officials who would like access to the data to better understand the outbreak.
+""",GPT_KEY)
     print(res)
 
 

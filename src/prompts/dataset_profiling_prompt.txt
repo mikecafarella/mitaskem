@@ -1,0 +1,10 @@
+I have a head sample of a dataset:
+
+[CSV]
+
+Here are the relevant documentations for the dataset:
+
+[DOC]
+
+For each column of the dataset, please infer the following attributes separated by "|".
+column name| concept| unit| description

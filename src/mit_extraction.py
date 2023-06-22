@@ -57,7 +57,7 @@ def load_arizona_concise_vars(input_file, o_file):
 
 def build_map_from_concise_vars(mit, arizona, gpt_key):
     prompt = get_mit_arizona_var_prompt(mit, arizona)
-    ans = get_gpt4_match(prompt, GPT_KEY, model="gpt-4")
+    ans = get_gpt4_match(prompt, gpt_key, model="gpt-4")
     return ans
 
 

@@ -12,7 +12,8 @@ sys.path.append(
     os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 )
 from src.text_search import text_var_search, vars_to_json, vars_dedup
-from src.connect import vars_formula_connection, vars_dataset_connection, dataset_header_dkg
+from src.connect import vars_formula_connection, vars_dataset_connection, dataset_header_dkg, \
+    dataset_header_document_dkg
 from src.link_annos_to_pyacset import link_annos_to_pyacset
 
 router = APIRouter()
@@ -63,14 +64,25 @@ def link_annotation_to_pyacset_and_paper_info(pyacset_str: str, annotations_str:
 
 
 @router.post("/link_dataset_col_to_dkg", tags=["Paper-2-annotated-vars"])
-def link_dataset_columns_to_dkg_info(csv_str: str, gpt_key: str):
-    s, success = dataset_header_dkg(header=csv_str, gpt_key=gpt_key)
+def link_dataset_columns_to_dkg_info(csv_str: str, doc:str, gpt_key: str):
+    s, success = dataset_header_document_dkg(header=csv_str, doc=doc, gpt_key=gpt_key)
 
     if not success:
         return JSONResponse(status_code=status.HTTP_401_UNAUTHORIZED, content=s)
 
     return ast.literal_eval(s)
 
+# @router.post("/link_dataset_col_to_dkg", tags=["Paper-2-annotated-vars"])
+# def link_dataset_columns_to_dkg_info(csv_str: str, gpt_key: str):
+#     s, success = dataset_header_dkg(header=csv_str, gpt_key=gpt_key)
+#
+#     if not success:
+#         return JSONResponse(status_code=status.HTTP_401_UNAUTHORIZED, content=s)
+#
+#     return ast.literal_eval(s)
+
+
+dataset_header_document_dkg
 @router.post("/upload_file_extract/", tags=["Paper-2-annotated-vars"])
 async def upload_file_annotate(gpt_key: str, file: UploadFile = File(...)):
     """

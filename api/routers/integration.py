@@ -63,10 +63,10 @@ async def upload_files_integration(gpt_key: str, mit_file: UploadFile = File(...
         m_collection = import_mit(Path(os.path.join(cache_dir, res_mit_file)))
         merged = merge_collections(a_collection, m_collection,
                                    Path(os.path.join(cache_dir, map_file)))
-        integreated_file = res_mit_file.split("mit-")[0] + "-integrated.json"
-        merged.save_json(os.path.join(cache_dir, integreated_file))
-        integreated_json = open(os.path.join(cache_dir, integreated_file)).read()
-        return integreated_json
+        # integreated_file = res_mit_file.split("mit-")[0] + "-integrated.json"
+        # merged.save_json(os.path.join(cache_dir, integreated_file))
+        # integreated_json = open(os.path.join(cache_dir, integreated_file)).read()
+        return merged
 
     except Exception as e:
         raise HTTPException(status_code=400, detail=str(e))
