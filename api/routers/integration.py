@@ -54,9 +54,10 @@ async def upload_files_integration(gpt_key: str, mit_file: UploadFile = File(...
         arizona_text = open(os.path.join(cache_dir, arizona_concise)).read()
 
         map_file = res_mit_file.split("_mit-")[0] + "-map.txt"
-        print(map_file)
 
         mit_arizona_map = build_map_from_concise_vars(mit_text, arizona_text,key)
+
+        print(mit_arizona_map)
         open(os.path.join(cache_dir, map_file), "w").write(mit_arizona_map)
         print("map file: ", map_file)
 
@@ -99,6 +100,7 @@ if __name__ == "__main__":
     map_file = res_mit_file.split("_mit-")[0] + "-map.txt"
 
     mit_arizona_map = build_map_from_concise_vars(mit_text, arizona_text, key)
+    print(mit_arizona_map)
     open(os.path.join(cache_dir, map_file), "w").write(mit_arizona_map)
     print("map file: ", map_file)
 
@@ -110,4 +112,4 @@ if __name__ == "__main__":
     integreated_file = res_mit_file.split("mit-")[0] + "-integrated.json"
     merged.save_json(os.path.join(cache_dir, integreated_file))
     integreated_json = open(os.path.join(cache_dir, integreated_file)).read()
-    print({"file name": integreated_file, "file contents": integreated_json})
+    # print({"file name": integreated_file, "file contents": integreated_json})

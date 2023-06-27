@@ -360,6 +360,7 @@ def dataset_header_document_dkg(header, doc,  gpt_key=''):
     """
     Grounding the column header to DKG terms
     :param header: Dataset header string seperated with comma
+    :param doc: Document string
     :return: Matches column name to DKG
     """
     if header=="":
