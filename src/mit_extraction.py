@@ -1,5 +1,8 @@
 
 import ast, json, requests, os
+from pathlib import Path
+
+from askem_extractions.importers import import_mit
 
 import gpt_key
 from connect import get_mit_arizona_var_prompt, get_gpt4_match
@@ -20,6 +23,25 @@ def load_concise_vars(input_file, o_file):
     # Open a new file to write the output
     with open(o_file, 'w') as output_file:
         # Extract id, name, and text_annotations for each variable
+        for item in json_data['attributes']:
+            if 'id' not in item['payload']:
+                continue
+            variable_id = item['payload']['id']['id']
+            variable_name = item['payload']['names'][0]['name']
+            value = item['payload']['descriptions'][0]['source']
+            output_line = f"{variable_id}, {variable_name}: {value}\n"
+
+            # Write the extracted information to the output file
+            output_file.write(output_line)
+
+def load_concise_vars_from_raw(input_file, o_file):
+    # Read JSON data from the file
+    with open(input_file, 'r') as file:
+        json_data = json.load(file)
+
+    # Open a new file to write the output
+    with open(o_file, 'w') as output_file:
+        # Extract id, name, and text_annotations for each variable
         for variable in json_data:
             id = variable['id']
             name = variable['name']
@@ -30,6 +52,35 @@ def load_concise_vars(input_file, o_file):
             output_file.write(output_line)
 
 def load_arizona_concise_vars(input_file, o_file):
+    # Read JSON data from the file
+    with open(input_file, 'r') as file:
+        data = json.load(file)
+
+    # Extract relevant information
+    output = []
+    for item in data['attributes']:
+        if 'id' not in item['payload'] or 'names' not in item['payload'] or 'descriptions' not in item['payload']:
+            continue
+        variable_id = item['payload']['id']['id']
+        print(variable_id)
+        variable_name = item['payload']['names'][0]['name']
+        if len(item['payload']['descriptions']) == 0:
+            value = ""
+        else:
+            value = item['payload']['descriptions'][0]['source']
+        output.append(f"{variable_id}, {variable_name}: {value}\n")
+
+
+
+    # Open a new file to write the output
+    with open(o_file, 'w') as output_file:
+        # Extract id, name, and text_annotations for each variable
+        # Print the extracted output
+        for line in output:
+            # Write the extracted information to the output file
+            output_file.write(line)
+
+def load_arizona_concise_vars_from_raw(input_file, o_file):
     # Read JSON data from the file
     with open(input_file, 'r') as file:
         data = json.load(file)
@@ -121,7 +172,7 @@ def mit_extraction_restAPI(file_name, gpt_key, cache_dir="/tmp/askem"):
         json.dump(data_json, json_file, ensure_ascii=False, indent=4)
     # %% md
 
-    load_concise_vars(
+    load_concise_vars_from_raw(
         os.path.join(cache_dir, paper_name + "__mit-extraction.json"),
         os.path.join(cache_dir, paper_name + "__mit-concise.txt"))
 
@@ -131,10 +182,9 @@ def mit_extraction_restAPI(file_name, gpt_key, cache_dir="/tmp/askem"):
         os.path.join(dir,'headers.txt'),
         os.path.join(dir,'catalog.txt'))
 
-    # read and return json file from "filename__mit-extraction_id.json"
-    with open(os.path.join(cache_dir, paper_name + "__mit-extraction_id.json"), 'r') as f:
-        json_data = json.load(f)
-    return json_data
+    # read and file from "filename__mit-extraction_id.json" and convert to TA1 json format
+    a_collection = import_mit(Path(cache_dir) / ( paper_name + "__mit-extraction_id.json"))
+    return a_collection
 
 def mit_extraction(paper):
     extract_variables(
@@ -166,8 +216,6 @@ def mit_extraction(paper):
         dataset_str = f.read()
         print(dataset_str[:419])
 
-    from connect import vars_dataset_connection
-
     json_str, success = vars_dataset_connection(dkg_json_string, dataset_str, GPT_KEY)
     print(json_str)
 
@@ -180,7 +228,7 @@ def mit_extraction(paper):
         json.dump(data_json, json_file, ensure_ascii=False, indent=4)
     # %% md
 
-    load_concise_vars(
+    load_concise_vars_from_raw(
         "/Users/chunwei/research/mitaskem/resources/xDD/mit-extraction/" + paper["title"] + '__mit-extraction.json',
         "/Users/chunwei/research/mitaskem/resources/xDD/mit-extraction/" + paper["title"] + '__mit-concise.txt')
 
@@ -190,28 +238,32 @@ def mit_extraction(paper):
         '/Users/chunwei/research/mitaskem/resources/dataset/ensemble/headers.txt',
         '/Users/chunwei/research/mitaskem/resources/dataset/ensemble/catalog.txt')
 
-
-
-
+    a_collection = import_mit(Path('/Users/chunwei/research/mitaskem/resources/xDD/mit-extraction') / (paper["title"] + "__mit-extraction_id.json"))
+    return a_collection
 
 
 if __name__ == "__main__":
     papers = load_paper_info("../../resources/xDD/xdd_paper.json")
-    paper = papers[6]  # 0 1 4 6
+    paper = papers[0]  # 0 1 4 6
     print(paper)
 
     mit_extraction(paper)
-    mit_text = open('../../resources/xDD/mit-extraction/' + paper["title"] + '__mit-concise.txt',
-                    "r").read()
-    arizona_text = open('../../resources/xDD/arizona-extraction/variables_' + paper["title"] + '.txt',
-                    "r").read()
+    # mit_text = open('../../resources/xDD/mit-extraction/' + paper["title"] + '__mit-concise.txt',
+    #                 "r").read()
 
-    mit_arizona_map = build_map_from_concise_vars(mit_text, arizona_text,gpt_key.GPT_KEY)
-    open('../../resources/xDD/mit-extraction/' + paper["title"] + '__map.txt', "w").write(mit_arizona_map)
-
-    modify_dataset(
-        '../../resources/xDD/mit-extraction/'+paper["title"]+'__mit-extraction.json',
-        '../../resources/dataset/ensemble/headers.txt',
-        '../../resources/dataset/ensemble/catalog.txt')
+    # arizona_text = open('../../resources/xDD/arizona-extraction/variables_' + paper["title"] + '.txt',
+    #                 "r").read()
+    #
+    # mit_arizona_map = build_map_from_concise_vars(mit_text, arizona_text,gpt_key.GPT_KEY)
+    # open('../../resources/xDD/mit-extraction/' + paper["title"] + '__map.txt', "w").write(mit_arizona_map)
+    #
+    # modify_dataset(
+    #     '../../resources/xDD/mit-extraction/'+paper["title"]+'__mit-extraction.json',
+    #     '../../resources/dataset/ensemble/headers.txt',
+    #     '../../resources/dataset/ensemble/catalog.txt')
     # res = mit_extraction_restAPI("md5__d41d8cd98f00b204e9800998ecf8427e__1-s2.0-S2211379721005490-main.txt", gpt_key.GPT_KEY ,"/tmp/askem")
     # print(res)
+    # res_mit_file = "/Users/chunwei/research/ASKEM-TA1-DataModel/examples/a_temp.json"
+    # mit_concise = res_mit_file.replace(".json", "-concise.txt")
+    # load_arizona_concise_vars(res_mit_file,mit_concise)
+    # print(open(mit_concise,"r").read())

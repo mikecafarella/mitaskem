@@ -1,0 +1,1758 @@
+{
+  "attributes": [
+    {
+      "type": "anchored_extraction",
+      "amr_element_id": null,
+      "payload": {
+        "id": {
+          "id": "v0"
+        },
+        "names": [
+          {
+            "id": {
+              "id": "v0"
+            },
+            "name": "S_i j",
+            "extraction_source": null,
+            "provenance": {
+              "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+              "timestamp": "2023-07-07T16:46:30.127525"
+            }
+          }
+        ],
+        "descriptions": [
+          {
+            "id": {
+              "id": "v0"
+            },
+            "source": " Proportion of individuals who are susceptible to the virus",
+            "grounding": null,
+            "extraction_source": null,
+            "provenance": {
+              "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+              "timestamp": "2023-07-07T16:46:30.127525"
+            }
+          }
+        ],
+        "value_specs": null,
+        "groundings": [
+          {
+            "grounding_text": "Skikda",
+            "grounding_id": "geonames:2479536",
+            "source": [],
+            "score": 1.0,
+            "provenance": {
+              "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+              "timestamp": "2023-07-07T16:46:30.127525"
+            }
+          },
+          {
+            "grounding_text": "Sterlitamak",
+            "grounding_id": "geonames:487495",
+            "source": [],
+            "score": 1.0,
+            "provenance": {
+              "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+              "timestamp": "2023-07-07T16:46:30.127525"
+            }
+          }
+        ],
+        "data_columns": []
+      }
+    },
+    {
+      "type": "anchored_extraction",
+      "amr_element_id": null,
+      "payload": {
+        "id": {
+          "id": "v1"
+        },
+        "names": [
+          {
+            "id": {
+              "id": "v1"
+            },
+            "name": "E_i j",
+            "extraction_source": null,
+            "provenance": {
+              "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+              "timestamp": "2023-07-07T16:46:30.127525"
+            }
+          }
+        ],
+        "descriptions": [
+          {
+            "id": {
+              "id": "v1"
+            },
+            "source": " Proportion of individuals who have been exposed to the virus",
+            "grounding": null,
+            "extraction_source": null,
+            "provenance": {
+              "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+              "timestamp": "2023-07-07T16:46:30.127525"
+            }
+          }
+        ],
+        "value_specs": null,
+        "groundings": [
+          {
+            "grounding_text": "Beijing",
+            "grounding_id": "geonames:1816670",
+            "source": [],
+            "score": 1.0,
+            "provenance": {
+              "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+              "timestamp": "2023-07-07T16:46:30.127525"
+            }
+          },
+          {
+            "grounding_text": "Neijiang",
+            "grounding_id": "geonames:1799491",
+            "source": [],
+            "score": 1.0,
+            "provenance": {
+              "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+              "timestamp": "2023-07-07T16:46:30.127525"
+            }
+          }
+        ],
+        "data_columns": []
+      }
+    },
+    {
+      "type": "anchored_extraction",
+      "amr_element_id": null,
+      "payload": {
+        "id": {
+          "id": "v2"
+        },
+        "names": [
+          {
+            "id": {
+              "id": "v2"
+            },
+            "name": "I_i, j^hosp",
+            "extraction_source": null,
+            "provenance": {
+              "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+              "timestamp": "2023-07-07T16:46:30.127525"
+            }
+          }
+        ],
+        "descriptions": [
+          {
+            "id": {
+              "id": "v2"
+            },
+            "source": " Proportion of individuals that are exhibiting severe disease symptoms and are in need of hospitalization",
+            "grounding": null,
+            "extraction_source": null,
+            "provenance": {
+              "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+              "timestamp": "2023-07-07T16:46:30.127525"
+            }
+          }
+        ],
+        "value_specs": null,
+        "groundings": [],
+        "data_columns": [
+          {
+            "id": {
+              "id": "6-2"
+            },
+            "name": "new_hospitalized_patients",
+            "dataset": {
+              "id": {
+                "id": "6"
+              },
+              "name": "usa-hospitalizations.csv",
+              "metadata": "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-hospitalizations.csv"
+            }
+          },
+          {
+            "id": {
+              "id": "6-3"
+            },
+            "name": "cumulative_hospitalized_patients",
+            "dataset": {
+              "id": {
+                "id": "6"
+              },
+              "name": "usa-hospitalizations.csv",
+              "metadata": "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-hospitalizations.csv"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "anchored_extraction",
+      "amr_element_id": null,
+      "payload": {
+        "id": {
+          "id": "v3"
+        },
+        "names": [
+          {
+            "id": {
+              "id": "v3"
+            },
+            "name": "I_i, j^mild",
+            "extraction_source": null,
+            "provenance": {
+              "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+              "timestamp": "2023-07-07T16:46:30.127525"
+            }
+          }
+        ],
+        "descriptions": [
+          {
+            "id": {
+              "id": "v3"
+            },
+            "source": " Proportion of individuals that are exhibiting mild disease symptoms",
+            "grounding": null,
+            "extraction_source": null,
+            "provenance": {
+              "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+              "timestamp": "2023-07-07T16:46:30.127525"
+            }
+          }
+        ],
+        "value_specs": null,
+        "groundings": [],
+        "data_columns": [
+          {
+            "id": {
+              "id": "5-2"
+            },
+            "name": "new_confirmed_age_0",
+            "dataset": {
+              "id": {
+                "id": "5"
+              },
+              "name": "usa-cases-hospitalized-by-age.csv",
+              "metadata": "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-cases-hospitalized-by-age.csv"
+            }
+          },
+          {
+            "id": {
+              "id": "5-3"
+            },
+            "name": "new_confirmed_age_1",
+            "dataset": {
+              "id": {
+                "id": "5"
+              },
+              "name": "usa-cases-hospitalized-by-age.csv",
+              "metadata": "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-cases-hospitalized-by-age.csv"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "anchored_extraction",
+      "amr_element_id": null,
+      "payload": {
+        "id": {
+          "id": "v4"
+        },
+        "names": [
+          {
+            "id": {
+              "id": "v4"
+            },
+            "name": "I_i, j^asym",
+            "extraction_source": null,
+            "provenance": {
+              "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+              "timestamp": "2023-07-07T16:46:30.127525"
+            }
+          }
+        ],
+        "descriptions": [
+          {
+            "id": {
+              "id": "v4"
+            },
+            "source": " Proportion of individuals who are infected but asymptomatic",
+            "grounding": null,
+            "extraction_source": null,
+            "provenance": {
+              "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+              "timestamp": "2023-07-07T16:46:30.127525"
+            }
+          }
+        ],
+        "value_specs": null,
+        "groundings": [],
+        "data_columns": []
+      }
+    },
+    {
+      "type": "anchored_extraction",
+      "amr_element_id": null,
+      "payload": {
+        "id": {
+          "id": "v5"
+        },
+        "names": [
+          {
+            "id": {
+              "id": "v5"
+            },
+            "name": "R_i, j",
+            "extraction_source": null,
+            "provenance": {
+              "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+              "timestamp": "2023-07-07T16:46:30.127525"
+            }
+          }
+        ],
+        "descriptions": [
+          {
+            "id": {
+              "id": "v5"
+            },
+            "source": " Proportion of individuals who have recovered from the virus and are no longer capable of infecting other individuals",
+            "grounding": null,
+            "extraction_source": null,
+            "provenance": {
+              "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+              "timestamp": "2023-07-07T16:46:30.127525"
+            }
+          }
+        ],
+        "value_specs": null,
+        "groundings": [],
+        "data_columns": [
+          {
+            "id": {
+              "id": "5-52"
+            },
+            "name": "cumulative_recovered_age_0",
+            "dataset": {
+              "id": {
+                "id": "5"
+              },
+              "name": "usa-cases-hospitalized-by-age.csv",
+              "metadata": "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-cases-hospitalized-by-age.csv"
+            }
+          },
+          {
+            "id": {
+              "id": "5-53"
+            },
+            "name": "cumulative_recovered_age_1",
+            "dataset": {
+              "id": {
+                "id": "5"
+              },
+              "name": "usa-cases-hospitalized-by-age.csv",
+              "metadata": "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-cases-hospitalized-by-age.csv"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "anchored_extraction",
+      "amr_element_id": null,
+      "payload": {
+        "id": {
+          "id": "v6"
+        },
+        "names": [
+          {
+            "id": {
+              "id": "v6"
+            },
+            "name": "R_i, j^hosp",
+            "extraction_source": null,
+            "provenance": {
+              "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+              "timestamp": "2023-07-07T16:46:30.127525"
+            }
+          }
+        ],
+        "descriptions": [
+          {
+            "id": {
+              "id": "v6"
+            },
+            "source": " Proportion of individuals who have recovered from the virus after a period of time in a hospital",
+            "grounding": null,
+            "extraction_source": null,
+            "provenance": {
+              "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+              "timestamp": "2023-07-07T16:46:30.127525"
+            }
+          }
+        ],
+        "value_specs": null,
+        "groundings": [],
+        "data_columns": []
+      }
+    },
+    {
+      "type": "anchored_extraction",
+      "amr_element_id": null,
+      "payload": {
+        "id": {
+          "id": "v7"
+        },
+        "names": [
+          {
+            "id": {
+              "id": "v7"
+            },
+            "name": "D_i, j",
+            "extraction_source": null,
+            "provenance": {
+              "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+              "timestamp": "2023-07-07T16:46:30.127525"
+            }
+          }
+        ],
+        "descriptions": [
+          {
+            "id": {
+              "id": "v7"
+            },
+            "source": " Proportion of individuals who have succumbed as a direct result of the virus",
+            "grounding": null,
+            "extraction_source": null,
+            "provenance": {
+              "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+              "timestamp": "2023-07-07T16:46:30.127525"
+            }
+          }
+        ],
+        "value_specs": null,
+        "groundings": [],
+        "data_columns": [
+          {
+            "id": {
+              "id": "5-22"
+            },
+            "name": "new_deceased_age_0",
+            "dataset": {
+              "id": {
+                "id": "5"
+              },
+              "name": "usa-cases-hospitalized-by-age.csv",
+              "metadata": "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-cases-hospitalized-by-age.csv"
+            }
+          },
+          {
+            "id": {
+              "id": "5-23"
+            },
+            "name": "new_deceased_age_1",
+            "dataset": {
+              "id": {
+                "id": "5"
+              },
+              "name": "usa-cases-hospitalized-by-age.csv",
+              "metadata": "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-cases-hospitalized-by-age.csv"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "anchored_extraction",
+      "amr_element_id": null,
+      "payload": {
+        "id": {
+          "id": "v8"
+        },
+        "names": [
+          {
+            "id": {
+              "id": "v8"
+            },
+            "name": "\u03b2_i, j",
+            "extraction_source": null,
+            "provenance": {
+              "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+              "timestamp": "2023-07-07T16:46:30.127525"
+            }
+          }
+        ],
+        "descriptions": [
+          {
+            "id": {
+              "id": "v8"
+            },
+            "source": " Force of infection on a member of age group i in location j",
+            "grounding": null,
+            "extraction_source": null,
+            "provenance": {
+              "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+              "timestamp": "2023-07-07T16:46:30.127525"
+            }
+          }
+        ],
+        "value_specs": null,
+        "groundings": [],
+        "data_columns": []
+      }
+    },
+    {
+      "type": "anchored_extraction",
+      "amr_element_id": null,
+      "payload": {
+        "id": {
+          "id": "v9"
+        },
+        "names": [
+          {
+            "id": {
+              "id": "v9"
+            },
+            "name": "\u03c3",
+            "extraction_source": null,
+            "provenance": {
+              "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+              "timestamp": "2023-07-07T16:46:30.127525"
+            }
+          }
+        ],
+        "descriptions": [
+          {
+            "id": {
+              "id": "v9"
+            },
+            "source": " Viral latent period",
+            "grounding": null,
+            "extraction_source": null,
+            "provenance": {
+              "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+              "timestamp": "2023-07-07T16:46:30.127525"
+            }
+          }
+        ],
+        "value_specs": null,
+        "groundings": [
+          {
+            "grounding_text": "Lhasa",
+            "grounding_id": "geonames:1280737",
+            "source": [],
+            "score": 1.0,
+            "provenance": {
+              "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+              "timestamp": "2023-07-07T16:46:30.127525"
+            }
+          },
+          {
+            "grounding_text": "Omsk",
+            "grounding_id": "geonames:1496153",
+            "source": [],
+            "score": 1.0,
+            "provenance": {
+              "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+              "timestamp": "2023-07-07T16:46:30.127525"
+            }
+          }
+        ],
+        "data_columns": []
+      }
+    },
+    {
+      "type": "anchored_extraction",
+      "amr_element_id": null,
+      "payload": {
+        "id": {
+          "id": "v10"
+        },
+        "names": [
+          {
+            "id": {
+              "id": "v10"
+            },
+            "name": "\u03b1",
+            "extraction_source": null,
+            "provenance": {
+              "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+              "timestamp": "2023-07-07T16:46:30.127525"
+            }
+          }
+        ],
+        "descriptions": [
+          {
+            "id": {
+              "id": "v10"
+            },
+            "source": " Rate of infections that are asymptomatic",
+            "grounding": null,
+            "extraction_source": null,
+            "provenance": {
+              "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+              "timestamp": "2023-07-07T16:46:30.127525"
+            }
+          }
+        ],
+        "value_specs": null,
+        "groundings": [
+          {
+            "grounding_text": "Van",
+            "grounding_id": "geonames:298117",
+            "source": [],
+            "score": 1.0,
+            "provenance": {
+              "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+              "timestamp": "2023-07-07T16:46:30.127525"
+            }
+          },
+          {
+            "grounding_text": "Sanaa",
+            "grounding_id": "geonames:71137",
+            "source": [],
+            "score": 1.0,
+            "provenance": {
+              "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+              "timestamp": "2023-07-07T16:46:30.127525"
+            }
+          }
+        ],
+        "data_columns": []
+      }
+    },
+    {
+      "type": "anchored_extraction",
+      "amr_element_id": null,
+      "payload": {
+        "id": {
+          "id": "v11"
+        },
+        "names": [
+          {
+            "id": {
+              "id": "v11"
+            },
+            "name": "\u03bd_i",
+            "extraction_source": null,
+            "provenance": {
+              "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+              "timestamp": "2023-07-07T16:46:30.127525"
+            }
+          }
+        ],
+        "descriptions": [
+          {
+            "id": {
+              "id": "v11"
+            },
+            "source": " Fraction of individuals in age group i who are susceptible to the virusI^{\text {asym }}",
+            "grounding": null,
+            "extraction_source": null,
+            "provenance": {
+              "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+              "timestamp": "2023-07-07T16:46:30.127525"
+            }
+          }
+        ],
+        "value_specs": null,
+        "groundings": [],
+        "data_columns": []
+      }
+    },
+    {
+      "type": "anchored_extraction",
+      "amr_element_id": null,
+      "payload": {
+        "id": {
+          "id": "v12"
+        },
+        "names": [
+          {
+            "id": {
+              "id": "v12"
+            },
+            "name": "I^{\text {mild }}",
+            "extraction_source": null,
+            "provenance": {
+              "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+              "timestamp": "2023-07-07T16:46:30.127525"
+            }
+          }
+        ],
+        "descriptions": [
+          {
+            "id": {
+              "id": "v12"
+            },
+            "source": " Mild infected state",
+            "grounding": null,
+            "extraction_source": null,
+            "provenance": {
+              "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+              "timestamp": "2023-07-07T16:46:30.127525"
+            }
+          }
+        ],
+        "value_specs": null,
+        "groundings": [],
+        "data_columns": [
+          {
+            "id": {
+              "id": "5-2"
+            },
+            "name": "new_confirmed_age_0",
+            "dataset": {
+              "id": {
+                "id": "5"
+              },
+              "name": "usa-cases-hospitalized-by-age.csv",
+              "metadata": "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-cases-hospitalized-by-age.csv"
+            }
+          },
+          {
+            "id": {
+              "id": "5-3"
+            },
+            "name": "new_confirmed_age_1",
+            "dataset": {
+              "id": {
+                "id": "5"
+              },
+              "name": "usa-cases-hospitalized-by-age.csv",
+              "metadata": "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-cases-hospitalized-by-age.csv"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "anchored_extraction",
+      "amr_element_id": null,
+      "payload": {
+        "id": {
+          "id": "v13"
+        },
+        "names": [
+          {
+            "id": {
+              "id": "v13"
+            },
+            "name": "I^{\text {hosp }}",
+            "extraction_source": null,
+            "provenance": {
+              "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+              "timestamp": "2023-07-07T16:46:30.127525"
+            }
+          }
+        ],
+        "descriptions": [
+          {
+            "id": {
+              "id": "v13"
+            },
+            "source": " Severe infected state",
+            "grounding": null,
+            "extraction_source": null,
+            "provenance": {
+              "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+              "timestamp": "2023-07-07T16:46:30.127525"
+            }
+          }
+        ],
+        "value_specs": null,
+        "groundings": [],
+        "data_columns": [
+          {
+            "id": {
+              "id": "5-82"
+            },
+            "name": "new_hospitalized_patients_age_0",
+            "dataset": {
+              "id": {
+                "id": "5"
+              },
+              "name": "usa-cases-hospitalized-by-age.csv",
+              "metadata": "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-cases-hospitalized-by-age.csv"
+            }
+          },
+          {
+            "id": {
+              "id": "5-83"
+            },
+            "name": "new_hospitalized_patients_age_1",
+            "dataset": {
+              "id": {
+                "id": "5"
+              },
+              "name": "usa-cases-hospitalized-by-age.csv",
+              "metadata": "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-cases-hospitalized-by-age.csv"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "anchored_extraction",
+      "amr_element_id": null,
+      "payload": {
+        "id": {
+          "id": "v14"
+        },
+        "names": [
+          {
+            "id": {
+              "id": "v14"
+            },
+            "name": "$\\gamma$",
+            "extraction_source": null,
+            "provenance": {
+              "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+              "timestamp": "2023-07-07T16:46:30.127525"
+            }
+          }
+        ],
+        "descriptions": [
+          {
+            "id": {
+              "id": "v14"
+            },
+            "source": " Rate of recovery from virus",
+            "grounding": null,
+            "extraction_source": null,
+            "provenance": {
+              "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+              "timestamp": "2023-07-07T16:46:30.127525"
+            }
+          }
+        ],
+        "value_specs": null,
+        "groundings": [],
+        "data_columns": [
+          {
+            "id": {
+              "id": "4-57"
+            },
+            "name": "ContainmentHealthIndex_Average",
+            "dataset": {
+              "id": {
+                "id": "4"
+              },
+              "name": "OxCGRT_nat_latest.csv",
+              "metadata": "https://raw.githubusercontent.com/OxCGRT/covid-policy-tracker/master/data/OxCGRT_nat_latest.csv"
+            }
+          },
+          {
+            "id": {
+              "id": "4-58"
+            },
+            "name": "ContainmentHealthIndex_Average_ForDisplay",
+            "dataset": {
+              "id": {
+                "id": "4"
+              },
+              "name": "OxCGRT_nat_latest.csv",
+              "metadata": "https://raw.githubusercontent.com/OxCGRT/covid-policy-tracker/master/data/OxCGRT_nat_latest.csv"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "anchored_extraction",
+      "amr_element_id": null,
+      "payload": {
+        "id": {
+          "id": "v15"
+        },
+        "names": [
+          {
+            "id": {
+              "id": "v15"
+            },
+            "name": "$1 / \tau_{i}$",
+            "extraction_source": null,
+            "provenance": {
+              "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+              "timestamp": "2023-07-07T16:46:30.127525"
+            }
+          }
+        ],
+        "descriptions": [
+          {
+            "id": {
+              "id": "v15"
+            },
+            "source": " Rate of recovery after period of illness",
+            "grounding": null,
+            "extraction_source": null,
+            "provenance": {
+              "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+              "timestamp": "2023-07-07T16:46:30.127525"
+            }
+          }
+        ],
+        "value_specs": null,
+        "groundings": [],
+        "data_columns": []
+      }
+    },
+    {
+      "type": "anchored_extraction",
+      "amr_element_id": null,
+      "payload": {
+        "id": {
+          "id": "v16"
+        },
+        "names": [
+          {
+            "id": {
+              "id": "v16"
+            },
+            "name": "$\\phi_{i} \\gamma$",
+            "extraction_source": null,
+            "provenance": {
+              "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+              "timestamp": "2023-07-07T16:46:30.127525"
+            }
+          }
+        ],
+        "descriptions": [
+          {
+            "id": {
+              "id": "v16"
+            },
+            "source": " Rate of expiration from virus",
+            "grounding": null,
+            "extraction_source": null,
+            "provenance": {
+              "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+              "timestamp": "2023-07-07T16:46:30.127525"
+            }
+          }
+        ],
+        "value_specs": null,
+        "groundings": [],
+        "data_columns": []
+      }
+    },
+    {
+      "type": "anchored_extraction",
+      "amr_element_id": null,
+      "payload": {
+        "id": {
+          "id": "v17"
+        },
+        "names": [
+          {
+            "id": {
+              "id": "v17"
+            },
+            "name": "$R_{0}$",
+            "extraction_source": null,
+            "provenance": {
+              "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+              "timestamp": "2023-07-07T16:46:30.127525"
+            }
+          }
+        ],
+        "descriptions": [
+          {
+            "id": {
+              "id": "v17"
+            },
+            "source": " Basic reproductive number",
+            "grounding": null,
+            "extraction_source": null,
+            "provenance": {
+              "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+              "timestamp": "2023-07-07T16:46:30.127525"
+            }
+          },
+          {
+            "id": {
+              "id": "v17"
+            },
+            "source": " Reproduction number-based reduction in overall community transmission",
+            "grounding": null,
+            "extraction_source": null,
+            "provenance": {
+              "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+              "timestamp": "2023-07-07T16:46:30.127525"
+            }
+          }
+        ],
+        "value_specs": null,
+        "groundings": [],
+        "data_columns": []
+      }
+    },
+    {
+      "type": "anchored_extraction",
+      "amr_element_id": null,
+      "payload": {
+        "id": {
+          "id": "v18"
+        },
+        "names": [
+          {
+            "id": {
+              "id": "v18"
+            },
+            "name": "asym_frac",
+            "extraction_source": null,
+            "provenance": {
+              "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+              "timestamp": "2023-07-07T16:46:30.127525"
+            }
+          }
+        ],
+        "descriptions": [
+          {
+            "id": {
+              "id": "v18"
+            },
+            "source": " Fraction of infections that are asymptomatic",
+            "grounding": null,
+            "extraction_source": null,
+            "provenance": {
+              "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+              "timestamp": "2023-07-07T16:46:30.127525"
+            }
+          }
+        ],
+        "value_specs": null,
+        "groundings": [],
+        "data_columns": []
+      }
+    },
+    {
+      "type": "anchored_extraction",
+      "amr_element_id": null,
+      "payload": {
+        "id": {
+          "id": "v19"
+        },
+        "names": [
+          {
+            "id": {
+              "id": "v19"
+            },
+            "name": "rel_inf_asym",
+            "extraction_source": null,
+            "provenance": {
+              "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+              "timestamp": "2023-07-07T16:46:30.127525"
+            }
+          }
+        ],
+        "descriptions": [
+          {
+            "id": {
+              "id": "v19"
+            },
+            "source": " Relative infectiousness of asymptomatic individuals",
+            "grounding": null,
+            "extraction_source": null,
+            "provenance": {
+              "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+              "timestamp": "2023-07-07T16:46:30.127525"
+            }
+          }
+        ],
+        "value_specs": null,
+        "groundings": [],
+        "data_columns": []
+      }
+    },
+    {
+      "type": "anchored_extraction",
+      "amr_element_id": null,
+      "payload": {
+        "id": {
+          "id": "v20"
+        },
+        "names": [
+          {
+            "id": {
+              "id": "v20"
+            },
+            "name": "frac_trans_before_s",
+            "extraction_source": null,
+            "provenance": {
+              "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+              "timestamp": "2023-07-07T16:46:30.127525"
+            }
+          }
+        ],
+        "descriptions": [
+          {
+            "id": {
+              "id": "v20"
+            },
+            "source": " Percentage of transmission prior to symptom onset",
+            "grounding": null,
+            "extraction_source": null,
+            "provenance": {
+              "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+              "timestamp": "2023-07-07T16:46:30.127525"
+            }
+          }
+        ],
+        "value_specs": null,
+        "groundings": [],
+        "data_columns": []
+      }
+    },
+    {
+      "type": "anchored_extraction",
+      "amr_element_id": null,
+      "payload": {
+        "id": {
+          "id": "v21"
+        },
+        "names": [
+          {
+            "id": {
+              "id": "v21"
+            },
+            "name": "F",
+            "extraction_source": null,
+            "provenance": {
+              "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+              "timestamp": "2023-07-07T16:46:30.127525"
+            }
+          }
+        ],
+        "descriptions": [
+          {
+            "id": {
+              "id": "v21"
+            },
+            "source": " Case fatality ratio",
+            "grounding": null,
+            "extraction_source": null,
+            "provenance": {
+              "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+              "timestamp": "2023-07-07T16:46:30.127525"
+            }
+          }
+        ],
+        "value_specs": null,
+        "groundings": [],
+        "data_columns": [
+          {
+            "id": {
+              "id": "4-50"
+            },
+            "name": "ConfirmedDeaths",
+            "dataset": {
+              "id": {
+                "id": "4"
+              },
+              "name": "OxCGRT_nat_latest.csv",
+              "metadata": "https://raw.githubusercontent.com/OxCGRT/covid-policy-tracker/master/data/OxCGRT_nat_latest.csv"
+            }
+          },
+          {
+            "id": {
+              "id": "7-5"
+            },
+            "name": "deaths",
+            "dataset": {
+              "id": {
+                "id": "7"
+              },
+              "name": "us-counties-2023.csv",
+              "metadata": "https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties-2023.csv"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "anchored_extraction",
+      "amr_element_id": null,
+      "payload": {
+        "id": {
+          "id": "v22"
+        },
+        "names": [
+          {
+            "id": {
+              "id": "v22"
+            },
+            "name": "H",
+            "extraction_source": null,
+            "provenance": {
+              "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+              "timestamp": "2023-07-07T16:46:30.127525"
+            }
+          }
+        ],
+        "descriptions": [
+          {
+            "id": {
+              "id": "v22"
+            },
+            "source": " Case hospitalization ratio",
+            "grounding": null,
+            "extraction_source": null,
+            "provenance": {
+              "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+              "timestamp": "2023-07-07T16:46:30.127525"
+            }
+          }
+        ],
+        "value_specs": null,
+        "groundings": [],
+        "data_columns": [
+          {
+            "id": {
+              "id": "6-2"
+            },
+            "name": "new_hospitalized_patients",
+            "dataset": {
+              "id": {
+                "id": "6"
+              },
+              "name": "usa-hospitalizations.csv",
+              "metadata": "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-hospitalizations.csv"
+            }
+          },
+          {
+            "id": {
+              "id": "6-3"
+            },
+            "name": "cumulative_hospitalized_patients",
+            "dataset": {
+              "id": {
+                "id": "6"
+              },
+              "name": "usa-hospitalizations.csv",
+              "metadata": "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-hospitalizations.csv"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "anchored_extraction",
+      "amr_element_id": null,
+      "payload": {
+        "id": {
+          "id": "v23"
+        },
+        "names": [
+          {
+            "id": {
+              "id": "v23"
+            },
+            "name": "I_TO_H_TIME",
+            "extraction_source": null,
+            "provenance": {
+              "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+              "timestamp": "2023-07-07T16:46:30.127525"
+            }
+          }
+        ],
+        "descriptions": [
+          {
+            "id": {
+              "id": "v23"
+            },
+            "source": " Time from symptom onset to hospitalization",
+            "grounding": null,
+            "extraction_source": null,
+            "provenance": {
+              "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+              "timestamp": "2023-07-07T16:46:30.127525"
+            }
+          }
+        ],
+        "value_specs": null,
+        "groundings": [],
+        "data_columns": []
+      }
+    },
+    {
+      "type": "anchored_extraction",
+      "amr_element_id": null,
+      "payload": {
+        "id": {
+          "id": "v24"
+        },
+        "names": [
+          {
+            "id": {
+              "id": "v24"
+            },
+            "name": "H_TIME",
+            "extraction_source": null,
+            "provenance": {
+              "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+              "timestamp": "2023-07-07T16:46:30.127525"
+            }
+          }
+        ],
+        "descriptions": [
+          {
+            "id": {
+              "id": "v24"
+            },
+            "source": " Duration of hospitalization",
+            "grounding": null,
+            "extraction_source": null,
+            "provenance": {
+              "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+              "timestamp": "2023-07-07T16:46:30.127525"
+            }
+          },
+          {
+            "id": {
+              "id": "v24"
+            },
+            "source": " Number of days anfrac",
+            "grounding": null,
+            "extraction_source": null,
+            "provenance": {
+              "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+              "timestamp": "2023-07-07T16:46:30.127525"
+            }
+          }
+        ],
+        "value_specs": null,
+        "groundings": [
+          {
+            "grounding_text": "protein timeless homolog (human)",
+            "grounding_id": "pr:Q9UNS1",
+            "source": [],
+            "score": 1.0,
+            "provenance": {
+              "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+              "timestamp": "2023-07-07T16:46:30.127525"
+            }
+          }
+        ],
+        "data_columns": [
+          {
+            "id": {
+              "id": "6-4"
+            },
+            "name": "current_hospitalized_patients",
+            "dataset": {
+              "id": {
+                "id": "6"
+              },
+              "name": "usa-hospitalizations.csv",
+              "metadata": "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-hospitalizations.csv"
+            }
+          },
+          {
+            "id": {
+              "id": "5-92"
+            },
+            "name": "cumulative_hospitalized_patients_age_0",
+            "dataset": {
+              "id": {
+                "id": "5"
+              },
+              "name": "usa-cases-hospitalized-by-age.csv",
+              "metadata": "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-cases-hospitalized-by-age.csv"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "anchored_extraction",
+      "amr_element_id": null,
+      "payload": {
+        "id": {
+          "id": "v25"
+        },
+        "names": [
+          {
+            "id": {
+              "id": "v25"
+            },
+            "name": "D_REPORT_TIME",
+            "extraction_source": null,
+            "provenance": {
+              "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+              "timestamp": "2023-07-07T16:46:30.127525"
+            }
+          }
+        ],
+        "descriptions": [
+          {
+            "id": {
+              "id": "v25"
+            },
+            "source": " Time between death and reporting",
+            "grounding": null,
+            "extraction_source": null,
+            "provenance": {
+              "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+              "timestamp": "2023-07-07T16:46:30.127525"
+            }
+          }
+        ],
+        "value_specs": null,
+        "groundings": [],
+        "data_columns": []
+      }
+    },
+    {
+      "type": "anchored_extraction",
+      "amr_element_id": null,
+      "payload": {
+        "id": {
+          "id": "v26"
+        },
+        "names": [
+          {
+            "id": {
+              "id": "v26"
+            },
+            "name": "Tg",
+            "extraction_source": null,
+            "provenance": {
+              "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+              "timestamp": "2023-07-07T16:46:30.127525"
+            }
+          }
+        ],
+        "descriptions": [
+          {
+            "id": {
+              "id": "v26"
+            },
+            "source": " Mean generation interval (in days)",
+            "grounding": null,
+            "extraction_source": null,
+            "provenance": {
+              "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+              "timestamp": "2023-07-07T16:46:30.127525"
+            }
+          }
+        ],
+        "value_specs": null,
+        "groundings": [],
+        "data_columns": []
+      }
+    },
+    {
+      "type": "anchored_extraction",
+      "amr_element_id": null,
+      "payload": {
+        "id": {
+          "id": "v27"
+        },
+        "names": [
+          {
+            "id": {
+              "id": "v27"
+            },
+            "name": "CHR",
+            "extraction_source": null,
+            "provenance": {
+              "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+              "timestamp": "2023-07-07T16:46:30.127525"
+            }
+          }
+        ],
+        "descriptions": [
+          {
+            "id": {
+              "id": "v27"
+            },
+            "source": " Case hospitalization-severity ratio",
+            "grounding": null,
+            "extraction_source": null,
+            "provenance": {
+              "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+              "timestamp": "2023-07-07T16:46:30.127525"
+            }
+          }
+        ],
+        "value_specs": null,
+        "groundings": [
+          {
+            "grounding_text": "Chronic",
+            "grounding_id": "hp:0011010",
+            "source": [],
+            "score": 1.0,
+            "provenance": {
+              "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+              "timestamp": "2023-07-07T16:46:30.127525"
+            }
+          },
+          {
+            "grounding_text": "Cherkasy",
+            "grounding_id": "geonames:710791",
+            "source": [],
+            "score": 1.0,
+            "provenance": {
+              "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+              "timestamp": "2023-07-07T16:46:30.127525"
+            }
+          }
+        ],
+        "data_columns": []
+      }
+    },
+    {
+      "type": "anchored_extraction",
+      "amr_element_id": null,
+      "payload": {
+        "id": {
+          "id": "v28"
+        },
+        "names": [
+          {
+            "id": {
+              "id": "v28"
+            },
+            "name": "I_to_H_time",
+            "extraction_source": null,
+            "provenance": {
+              "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+              "timestamp": "2023-07-07T16:46:30.127525"
+            }
+          }
+        ],
+        "descriptions": [
+          {
+            "id": {
+              "id": "v28"
+            },
+            "source": " Time it takes from symptom onset to hospitalization (in days)",
+            "grounding": null,
+            "extraction_source": null,
+            "provenance": {
+              "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+              "timestamp": "2023-07-07T16:46:30.127525"
+            }
+          }
+        ],
+        "value_specs": null,
+        "groundings": [],
+        "data_columns": []
+      }
+    },
+    {
+      "type": "anchored_extraction",
+      "amr_element_id": null,
+      "payload": {
+        "id": {
+          "id": "v29"
+        },
+        "names": [
+          {
+            "id": {
+              "id": "v29"
+            },
+            "name": "Contact-Matrix Based NPIs",
+            "extraction_source": null,
+            "provenance": {
+              "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+              "timestamp": "2023-07-07T16:46:30.127525"
+            }
+          }
+        ],
+        "descriptions": [
+          {
+            "id": {
+              "id": "v29"
+            },
+            "source": " NPIs that effect certain age groups within the total population.",
+            "grounding": null,
+            "extraction_source": null,
+            "provenance": {
+              "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+              "timestamp": "2023-07-07T16:46:30.127525"
+            }
+          }
+        ],
+        "value_specs": null,
+        "groundings": [],
+        "data_columns": [
+          {
+            "id": {
+              "id": "4-6"
+            },
+            "name": "C1M_School closing",
+            "dataset": {
+              "id": {
+                "id": "4"
+              },
+              "name": "OxCGRT_nat_latest.csv",
+              "metadata": "https://raw.githubusercontent.com/OxCGRT/covid-policy-tracker/master/data/OxCGRT_nat_latest.csv"
+            }
+          },
+          {
+            "id": {
+              "id": "4-8"
+            },
+            "name": "C2M_Workplace closing",
+            "dataset": {
+              "id": {
+                "id": "4"
+              },
+              "name": "OxCGRT_nat_latest.csv",
+              "metadata": "https://raw.githubusercontent.com/OxCGRT/covid-policy-tracker/master/data/OxCGRT_nat_latest.csv"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "anchored_extraction",
+      "amr_element_id": null,
+      "payload": {
+        "id": {
+          "id": "v30"
+        },
+        "names": [
+          {
+            "id": {
+              "id": "v30"
+            },
+            "name": "Mobility Based NPI",
+            "extraction_source": null,
+            "provenance": {
+              "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+              "timestamp": "2023-07-07T16:46:30.127525"
+            }
+          }
+        ],
+        "descriptions": [
+          {
+            "id": {
+              "id": "v30"
+            },
+            "source": " NPIs that lead to changes in mobility/movement between administrative districts.",
+            "grounding": null,
+            "extraction_source": null,
+            "provenance": {
+              "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+              "timestamp": "2023-07-07T16:46:30.127525"
+            }
+          }
+        ],
+        "value_specs": null,
+        "groundings": [],
+        "data_columns": [
+          {
+            "id": {
+              "id": "4-18"
+            },
+            "name": "C7M_Restrictions on internal movement",
+            "dataset": {
+              "id": {
+                "id": "4"
+              },
+              "name": "OxCGRT_nat_latest.csv",
+              "metadata": "https://raw.githubusercontent.com/OxCGRT/covid-policy-tracker/master/data/OxCGRT_nat_latest.csv"
+            }
+          },
+          {
+            "id": {
+              "id": "4-19"
+            },
+            "name": "C7M_Flag",
+            "dataset": {
+              "id": {
+                "id": "4"
+              },
+              "name": "OxCGRT_nat_latest.csv",
+              "metadata": "https://raw.githubusercontent.com/OxCGRT/covid-policy-tracker/master/data/OxCGRT_nat_latest.csv"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "anchored_extraction",
+      "amr_element_id": null,
+      "payload": {
+        "id": {
+          "id": "v31"
+        },
+        "names": [
+          {
+            "id": {
+              "id": "v31"
+            },
+            "name": "Reproduction Number Based NPI",
+            "extraction_source": null,
+            "provenance": {
+              "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+              "timestamp": "2023-07-07T16:46:30.127525"
+            }
+          }
+        ],
+        "descriptions": [
+          {
+            "id": {
+              "id": "v31"
+            },
+            "source": " NPIs that have an effect on the overall scaling of transmissibility.",
+            "grounding": null,
+            "extraction_source": null,
+            "provenance": {
+              "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+              "timestamp": "2023-07-07T16:46:30.127525"
+            }
+          }
+        ],
+        "value_specs": null,
+        "groundings": [],
+        "data_columns": [
+          {
+            "id": {
+              "id": "4-53"
+            },
+            "name": "StringencyIndex_Average",
+            "dataset": {
+              "id": {
+                "id": "4"
+              },
+              "name": "OxCGRT_nat_latest.csv",
+              "metadata": "https://raw.githubusercontent.com/OxCGRT/covid-policy-tracker/master/data/OxCGRT_nat_latest.csv"
+            }
+          },
+          {
+            "id": {
+              "id": "4-55"
+            },
+            "name": "GovernmentResponseIndex_Average",
+            "dataset": {
+              "id": {
+                "id": "4"
+              },
+              "name": "OxCGRT_nat_latest.csv",
+              "metadata": "https://raw.githubusercontent.com/OxCGRT/covid-policy-tracker/master/data/OxCGRT_nat_latest.csv"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "document_collection",
+      "amr_element_id": null,
+      "payload": {
+        "documents": [
+          {
+            "id": {
+              "id": "1"
+            },
+            "source_file": "d096ade60e503c888b756724e3818835__bucky",
+            "doi": ""
+          }
+        ]
+      }
+    }
+  ]
+}
