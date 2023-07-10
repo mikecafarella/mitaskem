@@ -130,6 +130,78 @@ def find_vars_from_text(text: str, gpt_key: str):
 
     return ast.literal_eval(vars_to_json(vars_dedup(outputs)))
 
+from methods import create_prompt_tasks, fork_join_requests
+async def afind_vars_from_text(text: str, gpt_key: str):
+    with open(os.path.join(os.path.dirname(__file__), 'prompts/text_var_prompt.txt'), "r") as f:
+        var_prompt = f.read()
+    
+    model_name = 'text-davinci-003'
+    chunks = create_prompt_tasks(prompt=var_prompt, document=text, 
+                                     model_name=model_name, chunk_token_length=None, answer_token_length=256)
+    res = await fork_join_requests(chunks, model=model_name)
+    fres = []
+    for r in res:
+        fres.append(r.strip('\nNone')) # always ends in \nNone with current prompt...
+    
+    unified = '\n'.join(fres)
+    return ast.literal_eval(vars_to_json(vars_dedup(unified)))
+
+async def async_mit_extraction_restAPI(file_name, gpt_key, cache_dir="/tmp/askem"):
+    paper_name = file_name.split(".txt")[0]
+    org_file = os.path.join(cache_dir, file_name)
+    print("is file existing", os.path.exists(org_file))
+    extract_vars(org_file, cache_dir)
+    file_path = os.path.join(cache_dir, paper_name+"_vars.txt")
+    print(file_path)
+    with open(file_path, "r") as f:
+        text = f.read()
+        json_str = await afind_vars_from_text(text, gpt_key)
+        print(type(json_str))
+
+    dkg_json = json.loads(json.dumps(json_str))
+    for variable in dkg_json:
+        variable["title"] = paper_name
+    dkg_json_string = json.dumps(dkg_json)
+    print(dkg_json_string)
+    dirname = os.path.dirname(__file__)
+    dir = os.path.join(dirname, '../resources/dataset/ensemble')
+    # dir = "../resources/dataset/ensemble/"
+    # with open(os.path.join(dir,"headers.txt"), "w+") as fw:
+    #     for filename in os.listdir(dir):
+    #         file = os.path.join(dir, filename)
+    #         if os.path.isfile(file) and file.endswith(".csv"):
+    #             fw.write("{}:\t{}".format(filename, open(file, "r").readline()))
+
+    with open(os.path.join(dir, "headers.txt")) as f:
+        dataset_str = f.read()
+        print(dataset_str[:419])
+
+
+    json_str, success = vars_dataset_connection(dkg_json_string, dataset_str, gpt_key)
+    print(json_str)
+
+    data_json = json.loads(json_str)
+
+    # %%
+    extraction = os.path.join(cache_dir, paper_name + "__mit-extraction.json")
+    with open(extraction, 'w', encoding='utf-8') as json_file:
+        json.dump(data_json, json_file, ensure_ascii=False, indent=4)
+    # %% md
+
+    load_concise_vars_from_raw(
+        os.path.join(cache_dir, paper_name + "__mit-extraction.json"),
+        os.path.join(cache_dir, paper_name + "__mit-concise.txt"))
+
+    # generate json with dataset id in file "filename__mit-extraction_id.json"
+    modify_dataset(
+        os.path.join(cache_dir, paper_name + "__mit-extraction.json"),
+        os.path.join(dir,'headers.txt'),
+        os.path.join(dir,'catalog.txt'))
+
+    # read and file from "filename__mit-extraction_id.json" and convert to TA1 json format
+    a_collection = import_mit(Path(cache_dir) / ( paper_name + "__mit-extraction_id.json"))
+    return a_collection
+
 def mit_extraction_restAPI(file_name, gpt_key, cache_dir="/tmp/askem"):
     paper_name = file_name.split(".txt")[0]
     org_file = os.path.join(cache_dir, file_name)

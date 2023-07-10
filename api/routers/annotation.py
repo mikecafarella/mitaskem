@@ -6,7 +6,7 @@ from fastapi import APIRouter, status, UploadFile, File, HTTPException
 from fastapi.responses import JSONResponse
 
 from file_cache import save_file_to_cache
-from mit_extraction import mit_extraction_restAPI
+from mit_extraction import async_mit_extraction_restAPI
 
 sys.path.append(
     os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -95,7 +95,7 @@ async def upload_file_annotate(gpt_key: str, file: UploadFile = File(...)):
         print(contents.decode())
         res_file = save_file_to_cache(file.filename, contents, "/tmp/askem")
         print("file exist: ", os.path.isfile("/tmp/askem/"+res_file))
-        return mit_extraction_restAPI(res_file, key, "/tmp/askem")
+        return await async_mit_extraction_restAPI(res_file, key, "/tmp/askem")
 
         # return {"file name": res_file, "file contents": text}
     except Exception as e:
