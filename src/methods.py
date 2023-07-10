@@ -10,7 +10,6 @@ import re
 def clean_spaces(text):
     text1 = re.sub(' +', ' ', text)
     text2 = re.sub('\n+', '\n', text1)
-    text3 = re.sub('\r+', '', text2)
     return text2
 
 def strip_latex_preamble(text):
@@ -26,6 +25,7 @@ _context_lengths = {
     'text-davinci-003':4097,
     'gpt-3.5-turbo-16k':16000, ## may be slightly larger
     'gpt-3.5-turbo':4097,
+    'gpt-4':8000,
 }
 
 def split_into_chunks(text_tokens, max_chunk_size_tokens : int):
@@ -62,40 +62,40 @@ def create_prompt_tasks(prompt, document, model_name, answer_token_length=256, c
     text_tasks  = tokenizer.decode_batch([pre_tok + chunk + post_tok for chunk in chunks])
     return text_tasks
 
+async def fork_join_requests(prompts, model : str):
+    """
+    send one request per prompt 
+    """
 
-async def asend_task_requests(prompts, model : str):
-    acc = []
-
-    chat_completion_models = ['gpt-3.5-turbo-16k','gpt-3.5-turbo']
+    chat_completion_models = ['gpt-3.5-turbo-16k','gpt-3.5-turbo', 'gpt-4']
     
+    acc = []
     for prompt in prompts:
         if model in chat_completion_models:
-            ## should we keep chat around for further questions?
-            t = asyncio.create_task(openai.ChatCompletion.acreate(model=model, 
-                                                                   messages=[
-                                                                            {"role": "user", "content": prompt},
-                                                                   ],
-                                                                  temperature=0.0))
+            # TODO: chat completions lets one split the prompt.
+            cor = openai.ChatCompletion.acreate(model=model, 
+                                                messages=[
+                                                    #{"role":"system", "content":TODO}
+                                                    {"role": "user", "content": prompt},
+                                                ],
+                                                temperature=0.0)
         else:
-            t = asyncio.create_task(openai.Completion.acreate(model=model, prompt=prompt, 
-                                                              temperature=0.0, max_tokens=256))
-
+            cor = openai.Completion.acreate(model=model, prompt=prompt, 
+                                            temperature=0.0, max_tokens=256)
             
-        acc.append(t)
+        acc.append(asyncio.create_task(cor))
 
-         
-    output = ''
-    for t in acc:        
+    outputs = []
+    for cor in acc:        
         try:        
-            response = await t
+            response = await cor
         except OpenAIError as err:   
             return f"OpenAI connection error: {err}", False
 
         if model in chat_completion_models:
             result = response.choices[0].message.content.strip()
-
         else:
             result = response.choices[0].text.strip()
-        output += result
+        outputs.append(result)
 
-    return output
+    return outputs
