@@ -96,6 +96,7 @@ async def upload_file_annotate(gpt_key: str, file: UploadFile = File(...)):
         res_file = save_file_to_cache(file.filename, contents, "/tmp/askem")
         print("file exist: ", os.path.isfile("/tmp/askem/"+res_file))
         return mit_extraction_restAPI(res_file, key, "/tmp/askem")
+
         # return {"file name": res_file, "file contents": text}
     except Exception as e:
         raise HTTPException(status_code=400, detail=str(e))

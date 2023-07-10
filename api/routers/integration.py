@@ -25,7 +25,7 @@ router = APIRouter()
 @router.post("/get_mapping", tags=["TA1-Integration"])
 async def upload_files_integration(gpt_key: str, mit_file: UploadFile = File(...), arizona_file: UploadFile = File(...)):
     """
-        Upload MIT and Arizona extractions, build entity mapping and align them together.
+        Upload MIT and Arizona extractions in TA1 schema, build entity mapping and align them together.
     """
     try:
         key = gpt_key
@@ -53,15 +53,16 @@ async def upload_files_integration(gpt_key: str, mit_file: UploadFile = File(...
         mit_text = open(os.path.join(cache_dir, mit_concise)).read()
         arizona_text = open(os.path.join(cache_dir, arizona_concise)).read()
 
-        map_file = res_mit_file.split("_mit-")[0] + "-map.txt"
-        print(map_file)
+        map_file = res_mit_file.replace(".json", "-map.txt")
 
         mit_arizona_map = build_map_from_concise_vars(mit_text, arizona_text,key)
+
+        print(mit_arizona_map)
         open(os.path.join(cache_dir, map_file), "w").write(mit_arizona_map)
         print("map file: ", map_file)
 
-        a_collection = import_arizona(Path(os.path.join(cache_dir, res_arizona_file)))
-        m_collection = import_mit(Path(os.path.join(cache_dir, res_mit_file)))
+        a_collection = AttributeCollection.from_json(Path(os.path.join(cache_dir, res_arizona_file)))
+        m_collection = AttributeCollection.from_json(Path(os.path.join(cache_dir, res_mit_file)))
         merged = merge_collections(a_collection, m_collection,
                                    Path(os.path.join(cache_dir, map_file)))
         # integreated_file = res_mit_file.split("mit-")[0] + "-integrated.json"
@@ -99,6 +100,7 @@ if __name__ == "__main__":
     map_file = res_mit_file.split("_mit-")[0] + "-map.txt"
 
     mit_arizona_map = build_map_from_concise_vars(mit_text, arizona_text, key)
+    print(mit_arizona_map)
     open(os.path.join(cache_dir, map_file), "w").write(mit_arizona_map)
     print("map file: ", map_file)
 
@@ -110,4 +112,4 @@ if __name__ == "__main__":
     integreated_file = res_mit_file.split("mit-")[0] + "-integrated.json"
     merged.save_json(os.path.join(cache_dir, integreated_file))
     integreated_json = open(os.path.join(cache_dir, integreated_file)).read()
-    print({"file name": integreated_file, "file contents": integreated_json})
+    # print({"file name": integreated_file, "file contents": integreated_json})

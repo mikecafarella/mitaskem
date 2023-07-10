@@ -1,665 +1,872 @@
 [
-  {
-    "type": "variable",
-    "name": "S_i j",
-    "id": "v0",
-    "text_annotations": [
-      " Proportion of individuals who are susceptible to the virus"
-    ],
-    "dkg_annotations": [
-      [
-        "geonames:2479536",
-        "Skikda"
-      ],
-      [
-        "geonames:487495",
-        "Sterlitamak"
-      ]
-    ],
-    "title": "d096ade60e503c888b756724e3818835__bucky",
-    "data_annotations": []
-  },
-  {
-    "type": "variable",
-    "name": "E_i j",
-    "id": "v1",
-    "text_annotations": [
-      " Proportion of individuals who have been exposed to the virus"
-    ],
-    "dkg_annotations": [
-      [
-        "geonames:1816670",
-        "Beijing"
-      ],
-      [
-        "geonames:1799491",
-        "Neijiang"
-      ]
-    ],
-    "title": "d096ade60e503c888b756724e3818835__bucky",
-    "data_annotations": []
-  },
-  {
-    "type": "variable",
-    "name": "I_i, j^hosp",
-    "id": "v2",
-    "text_annotations": [
-      " Proportion of individuals that are exhibiting severe disease symptoms and are in need of hospitalization"
-    ],
-    "dkg_annotations": [],
-    "title": "d096ade60e503c888b756724e3818835__bucky",
-    "data_annotations": [
-      [
-        [
-          6,
-          "usa-hospitalizations.csv",
-          2,
-          "new_hospitalized_patients"
+    {
+        "type": "variable",
+        "name": "S_ij",
+        "id": "v0",
+        "text_annotations": [
+            " Proportion of individuals who are susceptible to the virus",
+            " Proportion of individuals whoI^{\text {asym }}"
         ],
-        "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-hospitalizations.csv"
-      ],
-      [
-        [
-          6,
-          "usa-hospitalizations.csv",
-          3,
-          "cumulative_hospitalized_patients"
+        "dkg_annotations": [
+            [
+                "geonames:1670106",
+                "Sanxia"
+            ],
+            [
+                "geonames:1795270",
+                "Shijiazhuang"
+            ]
         ],
-        "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-hospitalizations.csv"
-      ]
-    ]
-  },
-  {
-    "type": "variable",
-    "name": "I_i, j^mild",
-    "id": "v3",
-    "text_annotations": [
-      " Proportion of individuals that are exhibiting mild disease symptoms"
-    ],
-    "dkg_annotations": [],
-    "title": "d096ade60e503c888b756724e3818835__bucky",
-    "data_annotations": [
-      [
-        [
-          5,
-          "usa-cases-hospitalized-by-age.csv",
-          2,
-          "new_confirmed_age_0"
+        "title": "bucky",
+        "doi": "",
+        "url": "",
+        "data_annotations": []
+    },
+    {
+        "type": "variable",
+        "name": "E_ij",
+        "id": "v1",
+        "text_annotations": [
+            " Proportion of individuals who have been exposed to the virus"
         ],
-        "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-cases-hospitalized-by-age.csv"
-      ],
-      [
-        [
-          5,
-          "usa-cases-hospitalized-by-age.csv",
-          3,
-          "new_confirmed_age_1"
+        "dkg_annotations": [
+            [
+                "geonames:1816670",
+                "Beijing"
+            ],
+            [
+                "geonames:2038349",
+                "Beijing"
+            ]
         ],
-        "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-cases-hospitalized-by-age.csv"
-      ]
-    ]
-  },
-  {
-    "type": "variable",
-    "name": "I_i, j^asym",
-    "id": "v4",
-    "text_annotations": [
-      " Proportion of individuals who are infected but asymptomatic"
-    ],
-    "dkg_annotations": [],
-    "title": "d096ade60e503c888b756724e3818835__bucky",
-    "data_annotations": []
-  },
-  {
-    "type": "variable",
-    "name": "R_i, j",
-    "id": "v5",
-    "text_annotations": [
-      " Proportion of individuals who have recovered from the virus and are no longer capable of infecting other individuals"
-    ],
-    "dkg_annotations": [],
-    "title": "d096ade60e503c888b756724e3818835__bucky",
-    "data_annotations": [
-      [
-        [
-          5,
-          "usa-cases-hospitalized-by-age.csv",
-          52,
-          "cumulative_recovered_age_0"
+        "title": "bucky",
+        "doi": "",
+        "url": "",
+        "data_annotations": [
+            [
+                [
+                    5,
+                    "usa-cases-hospitalized-by-age.csv",
+                    2,
+                    "new_confirmed_age_0"
+                ],
+                "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-cases-hospitalized-by-age.csv"
+            ],
+            [
+                [
+                    5,
+                    "usa-cases-hospitalized-by-age.csv",
+                    3,
+                    "new_confirmed_age_1"
+                ],
+                "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-cases-hospitalized-by-age.csv"
+            ]
+        ]
+    },
+    {
+        "type": "variable",
+        "name": "I_ij^hosp",
+        "id": "v2",
+        "text_annotations": [
+            " Proportion of individuals that are exhibiting severe disease symptoms and are in need of hospitalization"
         ],
-        "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-cases-hospitalized-by-age.csv"
-      ],
-      [
-        [
-          5,
-          "usa-cases-hospitalized-by-age.csv",
-          53,
-          "cumulative_recovered_age_1"
+        "dkg_annotations": [],
+        "title": "bucky",
+        "doi": "",
+        "url": "",
+        "data_annotations": [
+            [
+                [
+                    6,
+                    "usa-hospitalizations.csv",
+                    2,
+                    "new_hospitalized_patients"
+                ],
+                "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-hospitalizations.csv"
+            ],
+            [
+                [
+                    6,
+                    "usa-hospitalizations.csv",
+                    3,
+                    "cumulative_hospitalized_patients"
+                ],
+                "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-hospitalizations.csv"
+            ]
+        ]
+    },
+    {
+        "type": "variable",
+        "name": "I_ij^mild",
+        "id": "v3",
+        "text_annotations": [
+            " Proportion of individuals that are exhibiting mild disease symptoms"
         ],
-        "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-cases-hospitalized-by-age.csv"
-      ]
-    ]
-  },
-  {
-    "type": "variable",
-    "name": "R_i, j^hosp",
-    "id": "v6",
-    "text_annotations": [
-      " Proportion of individuals who have recovered from the virus after a period of time in a hospital"
-    ],
-    "dkg_annotations": [],
-    "title": "d096ade60e503c888b756724e3818835__bucky",
-    "data_annotations": []
-  },
-  {
-    "type": "variable",
-    "name": "D_i, j",
-    "id": "v7",
-    "text_annotations": [
-      " Proportion of individuals who have succumbed as a direct result of the virus"
-    ],
-    "dkg_annotations": [],
-    "title": "d096ade60e503c888b756724e3818835__bucky",
-    "data_annotations": [
-      [
-        [
-          5,
-          "usa-cases-hospitalized-by-age.csv",
-          22,
-          "new_deceased_age_0"
+        "dkg_annotations": [],
+        "title": "bucky",
+        "doi": "",
+        "url": "",
+        "data_annotations": [
+            [
+                [
+                    5,
+                    "usa-cases-hospitalized-by-age.csv",
+                    6,
+                    "new_confirmed_age_4"
+                ],
+                "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-cases-hospitalized-by-age.csv"
+            ],
+            [
+                [
+                    5,
+                    "usa-cases-hospitalized-by-age.csv",
+                    16,
+                    "cumulative_confirmed_age_4"
+                ],
+                "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-cases-hospitalized-by-age.csv"
+            ]
+        ]
+    },
+    {
+        "type": "variable",
+        "name": "I_ij^asym",
+        "id": "v4",
+        "text_annotations": [
+            " Proportion of individuals who are infected but asymptomatic"
         ],
-        "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-cases-hospitalized-by-age.csv"
-      ],
-      [
-        [
-          5,
-          "usa-cases-hospitalized-by-age.csv",
-          23,
-          "new_deceased_age_1"
+        "dkg_annotations": [],
+        "title": "bucky",
+        "doi": "",
+        "url": "",
+        "data_annotations": [
+            [
+                [
+                    5,
+                    "usa-cases-hospitalized-by-age.csv",
+                    7,
+                    "new_confirmed_age_5"
+                ],
+                "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-cases-hospitalized-by-age.csv"
+            ],
+            [
+                [
+                    5,
+                    "usa-cases-hospitalized-by-age.csv",
+                    17,
+                    "cumulative_confirmed_age_5"
+                ],
+                "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-cases-hospitalized-by-age.csv"
+            ]
+        ]
+    },
+    {
+        "type": "variable",
+        "name": "R_ij",
+        "id": "v5",
+        "text_annotations": [
+            " Proportion of individuals who have recovered from the virus and are no longer capable of infecting other individuals"
         ],
-        "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-cases-hospitalized-by-age.csv"
-      ]
-    ]
-  },
-  {
-    "type": "variable",
-    "name": "β_i, j",
-    "id": "v8",
-    "text_annotations": [
-      " Force of infection on a member of age group i in location j"
-    ],
-    "dkg_annotations": [],
-    "title": "d096ade60e503c888b756724e3818835__bucky",
-    "data_annotations": []
-  },
-  {
-    "type": "variable",
-    "name": "σ",
-    "id": "v9",
-    "text_annotations": [
-      " Viral latent period"
-    ],
-    "dkg_annotations": [
-      [
-        "geonames:1280737",
-        "Lhasa"
-      ],
-      [
-        "geonames:1496153",
-        "Omsk"
-      ]
-    ],
-    "title": "d096ade60e503c888b756724e3818835__bucky",
-    "data_annotations": []
-  },
-  {
-    "type": "variable",
-    "name": "α",
-    "id": "v10",
-    "text_annotations": [
-      " Rate of infections that are asymptomatic"
-    ],
-    "dkg_annotations": [
-      [
-        "geonames:298117",
-        "Van"
-      ],
-      [
-        "geonames:71137",
-        "Sanaa"
-      ]
-    ],
-    "title": "d096ade60e503c888b756724e3818835__bucky",
-    "data_annotations": []
-  },
-  {
-    "type": "variable",
-    "name": "ν_i",
-    "id": "v11",
-    "text_annotations": [
-      " Fraction of individuals in age group i who are susceptible to the virusI^{\text {asym }}"
-    ],
-    "dkg_annotations": [],
-    "title": "d096ade60e503c888b756724e3818835__bucky",
-    "data_annotations": []
-  },
-  {
-    "type": "variable",
-    "name": "I^{\text {mild }}",
-    "id": "v12",
-    "text_annotations": [
-      " Mild infected state"
-    ],
-    "dkg_annotations": [],
-    "title": "d096ade60e503c888b756724e3818835__bucky",
-    "data_annotations": [
-      [
-        [
-          5,
-          "usa-cases-hospitalized-by-age.csv",
-          2,
-          "new_confirmed_age_0"
+        "dkg_annotations": [
+            [
+                "geonames:3191648",
+                "Rijeka"
+            ],
+            [
+                "geonames:456172",
+                "Riga"
+            ]
         ],
-        "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-cases-hospitalized-by-age.csv"
-      ],
-      [
-        [
-          5,
-          "usa-cases-hospitalized-by-age.csv",
-          3,
-          "new_confirmed_age_1"
+        "title": "bucky",
+        "doi": "",
+        "url": "",
+        "data_annotations": [
+            [
+                [
+                    0,
+                    "usa-cases-deaths.csv",
+                    8,
+                    "cumulative_recovered"
+                ],
+                "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-cases-deaths.csv"
+            ],
+            [
+                [
+                    5,
+                    "usa-cases-hospitalized-by-age.csv",
+                    52,
+                    "cumulative_recovered_age_0"
+                ],
+                "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-cases-hospitalized-by-age.csv"
+            ]
+        ]
+    },
+    {
+        "type": "variable",
+        "name": "R_ij^hosp",
+        "id": "v6",
+        "text_annotations": [
+            " Proportion of individuals who have recovered from the virus after a period of time in a hospital"
         ],
-        "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-cases-hospitalized-by-age.csv"
-      ]
-    ]
-  },
-  {
-    "type": "variable",
-    "name": "I^{\text {hosp }}",
-    "id": "v13",
-    "text_annotations": [
-      " Severe infected state"
-    ],
-    "dkg_annotations": [],
-    "title": "d096ade60e503c888b756724e3818835__bucky",
-    "data_annotations": [
-      [
-        [
-          5,
-          "usa-cases-hospitalized-by-age.csv",
-          82,
-          "new_hospitalized_patients_age_0"
+        "dkg_annotations": [],
+        "title": "bucky",
+        "doi": "",
+        "url": "",
+        "data_annotations": [
+            [
+                [
+                    6,
+                    "usa-hospitalizations.csv",
+                    3,
+                    "cumulative_hospitalized_patients"
+                ],
+                "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-hospitalizations.csv"
+            ],
+            [
+                [
+                    6,
+                    "usa-hospitalizations.csv",
+                    4,
+                    "current_hospitalized_patients"
+                ],
+                "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-hospitalizations.csv"
+            ]
+        ]
+    },
+    {
+        "type": "variable",
+        "name": "D_ij",
+        "id": "v7",
+        "text_annotations": [
+            " Proportion of individuals who have succumbed as a direct result of the virus"
         ],
-        "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-cases-hospitalized-by-age.csv"
-      ],
-      [
-        [
-          5,
-          "usa-cases-hospitalized-by-age.csv",
-          83,
-          "new_hospitalized_patients_age_1"
+        "dkg_annotations": [
+            [
+                "geonames:3021372",
+                "Dijon"
+            ],
+            [
+                "geonames:1514588",
+                "Andijon"
+            ]
         ],
-        "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-cases-hospitalized-by-age.csv"
-      ]
-    ]
-  },
-  {
-    "type": "variable",
-    "name": "$\\gamma$",
-    "id": "v14",
-    "text_annotations": [
-      " Rate of recovery from virus"
-    ],
-    "dkg_annotations": [],
-    "title": "d096ade60e503c888b756724e3818835__bucky",
-    "data_annotations": [
-      [
-        [
-          4,
-          "OxCGRT_nat_latest.csv",
-          57,
-          "ContainmentHealthIndex_Average"
+        "title": "bucky",
+        "doi": "",
+        "url": "",
+        "data_annotations": [
+            [
+                [
+                    0,
+                    "usa-cases-deaths.csv",
+                    7,
+                    "cumulative_deceased"
+                ],
+                "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-cases-deaths.csv"
+            ],
+            [
+                [
+                    5,
+                    "usa-cases-hospitalized-by-age.csv",
+                    32,
+                    "cumulative_deceased_age_0"
+                ],
+                "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-cases-hospitalized-by-age.csv"
+            ]
+        ]
+    },
+    {
+        "type": "variable",
+        "name": "beta_ij",
+        "id": "v8",
+        "text_annotations": [
+            " Force of infection on a member of age group i in location j"
         ],
-        "https://raw.githubusercontent.com/OxCGRT/covid-policy-tracker/master/data/OxCGRT_nat_latest.csv"
-      ],
-      [
-        [
-          4,
-          "OxCGRT_nat_latest.csv",
-          58,
-          "ContainmentHealthIndex_Average_ForDisplay"
+        "dkg_annotations": [],
+        "title": "bucky",
+        "doi": "",
+        "url": "",
+        "data_annotations": []
+    },
+    {
+        "type": "variable",
+        "name": "sigma",
+        "id": "v9",
+        "text_annotations": [
+            " Viral latent period"
         ],
-        "https://raw.githubusercontent.com/OxCGRT/covid-policy-tracker/master/data/OxCGRT_nat_latest.csv"
-      ]
-    ]
-  },
-  {
-    "type": "variable",
-    "name": "$1 / \tau_{i}$",
-    "id": "v15",
-    "text_annotations": [
-      " Rate of recovery after period of illness"
-    ],
-    "dkg_annotations": [],
-    "title": "d096ade60e503c888b756724e3818835__bucky",
-    "data_annotations": []
-  },
-  {
-    "type": "variable",
-    "name": "$\\phi_{i} \\gamma$",
-    "id": "v16",
-    "text_annotations": [
-      " Rate of expiration from virus"
-    ],
-    "dkg_annotations": [],
-    "title": "d096ade60e503c888b756724e3818835__bucky",
-    "data_annotations": []
-  },
-  {
-    "type": "variable",
-    "name": "$R_{0}$",
-    "id": "v17",
-    "text_annotations": [
-      " Basic reproductive number",
-      " Reproduction number-based reduction in overall community transmission"
-    ],
-    "dkg_annotations": [],
-    "title": "d096ade60e503c888b756724e3818835__bucky",
-    "data_annotations": []
-  },
-  {
-    "type": "variable",
-    "name": "asym_frac",
-    "id": "v18",
-    "text_annotations": [
-      " Fraction of infections that are asymptomatic"
-    ],
-    "dkg_annotations": [],
-    "title": "d096ade60e503c888b756724e3818835__bucky",
-    "data_annotations": []
-  },
-  {
-    "type": "variable",
-    "name": "rel_inf_asym",
-    "id": "v19",
-    "text_annotations": [
-      " Relative infectiousness of asymptomatic individuals"
-    ],
-    "dkg_annotations": [],
-    "title": "d096ade60e503c888b756724e3818835__bucky",
-    "data_annotations": []
-  },
-  {
-    "type": "variable",
-    "name": "frac_trans_before_s",
-    "id": "v20",
-    "text_annotations": [
-      " Percentage of transmission prior to symptom onset"
-    ],
-    "dkg_annotations": [],
-    "title": "d096ade60e503c888b756724e3818835__bucky",
-    "data_annotations": []
-  },
-  {
-    "type": "variable",
-    "name": "F",
-    "id": "v21",
-    "text_annotations": [
-      " Case fatality ratio"
-    ],
-    "dkg_annotations": [
-      [
-        ""
-      ]
-    ],
-    "title": "d096ade60e503c888b756724e3818835__bucky",
-    "data_annotations": [
-      [
-        [
-          4,
-          "OxCGRT_nat_latest.csv",
-          50,
-          "ConfirmedDeaths"
+        "dkg_annotations": [
+            [
+                "probonto:k0000360",
+                "scale"
+            ],
+            [
+                "probonto:k0000469",
+                "scale"
+            ]
         ],
-        "https://raw.githubusercontent.com/OxCGRT/covid-policy-tracker/master/data/OxCGRT_nat_latest.csv"
-      ],
-      [
-        [
-          7,
-          "us-counties-2023.csv",
-          5,
-          "deaths"
+        "title": "bucky",
+        "doi": "",
+        "url": "",
+        "data_annotations": []
+    },
+    {
+        "type": "variable",
+        "name": "alpha",
+        "id": "v10",
+        "text_annotations": [
+            " Rate of infections that are asymptomatic"
         ],
-        "https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties-2023.csv"
-      ]
-    ]
-  },
-  {
-    "type": "variable",
-    "name": "H",
-    "id": "v22",
-    "text_annotations": [
-      " Case hospitalization ratio"
-    ],
-    "dkg_annotations": [
-      [
-        ""
-      ]
-    ],
-    "title": "d096ade60e503c888b756724e3818835__bucky",
-    "data_annotations": [
-      [
-        [
-          6,
-          "usa-hospitalizations.csv",
-          2,
-          "new_hospitalized_patients"
+        "dkg_annotations": [
+            [
+                "probonto:k0000066",
+                "alpha"
+            ],
+            [
+                "probonto:k0000096",
+                "alpha"
+            ]
         ],
-        "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-hospitalizations.csv"
-      ],
-      [
-        [
-          6,
-          "usa-hospitalizations.csv",
-          3,
-          "cumulative_hospitalized_patients"
+        "title": "bucky",
+        "doi": "",
+        "url": "",
+        "data_annotations": []
+    },
+    {
+        "type": "variable",
+        "name": "nu_i",
+        "id": "v11",
+        "text_annotations": [
+            " Fraction of cases necessitating hospitalization"
         ],
-        "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-hospitalizations.csv"
-      ]
-    ]
-  },
-  {
-    "type": "variable",
-    "name": "I_TO_H_TIME",
-    "id": "v23",
-    "text_annotations": [
-      " Time from symptom onset to hospitalization"
-    ],
-    "dkg_annotations": [],
-    "title": "d096ade60e503c888b756724e3818835__bucky",
-    "data_annotations": []
-  },
-  {
-    "type": "variable",
-    "name": "H_TIME",
-    "id": "v24",
-    "text_annotations": [
-      " Duration of hospitalization",
-      " Number of days anfrac"
-    ],
-    "dkg_annotations": [
-      [
-        "pr:Q9UNS1",
-        "protein timeless homolog (human)"
-      ]
-    ],
-    "title": "d096ade60e503c888b756724e3818835__bucky",
-    "data_annotations": [
-      [
-        [
-          6,
-          "usa-hospitalizations.csv",
-          4,
-          "current_hospitalized_patients"
+        "dkg_annotations": [
+            [
+                "ncit:C86558",
+                "Inuit"
+            ],
+            [
+                "geonames:1581130",
+                "Hanoi"
+            ]
         ],
-        "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-hospitalizations.csv"
-      ],
-      [
-        [
-          5,
-          "usa-cases-hospitalized-by-age.csv",
-          92,
-          "cumulative_hospitalized_patients_age_0"
+        "title": "bucky",
+        "doi": "",
+        "url": "",
+        "data_annotations": [
+            [
+                [
+                    6,
+                    "usa-hospitalizations.csv",
+                    2,
+                    "new_hospitalized_patients"
+                ],
+                "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-hospitalizations.csv"
+            ],
+            [
+                [
+                    6,
+                    "usa-hospitalizations.csv",
+                    3,
+                    "cumulative_hospitalized_patients"
+                ],
+                "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-hospitalizations.csv"
+            ]
+        ]
+    },
+    {
+        "type": "variable",
+        "name": "phi_i",
+        "id": "v12",
+        "text_annotations": [
+            " Case fatality rate for age group i"
         ],
-        "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-cases-hospitalized-by-age.csv"
-      ]
-    ]
-  },
-  {
-    "type": "variable",
-    "name": "D_REPORT_TIME",
-    "id": "v25",
-    "text_annotations": [
-      " Time between death and reporting"
-    ],
-    "dkg_annotations": [],
-    "title": "d096ade60e503c888b756724e3818835__bucky",
-    "data_annotations": []
-  },
-  {
-    "type": "variable",
-    "name": "Tg",
-    "id": "v26",
-    "text_annotations": [
-      " Mean generation interval (in days)"
-    ],
-    "dkg_annotations": [
-      [
-        ""
-      ]
-    ],
-    "title": "d096ade60e503c888b756724e3818835__bucky",
-    "data_annotations": []
-  },
-  {
-    "type": "variable",
-    "name": "CHR",
-    "id": "v27",
-    "text_annotations": [
-      " Case hospitalization-severity ratio"
-    ],
-    "dkg_annotations": [
-      [
-        "hp:0011010",
-        "Chronic"
-      ],
-      [
-        "geonames:710791",
-        "Cherkasy"
-      ]
-    ],
-    "title": "d096ade60e503c888b756724e3818835__bucky",
-    "data_annotations": []
-  },
-  {
-    "type": "variable",
-    "name": "I_to_H_time",
-    "id": "v28",
-    "text_annotations": [
-      " Time it takes from symptom onset to hospitalization (in days)"
-    ],
-    "dkg_annotations": [],
-    "title": "d096ade60e503c888b756724e3818835__bucky",
-    "data_annotations": []
-  },
-  {
-    "type": "variable",
-    "name": "Contact-Matrix Based NPIs",
-    "id": "v29",
-    "text_annotations": [
-      " NPIs that effect certain age groups within the total population."
-    ],
-    "dkg_annotations": [],
-    "title": "d096ade60e503c888b756724e3818835__bucky",
-    "data_annotations": [
-      [
-        [
-          4,
-          "OxCGRT_nat_latest.csv",
-          6,
-          "C1M_School closing"
+        "dkg_annotations": [],
+        "title": "bucky",
+        "doi": "",
+        "url": "",
+        "data_annotations": []
+    },
+    {
+        "type": "variable",
+        "name": "gamma",
+        "id": "v13",
+        "text_annotations": [
+            " Infectious period"
         ],
-        "https://raw.githubusercontent.com/OxCGRT/covid-policy-tracker/master/data/OxCGRT_nat_latest.csv"
-      ],
-      [
-        [
-          4,
-          "OxCGRT_nat_latest.csv",
-          8,
-          "C2M_Workplace closing"
+        "dkg_annotations": [
+            [
+                "probonto:k0001213",
+                "gamma"
+            ],
+            [
+                "probonto:k0000571",
+                "Gamma1"
+            ]
         ],
-        "https://raw.githubusercontent.com/OxCGRT/covid-policy-tracker/master/data/OxCGRT_nat_latest.csv"
-      ]
-    ]
-  },
-  {
-    "type": "variable",
-    "name": "Mobility Based NPI",
-    "id": "v30",
-    "text_annotations": [
-      " NPIs that lead to changes in mobility/movement between administrative districts."
-    ],
-    "dkg_annotations": [],
-    "title": "d096ade60e503c888b756724e3818835__bucky",
-    "data_annotations": [
-      [
-        [
-          4,
-          "OxCGRT_nat_latest.csv",
-          18,
-          "C7M_Restrictions on internal movement"
+        "title": "bucky",
+        "doi": "",
+        "url": "",
+        "data_annotations": []
+    },
+    {
+        "type": "variable",
+        "name": "tau_i",
+        "id": "v14",
+        "text_annotations": [
+            " Recovery period"
         ],
-        "https://raw.githubusercontent.com/OxCGRT/covid-policy-tracker/master/data/OxCGRT_nat_latest.csv"
-      ],
-      [
-        [
-          4,
-          "OxCGRT_nat_latest.csv",
-          19,
-          "C7M_Flag"
+        "dkg_annotations": [],
+        "title": "bucky",
+        "doi": "",
+        "url": "",
+        "data_annotations": []
+    },
+    {
+        "type": "variable",
+        "name": "I^{\text {mild }}",
+        "id": "v15",
+        "text_annotations": [
+            " Mild infected state"
         ],
-        "https://raw.githubusercontent.com/OxCGRT/covid-policy-tracker/master/data/OxCGRT_nat_latest.csv"
-      ]
-    ]
-  },
-  {
-    "type": "variable",
-    "name": "Reproduction Number Based NPI",
-    "id": "v31",
-    "text_annotations": [
-      " NPIs that have an effect on the overall scaling of transmissibility."
-    ],
-    "dkg_annotations": [],
-    "title": "d096ade60e503c888b756724e3818835__bucky",
-    "data_annotations": [
-      [
-        [
-          4,
-          "OxCGRT_nat_latest.csv",
-          53,
-          "StringencyIndex_Average"
+        "dkg_annotations": [],
+        "title": "bucky",
+        "doi": "",
+        "url": "",
+        "data_annotations": [
+            [
+                [
+                    5,
+                    "usa-cases-hospitalized-by-age.csv",
+                    6,
+                    "new_confirmed_age_4"
+                ],
+                "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-cases-hospitalized-by-age.csv"
+            ],
+            [
+                [
+                    5,
+                    "usa-cases-hospitalized-by-age.csv",
+                    16,
+                    "cumulative_confirmed_age_4"
+                ],
+                "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-cases-hospitalized-by-age.csv"
+            ]
+        ]
+    },
+    {
+        "type": "variable",
+        "name": "I^{\text {hosp }}",
+        "id": "v16",
+        "text_annotations": [
+            " Severe infected state"
         ],
-        "https://raw.githubusercontent.com/OxCGRT/covid-policy-tracker/master/data/OxCGRT_nat_latest.csv"
-      ],
-      [
-        [
-          4,
-          "OxCGRT_nat_latest.csv",
-          55,
-          "GovernmentResponseIndex_Average"
+        "dkg_annotations": [],
+        "title": "bucky",
+        "doi": "",
+        "url": "",
+        "data_annotations": [
+            [
+                [
+                    6,
+                    "usa-hospitalizations.csv",
+                    4,
+                    "current_hospitalized_patients"
+                ],
+                "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-hospitalizations.csv"
+            ],
+            [
+                [
+                    5,
+                    "usa-cases-hospitalized-by-age.csv",
+                    82,
+                    "new_hospitalized_patients_age_0"
+                ],
+                "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-cases-hospitalized-by-age.csv"
+            ]
+        ]
+    },
+    {
+        "type": "variable",
+        "name": "$\\gamma$",
+        "id": "v17",
+        "text_annotations": [
+            " Rate of recovery from virus"
         ],
-        "https://raw.githubusercontent.com/OxCGRT/covid-policy-tracker/master/data/OxCGRT_nat_latest.csv"
-      ]
-    ]
-  }
+        "dkg_annotations": [],
+        "title": "bucky",
+        "doi": "",
+        "url": "",
+        "data_annotations": []
+    },
+    {
+        "type": "variable",
+        "name": "$1 / \tau_{i}$",
+        "id": "v18",
+        "text_annotations": [
+            " Rate of recovery from severe symptoms"
+        ],
+        "dkg_annotations": [],
+        "title": "bucky",
+        "doi": "",
+        "url": "",
+        "data_annotations": []
+    },
+    {
+        "type": "variable",
+        "name": "$\\phi_{i} \\gamma$",
+        "id": "v19",
+        "text_annotations": [
+            " Rate of expiration from virus"
+        ],
+        "dkg_annotations": [],
+        "title": "bucky",
+        "doi": "",
+        "url": "",
+        "data_annotations": []
+    },
+    {
+        "type": "variable",
+        "name": "$R_{0}$",
+        "id": "v20",
+        "text_annotations": [
+            " Basic reproductive number",
+            " Reproduction number-based reduction in overall community transmission"
+        ],
+        "dkg_annotations": [],
+        "title": "bucky",
+        "doi": "",
+        "url": "",
+        "data_annotations": []
+    },
+    {
+        "type": "variable",
+        "name": "asym_frac",
+        "id": "v21",
+        "text_annotations": [
+            " Fraction of infections that are asymptomatic"
+        ],
+        "dkg_annotations": [],
+        "title": "bucky",
+        "doi": "",
+        "url": "",
+        "data_annotations": []
+    },
+    {
+        "type": "variable",
+        "name": "rel_inf_asym",
+        "id": "v22",
+        "text_annotations": [
+            " Relative infectiousness of asymptomatic individuals"
+        ],
+        "dkg_annotations": [],
+        "title": "bucky",
+        "doi": "",
+        "url": "",
+        "data_annotations": []
+    },
+    {
+        "type": "variable",
+        "name": "frac_trans_before_s",
+        "id": "v23",
+        "text_annotations": [
+            " Percentage of transmission prior to symptom onset"
+        ],
+        "dkg_annotations": [],
+        "title": "bucky",
+        "doi": "",
+        "url": "",
+        "data_annotations": []
+    },
+    {
+        "type": "variable",
+        "name": "F",
+        "id": "v24",
+        "text_annotations": [
+            " Case fatality ratio"
+        ],
+        "dkg_annotations": [
+            [
+                "ido:0000511",
+                "infected population"
+            ],
+            [
+                "ncit:C171133",
+                "COVID-19 Infection"
+            ]
+        ],
+        "title": "bucky",
+        "doi": "",
+        "url": "",
+        "data_annotations": []
+    },
+    {
+        "type": "variable",
+        "name": "H",
+        "id": "v25",
+        "text_annotations": [
+            " Case hospitalization ratio"
+        ],
+        "dkg_annotations": [
+            [
+                "ncit:C171133",
+                "COVID-19 Infection"
+            ],
+            [
+                "ncit:C28554",
+                "Dead"
+            ]
+        ],
+        "title": "bucky",
+        "doi": "",
+        "url": "",
+        "data_annotations": [
+            [
+                [
+                    1,
+                    "hospitalization-rate-by-month.csv",
+                    1,
+                    "num_hosp_month"
+                ],
+                "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/hospitalization-rate-by-month.csv"
+            ]
+        ]
+    },
+    {
+        "type": "variable",
+        "name": "I_TO_H_TIME",
+        "id": "v26",
+        "text_annotations": [
+            " Time from symptom onset to hospitalization"
+        ],
+        "dkg_annotations": [],
+        "title": "bucky",
+        "doi": "",
+        "url": "",
+        "data_annotations": []
+    },
+    {
+        "type": "variable",
+        "name": "H_TIME",
+        "id": "v27",
+        "text_annotations": [
+            " Duration of hospitalization",
+            " Number of days an individualD_REPORT_TIME"
+        ],
+        "dkg_annotations": [
+            [
+                "pr:Q9UNS1",
+                "protein timeless homolog (human)"
+            ]
+        ],
+        "title": "bucky",
+        "doi": "",
+        "url": "",
+        "data_annotations": [
+            [
+                [
+                    6,
+                    "usa-hospitalizations.csv",
+                    2,
+                    "new_hospitalized_patients"
+                ],
+                "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-hospitalizations.csv"
+            ],
+            [
+                [
+                    6,
+                    "usa-hospitalizations.csv",
+                    3,
+                    "cumulative_hospitalized_patients"
+                ],
+                "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-hospitalizations.csv"
+            ]
+        ]
+    },
+    {
+        "type": "variable",
+        "name": "D_REPORT_TIME",
+        "id": "v28",
+        "text_annotations": [
+            " Time between death and reporting"
+        ],
+        "dkg_annotations": [],
+        "title": "bucky",
+        "doi": "",
+        "url": "",
+        "data_annotations": [
+            [
+                [
+                    7,
+                    "us-counties-2023.csv",
+                    5,
+                    "deaths"
+                ],
+                "https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties-2023.csv"
+            ]
+        ]
+    },
+    {
+        "type": "variable",
+        "name": "Tg",
+        "id": "v29",
+        "text_annotations": [
+            " Mean generation interval (in days)"
+        ],
+        "dkg_annotations": [
+            [
+                "geonames:149606",
+                "Tanga"
+            ],
+            [
+                "geonames:1624494",
+                "Tegal"
+            ]
+        ],
+        "title": "bucky",
+        "doi": "",
+        "url": "",
+        "data_annotations": []
+    },
+    {
+        "type": "variable",
+        "name": "CHR",
+        "id": "v30",
+        "text_annotations": [
+            " Case hospitalization-severity ratio"
+        ],
+        "dkg_annotations": [
+            [
+                "hp:0011010",
+                "Chronic"
+            ],
+            [
+                "geonames:710791",
+                "Cherkasy"
+            ]
+        ],
+        "title": "bucky",
+        "doi": "",
+        "url": "",
+        "data_annotations": []
+    },
+    {
+        "type": "variable",
+        "name": "I_to_H_time",
+        "id": "v31",
+        "text_annotations": [
+            " Time it takes from symptom onset to hospitalization (in days)"
+        ],
+        "dkg_annotations": [],
+        "title": "bucky",
+        "doi": "",
+        "url": "",
+        "data_annotations": [
+            [
+                [
+                    5,
+                    "usa-cases-hospitalized-by-age.csv",
+                    82,
+                    "new_hospitalized_patients_age_0"
+                ],
+                "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-cases-hospitalized-by-age.csv"
+            ],
+            [
+                [
+                    5,
+                    "usa-cases-hospitalized-by-age.csv",
+                    83,
+                    "new_hospitalized_patients_age_1"
+                ],
+                "https://github.com/DARPA-ASKEM/program-milestones/blob/main/6-month-milestone/evaluation/scenario_3/ta_1/google-health-data/usa-cases-hospitalized-by-age.csv"
+            ]
+        ]
+    },
+    {
+        "type": "variable",
+        "name": "R0_frac",
+        "id": "v32",
+        "text_annotations": [
+            " Factor that is multiplied with the baseline mobility value to model the effect of NPIs."
+        ],
+        "dkg_annotations": [],
+        "title": "bucky",
+        "doi": "",
+        "url": "",
+        "data_annotations": []
+    },
+    {
+        "type": "variable",
+        "name": "Contact-Matrix Based NPIs",
+        "id": "v33",
+        "text_annotations": [
+            " NPIs that effect certain age groups within the total population."
+        ],
+        "dkg_annotations": [],
+        "title": "bucky",
+        "doi": "",
+        "url": "",
+        "data_annotations": []
+    },
+    {
+        "type": "variable",
+        "name": "Mobility Based NPI",
+        "id": "v34",
+        "text_annotations": [
+            " NPIs that lead to changes in mobility/movement between administrative districts."
+        ],
+        "dkg_annotations": [],
+        "title": "bucky",
+        "doi": "",
+        "url": "",
+        "data_annotations": [
+            [
+                [
+                    4,
+                    "OxCGRT_nat_latest.csv",
+                    18,
+                    "C7M_Restrictions on internal movement"
+                ],
+                "https://raw.githubusercontent.com/OxCGRT/covid-policy-tracker/master/data/OxCGRT_nat_latest.csv"
+            ],
+            [
+                [
+                    4,
+                    "OxCGRT_nat_latest.csv",
+                    19,
+                    "C7M_Flag"
+                ],
+                "https://raw.githubusercontent.com/OxCGRT/covid-policy-tracker/master/data/OxCGRT_nat_latest.csv"
+            ]
+        ]
+    },
+    {
+        "type": "variable",
+        "name": "Reproduction Number Based NPI",
+        "id": "v35",
+        "text_annotations": [
+            " NPIs that have an effect on the overall scaling of transmissibility."
+        ],
+        "dkg_annotations": [],
+        "title": "bucky",
+        "doi": "",
+        "url": "",
+        "data_annotations": [
+            [
+                [
+                    4,
+                    "OxCGRT_nat_latest.csv",
+                    53,
+                    "StringencyIndex_Average"
+                ],
+                "https://raw.githubusercontent.com/OxCGRT/covid-policy-tracker/master/data/OxCGRT_nat_latest.csv"
+            ],
+            [
+                [
+                    4,
+                    "OxCGRT_nat_latest.csv",
+                    54,
+                    "StringencyIndex_Average_ForDisplay"
+                ],
+                "https://raw.githubusercontent.com/OxCGRT/covid-policy-tracker/master/data/OxCGRT_nat_latest.csv"
+            ]
+        ]
+    }
 ]

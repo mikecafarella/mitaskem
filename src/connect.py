@@ -360,6 +360,7 @@ def dataset_header_document_dkg(header, doc,  gpt_key=''):
     """
     Grounding the column header to DKG terms
     :param header: Dataset header string seperated with comma
+    :param doc: Document string
     :return: Matches column name to DKG
     """
     if header=="":
@@ -473,7 +474,7 @@ def vars_dataset_connection(json_str, dataset_str, gpt_key):
     try:
         for i in tqdm(range(len(all_desc_ls))):
             prompt = get_var_dataset_prompt(all_desc, dataset_s, all_desc_ls[i])
-            ans = get_gpt4_match(prompt, gpt_key)
+            ans = get_gpt4_match(prompt, gpt_key, model="gpt-3.5-turbo")
             ans = ans.split('\n')
 
             for j in range(len(ans)):
