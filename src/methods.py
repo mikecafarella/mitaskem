@@ -20,13 +20,6 @@ def strip_latex_preamble(text):
     return text[start:end+end_len]
 
 
-_context_lengths = {
-    'text-davinci-002':4097,
-    'text-davinci-003':4097,
-    'gpt-3.5-turbo-16k':16000, ## may be slightly larger
-    'gpt-3.5-turbo':4097,
-    'gpt-4':8000,
-}
 
 def split_into_chunks(text_tokens, max_chunk_size_tokens : int):
     """ 
@@ -46,7 +39,7 @@ def split_into_chunks(text_tokens, max_chunk_size_tokens : int):
 
 
 def create_prompt_tasks(prompt, document, model_name, answer_token_length=256, chunk_token_length=None):
-    max_context_length = _context_lengths[model_name]
+    max_context_length = g_context_lengths[model_name]
     if chunk_token_length is None:
         chunk_token_length = max_context_length - answer_token_length
 
@@ -62,16 +55,39 @@ def create_prompt_tasks(prompt, document, model_name, answer_token_length=256, c
     text_tasks  = tokenizer.decode_batch([pre_tok + chunk + post_tok for chunk in chunks])
     return text_tasks
 
+g_context_lengths = {
+    'text-davinci-002':4097,
+    'text-davinci-003':4097,
+    'gpt-3.5-turbo-16k':16000, ## may be slightly larger
+    'gpt-3.5-turbo':4097,
+    'gpt-4':8000,
+}
+
+
+g_use_completion_api = set(['gpt-3.5-turbo-16k','gpt-3.5-turbo', 'gpt-4'])
+
+
+import langchain
+from langchain.text_splitter import LatexTextSplitter
+
+# def create_prompt_tasks_latex(prompt, document, model_name, answer_token_length=256, chunk_token_length=None):
+
+#     max_context_length = g_context_lengths[model_name]
+#     latex_splitter = LatexTextSplitter.from_tiktoken_encoder(model_name=model_name)
+#     if chunk_token_length is None:
+#         chunk_token_length = max_context_length - answer_token_length
+
+#                                                              chunk_size=, chunk_overlap=0)
+#     docs = latex_splitter.create_documents([document])
+
+
 async def fork_join_requests(prompts, model : str):
     """
     send one request per prompt 
     """
-
-    chat_completion_models = ['gpt-3.5-turbo-16k','gpt-3.5-turbo', 'gpt-4']
-    
     acc = []
     for prompt in prompts:
-        if model in chat_completion_models:
+        if model in g_use_completion_api:
             # TODO: chat completions lets one split the prompt.
             cor = openai.ChatCompletion.acreate(model=model, 
                                                 messages=[
@@ -92,7 +108,7 @@ async def fork_join_requests(prompts, model : str):
         except OpenAIError as err:   
             return f"OpenAI connection error: {err}", False
 
-        if model in chat_completion_models:
+        if model in g_use_completion_api:
             result = response.choices[0].message.content.strip()
         else:
             result = response.choices[0].text.strip()
