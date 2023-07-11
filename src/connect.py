@@ -667,27 +667,14 @@ def code_dkg_connection(dkg_targets, gpt_key, ontology_terms=DEFAULT_TERMS, onto
 
 if __name__ == "__main__":
     # code_dkg_connection("population", "") # GPT key
-    vars = read_text_from_file('../demos/2023-03-19/mar_demo_intermediate.json')
-    dataset = read_text_from_file('../resources/dataset/headers.txt')
-    match, _ = vars_dataset_connection(vars, dataset, GPT_KEY)
-    print(match)
+    # vars = read_text_from_file('../demos/2023-03-19/mar_demo_intermediate.json')
+    # dataset = read_text_from_file('../resources/dataset/headers.txt')
+    # match, _ = vars_dataset_connection(vars, dataset, GPT_KEY)
+    # print(match)
 #
-#     res, yes = dataset_header_document_dkg("""date,state,fips,cases,deaths
-# 2020-01-21,Washington,53,1,0
-# 2020-01-22,Washington,53,1,0
-# 2020-01-23,Washington,53,1,0
-# 2020-01-24,Illinois,17,1,0
-# 2020-01-24,Washington,53,1,0
-# """, """
-#
-# The New York Times is releasing a series of data files with cumulative counts of coronavirus cases in the United States, at the state and county level, over time. We are compiling this time series data from state and local governments and health departments in an attempt to provide a complete record of the ongoing outbreak.
-#
-# Since the first reported coronavirus case in Washington State on Jan. 21, 2020, The Times has tracked cases of coronavirus in real time as they were identified after testing. Because of the widespread shortage of testing, however, the data is necessarily limited in the picture it presents of the outbreak.
-#
-# We have used this data to power our maps and reporting tracking the outbreak, and it is now being made available to the public in response to requests from researchers, scientists and government officials who would like access to the data to better understand the outbreak.
-# """,GPT_KEY)
-#     print(res)
-#
+    res, yes = dataset_header_document_dkg("""dates,VAX_count,day,sdm,events,I_1,I_2,I_3,Y_1,Y_2,Y_3,V_1,V_2,V_3,Infected,Y,V,logV""", """Using wastewater surveillance as a continuous pooled sampling technique has been in place in many countries since the early stages of the outbreak of COVID-19. Since the beginning of the outbreak, many research works have emerged, studying different aspects of *viral SARS-CoV-2 DNA concentrations* (viral load) in wastewater and its potential as an early warning method. However, one of the questions that has remained unanswered is the quantitative relation between viral load and clinical indicators such as daily cases, deaths, and hospitalizations. Few studies have tried to couple viral load data with an epidemiological model to relate the number of infections in the community to the viral burden. We propose a **stochastic wastewater-based SEIR model** to showcase the importance of viral load in the early detection and prediction of an outbreak in a community. We built three models based on whether or not they use the case count and viral load data and compared their *simulations* and *forecasting* quality.  We consider a stochastic wastewater-based epidemiological model with four compartments (hidden states) of susceptible (S), exposed (E), infectious (I), and recovered/removed (R).dRxiv} } """,GPT_KEY)
+    print(res)
+
 
 
     # col = "people"
