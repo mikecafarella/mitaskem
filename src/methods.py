@@ -7,10 +7,11 @@ import openai ## already inited
 from openai import OpenAIError
 
 import re
-def clean_spaces(text):
-    text1 = re.sub(' +', ' ', text)
-    text2 = re.sub('\n+', '\n', text1)
-    return text2
+
+# def clean_spaces(text):
+#     text1 = re.sub(' +', ' ', text)
+#     text2 = re.sub('\n+', '\n', text1)
+#     return text2
 
 def strip_latex_preamble(text):
     start = text.find('\\begin{document}')
@@ -18,8 +19,6 @@ def strip_latex_preamble(text):
     end = text.find(end_marker)
     end_len = len(end_marker)
     return text[start:end+end_len]
-
-
 
 def split_into_chunks(text_tokens, max_chunk_size_tokens : int):
     """ 
@@ -44,7 +43,6 @@ def create_prompt_tasks(prompt, document, model_name, answer_token_length=256, c
         chunk_token_length = max_context_length - answer_token_length
 
     tokenizer = tiktoken.encoding_for_model(model_name)
-    
     pre_text, post_text = prompt.split('[TEXT]')
     pre_tok, post_tok = tokenizer.encode_batch([pre_text, post_text])
     available_length = chunk_token_length - len(pre_tok) - len(post_tok) - 2 # space before and after 
@@ -67,19 +65,42 @@ g_context_lengths = {
 g_use_completion_api = set(['gpt-3.5-turbo-16k','gpt-3.5-turbo', 'gpt-4'])
 
 
-import langchain
 from langchain.text_splitter import LatexTextSplitter
 
-# def create_prompt_tasks_latex(prompt, document, model_name, answer_token_length=256, chunk_token_length=None):
+def split_latex_into_chunks(document : str,  # latex
+                                 prompt_template : str, 
+                                model_name : str | None, # knowing which tokenizer guarantees we dont exceed context length
+                                max_total_size: int | None,  # if not given, use max possible based on model
+                                max_answer_size: int = 256,
+                                chunk_overlap: int = 0):
 
-#     max_context_length = g_context_lengths[model_name]
-#     latex_splitter = LatexTextSplitter.from_tiktoken_encoder(model_name=model_name)
-#     if chunk_token_length is None:
-#         chunk_token_length = max_context_length - answer_token_length
+        
 
-#                                                              chunk_size=, chunk_overlap=0)
-#     docs = latex_splitter.create_documents([document])
+    if model_name is not None: # if know model, use tokenizer to guarantee lengths
+        max_context_length = g_context_lengths[model_name]
 
+        if max_total_size is None:
+            max_total_size = max_context_length
+
+        assert max_total_size <= max_context_length
+
+        tokenizer = tiktoken.encoding_for_model(model_name)
+        encoded_prompt = tokenizer.encode(prompt_template)
+
+        chunk_token_length = min(max_context_length - max_answer_size, max_total_size)
+
+        max_document_chunk_size = chunk_token_length - len(encoded_prompt)
+
+        document_chunks = LatexTextSplitter.from_tiktoken_encoder(model_name=model_name, 
+                                                                chunk_size=max_document_chunk_size, 
+                                                                chunk_overlap=chunk_overlap).split_text(document)
+    else: ## tokenizer info not given, then best effort based on character count
+        assert max_total_size is not None
+        document_chunks = LatexTextSplitter(chunk_size=max_total_size, 
+                                            chunk_overlap=chunk_overlap).split_text(document)
+
+    
+    return document_chunks
 
 async def fork_join_requests(prompts, model : str):
     """

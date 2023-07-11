@@ -1,5 +1,4 @@
-I have a head sample of a dataset:
-
+I have a head sample of a dataset with each column separated by comma:
 [CSV]
 
 Here are the relevant documentations for the dataset:
@@ -8,3 +7,6 @@ Here are the relevant documentations for the dataset:
 
 For each column of the dataset, please infer the following attributes separated by "|".
 column name| concept| unit| description
+
+Please do not merge multiple column.
+

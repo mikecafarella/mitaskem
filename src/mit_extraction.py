@@ -129,21 +129,32 @@ def find_vars_from_text(text: str, gpt_key: str):
 
     return ast.literal_eval(vars_to_json(vars_dedup(outputs)))
 
-from methods import create_prompt_tasks, fork_join_requests
+from methods import create_prompt_tasks, fork_join_requests, split_latex_into_chunks
+
+async def _extract_text_vars(text, var_prompt):
+    model_name = 'text-davinci-003'
+    document_chunks = split_latex_into_chunks(document=text, prompt_template=var_prompt, model_name=model_name, 
+                                              max_total_size=None, max_answer_size=256, chunk_overlap=0)
+    
+    task_prompts = [var_prompt.replace('[TEXT]', doc_chunk) for doc_chunk in document_chunks]
+    res = await fork_join_requests(task_prompts, model=model_name)
+
+    fres = []
+    for r in res:
+        fres.append(r.strip('\nNone')) # always ends in \nNone with current prompt...
+
+    unified = '\n'.join(fres)
+    tmp1 = vars_dedup(unified)
+    return tmp1
+
 async def afind_vars_from_text(text: str, gpt_key: str):
     with open(os.path.join(os.path.dirname(__file__), 'prompts/text_var_prompt.txt'), "r") as f:
         var_prompt = f.read()
     
-    model_name = 'text-davinci-003'
-    chunks = create_prompt_tasks(prompt=var_prompt, document=text, 
-                                     model_name=model_name, chunk_token_length=None, answer_token_length=256)
-    res = await fork_join_requests(chunks, model=model_name)
-    fres = []
-    for r in res:
-        fres.append(r.strip('\nNone')) # always ends in \nNone with current prompt...
+    res = await _extract_text_vars(text, var_prompt)
     
-    unified = '\n'.join(fres)
-    return ast.literal_eval(vars_to_json(vars_dedup(unified)))
+    tmp2 = vars_to_json(res)
+    return ast.literal_eval(tmp2)
 
 async def async_mit_extraction_restAPI(file_name, gpt_key, cache_dir="/tmp/askem"):
     paper_name = file_name.split(".txt")[0]
