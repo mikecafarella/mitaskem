@@ -1,0 +1,14 @@
+date,county,state,fips,cases,deaths
+2023-01-01,Autauga,Alabama,01001,18961,230
+2023-01-01,Baldwin,Alabama,01003,67496,719
+2023-01-01,Barbour,Alabama,01005,7027,111
+2023-01-01,Bibb,Alabama,01007,7692,108
+2023-01-01,Blount,Alabama,01009,17731,260
+2023-01-01,Bullock,Alabama,01011,2886,54
+2023-01-01,Butler,Alabama,01013,6185,130
+2023-01-01,Calhoun,Alabama,01015,39458,665
+2023-01-01,Chambers,Alabama,01017,10311,174
+2023-01-01,Cherokee,Alabama,01019,6456,133
+2023-01-01,Chilton,Alabama,01021,12596,223
+2023-01-01,Choctaw,Alabama,01023,2204,63
+2023-01-01,Clarke,Alabama,01025,8184,113
