@@ -3,6 +3,8 @@ import io
 import json
 import os
 import re
+import time
+
 import pandas as pd
 from cryptography.fernet import Fernet
 import openai
@@ -113,6 +115,16 @@ def get_var_dataset_prompt(vars, dataset, target):
     prompt = prompt.replace("[DESC]", vars)
     prompt = prompt.replace("[DATASET]", dataset)
     prompt = prompt.replace("[TARGET]", target)
+    # print(prompt)
+    return prompt
+
+def get_var_dataset_prompt_simplified(vars, dataset):
+    text_file = open(os.path.join(os.path.dirname(__file__), 'prompts/var_dataset_prompt_simplified.txt'), "r")
+    prompt = text_file.read()
+    text_file.close()
+
+    prompt = prompt.replace("[DESC]", vars)
+    prompt = prompt.replace("[DATASET]", dataset)
     # print(prompt)
     return prompt
 
@@ -445,6 +457,59 @@ def code_formula_connection(code, formulas, gpt_key):
     except OpenAIError as err:
         return f"OpenAI connection error: {err}", False
 
+def represents_int(s):
+    try:
+        int(s)
+    except ValueError:
+        return False
+    else:
+        return True
+
+def vars_dataset_connection_simplified(json_str, dataset_str, gpt_key):
+    json_list = ast.literal_eval(json_str)
+
+    var_list = list(filter(lambda x: x["type"] == "variable", json_list))
+
+    all_desc_ls = [(var['id'] + ", " + var['name'] + ": " + var['text_annotations'][0]) for var in var_list]
+    all_desc = '\n'.join(all_desc_ls)
+
+    vs_data = {}
+
+    try:
+        prompt = get_var_dataset_prompt_simplified(all_desc, dataset_str)
+        print(prompt)
+        ans = get_gpt4_match(prompt, gpt_key, model="gpt-3.5-turbo-16k")
+        ans = ans.split('\n')
+        print(ans)
+        for item in ans:
+            toks = item.split(": ")
+            if len(toks) < 2:
+                continue
+            vid = toks[0]
+            cols = []
+            for ds in toks[1].split(", "):
+                data_col = ds.split("___")
+                if len(data_col) < 2:
+                    continue
+                cols.append([data_col[0], data_col[1]])
+
+            vs_data[vid] = cols
+            print(cols)
+
+    except OpenAIError as err:
+        return f"OpenAI connection error: {err}", False
+
+    for item in json_list:
+        if item["type"] != "variable":
+            continue
+
+        id = item["id"]
+        item["data_annotations"] = vs_data[id]
+
+    new_json_str = json.dumps(json_list)
+
+    return new_json_str, True
+
 
 def vars_dataset_connection(json_str, dataset_str, gpt_key):
     json_list = ast.literal_eval(json_str)
@@ -474,13 +539,14 @@ def vars_dataset_connection(json_str, dataset_str, gpt_key):
     try:
         for i in tqdm(range(len(all_desc_ls))):
             prompt = get_var_dataset_prompt(all_desc, dataset_s, all_desc_ls[i])
+            print(prompt)
             ans = get_gpt4_match(prompt, gpt_key, model="gpt-3.5-turbo")
             ans = ans.split('\n')
-
+            print(ans)
             for j in range(len(ans)):
                 toks = ans[j].split("___")
                 # print(toks)
-                if len(toks) < 2:
+                if len(toks) < 2 or not represents_int(toks[0]):
                     ans[j] = ""
                 else:
                     d_name = dataset_name_dict[int(toks[0])]
@@ -488,6 +554,7 @@ def vars_dataset_connection(json_str, dataset_str, gpt_key):
                     ans[j] = [d_name, col_name]
 
             vs_data[var_list[i]['id']] = ans
+            time.sleep(5)
             # print(f"assigned value {ans} to key {var_list[i]['id']}")
 
     except OpenAIError as err:
@@ -600,27 +667,27 @@ def code_dkg_connection(dkg_targets, gpt_key, ontology_terms=DEFAULT_TERMS, onto
 
 if __name__ == "__main__":
     # code_dkg_connection("population", "") # GPT key
-    # vars = read_text_from_file('../demos/2023-03-19/mar_demo_intermediate.json')
-    # dataset = read_text_from_file('../resources/dataset/headers.txt')
-    # match, _ = vars_dataset_connection(vars, dataset, GPT_KEY)
-    # print(match)
-
-    res, yes = dataset_header_document_dkg("""date,state,fips,cases,deaths
-2020-01-21,Washington,53,1,0
-2020-01-22,Washington,53,1,0
-2020-01-23,Washington,53,1,0
-2020-01-24,Illinois,17,1,0
-2020-01-24,Washington,53,1,0
-""", """
-    
-The New York Times is releasing a series of data files with cumulative counts of coronavirus cases in the United States, at the state and county level, over time. We are compiling this time series data from state and local governments and health departments in an attempt to provide a complete record of the ongoing outbreak.
-
-Since the first reported coronavirus case in Washington State on Jan. 21, 2020, The Times has tracked cases of coronavirus in real time as they were identified after testing. Because of the widespread shortage of testing, however, the data is necessarily limited in the picture it presents of the outbreak.
-
-We have used this data to power our maps and reporting tracking the outbreak, and it is now being made available to the public in response to requests from researchers, scientists and government officials who would like access to the data to better understand the outbreak.
-""",GPT_KEY)
-    print(res)
-
+    vars = read_text_from_file('../demos/2023-03-19/mar_demo_intermediate.json')
+    dataset = read_text_from_file('../resources/dataset/headers.txt')
+    match, _ = vars_dataset_connection(vars, dataset, GPT_KEY)
+    print(match)
+#
+#     res, yes = dataset_header_document_dkg("""date,state,fips,cases,deaths
+# 2020-01-21,Washington,53,1,0
+# 2020-01-22,Washington,53,1,0
+# 2020-01-23,Washington,53,1,0
+# 2020-01-24,Illinois,17,1,0
+# 2020-01-24,Washington,53,1,0
+# """, """
+#
+# The New York Times is releasing a series of data files with cumulative counts of coronavirus cases in the United States, at the state and county level, over time. We are compiling this time series data from state and local governments and health departments in an attempt to provide a complete record of the ongoing outbreak.
+#
+# Since the first reported coronavirus case in Washington State on Jan. 21, 2020, The Times has tracked cases of coronavirus in real time as they were identified after testing. Because of the widespread shortage of testing, however, the data is necessarily limited in the picture it presents of the outbreak.
+#
+# We have used this data to power our maps and reporting tracking the outbreak, and it is now being made available to the public in response to requests from researchers, scientists and government officials who would like access to the data to better understand the outbreak.
+# """,GPT_KEY)
+#     print(res)
+#
 
 
     # col = "people"

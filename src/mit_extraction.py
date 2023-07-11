@@ -5,12 +5,11 @@ from pathlib import Path
 from askem_extractions.importers import import_mit
 
 import gpt_key
-from connect import get_mit_arizona_var_prompt, get_gpt4_match
+from connect import get_mit_arizona_var_prompt, get_gpt4_match, vars_dataset_connection_simplified
 from dataset_id import modify_dataset
 from ensemble.ensemble import load_paper_info, extract_variables, extract_vars
 from gpt_key import *
 from text_search import text_var_search, vars_dedup, vars_to_json
-from connect import vars_dataset_connection
 
 PARAM = "/Users/chunwei/research/mitaskem/resources/xDD/params/"
 API_ROOT = "http://0.0.0.0:8000/"
@@ -177,7 +176,7 @@ async def async_mit_extraction_restAPI(file_name, gpt_key, cache_dir="/tmp/askem
         print(dataset_str[:419])
 
 
-    json_str, success = vars_dataset_connection(dkg_json_string, dataset_str, gpt_key)
+    json_str, success = vars_dataset_connection_simplified(dkg_json_string, dataset_str, gpt_key)
     print(json_str)
 
     data_json = json.loads(json_str)
@@ -233,7 +232,7 @@ def mit_extraction_restAPI(file_name, gpt_key, cache_dir="/tmp/askem"):
         print(dataset_str[:419])
 
 
-    json_str, success = vars_dataset_connection(dkg_json_string, dataset_str, gpt_key)
+    json_str, success = vars_dataset_connection_simplified(dkg_json_string, dataset_str, gpt_key)
     print(json_str)
 
     data_json = json.loads(json_str)
@@ -288,7 +287,7 @@ def mit_extraction(paper):
         dataset_str = f.read()
         print(dataset_str[:419])
 
-    json_str, success = vars_dataset_connection(dkg_json_string, dataset_str, GPT_KEY)
+    json_str, success = vars_dataset_connection_simplified(dkg_json_string, dataset_str, GPT_KEY)
     print(json_str)
 
     data_json = json.loads(json_str)
