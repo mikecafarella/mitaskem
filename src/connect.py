@@ -407,9 +407,7 @@ def dataset_header_document_dkg(header, doc,  gpt_key=''):
                 break
             seen.add(res[0])
 
-        ans = get_gpt_match(f"What's the top 2 similar terms of \"{col}\" in epidemiology? Please list these terms separated by comma.", gpt_key, model="text-davinci-003")
-        print(f"relevant items found from GPT: {ans}")
-        for e in ans.split(","):
+        for e in [col_ant[col]["concept"], col_ant[col]["col_name"]]:
             # print(e)
             for res in get_mira_dkg_term(e, ['id', 'name', 'type'],True):
                 print(res)
