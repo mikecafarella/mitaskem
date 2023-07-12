@@ -379,7 +379,7 @@ def dataset_header_dkg(header, gpt_key=''):
     return json.dumps(col_ant), True
 
 
-def dataset_header_document_dkg(header, doc,  gpt_key=''):
+async def dataset_header_document_dkg(header, doc,  gpt_key=''):
     """
     Grounding the column header to DKG terms
     :param header: Dataset header string seperated with comma
@@ -431,7 +431,7 @@ def dataset_header_document_dkg(header, doc,  gpt_key=''):
     return json.dumps(col_ant), True
 
 
-def construct_data_card(data, data_doc,  gpt_key='', fields=None, model="gpt-3.5-turbo"):
+async def construct_data_card(data, data_doc,  gpt_key='', fields=None, model="gpt-3.5-turbo"):
     """
     Constructing a data card for a given dataset and its description.
     :param data: Small dataset, including header and optionally a few rows
