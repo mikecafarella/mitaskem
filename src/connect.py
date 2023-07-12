@@ -506,6 +506,7 @@ async def construct_model_card(text, code,  gpt_key='', fields=None, model="gpt-
                   ("SCHEMA",       "Shot description of the schema of inputs and outputs of the model (1 sentence)."),
                   ("PROVENANCE",   "Short description (1 sentence) of how the model was trained."),
                   ("DATASET",      "Short description (1 sentence) of what dataset was used to train the model."),
+                  ("COMPLEXITY",  "The complexity of the model"),
                   ("USAGE",        "Short description (1 sentence) of the context in which the model should be used"),
                   ("LICENSE",      "License for this model."),
         ]
