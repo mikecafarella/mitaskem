@@ -232,6 +232,17 @@ def get_data_card_prompt(fields, csv, doc):
     prompt = prompt.replace("[DOC]", doc)
     return prompt
 
+def get_model_card_prompt(fields, text, code):
+    with open(os.path.join(os.path.dirname(__file__), "prompts/model_card_prompt.txt"), "r") as text_file:
+        prompt = text_file.read()
+
+    fields_str = '\n'.join([f"{f[0]}: {f[1]}" for f in fields])
+    prompt = prompt.replace("[FIELDS]", fields_str)
+    prompt = prompt.replace("[TEXT]", text)
+    prompt = prompt.replace("[CODE]", code)
+    return prompt
+
+
 def get_text_column_prompt(text, column):
     text_file = open(os.path.join(os.path.dirname(__file__), "prompts/text_column_prompt.txt"), "r")
     prompt = text_file.read()
@@ -455,6 +466,51 @@ async def construct_data_card(data, data_doc,  gpt_key='', fields=None, model="g
         ]
 
     prompt = get_data_card_prompt(fields, data, data_doc)
+    match = get_gpt4_match(prompt, gpt_key, model=model)
+    print(match)
+
+    results = OrderedDict([(f[0], "UNKNOWN") for f in fields])
+    for res in match.split("\n"):
+        if res == "":
+            continue
+        res = res.split(":", 1)
+        if len(res) != 2:
+            continue
+        field, value = res
+        field = field.strip()
+        value = value.strip()
+        for f in fields:
+            if f[0] == field:
+                results[field] = value
+                break
+
+    return json.dumps(results), True
+
+async def construct_model_card(text, code,  gpt_key='', fields=None, model="gpt-3.5-turbo-16k"):
+    """
+    Constructing a data card for a given dataset and its description.
+    :param text: Model description (either model documentation or related paper)
+    :param code: Model code
+    :param gpt_key: OpenAI API key
+    :param fields: Fields to be filled in the data card
+    :param model: OpenAI model to use
+    :return: Data card
+    """
+
+    if fields is None:
+        fields = [("DESCRIPTION",  "Short description of the model (1 sentence)."),
+                  ("AUTHOR_INST",  "Name of publishing institution."),
+                  ("AUTHOR_AUTHOR", "Name of author(s)."),
+                  ("AUTHOR_EMAIL", "Email address for the author of this model."),
+                  ("DATE",         "Date of publication of this model."),
+                  ("SCHEMA",       "Shot description of the schema of inputs and outputs of the model (1 sentence)."),
+                  ("PROVENANCE",   "Short description (1 sentence) of how the model was trained."),
+                  ("DATASET",      "Short description (1 sentence) of what dataset was used to train the model."),
+                  ("USAGE",        "Short description (1 sentence) of the context in which the model should be used"),
+                  ("LICENSE",      "License for this model."),
+        ]
+
+    prompt = get_model_card_prompt(fields, text, code)
     match = get_gpt4_match(prompt, gpt_key, model=model)
     print(match)
 

@@ -7,7 +7,7 @@ from fastapi.responses import JSONResponse
 sys.path.append(
     os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 )
-from src.connect import construct_data_card, dataset_header_document_dkg
+from src.connect import construct_data_card, dataset_header_document_dkg, construct_model_card
 
 router = APIRouter()
 
@@ -42,3 +42,22 @@ async def get_data_card(gpt_key: str, csv_file: UploadFile = File(...), doc_file
     data_card['DATA_PROFILING_RESULT'] = data_profiling
 
     return data_card
+
+
+@router.post("/get_model_card", tags=["Data-and-model-cards"])
+async def get_model_card(gpt_key: str, text_file: UploadFile = File(...), code_file: UploadFile = File(...)):
+
+    files = [text_file.read(), code_file.read()]
+    text, code = await asyncio.gather(*files)
+
+    # process model text
+    text_string = text.decode()
+
+    # process code
+    code_string = code.decode()
+
+    res, success = await construct_model_card(text=text_string, code=code_string, gpt_key=gpt_key)
+    if not success:
+        return JSONResponse(status_code=status.HTTP_400_BAD_REQUEST, content=res)
+    model_card = ast.literal_eval(res)
+    return model_card
