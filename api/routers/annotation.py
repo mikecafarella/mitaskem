@@ -1,6 +1,4 @@
-import os
-import sys
-import ast
+import ast, io, random, sys, os
 
 from fastapi import APIRouter, status, UploadFile, File, HTTPException
 from fastapi.responses import JSONResponse
@@ -63,7 +61,14 @@ def link_annotation_to_pyacset_and_paper_info(pyacset_str: str, annotations_str:
 
 
 @router.post("/link_dataset_col_to_dkg", tags=["Paper-2-annotated-vars"])
-def link_dataset_columns_to_dkg_info(csv_str: str, doc:str, gpt_key: str):
+async def link_dataset_columns_to_dkg_info(gpt_key: str, csv_file: UploadFile = File(...), doc_file: UploadFile = File(...)):
+    csv_string = await csv_file.read()
+    csv_string = csv_string.decode()
+    buf = io.StringIO(csv_string)
+    csv_str = buf.readline() + '\n' + '\n'.join(random.sample(buf.readlines(), 5))
+
+    doc = await doc_file.read()
+    doc = doc.decode()
     s, success = dataset_header_document_dkg(header=csv_str, doc=doc, gpt_key=gpt_key)
 
     if not success:
