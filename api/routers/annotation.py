@@ -69,7 +69,7 @@ async def link_dataset_columns_to_dkg_info(gpt_key: str, csv_file: UploadFile = 
 
     doc = await doc_file.read()
     doc = doc.decode()
-    s, success = dataset_header_document_dkg(header=csv_str, doc=doc, gpt_key=gpt_key)
+    s, success = await dataset_header_document_dkg(header=csv_str, doc=doc, gpt_key=gpt_key)
 
     if not success:
         return JSONResponse(status_code=status.HTTP_401_UNAUTHORIZED, content=s)
@@ -86,7 +86,6 @@ async def link_dataset_columns_to_dkg_info(gpt_key: str, csv_file: UploadFile = 
 #     return ast.literal_eval(s)
 
 
-dataset_header_document_dkg
 @router.post("/upload_file_extract/", tags=["Paper-2-annotated-vars"])
 async def upload_file_annotate(gpt_key: str, file: UploadFile = File(...)):
     """

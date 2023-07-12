@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 
 from file_cache import init_cache_directory
-from routers import code_dataset, code_formula, code_text, avail_check, petri, annotation, integration
+from routers import code_dataset, code_formula, code_text, avail_check, petri, annotation, integration, cards
 
 tags_metadata = [
     # {
@@ -25,7 +25,11 @@ tags_metadata = [
     {
         "name": "TA1-Integration",
         "description": "Integate Arizona's output with the MIT extraction pipeline."
-    }
+    },
+    {
+        "name": "Data-and-model-cards",
+        "description": "Requests related to generating data and model cards.",
+    },
 ]
 
 
@@ -65,5 +69,6 @@ app = build_api()
 app.include_router(petri.router, prefix="/petri")
 app.include_router(annotation.router, prefix="/annotation")
 app.include_router(integration.router, prefix="/integration")
+app.include_router(cards.router, prefix="/cards")
 
 

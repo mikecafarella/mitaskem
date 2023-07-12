@@ -1,4 +1,5 @@
 import asyncio
+from collections import OrderedDict
 import io
 import json
 import os
@@ -221,6 +222,16 @@ def get_csv_doc_prompt(csv, doc):
     # print(prompt)
     return prompt
 
+def get_data_card_prompt(fields, csv, doc):
+    with open(os.path.join(os.path.dirname(__file__), "prompts/data_card_prompt.txt"), "r") as text_file:
+        prompt = text_file.read()
+
+    fields_str = '\n'.join([f"{f[0]}: {f[1]}" for f in fields])
+    prompt = prompt.replace("[FIELDS]", fields_str)
+    prompt = prompt.replace("[CSV]", csv)
+    prompt = prompt.replace("[DOC]", doc)
+    return prompt
+
 def get_text_column_prompt(text, column):
     text_file = open(os.path.join(os.path.dirname(__file__), "prompts/text_column_prompt.txt"), "r")
     prompt = text_file.read()
@@ -368,7 +379,7 @@ def dataset_header_dkg(header, gpt_key=''):
     return json.dumps(col_ant), True
 
 
-def dataset_header_document_dkg(header, doc,  gpt_key=''):
+async def dataset_header_document_dkg(header, doc,  gpt_key=''):
     """
     Grounding the column header to DKG terms
     :param header: Dataset header string seperated with comma
@@ -420,6 +431,49 @@ def dataset_header_document_dkg(header, doc,  gpt_key=''):
     return json.dumps(col_ant), True
 
 
+async def construct_data_card(data, data_doc,  gpt_key='', fields=None, model="gpt-3.5-turbo"):
+    """
+    Constructing a data card for a given dataset and its description.
+    :param data: Small dataset, including header and optionally a few rows
+    :param data_doc: Document string
+    :param gpt_key: OpenAI API key
+    :param fields: Fields to be filled in the data card
+    :param model: OpenAI model to use
+    :return: Data card
+    """
+
+    if fields is None:
+        fields = [("DESCRIPTION",  "Short description of the dataset (1-3 sentences)."),
+                  ("AUTHOR_NAME",  "Name of publishing institution or author."),
+                  ("AUTHOR_EMAIL", "Email address for the author of this dataset."),
+                  ("DATE",         "Date of publication of this dataset."),
+                  ("SCHEMA",       "Schema of the data in this dataset."),
+                  ("PROVENANCE",   "Short (1 sentence) description of how the data was collected."),
+                  ("SENSITIVITY",  "Is there any human-identifying information in the dataset?"),
+                  ("EXAMPLES",     "One example data point from the dataset, formatted as a JSON object."),
+                  ("LICENSE",      "License for this dataset."),
+        ]
+
+    prompt = get_data_card_prompt(fields, data, data_doc)
+    match = get_gpt4_match(prompt, gpt_key, model=model)
+    print(match)
+
+    results = OrderedDict([(f[0], "UNKNOWN") for f in fields])
+    for res in match.split("\n"):
+        if res == "":
+            continue
+        res = res.split(":", 1)
+        if len(res) != 2:
+            continue
+        field, value = res
+        field = field.strip()
+        value = value.strip()
+        for f in fields:
+            if f[0] == field:
+                results[field] = value
+                break
+
+    return json.dumps(results), True
 
 
 def select_text(lines, s, t, buffer, interactive=True):
