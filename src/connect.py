@@ -54,9 +54,16 @@ def get_gpt_match(prompt, key, model="text-davinci-002"):
     # print(result)
     return result
 
-def get_gpt4_match(prompt, key, model="gpt-4"):
+def get_gpt4_match(prompt, key, model="gpt-4", add_system_prompt=True):
     openai.api_key = key
-    completion = openai.ChatCompletion.create(model=model, messages=[{"role": "user", "content": prompt}], temperature=0.0)
+    messages = [{"role": "user", "content": prompt}]
+    if add_system_prompt:
+        system_prompt = f"You are a friendly and experienced professor; a true expert in your field. "\
+                         "A student of yours is carrying out a literature review, reading papers and inspecting relevant corresponding datasets and source code. "\
+                         "You are helping them by answering their questions. "\
+                         "You do so expertly, truthfully and accurately, providing the best possible answer."
+        messages.insert(0, {"role": "system", "content": system_prompt})
+    completion = openai.ChatCompletion.create(model=model, messages=messages, temperature=0.0)
     result = completion.choices[0].message.content
     # print(result)
     return result
@@ -406,10 +413,13 @@ async def dataset_header_document_dkg(header, doc,  gpt_key=''):
     prompt = get_csv_doc_prompt(header,doc)
     match = get_gpt4_match(prompt, gpt_key, model="gpt-4")
     print(match)
+    # extract the part of the match that is contained in a ``` block
+    match = match.split("```")[1]
+
     for res in match.split("\n"):
         if res == "":
             continue
-        attrs = res.split("|")
+        attrs = [r.strip() for r in res.split("|")]
         col = attrs[0]
         col_ant[col] = {}
         col_ant[col]["col_name"] = attrs[0]
@@ -588,17 +598,21 @@ def vars_dataset_connection_simplified(json_str, dataset_str, gpt_key):
         prompt = get_var_dataset_prompt_simplified(all_desc, dataset_str)
         print(prompt)
         ans = get_gpt4_match(prompt, gpt_key, model="gpt-3.5-turbo-16k")
-        ans = ans.split('\n')
         print(ans)
+        # extract the part of the match that is contained in a ``` block
+        ans = ans.split("```")[1]
+        print('Extracting ``` block from match')
+        print(ans)
+        ans = ans.split("\n")
         for item in ans:
-            toks = item.split(": ")
-            if len(toks) < 2:
+            if len(item.split(":")) < 2:  # should have AT LEAST the variable name and 1 match
                 continue
-            vid = toks[0]
+            vid, toks = [s.strip() for s in item.split(":", 1)]  # split on first colon only to get var id
+            toks = [s.strip() for s in toks.split(",")] # split on comma to get matches
             cols = []
-            for ds in toks[1].split(", "):
-                data_col = ds.split("___")
-                if len(data_col) < 2:
+            for ds in toks:
+                data_col = [s.strip() for s in ds.split(":")] # split on colon to get dataset name and column name
+                if len(data_col) != 2:
                     continue
                 cols.append([data_col[0], data_col[1]])
 
