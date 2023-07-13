@@ -176,7 +176,8 @@ async def async_mit_extraction_restAPI(file_name, gpt_key, cache_dir="/tmp/askem
     # print(file_path)
 
 
-    file_path = file_name
+#    file_path = file_name
+    file_path = org_file 
     t2 = time.time()
     print(f'{t2 - start=}')
     with open(file_path, "r") as f:
