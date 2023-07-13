@@ -160,19 +160,24 @@ async def async_mit_extraction_restAPI(file_name, gpt_key, cache_dir="/tmp/askem
     paper_name = file_name.split(".txt")[0]
     org_file = os.path.join(cache_dir, file_name)
     print("is file existing", os.path.exists(org_file))
-    extract_vars(org_file, cache_dir)
-    file_path = os.path.join(cache_dir, paper_name+"_vars.txt")
-    print(file_path)
+    # extract_vars(org_file, cache_dir) # this calls open ai api.
+    # file_path = os.path.join(cache_dir, paper_name+"_vars.txt")
+    # print(file_path)
+
+
+    file_path = file_name
     with open(file_path, "r") as f:
         text = f.read()
         json_str = await afind_vars_from_text(text, gpt_key)
-        print(type(json_str))
+        # print(type(json_str))
+    # dkg_json = json.loads(json.dumps(json_str))
 
     dkg_json = json.loads(json.dumps(json_str))
     for variable in dkg_json:
         variable["title"] = paper_name
     dkg_json_string = json.dumps(dkg_json)
-    print(dkg_json_string)
+
+    # print(dkg_json_string) 
     dirname = os.path.dirname(__file__)
     dir = os.path.join(dirname, '../resources/dataset/ensemble')
     # dir = "../resources/dataset/ensemble/"
@@ -184,7 +189,7 @@ async def async_mit_extraction_restAPI(file_name, gpt_key, cache_dir="/tmp/askem
 
     with open(os.path.join(dir, "headers.txt")) as f:
         dataset_str = f.read()
-        print(dataset_str[:419])
+ #       print(dataset_str[:419])
 
 
     json_str, success = vars_dataset_connection_simplified(dkg_json_string, dataset_str, gpt_key)
