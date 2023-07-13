@@ -1,8 +1,6 @@
-import openai
 from gpt_key import GPT_KEY
 from server import app
 from fastapi.testclient import TestClient
-
 
 test_papers = [
         '../../resources/models/Bucky/bucky.txt',
