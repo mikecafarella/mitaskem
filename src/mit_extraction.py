@@ -147,16 +147,27 @@ async def _extract_text_vars(text, var_prompt):
     tmp1 = vars_dedup(unified)
     return tmp1
 
+import time
+
+#@profile
 async def afind_vars_from_text(text: str, gpt_key: str):
     with open(os.path.join(os.path.dirname(__file__), 'prompts/text_var_prompt.txt'), "r") as f:
         var_prompt = f.read()
     
+    start = time.time()
     res = await _extract_text_vars(text, var_prompt)
+    openai_done = time.time()
+    print(f'{openai_done - start = }')
     
     tmp2 = vars_to_json(res)
+    mira_done = time.time()
+    print(f'{mira_done - openai_done = }')
     return ast.literal_eval(tmp2)
+import time
 
+#@profile
 async def async_mit_extraction_restAPI(file_name, gpt_key, cache_dir="/tmp/askem"):
+    start = time.time()
     paper_name = file_name.split(".txt")[0]
     org_file = os.path.join(cache_dir, file_name)
     print("is file existing", os.path.exists(org_file))
@@ -166,13 +177,17 @@ async def async_mit_extraction_restAPI(file_name, gpt_key, cache_dir="/tmp/askem
 
 
     file_path = file_name
+    t2 = time.time()
+    print(f'{t2 - start=}')
     with open(file_path, "r") as f:
         text = f.read()
         json_str = await afind_vars_from_text(text, gpt_key)
         # print(type(json_str))
     # dkg_json = json.loads(json.dumps(json_str))
 
-    dkg_json = json.loads(json.dumps(json_str))
+    t3 = time.time()
+    print(f'{t3- t2=}')
+    dkg_json = json_str
     for variable in dkg_json:
         variable["title"] = paper_name
     dkg_json_string = json.dumps(dkg_json)
@@ -193,7 +208,9 @@ async def async_mit_extraction_restAPI(file_name, gpt_key, cache_dir="/tmp/askem
 
 
     json_str, success = vars_dataset_connection_simplified(dkg_json_string, dataset_str, gpt_key)
-    print(json_str)
+    t4 = time.time()
+    print(f'{t4-t3=}')
+    #  print(json_str)
 
     data_json = json.loads(json_str)
 
