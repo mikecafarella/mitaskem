@@ -1,19 +1,12 @@
-I have a dataset (given as a CSV file). The header and first few lines of the dataset are given below:
-```csv
+I have a head sample of a dataset with each column separated by comma:
 [CSV]
-```
 
-I also have the following relevant documentations for the dataset:
-```txt
+Here are the relevant documentations for the dataset:
+
 [DOC]
-```
 
-For each column, of the dataset, I want to infer the following attributes: its name; the concept it represents; the unit of measurement; and a brief description of the column.
-Please help me infer these attributes for each column of the dataset, giving the attributes in the following format:
-```
-<column name> | <concept> | <unit of measurement> | <description>
-```
-Please make sure not to accidentally merge two columns into one, or split one column into two.
-Also, please make sure that the inferred attributes are consistent with the documentation provided.
-If you are not sure about the attributes of a column, please set the corresponding fields to "UNKNOWN".
+For each column of the dataset, please infer the following attributes separated by "|".
+column name| concept| unit| description
+
+Please do not merge multiple column.
 

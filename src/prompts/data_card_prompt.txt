@@ -18,11 +18,11 @@ The textual description is as follows:
 
 Please help me extract the metadata from the dataset and the textual description.
 Print the result in the following format:
-```
+```txt
 <field name>: <field value>
 <field name>: <field value>
 <field name>: <field value>
 ...
 ```
-Only print metadata that can be extracted from the dataset and the textual description.
+Do not hallucinate metadata; only print metadata that can be extracted from the dataset and the textual description.
 If the metadata cannot be extracted, please print "UNKNOWN" instead of the field value.

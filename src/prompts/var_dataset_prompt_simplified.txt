@@ -1,27 +1,9 @@
-I have extracted a set of variables from a paper. For each variable, I have given it a unique ID, a name, and a short description.
-I also have the schemas of a few datasets that I found online.
-I want to find the columns in the datasets that match the variables I have extracted.
-
-The variables I have extracted are as follows:
-```txt
+We have several variable names and descriptions as follows, each on a newline with variable id, name: text_annotations:
 [DESC]
-```
 
-The datasets and their schemas (given as a comma-separated list of column names) are as follows:
-```txt
+We also have a list of column names with dataset_name: column list seperated by comma as follows:
 [DATASET]
-```
 
-Please help me find the columns in the datasets that match the variables I have extracted.
-For each variable, print the variable id and up to two column names that match it, as well as the dataset that the column belongs to.
-Separate dataset names and column names with a colon (:), and separate column names with a comma (,).
-Please give the output in a ```txt block with the following format:
-```txt
-<variable id>: <dataset:column name 1>, <dataset:column name 2>
-<variable id>: <dataset:column name 1>, <dataset:column name 2>
-<variable id>: <dataset:column name 1>, <dataset:column name 2>
-...
-```
-If there is no match for a variable, print "None" instead of the column names.
-
-Make sure that the output matches the format exactly, including being surrounded by three backticks (```) on the top and bottom.
+From the dataset columns stated above, print up to two columns that match each variable.
+For each variable, start a newline printing the variable id only (without variable name): dataset 1___column x, dataset 2___column y.
+If there is no match, print "None" for that variable.
