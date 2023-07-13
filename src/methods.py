@@ -124,11 +124,10 @@ async def fork_join_requests(prompts, model : str):
 
     outputs = []
     for cor in acc:        
-        try:        
-            response = await cor
-        except OpenAIError as err:   
-            return f"OpenAI connection error: {err}", False
-
+        # try: # no point in handling error here, just makes things confusing
+        response = await cor
+        # except OpenAIError as err:   
+        #     return f"OpenAI connection error: {err}", False
         if model in g_use_completion_api:
             result = response.choices[0].message.content.strip()
         else:
