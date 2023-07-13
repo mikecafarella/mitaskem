@@ -418,27 +418,27 @@ async def dataset_header_document_dkg(header, doc,  gpt_key=''):
         col_ant[col]["description"] = attrs[3]
 
 
-    for col in cols:
-        print(f"looking up {col}")
-        results = []
-        results.extend(get_mira_dkg_term(col, ['id', 'name'],True))
-        # print(results)
-        seen = set()
-        for res in results:
-            if not res:
-                break
-            seen.add(res[0])
+    print(f"Looking up column names and concepts in mira: {cols}")
+    col_names = [col_ant[col]["col_name"] for col in cols]
+    col_concepts = [col_ant[col]["concept"] for col in cols]
 
-        for e in [col_ant[col]["concept"], col_ant[col]["col_name"]]:
-            # print(e)
-            for res in get_mira_dkg_term(e, ['id', 'name', 'type'],True):
-                print(res)
-                if not res or len(res)==0:
+    ops = [abatch_get_mira_dkg_term(col_names, ['id', 'name', 'type'], True),
+           abatch_get_mira_dkg_term(col_concepts, ['id', 'name', 'type'], True)]
+    name_results, concept_results = await asyncio.gather(*ops)
+
+    for col, name_res, concept_res in zip(cols, name_results, concept_results):
+        seen = set()
+        results = []
+        for res in (concept_res, name_res):  # TODO check if this is the right order
+            for r in res:
+                if not r:
                     break
-                if not res[0] in seen:
-                    results.append(res)
-                    seen.add(res[0])
+                if not r[0] in seen:
+                    results.append(r)
+                    seen.add(r[0])
+
         col_ant[col]["dkg_groundings"] = results
+
     return json.dumps(col_ant), True
 
 
