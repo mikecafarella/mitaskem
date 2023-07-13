@@ -131,13 +131,13 @@ def find_vars_from_text(text: str, gpt_key: str):
 
 from methods import create_prompt_tasks, fork_join_requests, split_latex_into_chunks
 
-async def _extract_text_vars(text, var_prompt):
+async def _extract_text_vars(text, var_prompt, api_key=None):
     model_name = 'text-davinci-003'
     document_chunks = split_latex_into_chunks(document=text, prompt_template=var_prompt, model_name=model_name, 
                                               max_total_size=None, max_answer_size=256, chunk_overlap=0)
     
     task_prompts = [var_prompt.replace('[TEXT]', doc_chunk) for doc_chunk in document_chunks]
-    res = await fork_join_requests(task_prompts, model=model_name)
+    res = await fork_join_requests(task_prompts, model=model_name, api_key=api_key)
 
     fres = []
     for r in res:
@@ -150,12 +150,12 @@ async def _extract_text_vars(text, var_prompt):
 import time
 
 #@profile
-async def afind_vars_from_text(text: str, gpt_key: str):
+async def afind_vars_from_text(text: str, api_key: str):
     with open(os.path.join(os.path.dirname(__file__), 'prompts/text_var_prompt.txt'), "r") as f:
         var_prompt = f.read()
     
     start = time.time()
-    res = await _extract_text_vars(text, var_prompt)
+    res = await _extract_text_vars(text, var_prompt, api_key=api_key)
     openai_done = time.time()
     print(f'{openai_done - start = }')
     

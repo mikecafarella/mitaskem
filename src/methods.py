@@ -102,12 +102,17 @@ def split_latex_into_chunks(document : str,  # latex
     
     return document_chunks
 
-async def fork_join_requests(prompts, model : str):
+async def fork_join_requests(prompts, model : str, api_key : str = None):
     """
     send one request per prompt 
     """
     acc = []
+
+    if api_key is not None:
+        openai.api_key = api_key
+
     for prompt in prompts:
+
         if model in g_use_completion_api:
             # TODO: chat completions lets one split the prompt.
             cor = openai.ChatCompletion.acreate(model=model, 
