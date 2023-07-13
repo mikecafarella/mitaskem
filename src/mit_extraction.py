@@ -9,7 +9,7 @@ from connect import get_mit_arizona_var_prompt, get_gpt4_match, vars_dataset_con
 from dataset_id import modify_dataset
 from ensemble.ensemble import load_paper_info, extract_variables, extract_vars
 from gpt_key import *
-from text_search import text_var_search, vars_dedup, vars_to_json
+from text_search import text_var_search, vars_dedup, vars_to_json, avars_to_json
 
 PARAM = "/Users/chunwei/research/mitaskem/resources/xDD/params/"
 API_ROOT = "http://0.0.0.0:8000/"
@@ -159,7 +159,7 @@ async def afind_vars_from_text(text: str, gpt_key: str):
     openai_done = time.time()
     print(f'{openai_done - start = }')
     
-    tmp2 = vars_to_json(res)
+    tmp2 = await avars_to_json(res)
     mira_done = time.time()
     print(f'{mira_done - openai_done = }')
     return ast.literal_eval(tmp2)
