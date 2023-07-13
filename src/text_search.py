@@ -54,9 +54,41 @@ def vars_to_json(var_dict: dict) -> str:
     is_first = True
     id = 0
 
-    for var_name in var_dict:
+    batch_var_ground = batch_get_mira_dkg_term(var_dict.keys(), ['id', 'name'])
+
+    for var_name, var_ground in zip(var_dict, batch_var_ground):
         var_defs_s = "[\"" + '\",\"'.join(i for i in var_dict[var_name][:MAX_TEXT_MATCHES]) + "\"]"
-        var_ground = get_mira_dkg_term(var_name, ['id', 'name'])[:MAX_DKG_MATCHES]
+        #var_ground = get_mira_dkg_term(var_name, ['id', 'name'])
+        var_ground = var_ground[:MAX_DKG_MATCHES]
+        var_ground_s = "[" + ",".join([("[\"" + "\",\"".join([str(item) for item in sublist]) + "\"]") for sublist in var_ground]) + "]"
+
+        if is_first:
+            is_first = False
+        else:
+            s_out += ","
+
+        s_out += "{\"type\" : \"variable\", \"name\": \"" + var_name \
+        + "\", \"id\" : \"v" + str(id) + "\", \"text_annotations\": " + var_defs_s \
+        + ", \"dkg_annotations\" : " + var_ground_s + "}"
+
+        id += 1
+    
+    s_out += "]"
+
+    return s_out
+
+async def avars_to_json(var_dict: dict) -> str:
+
+    s_out = "["
+    is_first = True
+    id = 0
+
+    batch_var_ground = await abatch_get_mira_dkg_term(var_dict.keys(), ['id', 'name'])
+
+    for var_name, var_ground in zip(var_dict, batch_var_ground):
+        var_defs_s = "[\"" + '\",\"'.join(i for i in var_dict[var_name][:MAX_TEXT_MATCHES]) + "\"]"
+        #var_ground = get_mira_dkg_term(var_name, ['id', 'name'])
+        var_ground = var_ground[:MAX_DKG_MATCHES]
         var_ground_s = "[" + ",".join([("[\"" + "\",\"".join([str(item) for item in sublist]) + "\"]") for sublist in var_ground]) + "]"
 
         if is_first:
