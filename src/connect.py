@@ -1,4 +1,5 @@
 import asyncio
+import copy
 from collections import OrderedDict
 import io
 import json
@@ -129,6 +130,16 @@ def get_var_dataset_prompt_simplified(vars, dataset):
     # print(prompt)
     return prompt
 
+
+def get_rank_dkg_prompt(target, set):
+    text_file = open(os.path.join(os.path.dirname(__file__), 'prompts/rank_dkg_terms.txt'), "r")
+    prompt = text_file.read()
+    text_file.close()
+
+    prompt = prompt.replace("[TARGET]", target)
+    prompt = prompt.replace("[SET]", set)
+    # print(prompt)
+    return prompt
 #
 def get_mit_arizona_var_prompt(mit, arizona):
     text_file = open(os.path.join(os.path.dirname(__file__), 'prompts/mit_arizona_var_prompt.txt'), "r")
@@ -352,6 +363,33 @@ def text_column_connection(text, column, gpt_key):
     except OpenAIError as err:
         return f"OpenAI connection error: {err}",False
 
+
+def rank_dkg_terms(target, concepts, gpt_key):
+    """
+    Rank the concepts by their similarity to the target
+    :param target: Target concept json
+    :param concepts: List of candidate concepts in json
+    :return: List of ranked concepts
+    """
+    prompt = get_rank_dkg_prompt(json.dumps(target), json.dumps(concepts))
+    match = get_gpt4_match(prompt, gpt_key, model="gpt-4")
+    rank = match.split("\n")
+    sorted = sort_dkg(rank, concepts)
+    return sorted, True
+
+
+def sort_dkg(ranking, json_obj):
+    # Create a dictionary with the ranking as keys and the corresponding JSON objects as values
+    ranking_dict = {item[0]: item for item in json_obj if item[0] in ranking}
+
+    # Sort the dictionary based on the ranking list
+    sorted_dict = {k: ranking_dict[k] for k in ranking if k in ranking_dict}
+
+    # Convert the sorted dictionary back to a list of lists
+    sorted_json = list(sorted_dict.values())
+
+    return sorted_json
+
 def dataset_header_dkg(header, gpt_key=''):
     """
     Grounding the column header to DKG terms
@@ -418,27 +456,27 @@ async def dataset_header_document_dkg(header, doc,  gpt_key=''):
         col_ant[col]["description"] = attrs[3]
 
 
-    for col in cols:
-        print(f"looking up {col}")
-        results = []
-        results.extend(get_mira_dkg_term(col, ['id', 'name'],True))
-        # print(results)
-        seen = set()
-        for res in results:
-            if not res:
-                break
-            seen.add(res[0])
+    print(f"Looking up column names and concepts in mira: {cols}")
+    col_names = [col_ant[col]["col_name"] for col in cols]
+    col_concepts = [col_ant[col]["concept"] for col in cols]
 
-        for e in [col_ant[col]["concept"], col_ant[col]["col_name"]]:
-            # print(e)
-            for res in get_mira_dkg_term(e, ['id', 'name', 'type'],True):
-                print(res)
-                if not res or len(res)==0:
+    ops = [abatch_get_mira_dkg_term(col_names, ['id', 'name', 'type'], True),
+           abatch_get_mira_dkg_term(col_concepts, ['id', 'name', 'type'], True)]
+    name_results, concept_results = await asyncio.gather(*ops)
+
+    for col, name_res, concept_res in zip(cols, name_results, concept_results):
+        seen = set()
+        results = []
+        for res in (concept_res, name_res):  # TODO check if this is the right order
+            for r in res:
+                if not r:
                     break
-                if not res[0] in seen:
-                    results.append(res)
-                    seen.add(res[0])
+                if not r[0] in seen:
+                    results.append(r)
+                    seen.add(r[0])
+
         col_ant[col]["dkg_groundings"] = results
+
     return json.dumps(col_ant), True
 
 
@@ -775,17 +813,76 @@ def code_dkg_connection(dkg_targets, gpt_key, ontology_terms=DEFAULT_TERMS, onto
     return connection
 
 if __name__ == "__main__":
+
+    dkg_str = """{
+      "col_name": "dates",
+      "concept": "Time",
+      "unit": "YYYY-MM-DD",
+      "description": "The date when the data was recorded",
+      "dkg_groundings": [
+        [
+          "hp:0001147",
+          "Retinal exudate"
+        ],
+        [
+          "hp:0030496",
+          "Macular exudate"
+        ],
+        [
+          "ncit:C114947",
+          "Postterm Infant"
+        ],
+        [
+          "oae:0006126",
+          "retinal exudates AE"
+        ],
+        [
+          "oae:0008293",
+          "large for dates baby AE"
+        ],
+        [
+          "pato:0000165",
+          "time",
+          "class"
+        ],
+        [
+          "gfo:Time",
+          "time",
+          "class"
+        ],
+        [
+          "geonames:2365173",
+          "Maritime",
+          "individual"
+        ],
+        [
+          "wikidata:Q174728",
+          "centimeter",
+          "class"
+        ],
+        [
+          "probonto:k0000056",
+          "nondecisionTime",
+          "class"
+        ]
+      ]
+    }"""
+
+    json_obj = json.loads(dkg_str)
+    target = copy.deepcopy(json_obj)
+    del target["dkg_groundings"]
+
+    print(rank_dkg_terms(target, json_obj["dkg_groundings"], GPT_KEY))
+
     # code_dkg_connection("population", "") # GPT key
     # vars = read_text_from_file('../demos/2023-03-19/mar_demo_intermediate.json')
     # dataset = read_text_from_file('../resources/dataset/headers.txt')
     # match, _ = vars_dataset_connection(vars, dataset, GPT_KEY)
     # print(match)
-#
-    res, yes = dataset_header_document_dkg("""dates,VAX_count,day,sdm,events,I_1,I_2,I_3,Y_1,Y_2,Y_3,V_1,V_2,V_3,Infected,Y,V,logV""",
-                                           """Using wastewater surveillance as a continuous pooled sampling technique has been in place in many countries since the early stages of the outbreak of COVID-19. Since the beginning of the outbreak, many research works have emerged, studying different aspects of *viral SARS-CoV-2 DNA concentrations* (viral load) in wastewater and its potential as an early warning method. However, one of the questions that has remained unanswered is the quantitative relation between viral load and clinical indicators such as daily cases, deaths, and hospitalizations. Few studies have tried to couple viral load data with an epidemiological model to relate the number of infections in the community to the viral burden. We propose a **stochastic wastewater-based SEIR model** to showcase the importance of viral load in the early detection and prediction of an outbreak in a community. We built three models based on whether or not they use the case count and viral load data and compared their *simulations* and *forecasting* quality.  We consider a stochastic wastewater-based epidemiological model with four compartments (hidden states) of susceptible (S), exposed (E), infectious (I), and recovered/removed (R).dRxiv} } """,GPT_KEY)
-    print(res)
-
-
+    #
+    # res, yes = dataset_header_document_dkg("""dates,VAX_count,day,sdm,events,I_1,I_2,I_3,Y_1,Y_2,Y_3,V_1,V_2,V_3,Infected,Y,V,logV""",
+    #                                        """Using wastewater surveillance as a continuous pooled sampling technique has been in place in many countries since the early stages of the outbreak of COVID-19. Since the beginning of the outbreak, many research works have emerged, studying different aspects of *viral SARS-CoV-2 DNA concentrations* (viral load) in wastewater and its potential as an early warning method. However, one of the questions that has remained unanswered is the quantitative relation between viral load and clinical indicators such as daily cases, deaths, and hospitalizations. Few studies have tried to couple viral load data with an epidemiological model to relate the number of infections in the community to the viral burden. We propose a **stochastic wastewater-based SEIR model** to showcase the importance of viral load in the early detection and prediction of an outbreak in a community. We built three models based on whether or not they use the case count and viral load data and compared their *simulations* and *forecasting* quality.  We consider a stochastic wastewater-based epidemiological model with four compartments (hidden states) of susceptible (S), exposed (E), infectious (I), and recovered/removed (R).dRxiv} } """,GPT_KEY)
+    # print(res)
 
     # col = "people"
     # ans = get_gpt_match(
