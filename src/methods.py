@@ -102,10 +102,11 @@ def split_latex_into_chunks(document : str,  # latex
     
     return document_chunks
 
-async def fork_join_requests(prompts, model : str):
+async def fork_join_requests(key, prompts, model : str):
     """
     send one request per prompt 
     """
+    openai.api_key = key
     acc = []
     for prompt in prompts:
         if model in g_use_completion_api:
