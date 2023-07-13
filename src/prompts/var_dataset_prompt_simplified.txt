@@ -12,16 +12,16 @@ The datasets and their schemas (given as a comma-separated list of column names)
 [DATASET]
 ```
 
-Please help me find the columns in the datasets that match the variables I have extracted.
 For each variable, print the variable id and up to two column names that match it, as well as the dataset that the column belongs to.
+The columns can come from any of the datasets.
 Separate dataset names and column names with a colon (:), and separate column names with a comma (,).
 If there is no match for a variable, print "None" instead of the column names.
 
 Give your answer in a ``` block with the following format:
 ```
-<variable id>: <dataset:column name 1>, <dataset:column name 2>
-<variable id>: <dataset:column name 1>, <dataset:column name 2>
-<variable id>: <dataset:column name 1>, <dataset:column name 2>
+<variable id>: <dataset:column name>, <dataset:column name>
+<variable id>: <dataset:column name>, <dataset:column name>
+<variable id>: <dataset:column name>, <dataset:column name>
 ...
 ```
 Make sure that the output matches the format exactly, including being surrounded by three backticks (```) on the top and bottom.

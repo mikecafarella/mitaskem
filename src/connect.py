@@ -414,7 +414,13 @@ async def dataset_header_document_dkg(header, doc,  gpt_key=''):
     match = get_gpt4_match(prompt, gpt_key, model="gpt-4")
     print(match)
     # extract the part of the match that is contained in a ``` block
-    match = match.split("```")[1]
+    match = match.split("```")
+    if len(match) > 1:
+        match = match[1]
+    else:
+        match = match[0]
+
+
 
     for res in match.split("\n"):
         if res == "":
@@ -599,7 +605,11 @@ def vars_dataset_connection_simplified(json_str, dataset_str, gpt_key):
         ans = get_gpt4_match(prompt, gpt_key, model="gpt-3.5-turbo-16k")
         print(ans)
         # extract the part of the match that is contained in a ``` block
-        ans = ans.split("```")[1]
+        ans = ans.split("```")
+        if len(ans) > 1:
+            ans = ans[1]
+        else:
+            ans = ans[0]
         print('Extracting ``` block from match')
         print(ans)
         ans = ans.split("\n")
