@@ -1,5 +1,10 @@
 I used two systems, System A and System B, to extract variables from a paper.
-Each variable has a unique ID, a name, and a description.
+Each variable has a unique ID, a name, and optionally a description (which may be empty).
+These are given in the following format:
+```
+<id>, <name>: <description>
+```
+
 The two systems have different performance, so I want to merge the results from the two systems to get the best final result possible.
 That is, I want to find the best possible match between the variables from System A and the variables from System B, based on the variable names and descriptions.
 
@@ -14,10 +19,12 @@ System B gave the following output:
 ```
 
 Please help me find the best possible match between the outputs of System A and System B.
-Print the output in the following format:
+The output should only contain the IDs of the variables which are matched between the two systems.
+Give your answer in the following format:
 ```
-<id from system A>:<id from system B>
-<id from system A>:<id from system B>
+<id from system A>: <id from system B>
+<id from system A>: <id from system B>
 ...
 ```
-The output should only contain the IDs of the variables which are matched between the two systems.
+Make sure each item is on its own line, and that the IDs are separated from the names by a colon and a space (`: `).
+Make sure that the output matches the format exactly, including being surrounded by three backticks (```) on the top and bottom.

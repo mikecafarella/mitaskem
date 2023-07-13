@@ -106,8 +106,26 @@ def load_arizona_concise_vars_from_raw(input_file, o_file):
 
 
 def build_map_from_concise_vars(mit, arizona, gpt_key):
+    def process_match(m):
+        m = m.split("```")
+        if len(m) > 1:
+            m = m[1]
+        else:
+            m = m[0]
+        m = m.split("\n")
+        m = [x for x in m if ":" in x]
+        m = "\n".join(m)
+        return m
+
+    print(">> MIT")
+    print(mit)
+    print(">> Arizona")
+    print(arizona)
     prompt = get_mit_arizona_var_prompt(mit, arizona)
     ans = get_gpt4_match(prompt, gpt_key, model="gpt-4-0314")
+    ans = process_match(ans)
+    print(">> Processed match")
+    print(ans)
     return ans
 
 
