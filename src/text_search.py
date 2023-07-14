@@ -33,18 +33,26 @@ def vars_dedup(text:str) -> dict:
 
     # Build dictionary, deduplicating along the way
     for line in lines:
-        toks = line.rstrip().split(":")
+        toks = re.split(" \| ?", line.rstrip())
 
-        if len(toks) == 1:
+        if len(toks) == 1 or line == "name | description | numerical value":
             continue
 
         var_name = toks[0]
         var_desc = toks[1]
 
-        desc_list = var_dict.get(var_name, [])
+        if var_name not in var_dict:
+            var_dict[var_name] = {'description':[], 'value':None}
+        desc_list = var_dict[var_name]['description']
         desc_list.append(var_desc)
 
-        var_dict[var_name] = desc_list
+        var_dict[var_name]['description'] = desc_list
+
+        if len(toks) > 2:
+            var_val = toks[2]
+            print(var_name, 'found value', var_val)
+            if var_val != "None":
+                var_dict[var_name]['value'] = var_val
 
     return var_dict
 
@@ -86,7 +94,7 @@ async def avars_to_json(var_dict: dict) -> str:
     batch_var_ground = await abatch_get_mira_dkg_term(var_dict.keys(), ['id', 'name'])
 
     for var_name, var_ground in zip(var_dict, batch_var_ground):
-        var_defs_s = "[\"" + '\",\"'.join(i for i in var_dict[var_name][:MAX_TEXT_MATCHES]) + "\"]"
+        var_defs_s = "[\"" + '\",\"'.join(i for i in var_dict[var_name]['description'][:MAX_TEXT_MATCHES]) + "\"]"
         #var_ground = get_mira_dkg_term(var_name, ['id', 'name'])
         var_ground = var_ground[:MAX_DKG_MATCHES]
         var_ground_s = "[" + ",".join([("[\"" + "\",\"".join([str(item) for item in sublist]) + "\"]") for sublist in var_ground]) + "]"
@@ -98,7 +106,10 @@ async def avars_to_json(var_dict: dict) -> str:
 
         s_out += "{\"type\" : \"variable\", \"name\": \"" + var_name \
         + "\", \"id\" : \"v" + str(id) + "\", \"text_annotations\": " + var_defs_s \
-        + ", \"dkg_annotations\" : " + var_ground_s + "}"
+        + ", \"dkg_annotations\" : " + var_ground_s
+        if var_dict[var_name]['value']:
+            s_out +=  ", \"value\" : \"" + var_dict[var_name]['value'] + "\""
+        s_out += "}"
 
         id += 1
     
