@@ -33,9 +33,9 @@ def vars_dedup(text:str) -> dict:
 
     # Build dictionary, deduplicating along the way
     for line in lines:
-        toks = line.rstrip().split(" | ")
+        toks = re.split(" \| ?", line.rstrip())
 
-        if len(toks) == 1:
+        if len(toks) == 1 or line == "name | description | numerical value":
             continue
 
         var_name = toks[0]
