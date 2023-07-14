@@ -1,0 +1,135 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=blue, filecolor=magenta, urlcolor=cyan,}
+\urlstyle{same}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\graphicspath{ {./images/} }
+​
+\begin{document}
+Table S1. Model parameters. Infection rates are given per individual per day; other rates are given per day.
+​
+*2018-2019 death rate in Ontario, Statistics Canada.
+​
+\begin{itemize}
+  \item Taken to be $70 \%$ higher than actual number of deaths / cases (July 2021, Statistics Canada) per day, since only infected susceptible die at this rate.
+\end{itemize}
+​
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+Symbol & Description & Values \\
+\hline
+$\alpha^{\mathrm{W}}, \alpha^{\mathrm{A}}, \alpha^{\mathrm{D}}$ & Ratio of infectivity of asymptomatic and symptomatic individuals & $3.0[1]$ \\
+\hline
+$\beta^{\mathbf{W}}$ & Rate of symptomatic infections of susceptibles by wild type & 3.3E-9 \\
+\hline
+$\beta^{A}$ & Rate of symptomatic infections of susceptibles by Alpha & $5.5 \mathrm{E}-9[2]$ \\
+\hline
+$\beta^{\mathrm{D}}$ & Rate of symptomatic infections of susceptibles by Delta & $7.6 \mathrm{E}-9[2]$ \\
+\hline
+$\beta^{\mathrm{W}} \mathrm{v1,Pz}$ & $\begin{array}{l}\text { Rate of symptomatic infections of individuals vaccinated with one } \\ \text { Pfizer dose by wild type }\end{array}$ & $\begin{array}{l}0.2 \times \beta^{\mathrm{W}}[3 \\ 4]\end{array}$ \\
+\hline
+$\beta^{\mathrm{W}_{\mathrm{v}, \mathrm{PZ}}}$ & $\begin{array}{l}\text { Rate of symptomatic infections of individuals vaccinated with } \\ \text { both Pfizer doses by wild type }\end{array}$ & $\begin{array}{l}0.05 \times \beta^{\mathrm{W}} \\ {[4]}\end{array}$ \\
+\hline
+$\beta^{\mathrm{A}} \mathrm{v} 1, \mathrm{PZ}$ & $\begin{array}{l}\text { Rate of symptomatic infections of individuals vaccinated with one } \\ \text { Pfizer dose by Alpha }\end{array}$ & $0.5 \times \beta^{A}[5]$ \\
+\hline
+$\beta^{\mathrm{A}} \mathrm{V} 2, \mathrm{PZ}$ & $\begin{array}{l}\text { Rate of symptomatic infections of individuals vaccinated with } \\ \text { both Pfizer doses by Alpha }\end{array}$ & $\begin{array}{l}0.07 \times \beta^{A} \\ {[5]}\end{array}$ \\
+\hline
+$\beta^{\mathrm{D}_{\mathrm{v} 1, \mathrm{PZ}}}$ & $\begin{array}{l}\text { Rate of symptomatic infections of individuals vaccinated with one } \\ \text { Pfizer dose by Delta }\end{array}$ & $\begin{array}{l}0.67 \times \beta^{D} \\ {[6]}\end{array}$ \\
+\hline
+$\beta^{\mathrm{D}_{\mathrm{v} 2, \mathrm{PZ}}}$ & $\begin{array}{l}\text { Rate of symptomatic infections of individuals vaccinated with } \\ \text { both Pfizer doses by Delta }\end{array}$ & $\begin{array}{l}0.12 \times \beta^{D} \\ {[6]}\end{array}$ \\
+\hline
+$\beta^{\mathrm{W}} \mathrm{v1,Az}$ & $\begin{array}{l}\text { Rate of symptomatic infections of individuals vaccinated with one } \\ \text { AstraZeneca dose by wild type }\end{array}$ & $0.2 \times \beta^{\mathrm{W}}[4$ \\
+\hline
+$\beta^{\mathrm{W}} \mathrm{v} 2, \mathrm{Az}$ & $\begin{array}{l}\text { Rate of symptomatic infections of individuals vaccinated with } \\ \text { both AstraZeneca doses by wild type }\end{array}$ & $\begin{array}{l}0.05 \times \beta^{\mathrm{W}} \\ {[4]}\end{array}$ \\
+\hline
+$\beta^{\mathrm{A}} \mathrm{V} 1, \mathrm{AZ}$ & $\begin{array}{l}\text { Rate of symptomatic infections of individuals vaccinated with one } \\ \text { AstraZeneca dose by Alpha }\end{array}$ & $0.5 \times \beta^{A}[7]$ \\
+\hline
+$\beta^{\mathrm{A}} \mathrm{V} 2, \mathrm{AZ}$ & $\begin{array}{l}\text { Rate of symptomatic infections of individuals vaccinated with } \\ \text { both AstraZeneca doses by Alpha }\end{array}$ & $0.34 \times \beta^{\mathrm{A}[7}$ \\
+\hline
+$\beta^{D_{11, A Z}}$ & $\begin{array}{l}\text { Rate of symptomatic infections of individuals vaccinated with one } \\ \text { AstraZeneca dose by Delta }\end{array}$ & $\begin{array}{l}0.67 \times \beta^{D} \\ {[6]}\end{array}$ \\
+\hline
+$\beta^{D_{\mathrm{V} 2, \mathrm{AZ}}}$ & $\begin{array}{l}\text { Rate of symptomatic infections of individuals vaccinated with } \\ \text { both AstraZeneca doses by Delta }\end{array}$ & $0.4 \times \beta^{D}[6]$ \\
+\hline
+$\beta^{X_{R}}$ & $\begin{array}{l}\text { Rate of symptomatic infection of individual recovered from a } \\ \text { different variant }\end{array}$ & $0.05 \times \beta^{x}$ \\
+\hline
+$\gamma^{\mathrm{W}}, \gamma^{\mathrm{A}}, \gamma^{\mathrm{D}}$ & Recovery rate & $1 / 28$ [8] \\
+\hline
+$\varepsilon_{P Z}$ & Fraction of Pfizer vaccines & 0.95 \\
+\hline
+$\eta_{\mathrm{v} 1}$ & Rate of individuals with one vaccine dose losing immunity & 1/365 \\
+\hline
+$\eta_{\mathbf{V} 2}$ & Rate of individuals with both vaccine doses losing immunity & $1 /(4 \times 365)$ \\
+\hline
+$\eta_{R}$ & Rate of recovered individuals losing immunity & $1 /(4 \times 365)$ \\
+\hline
+\end{tabular}
+\end{center}
+​
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+$\boldsymbol{\mu}$ & Natural death rate & $298.7^{*}$ \\
+\hline
+$\mu^{\mathrm{w}}$ & Death rate from wild-type infections & $0.001 *$ \\
+\hline
+$\mu^{\mathrm{A}}$ & Death rate from Alpha infections & $1.6 \times \mu^{\mathrm{W}}$ \\
+\hline
+$\mu^{\mathrm{D}}$ & Death rate from Delta infections & $1.8 \times \mu^{\mathrm{w}}$ \\
+\hline
+$\begin{array}{l}\mu^{\mathrm{w}} v_{,} \mu^{A} v \\ \mu^{D} v\end{array}$ & Death rate of infected vaccinated individuals & $\begin{array}{l}0.15 \times\left(\mu^{W}\right. \\ \left.\mu^{A}, \mu^{D}\right)\end{array}$ \\
+\hline
+$\sigma^{\mathrm{w}}, \sigma^{\mathrm{A}}, \sigma^{\mathrm{D}}$ & Fraction of asymptomatic infections & $0.5[9]$ \\
+\hline
+$\begin{array}{l}\sigma^{\mathrm{w}} \mathrm{v}, \sigma^{\mathrm{A}} \mathrm{v} \\ \sigma^{\mathrm{D}} \mathrm{v}\end{array}$ & Fraction of asymptomatic infections among vaccinated individuals & 0.85 \\
+\hline
+$\begin{array}{l}\sigma^{W}, \sigma_{R}^{A}, \\ \sigma^{D}\end{array}$ & Fraction of asymptomatic infections among recovered individuals & 0.85 \\
+\hline
+\end{tabular}
+\end{center}
+​
+Vaccination rates. Vaccination rates follow Ontario timeline. Vaccination is assumed to begin on $\mathrm{t}_{\mathrm{vac}}{ }^{0}=$ December 14 2020. Vaccination rate increases linearly until it peaks at the end of June $\left(\mathrm{t}_{\mathrm{vac}}{ }^{1}\right.$ = June 30 2021). Prior to the end of May $\left(\mathrm{t}_{\mathrm{vac}}{ }^{2}=\right.$ May 312021$)$, dosing interval is $\Delta \mathrm{t}^{0}=16$ weeks. Afterwards, dosing interval is $\Delta \mathrm{t}^{\mathrm{PZ}}=4$ weeks for Pfizer and $\Delta \mathrm{t}^{\mathrm{AZ}}=8$ weeks for AstraZeneca.
+​
+$\omega_{1}(t)=\left\{\begin{array}{c}0, \quad t<t_{\mathrm{vac}}^{0} \\ r_{0} \frac{t-t_{\mathrm{vac}}^{0}}{t_{\mathrm{vac}}^{1}-t_{\mathrm{vac}}^{0}}, \quad t_{\mathrm{vac}}^{0}<t<t_{\mathrm{vac}}^{1} \\ \left(r_{0}-r_{\mathrm{ss}}\right) \exp \left(-0.03\left(t-t_{\mathrm{vac}}^{1}\right)\right)+r_{\mathrm{ss}}, \quad t_{\mathrm{vac}}^{1}<t\end{array}\right.$ $\omega_{2}^{M}(t)=\left\{\begin{array}{c}0, t<t_{\mathrm{vac}}^{0} \\ 1 / \Delta t^{0}, \quad t_{\mathrm{vac}}^{0}<t<t_{\mathrm{vac}}^{2}, \quad \mathrm{M}=\mathrm{PZ}, \mathrm{AZ} \\ 1 / \Delta t^{M}, \quad t_{\mathrm{vac}}^{2}<t\end{array}\right.$
+​
+where $r_{0}$ and $r_{s s}$ are taken to be $1.1 \%$ and $0.05 \%$ of the population per day. These parameters are chosen so that at the end of July 2021, $71 \%$ of the population have received at least one dose and $57 \%$ are fully vaccinated, consistent with Ontario statistics (\href{http://COVID19Tracker.ca}{COVID19Tracker.ca}).
+​
+Non-pharmaceutical interventions (NPI). The NPI severity index ( $\lambda$, shown in Fig. S1) is chosen in part based on Ontario COVID-19 lockdown timeline and Google mobility data, and in part to fit the predicted new case numbers against provincial data. Effective disease infectivity is obtained by scaling all infectivity parameters $\left(\beta^{x^{\prime}}\right.$ s and $\left.\beta^{x}, M^{\prime} s\right)$ simultaneously.
+​
+\begin{center}
+\includegraphics[max width=\textwidth]{2023_07_12_f562b885a2153a1dcb5cg-3}
+\end{center}
+​
+Figure S1. NPI index $(\lambda)$ between January 12020 and December 312021.
+​
+\section{$\underline{\text { References }}$}
+\begin{enumerate}
+  \item Li, Y., et al., Asymptomatic and symptomatic patients with non-severe coronavirus disease (COVID-19) have similar clinical features and virological courses: a retrospective single center study. Frontiers in microbiology, 2020. 11: p. 1570.
+​
+  \item Updates on COVID-19 Variants of Concern. 2021, National Collaborating Ccentre for Infectious Diseases.
+​
+  \item Thompson, M.G., et al., Interim estimates of vaccine effectiveness of BNT162b2 and mRNA-1273 COVID-19 vaccines in preventing SARS-CoV-2 infection among health care personnel, first responders, and other essential and frontline workers-eight US locations, December 2020-March 2021. Morbidity and Mortality Weekly Report, 2021. 70(13): p. 495.
+​
+  \item Bernal, J.L., et al., Effectiveness of the Pfizer-BioNTech and Oxford-AstraZeneca vaccines on covid-19 related symptoms, hospital admissions, and mortality in older adults in England: test negative case-control study. bmj, 2021. 373.
+​
+  \item Hall, V.J., et al., Effectiveness of BNT162b2 mRNA vaccine against infection and COVID19 vaccine coverage in healthcare workers in England, multicentre prospective cohort study (the SIREN Study). 2021.
+​
+  \item (WHO), W.H.O., COVID-19 weekly epidemiological update. 2021.
+​
+  \item Emary, K.R., et al., Efficacy of ChAdOx1 nCoV-19 (AZD1222) vaccine against SARS-CoV-2 variant of concern 202012/01 (B. 1.1. 7): an exploratory analysis of a randomised controlled trial. The Lancet, 2021. 397(10282): p. 1351-1362.
+​
+  \item Barman, M.P., et al., COVID-19 pandemic and its recovery time of patients in India: $A$ pilot study. Diabetes \& Metabolic Syndrome: Clinical Research \& Reviews, 2020. 14(5): p. 1205-1211.
+​
+  \item Oran, D.P. and E.J. Topol, The proportion of SARS-CoV-2 infections that are asymptomatic: a systematic review. Annals of internal medicine, 2021. 174(5): p. 655662.
+​
+\end{enumerate}
+​
+\end{document}
