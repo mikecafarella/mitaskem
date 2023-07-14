@@ -1,3 +1,4 @@
+import random
 import asyncio
 import copy
 from collections import OrderedDict
@@ -428,20 +429,26 @@ def dataset_header_dkg(header, gpt_key=''):
     return json.dumps(col_ant), True
 
 
-async def dataset_header_document_dkg(header, doc,  gpt_key='', smart=False):
+async def dataset_header_document_dkg(data, doc,  gpt_key='', smart=False, num_data_samples=10):
     """
     Grounding the column header to DKG terms
     :param header: Dataset header string seperated with comma
     :param doc: Document string
     :return: Matches column name to DKG
     """
-    if header=="":
+    if not data.strip():
         return f"Empty dataset input", False
-    row1 = header.split("\n")[0]
+    
+    # subsample from the dataset to make sure the prompt doesn't get too long
+    data = data.split('\n')
+    num_rows_to_sample = min(num_data_samples, len(data) - 1)
+    data = data[0] + '\n' + '\n'.join(random.sample(data[1:], num_rows_to_sample))
+
+    row1 = data.split("\n")[0]
     cols = row1.split(",")
     col_ant = {}
 
-    prompt = get_csv_doc_prompt(header,doc)
+    prompt = get_csv_doc_prompt(data, doc)
     match = get_gpt4_match(prompt, gpt_key, model="gpt-4")
     print(match)
     for res in match.split("\n"):
@@ -460,9 +467,13 @@ async def dataset_header_document_dkg(header, doc,  gpt_key='', smart=False):
     col_names = [col_ant[col]["col_name"] for col in cols]
     col_concepts = [col_ant[col]["concept"] for col in cols]
 
+    # line up coroutines
     ops = [abatch_get_mira_dkg_term(col_names, ['id', 'name', 'type'], True),
-           abatch_get_mira_dkg_term(col_concepts, ['id', 'name', 'type'], True)]
-    name_results, concept_results = await asyncio.gather(*ops)
+           abatch_get_mira_dkg_term(col_concepts, ['id', 'name', 'type'], True),
+           _compute_statistics(data),
+           ]
+    # let them all finish
+    name_results, concept_results, stats = await asyncio.gather(*ops)
 
     for col, name_res, concept_res in zip(cols, name_results, concept_results):
         seen = set()
@@ -483,10 +494,23 @@ async def dataset_header_document_dkg(header, doc,  gpt_key='', smart=False):
             col_ant[col]["dkg_groundings"] = res
             print(f"Smart grounding for {col}: {res}")
 
+    for col in col_ant:
+        col_ant[col]["column_stats"] = stats.get(col, {})
+
     return json.dumps(col_ant), True
 
 
-async def construct_data_card(data, data_doc,  gpt_key='', fields=None, model="gpt-3.5-turbo"):
+async def _compute_statistics(csv: str):
+    df = pd.read_csv(io.StringIO(csv), header=0)
+    df = df.describe(include='all')
+    # NaN and inf are not json serialiazable, so we replace them with strings
+    df = df.fillna('NaN')
+    df = df.replace(float('inf'), 'inf')
+    df = df.replace(float('-inf'), '-inf')
+    return df.to_dict()
+
+
+async def construct_data_card(data, data_doc,  gpt_key='', fields=None, model="gpt-3.5-turbo", num_data_samples=10):
     """
     Constructing a data card for a given dataset and its description.
     :param data: Small dataset, including header and optionally a few rows
@@ -507,6 +531,12 @@ async def construct_data_card(data, data_doc,  gpt_key='', fields=None, model="g
                   ("EXAMPLES",     "One example data point from the dataset, formatted as a JSON object."),
                   ("LICENSE",      "License for this dataset."),
         ]
+
+    
+    # subsample from the dataset to make sure the prompt doesn't get too long
+    data = data.split('\n')
+    num_rows_to_sample = min(num_data_samples, len(data) - 1)
+    data = data[0] + '\n' + '\n'.join(random.sample(data[1:], num_rows_to_sample))
 
     prompt = get_data_card_prompt(fields, data, data_doc)
     match = get_gpt4_match(prompt, gpt_key, model=model)

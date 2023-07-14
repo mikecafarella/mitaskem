@@ -74,7 +74,7 @@ async def link_dataset_columns_to_dkg_info(gpt_key: str, csv_file: UploadFile = 
 
     doc = await doc_file.read()
     doc = doc.decode()
-    s, success = await dataset_header_document_dkg(header=csv_str, doc=doc, gpt_key=gpt_key, smart=smart)
+    s, success = await dataset_header_document_dkg(data=csv_str, doc=doc, gpt_key=gpt_key, smart=smart)
 
     if not success:
         return JSONResponse(status_code=status.HTTP_401_UNAUTHORIZED, content=s)

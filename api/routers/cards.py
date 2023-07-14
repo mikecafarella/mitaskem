@@ -22,22 +22,19 @@ async def get_data_card(gpt_key: str, csv_file: UploadFile = File(...), doc_file
     files = [csv_file.read(), doc_file.read()]
     csv, doc = await asyncio.gather(*files)
 
-    # process CSV; get header and <= 5 random rows
-    csv = csv.decode()
-    csv_strings = csv.split('\n')
-    if len(csv_strings) == 0:
+    
+    # TODO handle inputs that are too long to fit in the context window
+    csv = csv.decode().strip()
+    doc = doc.decode().strip()
+    if len(csv) == 0:
         return JSONResponse(status_code=status.HTTP_400_BAD_REQUEST, content="Empty CSV file")
-    num_rows_to_sample = min(5, len(csv_strings) - 1)
-    csv_str = csv_strings[0] + '\n' + '\n'.join(random.sample(csv_strings[1:], num_rows_to_sample))
-
-    # process doc
-    # TODO: handle docs that are too long to fit in the context window
-    doc = doc.decode()
+    if len(doc) == 0:
+        return JSONResponse(status_code=status.HTTP_400_BAD_REQUEST, content="Empty document file")
 
     calls = [
-        construct_data_card(data=csv_str, data_doc=doc, gpt_key=gpt_key),
-        dataset_header_document_dkg(header=csv_str, doc=doc, gpt_key=gpt_key, smart=smart),
-        _compute_statistics(csv)]
+        construct_data_card(data=csv, data_doc=doc, gpt_key=gpt_key),
+        dataset_header_document_dkg(data=csv, doc=doc, gpt_key=gpt_key, smart=smart),
+    ]
 
     results = await asyncio.gather(*calls)
     for s, success in results:
@@ -45,16 +42,11 @@ async def get_data_card(gpt_key: str, csv_file: UploadFile = File(...), doc_file
             return JSONResponse(status_code=status.HTTP_400_BAD_REQUEST, content=s)
 
     data_card = ast.literal_eval(results[0][0])
-    data_card['SCHEMA'] = [s.strip() for s in csv_strings[0].split(',')]
+    data_card['SCHEMA'] = [s.strip() for s in csv.split('\n')[0].split(',')]
     data_profiling = ast.literal_eval(results[1][0])
     if 'DATA_PROFILING_RESULT' in data_card:
         return JSONResponse(status_code=status.HTTP_400_BAD_REQUEST, content='DATA_PROFILING_RESULT cannot be a requested field in the data card.')
     data_card['DATA_PROFILING_RESULT'] = data_profiling
-
-    # add summary statistics
-    if 'COLUMN_STATISTICS' in data_card:
-        return JSONResponse(status_code=status.HTTP_400_BAD_REQUEST, content='COLUMN_STATISTICS cannot be a requested field in the data card.')
-    data_card['COLUMN_STATISTICS'] = results[2][0]
 
     return data_card
 
@@ -76,13 +68,3 @@ async def get_model_card(gpt_key: str, text_file: UploadFile = File(...), code_f
         return JSONResponse(status_code=status.HTTP_400_BAD_REQUEST, content=res)
     model_card = ast.literal_eval(res)
     return model_card
-
-
-async def _compute_statistics(csv: str):
-    df = read_csv(io.StringIO(csv), header=0)
-    df = df.describe(include='all')
-    # NaN and inf are not json serialiazable, so we replace them with strings
-    df = df.fillna('NaN')
-    df = df.replace(float('inf'), 'inf')
-    df = df.replace(float('-inf'), '-inf')
-    return df.to_dict(), True
