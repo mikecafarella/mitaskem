@@ -60,6 +60,10 @@ def modify_dataset(json_file,header_file, source = 'null'):
     output_json_file = json_file.replace('.json', '_id.json')
     with open(output_json_file, "w") as file:
         json.dump(data, file, indent=4)
+    print('data before merging', data)
+    with open(output_json_file, "r") as file:
+        data = json.load(file)
+    print('data after dump', data)
 
 
 if __name__ == "__main__":
