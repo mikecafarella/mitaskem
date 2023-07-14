@@ -2,6 +2,7 @@ import ast, io, random, sys, os
 import asyncio
 from typing import Optional
 
+from openai import OpenAIError
 from fastapi import APIRouter, status, UploadFile, File
 from fastapi.responses import JSONResponse
 
@@ -35,7 +36,14 @@ async def get_data_card(gpt_key: str, csv_file: UploadFile = File(...), doc_file
         dataset_header_document_dkg(data=csv, doc=doc, gpt_key=gpt_key, smart=smart),
     ]
 
-    results = await asyncio.gather(*calls)
+    try:
+        results = await asyncio.gather(*calls)
+    except OpenAIError as err:
+        if "maximum context" in str(err):
+            return JSONResponse(status_code=status.HTTP_400_BAD_REQUEST, content="Input too long. Please reduce the size of your input.")
+        else:
+            return JSONResponse(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, content=f"OpenAI connection error: {err}")
+
     for s, success in results:
         if not success:
             return JSONResponse(status_code=status.HTTP_400_BAD_REQUEST, content=s)
@@ -64,7 +72,14 @@ async def get_model_card(gpt_key: str, text_file: UploadFile = File(...), code_f
     # process code
     code_string = code.decode()
 
-    res, success = await construct_model_card(text=text_string, code=code_string, gpt_key=gpt_key)
+    try:
+        res, success = await construct_model_card(text=text_string, code=code_string, gpt_key=gpt_key)
+    except OpenAIError as err:
+        if "maximum context" in str(err):
+            return JSONResponse(status_code=status.HTTP_400_BAD_REQUEST, content="Input too long. Please reduce the size of your input.")
+        else:
+            return JSONResponse(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, content=f"OpenAI connection error: {err}")
+
     if not success:
         return JSONResponse(status_code=status.HTTP_400_BAD_REQUEST, content=res)
     model_card = ast.literal_eval(res)
