@@ -2,7 +2,6 @@ import ast, io, random, sys, os
 import asyncio
 from typing import Optional
 
-from pandas import read_csv
 from fastapi import APIRouter, status, UploadFile, File
 from fastapi.responses import JSONResponse
 
@@ -43,6 +42,8 @@ async def get_data_card(gpt_key: str, csv_file: UploadFile = File(...), doc_file
 
     data_card = ast.literal_eval(results[0][0])
     data_card['SCHEMA'] = [s.strip() for s in csv.split('\n')[0].split(',')]
+    # get a random sample of a row from the csv
+    data_card['EXAMPLES'] = {k: v for k, v in zip(csv.split('\n')[0].split(','), random.sample(csv.split('\n')[1:], 1)[0].split(','))}
     data_profiling = ast.literal_eval(results[1][0])
     if 'DATA_PROFILING_RESULT' in data_card:
         return JSONResponse(status_code=status.HTTP_400_BAD_REQUEST, content='DATA_PROFILING_RESULT cannot be a requested field in the data card.')
