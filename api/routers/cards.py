@@ -34,7 +34,11 @@ async def get_data_card(gpt_key: str, csv_file: UploadFile = File(...), doc_file
     # TODO: handle docs that are too long to fit in the context window
     doc = doc.decode()
 
-    calls = [construct_data_card(data=csv_str, data_doc=doc, gpt_key=gpt_key), dataset_header_document_dkg(header=csv_str, doc=doc, gpt_key=gpt_key, smart=smart)]
+    calls = [
+        construct_data_card(data=csv_str, data_doc=doc, gpt_key=gpt_key),
+        dataset_header_document_dkg(header=csv_str, doc=doc, gpt_key=gpt_key, smart=smart),
+        _compute_statistics(csv)]
+
     results = await asyncio.gather(*calls)
     for s, success in results:
         if not success:
@@ -48,15 +52,9 @@ async def get_data_card(gpt_key: str, csv_file: UploadFile = File(...), doc_file
     data_card['SCEHMA'] = [s.strip() for s in csv_strings[0].split(',')]
 
     # add summary statistics
-    df = read_csv(io.StringIO(csv), header=0)
     if 'COLUMN_STATISTICS' in data_card:
         return JSONResponse(status_code=status.HTTP_400_BAD_REQUEST, content='COLUMN_STATISTICS cannot be a requested field in the data card.')
-    df = df.describe(include='all')
-    # NaN and inf are not json serialiazable, so we replace them with strings
-    df = df.fillna('NaN')
-    df = df.replace(float('inf'), 'inf')
-    df = df.replace(float('-inf'), '-inf')
-    data_card['COLUMN_STATISTICS'] = df.to_dict()
+    data_card['COLUMN_STATISTICS'] = results[2][0]
 
     return data_card
 
@@ -78,3 +76,13 @@ async def get_model_card(gpt_key: str, text_file: UploadFile = File(...), code_f
         return JSONResponse(status_code=status.HTTP_400_BAD_REQUEST, content=res)
     model_card = ast.literal_eval(res)
     return model_card
+
+
+async def _compute_statistics(csv: str):
+    df = read_csv(io.StringIO(csv), header=0)
+    df = df.describe(include='all')
+    # NaN and inf are not json serialiazable, so we replace them with strings
+    df = df.fillna('NaN')
+    df = df.replace(float('inf'), 'inf')
+    df = df.replace(float('-inf'), '-inf')
+    return df.to_dict(), True
