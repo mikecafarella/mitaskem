@@ -151,7 +151,7 @@ import time
 
 #@profile
 async def afind_vars_from_text(text: str, api_key: str):
-    with open(os.path.join(os.path.dirname(__file__), 'prompts/text_var_prompt.txt'), "r") as f:
+    with open(os.path.join(os.path.dirname(__file__), 'prompts/text_var_val_prompt.txt'), "r") as f:
         var_prompt = f.read()
     
     start = time.time()
