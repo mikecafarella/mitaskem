@@ -137,6 +137,8 @@ async def _extract_text_vars(text, var_prompt, api_key=None):
                                               max_total_size=None, max_answer_size=256, chunk_overlap=0)
     
     task_prompts = [var_prompt.replace('[TEXT]', doc_chunk) for doc_chunk in document_chunks]
+    for prompt in task_prompts:
+        print('prompt:\t', prompt)
     res = await fork_join_requests(task_prompts, model=model_name, api_key=api_key)
 
     fres = []
@@ -144,14 +146,16 @@ async def _extract_text_vars(text, var_prompt, api_key=None):
         fres.append(r.strip('\nNone')) # always ends in \nNone with current prompt...
 
     unified = '\n'.join(fres)
+    print('response:\t', unified)
     tmp1 = vars_dedup(unified)
+    print('tmp1', tmp1)
     return tmp1
 
 import time
 
 #@profile
 async def afind_vars_from_text(text: str, api_key: str):
-    with open(os.path.join(os.path.dirname(__file__), 'prompts/text_var_prompt.txt'), "r") as f:
+    with open(os.path.join(os.path.dirname(__file__), 'prompts/text_var_val_prompt.txt'), "r") as f:
         var_prompt = f.read()
     
     start = time.time()
@@ -185,6 +189,7 @@ async def async_mit_extraction_restAPI(file_name, gpt_key, cache_dir="/tmp/askem
         json_str = await afind_vars_from_text(text, gpt_key)
         # print(type(json_str))
     # dkg_json = json.loads(json.dumps(json_str))
+    print('after variable extraction', json_str)
 
     t3 = time.time()
     print(f'{t3- t2=}')
@@ -209,6 +214,7 @@ async def async_mit_extraction_restAPI(file_name, gpt_key, cache_dir="/tmp/askem
 
 
     json_str, success = vars_dataset_connection_simplified(dkg_json_string, dataset_str, gpt_key)
+    print('after dataset connection', json_str)
     t4 = time.time()
     print(f'{t4-t3=}')
     #  print(json_str)
