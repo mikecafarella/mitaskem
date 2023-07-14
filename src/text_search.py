@@ -51,7 +51,8 @@ def vars_dedup(text:str) -> dict:
         if len(toks) > 2:
             var_val = toks[2]
             print(var_name, 'found value', var_val)
-            var_dict[var_name]['value'] = var_val
+            if var_val != "None":
+                var_dict[var_name]['value'] = var_val
 
     return var_dict
 
