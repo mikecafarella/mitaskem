@@ -1,3 +1,4 @@
+import random
 import asyncio
 import copy
 from collections import OrderedDict
@@ -7,6 +8,7 @@ import os
 import re
 import time
 
+from dateutil.parser import ParserError
 import pandas as pd
 from cryptography.fernet import Fernet
 import openai
@@ -428,20 +430,26 @@ def dataset_header_dkg(header, gpt_key=''):
     return json.dumps(col_ant), True
 
 
-async def dataset_header_document_dkg(header, doc,  gpt_key='', smart=False):
+async def dataset_header_document_dkg(data, doc,  gpt_key='', smart=False, num_data_samples=10):
     """
     Grounding the column header to DKG terms
     :param header: Dataset header string seperated with comma
     :param doc: Document string
     :return: Matches column name to DKG
     """
-    if header=="":
+    if not data.strip():
         return f"Empty dataset input", False
-    row1 = header.split("\n")[0]
+    
+    # subsample from the dataset to make sure the prompt doesn't get too long
+    sub_data = data.split('\n')
+    num_rows_to_sample = min(num_data_samples, len(sub_data) - 1)
+    sub_data = sub_data[0] + '\n' + '\n'.join(random.sample(sub_data[1:], num_rows_to_sample))
+
+    row1 = sub_data.split("\n")[0]
     cols = row1.split(",")
     col_ant = {}
 
-    prompt = get_csv_doc_prompt(header,doc)
+    prompt = get_csv_doc_prompt(sub_data, doc)
     match = get_gpt4_match(prompt, gpt_key, model="gpt-4")
     print(match)
     for res in match.split("\n"):
@@ -460,9 +468,13 @@ async def dataset_header_document_dkg(header, doc,  gpt_key='', smart=False):
     col_names = [col_ant[col]["col_name"] for col in cols]
     col_concepts = [col_ant[col]["concept"] for col in cols]
 
+    # line up coroutines
     ops = [abatch_get_mira_dkg_term(col_names, ['id', 'name', 'type'], True),
-           abatch_get_mira_dkg_term(col_concepts, ['id', 'name', 'type'], True)]
-    name_results, concept_results = await asyncio.gather(*ops)
+           abatch_get_mira_dkg_term(col_concepts, ['id', 'name', 'type'], True),
+           _compute_statistics(data),
+           ]
+    # let them all finish
+    name_results, concept_results, stats = await asyncio.gather(*ops)
 
     for col, name_res, concept_res in zip(cols, name_results, concept_results):
         seen = set()
@@ -483,10 +495,67 @@ async def dataset_header_document_dkg(header, doc,  gpt_key='', smart=False):
             col_ant[col]["dkg_groundings"] = res
             print(f"Smart grounding for {col}: {res}")
 
+    for col in col_ant:
+        col_ant[col]["column_stats"] = stats.get(col, {})
+
     return json.dumps(col_ant), True
 
 
-async def construct_data_card(data, data_doc,  gpt_key='', fields=None, model="gpt-3.5-turbo-16k"):
+async def _compute_statistics(csv: str):
+    """
+    Compute summary statistics for a given dataset.
+    :param csv: Dataset as a csv string
+    :return: Summary statistics as a dictionary
+    """
+
+    csv_df = pd.read_csv(io.StringIO(csv), header=0)
+
+    # first handle numeric columns
+    df = csv_df.describe()
+    df.drop('count', inplace=True)  # we don't want the count row
+    # NaN and inf are not json serialiazable, so we replace them with strings
+    df.fillna('NaN', inplace=True)
+    df.replace(float('inf'), 'inf', inplace=True)
+    df.replace(float('-inf'), '-inf', inplace=True)
+    res = df.to_dict()
+    for col in res:
+        res[col]['type'] = 'numeric'
+
+
+    # try to infer date columns and convert them to datetime objects
+    date_cols = set()
+    df = csv_df.select_dtypes(include=['object'])
+    for col in df.columns:
+        try:
+            df[col] = pd.to_datetime(df[col])
+            date_cols.add(col)
+        except ParserError:
+            continue
+
+    # then handle categorical columns, saving the top 10 most common values along with their counts
+    # (also do this for dates)
+    for col in df.columns:
+        res[col] = {'type': 'categorical'}
+        res[col]['most_common_entries'] = {}
+        # get top <=10 most common values along with their counts
+        counts = df[col].value_counts()
+        for i in range(min(10, len(counts))):
+            val = counts.index[i]
+            if col in date_cols:
+                val = val.isoformat()
+            res[col]['most_common_entries'][val] = int(counts[i])
+        # get number of unique entries
+        res[col]['num_unique_entries'] = len(df[col].unique())
+
+        if col in date_cols:
+            res[col]['type'] = 'date'
+            res[col]['earliest'] = df[col].min().isoformat()
+            res[col]['latest'] = df[col].max().isoformat()
+
+    return res
+
+
+async def construct_data_card(data, data_doc,  gpt_key='', fields=None, model="gpt-3.5-turbo-16k", num_data_samples=10):
     """
     Constructing a data card for a given dataset and its description.
     :param data: Small dataset, including header and optionally a few rows
@@ -502,12 +571,16 @@ async def construct_data_card(data, data_doc,  gpt_key='', fields=None, model="g
                   ("AUTHOR_NAME",  "Name of publishing institution or author."),
                   ("AUTHOR_EMAIL", "Email address for the author of this dataset."),
                   ("DATE",         "Date of publication of this dataset."),
-                  ("SCHEMA",       "Schema of the data in this dataset."),
                   ("PROVENANCE",   "Short (1 sentence) description of how the data was collected."),
                   ("SENSITIVITY",  "Is there any human-identifying information in the dataset?"),
-                  ("EXAMPLES",     "One example data point from the dataset, formatted as a JSON object."),
                   ("LICENSE",      "License for this dataset."),
         ]
+
+    
+    # subsample from the dataset to make sure the prompt doesn't get too long
+    data = data.split('\n')
+    num_rows_to_sample = min(num_data_samples, len(data) - 1)
+    data = data[0] + '\n' + '\n'.join(random.sample(data[1:], num_rows_to_sample))
 
     prompt = get_data_card_prompt(fields, data, data_doc)
     match = get_gpt4_match(prompt, gpt_key, model=model)
