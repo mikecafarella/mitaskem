@@ -137,6 +137,7 @@ async def fork_join_requests(prompts, model : str, api_key : str = None):
             result = response.choices[0].message.content.strip()
         else:
             result = response.choices[0].text.strip()
+        print('openai result:\t', result)
         outputs.append(result)
 
     return outputs
