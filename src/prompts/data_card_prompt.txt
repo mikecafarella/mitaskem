@@ -1,14 +1,14 @@
-I have a dataset (as a CSV file) as well as a textual description of the contents of the dataset.
-I need to extract some metadata from the dataset and the textual description.
+I have a textual description of the contents of a dataset, along with the schema of the dataset.
+I need to extract some metadata about this dataset from these inputs.
 
 The metadata to be extracted is as follows:
 ```txt
 [FIELDS]
 ```
 
-The dataset is as follows:
+The dataset schema is as follows:
 ```csv
-[CSV]
+[SCHEMA]
 ```
 
 The textual description is as follows:

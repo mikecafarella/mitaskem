@@ -225,23 +225,24 @@ def get_code_dataset_prompt(code, dataset, target):
     return prompt
 
 
-def get_csv_doc_prompt(csv, doc):
+def get_csv_doc_prompt(schema, stats, doc):
     text_file = open(os.path.join(os.path.dirname(__file__), "prompts/dataset_profiling_prompt.txt"), "r")
     prompt = text_file.read()
     text_file.close()
 
-    prompt = prompt.replace("[CSV]", csv)
+    prompt = prompt.replace("[SCHEMA]", schema)
+    prompt = prompt.replace("[STATS]", json.dumps(stats))
     prompt = prompt.replace("[DOC]", doc)
     # print(prompt)
     return prompt
 
-def get_data_card_prompt(fields, csv, doc):
+def get_data_card_prompt(fields, schema, doc):
     with open(os.path.join(os.path.dirname(__file__), "prompts/data_card_prompt.txt"), "r") as text_file:
         prompt = text_file.read()
 
     fields_str = '\n'.join([f"{f[0]}: {f[1]}" for f in fields])
     prompt = prompt.replace("[FIELDS]", fields_str)
-    prompt = prompt.replace("[CSV]", csv)
+    prompt = prompt.replace("[SCHEMA]", schema)
     prompt = prompt.replace("[DOC]", doc)
     return prompt
 
@@ -430,7 +431,7 @@ def dataset_header_dkg(header, gpt_key=''):
     return json.dumps(col_ant), True
 
 
-async def dataset_header_document_dkg(data, doc,  gpt_key='', smart=False, num_data_samples=10):
+async def dataset_header_document_dkg(data, doc, gpt_key='', smart=False):
     """
     Grounding the column header to DKG terms
     :param header: Dataset header string seperated with comma
@@ -439,23 +440,28 @@ async def dataset_header_document_dkg(data, doc,  gpt_key='', smart=False, num_d
     """
     if not data.strip():
         return f"Empty dataset input", False
-    
-    # subsample from the dataset to make sure the prompt doesn't get too long
-    sub_data = data.split('\n')
-    num_rows_to_sample = min(num_data_samples, len(sub_data) - 1)
-    sub_data = sub_data[0] + '\n' + '\n'.join(random.sample(sub_data[1:], num_rows_to_sample))
 
-    row1 = sub_data.split("\n")[0]
-    cols = row1.split(",")
+    stats = await _compute_statistics(data)
+
+    schema = data.split("\n")[0].strip()
+    cols = [s.strip() for s in schema.split(",")]
     col_ant = {}
 
-    prompt = get_csv_doc_prompt(sub_data, doc)
+    prompt = get_csv_doc_prompt(schema, stats, doc)
     match = get_gpt4_match(prompt, gpt_key, model="gpt-4")
     print(match)
+    match = match.split('```')
+    if len(match) == 1:
+        match = match[0]
+    else:
+        match = match[1]
     for res in match.split("\n"):
-        if res == "":
+        res = res.strip()
+        if not res:
             continue
-        attrs = res.split("|")
+        attrs = [x.strip() for x in res.split("|")]
+        if len(attrs) != 4:
+            continue
         col = attrs[0]
         col_ant[col] = {}
         col_ant[col]["col_name"] = attrs[0]
@@ -471,10 +477,9 @@ async def dataset_header_document_dkg(data, doc,  gpt_key='', smart=False, num_d
     # line up coroutines
     ops = [abatch_get_mira_dkg_term(col_names, ['id', 'name', 'type'], True),
            abatch_get_mira_dkg_term(col_concepts, ['id', 'name', 'type'], True),
-           _compute_statistics(data),
            ]
     # let them all finish
-    name_results, concept_results, stats = await asyncio.gather(*ops)
+    name_results, concept_results = await asyncio.gather(*ops)
 
     for col, name_res, concept_res in zip(cols, name_results, concept_results):
         seen = set()
@@ -555,7 +560,7 @@ async def _compute_statistics(csv: str):
     return res
 
 
-async def construct_data_card(data, data_doc,  gpt_key='', fields=None, model="gpt-3.5-turbo-16k", num_data_samples=10):
+async def construct_data_card(schema, data_doc,  gpt_key='', fields=None, model="gpt-3.5-turbo-16k"):
     """
     Constructing a data card for a given dataset and its description.
     :param data: Small dataset, including header and optionally a few rows
@@ -576,13 +581,8 @@ async def construct_data_card(data, data_doc,  gpt_key='', fields=None, model="g
                   ("LICENSE",      "License for this dataset."),
         ]
 
-    
-    # subsample from the dataset to make sure the prompt doesn't get too long
-    data = data.split('\n')
-    num_rows_to_sample = min(num_data_samples, len(data) - 1)
-    data = data[0] + '\n' + '\n'.join(random.sample(data[1:], num_rows_to_sample))
 
-    prompt = get_data_card_prompt(fields, data, data_doc)
+    prompt = get_data_card_prompt(fields, schema, data_doc)
     match = get_gpt4_match(prompt, gpt_key, model=model)
     print(match)
 

@@ -68,12 +68,11 @@ async def link_dataset_columns_to_dkg_info(gpt_key: str, csv_file: UploadFile = 
            Smart run provides better results but may result in slow response times as a consequence of extra GPT calls.
     """
     csv_string = await csv_file.read()
-    csv_string = csv_string.decode()
-    buf = io.StringIO(csv_string)
-    csv_str = buf.readline() + '\n' + '\n'.join(random.sample(buf.readlines(), 5))
+    csv_str = csv_string.decode()
 
     doc = await doc_file.read()
     doc = doc.decode()
+
     s, success = await dataset_header_document_dkg(data=csv_str, doc=doc, gpt_key=gpt_key, smart=smart)
 
     if not success:

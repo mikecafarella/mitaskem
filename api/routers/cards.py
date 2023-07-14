@@ -31,8 +31,10 @@ async def get_data_card(gpt_key: str, csv_file: UploadFile = File(...), doc_file
     if len(doc) == 0:
         return JSONResponse(status_code=status.HTTP_400_BAD_REQUEST, content="Empty document file")
 
+    schema = csv.split('\n')[0].strip()
+
     calls = [
-        construct_data_card(data=csv, data_doc=doc, gpt_key=gpt_key),
+        construct_data_card(schema=schema, data_doc=doc, gpt_key=gpt_key),
         dataset_header_document_dkg(data=csv, doc=doc, gpt_key=gpt_key, smart=smart),
     ]
 
@@ -49,7 +51,7 @@ async def get_data_card(gpt_key: str, csv_file: UploadFile = File(...), doc_file
             return JSONResponse(status_code=status.HTTP_400_BAD_REQUEST, content=s)
 
     data_card = ast.literal_eval(results[0][0])
-    data_card['SCHEMA'] = [s.strip() for s in csv.split('\n')[0].split(',')]
+    data_card['SCHEMA'] = [s.strip() for s in schema.split(',')]
     # get a random sample of a row from the csv
     data_card['EXAMPLES'] = {k: v for k, v in zip(csv.split('\n')[0].split(','), random.sample(csv.split('\n')[1:], 1)[0].split(','))}
     data_profiling = ast.literal_eval(results[1][0])
