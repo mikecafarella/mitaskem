@@ -486,7 +486,7 @@ async def dataset_header_document_dkg(header, doc,  gpt_key='', smart=False):
     return json.dumps(col_ant), True
 
 
-async def construct_data_card(data, data_doc,  gpt_key='', fields=None, model="gpt-3.5-turbo"):
+async def construct_data_card(data, data_doc,  gpt_key='', fields=None, model="gpt-3.5-turbo-16k"):
     """
     Constructing a data card for a given dataset and its description.
     :param data: Small dataset, including header and optionally a few rows
