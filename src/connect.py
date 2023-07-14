@@ -8,6 +8,7 @@ import os
 import re
 import time
 
+from dateutil.parser import ParserError
 import pandas as pd
 from cryptography.fernet import Fernet
 import openai
@@ -507,7 +508,7 @@ async def _compute_statistics(csv: str):
     :return: Summary statistics as a dictionary
     """
 
-    csv_df = pd.read_csv(io.StringIO(csv), header=0, parse_dates=True, infer_datetime_format=True, on_bad_lines="warn")
+    csv_df = pd.read_csv(io.StringIO(csv), header=0)
 
     # first handle numeric columns
     df = csv_df.describe()
@@ -520,31 +521,34 @@ async def _compute_statistics(csv: str):
     for col in res:
         res[col]['type'] = 'numeric'
 
-    # then handle date columns, getting the min, the max, and the mode
-    # first find all columns which are dates
-    dtypes = csv_df.dtypes
-    date_cols = [col for col in dtypes.index if 'datetime' in str(dtypes[col])]  # slightly hacky, trying to handle all formats
-    for col in date_cols:
-        res[col] = {'type': 'date'}
-        res[col]['earliest'] = df[col].min().isoformat()
-        res[col]['latest'] = df[col].max().isoformat()
 
-    # then handle categorical columns, saving the top 10 most common values along with their counts
-    # (note this includes dates)
+    # try to infer date columns and convert them to datetime objects
+    date_cols = set()
     df = csv_df.select_dtypes(include=['object'])
     for col in df.columns:
-        if col not in res:
-            res[col] = {'type': 'categorical'}
+        try:
+            df[col] = pd.to_datetime(df[col])
+            date_cols.add(col)
+        except ParserError:
+            continue
+
+    # then handle categorical columns, saving the top 10 most common values along with their counts
+    # (also do this for dates)
+    for col in df.columns:
+        res[col] = {'type': 'categorical'}
         res[col]['most_common_entries'] = {}
         # get top <=10 most common values along with their counts
         counts = df[col].value_counts()
         for i in range(min(10, len(counts))):
             val = counts.index[i]
-            if col in date_cols:
-                val = val.isoformat()
             res[col]['most_common_entries'][val] = int(counts[i])
         # get number of unique entries
         res[col]['num_unique_entries'] = len(df[col].unique())
+
+        if col in date_cols:
+            res[col]['type'] = 'date'
+            res[col]['earliest'] = df[col].min().isoformat()
+            res[col]['latest'] = df[col].max().isoformat()
 
     return res
 
