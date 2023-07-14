@@ -2,6 +2,7 @@ import ast, io, random, sys, os
 import asyncio
 from typing import Optional
 
+from pandas import read_csv
 from fastapi import APIRouter, status, UploadFile, File
 from fastapi.responses import JSONResponse
 
@@ -22,8 +23,8 @@ async def get_data_card(gpt_key: str, csv_file: UploadFile = File(...), doc_file
     csv, doc = await asyncio.gather(*files)
 
     # process CSV; get header and <= 5 random rows
-    csv_string = csv.decode()
-    csv_strings = csv_string.split('\n')
+    csv = csv.decode()
+    csv_strings = csv.split('\n')
     if len(csv_strings) == 0:
         return JSONResponse(status_code=status.HTTP_400_BAD_REQUEST, content="Empty CSV file")
     num_rows_to_sample = min(5, len(csv_strings) - 1)
@@ -44,6 +45,18 @@ async def get_data_card(gpt_key: str, csv_file: UploadFile = File(...), doc_file
     if 'DATA_PROFILING_RESULT' in data_card:
         return JSONResponse(status_code=status.HTTP_400_BAD_REQUEST, content='DATA_PROFILING_RESULT cannot be a requested field in the data card.')
     data_card['DATA_PROFILING_RESULT'] = data_profiling
+    data_card['SCEHMA'] = [s.strip() for s in csv_strings[0].split(',')]
+
+    # add summary statistics
+    df = read_csv(io.StringIO(csv), header=0)
+    if 'COLUMN_STATISTICS' in data_card:
+        return JSONResponse(status_code=status.HTTP_400_BAD_REQUEST, content='COLUMN_STATISTICS cannot be a requested field in the data card.')
+    df = df.describe(include='all')
+    # NaN and inf are not json serialiazable, so we replace them with strings
+    df = df.fillna('NaN')
+    df = df.replace(float('inf'), 'inf')
+    df = df.replace(float('-inf'), '-inf')
+    data_card['COLUMN_STATISTICS'] = df.to_dict()
 
     return data_card
 
