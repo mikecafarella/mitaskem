@@ -502,7 +502,6 @@ async def construct_data_card(data, data_doc,  gpt_key='', fields=None, model="g
                   ("AUTHOR_NAME",  "Name of publishing institution or author."),
                   ("AUTHOR_EMAIL", "Email address for the author of this dataset."),
                   ("DATE",         "Date of publication of this dataset."),
-                  ("SCHEMA",       "Schema of the data in this dataset."),
                   ("PROVENANCE",   "Short (1 sentence) description of how the data was collected."),
                   ("SENSITIVITY",  "Is there any human-identifying information in the dataset?"),
                   ("EXAMPLES",     "One example data point from the dataset, formatted as a JSON object."),
