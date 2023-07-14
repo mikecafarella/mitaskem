@@ -63,11 +63,11 @@ def extract_vars(in_path, out_dir):
         for i in range(segments):
             snippet = text[i * 3500: (i + 1) * 3500]
 
-            output, success = text_param_search(snippet, GPT_KEY)
-            if success:
-                print("OUTPUT (params): " + output + "\n------\n")
-                if output != "None":
-                    fop.write(output + "\n")
+            # output, success = text_param_search(snippet, GPT_KEY)
+            # if success:
+            #     print("OUTPUT (params): " + output + "\n------\n")
+            #     if output != "None":
+            #         fop.write(output + "\n")
 
             output, success = text_var_search(snippet, GPT_KEY)
             if success:
