@@ -45,11 +45,11 @@ async def get_data_card(gpt_key: str, csv_file: UploadFile = File(...), doc_file
             return JSONResponse(status_code=status.HTTP_400_BAD_REQUEST, content=s)
 
     data_card = ast.literal_eval(results[0][0])
+    data_card['SCHEMA'] = [s.strip() for s in csv_strings[0].split(',')]
     data_profiling = ast.literal_eval(results[1][0])
     if 'DATA_PROFILING_RESULT' in data_card:
         return JSONResponse(status_code=status.HTTP_400_BAD_REQUEST, content='DATA_PROFILING_RESULT cannot be a requested field in the data card.')
     data_card['DATA_PROFILING_RESULT'] = data_profiling
-    data_card['SCEHMA'] = [s.strip() for s in csv_strings[0].split(',')]
 
     # add summary statistics
     if 'COLUMN_STATISTICS' in data_card:
