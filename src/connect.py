@@ -428,7 +428,7 @@ def dataset_header_dkg(header, gpt_key=''):
     return json.dumps(col_ant), True
 
 
-async def dataset_header_document_dkg(header, doc,  gpt_key=''):
+async def dataset_header_document_dkg(header, doc,  gpt_key='', smart=False):
     """
     Grounding the column header to DKG terms
     :param header: Dataset header string seperated with comma
@@ -476,6 +476,12 @@ async def dataset_header_document_dkg(header, doc,  gpt_key=''):
                     seen.add(r[0])
 
         col_ant[col]["dkg_groundings"] = results
+        if results and smart:
+            target = copy.deepcopy(col_ant[col])
+            del target["dkg_groundings"]
+            res=rank_dkg_terms(target, results, gpt_key)[0]
+            col_ant[col]["dkg_groundings"] = res
+            print(f"Smart grounding for {col}: {res}")
 
     return json.dumps(col_ant), True
 

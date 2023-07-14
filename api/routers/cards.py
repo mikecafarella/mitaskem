@@ -1,5 +1,6 @@
 import ast, io, random, sys, os
 import asyncio
+from typing import Optional
 
 from fastapi import APIRouter, status, UploadFile, File
 from fastapi.responses import JSONResponse
@@ -12,8 +13,11 @@ from src.connect import construct_data_card, dataset_header_document_dkg, constr
 router = APIRouter()
 
 @router.post("/get_data_card", tags=["Data-and-model-cards"])
-async def get_data_card(gpt_key: str, csv_file: UploadFile = File(...), doc_file: UploadFile = File(...)):
 
+async def get_data_card(gpt_key: str, csv_file: UploadFile = File(...), doc_file: UploadFile = File(...), smart: Optional[bool] = False):
+    """
+           Smart run provides better results but may result in slow response times as a consequence of extra GPT calls.
+    """
     files = [csv_file.read(), doc_file.read()]
     csv, doc = await asyncio.gather(*files)
 
@@ -29,7 +33,7 @@ async def get_data_card(gpt_key: str, csv_file: UploadFile = File(...), doc_file
     # TODO: handle docs that are too long to fit in the context window
     doc = doc.decode()
 
-    calls = [construct_data_card(data=csv_str, data_doc=doc, gpt_key=gpt_key), dataset_header_document_dkg(header=csv_str, doc=doc, gpt_key=gpt_key)]
+    calls = [construct_data_card(data=csv_str, data_doc=doc, gpt_key=gpt_key), dataset_header_document_dkg(header=csv_str, doc=doc, gpt_key=gpt_key, smart=smart)]
     results = await asyncio.gather(*calls)
     for s, success in results:
         if not success:
