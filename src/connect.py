@@ -555,7 +555,7 @@ async def _compute_statistics(csv: str):
     return res
 
 
-async def construct_data_card(data, data_doc,  gpt_key='', fields=None, model="gpt-3.5-turbo", num_data_samples=10):
+async def construct_data_card(data, data_doc,  gpt_key='', fields=None, model="gpt-3.5-turbo-16k", num_data_samples=10):
     """
     Constructing a data card for a given dataset and its description.
     :param data: Small dataset, including header and optionally a few rows
