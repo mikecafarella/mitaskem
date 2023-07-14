@@ -1,7 +1,6 @@
 from gpt_interaction import *
 from openai import OpenAIError
 from connect import *
-import re
 import argparse
 from gpt_key import *
 from mira_dkg_interface import *
@@ -33,7 +32,8 @@ def vars_dedup(text:str) -> dict:
 
     # Build dictionary, deduplicating along the way
     for line in lines:
-        toks = re.split(" \| ?", line.rstrip())
+        line = line.strip()
+        toks = [t.strip() for t in line.split("|")]
 
         if len(toks) == 1 or line == "name | description | numerical value":
             continue
