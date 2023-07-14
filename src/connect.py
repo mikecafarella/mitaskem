@@ -501,13 +501,52 @@ async def dataset_header_document_dkg(data, doc,  gpt_key='', smart=False, num_d
 
 
 async def _compute_statistics(csv: str):
-    df = pd.read_csv(io.StringIO(csv), header=0)
-    df = df.describe(include='all')
+    """
+    Compute summary statistics for a given dataset.
+    :param csv: Dataset as a csv string
+    :return: Summary statistics as a dictionary
+    """
+
+    csv_df = pd.read_csv(io.StringIO(csv), header=0, parse_dates=True, infer_datetime_format=True, on_bad_lines="warn")
+
+    # first handle numeric columns
+    df = csv_df.describe()
+    df.drop('count', inplace=True)  # we don't want the count row
     # NaN and inf are not json serialiazable, so we replace them with strings
-    df = df.fillna('NaN')
-    df = df.replace(float('inf'), 'inf')
-    df = df.replace(float('-inf'), '-inf')
-    return df.to_dict()
+    df.fillna('NaN', inplace=True)
+    df.replace(float('inf'), 'inf', inplace=True)
+    df.replace(float('-inf'), '-inf', inplace=True)
+    res = df.to_dict()
+    for col in res:
+        res[col]['type'] = 'numeric'
+
+    # then handle date columns, getting the min, the max, and the mode
+    # first find all columns which are dates
+    dtypes = csv_df.dtypes
+    date_cols = [col for col in dtypes.index if 'datetime' in str(dtypes[col])]  # slightly hacky, trying to handle all formats
+    for col in date_cols:
+        res[col] = {'type': 'date'}
+        res[col]['earliest'] = df[col].min().isoformat()
+        res[col]['latest'] = df[col].max().isoformat()
+
+    # then handle categorical columns, saving the top 10 most common values along with their counts
+    # (note this includes dates)
+    df = csv_df.select_dtypes(include=['object'])
+    for col in df.columns:
+        if col not in res:
+            res[col] = {'type': 'categorical'}
+        res[col]['most_common_entries'] = {}
+        # get top <=10 most common values along with their counts
+        counts = df[col].value_counts()
+        for i in range(min(10, len(counts))):
+            val = counts.index[i]
+            if col in date_cols:
+                val = val.isoformat()
+            res[col]['most_common_entries'][val] = int(counts[i])
+        # get number of unique entries
+        res[col]['num_unique_entries'] = len(df[col].unique())
+
+    return res
 
 
 async def construct_data_card(data, data_doc,  gpt_key='', fields=None, model="gpt-3.5-turbo", num_data_samples=10):
