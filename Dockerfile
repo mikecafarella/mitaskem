@@ -14,10 +14,20 @@ RUN git clone https://github.com/ml4ai/automates.git ./automates
 WORKDIR /automates
 RUN pip install -e .
 
+WORKDIR /
+# local KG
+# get mira KG
+RUN curl -o epi_2023-07-07_nodes.tsv.gz https://askem-mira.s3.amazonaws.com/dkg/epi/build/2023-07-07/nodes.tsv.gz
+RUN gunzip epi_2023-07-07_nodes.tsv
+
 # Copy src code in and start API
 COPY . /
-WORKDIR /
 ENV PYTHONPATH "${PYTHONPATH}:/src"
 RUN pip install -r requirements.txt
+
+
+
 WORKDIR /api
+
+
 CMD ["uvicorn", "server:app", "--reload", "--host", "0.0.0.0", "--port", "8000"]
