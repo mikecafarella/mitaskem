@@ -459,7 +459,7 @@ async def dataset_header_document_dkg(data, doc,  gpt_key='', smart=False, num_d
     for res in match.split("\n"):
         if res == "":
             continue
-        attrs = [a.strip() for a in res.split("|")]
+        attrs = [a.strip().strip("\"") for a in res.split("|")]
         print(f"attributes from gpt4: {attrs}")
         col = attrs[0]
         col_ant[col] = {}
@@ -480,6 +480,7 @@ async def dataset_header_document_dkg(data, doc,  gpt_key='', smart=False, num_d
            ]
     # let them all finish
     name_results, concept_results, stats = await asyncio.gather(*ops)
+    # TODO: if any results return empty, see if there's any better concept search terms from gpt-3.5-turbo-16k
 
     for col, name_res, concept_res in zip(cols, name_results, concept_results):
         seen = set()
