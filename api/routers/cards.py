@@ -9,12 +9,12 @@ from fastapi.responses import JSONResponse
 sys.path.append(
     os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 )
-from src.connect import construct_data_card, dataset_header_document_dkg, construct_model_card
+from src.connect import construct_data_card, dataset_header_document_dkg, construct_model_card, profile_matrix, get_dataset_type
 
 router = APIRouter()
 
-@router.post("/get_data_card", tags=["Data-and-model-cards"])
 
+@router.post("/get_data_card", tags=["Data-and-model-cards"])
 async def get_data_card(gpt_key: str, csv_file: UploadFile = File(...), doc_file: UploadFile = File(...), smart: Optional[bool] = False):
     """
            Smart run provides better results but may result in slow response times as a consequence of extra GPT calls.
@@ -31,23 +31,22 @@ async def get_data_card(gpt_key: str, csv_file: UploadFile = File(...), doc_file
     if len(doc) == 0:
         return JSONResponse(status_code=status.HTTP_400_BAD_REQUEST, content="Empty document file")
 
-    schema = csv.split('\n')[0].strip()
-    cols = [s.strip() for s in schema.split(',')]
-    # check if cols contains any entries that are entirely numeric, including both ints and floats
-    def is_numeric(s):
-        try:
-            float(s)
-            return True
-        except ValueError:
-            return False
-    if any([is_numeric(s) for s in cols]):
-        schema = ','.join([str(i) for i in range(len(cols))])
-
-
+    data_type = get_dataset_type(csv)
+    if data_type == 'header-0':
+        schema = csv.split('\n')[0].strip()
+        profiler = dataset_header_document_dkg
+    elif data_type == 'no-header':
+        schema = None
+        profiler = dataset_header_document_dkg
+    elif data_type == 'matrix':
+        schema = None
+        profiler = profile_matrix
+    else:
+        return JSONResponse(status_code=status.HTTP_400_BAD_REQUEST, content="Invalid CSV file; could not determine data type")
 
     calls = [
-        construct_data_card(schema=schema, data_doc=doc, dataset_name=csv_file.filename, doc_name=doc_file.filename, gpt_key=gpt_key),
-        dataset_header_document_dkg(data=csv, doc=doc, dataset_name=csv_file.filename, doc_name=doc_file.filename, gpt_key=gpt_key, smart=smart)
+        construct_data_card(data_doc=doc, dataset_name=csv_file.filename, doc_name=doc_file.filename, dataset_type=data_type, gpt_key=gpt_key),
+        profiler(data=csv, doc=doc, dataset_name=csv_file.filename, doc_name=doc_file.filename, gpt_key=gpt_key, smart=smart)
     ]
 
     try:
@@ -63,13 +62,35 @@ async def get_data_card(gpt_key: str, csv_file: UploadFile = File(...), doc_file
             return JSONResponse(status_code=status.HTTP_400_BAD_REQUEST, content=s)
 
     data_card = ast.literal_eval(results[0][0])
-    data_card['SCHEMA'] = [s.strip() for s in schema.split(',')]
-    # get a random sample of a row from the csv
-    data_card['EXAMPLES'] = {k.strip(): v for k, v in zip(schema.split(','), random.sample(csv.split('\n')[1:], 1)[0].split(','))}
     data_profiling = ast.literal_eval(results[1][0])
     if 'DATA_PROFILING_RESULT' in data_card:
         return JSONResponse(status_code=status.HTTP_400_BAD_REQUEST, content='DATA_PROFILING_RESULT cannot be a requested field in the data card.')
-    data_card['DATA_PROFILING_RESULT'] = data_profiling
+
+    if data_type == 'header-0':
+        data_card['SCHEMA'] = [s.strip() for s in schema.split(',')]
+        # get a random sample of a row from the csv
+        data_card['EXAMPLES'] = {k.strip(): v for k, v in zip(schema.split(','), random.sample(csv.split('\n')[1:], 1)[0].split(','))}
+        data_card['DATA_PROFILING_RESULT'] = data_profiling
+        data_card['EXAMPLES'] = {k.strip(): v for k, v in zip(schema.split(','), random.sample(csv.split('\n')[1:], 1)[0].split(','))}
+    elif data_type == 'no-header':
+        if 'SCHEMA' not in data_card:
+            return JSONResponse(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, content='SCHEMA not found in data card')
+        schema = [s.strip() for s in data_card['SCHEMA'].split(',')]
+        schema = [s[1:] if s.startswith('[') else s for s in schema]
+        schema = [s[:-1] if s.endswith(']') else s for s in schema]
+        aligned_data_profiling = {}
+        for k, v in data_profiling.items():
+            k = int(k)
+            k = schema[k]
+            aligned_data_profiling[k] = v
+        data_card['DATA_PROFILING_RESULT'] = aligned_data_profiling
+        data_card['EXAMPLES'] = {k.strip(): v for k, v in zip(schema.split(','), random.sample(csv.split('\n')[1:], 1)[0].split(','))}
+    elif data_type == 'matrix':
+        data_card['DATA_PROFILING_RESULT'] = data_profiling
+        data_card['EXAMPLES'] = random.sample(csv.split('\n'), 1)[0].split(',')
+    else:
+        raise Exception('Invalid data type')
+
 
     return data_card
 
