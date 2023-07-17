@@ -574,6 +574,9 @@ async def _compute_statistics(csv: str, header=0):
             res[col]['earliest'] = df[col].min().isoformat()
             res[col]['latest'] = df[col].max().isoformat()
 
+    # make sure all column indices are strings
+    res = {str(k): v for k, v in res.items()}
+
     return res
 
 
