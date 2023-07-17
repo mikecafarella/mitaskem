@@ -238,13 +238,12 @@ def get_csv_doc_prompt(schema, stats, doc, dataset_name, doc_name):
     # print(prompt)
     return prompt
 
-def get_data_card_prompt(fields, schema, doc, dataset_name, doc_name):
+def get_data_card_prompt(fields, doc, dataset_name, doc_name):
     with open(os.path.join(os.path.dirname(__file__), "prompts/data_card_prompt.txt"), "r") as text_file:
         prompt = text_file.read()
 
     fields_str = '\n'.join([f"{f[0]}: {f[1]}" for f in fields])
     prompt = prompt.replace("[FIELDS]", fields_str)
-    prompt = prompt.replace("[SCHEMA]", schema)
     prompt = prompt.replace("[DOC]", doc)
     prompt = prompt.replace("[DATASET_NAME]", dataset_name)
     prompt = prompt.replace("[DOC_NAME]", doc_name)
@@ -397,6 +396,29 @@ def sort_dkg(ranking, json_obj):
 
     return sorted_json
 
+
+async def matrix_dkg(data, doc, dataset_name, doc_name, gpt_key='', smart=False):
+    """
+    Grounding a matrix of data to DKG terms
+    """
+    if not data.strip():
+        return f"Empty dataset input", False
+
+    # for matrices, we compute statistics across the entire matrix
+    df = pd.read_csv(io.StringIO(data), header=None)
+    df = df.stack()
+    stats = {
+        "mean": df.mean(),
+        "std": df.std(),
+        "min": df.min(),
+        "max": df.max(),
+        "25%": df.quantile(0.25),
+        "50%": df.quantile(0.5),
+        "75%": df.quantile(0.75),
+    }
+
+    return json.dumps({'matrix_stats': stats}), True
+
 def dataset_header_dkg(header, gpt_key=''):
     """
     Grounding the column header to DKG terms
@@ -445,24 +467,19 @@ async def dataset_header_document_dkg(data, doc, dataset_name, doc_name, gpt_key
     if not data.strip():
         return f"Empty dataset input", False
 
-    schema = data.split("\n")[0].strip()
-    cols = [s.strip() for s in schema.split(",")]
-    def is_numeric(s):
-        try:
-            float(s)
-            return True
-        except ValueError:
-            return False
-    if any([is_numeric(s) for s in cols]):
-        cols = [str(i) for i in range(len(cols))]
-        schema = ','.join(cols)
-        header = None
-    else:
+    dataset_type = get_dataset_type(data)
+    if dataset_type == "header-0":
         header = 0
+        schema = data.split("\n")[0].strip()
+    elif dataset_type == "no-header":
+        header = None
+        schema = None
+    else:
+        return f"Invalid dataset input", False
 
-    stats = await _compute_statistics(data, header=header)
+    stats = await _compute_tabular_statistics(data, header=header)
 
-    col_ant = {}
+    col_ant = OrderedDict()
 
     prompt = get_csv_doc_prompt(schema, stats, doc, dataset_name, doc_name)
     match = get_gpt4_match(prompt, gpt_key, model="gpt-4")
@@ -487,9 +504,8 @@ async def dataset_header_document_dkg(data, doc, dataset_name, doc_name, gpt_key
         col_ant[col]["description"] = attrs[3]
 
 
-    print(f"Looking up column names and concepts in mira: {cols}")
-    col_names = [col_ant[col]["col_name"] for col in cols]
-    col_concepts = [col_ant[col]["concept"] for col in cols]
+    col_names = [col_ant[col]["col_name"] for col in col_ant]
+    col_concepts = [col_ant[col]["concept"] for col in col_ant]
 
     # line up coroutines
     ops = [abatch_get_mira_dkg_term(col_names, ['id', 'name', 'type'], True),
@@ -498,7 +514,7 @@ async def dataset_header_document_dkg(data, doc, dataset_name, doc_name, gpt_key
     # let them all finish
     name_results, concept_results = await asyncio.gather(*ops)
 
-    for col, name_res, concept_res in zip(cols, name_results, concept_results):
+    for col, name_res, concept_res in zip(col_names, name_results, concept_results):
         seen = set()
         results = []
         for res in (concept_res, name_res):  # TODO check if this is the right order
@@ -523,9 +539,9 @@ async def dataset_header_document_dkg(data, doc, dataset_name, doc_name, gpt_key
     return json.dumps(col_ant), True
 
 
-async def _compute_statistics(csv: str, header=0):
+async def _compute_tabular_statistics(csv: str, header=0):
     """
-    Compute summary statistics for a given dataset.
+    Compute summary statistics for a given tabular dataset.
     :param csv: Dataset as a csv string
     :return: Summary statistics as a dictionary
     """
@@ -580,7 +596,7 @@ async def _compute_statistics(csv: str, header=0):
     return res
 
 
-async def construct_data_card(schema, data_doc, dataset_name, doc_name, gpt_key='', fields=None, model="gpt-3.5-turbo-16k"):
+async def construct_data_card(data_doc, dataset_name, doc_name, dataset_type, gpt_key='', fields=None, model="gpt-3.5-turbo-16k"):
     """
     Constructing a data card for a given dataset and its description.
     :param data: Small dataset, including header and optionally a few rows
@@ -600,8 +616,14 @@ async def construct_data_card(schema, data_doc, dataset_name, doc_name, gpt_key=
                   ("SENSITIVITY",  "Is there any human-identifying information in the dataset?"),
                   ("LICENSE",      "License for this dataset."),
         ]
+        if dataset_type == 'no-header':
+            # also want GPT to fill in the schema
+            fields.append(("SCHEMA", "The dataset schema, as a comma-separated list of column names."))
+        elif dataset_type == 'matrix':
+            # instead of a schema, want to ask GPT to explain what a given (row, column) cell means
+            fields.append(("CELL_FORMAT", "A brief description of what a given cell in the matrix represents (i.e. a row/column pair)."))
 
-    prompt = get_data_card_prompt(fields, schema, data_doc, dataset_name, doc_name)
+    prompt = get_data_card_prompt(fields, data_doc, dataset_name, doc_name)
     match = get_gpt4_match(prompt, gpt_key, model=model)
     print(match)
 
@@ -909,6 +931,25 @@ def code_dkg_connection(dkg_targets, gpt_key, ontology_terms=DEFAULT_TERMS, onto
 
     print(connection)
     return connection
+
+
+def get_dataset_type(csv: str) -> str:
+    def is_numeric(s):
+        try:
+            float(s)
+            return True
+        except ValueError:
+            return False
+    
+    lines = csv.split('\n')
+    values = [[s.strip() for s in line.split(',')] for line in lines]
+    if all([all([is_numeric(s) for s in line]) for line in values]):
+        return 'matrix'
+    elif any([is_numeric(s) for s in values[0]]):
+        return 'no-header'
+    else:
+        return 'header-0'
+
 
 if __name__ == "__main__":
 
