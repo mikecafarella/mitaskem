@@ -8,7 +8,6 @@ import os
 import re
 import time
 
-from dateutil.parser import ParserError
 import pandas as pd
 from cryptography.fernet import Fernet
 import openai
@@ -567,7 +566,7 @@ async def _compute_tabular_statistics(csv: str, header=0):
         try:
             df[col] = pd.to_datetime(df[col])
             date_cols.add(col)
-        except ParserError:
+        except Exception:
             continue
 
     # then handle categorical columns, saving the top 10 most common values along with their counts
