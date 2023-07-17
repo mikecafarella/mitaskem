@@ -397,7 +397,7 @@ def sort_dkg(ranking, json_obj):
     return sorted_json
 
 
-async def matrix_dkg(data, doc, dataset_name, doc_name, gpt_key='', smart=False):
+async def profile_matrix(data, doc, dataset_name, doc_name, gpt_key='', smart=False):
     """
     Grounding a matrix of data to DKG terms
     """

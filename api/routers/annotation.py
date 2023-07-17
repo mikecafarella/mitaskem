@@ -11,7 +11,7 @@ sys.path.append(
     os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 )
 from src.text_search import text_var_search, vars_to_json, vars_dedup
-from src.connect import vars_formula_connection, dataset_header_document_dkg, vars_dataset_connection_simplified, matrix_dkg, get_dataset_type
+from src.connect import vars_formula_connection, dataset_header_document_dkg, vars_dataset_connection_simplified, profile_matrix, get_dataset_type
 from src.link_annos_to_pyacset import link_annos_to_pyacset
 
 router = APIRouter()
@@ -62,11 +62,7 @@ def link_annotation_to_pyacset_and_paper_info(pyacset_str: str, annotations_str:
 
 
 @router.post("/profile_matrix_data", tags=["Paper-2-annotated-vars"])
-async def link_dataset_columns_to_dkg_info(gpt_key: str, csv_file: UploadFile = File(...),
-                                           doc_file: UploadFile = File(...), smart: Optional[bool] = False):
-    """
-           Smart run provides better results but may result in slow response times as a consequence of extra GPT calls.
-    """
+async def profile_matrix_data(gpt_key: str, csv_file: UploadFile = File(...), doc_file: UploadFile = File(...)):
     csv_string = await csv_file.read()
     csv_str = csv_string.decode()
 
@@ -77,7 +73,7 @@ async def link_dataset_columns_to_dkg_info(gpt_key: str, csv_file: UploadFile = 
     if dataset_type != 'matrix':
         return JSONResponse(status_code=status.HTTP_400_BAD_REQUEST, content="Invalid CSV file; data type does not seem to be a matrix.")
 
-    s, success = await matrix_dkg(data=csv_str, doc=doc, dataset_name=csv_file.filename, doc_name=doc_file.filename, gpt_key=gpt_key, smart=smart)
+    s, success = await profile_matrix(data=csv_str, doc=doc, dataset_name=csv_file.filename, doc_name=doc_file.filename, gpt_key=gpt_key, smart=smart)
 
     if not success:
         return JSONResponse(status_code=status.HTTP_401_UNAUTHORIZED, content=s)

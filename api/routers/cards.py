@@ -9,7 +9,7 @@ from fastapi.responses import JSONResponse
 sys.path.append(
     os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 )
-from src.connect import construct_data_card, dataset_header_document_dkg, construct_model_card, matrix_dkg, get_dataset_type
+from src.connect import construct_data_card, dataset_header_document_dkg, construct_model_card, profile_matrix, get_dataset_type
 
 router = APIRouter()
 
@@ -40,7 +40,7 @@ async def get_data_card(gpt_key: str, csv_file: UploadFile = File(...), doc_file
         profiler = dataset_header_document_dkg
     elif data_type == 'matrix':
         schema = None
-        profiler = matrix_dkg
+        profiler = profile_matrix
     else:
         return JSONResponse(status_code=status.HTTP_400_BAD_REQUEST, content="Invalid CSV file; could not determine data type")
 
