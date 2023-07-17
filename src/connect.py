@@ -7,6 +7,7 @@ import json
 import os
 import re
 import time
+import csv
 
 from dateutil.parser import ParserError
 import pandas as pd
@@ -445,8 +446,11 @@ async def dataset_header_document_dkg(data, doc,  gpt_key='', smart=False, num_d
     num_rows_to_sample = min(num_data_samples, len(sub_data) - 1)
     sub_data = sub_data[0] + '\n' + '\n'.join(random.sample(sub_data[1:], num_rows_to_sample))
 
-    row1 = sub_data.split("\n")[0]
-    cols = row1.split(",")
+    # parse in data headers
+    cols = []
+    for row in csv.reader([io.StringIO(sub_data).readline()]):
+        print('csv reading test', row)
+        cols = row
     col_ant = {}
 
     prompt = get_csv_doc_prompt(sub_data, doc)
@@ -455,7 +459,8 @@ async def dataset_header_document_dkg(data, doc,  gpt_key='', smart=False, num_d
     for res in match.split("\n"):
         if res == "":
             continue
-        attrs = res.split("|")
+        attrs = [a.strip() for a in res.split("|")]
+        print(f"attributes from gpt4: {attrs}")
         col = attrs[0]
         col_ant[col] = {}
         col_ant[col]["col_name"] = attrs[0]
