@@ -6,7 +6,6 @@
 
 import os
 import openai
-import aiofiles
 from fastapi import UploadFile
 from api.routers.annotation import upload_file_annotate 
 import asyncio
