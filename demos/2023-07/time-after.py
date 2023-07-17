@@ -6,11 +6,31 @@
 
 import os
 import openai
-from mit_extraction import async_mit_extraction_restAPI
+from fastapi import UploadFile
+from api.routers.annotation import upload_file_annotate 
 import asyncio
+import json
+import io
 
-bucky_path = os.path.abspath('../resources/models/Bucky/bucky.txt')
-res = asyncio.run(async_mit_extraction_restAPI('/tmp/askemcache/bucky.txt', gpt_key=openai.api_key, cache_dir='/tmp/askemcache/'))
 
-print('result:', res)
+async def test():
+    filename = os.path.dirname(__file__) + '/../../resources/models/Bucky/bucky.txt'
+    with open(filename, 'rb') as f:
+        c = f.read()
+
+    f = io.BytesIO(c)
+    upfile = UploadFile(
+        filename=os.path.basename(filename),
+        file=f
+    )
+    res = await upload_file_annotate(gpt_key=openai.api_key,file=upfile)
+
+    return res
+
+res = asyncio.run(test())
+print('results:')
+print('-----')
+print(res)
+
+print('result:', res.json())
 

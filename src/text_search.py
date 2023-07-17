@@ -85,17 +85,30 @@ def vars_to_json(var_dict: dict) -> str:
 
     return s_out
 
+from kgmatching import local_batch_get_mira_dkg_term
+import json
+
 async def avars_to_json(var_dict: dict) -> str:
 
     s_out = "["
     is_first = True
     id = 0
 
-    batch_var_ground = await abatch_get_mira_dkg_term(var_dict.keys(), ['id', 'name'])
+    batch_var_ground0 = local_batch_get_mira_dkg_term(var_dict)
+    pretty_var0 = json.dumps(batch_var_ground0, indent=2)
+    print(f'batch_var_ground\n{pretty_var0}')
+
+
+    # batch_var_ground = await abatch_get_mira_dkg_term(var_dict.keys(), ['id', 'name'])
+    # pretty_var = json.dumps(batch_var_ground, indent=2)
+    # print(f'batch_var_ground\n{pretty_var}')
+
+    batch_var_ground = [[[res['id'], res['name']] for res in batch] for batch in batch_var_ground0]
 
     for var_name, var_ground in zip(var_dict, batch_var_ground):
         var_defs_s = "[\"" + '\",\"'.join(i for i in var_dict[var_name]['description'][:MAX_TEXT_MATCHES]) + "\"]"
         #var_ground = get_mira_dkg_term(var_name, ['id', 'name'])
+
         var_ground = var_ground[:MAX_DKG_MATCHES]
         var_ground_s = "[" + ",".join([("[\"" + "\",\"".join([str(item) for item in sublist]) + "\"]") for sublist in var_ground]) + "]"
 
