@@ -7,6 +7,7 @@ import json
 import os
 import re
 import time
+import csv
 
 from dateutil.parser import ParserError
 import pandas as pd
@@ -445,8 +446,12 @@ async def dataset_header_document_dkg(data, doc, dataset_name, doc_name, gpt_key
     if not data.strip():
         return f"Empty dataset input", False
 
-    schema = data.split("\n")[0].strip()
-    cols = [s.strip() for s in schema.split(",")]
+    # parse in data headers
+    schema = io.StringIO(data).readline()
+    cols = []
+    for row in csv.reader([schema]):
+        print('csv reading test', row)
+        cols = row
     def is_numeric(s):
         try:
             float(s)
@@ -498,6 +503,7 @@ async def dataset_header_document_dkg(data, doc, dataset_name, doc_name, gpt_key
            ]
     # let them all finish
     name_results, concept_results = await asyncio.gather(*ops)
+    # TODO: if any results return empty, see if there's any better concept search terms from gpt-3.5-turbo-16k
 
     for col, name_res, concept_res in zip(cols, name_results, concept_results):
         seen = set()
