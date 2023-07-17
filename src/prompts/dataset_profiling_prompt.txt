@@ -1,4 +1,5 @@
 I have some summary statistics of a dataset, as well as some relevant documentation about the dataset.
+The dataset is called `[DATASET_NAME]`. The documentation was taken from a file called `[DOC_NAME]`.
 I need to infer some attributes about each column of the dataset.
 
 The dataset contains the following columns:

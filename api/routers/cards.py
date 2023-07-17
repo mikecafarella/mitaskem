@@ -32,10 +32,22 @@ async def get_data_card(gpt_key: str, csv_file: UploadFile = File(...), doc_file
         return JSONResponse(status_code=status.HTTP_400_BAD_REQUEST, content="Empty document file")
 
     schema = csv.split('\n')[0].strip()
+    cols = [s.strip() for s in schema.split(',')]
+    # check if cols contains any entries that are entirely numeric, including both ints and floats
+    def is_numeric(s):
+        try:
+            float(s)
+            return True
+        except ValueError:
+            return False
+    if any([is_numeric(s) for s in cols]):
+        schema = ','.join([str(i) for i in range(len(cols))])
+
+
 
     calls = [
-        construct_data_card(schema=schema, data_doc=doc, gpt_key=gpt_key),
-        dataset_header_document_dkg(data=csv, doc=doc, gpt_key=gpt_key, smart=smart),
+        construct_data_card(schema=schema, data_doc=doc, dataset_name=csv_file.filename, doc_name=doc_file.filename, gpt_key=gpt_key),
+        dataset_header_document_dkg(data=csv, doc=doc, dataset_name=csv_file.filename, doc_name=doc_file.filename, gpt_key=gpt_key, smart=smart)
     ]
 
     try:

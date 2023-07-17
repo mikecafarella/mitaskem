@@ -225,7 +225,7 @@ def get_code_dataset_prompt(code, dataset, target):
     return prompt
 
 
-def get_csv_doc_prompt(schema, stats, doc):
+def get_csv_doc_prompt(schema, stats, doc, dataset_name, doc_name):
     text_file = open(os.path.join(os.path.dirname(__file__), "prompts/dataset_profiling_prompt.txt"), "r")
     prompt = text_file.read()
     text_file.close()
@@ -233,10 +233,12 @@ def get_csv_doc_prompt(schema, stats, doc):
     prompt = prompt.replace("[SCHEMA]", schema)
     prompt = prompt.replace("[STATS]", json.dumps(stats))
     prompt = prompt.replace("[DOC]", doc)
+    prompt = prompt.replace("[DATASET_NAME]", dataset_name)
+    prompt = prompt.replace("[DOC_NAME]", doc_name)
     # print(prompt)
     return prompt
 
-def get_data_card_prompt(fields, schema, doc):
+def get_data_card_prompt(fields, schema, doc, dataset_name, doc_name):
     with open(os.path.join(os.path.dirname(__file__), "prompts/data_card_prompt.txt"), "r") as text_file:
         prompt = text_file.read()
 
@@ -244,6 +246,8 @@ def get_data_card_prompt(fields, schema, doc):
     prompt = prompt.replace("[FIELDS]", fields_str)
     prompt = prompt.replace("[SCHEMA]", schema)
     prompt = prompt.replace("[DOC]", doc)
+    prompt = prompt.replace("[DATASET_NAME]", dataset_name)
+    prompt = prompt.replace("[DOC_NAME]", doc_name)
     return prompt
 
 def get_model_card_prompt(fields, text, code):
@@ -431,7 +435,7 @@ def dataset_header_dkg(header, gpt_key=''):
     return json.dumps(col_ant), True
 
 
-async def dataset_header_document_dkg(data, doc, gpt_key='', smart=False):
+async def dataset_header_document_dkg(data, doc, dataset_name, doc_name, gpt_key='', smart=False):
     """
     Grounding the column header to DKG terms
     :param header: Dataset header string seperated with comma
@@ -441,13 +445,26 @@ async def dataset_header_document_dkg(data, doc, gpt_key='', smart=False):
     if not data.strip():
         return f"Empty dataset input", False
 
-    stats = await _compute_statistics(data)
-
     schema = data.split("\n")[0].strip()
     cols = [s.strip() for s in schema.split(",")]
+    def is_numeric(s):
+        try:
+            float(s)
+            return True
+        except ValueError:
+            return False
+    if any([is_numeric(s) for s in cols]):
+        cols = [str(i) for i in range(len(cols))]
+        schema = ','.join(cols)
+        header = None
+    else:
+        header = 0
+
+    stats = await _compute_statistics(data, header=header)
+
     col_ant = {}
 
-    prompt = get_csv_doc_prompt(schema, stats, doc)
+    prompt = get_csv_doc_prompt(schema, stats, doc, dataset_name, doc_name)
     match = get_gpt4_match(prompt, gpt_key, model="gpt-4")
     print(match)
     match = match.split('```')
@@ -506,14 +523,14 @@ async def dataset_header_document_dkg(data, doc, gpt_key='', smart=False):
     return json.dumps(col_ant), True
 
 
-async def _compute_statistics(csv: str):
+async def _compute_statistics(csv: str, header=0):
     """
     Compute summary statistics for a given dataset.
     :param csv: Dataset as a csv string
     :return: Summary statistics as a dictionary
     """
 
-    csv_df = pd.read_csv(io.StringIO(csv), header=0)
+    csv_df = pd.read_csv(io.StringIO(csv), header=header)
 
     # first handle numeric columns
     df = csv_df.describe()
@@ -560,7 +577,7 @@ async def _compute_statistics(csv: str):
     return res
 
 
-async def construct_data_card(schema, data_doc,  gpt_key='', fields=None, model="gpt-3.5-turbo-16k"):
+async def construct_data_card(schema, data_doc, dataset_name, doc_name, gpt_key='', fields=None, model="gpt-3.5-turbo-16k"):
     """
     Constructing a data card for a given dataset and its description.
     :param data: Small dataset, including header and optionally a few rows
@@ -581,8 +598,7 @@ async def construct_data_card(schema, data_doc,  gpt_key='', fields=None, model=
                   ("LICENSE",      "License for this dataset."),
         ]
 
-
-    prompt = get_data_card_prompt(fields, schema, data_doc)
+    prompt = get_data_card_prompt(fields, schema, data_doc, dataset_name, doc_name)
     match = get_gpt4_match(prompt, gpt_key, model=model)
     print(match)
 
