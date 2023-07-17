@@ -9,3 +9,4 @@ usa-hospitalizations.csv, https://github.com/DARPA-ASKEM/program-milestones/blob
 OxCGRT_nat_latest.csv, https://raw.githubusercontent.com/OxCGRT/covid-policy-tracker/master/data/OxCGRT_nat_latest.csv
 us-counties-2023.csv, https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties-2023.csv
 abm.csv, https://github.com/Shakeri-Lab/COVID-SEIR/blob/main/Data/abm.csv
+us.csv, https://github.com/nytimes/covid-19-data/us.csv
