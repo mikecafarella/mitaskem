@@ -7,7 +7,6 @@ import json
 import os
 import re
 import time
-import csv
 
 from dateutil.parser import ParserError
 import pandas as pd
@@ -226,24 +225,29 @@ def get_code_dataset_prompt(code, dataset, target):
     return prompt
 
 
-def get_csv_doc_prompt(csv, doc):
+def get_csv_doc_prompt(schema, stats, doc, dataset_name, doc_name):
     text_file = open(os.path.join(os.path.dirname(__file__), "prompts/dataset_profiling_prompt.txt"), "r")
     prompt = text_file.read()
     text_file.close()
 
-    prompt = prompt.replace("[CSV]", csv)
+    prompt = prompt.replace("[SCHEMA]", schema)
+    prompt = prompt.replace("[STATS]", json.dumps(stats))
     prompt = prompt.replace("[DOC]", doc)
+    prompt = prompt.replace("[DATASET_NAME]", dataset_name)
+    prompt = prompt.replace("[DOC_NAME]", doc_name)
     # print(prompt)
     return prompt
 
-def get_data_card_prompt(fields, csv, doc):
+def get_data_card_prompt(fields, schema, doc, dataset_name, doc_name):
     with open(os.path.join(os.path.dirname(__file__), "prompts/data_card_prompt.txt"), "r") as text_file:
         prompt = text_file.read()
 
     fields_str = '\n'.join([f"{f[0]}: {f[1]}" for f in fields])
     prompt = prompt.replace("[FIELDS]", fields_str)
-    prompt = prompt.replace("[CSV]", csv)
+    prompt = prompt.replace("[SCHEMA]", schema)
     prompt = prompt.replace("[DOC]", doc)
+    prompt = prompt.replace("[DATASET_NAME]", dataset_name)
+    prompt = prompt.replace("[DOC_NAME]", doc_name)
     return prompt
 
 def get_model_card_prompt(fields, text, code):
@@ -431,7 +435,7 @@ def dataset_header_dkg(header, gpt_key=''):
     return json.dumps(col_ant), True
 
 
-async def dataset_header_document_dkg(data, doc,  gpt_key='', smart=False, num_data_samples=10):
+async def dataset_header_document_dkg(data, doc, dataset_name, doc_name, gpt_key='', smart=False):
     """
     Grounding the column header to DKG terms
     :param header: Dataset header string seperated with comma
@@ -440,27 +444,42 @@ async def dataset_header_document_dkg(data, doc,  gpt_key='', smart=False, num_d
     """
     if not data.strip():
         return f"Empty dataset input", False
-    
-    # subsample from the dataset to make sure the prompt doesn't get too long
-    sub_data = data.split('\n')
-    num_rows_to_sample = min(num_data_samples, len(sub_data) - 1)
-    sub_data = sub_data[0] + '\n' + '\n'.join(random.sample(sub_data[1:], num_rows_to_sample))
 
-    # parse in data headers
-    cols = []
-    for row in csv.reader([io.StringIO(sub_data).readline()]):
-        print('csv reading test', row)
-        cols = row
+    schema = data.split("\n")[0].strip()
+    cols = [s.strip() for s in schema.split(",")]
+    def is_numeric(s):
+        try:
+            float(s)
+            return True
+        except ValueError:
+            return False
+    if any([is_numeric(s) for s in cols]):
+        cols = [str(i) for i in range(len(cols))]
+        schema = ','.join(cols)
+        header = None
+    else:
+        header = 0
+
+    stats = await _compute_statistics(data, header=header)
+
     col_ant = {}
 
-    prompt = get_csv_doc_prompt(sub_data, doc)
+    prompt = get_csv_doc_prompt(schema, stats, doc, dataset_name, doc_name)
     match = get_gpt4_match(prompt, gpt_key, model="gpt-4")
     print(match)
+    match = match.split('```')
+    if len(match) == 1:
+        match = match[0]
+    else:
+        match = match[1]
     for res in match.split("\n"):
-        if res == "":
+        res = res.strip()
+        if not res:
             continue
-        attrs = [a.strip().strip("\"") for a in res.split("|")]
+        attrs = [x.strip().strip("\"") for x in res.split("|")]
         print(f"attributes from gpt4: {attrs}")
+        if len(attrs) != 4:
+            continue
         col = attrs[0]
         col_ant[col] = {}
         col_ant[col]["col_name"] = attrs[0]
@@ -476,11 +495,9 @@ async def dataset_header_document_dkg(data, doc,  gpt_key='', smart=False, num_d
     # line up coroutines
     ops = [abatch_get_mira_dkg_term(col_names, ['id', 'name', 'type'], True),
            abatch_get_mira_dkg_term(col_concepts, ['id', 'name', 'type'], True),
-           _compute_statistics(data),
            ]
     # let them all finish
-    name_results, concept_results, stats = await asyncio.gather(*ops)
-    # TODO: if any results return empty, see if there's any better concept search terms from gpt-3.5-turbo-16k
+    name_results, concept_results = await asyncio.gather(*ops)
 
     for col, name_res, concept_res in zip(cols, name_results, concept_results):
         seen = set()
@@ -507,14 +524,14 @@ async def dataset_header_document_dkg(data, doc,  gpt_key='', smart=False, num_d
     return json.dumps(col_ant), True
 
 
-async def _compute_statistics(csv: str):
+async def _compute_statistics(csv: str, header=0):
     """
     Compute summary statistics for a given dataset.
     :param csv: Dataset as a csv string
     :return: Summary statistics as a dictionary
     """
 
-    csv_df = pd.read_csv(io.StringIO(csv), header=0)
+    csv_df = pd.read_csv(io.StringIO(csv), header=header)
 
     # first handle numeric columns
     df = csv_df.describe()
@@ -558,10 +575,13 @@ async def _compute_statistics(csv: str):
             res[col]['earliest'] = df[col].min().isoformat()
             res[col]['latest'] = df[col].max().isoformat()
 
+    # make sure all column indices are strings
+    res = {str(k): v for k, v in res.items()}
+
     return res
 
 
-async def construct_data_card(data, data_doc,  gpt_key='', fields=None, model="gpt-3.5-turbo-16k", num_data_samples=10):
+async def construct_data_card(schema, data_doc, dataset_name, doc_name, gpt_key='', fields=None, model="gpt-3.5-turbo-16k"):
     """
     Constructing a data card for a given dataset and its description.
     :param data: Small dataset, including header and optionally a few rows
@@ -582,13 +602,7 @@ async def construct_data_card(data, data_doc,  gpt_key='', fields=None, model="g
                   ("LICENSE",      "License for this dataset."),
         ]
 
-    
-    # subsample from the dataset to make sure the prompt doesn't get too long
-    data = data.split('\n')
-    num_rows_to_sample = min(num_data_samples, len(data) - 1)
-    data = data[0] + '\n' + '\n'.join(random.sample(data[1:], num_rows_to_sample))
-
-    prompt = get_data_card_prompt(fields, data, data_doc)
+    prompt = get_data_card_prompt(fields, schema, data_doc, dataset_name, doc_name)
     match = get_gpt4_match(prompt, gpt_key, model=model)
     print(match)
 
