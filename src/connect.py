@@ -621,7 +621,7 @@ async def construct_data_card(data_doc, dataset_name, doc_name, dataset_type, gp
             fields.append(("SCHEMA", "The dataset schema, as a comma-separated list of column names."))
         elif dataset_type == 'matrix':
             # instead of a schema, want to ask GPT to explain what a given (row, column) cell means
-            fields.append(("CELL_FORMAT", "A brief description of what a given cell in the matrix represents (i.e. a row/column pair)."))
+            fields.append(("CELL_INTERPRETATION", "A brief description of what a given cell in the matrix represents (i.e. how to interpret the value at a given a row/column pair)."))
 
     prompt = get_data_card_prompt(fields, data_doc, dataset_name, doc_name)
     match = get_gpt4_match(prompt, gpt_key, model=model)
