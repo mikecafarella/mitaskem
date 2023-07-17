@@ -451,7 +451,7 @@ async def dataset_header_document_dkg(data, doc, dataset_name, doc_name, gpt_key
     cols = []
     for row in csv.reader([schema]):
         print('csv reading test', row)
-        cols = row
+        cols = [x.strip() for x in row]
     def is_numeric(s):
         try:
             float(s)
@@ -459,7 +459,7 @@ async def dataset_header_document_dkg(data, doc, dataset_name, doc_name, gpt_key
         except ValueError:
             return False
     if any([is_numeric(s) for s in cols]):
-        cols = [str(i) for i in range(len(cols))]
+        cols = [str(i).strip().strip("\"") for i in range(len(cols))]
         schema = ','.join(cols)
         header = None
     else:
