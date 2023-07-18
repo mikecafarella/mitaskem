@@ -28,7 +28,7 @@ def text_var_search(text, gpt_key):
 def vars_dedup(text:str) -> dict:
     var_dict = {}
 
-    lines = text.split("\n")
+    lines = text.splitlines()
 
     # Build dictionary, deduplicating along the way
     for line in lines:
