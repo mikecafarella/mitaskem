@@ -535,12 +535,14 @@ async def _compute_tabular_statistics(data: List[List[Any]], header):
     """
 
     csv_df = pd.DataFrame(data, columns=header)
+    null_counts = csv_df.isnull().sum(axis=0)
 
     # first handle numeric columns
     df = csv_df.describe()
     df.drop('count', inplace=True)  # we don't want the count row
     # NaN and inf are not json serialiazable, so we replace them with strings
     df.fillna('NaN', inplace=True)
+    df.replace(float('nan'), 'NaN', inplace=True)  # better safe than sorry
     df.replace(float('inf'), 'inf', inplace=True)
     df.replace(float('-inf'), '-inf', inplace=True)
     res = df.to_dict()
@@ -577,6 +579,9 @@ async def _compute_tabular_statistics(data: List[List[Any]], header):
             res[col]['type'] = 'date'
             res[col]['earliest'] = df[col].min().isoformat()
             res[col]['latest'] = df[col].max().isoformat()
+
+    for col in res:
+        res[col]['num_null_entries'] = int(null_counts[col])
 
     # make sure all column indices are strings
     res = {str(k): v for k, v in res.items()}
@@ -930,11 +935,19 @@ def _is_numeric(s):
 
 def process_data(data: List[List[Any]]) -> List[List[Any]]:
     """
-    Convert all numeric values in a dataset to floats.
+    Convert all numeric values in a dataset to floats, casting empty strings to NaNs.
     :param data: Dataset as a list of lists
     :return: Dataset with all numeric values converted to floats
     """
-    return [[float(x) if _is_numeric(x) else x for x in row] for row in data]
+    def f(x):
+        if x == '':
+            return float('nan')
+        elif _is_numeric(x):
+            return float(x)
+        else:
+            return x
+
+    return [[f(x) for x in row] for row in data]
 
 
 def get_dataset_type(first_row: List[Any]) -> str:
