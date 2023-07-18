@@ -4,7 +4,7 @@ from fastapi import APIRouter, status, UploadFile, File, HTTPException
 from fastapi.responses import JSONResponse
 
 from file_cache import save_file_to_cache
-from mit_extraction import async_mit_extraction_restAPI
+from mit_extraction import async_mit_extraction_restAPI, afind_vars_from_text
 from typing import Optional
 
 sys.path.append(
@@ -18,7 +18,11 @@ router = APIRouter()
 
 
 @router.post("/find_text_vars", tags=["Paper-2-annotated-vars"])
-def find_variables_from_text(text: str, gpt_key: str):
+async def find_variables_from_text(gpt_key: str, file: UploadFile = File(...)):
+
+    contents = await file.read()
+    json_str = await afind_vars_from_text(contents.decode(), gpt_key)
+    return json_str
 
     length = len(text)
     segments = int(length/1000 + 1)
@@ -141,4 +145,5 @@ async def upload_file_annotate(gpt_key: str, file: UploadFile = File(...)):
 
         # return {"file name": res_file, "file contents": text}
     except Exception as e:
+        print(str(e))
         raise HTTPException(status_code=400, detail=str(e))

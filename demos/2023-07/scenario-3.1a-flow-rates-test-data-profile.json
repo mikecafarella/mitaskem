@@ -1,0 +1,78 @@
+{
+    "Sample Date": {
+      "col_name": "Sample Date",
+      "concept": "Date of Sample Collection",
+      "unit": "Date",
+      "description": "The date when the wastewater samples were collected from the Deer Island wastewater treatment plant in Massachusetts.",
+      "dkg_groundings": [],
+      "column_stats": {
+        "type": "date",
+        "most_common_entries": {
+          "2020-10-02T00:00:00": 1,
+          "2020-12-14T00:00:00": 1,
+          "2020-12-26T00:00:00": 1,
+          "2020-12-25T00:00:00": 1,
+          "2020-12-24T00:00:00": 1,
+          "2020-12-23T00:00:00": 1,
+          "2020-12-22T00:00:00": 1,
+          "2020-12-21T00:00:00": 1,
+          "2020-12-20T00:00:00": 1,
+          "2020-12-19T00:00:00": 1
+        },
+        "num_unique_entries": 116,
+        "earliest": "2020-10-02T00:00:00",
+        "latest": "2021-01-25T00:00:00"
+      }
+    },
+    "North System Flows to DITP, MGD": {
+      "col_name": "North System Flows to DITP, MGD",
+      "concept": "North System Flow Rate",
+      "unit": "Million Gallons per Day (MGD)",
+      "description": "The daily flow rate of the northern influent stream to the Deer Island wastewater treatment plant in Massachusetts.",
+      "dkg_groundings": [],
+      "column_stats": {
+        "mean": 210.63706896551724,
+        "std": 84.60938022842787,
+        "min": 120.7,
+        "25%": 157,
+        "50%": 191.85,
+        "75%": 231.5,
+        "max": 617,
+        "type": "numeric"
+      }
+    },
+    "South System Flows to DITP, MGD": {
+      "col_name": "South System Flows to DITP, MGD",
+      "concept": "South System Flow Rate",
+      "unit": "Million Gallons per Day (MGD)",
+      "description": "The daily flow rate of the southern influent stream to the Deer Island wastewater treatment plant in Massachusetts.",
+      "dkg_groundings": [],
+      "column_stats": {
+        "mean": 115.93879310344828,
+        "std": 47.982255364197734,
+        "min": 57,
+        "25%": 81.375,
+        "50%": 111.25,
+        "75%": 138.625,
+        "max": 314,
+        "type": "numeric"
+      }
+    },
+    "Total flows to DITP (MGD: Million gallon per day)": {
+      "col_name": "Total flows to DITP (MGD: Million gallon per day)",
+      "concept": "Total Flow Rate",
+      "unit": "Million Gallons per Day (MGD)",
+      "description": "The total daily flow rate to the Deer Island wastewater treatment plant in Massachusetts, which is the sum of the flow rates of the northern and southern influents.",
+      "dkg_groundings": [],
+      "column_stats": {
+        "mean": 326.5758620689655,
+        "std": 124.7372205674896,
+        "min": 177.7,
+        "25%": 241.5,
+        "50%": 306.75,
+        "75%": 369.475,
+        "max": 931,
+        "type": "numeric"
+      }
+    }
+  }

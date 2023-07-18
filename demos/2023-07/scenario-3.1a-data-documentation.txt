@@ -1,0 +1,69 @@
+2. Materials and methods
+2.1. Samples and wastewater data
+Raw, 24-h composite wastewater samples were collected from the Deer Island wastewater treatment plant in Massachusetts from October 02, 2020 to January 25, 2021. The Massachusetts wastewater treatment plant where we obtained samples has two major influent streams, which are referred to as the “northern” and “southern” influents. The daily flow rates during the sampling period for the northern and southern influents are 4.54e5–2.3e6 m3/day, and 2.16e5–1.19e6m3/day, respectively. Together the two catchments represent approximately 2.3 million wastewater customers in Middlesex, Norfolk, and Suffolk counties, primarily in urban and suburban neighborhoods. There are 5100 miles of local sewers transporting wastewater into 227 miles of interceptor pipes to the wastewater treatment plant (www.mwra.com), and the typical turnaround time for the plant to treat wastewater is 24 h. Samples were processed as they were received. Experimental methods and data were reported in our previous work (Wu et al., 2022b; Xiao et al., 2022). Briefly, the samples were pasteurized at 60 °C for 1 h for disinfection, and then filtered with 0.2 μm hydrophilic polyethersulfone membrane (Millipore Sigma) to remove bacterial cells and debris. Then, 15-ml filtrate was concentrated to ~200 ul with Amicon Ultra Centrifugal Filter (30-kDa cutoff, Millipore Sigma), and lysed with Qiagen AVL buffer followed by RNA extraction with Qiagen RNeasy kit. SARS-CoV-2 concentrations were quantified by one-step reverse transcription-polymerase chain reaction (RT-PCR) with the Taqman Fast Virus 1-Step Master Mix (Thermofisher) and CDC N1 and N2 primers/probes. Ct values were transformed to copies per ml of wastewater using standard curves for N1 and N2 targets established with synthetic SARS-CoV-2 RNA (Twist Bioscience) as the template. To compute the total viral load in the sewershed, we first averaged the viral concentration in the northern and southern influents by the sampling date, which is then multiplied by the total influent flow rates (i.e., sum of flow rates of northern and southern influents) on the same day.
+
+2.2. Clinical data source
+The clinical COVID-19 case data for Norfolk, Suffolk, and Middlesex Counties served by the Massachusetts wastewater treatment plant were downloaded from Massachusetts government website (www.mass.gov). The plant covers about 71.9 % of the total population in the three counties, including almost all of Suffolk County (99.8 %), 59.8 % of Middlesex County, and 68.7 % of Norfolk County, based on the 2020 Census population data. For simplicity, we summed the number of clinical cases from each county to represent the total cases in the catchment of the wastewater treatment plant, which is used to compare with the modeling results. Temporal fecal viral shedding data from COVID-19 patients were kindly provided by (Wölfel et al., 2020).
+
+2.3. Relationship between wastewater viral concentrations and infectious cases
+Assuming we can obtain the fecal viral shedding distribution function over time, we can approximate a constant rate of fecal viral shedding over the duration of infectiousness. In this way, the viral RNA production is proportional to the number of people in the infectious compartment I of the SEIR model. That is:
+(1)
+where the proportional constant is defined based on biological parameters similar to (Saththasivam et al., 2021): α is the fecal load with unit g/day/person, β is the viral shedding rate in stool with unit viral copies/g, and γ is the fraction of viral loss in the sewer.
+
+2.4. Approximation of fecal viral shedding profile
+A key component of this approach is the generation of fecal viral shedding profile. Let f(t) be the function that describes the temporal fecal viral shedding profile. Upon infection, the shedding of virus in stool should be very small, then reaches a peak before decreasing to 0. Mathematically, this means f(0) = 0,
+ and f(t) has a unique maximum for some t > 0. While beta and gamma functions are often used to represent f(t) (Wu et al., 2022a; Ferretti et al., 2020; He et al., 2020), we introduce a phenomenological function f(t) that is more tractable than the standard beta and gamma functions:
+(2)
+
+In this form, ω1 is a magnitude modifier parameter (log10 viral RNA copy per g per day) and ω2 (day) represents the timing for peak viral shedding and influences the timing and the magnitude of the peak of the viral shedding profile. Specifically, f(t) peaks at 
+ when t = ω2. Thus, if the peak timing and magnitude of the viral shedding profile are known, then f(t) can be uniquely defined. It is necessary to mention that f(t) is the overall viral shedding into the wastewater from infected individuals; however, it mostly means fecal shedding in this work. We did not include the viral shedding from urine or other sources (sputum or saliva) because previous studies showed that no or low level of virus was detected in urine samples of typical patients despite high viral load (Wölfel et al., 2020; Jones et al., 2020), and the total amount of virus in sputum or saliva are likely to be insignificant compared to stool due to the huge difference in volume.
+
+2.5. Simple wastewater epidemiological model
+(3)
+
+In this model, S denotes the susceptible population, E is the infected but yet to be infectious population (or the exposed class), I is the infectious class, and V is the cumulative viral load in wastewater. The R compartment (recovered individuals) does not contribute to the transmission dynamics in the SEIR model, hence omitted here. Susceptible people are infected by the infectious class at a rate λI. Exposed individuals become infectious at a rate k. Infectious individuals recover at a rate δ and shed virus at a rate α × β, where α is the fecal load and β is the average viral shedding rate in Eq. (1). The time spent in the E and I classes are exponentially distributed with average duration of 1/k and 1/δ, respectively. γ is the viral degradation and loss rate in the sewer pipes, so only a fraction (1 − γ) of virus is detected in the wastewater sample. The expression for V follows directly from Eq. (1).
+
+Several studies note that infectious virus is detectable in nose and throat swabs only when the total viral load is above 105−6 copies/mL (Killingley et al., 2022; Ke et al., 2021; Wölfel et al., 2020; Kampen et al., 2021). Since a certain level of infectious viruses is required for disease transmission, this implies that the infectious period does not start until the viral load (within host) reaches above 105−6 virus copies/mL. The shedding of infectious virus that links to transmission happens early and rapidly diminishes within 10 days after symptom onset; however, significant heterogeneity exists (Ke et al., 2022; Heitzman-Breen and Ciupe, 2022; Boucau et al., 2022). This agrees with previous observations that viral loads above 106 copies/mL are associated with a high probability of transmission (Ke et al., 2021). Together, these observations suggest that in this SEIR epidemic model, we can separate the exposed class (E) based on the duration before viral load reaches 105−6 copies/mL, and the infectious class (I) based on the duration that viral load stays above 105−6 copies/mL. This results in an incubation period of about 3 days and an infectious period of 8 days based on the viral dynamics profile in the SARS-CoV-2 Human Challenge experiment in healthy young adults (Killingley et al., 2022). These estimates are within previous estimated ranges of 2–7 days for incubation periods (Li et al., 2020; Lauer et al., 2020; Guan et al., 2020) and consistent with the updated guideline from CDC where the average infectious duration is about 2 days before and 8 days after symptom onset (CDC, 2022a). Thus, we fix the average exposed duration to 3 days, which is equivalent to fixing 
+ per day (Fig. 1A). Similarly, we fix the average infectious duration to 8 days, which is equivalent to fixing 
+ per day. Thus, in our model, parameters λ, α, β, and γ need to be estimated.
+
+Fig. 1
+Download : Download high-res image (367KB)
+Download : Download full-size image
+Fig. 1. Illustration and fitting fecal viral shedding dynamics. (A) Illustration of the fecal viral shedding dynamics based on the infection progression. The viral shedding profile is divided into three periods shaded: Exposed (E), Infectious (I), and Recovered (R). The red-shaded region is the period of infectiousness I, which is corresponding to the compartment I in the SEIR model. (B) Fitting of the proposed viral shedding function to viral shedding in hospitalized patients' stool data from (Wolfel et al. 2020). While aggregated data seem to show a viral shedding peak at around day 13–14, declining trends were found in the 9 individual cases. The average viral shedding rate in stool during the infectious period (from day 3 to day 11) is 4.49 × 107 viral RNA per g. The horizontal dashed line is the average fecal viral shedding rate for infectious individuals inferred from the model. The viral shedding peak is set at the 4th day post infection.
+
+By fitting the model to wastewater data covering the second wave of the pandemic, specifically, from Oct 2 to Dec 16, 2020, we can approximate the susceptible (to an emerging variant) to be the entire population served by the wastewater treatment plant. For simplification, we assume that there are no infectious individuals initially (I(0) = 0), only infected individuals (E(0) > 0) due to the assumed lack of immunity to new circulating variants. The initial value for the virus concentration in wastewater can be taken from the first data point. Thus, E(0) is the only unknown initial condition.
+
+The parameters and initial conditions that remain to be estimated are: λ, α, β, γ, and E(0). Since the viral production rate is αβ(1 − γ), and we only have viral concentration (or total viral load) data, it is impossible to estimate a unique set of values, or specific values, for α, β, and γ. For example, the product of α = 1, β = 2, γ = 0.5 is the same as when α = 10, β = 1, γ = 0.9. This reflects the pertinent issue of model identifiability in mathematical models in biology and epidemiology (Tuncer et al., 2022; Eisenberg et al., 2013; Wu et al., 2019; Ciupe and Tuncer, 2022). Thus, an important step in our approach is the direct estimations of β and γ, which would allow us to identify α uniquely.
+
+2.6. Incorporating the effect of temperature on the viral degradation rate
+In order to account for temperature variation over time, a sine curve was fit to the average of temperatures at the northern and southern influents (Brozak et al., 2022). The curve describing the temperature in degrees Celsius at time t (Fig. S1) is given by
+
+The temperature-adjusted half-life is described by
+(4)
+where η0 is the half-life in hours at ambient temperature T0 and Q10 is the temperature-dependent rate of change (McMahan et al., 2021; Hart and Halden, 2020). Q10 is typically between 2 and 3 for biological systems, and assumed here to be 2.5 (Bˇehrádek, 1930; Reyes et al., 2008).
+
+The temperature-adjusted first-order decay rate ξ(T) (per hour) is then
+
+We used the simple exponential decay equation
+ to estimate the losses in the sewer γ. Then,
+(5)
+where V0 is the amount of viral RNA in the sewers at time t = 0. Thus, the amount of virus that arrives to the wastewater treatment plant is
+(6)
+where tarrive is the time it takes the viral RNA to travel to the wastewater treatment plant after excretion. The amount of virus lost is given by V0 − V(tarrive). Thus, the proportion of viral RNA lost in the sewer is given by
+(7)
+where the last equality follows from Eq. (6). We provide estimates of the die-off fraction under various scenarios in Table S3 (Supplementary Material). Note that γ(T) varies with temperature over the course of fitting and forecasting.
+
+2.7. Data fitting
+Our goal is to fit the SEIR-V model to viral concentration in wastewater data to infer the true number of cases. Then, we compare the predicted number of cases with the daily reported case data. In our model, the variable V is the cumulative viral load in wastewater. Thus, the difference of V in every 24-hour period reflects the daily measurement data of total virus concentration in wastewater. To reflect this observation, we aim to minimize the sum of square error (SSEV) between these two quantities in our fitting. Hence, our minimization objective is:
+(8)
+Here, 
+ is the total virus concentration experimentally measured on day td, which equals to viral RNA concentration in wastewater (CRNA) multiplied by the total flow (F) data. ∫td−1tdV′(s)ds is the corresponding quantity in our model. Once we obtain a reasonable fit to the data, the inferred number of true cases is given by:
+(9)
+where Ccumulative cases(t) is a variable that keeps track of the cumulative infected cases, e.g., Ccumulative cases′ = λIS.
+
+For the minimization algorithm, we use MATLAB function fmincon and multistart. Similarly, the fecal viral shedding function is fitted by minimizing the objective function SSEf:
+(10)
+where 
+ is the fecal shedding data at day tn. Note that, we assume reported data represents a single time point, which is equivalent to assuming the viral shedding is approximately constant over the course of one day. A more technical approach would be to integrate f(t) similar to Eq. (8), then average it to compare with 
+. Instead, here we pass the integration to the average stool shed per day (α), and the average viral shedding over one day is given by (α × β) during the infectious period.
