@@ -484,22 +484,21 @@ async def dataset_header_document_dkg(data, doc, dataset_name, doc_name, gpt_key
         match = match[0]
     else:
         match = match[1]
-    for res in match.splitlines():
-        res = res.strip()
-        if not res:
-            continue
-        attrs = [x.strip() for x in res.split("|")]
-        if len(attrs) != 4:
-            continue
-        col = attrs[0]
+    results = [s.strip() for s in match.splitlines()]
+    results = [s for s in results if s]
+    results = [[x.strip() for x in s.split("|")] for s in results]
+    results = [x for x in results if len(x) == 4]
+    if len(results) != len(header):
+        return f"Got different number of results ({len(results)}) than columns ({len(header)})", False
+
+    for res, col in zip(results, header):
         col_ant[col] = {}
-        col_ant[col]["col_name"] = attrs[0]
-        col_ant[col]["concept"] = attrs[1]
-        col_ant[col]["unit"] = attrs[2]
-        col_ant[col]["description"] = attrs[3]
+        col_ant[col]["col_name"] = res[0]
+        col_ant[col]["concept"] = res[1]
+        col_ant[col]["unit"] = res[2]
+        col_ant[col]["description"] = res[3]
 
-
-    col_names = [col_ant[col]["col_name"] for col in col_ant]
+    col_names = list(col_ant.keys())
     col_concepts = [col_ant[col]["concept"] for col in col_ant]
 
     terms = [ f'{col_name}: {col_concept}' for (col_name, col_concept) in zip(col_names, col_concepts) ]
