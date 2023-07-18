@@ -115,6 +115,8 @@ async def get_data_card(gpt_key: str, csv_file: UploadFile = File(...), doc_file
 
     data_card['EXAMPLES'] = _fill_nan(data_card['EXAMPLES'])
 
+    data_card['DATASET_TYPE'] = "matrix" if data_type == 'matrix' else "tabular"
+
     return data_card
 
 
