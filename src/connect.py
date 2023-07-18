@@ -452,6 +452,8 @@ def dataset_header_dkg(cols, gpt_key=''):
     return json.dumps(col_ant), True
 
 
+from kgmatching import local_batch_get_mira_dkg_term
+
 async def dataset_header_document_dkg(data, doc, dataset_name, doc_name, gpt_key='', smart=False):
     """
     Grounding a dataset to a DKG
@@ -500,29 +502,21 @@ async def dataset_header_document_dkg(data, doc, dataset_name, doc_name, gpt_key
     col_names = [col_ant[col]["col_name"] for col in col_ant]
     col_concepts = [col_ant[col]["concept"] for col in col_ant]
 
-    # line up coroutines
-    ops = [abatch_get_mira_dkg_term(col_names, ['id', 'name', 'type'], True),
-           abatch_get_mira_dkg_term(col_concepts, ['id', 'name', 'type'], True),
-           ]
-    # let them all finish
-    name_results, concept_results = await asyncio.gather(*ops)
+    terms = [ f'{col_name}: {col_concept}' for (col_name, col_concept) in zip(col_names, col_concepts) ]
+    matches = local_batch_get_mira_dkg_term(terms)
+    # # line up coroutines
+    # ops = [abatch_get_mira_dkg_term(col_names, ['id', 'name', 'type'], True),
+    #        abatch_get_mira_dkg_term(col_concepts, ['id', 'name', 'type'], True),
+    #        ]
+    # # let them all finish
+    # name_results, concept_results = await asyncio.gather(*ops)
 
-    for col, name_res, concept_res in zip(col_names, name_results, concept_results):
-        seen = set()
-        results = []
-        for res in (concept_res, name_res):  # TODO check if this is the right order
-            for r in res:
-                if not r:
-                    break
-                if not r[0] in seen:
-                    results.append(r)
-                    seen.add(r[0])
-
-        col_ant[col]["dkg_groundings"] = results
-        if results and smart:
+    for col, match in zip(col_names, matches):
+        col_ant[col]["dkg_groundings"] = match
+        if smart:
             target = copy.deepcopy(col_ant[col])
             del target["dkg_groundings"]
-            res=rank_dkg_terms(target, results, gpt_key)[0]
+            res=rank_dkg_terms(target, match, gpt_key)[0]
             col_ant[col]["dkg_groundings"] = res
             print(f"Smart grounding for {col}: {res}")
 
