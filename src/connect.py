@@ -1,3 +1,4 @@
+import random
 import asyncio
 import copy
 from collections import OrderedDict
@@ -502,7 +503,8 @@ async def dataset_header_document_dkg(data, doc, dataset_name, doc_name, gpt_key
     col_concepts = [col_ant[col]["concept"] for col in col_ant]
 
     terms = [ f'{col_name}: {col_concept}' for (col_name, col_concept) in zip(col_names, col_concepts) ]
-    matches = local_batch_get_mira_dkg_term(terms)
+    matches0 = local_batch_get_mira_dkg_term(terms)
+    matches = [[[res['id'], res['name'], res['type']] for res in batch] for batch in matches0]
     # # line up coroutines
     # ops = [abatch_get_mira_dkg_term(col_names, ['id', 'name', 'type'], True),
     #        abatch_get_mira_dkg_term(col_concepts, ['id', 'name', 'type'], True),
