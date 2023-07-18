@@ -1,7 +1,7 @@
 from gpt_key import GPT_KEY
 from server import app
 from fastapi.testclient import TestClient
-
+import json 
 test_papers = [
         '../../resources/models/Bucky/bucky.txt',
     # './text_ijerph-18-09027.txt',
@@ -17,7 +17,8 @@ def run_test(paper_path):
         response = client.post('/annotation/upload_file_extract', params={"gpt_key": GPT_KEY}, 
                     files={'file':('filename', f)})
         
-        print(response.text)
+        pretty = json.dumps(response.json(), indent=2)
+        print('response:\n', pretty)
 
 
 for p in test_papers:

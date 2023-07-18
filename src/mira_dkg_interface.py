@@ -11,11 +11,11 @@ async def aget_mira_dkg_term(session, term: str,  attribs, fallback: bool, limit
 
     async with session.get(MIRA_DKG_URL + '/api/search', params=params) as response:
         if not response.ok:
-            print(f"aget_mira_dkg_term got response.ok==False for term {term}. Response: {response}")
+            # print(f"aget_mira_dkg_term got response.ok==False for term {term}. Response: {response}")
             return [[]]
         else:
             rjson = await response.json()  # TODO does this __need__ to be awaited?
-            print(f"aget_mira_dkg_term got response.json() for term {term}. Response: {rjson}")
+            # print(f"aget_mira_dkg_term got response.json() for term {term}. Response: {rjson}")
             return [[t[attrib] for attrib in attribs if t[attrib] is not None] for t in rjson]
 
 def get_mira_dkg_term(term, attribs, fallback=False, limit=5):
@@ -40,7 +40,6 @@ async def abatch_get_mira_dkg_term(terms, attribs, fallback=False, limit=5):
         for term in terms:
             cor = aget_mira_dkg_term(session,term, attribs, fallback, limit)
             tasks.append(asyncio.create_task(cor))
-
 
         ans = []
         for task in tasks:
