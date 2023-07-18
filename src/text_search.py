@@ -94,10 +94,17 @@ async def avars_to_json(var_dict: dict) -> str:
     is_first = True
     id = 0
 
-    batch_var_ground0 = local_batch_get_mira_dkg_term(var_dict)
+    term_list = []
+    meta_list = []
+    for (term_name,term_desc) in var_dict.items():
+        gpt_desc = term_desc['description'][0]
+        term_list.append(term_name +':' + gpt_desc)
+        meta_list.append({'llm_output_name':term_name,
+                         'llm_output_desc':gpt_desc})
+    
+    batch_var_ground0 = local_batch_get_mira_dkg_term(term_list)
     pretty_var0 = json.dumps(batch_var_ground0, indent=2)
     print(f'batch_var_ground\n{pretty_var0}')
-
 
     # batch_var_ground = await abatch_get_mira_dkg_term(var_dict.keys(), ['id', 'name'])
     # pretty_var = json.dumps(batch_var_ground, indent=2)
