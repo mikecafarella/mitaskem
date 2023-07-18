@@ -53,17 +53,14 @@ import os
 g_kgpath = os.path.dirname(__file__) + '/../epi_2023-07-07_nodes.tsv'
 g_retriever = build_node_retriever(g_kgpath, limit=4)
 
-def local_batch_get_mira_dkg_term(term_dict):
+from typing import List
+def local_batch_get_mira_dkg_term(term_list : List[str]) -> List[dict]:
     batch_ans = []
-    for (term_name,term_desc) in term_dict.items():
-        gpt_desc = term_desc['description'][0]
-        # x = term_name + ':' + term_desc
-        docs = g_retriever.get_relevant_documents(term_name +':' + gpt_desc)
+    for term in term_list:
+        docs = g_retriever.get_relevant_documents(term)
         ansdocs = []
         for doc in docs:
             meta = {}
-            meta['llm_output_name']=term_name
-            meta['llm_output_desc']=gpt_desc
             meta.update(doc.metadata)
             ansdocs.append(meta)
 
