@@ -1,0 +1,394 @@
+{
+    "Sample Date": {
+      "col_name": "Sample Date",
+      "concept": "Date of Sample Collection",
+      "unit": "Date",
+      "description": "Date sample was collected; The “sample” is a 24 hour composite of influent wastewater. The “sample date” is the date of start of collection.",
+      "dkg_groundings": [
+        {
+          "name": "Date",
+          "synonyms": "",
+          "id": "dc:date",
+          "description": "",
+          "type": "property"
+        },
+        {
+          "name": "date",
+          "synonyms": "",
+          "id": "oboinowl:date",
+          "description": "Date.",
+          "type": "property"
+        },
+        {
+          "name": "condition end date",
+          "synonyms": "",
+          "id": "opmi:0000529",
+          "description": "The date on which a condition ends.",
+          "type": "class"
+        },
+        {
+          "name": "condition start date",
+          "synonyms": "",
+          "id": "opmi:0000531",
+          "description": "The date on which a condition starts.",
+          "type": "class"
+        }
+      ],
+      "column_stats": {
+        "type": "date",
+        "most_common_entries": {
+          "2020-08-31T00:00:00": 14,
+          "2022-06-05T00:00:00": 14,
+          "2022-04-19T00:00:00": 14,
+          "2022-04-24T00:00:00": 14,
+          "2022-04-26T00:00:00": 14,
+          "2022-05-01T00:00:00": 14,
+          "2022-05-03T00:00:00": 14,
+          "2022-05-08T00:00:00": 14,
+          "2022-05-10T00:00:00": 14,
+          "2022-05-15T00:00:00": 14
+        },
+        "num_unique_entries": 234,
+        "earliest": "2020-08-31T00:00:00",
+        "latest": "2023-04-11T00:00:00"
+      }
+    },
+    "Test date": {
+      "col_name": "Test date",
+      "concept": "Date of Sample Analysis",
+      "unit": "Date",
+      "description": "Date sample was analyzed;  This date is the date the analysis started (this is a three-days analysis protocol).",
+      "dkg_groundings": [
+        {
+          "name": "Date",
+          "synonyms": "",
+          "id": "dc:date",
+          "description": "",
+          "type": "property"
+        },
+        {
+          "name": "date",
+          "synonyms": "",
+          "id": "oboinowl:date",
+          "description": "Date.",
+          "type": "property"
+        },
+        {
+          "name": "condition end date",
+          "synonyms": "",
+          "id": "opmi:0000529",
+          "description": "The date on which a condition ends.",
+          "type": "class"
+        },
+        {
+          "name": "condition start date",
+          "synonyms": "",
+          "id": "opmi:0000531",
+          "description": "The date on which a condition starts.",
+          "type": "class"
+        }
+      ],
+      "column_stats": {
+        "type": "date",
+        "most_common_entries": {
+          "2020-09-30T00:00:00": 18,
+          "2021-08-02T00:00:00": 17,
+          "2022-01-13T00:00:00": 15,
+          "2022-03-30T00:00:00": 15,
+          "2020-09-01T00:00:00": 14,
+          "2022-06-06T00:00:00": 14,
+          "2022-04-27T00:00:00": 14,
+          "2022-05-02T00:00:00": 14,
+          "2022-05-04T00:00:00": 14,
+          "2022-05-09T00:00:00": 14
+        },
+        "num_unique_entries": 237,
+        "earliest": "2020-09-01T00:00:00",
+        "latest": "2023-04-12T00:00:00"
+      }
+    },
+    "WRRF Name": {
+      "col_name": "WRRF Name",
+      "concept": "Wastewater Resource Recovery Facility Name",
+      "unit": "Text",
+      "description": "Wastewater Resource Recovery Facility (waste water treatment plant) where sample was taken. Samples are taken from WRRF influent.",
+      "dkg_groundings": [
+        {
+          "name": "name of temporal region",
+          "synonyms": "",
+          "id": "apollosv:00000395",
+          "description": "",
+          "type": "class"
+        },
+        {
+          "name": "given name",
+          "synonyms": "",
+          "id": "iao:0020016",
+          "description": "A personal name that specifies and differentiates between members of a group of individuals, especially in a family, all of whose members usually share the same family name (surname). A given name is purposefully given, usually by a child's parents at or near birth, in contrast to an inherited one such as a family name",
+          "type": "class"
+        },
+        {
+          "name": "Resource",
+          "synonyms": "",
+          "id": "rdfs:Resource",
+          "description": "",
+          "type": "class"
+        },
+        {
+          "name": "trade name",
+          "synonyms": "",
+          "id": "vo:0003099",
+          "description": "An annotation property that represents the trade name of a product.",
+          "type": "property"
+        }
+      ],
+      "column_stats": {
+        "type": "categorical",
+        "most_common_entries": {
+          "26th Ward": 234,
+          "Bowery Bay": 234,
+          "Coney Island": 234,
+          "Hunts Point": 234,
+          "Jamaica Bay": 234,
+          "Newtown Creek": 234,
+          "North River": 234,
+          "Oakwood Beach": 234,
+          "Owls Head": 234,
+          "Port Richmond": 234
+        },
+        "num_unique_entries": 14
+      }
+    },
+    "WRRF Abbreviation": {
+      "col_name": "WRRF Abbreviation",
+      "concept": "Wastewater Resource Recovery Facility Abbreviation",
+      "unit": "Text",
+      "description": "WRRF Abbreviation; Two letter abbreviation for WRRF name.",
+      "dkg_groundings": [
+        {
+          "name": "ISO Title Abbreviation",
+          "synonyms": "",
+          "id": "apollosv:00000321",
+          "description": "",
+          "type": "property"
+        },
+        {
+          "name": "NLM Title Abbreviation",
+          "synonyms": "",
+          "id": "apollosv:00000324",
+          "description": "",
+          "type": "property"
+        },
+        {
+          "name": "US State Two Letter Abbreviation",
+          "synonyms": "",
+          "id": "geogeo:000000010",
+          "description": "",
+          "type": "property"
+        },
+        {
+          "name": "Resource",
+          "synonyms": "",
+          "id": "rdfs:Resource",
+          "description": "",
+          "type": "class"
+        }
+      ],
+      "column_stats": {
+        "type": "categorical",
+        "most_common_entries": {
+          "26W": 234,
+          "BB": 234,
+          "CI": 234,
+          "HP": 234,
+          "JA": 234,
+          "NC": 234,
+          "NR": 234,
+          "OB": 234,
+          "OH": 234,
+          "PR": 234
+        },
+        "num_unique_entries": 14
+      }
+    },
+    "Concentration SARS-CoV-2 gene target (N1 Copies/L)": {
+      "col_name": "Concentration SARS-CoV-2 gene target (N1 Copies/L)",
+      "concept": "Concentration of SARS-CoV-2 gene target",
+      "unit": "Copies/L",
+      "description": "Concentration of the N1 target of SARS-CoV2 genetic material measured in wastewater influent.",
+      "dkg_groundings": [
+        {
+          "name": "SARS-COV-2 R-GENE",
+          "synonyms": "",
+          "id": "cido:0020279",
+          "description": "",
+          "type": "class"
+        },
+        {
+          "name": "target participant in",
+          "synonyms": "",
+          "id": "ro:0002463",
+          "description": "",
+          "type": "property"
+        },
+        {
+          "name": "SARS-CoV gene",
+          "synonyms": "",
+          "id": "vo:0001444",
+          "description": "A viral gene that is from SARS-CoV.",
+          "type": "class"
+        },
+        {
+          "name": "concentration",
+          "synonyms": "\\kappa;concentration",
+          "id": "probonto:k0000781",
+          "description": "",
+          "type": "class"
+        }
+      ],
+      "column_stats": {}
+    },
+    "Per capita SARS-CoV-2 load (N1 copies per day per population)": {
+      "col_name": "Per capita SARS-CoV-2 load (N1 copies per day per population)",
+      "concept": "Normalized SARS-CoV-2 load",
+      "unit": "Copies per day per population",
+      "description": "Normalized  SARS-CoV-2 N gene concentration (taking into account average daily flow and total population).",
+      "dkg_groundings": [
+        {
+          "name": "per capita mobility",
+          "synonyms": "",
+          "id": "cemo:per_capita_mobility",
+          "description": "",
+          "type": "class"
+        },
+        {
+          "name": "Nephrotic range proteinuria",
+          "synonyms": "",
+          "id": "hp:0012593",
+          "description": "Severely increased amount of excretion of protein in the urine, defined as 3.5 grams per day or more in adults and 40 mg per meter-squared body surface area per hour in children.",
+          "type": "class"
+        },
+        {
+          "name": "infectious disease mortality rate",
+          "synonyms": "",
+          "id": "ido:0000489",
+          "description": "A quality that inheres in an organism population and is the per capita number of deaths in the population resulting from an infectious disease over a specified period of time.",
+          "type": "class"
+        },
+        {
+          "name": "reciprocal_day",
+          "synonyms": "inverse day;per day;reciprocal day",
+          "id": "wikidata:Q102129592",
+          "description": "unit of reciprocal duration",
+          "type": "class"
+        }
+      ],
+      "column_stats": {
+        "type": "date",
+        "most_common_entries": {
+          "1970-01-01T00:00:00.015100": 8,
+          "1970-01-01T00:00:00.011100": 7,
+          "1970-01-01T00:00:00.012200": 7,
+          "1970-01-01T00:00:00.010800": 7,
+          "1970-01-01T00:00:00.011600": 7,
+          "1970-01-01T00:00:00.001230": 7,
+          "1970-01-01T00:00:00.002630": 6,
+          "1970-01-01T00:00:00.010600": 6,
+          "1970-01-01T00:00:00.011400": 6,
+          "1970-01-01T00:00:00.011300": 6
+        },
+        "num_unique_entries": 2498,
+        "earliest": "1970-01-01T00:00:00",
+        "latest": "1970-01-01T00:00:00.107298936"
+      }
+    },
+    "Annotation": {
+      "col_name": "Annotation",
+      "concept": "Notes on Sampling and Testing",
+      "unit": "Text",
+      "description": "Notes on sampling and testing.",
+      "dkg_groundings": [
+        {
+          "name": "Annotation",
+          "synonyms": "",
+          "id": "owl:Annotation",
+          "description": "",
+          "type": "class"
+        },
+        {
+          "name": "vaccine response annotation",
+          "synonyms": "",
+          "id": "vo:0005433",
+          "description": "",
+          "type": "property"
+        },
+        {
+          "name": "notes section",
+          "synonyms": "",
+          "id": "iao:0000634",
+          "description": "A part of a document containing typically short notes about the document itself and/or the authors. Often the notes section contains subsections related to funding, competing interests, ethical approval, etc.",
+          "type": "class"
+        },
+        {
+          "name": "testing rate",
+          "synonyms": "",
+          "id": "cemo:testing_rate",
+          "description": "",
+          "type": "class"
+        }
+      ],
+      "column_stats": {
+        "type": "categorical",
+        "most_common_entries": {
+          "": 2658,
+          "This sample was analyzed in duplicate. The higher of the 2 results is reported": 202,
+          "Concentration below Method Limit of Quantification (above Method Limit of Detection)": 117,
+          "Concentration below Method Limit of Detection": 30,
+          "This result is not useable (because associated with contaminated method blank)": 28,
+          "Lower PCR efficiency: 78%": 26,
+          "Sample processing method slightly different due to supply chain issues": 26,
+          "Analytical issue": 24,
+          "No sample delivery due to logistical issue": 15,
+          "Low standard curve efficiency (62%)": 14
+        },
+        "num_unique_entries": 42
+      }
+    },
+    "Population Served, estimated": {
+      "col_name": "Population Served, estimated",
+      "concept": "Estimated Population Served",
+      "unit": "People",
+      "description": "Population of sewershed; Estimated from 2020 New York Department of City Planning population estimate model.",
+      "dkg_groundings": [
+        {
+          "name": "human population",
+          "synonyms": "",
+          "id": "idomal:0001255",
+          "description": "A population of human beings.",
+          "type": "class"
+        },
+        {
+          "name": "Source Population",
+          "synonyms": "Source Population",
+          "id": "ncit:C71544",
+          "description": "",
+          "type": "class"
+        },
+        {
+          "name": "vaccination of population",
+          "synonyms": "",
+          "id": "idomal:0000118",
+          "description": "The administration of antigenic material (the vaccine) to members of a population to produce immunity to a disease in that population.",
+          "type": "class"
+        },
+        {
+          "name": "Population Covered",
+          "synonyms": "Population Covered",
+          "id": "ncit:C71553",
+          "description": "",
+          "type": "class"
+        }
+      ],
+      "column_stats": {}
+    }
+  }

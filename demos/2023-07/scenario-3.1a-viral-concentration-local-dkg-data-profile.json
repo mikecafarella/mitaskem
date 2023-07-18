@@ -1,0 +1,249 @@
+{
+    "Date": {
+      "col_name": "Date",
+      "concept": "Sampling date",
+      "unit": "Date",
+      "description": "The date when the wastewater sample was collected",
+      "dkg_groundings": [
+        {
+          "name": "date",
+          "synonyms": "",
+          "id": "oboinowl:date",
+          "description": "Date.",
+          "type": "property"
+        },
+        {
+          "name": "Date",
+          "synonyms": "",
+          "id": "dc:date",
+          "description": "",
+          "type": "property"
+        },
+        {
+          "name": "condition end date",
+          "synonyms": "",
+          "id": "opmi:0000529",
+          "description": "The date on which a condition ends.",
+          "type": "class"
+        },
+        {
+          "name": "condition start date",
+          "synonyms": "",
+          "id": "opmi:0000531",
+          "description": "The date on which a condition starts.",
+          "type": "class"
+        }
+      ],
+      "column_stats": {
+        "type": "date",
+        "most_common_entries": {
+          "2020-10-02T00:00:00": 1,
+          "2020-12-14T00:00:00": 1,
+          "2020-12-26T00:00:00": 1,
+          "2020-12-25T00:00:00": 1,
+          "2020-12-24T00:00:00": 1,
+          "2020-12-23T00:00:00": 1,
+          "2020-12-22T00:00:00": 1,
+          "2020-12-21T00:00:00": 1,
+          "2020-12-20T00:00:00": 1,
+          "2020-12-19T00:00:00": 1
+        },
+        "num_unique_entries": 116,
+        "earliest": "2020-10-02T00:00:00",
+        "latest": "2021-01-25T00:00:00"
+      }
+    },
+    "SARS-CoV-2 levels [copies/L]": {
+      "col_name": "SARS-CoV-2 levels [copies/L]",
+      "concept": "SARS-CoV-2 concentration",
+      "unit": "copies/L",
+      "description": "The concentration of SARS-CoV-2 in the wastewater sample, measured in copies per liter",
+      "dkg_groundings": [
+        {
+          "name": "SARS-CoV-2-SARS-CoV-2 M-N physical association",
+          "synonyms": "",
+          "id": "cido:0003062",
+          "description": "A SARS-CoV-2 M and SARS-CoV-2 PPI that has an interactor of M from SARS-CoV-2 and another interactor of N from SARS-CoV-2.",
+          "type": "class"
+        },
+        {
+          "name": "SARS-CoV-2-SARS-CoV-2 N-S physical association",
+          "synonyms": "",
+          "id": "cido:0004830",
+          "description": "A SARS-CoV-2 N and SARS-CoV-2 PPI that has an interactor of N from SARS-CoV-2 and another interactor of S from SARS-CoV-2.",
+          "type": "class"
+        },
+        {
+          "name": "SARS-CoV-2-SARS-CoV-2 M-S physical association",
+          "synonyms": "",
+          "id": "cido:0003058",
+          "description": "A SARS-CoV-2 M and SARS-CoV-2 PPI that has an interactor of M from SARS-CoV-2 and another interactor of S from SARS-CoV-2.",
+          "type": "class"
+        },
+        {
+          "name": "SARS-CoV-2-SARS-CoV-2 N-E direct interaction",
+          "synonyms": "",
+          "id": "cido:0004831",
+          "description": "A SARS-CoV-2 N and SARS-CoV-2 PPI that has an interactor of N from SARS-CoV-2 and another interactor of E from SARS-CoV-2.",
+          "type": "class"
+        }
+      ],
+      "column_stats": {
+        "type": "date",
+        "most_common_entries": {
+          "1970-01-01T00:00:00.000047912": 1,
+          "1970-01-01T00:00:00.001135274": 1,
+          "1970-01-01T00:00:00.001084288": 1,
+          "1970-01-01T00:00:00.000737084": 1,
+          "1970-01-01T00:00:00.000530487": 1,
+          "1970-01-01T00:00:00.000834063": 1,
+          "1970-01-01T00:00:00.000869241": 1,
+          "1970-01-01T00:00:00.000895301": 1,
+          "1970-01-01T00:00:00.000945209": 1,
+          "1970-01-01T00:00:00.000801700": 1
+        },
+        "num_unique_entries": 108,
+        "earliest": "1970-01-01T00:00:00.000047423",
+        "latest": "1970-01-01T00:00:00.002038591"
+      }
+    },
+    "log_SARS-CoV-2": {
+      "col_name": "log_SARS-CoV-2",
+      "concept": "Logarithm of SARS-CoV-2 concentration",
+      "unit": "Log(copies/L)",
+      "description": "The natural logarithm of the SARS-CoV-2 concentration in the wastewater sample",
+      "dkg_groundings": [
+        {
+          "name": "SARS-CoV-2-SARS-CoV-2 N-S physical association",
+          "synonyms": "",
+          "id": "cido:0004830",
+          "description": "A SARS-CoV-2 N and SARS-CoV-2 PPI that has an interactor of N from SARS-CoV-2 and another interactor of S from SARS-CoV-2.",
+          "type": "class"
+        },
+        {
+          "name": "SARS-CoV-2-SARS-CoV-2 M-S physical association",
+          "synonyms": "",
+          "id": "cido:0003058",
+          "description": "A SARS-CoV-2 M and SARS-CoV-2 PPI that has an interactor of M from SARS-CoV-2 and another interactor of S from SARS-CoV-2.",
+          "type": "class"
+        },
+        {
+          "name": "SARS-CoV-2-SARS-CoV-2 M-N physical association",
+          "synonyms": "",
+          "id": "cido:0003062",
+          "description": "A SARS-CoV-2 M and SARS-CoV-2 PPI that has an interactor of M from SARS-CoV-2 and another interactor of N from SARS-CoV-2.",
+          "type": "class"
+        },
+        {
+          "name": "SARS-CoV-2-SARS-CoV-2 M-M direct interaction",
+          "synonyms": "",
+          "id": "cido:0003059",
+          "description": "A SARS-CoV-2 M and SARS-CoV-2 PPI that has an interactor of M from SARS-CoV-2 and another interactor of M from SARS-CoV-2.",
+          "type": "class"
+        }
+      ],
+      "column_stats": {
+        "type": "date",
+        "most_common_entries": {
+          "1970-01-01T00:00:00.000000005": 83,
+          "1970-01-01T00:00:00.000000006": 16,
+          "1970-01-01T00:00:00.000000004": 8
+        },
+        "num_unique_entries": 4,
+        "earliest": "1970-01-01T00:00:00.000000004",
+        "latest": "1970-01-01T00:00:00.000000006"
+      }
+    },
+    "seven_day_average": {
+      "col_name": "seven_day_average",
+      "concept": "Seven-day average of SARS-CoV-2 concentration",
+      "unit": "copies/L",
+      "description": "The seven-day moving average of the SARS-CoV-2 concentration in the wastewater sample",
+      "dkg_groundings": [
+        {
+          "name": "day of birth",
+          "synonyms": "",
+          "id": "opmi:0000091",
+          "description": "A day when an organism (e.g., a human) is born.",
+          "type": "class"
+        },
+        {
+          "name": "reciprocal_day",
+          "synonyms": "inverse day;per day;reciprocal day",
+          "id": "wikidata:Q102129592",
+          "description": "unit of reciprocal duration",
+          "type": "class"
+        },
+        {
+          "name": "1 day after blood meal",
+          "synonyms": "",
+          "id": "idomal:0000478",
+          "description": "One day after blood meal.",
+          "type": "class"
+        },
+        {
+          "name": "average rate of infectious contacts",
+          "synonyms": "",
+          "id": "cemo:average_rate_of_infectious_contacts",
+          "description": "",
+          "type": "class"
+        }
+      ],
+      "column_stats": {
+        "mean": 552940.251807069,
+        "std": 367337.11999084544,
+        "min": 43998.28696,
+        "25%": 156967.38775,
+        "50%": 614862.7967000001,
+        "75%": 873505.1644,
+        "max": 1256651.488,
+        "type": "numeric"
+      }
+    },
+    "seven_day_average_log": {
+      "col_name": "seven_day_average_log",
+      "concept": "Logarithm of seven-day average of SARS-CoV-2 concentration",
+      "unit": "Log(copies/L)",
+      "description": "The natural logarithm of the seven-day moving average of the SARS-CoV-2 concentration in the wastewater sample",
+      "dkg_groundings": [
+        {
+          "name": "day of birth",
+          "synonyms": "",
+          "id": "opmi:0000091",
+          "description": "A day when an organism (e.g., a human) is born.",
+          "type": "class"
+        },
+        {
+          "name": "reciprocal_day",
+          "synonyms": "inverse day;per day;reciprocal day",
+          "id": "wikidata:Q102129592",
+          "description": "unit of reciprocal duration",
+          "type": "class"
+        },
+        {
+          "name": "average rate of infectious contacts",
+          "synonyms": "",
+          "id": "cemo:average_rate_of_infectious_contacts",
+          "description": "",
+          "type": "class"
+        },
+        {
+          "name": "1 day after blood meal",
+          "synonyms": "",
+          "id": "idomal:0000478",
+          "description": "One day after blood meal.",
+          "type": "class"
+        }
+      ],
+      "column_stats": {
+        "mean": 5.586522559060344,
+        "std": 0.42608132875602883,
+        "min": 4.643445638,
+        "25%": 5.1958120945,
+        "50%": 5.788696966,
+        "75%": 5.941264904,
+        "max": 6.099215196,
+        "type": "numeric"
+      }
+    }
+  }
