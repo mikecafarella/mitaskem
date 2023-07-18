@@ -1,0 +1,140 @@
+{
+    "Wastewater Resource Recovery Facility (WRRF)": {
+      "col_name": "Wastewater Resource Recovery Facility (WRRF)",
+      "concept": "Wastewater treatment plant",
+      "unit": "N/A",
+      "description": "The name of the wastewater treatment plant in New York City",
+      "dkg_groundings": [
+        [
+          "wikidata:Q15242449",
+          "wastewater treatment plant",
+          "class"
+        ],
+        [
+          "wikidata:Q106365184",
+          "wastewater treatment plant in České Budějovice",
+          "class"
+        ],
+        [
+          "wikidata:Q53937858",
+          "Wastewater treatment plant in Prague-Bubeneč",
+          "class"
+        ],
+        [
+          "wikidata:Q108855296",
+          "Wastewater treatment plant of Saint-Cyr-sur-Menthon",
+          "class"
+        ],
+        [
+          "wikidata:Q58003082",
+          "Wastewater treatment plant Bülk",
+          "class"
+        ]
+      ],
+      "column_stats": {
+        "type": "categorical",
+        "most_common_entries": {
+          "Hunts Point": 1,
+          "Wards Island": 1,
+          "North River": 1,
+          "Newtown Creek": 1,
+          "Red Hook": 1,
+          "Owls Head": 1,
+          "Coney Island": 1,
+          "26th Ward": 1,
+          "Rockaway": 1,
+          "Jamaica Bay": 1
+        },
+        "num_unique_entries": 14
+      }
+    },
+    "Borough(s)": {
+      "col_name": "Borough(s)",
+      "concept": "Geographic location",
+      "unit": "N/A",
+      "description": "The borough(s) in New York City that the wastewater treatment plant serves",
+      "dkg_groundings": [
+        [
+          "gaz:00000448",
+          "geographic location",
+          "class"
+        ]
+      ],
+      "column_stats": {
+        "type": "categorical",
+        "most_common_entries": {
+          "Brooklyn": 4,
+          "Queens": 4,
+          "Staten Island": 2,
+          "Bronx": 1,
+          "Bronx and Manhattan": 1,
+          "Manhattan": 1,
+          "Manhattan, Brooklyn, \nand Queens": 1
+        },
+        "num_unique_entries": 7
+      }
+    },
+    "Population Served*": {
+      "col_name": "Population Served*",
+      "concept": "Population size",
+      "unit": "People",
+      "description": "The estimated number of people served by the wastewater treatment plant",
+      "dkg_groundings": [
+        [
+          "probonto:k0000132",
+          "populationSize",
+          "class"
+        ],
+        [
+          "stato:0000088",
+          "study group population size",
+          "class"
+        ]
+      ],
+      "column_stats": {
+        "type": "categorical",
+        "most_common_entries": {
+          "755,948": 1,
+          "1,201,485": 1,
+          "658,596": 1,
+          "1,156,473": 1,
+          "224,029": 1,
+          "906,442": 1,
+          "682,342": 1,
+          "290,608": 1,
+          "120,539": 1,
+          "748,737": 1
+        },
+        "num_unique_entries": 14
+      }
+    },
+    "Daily Flow Range (Average)† in MGD": {
+      "col_name": "Daily Flow Range (Average)† in MGD",
+      "concept": "Wastewater flow",
+      "unit": "Million gallons per day (MGD)",
+      "description": "The average daily flow range of wastewater processed by the treatment plant, in million gallons per day",
+      "dkg_groundings": [
+        [
+          "wikidata:Q57125816",
+          "Wastewater Flow and Pathogen Transport from At-Grade Line Sources to Shallow Groundwater",
+          "class"
+        ]
+      ],
+      "column_stats": {
+        "type": "categorical",
+        "most_common_entries": {
+          "115 - 215 (136)": 1,
+          "143 - 273 (180)": 1,
+          "81 - 143 (94)": 1,
+          "158 - 296 (188)": 1,
+          "21 - 46 (26)": 1,
+          "81 - 159 (95)": 1,
+          "70 - 102 (82)": 1,
+          "44 - 89  (55)": 1,
+          "18 - 25 (20)": 1,
+          "74 - 103 (81)": 1
+        },
+        "num_unique_entries": 14
+      }
+    }
+  }
