@@ -1,4 +1,5 @@
 import csv
+from math import isnan
 import ast, io, random, sys, os
 import asyncio
 from typing import Optional
@@ -101,6 +102,18 @@ async def get_data_card(gpt_key: str, csv_file: UploadFile = File(...), doc_file
     else:
         raise Exception('Invalid data type')
 
+    def _fill_nan(ex):
+        if isinstance(ex, dict):
+            for k, v in ex.items():
+                ex[k] = _fill_nan(v)
+        elif isinstance(ex, list):
+            for i in range(len(ex)):
+                ex[i] = _fill_nan(ex[i])
+        elif isinstance(ex, float) and isnan(ex):
+            ex = None
+        return ex
+
+    data_card['EXAMPLES'] = _fill_nan(data_card['EXAMPLES'])
 
     return data_card
 
