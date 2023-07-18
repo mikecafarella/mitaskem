@@ -11,6 +11,6 @@ The MIT team consists of (in alphabetical order):
 
 ## Public API
 
-Our functionality is provided via a public API available [here](http://100.26.10.46/). Many of the calls also require you to provide a GPT key, which you can obtain from [OpenAI](https://beta.openai.com/login/).
+Our functionality is provided via a public API available [here](http://3.83.68.208/). Many of the calls also require you to provide a GPT key, which you can obtain from [OpenAI](https://beta.openai.com/login/).
 
 For examples of usage, you can refer to our most recent demo [here](https://github.com/mikecafarella/mitaskem/blob/d26ccfb57b3605e54dd0068510f18c9b19f0b599/demos/2023-02-01/mit-feb1-demo.ipynb).

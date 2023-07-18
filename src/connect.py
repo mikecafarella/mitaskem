@@ -505,7 +505,6 @@ async def dataset_header_document_dkg(data, doc, dataset_name, doc_name, gpt_key
     col_descriptions = [col_ant[col]["description"] for col in col_ant]
 
     terms = [ f'{col_name}: {col_concept} {col_description}' for (col_name, col_concept, col_description) in zip(col_names, col_concepts, col_descriptions) ]
-    # print('\n'.join(terms))
     matches0 = local_batch_get_mira_dkg_term(terms)
     matches = [[[res['id'], res['name'], res['type']] for res in batch] for batch in matches0]
     # # line up coroutines
