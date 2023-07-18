@@ -1,3 +1,4 @@
+import csv
 import ast, io, random, sys, os
 import asyncio
 from typing import Optional
@@ -9,7 +10,7 @@ from fastapi.responses import JSONResponse
 sys.path.append(
     os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 )
-from src.connect import construct_data_card, dataset_header_document_dkg, construct_model_card, profile_matrix, get_dataset_type
+from src.connect import construct_data_card, dataset_header_document_dkg, construct_model_card, profile_matrix, get_dataset_type, process_data
 
 router = APIRouter()
 
@@ -20,33 +21,42 @@ async def get_data_card(gpt_key: str, csv_file: UploadFile = File(...), doc_file
            Smart run provides better results but may result in slow response times as a consequence of extra GPT calls.
     """
     files = [csv_file.read(), doc_file.read()]
-    csv, doc = await asyncio.gather(*files)
-
-    
-    # TODO handle inputs that are too long to fit in the context window
-    csv = csv.decode().strip()
+    _csv, doc = await asyncio.gather(*files)
+    _csv = _csv.decode().strip()
     doc = doc.decode().strip()
-    if len(csv) == 0:
+
+    # TODO handle inputs that are too long to fit in the context window
+    if len(_csv) == 0:
         return JSONResponse(status_code=status.HTTP_400_BAD_REQUEST, content="Empty CSV file")
     if len(doc) == 0:
         return JSONResponse(status_code=status.HTTP_400_BAD_REQUEST, content="Empty document file")
 
-    data_type = get_dataset_type(csv)
+    csv_reader = csv.reader(io.StringIO(_csv), dialect=csv.Sniffer().sniff(_csv.splitlines()[0]))
+
+    header = next(csv_reader)  # can determine type from the header row
+    data_type = get_dataset_type(header)
     if data_type == 'header-0':
-        schema = csv.split('\n')[0].strip()
+        schema = header
         profiler = dataset_header_document_dkg
     elif data_type == 'no-header':
-        schema = None
-        profiler = dataset_header_document_dkg
+        # Probably best not to support this; the code path is poorly tested, and it's not clear what the expected behavior is.
+        # Either way, this should never come up in the Evaluation.
+        #schema = None
+        #profiler = dataset_header_dkg
+        return JSONResponse(status_code=status.HTTP_400_BAD_REQUEST, content="Invalid CSV file; no header found.")
     elif data_type == 'matrix':
         schema = None
         profiler = profile_matrix
     else:
         return JSONResponse(status_code=status.HTTP_400_BAD_REQUEST, content="Invalid CSV file; could not determine data type")
 
+    data = [header]
+    data.extend(csv_reader)  # make sure header is included in data
+    data = process_data(data)
+
     calls = [
         construct_data_card(data_doc=doc, dataset_name=csv_file.filename, doc_name=doc_file.filename, dataset_type=data_type, gpt_key=gpt_key),
-        profiler(data=csv, doc=doc, dataset_name=csv_file.filename, doc_name=doc_file.filename, gpt_key=gpt_key, smart=smart)
+        profiler(data=data, doc=doc, dataset_name=csv_file.filename, doc_name=doc_file.filename, gpt_key=gpt_key, smart=smart)
     ]
 
     try:
@@ -67,11 +77,11 @@ async def get_data_card(gpt_key: str, csv_file: UploadFile = File(...), doc_file
         return JSONResponse(status_code=status.HTTP_400_BAD_REQUEST, content='DATA_PROFILING_RESULT cannot be a requested field in the data card.')
 
     if data_type == 'header-0':
-        data_card['SCHEMA'] = [s.strip() for s in schema.split(',')]
+        data_card['SCHEMA'] = schema
         # get a random sample of a row from the csv
-        data_card['EXAMPLES'] = {k.strip(): v for k, v in zip(schema.split(','), random.sample(csv.split('\n')[1:], 1)[0].split(','))}
+        data_card['EXAMPLES'] = {k.strip(): v for k, v in zip(schema, random.sample(list(data), 1)[0])}
         data_card['DATA_PROFILING_RESULT'] = data_profiling
-        data_card['EXAMPLES'] = {k.strip(): v for k, v in zip(schema.split(','), random.sample(csv.split('\n')[1:], 1)[0].split(','))}
+        data_card['EXAMPLES'] = {k.strip(): v for k, v in zip(schema, random.sample(list(data), 1)[0])}
     elif data_type == 'no-header':
         if 'SCHEMA' not in data_card:
             return JSONResponse(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, content='SCHEMA not found in data card')
@@ -84,10 +94,10 @@ async def get_data_card(gpt_key: str, csv_file: UploadFile = File(...), doc_file
             k = schema[k]
             aligned_data_profiling[k] = v
         data_card['DATA_PROFILING_RESULT'] = aligned_data_profiling
-        data_card['EXAMPLES'] = {k.strip(): v for k, v in zip(schema.split(','), random.sample(csv.split('\n')[1:], 1)[0].split(','))}
+        data_card['EXAMPLES'] = {k.strip(): v for k, v in zip(schema, random.sample(list(data), 1)[0])}
     elif data_type == 'matrix':
         data_card['DATA_PROFILING_RESULT'] = data_profiling
-        data_card['EXAMPLES'] = random.sample(csv.split('\n'), 1)[0].split(',')
+        data_card['EXAMPLES'] = random.sample(data, 1)[0]
     else:
         raise Exception('Invalid data type')
 

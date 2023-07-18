@@ -1,4 +1,3 @@
-import random
 import asyncio
 import copy
 from collections import OrderedDict
@@ -7,13 +6,11 @@ import json
 import os
 import re
 import time
+from typing import Any, List
 
 import pandas as pd
-from cryptography.fernet import Fernet
 import openai
 from openai import OpenAIError
-from PIL import Image
-import gpt_interaction
 from tqdm import tqdm
 import ast
 import sys
@@ -35,7 +32,7 @@ def index_text_path(text_path: str) -> str:
 
 def index_text(text: str) -> str:
     idx_text = ""
-    tlist = text.split('\n')
+    tlist = text.splitlines()
     # print(tlist)
     for i, line in enumerate(tlist):
         if i==len(tlist)-1 and line== "":
@@ -315,7 +312,7 @@ def ontology_code_connection():
 def code_text_connection(code, text, gpt_key, interactive = False):
     code_str = code
     idx_text = index_text(text)
-    tlist = text.split("\n")
+    tlist = text.splitlines()
     targets = extract_func_names(code_str)
     print(f"TARGETS: {targets}")
     tups = []
@@ -378,7 +375,7 @@ def rank_dkg_terms(target, concepts, gpt_key):
     """
     prompt = get_rank_dkg_prompt(json.dumps(target), json.dumps(concepts))
     match = get_gpt4_match(prompt, gpt_key, model="gpt-4")
-    rank = match.split("\n")
+    rank = match.splitlines()
     sorted = sort_dkg(rank, concepts)
     return sorted, True
 
@@ -396,15 +393,18 @@ def sort_dkg(ranking, json_obj):
     return sorted_json
 
 
-async def profile_matrix(data, doc, dataset_name, doc_name, gpt_key='', smart=False):
+async def profile_matrix(data: List[List[Any]], doc, dataset_name, doc_name, gpt_key='', smart=False):
     """
     Grounding a matrix of data to DKG terms
     """
-    if not data.strip():
+    if not data:
         return f"Empty dataset input", False
 
+    if not all(all(isinstance(x, (int, float)) for x in row) for row in data):
+        return f"Matrix data must be all-numeric. Data was: {data}", False
+
     # for matrices, we compute statistics across the entire matrix
-    df = pd.read_csv(io.StringIO(data), header=None)
+    df = pd.DataFrame(data)
     df = df.stack()
     stats = {
         "mean": df.mean(),
@@ -418,18 +418,13 @@ async def profile_matrix(data, doc, dataset_name, doc_name, gpt_key='', smart=Fa
 
     return json.dumps({'matrix_stats': stats}), True
 
-def dataset_header_dkg(header, gpt_key=''):
+def dataset_header_dkg(cols, gpt_key=''):
     """
     Grounding the column header to DKG terms
-    :param header: Dataset header string seperated with comma
+    :param cols: List of column names
     :return: Matches column name to DKG
     """
-    if header=="":
-        return f"Empty dataset input", False
-    row1 = header.split("\n")[0]
-    cols = row1.split(",")
     col_ant = {}
-
     for col in cols:
         print(f"looking up {col}")
         results = []
@@ -445,6 +440,7 @@ def dataset_header_dkg(header, gpt_key=''):
         print(f"relevant items found from GPT: {ans}")
         for e in ans.split(","):
             # print(e)
+            e = e.strip()
             for res in get_mira_dkg_term(e, ['id', 'name', 'type'],True):
                 # print(res)
                 if not res:
@@ -458,37 +454,35 @@ def dataset_header_dkg(header, gpt_key=''):
 
 async def dataset_header_document_dkg(data, doc, dataset_name, doc_name, gpt_key='', smart=False):
     """
-    Grounding the column header to DKG terms
-    :param header: Dataset header string seperated with comma
+    Grounding a dataset to a DKG
+    :param data: Dataset as a list of lists, including header and optionally a few rows
     :param doc: Document string
+    :param dataset_name: Name of dataset
+    :param doc_name: Name of document
+    :param gpt_key: OpenAI API key
     :return: Matches column name to DKG
     """
-    if not data.strip():
+    if not data:
         return f"Empty dataset input", False
+    header = data[0]
+    data = data[1:]
+    schema = ','.join(header)
 
-    dataset_type = get_dataset_type(data)
-    if dataset_type == "header-0":
-        header = 0
-        schema = data.split("\n")[0].strip()
-    elif dataset_type == "no-header":
-        header = None
-        schema = None
-    else:
-        return f"Invalid dataset input", False
-
+    print("Getting stats")
     stats = await _compute_tabular_statistics(data, header=header)
 
     col_ant = OrderedDict()
 
     prompt = get_csv_doc_prompt(schema, stats, doc, dataset_name, doc_name)
     match = get_gpt4_match(prompt, gpt_key, model="gpt-4")
+    print("Got match")
     print(match)
     match = match.split('```')
     if len(match) == 1:
         match = match[0]
     else:
         match = match[1]
-    for res in match.split("\n"):
+    for res in match.splitlines():
         res = res.strip()
         if not res:
             continue
@@ -538,14 +532,14 @@ async def dataset_header_document_dkg(data, doc, dataset_name, doc_name, gpt_key
     return json.dumps(col_ant), True
 
 
-async def _compute_tabular_statistics(csv: str, header=0):
+async def _compute_tabular_statistics(data: List[List[Any]], header):
     """
     Compute summary statistics for a given tabular dataset.
-    :param csv: Dataset as a csv string
+    :param data: Dataset as a list of lists
     :return: Summary statistics as a dictionary
     """
 
-    csv_df = pd.read_csv(io.StringIO(csv), header=header)
+    csv_df = pd.DataFrame(data, columns=header)
 
     # first handle numeric columns
     df = csv_df.describe()
@@ -627,7 +621,7 @@ async def construct_data_card(data_doc, dataset_name, doc_name, dataset_type, gp
     print(match)
 
     results = OrderedDict([(f[0], "UNKNOWN") for f in fields])
-    for res in match.split("\n"):
+    for res in match.splitlines():
         if res == "":
             continue
         res = res.split(":", 1)
@@ -673,7 +667,7 @@ async def construct_model_card(text, code,  gpt_key='', fields=None, model="gpt-
     print(match)
 
     results = OrderedDict([(f[0], "UNKNOWN") for f in fields])
-    for res in match.split("\n"):
+    for res in match.splitlines():
         if res == "":
             continue
         res = res.split(":", 1)
@@ -709,7 +703,7 @@ def select_text(lines, s, t, buffer, interactive=True):
     return ret_s
 
 def code_formula_connection(code, formulas, gpt_key):
-    flist = formulas.split("\n")
+    flist = formulas.splitlines()
     matches = []
     if flist[-1]=="":
         del flist[-1]
@@ -745,7 +739,7 @@ def vars_dataset_connection_simplified(json_str, dataset_str, gpt_key):
         prompt = get_var_dataset_prompt_simplified(all_desc, dataset_str)
         print(prompt)
         ans = get_gpt4_match(prompt, gpt_key, model="gpt-3.5-turbo-16k")
-        ans = ans.split('\n')
+        ans = ans.splitlines()
         print(ans)
         for item in ans:
             toks = item.split(": ")
@@ -788,7 +782,7 @@ def vars_dataset_connection(json_str, dataset_str, gpt_key):
     vs_data = {}
 
     dataset_s = ""
-    datasets = dataset_str.split("\n")
+    datasets = dataset_str.splitlines()
     dataset_name_dict = {}
     i = 0
     for d in tqdm(datasets):
@@ -807,7 +801,7 @@ def vars_dataset_connection(json_str, dataset_str, gpt_key):
             prompt = get_var_dataset_prompt(all_desc, dataset_s, all_desc_ls[i])
             print(prompt)
             ans = get_gpt4_match(prompt, gpt_key, model="gpt-3.5-turbo")
-            ans = ans.split('\n')
+            ans = ans.splitlines()
             print(ans)
             for j in range(len(ans)):
                 toks = ans[j].split("___")
@@ -866,7 +860,7 @@ def vars_formula_connection(json_str, formula, gpt_key):
         for latex_var in tqdm(latex_vars):
             prompt = get_all_desc_formula_prompt(all_desc, latex_var)
             ans = get_gpt_match(prompt, gpt_key, model="text-davinci-003")
-            ans = ans.split('\n')
+            ans = ans.splitlines()
 
             matches = []
             for a in ans:
@@ -932,19 +926,26 @@ def code_dkg_connection(dkg_targets, gpt_key, ontology_terms=DEFAULT_TERMS, onto
     return connection
 
 
-def get_dataset_type(csv: str) -> str:
-    def is_numeric(s):
-        try:
-            float(s)
-            return True
-        except ValueError:
-            return False
-    
-    lines = csv.split('\n')
-    values = [[s.strip() for s in line.split(',')] for line in lines]
-    if all([all([is_numeric(s) for s in line]) for line in values]):
+def _is_numeric(s):
+    try:
+        float(s)
+        return True
+    except ValueError:
+        return False
+
+def process_data(data: List[List[Any]]) -> List[List[Any]]:
+    """
+    Convert all numeric values in a dataset to floats.
+    :param data: Dataset as a list of lists
+    :return: Dataset with all numeric values converted to floats
+    """
+    return [[float(x) if _is_numeric(x) else x for x in row] for row in data]
+
+
+def get_dataset_type(first_row: List[Any]) -> str:
+    if all([_is_numeric(s) for s in first_row]):
         return 'matrix'
-    elif any([is_numeric(s) for s in values[0]]):
+    elif any([_is_numeric(s) for s in first_row]):
         return 'no-header'
     else:
         return 'header-0'

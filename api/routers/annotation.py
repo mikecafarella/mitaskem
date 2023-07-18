@@ -1,4 +1,4 @@
-import ast, io, random, sys, os
+import ast, io, random, sys, os, csv
 
 from fastapi import APIRouter, status, UploadFile, File, HTTPException
 from fastapi.responses import JSONResponse
@@ -11,7 +11,7 @@ sys.path.append(
     os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 )
 from src.text_search import text_var_search, vars_to_json, vars_dedup
-from src.connect import vars_formula_connection, dataset_header_document_dkg, vars_dataset_connection_simplified, profile_matrix, get_dataset_type
+from src.connect import vars_formula_connection, dataset_header_document_dkg, vars_dataset_connection_simplified, profile_matrix, get_dataset_type, process_data
 from src.link_annos_to_pyacset import link_annos_to_pyacset
 
 router = APIRouter()
@@ -63,17 +63,22 @@ def link_annotation_to_pyacset_and_paper_info(pyacset_str: str, annotations_str:
 
 @router.post("/profile_matrix_data", tags=["Paper-2-annotated-vars"])
 async def profile_matrix_data(gpt_key: str, csv_file: UploadFile = File(...), doc_file: UploadFile = File(...)):
+
     csv_string = await csv_file.read()
     csv_str = csv_string.decode()
+    csv_reader = csv.reader(io.StringIO(csv_str), dialect=csv.Sniffer().sniff(csv_str.splitlines()[0]))
 
     doc = await doc_file.read()
     doc = doc.decode()
 
-    dataset_type = get_dataset_type(csv_str)
+    header = next(csv_reader)
+    dataset_type = get_dataset_type(header)
     if dataset_type != 'matrix':
         return JSONResponse(status_code=status.HTTP_400_BAD_REQUEST, content="Invalid CSV file; data type does not seem to be a matrix.")
+    data = header.extend(csv_reader)  # make sure header is included in data
+    data = process_data(data)
 
-    s, success = await profile_matrix(data=csv_str, doc=doc, dataset_name=csv_file.filename, doc_name=doc_file.filename, gpt_key=gpt_key, smart=smart)
+    s, success = await profile_matrix(data=data, doc=doc, dataset_name=csv_file.filename, doc_name=doc_file.filename, gpt_key=gpt_key, smart=smart)
 
     if not success:
         return JSONResponse(status_code=status.HTTP_401_UNAUTHORIZED, content=s)
@@ -88,15 +93,22 @@ async def link_dataset_columns_to_dkg_info(gpt_key: str, csv_file: UploadFile = 
     """
     csv_string = await csv_file.read()
     csv_str = csv_string.decode()
+    csv_reader = csv.reader(io.StringIO(csv_str), dialect=csv.Sniffer().sniff(csv_str.splitlines()[0]))
 
     doc = await doc_file.read()
     doc = doc.decode()
 
-    dataset_type = get_dataset_type(csv_str)
+    header = next(csv_reader)
+    dataset_type = get_dataset_type(header)
     if dataset_type == 'matrix':
         return JSONResponse(status_code=status.HTTP_400_BAD_REQUEST, content="Invalid CSV file; seems to be a matrix, not tabular.")
+    elif dataset_type == 'no-header':
+        return JSONResponse(status_code=status.HTTP_400_BAD_REQUEST, content="Invalid CSV file; no header found.")
 
-    s, success = await dataset_header_document_dkg(data=csv_str, doc=doc, dataset_name=csv_file.filename, doc_name=doc_file.filename, gpt_key=gpt_key, smart=smart)
+    data = [header]
+    data.extend(csv_reader)  # make sure header is included in data
+    data = process_data(data)
+    s, success = await dataset_header_document_dkg(data=data, doc=doc, dataset_name=csv_file.filename, doc_name=doc_file.filename, gpt_key=gpt_key, smart=smart)
 
     if not success:
         return JSONResponse(status_code=status.HTTP_401_UNAUTHORIZED, content=s)
