@@ -9,7 +9,7 @@ The MIT team consists of (in alphabetical order):
 - [Wenjia He](https://web.eecs.umich.edu/~wenjiah/)
 - [Chunwei Liu](https://people.csail.mit.edu/chunwei/)
 - [Markos Markakis](https://people.csail.mit.edu/markakis/)
-- [Oscar Moll Thomae](https://www.csail.mit.edu/person/oscar-ricardo-moll-thomae)
+- [Oscar Moll](https://www.csail.mit.edu/person/oscar-ricardo-moll-thomae)
 - [Theo Olausson](https://theoxo.xyz/)
 - [Anna Zeng](https://people.csail.mit.edu/annazeng/)
 
