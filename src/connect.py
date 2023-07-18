@@ -415,6 +415,7 @@ async def profile_matrix(data: List[List[Any]], doc, dataset_name, doc_name, gpt
         "25%": df.quantile(0.25),
         "50%": df.quantile(0.5),
         "75%": df.quantile(0.75),
+        "num_null_entries": df.isnull().sum(),
     }
 
     return json.dumps({'matrix_stats': stats}), True
