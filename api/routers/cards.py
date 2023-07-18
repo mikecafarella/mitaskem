@@ -31,7 +31,7 @@ async def get_data_card(gpt_key: str, csv_file: UploadFile = File(...), doc_file
     if len(doc) == 0:
         return JSONResponse(status_code=status.HTTP_400_BAD_REQUEST, content="Empty document file")
 
-    csv_reader = csv.reader(io.StringIO(_csv), dialect=csv.Sniffer().sniff(_csv.splitlines()[0]))
+    csv_reader = csv.reader(io.StringIO(_csv), dialect=csv.Sniffer().sniff(_csv.splitlines()[-1]))
 
     header = next(csv_reader)  # can determine type from the header row
     data_type = get_dataset_type(header)

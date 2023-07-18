@@ -66,7 +66,7 @@ async def profile_matrix_data(gpt_key: str, csv_file: UploadFile = File(...), do
 
     csv_string = await csv_file.read()
     csv_str = csv_string.decode()
-    csv_reader = csv.reader(io.StringIO(csv_str), dialect=csv.Sniffer().sniff(csv_str.splitlines()[0]))
+    csv_reader = csv.reader(io.StringIO(csv_str), dialect=csv.Sniffer().sniff(csv_str.splitlines()[-1]))
 
     doc = await doc_file.read()
     doc = doc.decode()
@@ -93,7 +93,7 @@ async def link_dataset_columns_to_dkg_info(gpt_key: str, csv_file: UploadFile = 
     """
     csv_string = await csv_file.read()
     csv_str = csv_string.decode()
-    csv_reader = csv.reader(io.StringIO(csv_str), dialect=csv.Sniffer().sniff(csv_str.splitlines()[0]))
+    csv_reader = csv.reader(io.StringIO(csv_str), dialect=csv.Sniffer().sniff(csv_str.splitlines()[-1]))
 
     doc = await doc_file.read()
     doc = doc.decode()
