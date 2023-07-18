@@ -470,7 +470,7 @@ async def dataset_header_document_dkg(data, doc, dataset_name, doc_name, gpt_key
     dataset_type = get_dataset_type(data)
     if dataset_type == "header-0":
         header = 0
-        schema = io.StringIO(data).readline()
+        schema = data.split("\n")[0].strip()
     elif dataset_type == "no-header":
         header = None
         schema = None
