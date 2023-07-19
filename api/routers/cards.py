@@ -80,7 +80,7 @@ async def get_data_card(gpt_key: str, csv_file: UploadFile = File(...), doc_file
     if data_type == 'header-0':
         data_card['SCHEMA'] = schema
         # get a random sample of a row from the csv
-        data_card['EXAMPLES'] = {k.strip(): v for k, v in zip(schema, random.sample(list(data), 1)[0])}
+        data_card['EXAMPLES'] = {k.strip(): v for k, v in zip(schema, random.sample(list(data[1:]), 1)[0])}
         data_card['DATA_PROFILING_RESULT'] = data_profiling
     elif data_type == 'no-header':
         if 'SCHEMA' not in data_card:
@@ -116,6 +116,7 @@ async def get_data_card(gpt_key: str, csv_file: UploadFile = File(...), doc_file
 
     data_card['DATASET_TYPE'] = "matrix" if data_type == 'matrix' else "tabular"
 
+    print(data_card)
     return data_card
 
 @router.post("/get_model_card", tags=["Data-and-model-cards"], response_model=ModelCard)
