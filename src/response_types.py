@@ -1,24 +1,27 @@
 from dataclasses import dataclass
 from typing import Any, Dict, List, Union
+from pydantic import Field, BaseModel
 
-@dataclass
-class Stats:
+class Stats(BaseModel):
     num_null_entries: int
     type: str
-@dataclass
+
+    class Config:
+        allow_population_by_field_name = True
 class NumericStats(Stats):
     min: float
     max: float
     mean: float
     std: float
-    quantile_25: float
-    quantile_50: float
-    quantile_75: float
-@dataclass
+    quantile_25: float = Field(alias='25%')
+    quantile_50: float = Field(alias='50%')
+    quantile_75: float = Field(alias='75%')
+
+    class Config:
+        allow_population_by_field_name = True
 class CategoricalStats(Stats):
     num_unique_entries: int
     most_common_entries: Dict[str, int]
-@dataclass
 class DateStats(CategoricalStats):
     earliest: str
     latest: str
