@@ -2,7 +2,7 @@ import csv
 from math import isnan
 import ast, io, random, sys, os
 import asyncio
-from typing import Optional
+from typing import Optional, Union
 
 from openai import OpenAIError
 from fastapi import APIRouter, status, UploadFile, File
@@ -12,12 +12,12 @@ sys.path.append(
     os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 )
 from src.connect import construct_data_card, dataset_header_document_dkg, construct_model_card, profile_matrix, get_dataset_type, process_data
+from src.response_types import MatrixDataCard, TabularDataCard, ModelCard
 
 router = APIRouter()
 
-
-@router.post("/get_data_card", tags=["Data-and-model-cards"])
-async def get_data_card(gpt_key: str, csv_file: UploadFile = File(...), doc_file: UploadFile = File(...), smart: Optional[bool] = False):
+@router.post("/get_data_card", tags=["Data-and-model-cards"], response_model=Union[MatrixDataCard, TabularDataCard])
+async def get_data_card(gpt_key: str, csv_file: UploadFile = File(...), doc_file: UploadFile = File(...), smart: Optional[bool] = False) -> JSONResponse:
     """
            Smart run provides better results but may result in slow response times as a consequence of extra GPT calls.
     """
@@ -82,7 +82,6 @@ async def get_data_card(gpt_key: str, csv_file: UploadFile = File(...), doc_file
         # get a random sample of a row from the csv
         data_card['EXAMPLES'] = {k.strip(): v for k, v in zip(schema, random.sample(list(data), 1)[0])}
         data_card['DATA_PROFILING_RESULT'] = data_profiling
-        data_card['EXAMPLES'] = {k.strip(): v for k, v in zip(schema, random.sample(list(data), 1)[0])}
     elif data_type == 'no-header':
         if 'SCHEMA' not in data_card:
             return JSONResponse(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, content='SCHEMA not found in data card')
@@ -119,9 +118,8 @@ async def get_data_card(gpt_key: str, csv_file: UploadFile = File(...), doc_file
 
     return data_card
 
-
-@router.post("/get_model_card", tags=["Data-and-model-cards"])
-async def get_model_card(gpt_key: str, text_file: UploadFile = File(...), code_file: UploadFile = File(...)):
+@router.post("/get_model_card", tags=["Data-and-model-cards"], response_model=ModelCard)
+async def get_model_card(gpt_key: str, text_file: UploadFile = File(...), code_file: UploadFile = File(...)) -> JSONResponse:
 
     files = [text_file.read(), code_file.read()]
     text, code = await asyncio.gather(*files)

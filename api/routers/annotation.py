@@ -5,7 +5,7 @@ from fastapi.responses import JSONResponse
 
 from file_cache import save_file_to_cache
 from mit_extraction import async_mit_extraction_restAPI, afind_vars_from_text
-from typing import Optional
+from typing import Dict, Optional
 
 sys.path.append(
     os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -13,12 +13,13 @@ sys.path.append(
 from src.text_search import text_var_search, vars_to_json, vars_dedup
 from src.connect import vars_formula_connection, dataset_header_document_dkg, vars_dataset_connection_simplified, profile_matrix, get_dataset_type, process_data
 from src.link_annos_to_pyacset import link_annos_to_pyacset
+from src.response_types import TabularProfile, MatrixProfile
 
 router = APIRouter()
 
 
 @router.post("/find_text_vars", tags=["Paper-2-annotated-vars"])
-async def find_variables_from_text(gpt_key: str, file: UploadFile = File(...)):
+async def find_variables_from_text(gpt_key: str, file: UploadFile = File(...)) -> JSONResponse:
 
     contents = await file.read()
     json_str = await afind_vars_from_text(contents.decode(), gpt_key)
@@ -41,7 +42,7 @@ async def find_variables_from_text(gpt_key: str, file: UploadFile = File(...)):
     return ast.literal_eval(vars_to_json(vars_dedup(outputs)))
 
 @router.post("/link_datasets_to_vars", tags=["Paper-2-annotated-vars"])
-def link_dataset_columns_to_extracted_variables(json_str: str, dataset_str: str, gpt_key: str):
+def link_dataset_columns_to_extracted_variables(json_str: str, dataset_str: str, gpt_key: str) -> JSONResponse:
     s, success = vars_dataset_connection_simplified(json_str=json_str, dataset_str=dataset_str, gpt_key=gpt_key)
     
     if not success:
@@ -50,7 +51,7 @@ def link_dataset_columns_to_extracted_variables(json_str: str, dataset_str: str,
     return ast.literal_eval(s)
 
 @router.post("/link_latex_to_vars", tags=["Paper-2-annotated-vars"])
-def link_latex_formulas_to_extracted_variables(json_str: str, formula: str, gpt_key: str):
+def link_latex_formulas_to_extracted_variables(json_str: str, formula: str, gpt_key: str) -> JSONResponse:
     s, success = vars_formula_connection(json_str=json_str, formula=formula, gpt_key=gpt_key)
 
     if not success:
@@ -59,14 +60,14 @@ def link_latex_formulas_to_extracted_variables(json_str: str, formula: str, gpt_
     return ast.literal_eval(s)
 
 @router.post("/link_annos_to_pyacset", tags=["Paper-2-annotated-vars"])
-def link_annotation_to_pyacset_and_paper_info(pyacset_str: str, annotations_str: str, info_str: str = ""):
+def link_annotation_to_pyacset_and_paper_info(pyacset_str: str, annotations_str: str, info_str: str = "") -> JSONResponse:
     s = link_annos_to_pyacset(pyacset_s = pyacset_str, annos_s = annotations_str, info_s = info_str)
 
     return ast.literal_eval(s)
 
 
-@router.post("/profile_matrix_data", tags=["Paper-2-annotated-vars"])
-async def profile_matrix_data(gpt_key: str, csv_file: UploadFile = File(...), doc_file: UploadFile = File(...)):
+@router.post("/profile_matrix_data", tags=["Paper-2-annotated-vars"], response_model=MatrixProfile)
+async def profile_matrix_data(gpt_key: str, csv_file: UploadFile = File(...), doc_file: UploadFile = File(...)) -> JSONResponse:
 
     csv_string = await csv_file.read()
     csv_str = csv_string.decode()
@@ -89,9 +90,9 @@ async def profile_matrix_data(gpt_key: str, csv_file: UploadFile = File(...), do
 
     return ast.literal_eval(s)
 
-@router.post("/link_dataset_col_to_dkg", tags=["Paper-2-annotated-vars"])
+@router.post("/link_dataset_col_to_dkg", tags=["Paper-2-annotated-vars"], response_model=Dict[str, TabularProfile])
 async def link_dataset_columns_to_dkg_info(gpt_key: str, csv_file: UploadFile = File(...),
-                                           doc_file: UploadFile = File(...), smart: Optional[bool] = False):
+                                           doc_file: UploadFile = File(...), smart: Optional[bool] = False) -> JSONResponse:
     """
            Smart run provides better results but may result in slow response times as a consequence of extra GPT calls.
     """
@@ -120,7 +121,7 @@ async def link_dataset_columns_to_dkg_info(gpt_key: str, csv_file: UploadFile = 
     return ast.literal_eval(s)
 
 # @router.post("/link_dataset_col_to_dkg", tags=["Paper-2-annotated-vars"])
-# def link_dataset_columns_to_dkg_info(csv_str: str, gpt_key: str):
+# def link_dataset_columns_to_dkg_info(csv_str: str, gpt_key: str) -> JSONResponse:
 #     s, success = dataset_header_dkg(header=csv_str, gpt_key=gpt_key)
 #
 #     if not success:
@@ -130,7 +131,7 @@ async def link_dataset_columns_to_dkg_info(gpt_key: str, csv_file: UploadFile = 
 
 
 @router.post("/upload_file_extract/", tags=["Paper-2-annotated-vars"])
-async def upload_file_annotate(gpt_key: str, file: UploadFile = File(...)):
+async def upload_file_annotate(gpt_key: str, file: UploadFile = File(...)) -> JSONResponse:
     """
         User Warning: Calling APIs may result in slow response times as a consequence of GPT-4.
     """

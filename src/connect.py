@@ -412,10 +412,11 @@ async def profile_matrix(data: List[List[Any]], doc, dataset_name, doc_name, gpt
         "std": df.std(),
         "min": df.min(),
         "max": df.max(),
-        "25%": df.quantile(0.25),
-        "50%": df.quantile(0.5),
-        "75%": df.quantile(0.75),
+        "quantile_25": df.quantile(0.25),
+        "quantile_50": df.quantile(0.5),
+        "quantile_75": df.quantile(0.75),
         "num_null_entries": int(df.isnull().sum()),
+        "type": "numeric",
     }
 
     return json.dumps({'matrix_stats': stats}), True
@@ -591,32 +592,30 @@ async def _compute_tabular_statistics(data: List[List[Any]], header):
     return res
 
 
-async def construct_data_card(data_doc, dataset_name, doc_name, dataset_type, gpt_key='', fields=None, model="gpt-3.5-turbo-16k"):
+async def construct_data_card(data_doc, dataset_name, doc_name, dataset_type, gpt_key='', model="gpt-3.5-turbo-16k"):
     """
     Constructing a data card for a given dataset and its description.
     :param data: Small dataset, including header and optionally a few rows
     :param data_doc: Document string
     :param gpt_key: OpenAI API key
-    :param fields: Fields to be filled in the data card
     :param model: OpenAI model to use
     :return: Data card
     """
 
-    if fields is None:
-        fields = [("DESCRIPTION",  "Short description of the dataset (1-3 sentences)."),
-                  ("AUTHOR_NAME",  "Name of publishing institution or author."),
-                  ("AUTHOR_EMAIL", "Email address for the author of this dataset."),
-                  ("DATE",         "Date of publication of this dataset."),
-                  ("PROVENANCE",   "Short (1 sentence) description of how the data was collected."),
-                  ("SENSITIVITY",  "Is there any human-identifying information in the dataset?"),
-                  ("LICENSE",      "License for this dataset."),
-        ]
-        if dataset_type == 'no-header':
-            # also want GPT to fill in the schema
-            fields.append(("SCHEMA", "The dataset schema, as a comma-separated list of column names."))
-        elif dataset_type == 'matrix':
-            # instead of a schema, want to ask GPT to explain what a given (row, column) cell means
-            fields.append(("CELL_INTERPRETATION", "A brief description of what a given cell in the matrix represents (i.e. how to interpret the value at a given a row/column pair)."))
+    fields = [("DESCRIPTION",  "Short description of the dataset (1-3 sentences)."),
+              ("AUTHOR_NAME",  "Name of publishing institution or author."),
+              ("AUTHOR_EMAIL", "Email address for the author of this dataset."),
+              ("DATE",         "Date of publication of this dataset."),
+              ("PROVENANCE",   "Short (1 sentence) description of how the data was collected."),
+              ("SENSITIVITY",  "Is there any human-identifying information in the dataset?"),
+              ("LICENSE",      "License for this dataset."),
+    ]
+    if dataset_type == 'no-header':
+        # also want GPT to fill in the schema
+        fields.append(("SCHEMA", "The dataset schema, as a comma-separated list of column names."))
+    elif dataset_type == 'matrix':
+        # instead of a schema, want to ask GPT to explain what a given (row, column) cell means
+        fields.append(("CELL_INTERPRETATION", "A brief description of what a given cell in the matrix represents (i.e. how to interpret the value at a given a row/column pair)."))
 
     prompt = get_data_card_prompt(fields, data_doc, dataset_name, doc_name)
     match = get_gpt4_match(prompt, gpt_key, model=model)
@@ -639,30 +638,28 @@ async def construct_data_card(data_doc, dataset_name, doc_name, dataset_type, gp
 
     return json.dumps(results), True
 
-async def construct_model_card(text, code,  gpt_key='', fields=None, model="gpt-3.5-turbo-16k"):
+async def construct_model_card(text, code,  gpt_key='', model="gpt-3.5-turbo-16k"):
     """
     Constructing a data card for a given dataset and its description.
     :param text: Model description (either model documentation or related paper)
     :param code: Model code
     :param gpt_key: OpenAI API key
-    :param fields: Fields to be filled in the data card
     :param model: OpenAI model to use
     :return: Data card
     """
 
-    if fields is None:
-        fields = [("DESCRIPTION",  "Short description of the model (1 sentence)."),
-                  ("AUTHOR_INST",  "Name of publishing institution."),
-                  ("AUTHOR_AUTHOR", "Name of author(s)."),
-                  ("AUTHOR_EMAIL", "Email address for the author of this model."),
-                  ("DATE",         "Date of publication of this model."),
-                  ("SCHEMA",       "Shot description of the schema of inputs and outputs of the model (1 sentence)."),
-                  ("PROVENANCE",   "Short description (1 sentence) of how the model was trained."),
-                  ("DATASET",      "Short description (1 sentence) of what dataset was used to train the model."),
-                  ("COMPLEXITY",  "The complexity of the model"),
-                  ("USAGE",        "Short description (1 sentence) of the context in which the model should be used"),
-                  ("LICENSE",      "License for this model."),
-        ]
+    fields = [("DESCRIPTION",  "Short description of the model (1 sentence)."),
+              ("AUTHOR_INST",  "Name of publishing institution."),
+              ("AUTHOR_AUTHOR", "Name of author(s)."),
+              ("AUTHOR_EMAIL", "Email address for the author of this model."),
+              ("DATE",         "Date of publication of this model."),
+              ("SCHEMA",       "Shot description of the schema of inputs and outputs of the model (1 sentence)."),
+              ("PROVENANCE",   "Short description (1 sentence) of how the model was trained."),
+              ("DATASET",      "Short description (1 sentence) of what dataset was used to train the model."),
+              ("COMPLEXITY",  "The complexity of the model"),
+              ("USAGE",        "Short description (1 sentence) of the context in which the model should be used"),
+              ("LICENSE",      "License for this model."),
+    ]
 
     prompt = get_model_card_prompt(fields, text, code)
     match = get_gpt4_match(prompt, gpt_key, model=model)
