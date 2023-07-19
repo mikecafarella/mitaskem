@@ -1,8 +1,6 @@
-import random
-import asyncio
+import locale
 import copy
 from collections import OrderedDict
-import io
 import json
 import os
 import re
@@ -22,6 +20,8 @@ from mira_dkg_interface import *
 from gpt_key import *
 # from automates.program_analysis.JSON2GroMEt.json2gromet import json_to_gromet
 # from automates.gromet.query import query
+
+locale.setlocale(locale.LC_NUMERIC, 'en_US.UTF-8')
 
 def index_text_path(text_path: str) -> str:
     fw = open(text_path + "_idx", "w")
@@ -931,7 +931,7 @@ def code_dkg_connection(dkg_targets, gpt_key, ontology_terms=DEFAULT_TERMS, onto
 
 def _is_numeric(s):
     try:
-        float(s)
+        locale.atof(s)
         return True
     except ValueError:
         return False
@@ -946,7 +946,7 @@ def process_data(data: List[List[Any]]) -> List[List[Any]]:
         if x == '':
             return float('nan')
         elif _is_numeric(x):
-            return float(x)
+            return locale.atof(x)
         else:
             return x
 
