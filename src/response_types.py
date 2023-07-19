@@ -36,7 +36,7 @@ class TabularProfile:
     unit: str
     description: str
     dkg_groundings: List[List[str]]
-    column_stats: Union[CategoricalStats, NumericStats, DateStats]
+    column_stats: Union[NumericStats, DateStats, CategoricalStats]
 
 @dataclass
 class BaseDataCard:
