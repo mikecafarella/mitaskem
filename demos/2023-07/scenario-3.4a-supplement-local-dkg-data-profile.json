@@ -1,0 +1,207 @@
+{
+    "Wastewater Resource Recovery Facility (WRRF)": {
+      "col_name": "Wastewater Resource Recovery Facility (WRRF)",
+      "concept": "Wastewater treatment facility",
+      "unit": "N/A",
+      "description": "The name of the wastewater treatment facility in New York City",
+      "dkg_groundings": [
+        {
+          "name": "wastewater surveillance data set",
+          "synonyms": "",
+          "id": "apollosv:00000618",
+          "description": "A disease surveillance data set that is about some wastewater disease surveillance.",
+          "type": "class"
+        },
+        {
+          "name": "Outpatient Treatment Facility",
+          "synonyms": "OUTPATIENT TREATMENT FACILITY;Outpatient Treatment Facility",
+          "id": "ncit:C53549",
+          "description": "",
+          "type": "class"
+        },
+        {
+          "name": "Birth Facility",
+          "synonyms": "Birth Facility;Birth Facility",
+          "id": "ncit:C81237",
+          "description": "The facility which provides a setting with provisions for monitoring and delivering babies.",
+          "type": "class"
+        },
+        {
+          "name": "Tissue Irradiation Facility",
+          "synonyms": "Irradiation facility only;Tissue Irradiation Facility",
+          "id": "ncit:C133326",
+          "description": "A facility that irradiates body tissue products.",
+          "type": "class"
+        }
+      ],
+      "column_stats": {
+        "type": "categorical",
+        "most_common_entries": {
+          "Hunts Point": 1,
+          "Wards Island": 1,
+          "North River": 1,
+          "Newtown Creek": 1,
+          "Red Hook": 1,
+          "Owls Head": 1,
+          "Coney Island": 1,
+          "26th Ward": 1,
+          "Rockaway": 1,
+          "Jamaica Bay": 1
+        },
+        "num_unique_entries": 14
+      }
+    },
+    "Borough(s)": {
+      "col_name": "Borough(s)",
+      "concept": "Geographic location",
+      "unit": "N/A",
+      "description": "The borough(s) in New York City that the wastewater treatment facility serves",
+      "dkg_groundings": [
+        {
+          "name": "geographic location",
+          "synonyms": "geographic region {alternative name}",
+          "id": "gaz:00000448",
+          "description": "A reference to a place on the Earth, by its name or by its geographical location.",
+          "type": "class"
+        },
+        {
+          "name": "location",
+          "synonyms": "m;location",
+          "id": "probonto:k0001384",
+          "description": "",
+          "type": "class"
+        },
+        {
+          "name": "location",
+          "synonyms": "m;location",
+          "id": "probonto:k0001160",
+          "description": "",
+          "type": "class"
+        },
+        {
+          "name": "location",
+          "synonyms": "a;location",
+          "id": "probonto:k0000650",
+          "description": "",
+          "type": "class"
+        }
+      ],
+      "column_stats": {
+        "type": "categorical",
+        "most_common_entries": {
+          "Brooklyn": 4,
+          "Queens": 4,
+          "Staten Island": 2,
+          "Bronx": 1,
+          "Bronx and Manhattan": 1,
+          "Manhattan": 1,
+          "Manhattan, Brooklyn, \nand Queens": 1
+        },
+        "num_unique_entries": 7
+      }
+    },
+    "Population Served*": {
+      "col_name": "Population Served*",
+      "concept": "Number of people",
+      "unit": "People",
+      "description": "The estimated number of people whose wastewater is treated by the facility",
+      "dkg_groundings": [
+        {
+          "name": "population",
+          "synonyms": "",
+          "id": "askemo:0000001",
+          "description": "The number of people who live in an area being modeled.",
+          "type": "class"
+        },
+        {
+          "name": "People",
+          "synonyms": "People",
+          "id": "ncit:C95553",
+          "description": "Human beings in general.",
+          "type": "class"
+        },
+        {
+          "name": "effective reproduction number",
+          "synonyms": "effective reproductive number;effective reproductive rate",
+          "id": "askemo:0000007",
+          "description": "Represents the average number of people who will be infected by any given infected person in a partially susceptible population. It is calculated by multiplying the basic reproduction number by the fraction of the population that is susceptible.",
+          "type": "class"
+        },
+        {
+          "name": "human population",
+          "synonyms": "",
+          "id": "idomal:0001255",
+          "description": "A population of human beings.",
+          "type": "class"
+        }
+      ],
+      "column_stats": {
+        "type": "categorical",
+        "most_common_entries": {
+          "755,948": 1,
+          "1,201,485": 1,
+          "658,596": 1,
+          "1,156,473": 1,
+          "224,029": 1,
+          "906,442": 1,
+          "682,342": 1,
+          "290,608": 1,
+          "120,539": 1,
+          "748,737": 1
+        },
+        "num_unique_entries": 14
+      }
+    },
+    "Daily Flow Range (Average)† in MGD": {
+      "col_name": "Daily Flow Range (Average)† in MGD",
+      "concept": "Wastewater flow",
+      "unit": "Million gallons per day (MGD)",
+      "description": "The range and average of daily flow of wastewater treated by the facility, measured in million gallons per day",
+      "dkg_groundings": [
+        {
+          "name": "sensation of blood flow AE",
+          "synonyms": "",
+          "id": "oae:0001386",
+          "description": "a sensory capability AE that results in the patient feeling their blood flow",
+          "type": "class"
+        },
+        {
+          "name": "Blood Flow Rate",
+          "synonyms": "Blood Flow Rate;Blood Flow Rate;Blood Flow Rate;Blood Flow Rate;Blood Flow Rate;BLDFLRT;Blood Flow Rate;BLDFLRT;BLDFLRT;BLDFLRT",
+          "id": "ncit:C94866",
+          "description": "The volume of blood per unit time passing through a specified location, such as a point in a blood vessel or an entire organ. Units are ml/sec.",
+          "type": "class"
+        },
+        {
+          "name": "range",
+          "synonyms": "",
+          "id": "rdfs:range",
+          "description": "",
+          "type": "unknown"
+        },
+        {
+          "name": "Abnormal umbilical blood flow measurement",
+          "synonyms": "",
+          "id": "hp:0025657",
+          "description": "",
+          "type": "class"
+        }
+      ],
+      "column_stats": {
+        "type": "categorical",
+        "most_common_entries": {
+          "115 - 215 (136)": 1,
+          "143 - 273 (180)": 1,
+          "81 - 143 (94)": 1,
+          "158 - 296 (188)": 1,
+          "21 - 46 (26)": 1,
+          "81 - 159 (95)": 1,
+          "70 - 102 (82)": 1,
+          "44 - 89  (55)": 1,
+          "18 - 25 (20)": 1,
+          "74 - 103 (81)": 1
+        },
+        "num_unique_entries": 14
+      }
+    }
+  }
