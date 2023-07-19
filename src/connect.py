@@ -549,9 +549,12 @@ async def _compute_tabular_statistics(data: List[List[Any]], header):
     df.replace(float('inf'), 'inf', inplace=True)
     df.replace(float('-inf'), '-inf', inplace=True)
     res = df.to_dict()
-    for col in res:
+    key_translations = {f"{x}%": f"quantile_{x}" for x in (25, 50, 75)}
+    for col in res.keys():
         res[col]['type'] = 'numeric'
-
+        for k in list(res[col].keys()):
+            if k in key_translations:
+                res[col][key_translations[k]] = res[col].pop(k)
 
     # try to infer date columns and convert them to datetime objects
     date_cols = set()
