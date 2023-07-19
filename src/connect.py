@@ -21,7 +21,7 @@ from gpt_key import *
 # from automates.program_analysis.JSON2GroMEt.json2gromet import json_to_gromet
 # from automates.gromet.query import query
 
-locale.setlocale(locale.LC_NUMERIC, 'en_US.UTF-8')
+locale.setlocale(locale.LC_ALL, 'en_US.UTF-8')
 
 def index_text_path(text_path: str) -> str:
     fw = open(text_path + "_idx", "w")
