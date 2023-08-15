@@ -1,4 +1,5 @@
 # Client code for SKEMA TR
+import os
 import argparse
 import io
 import json
@@ -14,9 +15,6 @@ from fastapi import APIRouter, FastAPI, UploadFile, Response, status
 COSMOS_ADDRESS = "https://xdd.wisc.edu/cosmos_service"
 router = APIRouter()
 
-
-# Utility code for the endpoints
-
 def annotate_with_skema(
         endpoint: str,
         input_: Union[str, List[str], List[Dict], List[List[Dict]]]) -> List[Dict[str, Any]]:
@@ -25,10 +23,9 @@ def annotate_with_skema(
     if isinstance(input_, (str, dict)):
         payload = [
             input_
-        ]  # If the text to annotate is a single string representing the contents of a document, make it a list with
-        # a single element
+        ]
     else:
-        payload = input_  # if the text to annotate is already a list of documents to annotate, it is the payload itself
+        payload = input_
     response = requests.post(endpoint, json=payload, timeout=600)
     if response.status_code == 200:
         return response.json()
@@ -36,8 +33,6 @@ def annotate_with_skema(
         raise RuntimeError(
             f"Calling {endpoint} failed with HTTP code {response.status_code}"
         )
-
-
 
 def parquet_to_json(path):
     parquet_df = pd.read_parquet(path)
@@ -56,17 +51,11 @@ def parquet_to_json(path):
                 row_idx_num = int(row_idx)
                 row_order_parquet_data[row_idx_num][field_key] = datum
 
-        # if filename == "documents.parquet":
-        # Sorts the content sections by page number and then by
-        # bounding box location. Use x-pos first to account for
-        # multi-column documents and then sort by y-pos.
         row_order_parquet_data.sort(
             key=lambda d: (
                 d["page_num"],
                 d["bounding_box"][0]
-                // 500,  # allows for indentation while still catching items across the center line
-                # (d["bounding_box"][0]) // 100
-                # + round((d["bounding_box"][0] % 100 // 10) / 10),
+                // 500,
                 d["bounding_box"][1],
             )
         )
@@ -76,8 +65,6 @@ def parquet_to_json(path):
             (ext1_x1, ext1_y1, ext1_x2, ext1_y2) = extraction1[
                 "bounding_box"
             ]
-            # Don't bother processing for left-justified or centered
-            # content ... only right column content needs to be checked
             if ext1_x1 < 500:
                 continue
 
@@ -88,8 +75,6 @@ def parquet_to_json(path):
             while t1 > 0:
                 extraction2 = row_order_parquet_data[t1 - 1]
                 ext2_page_num = extraction2["page_num"]
-                # If the previous sorted entry is on an earlier page
-                # then we can stop our search
                 if ext1_page_num > ext2_page_num:
                     break
 
@@ -99,7 +84,6 @@ def parquet_to_json(path):
 
                 if ext1_y2 <= ext2_y1:
                     ext2_xspan = ext2_x2 - ext2_x1
-                    # Useful heuristic cutoff for now
                     if ext2_xspan >= 800:
                         found_col_break = True
                         insertion_index = t1 - 1
@@ -128,15 +112,7 @@ def parquet_to_json(path):
 
         return next(iter(name2results.items()))[1]
 
-
-def cosmos_client(name: str, data: BinaryIO):
-    """
-    Posts a pdf to COSMOS and returns the JSON representation of the parquet file
-
-    """
-
-    # Create POST request to COSMOS server
-    # Prep the pdf data for upload
+def cosmos_client(name: str, data: BinaryIO, output_dir: str):
     files = [
         ("pdf", (name, data, 'application/pdf')),
     ]
@@ -149,32 +125,34 @@ def cosmos_client(name: str, data: BinaryIO):
         callback_endpoints = response.json()
 
         for retry_num in range(200):
-            time.sleep(3)  # Retry in ten seconds
+            time.sleep(3)
             poll = requests.get(f"{COSMOS_ADDRESS}{callback_endpoints['status_endpoint']}")
             print(f"Polling COSMOS on retry num {retry_num + 1}")
             if poll.status_code == status.HTTP_200_OK:
                 poll_results = poll.json()
-                # If the job is completed, fetch the results
                 if poll_results['job_completed']:
                     cosmos_response = requests.get(f"{COSMOS_ADDRESS}{callback_endpoints['result_endpoint']}")
                     if cosmos_response.status_code == status.HTTP_200_OK:
                         data = cosmos_response.content
                         with ZipFile(io.BytesIO(data)) as z:
-                            for file in z.namelist():
-                                if file.endswith(".parquet") and \
-                                        not file.endswith("_figures.parquet") and \
-                                        not file.endswith("_pdfs.parquet") and \
-                                        not file.endswith("_tables.parquet") and \
-                                        not file.endswith("_sections.parquet") and \
-                                        not file.endswith("_equations.parquet"):
-                                    # convert parquet to json
-                                    with z.open(file) as zf:
-                                        json_data = parquet_to_json(zf)
-                                        #print file name and json data in the same line with a nice formatting
+                            output_subdir = os.path.join(output_dir, name.split('.')[0].replace(' ', '_'))
+                            os.makedirs(output_subdir, exist_ok=True)
+                            z.extractall(path=output_subdir)
+                            for file in os.listdir(output_subdir):
+                                if file.endswith(".parquet"):
+                                    print(f"Converting {file} to JSON")
+                                    # if error while converting parquet to json, skip this file
+                                    try:
+                                        json_data = parquet_to_json(os.path.join(output_subdir, file))
+                                        with open(os.path.join(output_subdir, f"{os.path.splitext(file)[0]}.json"), 'w') as json_file:
+                                            json.dump(json_data, json_file)
                                         print(f"{file} : {json_data}")
-                                        return json_data
-                        # Shouldn't reach this point
-                        raise RuntimeError("COSMOS data doesn't include document file for annotation")
+
+                                    except Exception as e:
+                                        print(f"Error while converting {file} to JSON: {e}")
+                                        pass
+                        return
+                        # raise RuntimeError("COSMOS data doesn't include document file for annotation")
 
                     else:
                         raise RuntimeError(
@@ -189,15 +167,19 @@ def cosmos_client(name: str, data: BinaryIO):
     else:
         raise RuntimeError(f"COSMOS Error - STATUS CODE: {response.status_code} - {COSMOS_ADDRESS}")
 
-def main(file_path):
+def main(file_path, output_dir):
     # Open the file in binary mode
     with open(file_path, "rb") as file:
+        # Extract the file name from the file path
+        file_name = os.path.basename(file_path)
         # Call the cosmos_client function
-        cosmos_client("Flamingo.pdf", file)
+        cosmos_client(file_name, file, output_dir)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Process a PDF file.')
     parser.add_argument('--file', type=str, default="/Users/chunwei/Documents/paper/LLM/Flamingo.pdf",
                         help='The path to the PDF file to process.')
+    parser.add_argument('--output_dir', type=str, default="/Users/chunwei/Downloads/",
+                        help='The directory to save the extraction results.')
     args = parser.parse_args()
-    main(args.file)
+    main(args.file, args.output_dir)
