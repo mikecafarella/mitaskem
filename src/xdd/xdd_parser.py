@@ -177,7 +177,7 @@ def main(file_path, output_dir):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Process a PDF file.')
-    parser.add_argument('--file', type=str, default="/Users/chunwei/Documents/paper/LLM/Flamingo.pdf",
+    parser.add_argument('--file', type=str, default="/Users/chunwei/Downloads/sidarthe.pdf",
                         help='The path to the PDF file to process.')
     parser.add_argument('--output_dir', type=str, default="/Users/chunwei/Downloads/",
                         help='The directory to save the extraction results.')
