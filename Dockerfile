@@ -1,5 +1,11 @@
 FROM python:3.10
-EXPOSE 8000 
+EXPOSE 8000
+ARG COMMIT_SHA=unknown
+ARG VERSION=0.0.1
+ENV GIT_COMMIT_SHA=${COMMIT_SHA}
+ENV APP_VERSION=${VERSION}
+RUN echo "APP Version is $APP_VERSION"
+RUN echo "GIT Commit is ${GIT_COMMIT_SHA}"
 
 # General Environment Setup
 RUN apt-get update && apt-get install -y \

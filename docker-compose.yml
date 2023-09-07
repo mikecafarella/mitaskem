@@ -9,6 +9,9 @@ services:
     build:
       context: ./
       dockerfile: Dockerfile
+    environment:
+       - GIT_COMMIT_SHA=${COMMIT_SHA:-unknown}
+       - APP_VERSION=${VERSION:-unknown}
     ports:
       - "8000:8000"
     networks:
