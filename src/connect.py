@@ -648,7 +648,7 @@ async def construct_model_card(text, code,  gpt_key='', model="gpt-3.5-turbo-16k
     :param code: Model code
     :param gpt_key: OpenAI API key
     :param model: OpenAI model to use
-    :return: Data card
+    :return: Model card
     """
 
     fields = [("DESCRIPTION",  "Short description of the model (1 sentence)."),
@@ -656,7 +656,7 @@ async def construct_model_card(text, code,  gpt_key='', model="gpt-3.5-turbo-16k
               ("AUTHOR_AUTHOR", "Name of author(s)."),
               ("AUTHOR_EMAIL", "Email address for the author of this model."),
               ("DATE",         "Date of publication of this model."),
-              ("SCHEMA",       "Shot description of the schema of inputs and outputs of the model (1 sentence)."),
+              ("SCHEMA",       "Short description of the schema of inputs and outputs of the model (1 sentence)."),
               ("PROVENANCE",   "Short description (1 sentence) of how the model was trained."),
               ("DATASET",      "Short description (1 sentence) of what dataset was used to train the model."),
               ("COMPLEXITY",  "The complexity of the model"),
