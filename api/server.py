@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from file_cache import init_cache_directory
-from routers import code_dataset, code_formula, code_text, avail_check, petri, annotation, integration, cards, debugging
+from routers import code_dataset, code_formula, code_text, avail_check, petri, evaluation, annotation, integration, cards, debugging
 
 tags_metadata = [
     # {
@@ -33,6 +33,10 @@ tags_metadata = [
         "name": "Debugging",
         "description": "Version check and debugging requests."
     },
+    {
+        "name": "Evaluation",
+        "description": "Evaluating the MIT extraction services."
+    }
 ]
 
 
@@ -74,5 +78,6 @@ app.include_router(annotation.router, prefix="/annotation")
 app.include_router(integration.router, prefix="/integration")
 app.include_router(cards.router, prefix="/cards")
 app.include_router(debugging.router, prefix="/debugging")
+app.include_router(evaluation.router, prefix="/evaluation")
 
 

@@ -225,7 +225,7 @@ Our findings provide policymakers with a tool to assess the consequences of poss
 Although the mortality rate (number of deaths in the whole pop- ulation) of COVID-19 can be decreased with restrictive measures that reduce the spread of SARS-CoV-2, the CFR (number of deaths in the infected population) is essentially constant in different scenar- ios, unaffected by the extent of social restriction and testing. Despite rigid isolation policies, COVID-19 patients may still be burdened with excess case fatality, and efforts should be focused on developing more effective treatment strategies to combat COVID-19. As new drugs and vaccines are being tested and evaluated, the current sce- nario will evolve to account for these ongoing innovations34–37. NAtuRe MeDICINe | VOL 26 | JUNE 2020 | 855–860 | www.nature.com/naturemedicine
 Online content
 Any methods, additional references, Nature Research reporting summaries, source data, extended data, supplementary informa- tion, acknowledgements, peer review information; details of author contributions and competing interests; and statements of data and code availability are available at https://doi.org/10.1038/s41591- 020-0883-7.
-Received: 21 March 2020; Accepted: 14 April 2020; Published online: 22 April 2020
+Received date: 21 March 2020; Accepted: 14 April 2020; Published online: 22 April 2020
 
 Methods
 SIDARTHE mathematical model. The SIDARTHE dynamical system consists of eight ordinary differential equations, describing the evolution of the population in each stage over time:

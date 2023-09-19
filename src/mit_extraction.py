@@ -132,7 +132,9 @@ def find_vars_from_text(text: str, gpt_key: str):
 from methods import create_prompt_tasks, fork_join_requests, split_latex_into_chunks
 
 async def _extract_text_vars(text, var_prompt, api_key=None):
-    model_name = 'text-davinci-003'
+    model_name = 'gpt-4'
+    # original implementation for speed
+    # model_name = 'text-davinci-003'
     document_chunks = split_latex_into_chunks(document=text, prompt_template=var_prompt, model_name=model_name, 
                                               max_total_size=None, max_answer_size=256, chunk_overlap=0)
     
@@ -210,7 +212,6 @@ async def async_mit_extraction_restAPI(file_name, gpt_key, cache_dir="/tmp/askem
 
     with open(os.path.join(dir, "headers.txt")) as f:
         dataset_str = f.read()
- #       print(dataset_str[:419])
 
 
     json_str, success = vars_dataset_connection_simplified(dkg_json_string, dataset_str, gpt_key)
@@ -354,7 +355,7 @@ def mit_extraction(paper):
 
 
 if __name__ == "__main__":
-    papers = load_paper_info("../../resources/xDD/xdd_paper.json")
+    papers = load_paper_info("/../resources/xDD/xdd_paper.json")
     paper = papers[0]  # 0 1 4 6
     print(paper)
 

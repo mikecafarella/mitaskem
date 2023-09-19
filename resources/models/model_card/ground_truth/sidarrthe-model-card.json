@@ -1,0 +1,13 @@
+{
+  "DESCRIPTION": "Modelling the COVID-19 epidemic and implementation of population-wide interventions in Italy",
+  "AUTHOR_INST": "University of Trento, Trento, Italy",
+  "AUTHOR_AUTHOR": "Giulia Giordano, Franco Blanchini, Raffaele Bruno, Patrizio Colaneri, Alessandro Di Filippo, Angela Di Matteo, Marta Colaneri",
+  "AUTHOR_EMAIL": "giulia.giordano@unitn.it",
+  "DATE": "2020",
+  "SCHEMA": "The model considers eight stages of infection: susceptible (S), infected (I), diagnosed (D), ailing (A), recognized (R), threatened (T), healed (H), and extinct (E), collectively termed SIDARTHE.",
+  "PROVENANCE": "The model was trained using data from the COVID-19 epidemic in Italy.",
+  "DATASET": "Italian Civil Protection (http://www.protezionecivilfor exampleov.it/ media-comunicazione/comunicati-stampa) and the Ministry of Health (http:// www.salutfor exampleov.it/portale/home.html)",
+  "COMPLEXITY": "UNKNOWN",
+  "USAGE": "The model can be used to predict the course of the COVID-19 epidemic and evaluate the impact of different control strategies.",
+  "LICENSE": "UNKNOWN"
+}

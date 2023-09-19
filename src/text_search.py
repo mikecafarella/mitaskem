@@ -76,7 +76,7 @@ def vars_to_json(var_dict: dict) -> str:
             s_out += ","
 
         s_out += "{\"type\" : \"variable\", \"name\": \"" + var_name \
-        + "\", \"id\" : \"v" + str(id) + "\", \"text_annotations\": " + var_defs_s \
+        + "\", \"id\" : \"mit" + str(id) + "\", \"text_annotations\": " + var_defs_s \
         + ", \"dkg_annotations\" : " + var_ground_s + "}"
 
         id += 1
@@ -125,7 +125,7 @@ async def avars_to_json(var_dict: dict) -> str:
             s_out += ","
 
         s_out += "{\"type\" : \"variable\", \"name\": \"" + var_name \
-        + "\", \"id\" : \"v" + str(id) + "\", \"text_annotations\": " + var_defs_s \
+        + "\", \"id\" : \"mit" + str(id) + "\", \"text_annotations\": " + var_defs_s \
         + ", \"dkg_annotations\" : " + var_ground_s
         if var_dict[var_name]['value']:
             s_out +=  ", \"value\" : \"" + var_dict[var_name]['value'] + "\""
