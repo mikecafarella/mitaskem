@@ -12,4 +12,8 @@ src/pyacset_gen/__pycache__/
 /demos/2023-03-19/gpt_key.py
 /demos/2023-02-01/gpt_key.py
 /resources/xDD/arizona-extraction/
+.ipynb_checkpoints
+__pycache__
+*.egg-info
+gpt_key.py
 *.pyc
