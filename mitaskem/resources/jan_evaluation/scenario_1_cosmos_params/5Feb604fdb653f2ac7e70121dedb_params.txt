@@ -1,0 +1,160 @@
+4 - Infectious Disease Modelling 6 (2021)
+20 - Received 30 November 2020
+15 - Received in revised form 15 February 2021
+16 - Accepted 16 February 2021
+23 - Available online 23 February 2021
+4-10 - total of 4e10 million infected cases
+20,080-58,604 - 20,080e58,604 deaths
+None
+4,434,653 conﬁrmed cases and 302,169 deaths globally (WHO Coronavirus Disease (COVID- 19) Dashboard, 2020)
+7 million and 200, 000 respectively in October 2020
+1000 in Texas (Texas DSHS, Texas COVID-19, 20202)
+1173 between April 30th and May 16th, 2020
+1801 on May 16th, 2020 (Texas DSHS, Texas COVID-19 Data, 2020)
+10 - contact rate of infected people with symptoms
+11 - contact rate of infected people without symptoms
+T1c - timing of social distancing strategies implemented on March 19th
+c10 - baseline contact rate of the infected people with symptoms
+c1b - minimum contact rate of infected people with symptoms under control strategies
+r1 - how an exponential decrease in the contact rate is achieved
+c20 - baseline contact rate of infected people without symptoms
+c2b - minimum contact rate of infected people without symptoms under control strategies
+r2 - how an exponential decrease in the contact rate of the infected people without symptoms is achieved
+None
+q0 - baseline quarantine rate
+qm - maximum quarantine rate
+r3 - parameter of exponential increase in the quarantine rate
+T2c - critical timing of enhanced quarantine strategies on April 2nd, 2020
+fs0 - baseline of the test rate of infected people with symptoms
+fsf - maximum of the test rate of infected people with symptoms
+s - sensitivity of the testing kit
+T3c - timing of enhanced detecting rate for people with symptoms on March 17th, 2020
+fa0 - baseline of the test rate of infected people without symptoms
+faf - maximum of the test rate of infected people without symptoms
+u40 - baseline recovery proportion
+u4b - maximum recovery proportion
+r6 - parameter of exponential increase in the recovery proportion
+s2 - variance
+None
+18 - Loss Function
+1 - Initial value of the number of hospitalized individuals
+28,995,881 - Initial value of the number of susceptible individuals
+28,995,881 - The population size
+0.8 - Sensitivity of the test for infected people
+0.81 - Probability of confirmed cases to be quarantined at home
+28,995,881 - The initial value of the number of the susceptible individuals
+0 - The initial value of the number of the exposed and quarantined individuals
+0 - The initial value of the number of the patients who are confirmed cases quarantined at home
+1 - The initial value of the number of the confirmed cases and hospitalized individuals
+0 - The initial value of the number of recovered individuals
+0 - The initial value of the number of the deaths
+200 - Initial value of exposed but not quarantined population
+20 - Initial value of infected patients with symptoms
+15 - Initial value of infected patients with no symptoms
+0.05 - Transition rate from exposed and quarantined to susceptible
+0.1 - Transition rate from exposed and not quarantined to susceptible
+1.5 - Baseline contact rate of infected people with symptoms
+0.5 - Minimum contact rate of infected people with symptoms under control strategies
+0.15 - Denotes how an exponential decrease in the contact rate of infected people with symptoms is achieved
+3
+0.0333 - Baseline of the test rate of infected people with symptoms
+0.01 - Baseline of the test rate of infected people with symptoms
+0.1429 - Baseline of the test rate of infected people with symptoms
+0.0100 - Baseline of the test rate of infected people with symptoms
+0.3333 - Maximum of the test rate of infected people with symptoms
+0.0714 - Maximum of the test rate of infected people with symptoms
+0.5 - Maximum of the test rate of infected people with symptoms
+0.1197 - Maximum of the test rate of infected people with symptoms
+0.15 - fsf infected people with symptoms
+0.001 - fsf infected people with symptoms
+0.4 - fsf infected people with symptoms
+0.2803 - fsf infected people with symptoms
+0.0167 - Baseline of the test rate of infected people without symptoms
+0.01 - Baseline of the test rate of infected people without symptoms
+0.0714 - Baseline of the test rate of infected people without symptoms
+0.0435 - Baseline of the test rate of infected people without symptoms
+0.0714 - Maximum of the test rate of infected people without symptoms
+2 (fold-change)
+3 (fold-change)
+4 (fold-change)
+3 (fold-change)
+1.5 (fold-change)
+2 (fold-change)
+3 (fold-change)
+4 (fold-change)
+5 (fold-change)
+4 (fold-change)
+1.5 (fold-change)
+2 (fold-change)
+4 (fold-change)
+5 (fold-change)
+6 (fold-change)
+5 (fold-change)
+1.5 (fold-change)
+2 (fold-change)
+67,196 infections
+1394 deaths
+27,582 hospitalizations
+2-folds increase in the detection rates and quarantine rate
+1.5-folds increase in the detection rates and quarantine rate
+4-folds increase in the contact rate
+3-folds increase in the contact rate
+5-folds increase in the contact rate
+49,651 death toll
+37% of the Texas population infected
+3e5 folds after reopening
+101,305 total death
+50% of Texas population
+1.5 to 2-folds increase in the detection rates and quarantine rate
+4e6 folds after reopening
+10e17 million infections
+142,578 deaths
+None
+67,196 - Total Infections
+1394 - Total deaths
+27,582 - Total hospitalizations
+10,783,692 - Total Infections
+49,651 - Total deaths
+4,414,398 - Total hospitalizations
+1,792,414 - Total Infections
+7566 - Total deaths
+733,011 - Total hospitalizations
+66,367 - Total Infections
+1417 - Total deaths
+27,229 - Total hospitalizations
+15,325,653 - Total Infections
+101,305 - Total deaths
+6,273,655 - Total hospitalizations
+9,850,955 - Total Infections
+58,604 - Total deaths
+4,028,101 - Total hospitalizations
+4,336,288 - Total Infections
+20,080 - Total deaths
+1,770,218 - Total hospitalizations
+17,961,572 - Total Infections
+142,578 - Total deaths
+7,352,671 - Total hospitalizations
+14,069,211 - Total Infections
+112,202 - Total deaths
+5,752,920 - Total hospitalizations
+10,421,684 - Total Infections
+76,884 - Total deaths
+4,254,285
+1014 cases (p. 200642)
+R01 AI087135
+11420
+343e346
+69
+6
+42e56
+1708e1720
+2000180
+2311
+1e14
+285-598205d0-9b31-4b39-a3ec-a0c32bb7a14f
+53
+25
+1843e1844
+0201987
+16 May, 2020
+11 March 2020

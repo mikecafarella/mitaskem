@@ -1,7 +1,0 @@
-Here is a text description of a model:
-
-[TEXT]
-
-Represent this model as a Petri net and print the arcs, one per line, on successive lines.
-For example, if there is an arc from A to B, print: A -> B
-

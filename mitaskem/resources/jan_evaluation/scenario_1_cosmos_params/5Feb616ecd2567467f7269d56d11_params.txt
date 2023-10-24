@@ -1,0 +1,139 @@
+12 January 2020
+11 February 2020
+6-8
+9-11
+14 days
+82 993 confirmed cases
+6 suspected cases
+4634 deaths
+68 135 confirmed cases
+4512 deaths
+5 404 512 confirmed cases
+343 514 deaths
+8096 cases
+774 deaths (mortality 9.6%)
+2494 cases
+858 deaths (mortality 34.4%)
+2.8%
+32, 33 - COVID-19 epidemic in the mainland of China
+13 - National Health Commission (NHC)
+32 - 44 - two patches, denoted as 1 and 2
+23 - 26 - Asymptomatic transmission 
+None
+1.0009 - Transmission rate (day− 1 individual− 1)
+1.3754 - Transmission rate
+1.0967 - Transmission rate
+0.0809 - Transmission rate
+2.2783 - Transmission rate
+1.4721 - Transmission rate
+0.289 - Transmission rate
+0.0189 - Transmission rate
+0.0618 - Recovery rate (day− 1)
+0.2269 - Detection rate (day− 1)
+0.0033 - Migration rate (day− 1)
+0.0029 - Migration rate (day− 1)
+0.2001 - Infectivity reduction factor
+0.1489 - Infectivity reduction factor
+0.0587 - Infectivity reduction factor
+0.0001 - Infectivity reduction factor
+0.0335 - Self-healing ratio
+0.3301 - Infectivity reduction factor (day− 1)
+0.1724 - Transition rate of exposed (day− 1)
+0.8683 - Proportion of the infectious
+1.7826 x 10-5 - Disease-induced death rate (day− 1)
+1.10 x 107 - Initial susceptible population
+12.2544 - Initial exposed population
+0.12
+0.8683 - Proportion of the infectious
+1.7826 x 10-5 - Disease-induced death rate
+0.03 - Upper limit of the rate of migration out of Wuhan
+0.0027 - Lower limit of the mobility
+13332 - Cumulative confirmed cases announced by the NHC in Hubei province
+12 February
+33th day of our simulation
+0.0001
+infectivity reduction factor (l)
+46
+confirmed cases in Hubei province
+46
+confirmed cases outside Hubei province
+25 February 2020
+Chi-square value
+17
+parameters
+5
+initial values
+None
+5.6015 - R0 in the mainland of China before Wuhan was locked down
+6.6037 - R0 in the mainland of China after Wuhan was locked down and before Hubei was locked down
+3.7732 - R0 in Hubei after Hubei province was locked down and large-scale case-screening was not started
+0.9943 - R0 outside Hubei province after Hubei province was locked down and large-scale case-screening was not started
+0.2020 - R0 in Hubei after large-scale case-screening
+0.0472 - R0 outside Hubei province after large-scale case-screening
+3.4094 - Average R0 in Hubei until 25 February
+1) from to the basic reproduction number in Hubei (R0 27 January to 11 February 2020
+2) n = 2000
+3) The significance level was chosen as 0.01
+4) α1, k, lc, ρ1, β1c, δ1 and γ1
+5) R01 > R02, R03 > R02
+6) R04 > R05, R06 > R05
+
+None
+5.8 days - detection time (1/γ, average: 4.41 days)
+16.18 days - treatment period (1/δ, average: 16.18 days)
+5.6015 - basic reproduction numbers in the mainland of China (R0)
+6.6037 - basic reproduction numbers in the mainland of China (R0)
+6.47 - Tang et al. (6.47 [95% CI: 5.71–7.23])
+4.71 - Shen et al., (4.71 [95% CI: 4.50–4.92])
+5.6870 - Jia et al. (5.6870 inside Hubei, 6.0295 outside Hubei)
+3.7732 - basic reproduction number in Hubei
+3.4094 - average basic reproduction number
+3.58 - Zhao et al. (3.58 [95% CI: 2.89–4.39])
+1.5 - Imai (1.5–3.5)
+3.11 - Read et al. (3.11 [95% CI: 2.39–4.13])
+4.08 - Cao
+R01 = 1.8805
+R02 = 0.6366
+R03 = 1.0368
+R04 = 0.5534
+R05 = 0.1677
+R06 = 0.2732
+R0 (1) = 1.4981
+R0 (2) = 0.9943
+R0 (1) = 1.6229
+R0 (2) = 0.0472
+R0 (1) = 1.7477
+R0 (2) = 0.0466
+R0 (1) = 3.7732
+R0 (2) = 0.0434
+R0 (1) = 5.6015
+R0 (2) = 2.5697
+R0 = 5.6015
+R0 = 6.6037
+None
+1. National Natural Science Foundation of China (No. 81673275, 11901059)
+2. National S&T Major Project Foundation of China (No. 2017ZX10201101 and 2018ZX10715002)
+3. Natural Science Foundation of Hubei province, China (No. 2019CFB353 and 2019CFB241)
+4. World Health Organization (http://www.nhc.gov.cn/xcs/yqtb/list_ gzbd.shtml)
+5. Li et al. Infectious Diseases of Poverty (2020) 9:94
+None
+9. Du Z, Wang L, Cauchemez S, Xu X, Wang X, Cowling B, et al. Risk for transportation of 2019 novel coronavirus disease from Wuhan to other cities in China. Emerg Infect Dis. 2020;26(5):1049–52.
+11. Wu Z, McGoogan JM. Characteristics of and important lessons from the coronavirus disease 2019 (COVID-19) outbreak in China: summary of a report of 72,314 cases from the Chinese Center for Disease Control and Prevention. JAMA. 2020;323(13):1239–42.
+16. Wu P, Hao X, Lau EH, Wong JY, Leung KS, Wu JT, et al. Real-time tentative assessment of the epidemiological characteristics of novel coronavirus infections in Wuhan, China, as at 22 January 2020. Euro Surveill. 2020;25(3): 2000044.
+21. Guan W, Ni Z, Hu Y, Liang W, Ou C, He J, et al. Clinical characteristics of coronavirus disease 2019 in China. New Engl J Med. 2020;382:1708–20.
+22
+24 Mar 2020
+27. Coronavirus medicine
+28. Patient. COVID-19: how to treat coronavirus at home
+29. World Health Organization. Summary of probable SARS cases with onset of illness from 1 November 2002 to 31 July 2003
+30. World Health Organization. Middle East Respiratory Syndrome Coronavirus (MERS-CoV)
+31. Wang C, Horby PW, Hayden FG, Gao GF. A novel coronavirus outbreak of global health concern
+32. Jia J, Ding J, Liu S, Liao G, Li J, Duan B, et al. Modeling the control of COVID-19: impact of policy interventions and meteorological factors
+33. Tang B, Wang X, Li Q, Bragazzi NL, Tang S, Xiao Y, et al. Estimation of the transmission risk of the 2019-nCoV and its implication for public health interventions
+34. Shen M, Peng Z, Xiao Y, Zhang L. Modelling the epidemic trend of the 2019 novel coronavirus outbreak in China
+35. Zhao S, Lin Q, Ran J, Musa SS, Yang G, Wang W, et al. Preliminary estimation
+45. Backer JA, Klinkenberg D, Wallinga J. Incubation period of 2019 novel coronavirus (2019-nCoV) infections among travellers from Wuhan, China, 20–28 January 2020. Euro Surveill. 2020;25(5):2000062.
+46. Wuhan Municipal People’s Government, Wuhan's resident population exceeds 11 million. http://www.wh.gov.cn/2019_web/whyw/201910/t20191 021_280212.html. Accessed 26 Mar 2019.
+47. Wuhan Municipal Bureau of Statistics. The 10th Report of Wuhan’s Economic and Social Development Achievements on the 70th Anniversary of the Founding of New China,. http://tjj.wuhan.gov.cn/details.aspx?id=4506. Accessed 29 Sept 2019.
+48. Van den Driessche P, Watmough J. Reproduction numbers and sub- threshold endemic equilibria for compartmental models of disease transmission. Math Biosci. 2002;180(1–2):29–48.
+49. Medical Administration Bureau. Notice on printing and distributing Diagnosis and Treatment

@@ -1,0 +1,56 @@
+2 - The new burst quickly spread to the rest of the country
+4 - In 2010, the SUS was able to vaccinate 89 millions of individuals
+6 - Poor coordination and logistic at the federal level
+9 - Around 24 thousand hospitalizations and 11 thousand deaths averted by vaccination in São Paulo state
+11 - Vaccination rollout structured considering age groups
+17 - 88.9% of the adult population and 66.7% of the total population with one and two doses
+20 - Origin of VOC P.1 identified as November of 2020
+21 - Gamma found more transmissible and with potential immunity escape
+22 - Cuts in fundings to SUS and widespread misinformation
+26 - Gamma variant eventually substituted by Delta variant in frequency
+166,780 (95% CI: 157,198-176,309) hospitalizations
+76,503 (95% CI: 71,832-80,714) deaths
+219,006 (95% CI: 205,903-232,651) hospitalizations
+101,416 (95% CI: 95,079-107,091) deaths
+268,614 (95% CI: 248,858-289,034) hospitalizations
+124,962 (95% CI: 116,573-132,234) deaths
+165 thousands of individuals were not hospitalized due to COVID-19
+US$12,000.00 per admission in hospital
+More than 75 thousand lives were saved in the period analysed
+20% of the actual deaths in 60+ y.o. individuals during the period analysed
+219,006 (205,903–232,651)
+99,425 (90,605–107,850)
+69,774 (61,846–78,351)
+49,806 (43,109–56,685)
+101,416 (95,079–107,091)
+31,849 (28,648–34,863)
+35,518 (32,511–38,783)
+34,049 (29,765–38,110)
+None
+10 - models
+12 - protection of the community
+13 - superspreaders
+2 - regional wealth
+8 - Amazonas people
+18 - priority
+11 - comorbidity
+5 - Gamma variant
+21 - emergence of Gamma variant
+1 - vaccines not approved
+17 - adults below 60 y.o. started their immunization in June, 2021
+19 - COVID-19 was the cause of 3302 and 3317 hospitalizations in 2020 and 2021 (until November 29, 2021)
+156 - 142 deaths occurred in 2020 and 2021 (until November 29, 2021)
+450 - 292 deaths due to SARI consequences in 2020 and 2021 (until November 29, 2021)
+283 - average cause of mortality between 2015 and 2019 due to all respiratory system diseases
+8 - Instituto Brasileiro de Geograﬁa e Estat´ıstica. Proje¸c˜ao da popula¸c˜ao brasileira para 2020. 2021. 
+9 - Rafael Izbicki et al. “How many hospitalizations has the COVID-19 vaccination already prevented in S˜ao Paulo?” In: Clinics 76 (2021). 
+10 - Matt J. Keeling and Pejman Rohani. Modeling Infectious Diseases in Humans and An- imals. English. Hardcover. Princeton University Press, Oct. 2007, p. 384. 
+11 - Raquel Martins Lana et al. “Identiﬁca¸c˜ao de grupos priorit´arios para a vacina¸c˜ao contra COVID-19 no Brasil”. In: Cadernos de Sa´ude P´ublica 37.10 (2021). 
+12 - J. O. Lloyd-Smith et al. “Superspreading and the eﬀect of individual variation on disease emergence”. In: Nature 438.7066 (Nov. 2005
+[20] Felipe Naveca et al. “Phylogenetic relationship of SARS-CoV-2 sequences from Amazonas with emerging Brazilian variants harboring mutations E484K and N501Y in the Spike pro- tein”. 
+[21] Felipe Gomes Naveca et al. “COVID-19 in Amazonas, Brazil, was driven by the persistence of endemic lineages and P.1 emergence”. 
+[22] Fl´avia C. Pacheco et al. “Decrease in the coverage of measles-containing vaccines and the risk of reestablishing endemic transmission of measles in Brazil”. 
+[23] R Core Team. R: A Language and Environment for Statistical Computing. 
+[24] H˚avard Rue, Sara Martino, and Nicolas Chopin. “Approximate Bayesian inference for latent Gaussian models by using integrated nested Laplace approximations”. 
+[25] H˚avard Rue et al. “Bayesian Computing with INLA: A Review”. 
+[26] Ester C Sabino et al. “Resurgence of CO

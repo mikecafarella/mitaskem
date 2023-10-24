@@ -1,0 +1,10 @@
+Here is a text description of a model:
+
+[TEXT]
+
+Imagine that we reresent this model as a Petri net.
+
+Here is a place in that net: [PLACE]
+
+Print the sentence from the text that includes the definition of that place.
+

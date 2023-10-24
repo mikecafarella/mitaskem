@@ -1,0 +1,8 @@
+We have a list of variable names and initial values for lines of code in a Python program.The list has [VLEN] elements
+[VAR]
+There is also an ontology which has [TLEN] items:
+ontology = [TERMS]
+Some code elements have a matching element in the ontology. For example,
+(s_n, 1000) matches 'population'
+(relative_contact_rate, 005) matches 'number contacts'
+Which element is the best match for [TARGET]?

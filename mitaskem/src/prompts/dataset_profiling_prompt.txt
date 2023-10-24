@@ -1,0 +1,37 @@
+I have some summary statistics of a dataset, as well as some relevant documentation about the dataset.
+The dataset is called `[DATASET_NAME]`. The documentation was taken from a file called `[DOC_NAME]`.
+I need to infer some attributes about each column of the dataset.
+
+The dataset contains the following columns:
+```csv
+[SCHEMA]
+```
+
+The summary statistics of which are:
+```json
+[STATS]
+```
+
+The dataset documentation is:
+```txt
+[DOC]
+```
+
+Please help me infer, for each column of the dataset, the following attributes:
+1. The name of the column
+2. The concept that the column represents
+3. The unit of the column
+4. A description of the column
+
+
+Please give your answer exactly in the following format:
+```txt
+<column name> | <concept> | <unit> | <description>
+<column name> | <concept> | <unit> | <description>
+...
+```
+Make sure to replace `<column name>`, `<concept>`, `<unit>`, and `<description>` with the correct values.
+List the columns in the same order as they appear in the dataset schema, with exactly one line per column.
+Also make sure to format the answer exactly as shown above, with the pipe character `|` separating the four values and a ```-block surrounding the answer.
+Finally, do not merge multiple columns into one line, and do not split any one column into multiple lines.
+

@@ -1,0 +1,116 @@
+80.3 million confirmed cases and nearly 1 million deaths in the United States (US)
+500 million cases worldwide
+6 million deaths worldwide
+1 - COVID-19 pandemic
+2 - (2)
+3 - United States Centers for Disease Control and Prevention (US-CDC)
+4 - serology data
+5 - serology data
+6 - COVID-19 case forecasting models
+7 - COVID-19 case forecasting models
+None
+Wave-I to IV
+MAPE values:
+1. US CDC Case Prediction models: 0.22
+2. Model category: 0.20
+3. Baselines: 0.18
+None
+2 - Figure 2
+4 - baseline models
+3 - ensemble models
+None
+54 models overall
+51 in the full timeline
+25% MAPE
+50% MAPE
+4 weeks
+1 standard deviation (σ)
+None
+31.11 (mean MAPE of epidemiological models in first wave)
+31.97 (mean MAPE of machine learning models in first wave)
+44.87 (mean MAPE of epidemiological models in second wave)
+44.25 (mean MAPE of machine learning models in second wave)
+62.5 (mean MAPE of epidemiological models in third wave)
+63.15 (mean MAPE of machine learning models in third wave)
+91.48 (mean MAPE of epidemiological models in fourth wave)
+43.58 (mean MAPE of machine learning models in fourth wave)
+48 (MAPE of baseline models over entire course of pandemic in US)
+54 (MAPE of baseline models over entire course of pandemic in US)
+38 - MAPE of model
+35 - MAPE of USC-SI_kJalpha_RF
+34 - MAPE of MSRA-DeepST
+31 - MAPE of USACE-ERDC_SEIR
+5 - MAPE of IQVIA_ACOE_STAN
+04 time segments
+4-week ahead forecasts
+CC-BY-NC-ND 4.0 International license
+None
+13 - Staffing decisions for hospitals can require a lead time of 2-4 weeks to prevent over-reliance on temporary workers, or shortages
+14 - Oxygen has become a scarce resource during the COVID-19 pandemic, and also needs lead time
+15 - Public officials have ordered oxygen imports well after there were needed to prevent shortages
+Figure 6. The MAPE of the top-10 best performing models in decreasing order of predictions performance over complete timeline (Wave 1-4 combined), as well as two “Baselines” that either followed a simple linear model based on the previous week’s case counts (Baseline-II), or that case counts would remain the same (Baseline-I).
+None
+4.0 International license
+25% of the target dates
+Wave-I: July, 6th 2020 to August 31st, 2020
+Wave-II: September, 1st 2020 to February, 14th 2021
+Wave-III: February, 15th 2021 to July, 26th 2021
+Wave-IV: July, 27th 2021 to January, 17th 2022
+p-value less than 0.05 (typically ≤ 0.05) 
+None
+05% - Probability that null-hypothesis is correct
+0.05 - P-value less than 0.05 (statistically significant)
+5 - Five number summary (“minimum”, first quartile (Q1), median, third quartile (Q3), and “maximum”)
+20 - New Engl. journal medicine DOI: https://doi.org/10.1056/NEJMoa2001017 (2020)
+20 - The Lancet infectious diseases 20, 533–534, DOI: https://doi.org/10.1016/S1473-3099(20)30120-1 (2020)
+2021 - medRxiv DOI: https://doi.org/10.1186/s12879-021-06780-7 (2021)
+2021 - Nature 590, 146–150, DOI: https://doi.org/10.1038/s41586-020-2912-6 (2021)
+2020 - Chaos, Solitons & Fractals 140, 110120, DOI: https://doi.org/10.1016/j.chaos.2020.110120
+14. Bonnet, L., Carle, A. & Muret, J. In the light of covid-19 oxygen crisis, why should we optimise our oxygen use? Anaesthesia, Critical Care & Pain Medicine DOI: https://dx.doi.org/10.1016%2Fj.accpm.2021.100932 (2021).
+15. Bhuyan, A. Experts criticise india’s complacency over covid-19. The Lancet 397, 1611–1612, DOI: https://doi.org/10.1016/S0140-6736(21)00993-4 (2021).
+16. Khan, Z. S., Bussel, F. V. & Hussain, F. A predictive model for covid-19 spread applied to eight us states, DOI: https://doi.org/10.48550/arXiv.2006.05955 (2020).
+17. Lemaitre, J. C. et al. A scenario modeling pipeline for covid-19 emergency planning. Sci. reports 11, 1–13, DOI: https://doi.org/10.1038/s41598
+34. Ray, E. L. & Tibshirani, R. Covid-19 forecast hub - covidhub-baseline (2020).
+35. Ray, E. L., Cramer, E., Gerding, A. & Reich, N. Covid-19 forecast hub-covidhub-trained_ensemble (2021).
+36. Adiga, A. et al. University of virginia, biocomplexity covid-19 response team - uva-ensemble (2020).
+37. Perakis, G. et al. Mit-cassandra (2021).
+38. Yogurtcu, O. N. et al. A quantitative evaluation of covid-19 epidemiological models. medRxiv DOI: https://doi.org/10. 1101/2021.02.06.21251276 (2021).
+39. Kinsey, M. et al. Johns hopkins university applied physics lab - jhuapl-bucky (2020).
+40. Wilson, D. J. Weather, mobility, and covid-19: A panel local projections estimator for understanding and forecasting infectious disease spread, DOI: https://doi
+08. Columbia_UNC- Takes into consideration transmission throughout the pre- Columbia_UNC
+09. CU-select (24) Produces several different intervention scenarios, each assum- Columbia Metapopulation University county-level SEIR
+10. CU-nochange (24) Assumes that current contact rates will remain unchanged in Columbia Metapopulation University county-level SEIR
+11. CU-scenario_low (24) This projection assumes relatively low transmission. Columbia Metapopulation University county-level SEIR
+12. CU-scenerio_mid (24) This projection assumes relatively moderate transmission. Columbia Metapopulation University county-level SEIR
+13. CU-scenerio_high (24) This projection assumes relatively high transmission. Columbia Metapopulation University county-level SEIR
+14. USACE- Bayesian Inference is used to calculate model parameters from US Army Process- Assumes that current inter- ERDC_SEIR (25) observations of the total number of cases. Information from Engineer based math- ventions will not change subject matter experts is used to develop a prior probability Research ematical during the forecast period.
+distribution over the model parameters.
+15.
+28. ML Assumes that current interventions will not change during the forecasted period.
+29. ML Assumes that current interventions will not change during period forecasted.
+30. County-level Assumes that current interventions will not change during period forecasted.
+31. COVID-19 Forecast Hub
+32. SEIR model Assumes that current interventions will not change during the forecasted period.
+33. Ensemble of three different models.
+34. COVID-19 Forecast Hub
+25. COVIDhub- A weighted ensemble combination of all component model COVID-19 Ensemble trained_ensemble forecasts.
+26. UVA-Ensemble (36) Combines models using Bayesian model averaging.
+27. Caltech CS156 Based on the Ensemble of 14 different ML models.
+28. MIT-Cassandra (37) Based on the ensemble of predictions from four models.
+29. FDANIHASU- An ensemble of submitted forecasts to the COVID-19 Forecast Hub.
+30. JHUAPL-Bucky (39) Uses public mobility data to build a Spatial compartment model.
+31. FRBSF_Wilson- An econometric model that connects the current transmission rate with the fraction of the population that is vulnerable to the shift in new infections.
+32. IEM_MED- Uses an AI model.
+41 - IEM MED CovidProject
+42 - GLEAM_COVID at Northeast- ern structured SLIR
+43 - DDS-NBDS
+44 - IBF-TimeSeries
+45 - Robert Walraven
+46 - UMich-RidgeTfReg
+47 - Karlen-pypm
+48 - LANL-GrowthRate
+None
+40. JCB-PRM (49)
+41. SigSci-TS (50)
+42. CEID-Walk (51)
+43. MIT_ISOLAT-Mixtures (52)

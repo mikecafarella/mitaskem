@@ -1,0 +1,54 @@
+When no vaccine is available, the isolation of diagnosed infectives and social distancing are the only control measures available. We consider an SEIR epidemic disease model [e.g., (5, 7–9)]. The total (initial) population, N0, is categorized into four classes, namely, susceptible, S(t), exposed, E(t), infected-infectious, I(t) and recovered, R(t), where t is the time variable. The governing differential equations are
+
+S˙=Λ−μS−βSIN,E˙=βSIN−(μ+ϵ)E,I˙=ϵE−(γ+μ+α)I,R˙=γI−μR,    (1)
+ 
+where N = S + E + I + R ≤ N0 in this case, and a dot above a variable denotes time differentiation. Equations (1) are subject to the initial conditions S(0), E(0), I(0), and R(0). The parameters are defined as:
+
+Λ: Per-capita birth rate.
+
+μ: Per-capita natural death rate.
+
+α: Virus-induced average fatality rate.
+
+β: Probability of disease transmission per contact (dimensionless) times the number of contacts per unit time.
+
+ϵ: Rate of progression from exposed to infectious (the reciprocal is the incubation period).
+
+γ: Recovery rate of infectious individuals (the reciprocal is the infectious period).
+
+having units of (1/T), with T: time. The scheme is illustrated in Figure 1. The choice Λ = μ = 0 and ϵ = ∞ gives the classical SIR model [e.g., (11)], while if Λ and μ are not zero, the model is termed an endemic SIR model [e.g., (12)]. However, the SIR model has no latent stage (no exposed individuals), and then it is inappropriate as a model for diseases with an ϵ such as that of COVID-19.
+
+Figure 1
+www.frontiersin.org
+FIGURE 1. A typical SEIR model. The total population, N, is categorized into four classes, namely, susceptible S, exposed E, infected I, and recovered R [e.g., (10)]. Λ and μ correspond to births and natural deaths independent of the disease, and α is the fatality rate.
+
+Let us better clarify the meaning of each quantity. N is the total number of live humans in the system at time t. S is the number of humans susceptible to be exposed, and E is the actual number of exposed individuals (a class in which the disease is latent; they are infected but not infectious); people go from S to E depending on the number of contacts with I individuals, multiplied by the probability of infection (β) (see Figure 1, where βI/N is the average number of contacts with infection per unit time of one susceptible person). The other processes taking place at time t are: the exposed (E) become infectious (I) with a rate ϵ and the infectious recover (R) with a rate γ. Recovered means an individual who does not flow back into the S class, as lifelong immunity is assumed, but it remains to be seen whether patients recovered from COVID-19 will develop antibodies and achieve lifelong protection. The reciprocals ϵ−1 and γ−1 are the average disease incubation and infectious periods, respectively.
+
+Λ is the rate of birth and μ is the natural rate of death, both per unit time. The reciprocal μ−1, interpreted as the normal life expectancy (e.g., 83 years), refers to the average normal deaths (e.g., natural deaths, by normal flu, accidents, etc.) not related to the infectious disease. These quantities describe a model with vital dynamics (endemic model), which has an inflow of births into the S class at rate Λ and deaths into the other classes at rates μS, μI, and μR (see Figure 1). If Λ = μN, the deaths balance the newborns. The number of live people at time t is N(t) = S(t) + E(t) + I(t) + R(t), which can be lower or higher than N0 depending on the values of Λ and μ. In this case, it is lower than N0.
+
+One of the key parameters, besides β, is α, which represents the disease-related fatality rate (3, 13). In a very fast pandemic, we may assume that there are no births and normal deaths (or that they balance and Λ = μN), but there are deaths due to the fatality rate of the disease. This rate is an average, because the model does not take into account the age (a far higher portion of old people die from the disease than young people), the patients' preexisting conditions, and the healthcare quality.
+
+In summary, susceptible persons enter the exposed class with a rate proportional to β and remain there for a mean incubation period ϵ−1, i.e., those already infected with the disease but not able to transmit it are in the exposed class and progress to the infectious class, to recover at the rate γ and die at the rate α. It is important to recall that the E class does not have the symptoms of the disease, because they are incubating it. They will have symptoms when they pass to class I. Individuals in class I may not have symptoms (asymptomatic), but they are infectious, while those in class E are not. Moreover, individuals in class E can move to R without showing symptoms, but they become infectious when they are in class I.
+
+The dead population as a function of time is D(t) = N0 − N(t), whereas the curve giving the dead people per unit time is
+
+D˙(t)=−N˙(t)=−(S˙+E˙+I˙+R˙)(t).    (2)
+Another equivalent approach is an SEIDR model [e.g., (14, 15)], where we have to add
+
+D˙(t)=αI(t)    (3)
+to Equations (1). In Keeling and Rohani [(7), section 2.2], α/(γ + μ) = ρ/(1 − ρ), where ρ is the per capita probability of dying from the infection. It can easily be shown that Equations (2) and (3) are equivalent if births and natural deaths compensate.
+
+2.1. Reproduction Ratio
+The basic reproduction ratio, R0, is the classical epidemiological measure associated with the reproductive power of the disease. For the SEIR model, it is
+
+R0=βϵ(ϵ+μ)(γ+α+μ)    (4)
+(8, 13). It gives the average number of secondary cases of infection generated by an infectious individual. Therefore, it is used to estimate the growth of the virus outbreak. R0 provides a threshold for the stability of the disease-free equilibrium point. When R0 < 1, the disease dies out; when R0>1, an epidemic occurs. The behavior of SEIR models as a function of R0 can be found, for instance, in Al-Sheikh (16).
+
+2.2. Infection and Case Fatality Rates
+The infection fatality rate (IFR) is based on all the population that has been infected, i.e., including the undetected individuals and asymptomatic. In terms of the recovery and fatality rates, we have
+
+IFR (%)=100⋅D∞R∞+D∞,    (5)
+since the total humans that have been infected is the sum of the recovered and dead individuals, where the subscript refers to the end of the epidemic (t → ∞). It can easily be shown that, using the last Equations (1) and (3), we obtain
+
+IFR (%)=100⋅αI∞(α+γ)I∞−μR∞≈100⋅αα+γ≈100⋅αγ,    (6)
+since the term containing μ is much smaller, because μ ≪ α ≪ γ, and Equation (6) holds approximately at all times, not only at the end of the epidemic. On the other hand, the case fatality rate (CFR) considers the number of deaths related to the diagnosed individuals, and CFR > IFR is always true, since the number of diagnosed individuals is lower than the denominator of Equation (5). The CFR is time-dependent and is the value that is usually reported.

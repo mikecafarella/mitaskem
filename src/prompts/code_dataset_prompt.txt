@@ -1,6 +1,0 @@
-We have a list of function in a Python program:
-[CODE]
-
-There is also a list of dataset with column names as follows:
-[DATASET]
-Which columns are the most relevant to the python function [TARGET]?

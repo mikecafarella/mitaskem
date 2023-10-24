@@ -1,4 +1,0 @@
-We have a latex formula as follows:
-[FORMULA]
-
-Which variables are there in the latex formula? Print the answer on a new line, without space, after ANSWER:.

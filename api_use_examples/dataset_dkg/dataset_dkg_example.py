@@ -1,4 +1,4 @@
-from src import connect, gpt_key
+from mitaskem.src import connect, gpt_key
 
 if __name__ == "__main__":
     with open("./data_sample/covid_deaths_usafacts.csv", "r") as f:

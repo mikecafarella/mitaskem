@@ -1,8 +1,0 @@
-We have a set of attributes extracted for a model card. The following is the extracted attributes:
-[EXTRACT]
-
-And the following is the model card attributes ground truth:
-[GROUND]
-
-Check both the extraction attributes and the ground truth set, and check if the extracted variable is correct or not. Please evaluate the whole task accuracy based on the correctness check result on each extracted attribute. Please return the accuracy number in decimal value between 0.0 to 1.0 for the first line.
-Then, explain how you get the number in the second line.
