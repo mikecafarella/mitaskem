@@ -17,7 +17,9 @@ import sys
 from mitaskem.src.util import *
 from mitaskem.src.gpt_interaction import *
 from mitaskem.src.mira_dkg_interface import *
-from mitaskem.gpt_key import *
+
+GPT_KEY = os.environ.get('OPENAI_API_KEY')
+
 # from automates.program_analysis.JSON2GroMEt.json2gromet import json_to_gromet
 # from automates.gromet.query import query
 
@@ -1020,6 +1022,7 @@ if __name__ == "__main__":
     json_obj = json.loads(dkg_str)
     target = copy.deepcopy(json_obj)
     del target["dkg_groundings"]
+
 
     print(rank_dkg_terms(target, json_obj["dkg_groundings"], GPT_KEY))
 

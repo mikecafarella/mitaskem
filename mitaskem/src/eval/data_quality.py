@@ -1,7 +1,6 @@
 import json
 import os
 
-import mitaskem.gpt_key as gpt_key
 from mitaskem.src.connect import get_gpt4_match
 
 def get_mit_variable_eval_prompt(extraction, grdthruth):
@@ -54,7 +53,8 @@ def evaluate_model_card_extraction(extraction, grdthruth, gpt_key):
 
 
 if __name__ == "__main__":
-    key = gpt_key.GPT_KEY
+    GPT_KEY = os.environ.get('OPENAI_API_KEY')
+    key = GPT_KEY
     cache_dir = "/Users/chunwei/research/mitaskem/resources/xDD/"
 
     res_mit_file = "mit-extraction/bucky__mit-extraction_id.json"

@@ -2,9 +2,10 @@ from mitaskem.src.gpt_interaction import *
 from openai import OpenAIError
 from mitaskem.src.connect import *
 import argparse
-from mitaskem.gpt_key import *
 from mitaskem.src.mira_dkg_interface import *
 
+
+GPT_KEY = os.environ.get('OPENAI_API_KEY')
 MAX_TEXT_MATCHES = 2
 MAX_DKG_MATCHES = 2
 

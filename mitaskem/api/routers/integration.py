@@ -9,7 +9,6 @@ from askem_extractions.data_model import *
 from askem_extractions.importers import import_arizona, import_mit
 from askem_extractions.importers.mit import merge_collections
 
-import mitaskem.gpt_key as gpt_key
 from mitaskem.src.file_cache import save_file_to_cache
 from mitaskem.src.mit_extraction import mit_extraction_restAPI, load_concise_vars, load_arizona_concise_vars, \
     build_map_from_concise_vars
@@ -75,7 +74,8 @@ async def upload_files_integration(gpt_key: str, mit_file: UploadFile = File(...
 
 
 if __name__ == "__main__":
-    key = gpt_key.GPT_KEY
+    GPT_KEY = os.environ.get('OPENAI_API_KEY')
+    key = GPT_KEY
     cache_dir = "/Users/chunwei/research/mitaskem/resources/xDD/"
 
     res_mit_file = "mit-extraction/bucky__mit-extraction_id.json"

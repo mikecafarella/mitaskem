@@ -4,12 +4,12 @@ from pathlib import Path
 
 from askem_extractions.importers import import_mit
 
-import mitaskem.gpt_key as gpt_key
 from mitaskem.src.connect import get_mit_arizona_var_prompt, get_gpt4_match, vars_dataset_connection_simplified
 from mitaskem.src.dataset_id import modify_dataset
 from mitaskem.src.ensemble.ensemble import load_paper_info, extract_variables, extract_vars
-from mitaskem.gpt_key import *
 from mitaskem.src.text_search import text_var_search, vars_dedup, vars_to_json, avars_to_json
+
+GPT_KEY = os.environ.get('OPENAI_API_KEY')
 
 PARAM = "/Users/chunwei/research/mitaskem/resources/xDD/params/"
 API_ROOT = "http://0.0.0.0:8000/"
@@ -366,14 +366,14 @@ if __name__ == "__main__":
     # arizona_text = open('../../resources/xDD/arizona-extraction/variables_' + paper["title"] + '.txt',
     #                 "r").read()
     #
-    # mit_arizona_map = build_map_from_concise_vars(mit_text, arizona_text,gpt_key.GPT_KEY)
+    # mit_arizona_map = build_map_from_concise_vars(mit_text, arizona_text, GPT_KEY)
     # open('../../resources/xDD/mit-extraction/' + paper["title"] + '__map.txt', "w").write(mit_arizona_map)
     #
     # modify_dataset(
     #     '../../resources/xDD/mit-extraction/'+paper["title"]+'__mit-extraction.json',
     #     '../../resources/dataset/ensemble/headers.txt',
     #     '../../resources/dataset/ensemble/catalog.txt')
-    # res = mit_extraction_restAPI("md5__d41d8cd98f00b204e9800998ecf8427e__1-s2.0-S2211379721005490-main.txt", gpt_key.GPT_KEY ,"/tmp/askem")
+    # res = mit_extraction_restAPI("md5__d41d8cd98f00b204e9800998ecf8427e__1-s2.0-S2211379721005490-main.txt", GPT_KEY ,"/tmp/askem")
     # print(res)
     # res_mit_file = "/Users/chunwei/research/ASKEM-TA1-DataModel/examples/a_temp.json"
     # mit_concise = res_mit_file.replace(".json", "-concise.txt")

@@ -9,7 +9,6 @@ from askem_extractions.data_model import *
 from askem_extractions.importers import import_arizona, import_mit
 from askem_extractions.importers.mit import merge_collections
 
-import mitaskem.gpt_key as gpt_key
 from mitaskem.src.eval.data_quality import evaluate_variable_extraction, evaluate_model_card_extraction
 from mitaskem.src.file_cache import save_file_to_cache
 from mitaskem.src.mit_extraction import mit_extraction_restAPI, load_concise_vars, load_arizona_concise_vars, \
