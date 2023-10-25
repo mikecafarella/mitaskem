@@ -45,4 +45,4 @@ WORKDIR /mitaskem
 RUN pip install -r requirements.txt
 RUN pip install -e .
 
-CMD ["uvicorn", "mistakem.api.server:app", "--reload", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "mitaskem.api.server:app", "--reload", "--host", "0.0.0.0", "--port", "8000"]
