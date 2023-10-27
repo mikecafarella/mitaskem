@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 from langchain.retrievers import TFIDFRetriever
 from langchain.schema import Document
+from pathlib import Path
 
 def make_name_doc(tup):
     (name_str, synonym_string) = tup
@@ -47,19 +48,50 @@ def build_node_retriever(kg_node_tsv_path, limit):
     print('done building index')
     return retriever
 
-## curl -o epi_2023-07-07_nodes.tsv.gz https://askem-mira.s3.amazonaws.com/dkg/epi/build/2023-07-07/nodes.tsv.gz
+## curl -o epi_2023-07-07_nodes.tsv.gz 
+# https://askem-mira.s3.amazonaws.com/dkg/epi/build/2023-07-07/nodes.tsv.gz
 ## unzip epi_2023-07-07_nodes.tsv
 import os
+from mitaskem.globals import CACHE_BASE
+
+g_kgpath = CACHE_BASE/'epi_nodes.tsv'
+g_retriever_filename = 'epi_nodes_retriever'
+_g_retriever = None
+
+def _get_retriever():
+    ''' initializes and caches retriever from kg nodes file
+        use this instead of the global variable directly
+    '''
+    global _g_retriever
+    if not os.path.exists(g_kgpath):
+        raise Exception(f'KG file {g_kgpath} does not exist')
 
 
-g_kgpath = f'/{os.getenv("HOME")}/.cache/mitaskem/epi_nodes.tsv'
-g_retriever = build_node_retriever(g_kgpath, limit=4)
+    if _g_retriever is None:
+        cache_file = (CACHE_BASE/g_retriever_filename).with_suffix('.joblib')
+
+        if cache_file.exists():
+            print('loading retriever from cache')
+            _g_retriever = TFIDFRetriever.load_local(str(CACHE_BASE), g_retriever_filename)
+        else:
+            print('building retriever from scratch')
+            ret = build_node_retriever(g_kgpath, limit=4)
+            ret.save_local(str(CACHE_BASE), g_retriever_filename)
+            _g_retriever = ret
+
+        assert cache_file.exists()
+
+
+    assert _g_retriever is not None
+    return _g_retriever
+
 
 from typing import List
 def local_batch_get_mira_dkg_term(term_list : List[str]) -> List[dict]:
     batch_ans = []
+    retriever = _get_retriever()
     for term in term_list:
-        docs = g_retriever.get_relevant_documents(term)
+        docs = retriever.get_relevant_documents(term)
         ansdocs = []
         for doc in docs:
             meta = {}
