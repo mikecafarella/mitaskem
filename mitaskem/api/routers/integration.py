@@ -26,51 +26,47 @@ async def upload_files_integration(gpt_key: str, mit_file: UploadFile = File(...
     """
         Upload MIT and Arizona extractions in TA1 schema, build entity mapping and align them together.
     """
-    try:
-        key = gpt_key
-        cache_dir = "/tmp/askem"
+    key = gpt_key
+    cache_dir = "/tmp/askem"
 
-        mit_contents = await mit_file.read()
-        # Assuming the file contains text, you can print it out
-        print(mit_contents.decode())
-        res_mit_file = save_file_to_cache(mit_file.filename, mit_contents, cache_dir)
-        mit_concise = res_mit_file.replace(".json","-concise.txt")
-        print("file exist: ", os.path.isfile("/tmp/askem/"+res_mit_file))
-        load_concise_vars(
-            os.path.join(cache_dir, res_mit_file),
-            os.path.join(cache_dir, mit_concise))
+    mit_contents = await mit_file.read()
+    # Assuming the file contains text, you can print it out
+    print(mit_contents.decode())
+    res_mit_file = save_file_to_cache(mit_file.filename, mit_contents, cache_dir)
+    mit_concise = res_mit_file.replace(".json","-concise.txt")
+    print("file exist: ", os.path.isfile("/tmp/askem/"+res_mit_file))
+    load_concise_vars(
+        os.path.join(cache_dir, res_mit_file),
+        os.path.join(cache_dir, mit_concise))
 
-        arizona_contents = await arizona_file.read()
-        # Assuming the file contains text, you can print it out
-        print(arizona_contents.decode())
-        res_arizona_file = save_file_to_cache(arizona_file.filename, arizona_contents, "/tmp/askem")
-        arizona_concise = res_arizona_file.replace(".json", "-concise.txt")
-        print("file exist: ", os.path.isfile("/tmp/askem/" + res_arizona_file))
-        load_arizona_concise_vars(
-            os.path.join(cache_dir, res_arizona_file),
-            os.path.join(cache_dir, arizona_concise))
-        mit_text = open(os.path.join(cache_dir, mit_concise)).read()
-        arizona_text = open(os.path.join(cache_dir, arizona_concise)).read()
+    arizona_contents = await arizona_file.read()
+    # Assuming the file contains text, you can print it out
+    print(arizona_contents.decode())
+    res_arizona_file = save_file_to_cache(arizona_file.filename, arizona_contents, "/tmp/askem")
+    arizona_concise = res_arizona_file.replace(".json", "-concise.txt")
+    print("file exist: ", os.path.isfile("/tmp/askem/" + res_arizona_file))
+    load_arizona_concise_vars(
+        os.path.join(cache_dir, res_arizona_file),
+        os.path.join(cache_dir, arizona_concise))
+    mit_text = open(os.path.join(cache_dir, mit_concise)).read()
+    arizona_text = open(os.path.join(cache_dir, arizona_concise)).read()
 
-        map_file = res_mit_file.replace(".json", "-map.txt")
+    map_file = res_mit_file.replace(".json", "-map.txt")
 
-        mit_arizona_map = build_map_from_concise_vars(mit_text, arizona_text,key)
+    mit_arizona_map = build_map_from_concise_vars(mit_text, arizona_text,key)
 
-        print(mit_arizona_map)
-        open(os.path.join(cache_dir, map_file), "w").write(mit_arizona_map)
-        print("map file: ", map_file)
+    print(mit_arizona_map)
+    open(os.path.join(cache_dir, map_file), "w").write(mit_arizona_map)
+    print("map file: ", map_file)
 
-        a_collection = AttributeCollection.from_json(Path(os.path.join(cache_dir, res_arizona_file)))
-        m_collection = AttributeCollection.from_json(Path(os.path.join(cache_dir, res_mit_file)))
-        merged = merge_collections(a_collection, m_collection,
-                                   Path(os.path.join(cache_dir, map_file)))
-        # integreated_file = res_mit_file.split("mit-")[0] + "-integrated.json"
-        # merged.save_json(os.path.join(cache_dir, integreated_file))
-        # integreated_json = open(os.path.join(cache_dir, integreated_file)).read()
-        return merged
-
-    except Exception as e:
-        raise HTTPException(status_code=400, detail=str(e))
+    a_collection = AttributeCollection.from_json(Path(os.path.join(cache_dir, res_arizona_file)))
+    m_collection = AttributeCollection.from_json(Path(os.path.join(cache_dir, res_mit_file)))
+    merged = merge_collections(a_collection, m_collection,
+                                Path(os.path.join(cache_dir, map_file)))
+    # integreated_file = res_mit_file.split("mit-")[0] + "-integrated.json"
+    # merged.save_json(os.path.join(cache_dir, integreated_file))
+    # integreated_json = open(os.path.join(cache_dir, integreated_file)).read()
+    return merged
 
 
 if __name__ == "__main__":
