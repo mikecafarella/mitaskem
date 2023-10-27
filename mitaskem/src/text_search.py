@@ -13,7 +13,7 @@ MAX_DKG_MATCHES = 2
 def text_param_search(text, gpt_key):
     try:
         prompt = get_text_param_prompt(text)
-        match = get_gpt_match(prompt, gpt_key, "text-davinci-003")
+        match = get_gpt_match(prompt, gpt_key)
         return match, True
     except OpenAIError as err:   
         return f"OpenAI connection error: {err}", False
@@ -21,7 +21,7 @@ def text_param_search(text, gpt_key):
 def text_var_search(text, gpt_key):
     try:
         prompt = get_text_var_prompt(text)
-        match = get_gpt_match(prompt, gpt_key, "text-davinci-003")
+        match = get_gpt_match(prompt, gpt_key)
         return match, True
     except OpenAIError as err:   
         return f"OpenAI connection error: {err}", False

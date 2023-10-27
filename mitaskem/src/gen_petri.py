@@ -25,7 +25,7 @@ def get_transitions(text, gpt_key):
 def get_arcs(text, gpt_key):
     try:
         prompt = get_petri_arcs_prompt(text)
-        match = get_gpt_match(prompt, gpt_key, "text-davinci-003")
+        match = get_gpt_match(prompt, gpt_key)
         #print(match)
         lines = match.splitlines()
         transitions = []

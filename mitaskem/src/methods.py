@@ -1,17 +1,11 @@
 import tiktoken
 import asyncio
 from typing import List
-import openai ## already inited
-## assumes 
 
-from openai import OpenAIError
+from langchain.chat_models import ChatOpenAI
+from langchain.text_splitter import LatexTextSplitter
+from langchain.schema.messages import HumanMessage, SystemMessage
 
-import re
-
-# def clean_spaces(text):
-#     text1 = re.sub(' +', ' ', text)
-#     text2 = re.sub('\n+', '\n', text1)
-#     return text2
 
 def strip_latex_preamble(text):
     start = text.find('\\begin{document}')
@@ -54,18 +48,19 @@ def create_prompt_tasks(prompt, document, model_name, answer_token_length=256, c
     return text_tasks
 
 g_context_lengths = {
-    'text-davinci-002':4097,
-    'text-davinci-003':4097,
-    'gpt-3.5-turbo-16k':16000, ## may be slightly larger
+    # https://platform.openai.com/docs/models
+    'text-davinci-002':4097, # deprecated
+    'text-davinci-003':4097, # deprecated. 
+    'gpt-3.5-turbo-16k':16385, 
     'gpt-3.5-turbo':4097,
-    'gpt-4':8000,
+    'gpt-4':8192,
+    'gpt-3.5-turbo-instruct':4097, # recommended replacement for davinci
 }
 
-
-g_use_completion_api = set(['gpt-3.5-turbo-16k','gpt-3.5-turbo', 'gpt-4'])
-
-
-from langchain.text_splitter import LatexTextSplitter
+g_use_completion_api = set(['gpt-3.5-turbo-16k', 
+                            'gpt-3.5-turbo', 
+                            'gpt-4', 
+                            'gpt-3.5-turbo-instruct'])
 
 def split_latex_into_chunks(document : str,  # latex
                                  prompt_template : str, 
@@ -73,8 +68,6 @@ def split_latex_into_chunks(document : str,  # latex
                                 max_total_size: int | None,  # if not given, use max possible based on model
                                 max_answer_size: int = 256,
                                 chunk_overlap: int = 0):
-
-        
 
     if model_name is not None: # if know model, use tokenizer to guarantee lengths
         max_context_length = g_context_lengths[model_name]
@@ -106,38 +99,16 @@ async def fork_join_requests(prompts, model : str, api_key : str = None):
     """
     send one request per prompt 
     """
+
+    assert model in g_use_completion_api
+    llm = ChatOpenAI(model_name=model, openai_api_key=api_key, temperature=0)
+
     acc = []
-
-    if api_key is not None:
-        openai.api_key = api_key
-
     for prompt in prompts:
+            cor = llm.ainvoke(input=[HumanMessage(content=prompt)])
+            acc.append(cor)
 
-        if model in g_use_completion_api:
-            # TODO: chat completions lets one split the prompt.
-            cor = openai.ChatCompletion.acreate(model=model, 
-                                                messages=[
-                                                    #{"role":"system", "content":TODO}
-                                                    {"role": "user", "content": prompt},
-                                                ],
-                                                temperature=0.0)
-        else:
-            cor = openai.Completion.acreate(model=model, prompt=prompt, 
-                                            temperature=0.0, max_tokens=256)
-            
-        acc.append(asyncio.create_task(cor))
+    raw_outputs = await asyncio.gather(*acc)
 
-    outputs = []
-    for cor in acc:        
-        # try: # no point in handling error here, just makes things confusing
-        response = await cor
-        # except OpenAIError as err:   
-        #     return f"OpenAI connection error: {err}", False
-        if model in g_use_completion_api:
-            result = response.choices[0].message.content.strip()
-        else:
-            result = response.choices[0].text.strip()
-        print('openai result:\t', result)
-        outputs.append(result)
-
+    outputs = list(map(lambda m : m.content.strip(), raw_outputs))
     return outputs

@@ -43,27 +43,20 @@ def index_text(text: str) -> str:
         idx_text = idx_text + ('%d\t%s\n' % (i, line))
     return idx_text
 
+from langchain.chat_models import ChatOpenAI
+from langchain.text_splitter import LatexTextSplitter
+from langchain.schema.messages import HumanMessage, SystemMessage
 
+def get_gpt_match(prompt, key, model="gpt-3.5-turbo"):
+    # model="text-davinci-003" does not use completion
+    llm = ChatOpenAI(model_name=model, openai_api_key=key, temperature=0, max_tokens=256)
+    completion = llm.invoke(input=[HumanMessage(content=prompt)])
+    return completion.content.strip()
 
-def get_gpt_match(prompt, key, model="text-davinci-002"):
-    # mykey = b'Z1QFxceGL_s6karbgfNFyuOdQ__m5TfHR7kuLPJChgs='
-    # enc = b'gAAAAABjRh0iNbsVb6_DKSHPmlg3jc4svMDEmKuYd-DcoTxEbESYI9F8tm8anjbsTsZYHz_avZudJDBdOXSHYZqKmhdoBcJd919hCffSMg6WFYP12hpvI7EeNppGFNoZsLGnDM5d6AOUeRVeIc2FbmB_j0vvcIwuEQ=='
-    # fernet = Fernet(mykey)
-    # openai.api_key = fernet.decrypt(enc).decode()
-    openai.api_key = key
-    response = openai.Completion.create(model=model, prompt=prompt, temperature=0.0, max_tokens=256)
-    result = response.choices[0].text.strip()
-    # print(result)
-    return result
-
-def get_gpt4_match(prompt, key, model="gpt-4"):
-    openai.api_key = key
-    completion = openai.ChatCompletion.create(model=model, messages=[{"role": "user", "content": prompt}], temperature=0.0)
-    result = completion.choices[0].message.content
-    # print(result)
-    return result
-
-
+def get_gpt4_match(prompt, key, model="gpt-4"):    
+    llm = ChatOpenAI(model_name=model, openai_api_key=key, temperature=0)
+    completion = llm.invoke(input=[HumanMessage(content=prompt)])
+    return completion.content
 
 def read_text_from_file(text_path):
     text_file = open(text_path, "r")
@@ -363,7 +356,7 @@ def code_dataset_connection(code, schema, gpt_key, interactive=False):
 def text_column_connection(text, column, gpt_key):
     try:
         prompt = get_text_column_prompt(text, column)
-        match = get_gpt_match(prompt, gpt_key, model="text-davinci-003")
+        match = get_gpt_match(prompt, gpt_key)
         return match, True
     except OpenAIError as err:
         return f"OpenAI connection error: {err}",False
@@ -852,7 +845,7 @@ def vars_formula_connection(json_str, formula, gpt_key):
     var_list = list(filter(lambda x: x["type"] == "variable", json_list))
 
     prompt = get_formula_var_prompt(formula)
-    latex_vars = get_gpt_match(prompt, gpt_key, model="text-davinci-003")
+    latex_vars = get_gpt_match(prompt, gpt_key)
     latex_vars = latex_vars.split(':')[1].split(',')
 
     latex_var_set = {}
@@ -863,7 +856,7 @@ def vars_formula_connection(json_str, formula, gpt_key):
     try:
         for latex_var in tqdm(latex_vars):
             prompt = get_all_desc_formula_prompt(all_desc, latex_var)
-            ans = get_gpt_match(prompt, gpt_key, model="text-davinci-003")
+            ans = get_gpt_match(prompt, gpt_key)
             ans = ans.splitlines()
 
             matches = []

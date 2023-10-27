@@ -132,9 +132,10 @@ def find_vars_from_text(text: str, gpt_key: str):
 from mitaskem.src.methods import create_prompt_tasks, fork_join_requests, split_latex_into_chunks
 
 async def _extract_text_vars(text, var_prompt, api_key=None):
-    # model_name = 'gpt-4'
+    # model_name = 'gpt-4' # too few requests allowed
     # original implementation for speed
-    model_name = 'text-davinci-003'
+#    model_name = 'text-davinci-003' # deprecated
+    model_name = 'gpt-3.5-turbo'
     document_chunks = split_latex_into_chunks(document=text, prompt_template=var_prompt, model_name=model_name, 
                                               max_total_size=None, max_answer_size=256, chunk_overlap=0)
     
