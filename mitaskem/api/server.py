@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-
+import fastapi
 from mitaskem.src.file_cache import init_cache_directory
 from mitaskem.api.routers import code_dataset, code_formula, code_text, avail_check, petri, evaluation, annotation, integration, cards, debugging
 
@@ -40,6 +40,17 @@ tags_metadata = [
 ]
 
 
+async def debug_exception_handler(request: fastapi.Request, exc: Exception):
+    import traceback
+
+    return fastapi.Response(
+        status_code=500,
+        content="".join(
+            traceback.format_exception(type(exc), value=exc, tb=exc.__traceback__)
+        )
+    )
+
+
 def build_api(*args) -> FastAPI:
 
     api = FastAPI(
@@ -68,6 +79,8 @@ def build_api(*args) -> FastAPI:
     return api
 
 app = build_api()
+
+app.exception_handler(Exception)(debug_exception_handler)
 
 #app.include_router(code_dataset.router, prefix="/code_dataset")
 #app.include_router(code_formula.router, prefix="/code_formula")
