@@ -1,0 +1,1783 @@
+{
+    "attributes": [
+        {
+            "type": "anchored_extraction",
+            "amr_element_id": null,
+            "payload": {
+                "id": {
+                    "id": "mit0"
+                },
+                "names": [
+                    {
+                        "id": {
+                            "id": "mit0"
+                        },
+                        "name": "ame",
+                        "extraction_source": null,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "descriptions": [
+                    {
+                        "id": {
+                            "id": "mit0"
+                        },
+                        "source": "description",
+                        "grounding": null,
+                        "extraction_source": null,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    },
+                    {
+                        "id": {
+                            "id": "mit0"
+                        },
+                        "source": "description",
+                        "grounding": null,
+                        "extraction_source": null,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "value_specs": null,
+                "groundings": [
+                    {
+                        "grounding_text": "description",
+                        "grounding_id": "dc:description",
+                        "source": [],
+                        "score": 1.0,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    },
+                    {
+                        "grounding_text": "",
+                        "grounding_id": "fbbt:00045003",
+                        "source": [],
+                        "score": 1.0,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "data_columns": []
+            }
+        },
+        {
+            "type": "anchored_extraction",
+            "amr_element_id": null,
+            "payload": {
+                "id": {
+                    "id": "mit1"
+                },
+                "names": [
+                    {
+                        "id": {
+                            "id": "mit1"
+                        },
+                        "name": "---",
+                        "extraction_source": null,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "descriptions": [
+                    {
+                        "id": {
+                            "id": "mit1"
+                        },
+                        "source": "---",
+                        "grounding": null,
+                        "extraction_source": null,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "value_specs": null,
+                "groundings": [
+                    {
+                        "grounding_text": "metre_of_mercury",
+                        "grounding_id": "wikidata:Q99492167",
+                        "source": [],
+                        "score": 1.0,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    },
+                    {
+                        "grounding_text": "",
+                        "grounding_id": "fbbt:00005069",
+                        "source": [],
+                        "score": 1.0,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "data_columns": []
+            }
+        },
+        {
+            "type": "anchored_extraction",
+            "amr_element_id": null,
+            "payload": {
+                "id": {
+                    "id": "mit2"
+                },
+                "names": [
+                    {
+                        "id": {
+                            "id": "mit2"
+                        },
+                        "name": "\u03b2",
+                        "extraction_source": null,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "descriptions": [
+                    {
+                        "id": {
+                            "id": "mit2"
+                        },
+                        "source": "expected number of people an infected person infects per day",
+                        "grounding": null,
+                        "extraction_source": null,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "value_specs": null,
+                "groundings": [
+                    {
+                        "grounding_text": "reciprocal_day",
+                        "grounding_id": "wikidata:Q102129592",
+                        "source": [],
+                        "score": 1.0,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    },
+                    {
+                        "grounding_text": "day of birth",
+                        "grounding_id": "opmi:0000091",
+                        "source": [],
+                        "score": 1.0,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "data_columns": []
+            }
+        },
+        {
+            "type": "anchored_extraction",
+            "amr_element_id": null,
+            "payload": {
+                "id": {
+                    "id": "mit3"
+                },
+                "names": [
+                    {
+                        "id": {
+                            "id": "mit3"
+                        },
+                        "name": "\u03b3",
+                        "extraction_source": null,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "descriptions": [
+                    {
+                        "id": {
+                            "id": "mit3"
+                        },
+                        "source": "proportion of recovery per day",
+                        "grounding": null,
+                        "extraction_source": null,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "value_specs": null,
+                "groundings": [
+                    {
+                        "grounding_text": "incomplete AE recovery",
+                        "grounding_id": "oae:0001873",
+                        "source": [],
+                        "score": 1.0,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    },
+                    {
+                        "grounding_text": "complete AE recovery",
+                        "grounding_id": "oae:0001871",
+                        "source": [],
+                        "score": 1.0,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "data_columns": []
+            }
+        },
+        {
+            "type": "anchored_extraction",
+            "amr_element_id": null,
+            "payload": {
+                "id": {
+                    "id": "mit4"
+                },
+                "names": [
+                    {
+                        "id": {
+                            "id": "mit4"
+                        },
+                        "name": "\u03b4",
+                        "extraction_source": null,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "descriptions": [
+                    {
+                        "id": {
+                            "id": "mit4"
+                        },
+                        "source": "incubation period",
+                        "grounding": null,
+                        "extraction_source": null,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "value_specs": null,
+                "groundings": [
+                    {
+                        "grounding_text": "incubation time",
+                        "grounding_id": "askemo:0000010",
+                        "source": [],
+                        "score": 1.0,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    },
+                    {
+                        "grounding_text": "incubation end process boundary",
+                        "grounding_id": "ido:0001346",
+                        "source": [],
+                        "score": 1.0,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "data_columns": []
+            }
+        },
+        {
+            "type": "anchored_extraction",
+            "amr_element_id": null,
+            "payload": {
+                "id": {
+                    "id": "mit5"
+                },
+                "names": [
+                    {
+                        "id": {
+                            "id": "mit5"
+                        },
+                        "name": "\u03b1",
+                        "extraction_source": null,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "descriptions": [
+                    {
+                        "id": {
+                            "id": "mit5"
+                        },
+                        "source": "fatality rate due to the infection",
+                        "grounding": null,
+                        "extraction_source": null,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "value_specs": null,
+                "groundings": [
+                    {
+                        "grounding_text": "infection fatality rate",
+                        "grounding_id": "cemo:infection_fatality_rate",
+                        "source": [],
+                        "score": 1.0,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    },
+                    {
+                        "grounding_text": "case fatality rate",
+                        "grounding_id": "cemo:case_fatality_rate",
+                        "source": [],
+                        "score": 1.0,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "data_columns": []
+            }
+        },
+        {
+            "type": "anchored_extraction",
+            "amr_element_id": null,
+            "payload": {
+                "id": {
+                    "id": "mit6"
+                },
+                "names": [
+                    {
+                        "id": {
+                            "id": "mit6"
+                        },
+                        "name": "\u03c1",
+                        "extraction_source": null,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "descriptions": [
+                    {
+                        "id": {
+                            "id": "mit6"
+                        },
+                        "source": "inverse of the average number of days for an infected person to die if he does not recover",
+                        "grounding": null,
+                        "extraction_source": null,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "value_specs": null,
+                "groundings": [
+                    {
+                        "grounding_text": "intensity of infection",
+                        "grounding_id": "vsmo:0000141",
+                        "source": [],
+                        "score": 1.0,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    },
+                    {
+                        "grounding_text": "reproduction number",
+                        "grounding_id": "apollosv:00000043",
+                        "source": [],
+                        "score": 1.0,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "data_columns": []
+            }
+        },
+        {
+            "type": "anchored_extraction",
+            "amr_element_id": null,
+            "payload": {
+                "id": {
+                    "id": "mit7"
+                },
+                "names": [
+                    {
+                        "id": {
+                            "id": "mit7"
+                        },
+                        "name": "------",
+                        "extraction_source": null,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "descriptions": [
+                    {
+                        "id": {
+                            "id": "mit7"
+                        },
+                        "source": "-------------",
+                        "grounding": null,
+                        "extraction_source": null,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    },
+                    {
+                        "id": {
+                            "id": "mit7"
+                        },
+                        "source": "-------------",
+                        "grounding": null,
+                        "extraction_source": null,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "value_specs": null,
+                "groundings": [
+                    {
+                        "grounding_text": "metre_of_mercury",
+                        "grounding_id": "wikidata:Q99492167",
+                        "source": [],
+                        "score": 1.0,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    },
+                    {
+                        "grounding_text": "",
+                        "grounding_id": "fbbt:00005069",
+                        "source": [],
+                        "score": 1.0,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "data_columns": []
+            }
+        },
+        {
+            "type": "anchored_extraction",
+            "amr_element_id": null,
+            "payload": {
+                "id": {
+                    "id": "mit8"
+                },
+                "names": [
+                    {
+                        "id": {
+                            "id": "mit8"
+                        },
+                        "name": "Maximum Infected Value",
+                        "extraction_source": null,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "descriptions": [
+                    {
+                        "id": {
+                            "id": "mit8"
+                        },
+                        "source": "The highest percentage of the population that becomes infected with the virus",
+                        "grounding": null,
+                        "extraction_source": null,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "value_specs": null,
+                "groundings": [
+                    {
+                        "grounding_text": "infected population",
+                        "grounding_id": "apollosv:00000233",
+                        "source": [],
+                        "score": 1.0,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    },
+                    {
+                        "grounding_text": "human infected by SARS-CoV-2",
+                        "grounding_id": "cido:0000292",
+                        "source": [],
+                        "score": 1.0,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "data_columns": []
+            }
+        },
+        {
+            "type": "anchored_extraction",
+            "amr_element_id": null,
+            "payload": {
+                "id": {
+                    "id": "mit9"
+                },
+                "names": [
+                    {
+                        "id": {
+                            "id": "mit9"
+                        },
+                        "name": "Delay in mask enforcement",
+                        "extraction_source": null,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "descriptions": [
+                    {
+                        "id": {
+                            "id": "mit9"
+                        },
+                        "source": "The number of days between the first case being detected and the enforcement of mask-wearing",
+                        "grounding": null,
+                        "extraction_source": null,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "value_specs": null,
+                "groundings": [
+                    {
+                        "grounding_text": "masking",
+                        "grounding_id": "askemo:0000015",
+                        "source": [],
+                        "score": 1.0,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    },
+                    {
+                        "grounding_text": "Drug Enforcement Administration",
+                        "grounding_id": "ncit:C127110",
+                        "source": [],
+                        "score": 1.0,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "data_columns": []
+            }
+        },
+        {
+            "type": "anchored_extraction",
+            "amr_element_id": null,
+            "payload": {
+                "id": {
+                    "id": "mit10"
+                },
+                "names": [
+                    {
+                        "id": {
+                            "id": "mit10"
+                        },
+                        "name": "Peak",
+                        "extraction_source": null,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "descriptions": [
+                    {
+                        "id": {
+                            "id": "mit10"
+                        },
+                        "source": "The day on which the maximum number of infections occurs",
+                        "grounding": null,
+                        "extraction_source": null,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "value_specs": null,
+                "groundings": [
+                    {
+                        "grounding_text": "maximum",
+                        "grounding_id": "probonto:k0000734",
+                        "source": [],
+                        "score": 1.0,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    },
+                    {
+                        "grounding_text": "maximum",
+                        "grounding_id": "probonto:k0000711",
+                        "source": [],
+                        "score": 1.0,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "data_columns": []
+            }
+        },
+        {
+            "type": "anchored_extraction",
+            "amr_element_id": null,
+            "payload": {
+                "id": {
+                    "id": "mit11"
+                },
+                "names": [
+                    {
+                        "id": {
+                            "id": "mit11"
+                        },
+                        "name": "SEIR",
+                        "extraction_source": null,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "descriptions": [
+                    {
+                        "id": {
+                            "id": "mit11"
+                        },
+                        "source": "A compartmental model used to simulate the spread of infectious diseases, consisting of susceptible (S), exposed (E), infected (I), and recovered (R) compartments",
+                        "grounding": null,
+                        "extraction_source": null,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "value_specs": null,
+                "groundings": [
+                    {
+                        "grounding_text": "Susceptible-Exposed-Infectious-Recovered model",
+                        "grounding_id": "apollosv:00000551",
+                        "source": [],
+                        "score": 1.0,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    },
+                    {
+                        "grounding_text": "Susceptible-Infected-Resistant model",
+                        "grounding_id": "apollosv:00000549",
+                        "source": [],
+                        "score": 1.0,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "data_columns": []
+            }
+        },
+        {
+            "type": "anchored_extraction",
+            "amr_element_id": null,
+            "payload": {
+                "id": {
+                    "id": "mit12"
+                },
+                "names": [
+                    {
+                        "id": {
+                            "id": "mit12"
+                        },
+                        "name": "SEIRS",
+                        "extraction_source": null,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "descriptions": [
+                    {
+                        "id": {
+                            "id": "mit12"
+                        },
+                        "source": "A modified version of the SEIR model that includes a temporary immunity period for recovered individuals",
+                        "grounding": null,
+                        "extraction_source": null,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "value_specs": null,
+                "groundings": [
+                    {
+                        "grounding_text": "Susceptible-Infected-Resistant model",
+                        "grounding_id": "apollosv:00000549",
+                        "source": [],
+                        "score": 1.0,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    },
+                    {
+                        "grounding_text": "Recovered from Adverse Event",
+                        "grounding_id": "ncit:C49498",
+                        "source": [],
+                        "score": 1.0,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "data_columns": []
+            }
+        },
+        {
+            "type": "anchored_extraction",
+            "amr_element_id": null,
+            "payload": {
+                "id": {
+                    "id": "mit13"
+                },
+                "names": [
+                    {
+                        "id": {
+                            "id": "mit13"
+                        },
+                        "name": "R0",
+                        "extraction_source": null,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "descriptions": [
+                    {
+                        "id": {
+                            "id": "mit13"
+                        },
+                        "source": "The basic reproduction number, representing the average number of secondary infections caused by a single infected individual in a susceptible population",
+                        "grounding": null,
+                        "extraction_source": null,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "value_specs": null,
+                "groundings": [
+                    {
+                        "grounding_text": "effective reproduction number",
+                        "grounding_id": "askemo:0000007",
+                        "source": [],
+                        "score": 1.0,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    },
+                    {
+                        "grounding_text": "basic reproduction number",
+                        "grounding_id": "askemo:0000006",
+                        "source": [],
+                        "score": 1.0,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "data_columns": []
+            }
+        },
+        {
+            "type": "anchored_extraction",
+            "amr_element_id": null,
+            "payload": {
+                "id": {
+                    "id": "mit14"
+                },
+                "names": [
+                    {
+                        "id": {
+                            "id": "mit14"
+                        },
+                        "name": "B117 variant",
+                        "extraction_source": null,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "descriptions": [
+                    {
+                        "id": {
+                            "id": "mit14"
+                        },
+                        "source": "A more infectious strain of the COVID-19 virus that has acquired the D614G spike protein mutation",
+                        "grounding": null,
+                        "extraction_source": null,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "value_specs": null,
+                "groundings": [
+                    {
+                        "grounding_text": "SARS-CoV-2 clade G virus",
+                        "grounding_id": "cido:0000232",
+                        "source": [],
+                        "score": 1.0,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    },
+                    {
+                        "grounding_text": "Delta variant COVID-19 disease process",
+                        "grounding_id": "cido:0000063",
+                        "source": [],
+                        "score": 1.0,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "data_columns": []
+            }
+        },
+        {
+            "type": "anchored_extraction",
+            "amr_element_id": null,
+            "payload": {
+                "id": {
+                    "id": "mit15"
+                },
+                "names": [
+                    {
+                        "id": {
+                            "id": "mit15"
+                        },
+                        "name": "accessed_on",
+                        "extraction_source": null,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "descriptions": [
+                    {
+                        "id": {
+                            "id": "mit15"
+                        },
+                        "source": "date of access to the online source",
+                        "grounding": null,
+                        "extraction_source": null,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "value_specs": null,
+                "groundings": [
+                    {
+                        "grounding_text": "date",
+                        "grounding_id": "oboinowl:date",
+                        "source": [],
+                        "score": 1.0,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    },
+                    {
+                        "grounding_text": "Date",
+                        "grounding_id": "dc:date",
+                        "source": [],
+                        "score": 1.0,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "data_columns": []
+            }
+        },
+        {
+            "type": "anchored_extraction",
+            "amr_element_id": null,
+            "payload": {
+                "id": {
+                    "id": "mit16"
+                },
+                "names": [
+                    {
+                        "id": {
+                            "id": "mit16"
+                        },
+                        "name": "arXiv",
+                        "extraction_source": null,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "descriptions": [
+                    {
+                        "id": {
+                            "id": "mit16"
+                        },
+                        "source": "a repository for scientific papers in the fields of mathematics, physics, computer science, and more",
+                        "grounding": null,
+                        "extraction_source": null,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "value_specs": null,
+                "groundings": [
+                    {
+                        "grounding_text": "American Association for the Advancement of Science",
+                        "grounding_id": "ncit:C39307",
+                        "source": [],
+                        "score": 1.0,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    },
+                    {
+                        "grounding_text": "cell line repository role",
+                        "grounding_id": "vo:0015978",
+                        "source": [],
+                        "score": 1.0,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "data_columns": []
+            }
+        },
+        {
+            "type": "anchored_extraction",
+            "amr_element_id": null,
+            "payload": {
+                "id": {
+                    "id": "mit17"
+                },
+                "names": [
+                    {
+                        "id": {
+                            "id": "mit17"
+                        },
+                        "name": "CrossRef",
+                        "extraction_source": null,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "descriptions": [
+                    {
+                        "id": {
+                            "id": "mit17"
+                        },
+                        "source": "a digital object identifier (DOI) registration agency for scholarly and professional publications",
+                        "grounding": null,
+                        "extraction_source": null,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "value_specs": null,
+                "groundings": [
+                    {
+                        "grounding_text": "digital object identifier",
+                        "grounding_id": "obi:0002110",
+                        "source": [],
+                        "score": 1.0,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    },
+                    {
+                        "grounding_text": "has identifier",
+                        "grounding_id": "opmi:0000481",
+                        "source": [],
+                        "score": 1.0,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "data_columns": []
+            }
+        },
+        {
+            "type": "anchored_extraction",
+            "amr_element_id": null,
+            "payload": {
+                "id": {
+                    "id": "mit18"
+                },
+                "names": [
+                    {
+                        "id": {
+                            "id": "mit18"
+                        },
+                        "name": "SEIR_model",
+                        "extraction_source": null,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "descriptions": [
+                    {
+                        "id": {
+                            "id": "mit18"
+                        },
+                        "source": "a mathematical model used in epidemiology to study the spread of infectious diseases",
+                        "grounding": null,
+                        "extraction_source": null,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "value_specs": null,
+                "groundings": [
+                    {
+                        "grounding_text": "Infectious Diseases [Disease/Finding]",
+                        "grounding_id": "ndfrt:N0000000007",
+                        "source": [],
+                        "score": 1.0,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    },
+                    {
+                        "grounding_text": "descriptive epidemiology",
+                        "grounding_id": "cemo:descriptive_epidemiology",
+                        "source": [],
+                        "score": 1.0,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "data_columns": []
+            }
+        },
+        {
+            "type": "anchored_extraction",
+            "amr_element_id": null,
+            "payload": {
+                "id": {
+                    "id": "mit19"
+                },
+                "names": [
+                    {
+                        "id": {
+                            "id": "mit19"
+                        },
+                        "name": "COVID-19",
+                        "extraction_source": null,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "descriptions": [
+                    {
+                        "id": {
+                            "id": "mit19"
+                        },
+                        "source": "a respiratory illness caused by the SARS-CoV-2 virus",
+                        "grounding": null,
+                        "extraction_source": null,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "value_specs": null,
+                "groundings": [
+                    {
+                        "grounding_text": "COVID-19 vaccine",
+                        "grounding_id": "vo:0004908",
+                        "source": [],
+                        "score": 1.0,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    },
+                    {
+                        "grounding_text": "non-severe COVID-19",
+                        "grounding_id": "doid:0081014",
+                        "source": [],
+                        "score": 1.0,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "data_columns": []
+            }
+        },
+        {
+            "type": "anchored_extraction",
+            "amr_element_id": null,
+            "payload": {
+                "id": {
+                    "id": "mit20"
+                },
+                "names": [
+                    {
+                        "id": {
+                            "id": "mit20"
+                        },
+                        "name": "Germany",
+                        "extraction_source": null,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "descriptions": [
+                    {
+                        "id": {
+                            "id": "mit20"
+                        },
+                        "source": "a country in Europe",
+                        "grounding": null,
+                        "extraction_source": null,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "value_specs": null,
+                "groundings": [
+                    {
+                        "grounding_text": "country",
+                        "grounding_id": "vo:0010632",
+                        "source": [],
+                        "score": 1.0,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    },
+                    {
+                        "grounding_text": "Germany",
+                        "grounding_id": "geonames:2921044",
+                        "source": [],
+                        "score": 1.0,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "data_columns": []
+            }
+        },
+        {
+            "type": "anchored_extraction",
+            "amr_element_id": null,
+            "payload": {
+                "id": {
+                    "id": "mit21"
+                },
+                "names": [
+                    {
+                        "id": {
+                            "id": "mit21"
+                        },
+                        "name": "Singapore",
+                        "extraction_source": null,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "descriptions": [
+                    {
+                        "id": {
+                            "id": "mit21"
+                        },
+                        "source": "a country in Southeast Asia",
+                        "grounding": null,
+                        "extraction_source": null,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "value_specs": null,
+                "groundings": [
+                    {
+                        "grounding_text": "country",
+                        "grounding_id": "vo:0010632",
+                        "source": [],
+                        "score": 1.0,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    },
+                    {
+                        "grounding_text": "Singapore",
+                        "grounding_id": "geonames:1880251",
+                        "source": [],
+                        "score": 1.0,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "data_columns": []
+            }
+        },
+        {
+            "type": "anchored_extraction",
+            "amr_element_id": null,
+            "payload": {
+                "id": {
+                    "id": "mit22"
+                },
+                "names": [
+                    {
+                        "id": {
+                            "id": "mit22"
+                        },
+                        "name": "B117_variant",
+                        "extraction_source": null,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "descriptions": [
+                    {
+                        "id": {
+                            "id": "mit22"
+                        },
+                        "source": "a variant of the SARS-CoV-2 virus first identified in the United Kingdom",
+                        "grounding": null,
+                        "extraction_source": null,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "value_specs": null,
+                "groundings": [
+                    {
+                        "grounding_text": "United Kingdom",
+                        "grounding_id": "geonames:2635167",
+                        "source": [],
+                        "score": 1.0,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    },
+                    {
+                        "grounding_text": "United Kingdom Sarcoma Registry",
+                        "grounding_id": "ncit:C174963",
+                        "source": [],
+                        "score": 1.0,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "data_columns": []
+            }
+        },
+        {
+            "type": "anchored_extraction",
+            "amr_element_id": null,
+            "payload": {
+                "id": {
+                    "id": "mit23"
+                },
+                "names": [
+                    {
+                        "id": {
+                            "id": "mit23"
+                        },
+                        "name": "SARS-CoV-2",
+                        "extraction_source": null,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "descriptions": [
+                    {
+                        "id": {
+                            "id": "mit23"
+                        },
+                        "source": "the virus that causes COVID-19",
+                        "grounding": null,
+                        "extraction_source": null,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "value_specs": null,
+                "groundings": [
+                    {
+                        "grounding_text": "COVID-19 vaccine",
+                        "grounding_id": "vo:0004908",
+                        "source": [],
+                        "score": 1.0,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    },
+                    {
+                        "grounding_text": "non-severe COVID-19",
+                        "grounding_id": "doid:0081014",
+                        "source": [],
+                        "score": 1.0,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "data_columns": []
+            }
+        },
+        {
+            "type": "anchored_extraction",
+            "amr_element_id": null,
+            "payload": {
+                "id": {
+                    "id": "mit24"
+                },
+                "names": [
+                    {
+                        "id": {
+                            "id": "mit24"
+                        },
+                        "name": "D614G",
+                        "extraction_source": null,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "descriptions": [
+                    {
+                        "id": {
+                            "id": "mit24"
+                        },
+                        "source": "a mutation in the spike protein of the SARS-CoV-2 virus",
+                        "grounding": null,
+                        "extraction_source": null,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "value_specs": null,
+                "groundings": [
+                    {
+                        "grounding_text": "SARS-CoV-2 clade G virus",
+                        "grounding_id": "cido:0000232",
+                        "source": [],
+                        "score": 1.0,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    },
+                    {
+                        "grounding_text": "D614G in SARS-CoV-2 S protein",
+                        "grounding_id": "cido:0000238",
+                        "source": [],
+                        "score": 1.0,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "data_columns": []
+            }
+        },
+        {
+            "type": "anchored_extraction",
+            "amr_element_id": null,
+            "payload": {
+                "id": {
+                    "id": "mit25"
+                },
+                "names": [
+                    {
+                        "id": {
+                            "id": "mit25"
+                        },
+                        "name": "lineage_B.1.1.7",
+                        "extraction_source": null,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "descriptions": [
+                    {
+                        "id": {
+                            "id": "mit25"
+                        },
+                        "source": "a variant of the SARS-CoV-2 virus first identified in the United Kingdom",
+                        "grounding": null,
+                        "extraction_source": null,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "value_specs": null,
+                "groundings": [
+                    {
+                        "grounding_text": "United Kingdom",
+                        "grounding_id": "geonames:2635167",
+                        "source": [],
+                        "score": 1.0,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    },
+                    {
+                        "grounding_text": "United Kingdom Sarcoma Registry",
+                        "grounding_id": "ncit:C174963",
+                        "source": [],
+                        "score": 1.0,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "data_columns": []
+            }
+        },
+        {
+            "type": "anchored_extraction",
+            "amr_element_id": null,
+            "payload": {
+                "id": {
+                    "id": "mit26"
+                },
+                "names": [
+                    {
+                        "id": {
+                            "id": "mit26"
+                        },
+                        "name": "agent-based_model",
+                        "extraction_source": null,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "descriptions": [
+                    {
+                        "id": {
+                            "id": "mit26"
+                        },
+                        "source": "a computational model that simulates the actions and interactions of autonomous agents",
+                        "grounding": null,
+                        "extraction_source": null,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "value_specs": null,
+                "groundings": [
+                    {
+                        "grounding_text": "agent-based disease transmission model",
+                        "grounding_id": "apollosv:00000294",
+                        "source": [],
+                        "score": 1.0,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    },
+                    {
+                        "grounding_text": "disease transmission model identifier",
+                        "grounding_id": "apollosv:00000507",
+                        "source": [],
+                        "score": 1.0,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "data_columns": []
+            }
+        },
+        {
+            "type": "anchored_extraction",
+            "amr_element_id": null,
+            "payload": {
+                "id": {
+                    "id": "mit27"
+                },
+                "names": [
+                    {
+                        "id": {
+                            "id": "mit27"
+                        },
+                        "name": "US",
+                        "extraction_source": null,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "descriptions": [
+                    {
+                        "id": {
+                            "id": "mit27"
+                        },
+                        "source": "United States",
+                        "grounding": null,
+                        "extraction_source": null,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "value_specs": null,
+                "groundings": [
+                    {
+                        "grounding_text": "United States",
+                        "grounding_id": "geonames:6252001",
+                        "source": [],
+                        "score": 1.0,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    },
+                    {
+                        "grounding_text": "United States",
+                        "grounding_id": "idocovid19:0001301",
+                        "source": [],
+                        "score": 1.0,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "data_columns": []
+            }
+        },
+        {
+            "type": "anchored_extraction",
+            "amr_element_id": null,
+            "payload": {
+                "id": {
+                    "id": "mit28"
+                },
+                "names": [
+                    {
+                        "id": {
+                            "id": "mit28"
+                        },
+                        "name": "public_health",
+                        "extraction_source": null,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "descriptions": [
+                    {
+                        "id": {
+                            "id": "mit28"
+                        },
+                        "source": "the science and practice of protecting and improving the health of communities",
+                        "grounding": null,
+                        "extraction_source": null,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "value_specs": null,
+                "groundings": [
+                    {
+                        "grounding_text": "American Association for the Advancement of Science",
+                        "grounding_id": "ncit:C39307",
+                        "source": [],
+                        "score": 1.0,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    },
+                    {
+                        "grounding_text": "Centers for Disease Control and Prevention",
+                        "grounding_id": "ncit:C16408",
+                        "source": [],
+                        "score": 1.0,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-27T22:11:41.999053"
+                        }
+                    }
+                ],
+                "data_columns": []
+            }
+        },
+        {
+            "type": "document_collection",
+            "amr_element_id": null,
+            "payload": {
+                "documents": [
+                    {
+                        "id": {
+                            "id": "1"
+                        },
+                        "source_file": "be122a7b0834dea144f41dbd06e7045a__filename",
+                        "doi": ""
+                    }
+                ]
+            }
+        }
+    ]
+}
