@@ -11,3 +11,4 @@ python-multipart~=0.0.6
 tiktoken~=0.4.0
 askem_extractions @ git+https://github.com/ml4ai/ASKEM-TA1-DataModel.git@80feba4
 aiohttp~=3.8.4
+jmespath

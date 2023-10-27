@@ -7,5 +7,4 @@ Then I have another version of the same paper with the ID, name, and the discrip
 [ARIZONA]
 
 Can you find the best match from the second version of variable extraction for each variable in the first variable extraction?
-If you can, then print the ID mapping of these variables, one on each line as follows:
-within each line start with the ID from first variable extraction, then print a colon, and then follow it with the ID from the second variable extraction.
+If it does, print the ID mapping of these variables, one on each line with the following format: started with ID from first set of variable extraction, print a colon, followed by ID from the second set of variable extraction (e.g., "mitx: R/E:y").

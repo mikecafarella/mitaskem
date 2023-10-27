@@ -39,34 +39,34 @@ async def upload_files_integration(gpt_key: str, mit_file: UploadFile = File(...
         os.path.join(cache_dir, res_mit_file),
         os.path.join(cache_dir, mit_concise))
 
-        arizona_contents = await arizona_file.read()
-        # load arizona contents as json file
-        a_josn = json.loads(arizona_contents.decode())
-        if 'outputs' in a_josn:
-            print("Arizona input includes wrapper, removing wrapper...")
-            a_josn = a_josn['outputs'][0]['data']
+    arizona_contents = await arizona_file.read()
+    # load arizona contents as json file
+    a_josn = json.loads(arizona_contents.decode())
+    if 'outputs' in a_josn:
+        print("Arizona input includes wrapper, removing wrapper...")
+        a_josn = a_josn['outputs'][0]['data']
 
-        # Assuming the file contains text, you can print it out
-        arizona_str = json.dumps(a_josn)
-        res_arizona_file = save_file_to_cache(arizona_file.filename, arizona_str.encode(), "/tmp/askem")
-        arizona_concise = res_arizona_file.replace(".json", "-concise.txt")
-        print("file exist: ", os.path.isfile("/tmp/askem/" + res_arizona_file))
-        load_arizona_concise_vars(
-            os.path.join(cache_dir, res_arizona_file),
-            os.path.join(cache_dir, arizona_concise))
-        mit_text = open(os.path.join(cache_dir, mit_concise)).read()
-        arizona_text = open(os.path.join(cache_dir, arizona_concise)).read()
-        print("=========mit text: ", mit_text)
-        print("=========arizona text: ", arizona_text)
+    # Assuming the file contains text, you can print it out
+    arizona_str = json.dumps(a_josn)
+    res_arizona_file = save_file_to_cache(arizona_file.filename, arizona_str.encode(), "/tmp/askem")
+    arizona_concise = res_arizona_file.replace(".json", "-concise.txt")
+    print("file exist: ", os.path.isfile("/tmp/askem/" + res_arizona_file))
+    load_arizona_concise_vars(
+        os.path.join(cache_dir, res_arizona_file),
+        os.path.join(cache_dir, arizona_concise))
+    mit_text = open(os.path.join(cache_dir, mit_concise)).read()
+    arizona_text = open(os.path.join(cache_dir, arizona_concise)).read()
+    print("=========mit text: ", mit_text)
+    print("=========arizona text: ", arizona_text)
 
     map_file = res_mit_file.replace(".json", "-map.txt")
 
     mit_arizona_map = build_map_from_concise_vars(mit_text, arizona_text,key)
 
-        print("GPT map output: ", mit_arizona_map)
-        open(os.path.join(cache_dir, map_file), "w").write(mit_arizona_map)
-        print("map file: ", mit_arizona_map)
-        print("map file ends here.")
+    print("GPT map output: ", mit_arizona_map)
+    open(os.path.join(cache_dir, map_file), "w").write(mit_arizona_map)
+    print("map file: ", mit_arizona_map)
+    print("map file ends here.")
 
     a_collection = AttributeCollection.from_json(Path(os.path.join(cache_dir, res_arizona_file)))
     m_collection = AttributeCollection.from_json(Path(os.path.join(cache_dir, res_mit_file)))
