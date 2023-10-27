@@ -1,0 +1,473 @@
+medRxiv preprint doi: https://doi.org/10.1101/2021.09.28.21263801 ; this version posted September 30, 2021. The copyright holder for this preprint (which was not certified by peer review) is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity. All rights reserved. No reuse allowed without permission.
+Analysis of overdispersion in airborne transmission of
+Covid-19
+Swetaprovo Chaudhuri ∗1, Prasad Kasibhatla2, Arnab Mukherjee1, William
+Pan3, Glenn Morrison4, Sharmistha Mishra5, and Vijaya Kumar Murty6,7
+1Institute for Aerospace Studies, University of Toronto
+2Nicholas School of Environment, Duke University
+5Department of Medicine, Division of Infectious Diseases, University of
+Toronto
+3Global Institute of Health, Duke University
+4Gillings School of Global Public Health, University of North Carolina
+5Department of Medicine, Division of Infectious Diseases, University of
+6The Fields Institute for Research in Mathematical Sciences
+Abstract
+7Department of Mathematics, University of Toronto
+Superspreading events and overdispersion are hallmarks of the Covid-19 pandemic. To gain insight into the nature and controlling factors of these superspreading events and heterogeneity in transmission, we conducted mechanistic modeling of SARS-CoV- 2 transmission by infectious aerosols using real-world occupancy data from a large number of full-service restaurants in ten US metropolises. Including a large number of factors that inﬂuence disease transmission in these settings, we demonstrate the emergence of a stretched tail in the probability density function of secondary infection ∗ Corresponding author, email: schaudhuri@utias.utoronto.ca
+1 NOTE: This preprint reports new research that has not been certified by peer review and should not be used to guide clinical practice.
+medRxiv preprint doi: https://doi.org/10.1101/2021.09.28.21263801 ; this version posted September 30, 2021. The copyright holder for this preprint (which was not certified by peer review) is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity. All rights reserved. No reuse allowed without permission.
+numbers indicating strong heterogeneity in individual infectivity. Derived analytical results further demonstrate that variability in viral loads and variability in occupancy, together, lead to overdispersion in the number of secondary infections arising from indi- vidual index cases. Our analysis, connecting mechanistic understanding of SARS-CoV- 2 transmission by aerosols with observed large-scale epidemiological characteristics of Covid-19 outbreaks, adds an important dimension to the mounting body of evidence with regards to the determinants of airborne transmission of SARS-CoV-2 by aerosols
+in indoor settings.
+1 Introduction
+Superspreading events and overdispersion are now well-established characteristics of the Covid-19 pandemic, similar to SARS and other outbreaks of respiratory viruses [1]. The documented outbreaks at the Skagit Valley Chorale [2, 3], at a restaurant in Guangzhou [4, 5] and at a call center in Korea [6] are examples of superspreading events where one infectious index case led to tens of individuals infected within a few hours, at an order of
+magnitude higher than the basic reproduction number 2 ≤ R0 ≤ 3.6 for the original SARS- CoV-2 variant [7]. The term ”superspreading” has generally been ascribed to any event (index case and exposures) that led to more than the average number of secondary trans- missions, and thus in probabilistic terms could refer to any number of secondary cases to the right of the expectation [1]. As such, it has been proposed that superspreading events are not exceptional events but an expected feature of an expected right-sided tail of the distri-
+bution of the basic reproduction number. When this right-hand tail is further skewed, with
+2
+greater variability than expected leading to an uneven distribution, the term overdispersion is applied (statistical deﬁnition). In the context of communicable diseases, overdispersion refers to a non-random pattern of clustering, and which often include a large number of zero cases and a small number of larger outbreaks [8]. This pattern of overdispersion can be applied at the level of an event or index case (individual-level variation) [8], or in the context of networks (population-level via onward transmission chains) [9]: both fall under the broader epidemiological umbrella of heterogeneity. In the context of the former, data
+medRxiv preprint doi: https://doi.org/10.1101/2021.09.28.21263801 ; this version posted September 30, 2021. The copyright holder for this preprint (which was not certified by peer review) is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity. All rights reserved. No reuse allowed without permission.
+suggest that such superspreading events are characterized by overdispersion in SARS-CoV-2 transmissions, with 10-20% of index cases responsible for 80% of secondary cases [10]. Understanding the nature and characteristics of superspreading events is therefore key to understanding SARS-CoV-2 spread. Agent based modeling by Sneppen et al. [11] sug- gested that non-repeating, random contacts such as those in restaurants, bars etc. is a dominant contributor to SARS-CoV-2 spread. Chen et al. [12] argue that while social, and micro-environmental factors aﬀect transmissibility, overdispersion could result from an
+intrinsic characteristic of certain viruses. The knowledge gap that remains is the extent to
+which each of these factors contribute to the observed distribution of secondary SARS-CoV-2
+transmissions per index case, by connecting variability in each of the components with our
+mechanistic understanding of SARS-CoV-2 transmission.
+Emerging data strongly suggest the importance of airborne transmission of SARS-CoV-2 by respiratory aerosols [13, 14, 15, 16, 17]. A large number of small respiratory droplets (when size < 100µm at point of exhalation) often referred as aerosols, as suggested by Prather et al. [18], can remain airborne in the liquid or semi-solid state [19], encapsulating the SARS-CoV-2 virus. As a result, the virus can remain infectious within the aerosols
+for substantial length of time [20]. Several studies have analyzed airborne transmission in speciﬁc micro-environments. Bourouiba et al. [21] identiﬁed that respiratory droplets and aerosols exhaled during violent expiratory events can travel long distances co-ﬂowing with the moist air jet. Abkarian et al. [22], analyzed exhaled air ﬂow during speech and how certain phonetics produce a train of puﬀs. Chen et al. [23] showed that for talking and coughing, short range airborne route dominates transmission of respiratory infections. Analyzing a respiratory droplet/aerosol laden cough jet, modeling by Chaudhuri et al. [19] showed that aerosols (droplet-nuclei) of initial size less than 50 µm pose highest infection risk and variation in the corresponding viral load could lead to large variation in the number of secondary infections. Using well-mixed assumptions and the Wells-Riley model [24, 25], Buonanno et al. [26] proposed a quantitative risk assessment for speciﬁc micro-environments with asymptomatic infectious cases and suggested that instead of speciﬁc superspreaders it is a
+3
+combination of several factors, including emission and exposure that lead to highly probable, superspreading events. Using similar well-mixed approach Bazant and Bush [27] proposed
+medRxiv preprint doi: https://doi.org/10.1101/2021.09.28.21263801 ; this version posted September 30, 2021. The copyright holder for this preprint (which was not certified by peer review) is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity. All rights reserved. No reuse allowed without permission.
+to restrict occupancy number and time spent in a room, to mitigate airborne transmission [27]. Schijven et al. estimated risk of infection resulting from sneezing, coughing, speaking, breathing, and singing [28] at diﬀerent viral loads. Analysis by Bond et al. [29] quantiﬁed the importance of conﬁnement in pathogen transport using “eﬀective rebreathed air volume”. Further details on speciﬁc aspects of airborne disease transmission: including but not limited to aerosols, ﬂow physics, respiratory droplet size distribution could be found in recent review and opinion articles [30, 31, 32, 33, 34]. Yet, to date mechanistic models describing airborne transmission have not been coupled with real-world distributions and occupancy information towards understanding the large scale features of disease dynamics, for e.g. overdispersion in transmissibility. The overarching goal of this work is to utilize the mechanistic underpinnings of the airborne disease transmission to explore event-level overdispersion of SARS-Cov-2 spread, utilizing real-world inputs from a large number of social gatherings. The speciﬁc goals are:
+1. Develop an algorithm based on aerosol dispersion with randomized inputs and available occupancy data to generate distribution of the number of secondary infections per infectious case.
+2. Explore if observed patterns of overdispersion in secondary transmissions could be reproduced via simulations using the above algorithm.
+3. Derive an analytical function (and not a ﬁt) which can describe the probability density function of number of the secondary infections from the dynamics of the problem.
+4. Identify the dominant variables that drive overdispersion and the resulting implications for mitigation measures.
+To these ends, an aerosol spread model is solved over a hundred thousand random social- contact settings, utilizing real-world occupancy and area information coupled with realistic input distributions of viral-load and ventilation rates, to obtain the probability distributions of the number of secondary infections per infectious case, in those settings.
+4
+medRxiv preprint doi: https://doi.org/10.1101/2021.09.28.21263801 ; this version posted September 30, 2021. The copyright holder for this preprint (which was not certified by peer review) is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity. All rights reserved. No reuse allowed without permission.
+2 Method
+In this section, ﬁrst we describe the model to obtain the probability of infection resulting from inhalation of infectious aerosols generated from speaking and breathing, in an indoor, conﬁned, and ventilated micro-environment. Next, we connect this model to an algorithm - a ﬁrst of its kind to our knowledge, that accepts randomized inputs from distributions of viral load, exhaled aerosol size distribution, ventilation rate, speech and exposure time corresponding to speciﬁc inputs of number of people occupying speciﬁc indoor areas. The occupancy information is obtained from a large SafeGraph data-set of full-service restaurants from ten major US cities. The restaurants serve as our study setting for time-limited, point source transmission via mostly non-repeating, random contacts, in contrast to households or workplaces where repeated contacts are made with the same individuals and over longer periods of time. In this work, we focus on disease spread by asymptomatic infectious cases (asymptomatic at the time of disease spread therefore including presymptomatics) under the assumption that individuals with symptoms would not be engaged in indoor dining. Hence, we consider only speech and breath as the mechanisms by which respiratory aerosols are ejected into speciﬁc micro-environments. The algorithm developed for this work, is shown in Fig. 1.
+2.1 Aerosol dispersion from an infectious case
+We use the standard, turbulent diﬀusivity based closure [35] to model the spatio-temporal evolution of ensemble averaged infectious aerosol concentration ca (number of aerosol parti- cles per unit volume of air associated with emissions from the infector), as shown by Eqn. 1. This approach was used by Drivas et al. [36] to model indoor concentration ﬁelds from point sources. The turbulent diﬀusivity DT in Eqn. 1 is a function of the air-change rate a and area of the space given by A. The second term on the R.H.S. is a sink term that accounts for removal of particles by ventilation (a: air change rate) and by deposition, while wd is the deposition velocity and V being the volume of the indoor space. (cid:19) (cid:18) (cid:19) ∂ca (cid:18) ∂2ca ∂2ca ∂2ca wdA a + (1) = DT ca ∂t ∂x2 + ∂y2 + ∂z2 V −
+5
+medRxiv preprint doi: https://doi.org/10.1101/2021.09.28.21263801 ; this version posted September 30, 2021. The copyright holder for this preprint (which was not certified by peer review) is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity. All rights reserved. No reuse allowed without permission.
+We treat the infectious case as a continuous point source. The initial condition is ca(x, y, z, 0) = 0 with reﬂection boundary conditions at the six walls. Since the virus re- mains embedded inside the infectious aerosols and since they are non-volatile, the ratio of the number of virions to the number of aerosol particles in any given volume of air can be assumed to remain constant post-ejection. To retain analytical tractability of the solu- tion, in this work, we consider fast evaporation and a constant, post-evaporation, aerosol volume-averaged wd; see [23, 37, 19] for detailed evaporation and deposition considerations of respiratory droplets. Therefore, the ensemble averaged concentration of virus RNA copies per unit volume of air c is proportional to ca, or
+(2)
+c = caNa
+The average number of virions within an aerosol particle, Na, is the constant of proportional- ity. Using the identity Eq. 2 we can immediately convert Eqn. 1 into an evolution equation for c, as shown in Eqn. 3: (cid:19) (cid:19) (cid:18) (cid:18) ∂2c
+(cid:19) (cid:19) (cid:18) (cid:18) ∂2c ∂c ∂2c ∂2c wdA c a + (3) = DT ∂t ∂x2 + ∂y2 + ∂z2 V −
+While one can use more complex approaches to model turbulent mixing and aerosol dis- persion, the advantage of the relatively simple, yet suﬃciently robust and accurate, diﬀusivity based closure is the analytical tractability and the inexpensive solution it oﬀers. As will be seen later, such an attribute is pivotal to generating the large number of realizations of the c ﬁeld, utilized in this work. As such, for a continuous point source Qx0,y0,z0 at (x0, y0, z0), the solution of the concentration ﬁeld c(x, y, z, t(cid:48)) at time t(cid:48) was given by [36]: (cid:17) −(cid:16) (cid:90) t(cid:48)
+(cid:17) wdA −(cid:16) a+ t V (cid:90) t(cid:48) Qx0,y0,z0e (cid:48) c(x, y, z, t ) = (4) RxRyRzψ(t)dt 0 (4πDT t)3/2 (cid:21) (cid:20)
+with wall reﬂection terms for i, j, k (cid:54)= 0 (cid:20) ∞(cid:88)
+6
+(cid:21) (cid:20) − (x+2iL−x0)2 − (x+2iL+x0)2 ∞(cid:88) 4DT t e 4DT t + e (5) Rx = i=−∞ (cid:20) (cid:21) ∞(cid:88)
+(cid:20) (cid:21) − (y+2jW−y0)2 − (y+2jW +y0)2 ∞(cid:88) 4DT t 4DT t e + e (6) Ry = j=−∞
+medRxiv preprint doi: https://doi.org/10.1101/2021.09.28.21263801 ; this version posted September 30, 2021. The copyright holder for this preprint (which was not certified by peer review) is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity. All rights reserved. No reuse allowed without permission.
+(cid:20) (cid:21) − (z+2kH−z0)2 − (z+2kH+z0)2 ∞(cid:88) 4DT t 4DT t e + e (7) Rz = k=−∞ L, W, H are the length, width, and height of the room, respectively. Here, we have introduced a virus survivability function ψ(t) in the solution, as in Chaudhuri et al. [19]
+(8)
+t/t 1 2 ψ(t) = (1/2)
+(9)
+t 1 = f (T, RH, U Vindex) 2
+Here T is the temperature, RH is the relative-humidity and U Vindex is the ultra-violet index inside the room of interest. Based on the experiments by Dabisch et al. [20] and calculator from DHS [38], for T = 21.7oC, RH = 0.50, U Vindex = 0 i.e. typical ASHRAE recommended indoor air conditions, for SARS-CoV-2, half-life t 1 = 32.07 minutes. The SARS-CoV-2 2 virus half-life reduces monotonically with temperature and non-monotonically with relative humidity [39] like other enveloped viruses, as shown by Marr et al. [40]. The above solution given by Eqns. 4-7 (without ψ(t)) was validated by Cheng et al. [41] who released CO from a point source and measured its spatio-temporal dispersion character- istics inside typical built environments. Indeed aerosols deposit (accounted for in this paper) unlike CO, but since their motion is predominantly controlled by turbulent diﬀusion inside a room (turbulent diﬀusivity DT >> molecular diﬀusivity of CO or eﬀective diﬀusivity of aerosol particles), the validation exercise is highly relevant. They suggested the following correlation between turbulent diﬀusivity, area of room, and air change rate:
+(10)
+DT = A × (0.52 × ACH + 0.32)/3600
+which is used for the present study as well. Recall that A is the area, ACH is the air changes per hour, therefore a = ACH/3600. Denoting τ as the time duration of the event under considerations, the ensemble averaged
+number of infectious virions, generated from both speech and breath of the infected individual located at x0, y0, zo, that is inhaled at x, y, z0 upto time τ is denoted Nv(x, y, z0, τ ) and it is given by: (cid:90) τ (cid:48) (cid:48) (11) c(x, y, z0, t ) ˙Vbdt Nv(x, y, z0, τ ) = 0
+7
+medRxiv preprint doi: https://doi.org/10.1101/2021.09.28.21263801 ; this version posted September 30, 2021. The copyright holder for this preprint (which was not certified by peer review) is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity. All rights reserved. No reuse allowed without permission.
+While infectious aerosol emissions from breathing take place over the entire time duration of the event, emissions from talking are assumed to occur only for a time ts < τ (see supplementary material, section 3 for details). This is accounted for in our calculation of the corresponding time-varying virus concentration ﬁeld. ˙Vb is the average volume of air
+inhaled per second. The local probability of infection due to infectious aerosols produced by speaking and breathing Ps+b(x, y, z0, τ ) is calculated using the dose-response model originally proposed by Haas [42]. The dose-response constant is chosen as rv = 1/1440 based on the estimations by Haas [43] and Schijven et al. [28] for the original SARS-CoV-2 variant. The subscript s + b indicates infection caused by exhaled aerosols due to speech (s) and breath (b) from the infected individual.
+(12)
+−rvNv(x,y,z0,τ ) Ps+b(x, y, z0, τ ) = 1 − e
+(13)
+(cid:90) L (cid:90) W Z = ρpPs+b(x, y, z0, τ )dxdy 0 0
+Th number of secondary infections Z within a room is thus given by (cid:90) L (cid:90) W
+Here ρp is the susceptible population density (assumed to be uniform), estimated as ρp = n/A at the given point of interest (POI). POI is a term used in SafeGraph data-set and in Chang et al. [44] referring to a speciﬁc business location like a restaurant. A is the indoor area of that POI. In this paper, we place one infectious case at each POI. Therefore, Z is a measure
+of individual-level infectivity as well. Here n is the number of susceptible individuals present
+at a given POI i.e. n = np − 1 where np is the total number of people present at that POI. N is the sample space variable corresponding to n.
+8
+medRxiv preprint doi: https://doi.org/10.1101/2021.09.28.21263801 ; this version posted September 30, 2021. The copyright holder for this preprint (which was not certified by peer review) is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity. All rights reserved. No reuse allowed without permission.
+2.2 Algorithm for generating the pdf of secondary infections
+
+Figure 1: The algorithm for estimating distribution of secondary infections Z. 9
+Figure 1: The algorithm for estimating distribution of secondary infections Z.
+medRxiv preprint doi: https://doi.org/10.1101/2021.09.28.21263801 ; this version posted September 30, 2021. The copyright holder for this preprint (which was not certified by peer review) is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity. All rights reserved. No reuse allowed without permission.
+With a basic semi-analytical framework available to compute the number of secondary in-
+fections inside a room of speciﬁed dimensions, for a given viral load, ACH, and occupancy,
+we use the algorithm detailed in Fig. 1 with randomized inputs from speciﬁed distributions (e.g., for viral load, air change rate) and available data (e.g., for occupancy, room area) to generate the pdf of Z.
+generate the pdf of Z. The algorithm runs over Ns iterations where Ns = 103679 corresponding to the total
+number of full service restaurants in 10 US cities, available from SafeGraph data, used for
+generating a pdf at the end; i being the iteration index. First, the volume of the mucosalivary
+ﬂuid ejected per unit time, evaluated from the exhaled respiratory droplet size volume size distribution (vsd) multiplied with a random sample from the log-normal viral load distribu- tion, is fed into the code to generate the number of virions emitted per unit time. This is
+used in the turbulent diﬀusion solutions shown in Eqns. 4-7 . Random samples of exposure
+time, speaking time, ACH, and area of POI, along with virus half-life, which is calculated separately, also act as input parameters for the solver. The resulting concentration ﬁeld is used in the dose response model (with a speciﬁed dose response constant) to obtain proba- bility ﬁelds. Next, probability ﬁelds are multiplied with the POI speciﬁc population density data (from SafeGraph) to obtain Z values. Once the index value reaches Ns, the iteration ends and the pdf of Z is calculated using Z values from every iteration. Note that the
+ends and the pdf of Z is calculated using Z values from every iteration. Note that the random variable - number of secondary infections at speciﬁc POIs or individual infectivity is
+denoted by Z, while the sample-space variable corresponding to Z is denoted by Z. Pdf of Z
+denoted by Z, while the sample-space variable corresponding to Z is denoted by Z. Pdf of Z i.e. probability density function, deﬁned as probability per unit distance in the sample space of Z [35], is a powerful tool to describe overdispersion, irrespective of the speciﬁc number of events or samples. Furthermore pdfs are amenable to analytical descriptions. Fundamen-
+tally, any long tailed pdf represents an inherently overdispersed random variable, because the long tail represent ﬁnite (but could be small) probability of an event where Z >> mean of Z, while any pdf other than that represented by a delta function represents heterogeneity.
+In view of these, in this paper, the analysis of overdispersion will be addressed using both
+simulated and analytical pdfs of Z.
+simulated and analytical pdfs of Z. Three key inputs - particle size distribution, viral load distribution, and occupancy in-
+formation are described below, details of the rest of the inputs: ventilation rate distribution,
+10
+medRxiv preprint doi: https://doi.org/10.1101/2021.09.28.21263801 ; this version posted September 30, 2021. The copyright holder for this preprint (which was not certified by peer review) is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity. All rights reserved. No reuse allowed without permission.
+speech time and exposure time distributions can be found in the supplementary material (section 3). A table summarizing the important parameter values, distributions, and sources can also be found there (Table 1).
+2.2.1 Particle size distribution of exhaled aerosols
+
+Figure 2: Aerosol number size distribution (nsd) on left, and volume size distribution (vsd) on right, for speaking and breathing as expressed by Eq. 14 and Eq. 4 respectively, from [33] as a function of initial particle diameter sample space variable Ds,0 i.e. at the moment of exhalation.
+The particle size distributions at the source of the expiratory events: speaking and breathing are obtained from the review by P¨ohlker et al. [33]. A multimode lognormal ﬁtting has been found to describe the corresponding distribution reasonably well. Number size distribution (nsd) for exhaled aerosol particles for diﬀerent expiratory events can be described using a single function with event speciﬁc constants. The general form for the distribution can be (cid:18) (cid:21)2(cid:19) (cid:20)ln(Ds,0/Di) n(cid:88)
+expressed as (cid:18) (cid:21)2(cid:19) dη Ai (cid:20)ln(Ds,0/Di) n(cid:88) exp (14) = log10(e) − dDs,0 Ds,0 σi i=1 where η is the number concentration of particles (whereas qη is the volume concentration of particles), D0 is the particle diameter at ejection i.e. at time t = 0, and Ds,0 is the corresponding sample space variable. Moreover, Ai and σi are constants that depend on
+the mode and type of expiratory event. For further details the reader is referred to the
+11
+medRxiv preprint doi: https://doi.org/10.1101/2021.09.28.21263801 ; this version posted September 30, 2021. The copyright holder for this preprint (which was not certified by peer review) is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity. All rights reserved. No reuse allowed without permission.
+supplementary material (section 1). Figure 2 shows the number and volume size distributions that are used in the simulation for the speaking and breathing events. The volume size distribution (vsd) is integrated over Ds,0 to obtain the volume of the exhaled respiratory liquid per unit volume of air for the given expiratory event. This volume ﬂow rate ratio
+multiplied with the individual viral load ρ and the volume ﬂow of air per unit time, yields the ejected number of virions (RNA copies) emitted per unit time i.e. the source term Qx0,y0,z0 of Eqn. 4. Here we choose particles only with Ds,0 < 100µm as the larger ones will settle in less than 10 s even after accounting for evaporation [19]. A detailed description of the particle deposition velocity calculation is presented in the supplementary material (section 2).
+2.2.2 Viral load distribution
+Viral load, (ρ) has been associated with infectivity and thus, the number of secondary infec- tions for a given setting [45, 46]. Analyzing respiratory droplet and aerosol laden cough jets Chaudhuri et al. [19] showed that the corresponding number of infected individuals could vary by orders of magnitude due to variation in the viral load. Chen et al. [10] analyzed a large number of SARS-CoV-2 viral load databases and suggested that viral load is an impor-
+tant contributor to heterogeneity in secondary infections. They also showed that the viral
+load distributions were similar for symptomatic and asymptomatic stages of infection. This point was further ampliﬁed by direct measurements of Yang et al. [47] who showed that viral load distributions are nearly identical among hospitalized (symptomatic) and asymptomatic population. In this paper, we utilize measurements of viral load in asymptomatic (including presymptomatic) population from Yang et al. [47] as an input into the algorithm shown in Fig. 1. According to [47] at the time of saliva collection, the infected individual was either asymptomatic or presymptomatic. The pdf of ln(ρv) (ρv is the sample space variable of ρ) is shown in Fig. 3. We generate and use samples of ρ from this log-normal distribution in
+our calculations.
+12
+medRxiv preprint doi: https://doi.org/10.1101/2021.09.28.21263801 ; this version posted September 30, 2021. The copyright holder for this preprint (which was not certified by peer review) is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity. All rights reserved. No reuse allowed without permission.
+
+
+Figure 3: Viral load pdf for asymptomatic (including presymptomatic) population, based on
+the histogram data from Yang et al. [47]. The red line shows a normal distribution with µ
+and σ given by 13.84 and 3.63 respectively.
+2.2.3 Occupancy and area of diﬀerent points of interest from SafeGraph data
+2.2.3 Occupancy and area of diﬀerent points of interest from SafeGraph data
+Two of the important inputs in the simulation are the areas of diﬀerent points of interests
+(POI) and the number of people occupying them during each time period of interest. These
+data were obtained from SafeGraph - a company that collects anonymous data from mobile
+devices. For our simulation, data that is available from individual conﬁned spaces, rather
+than that from a collection of several indoor spaces, was felt to be most appropriate. Hence,
+we used SafeGraph data for areas of full service restaurants (POI) over ten cities in USA,
+namely Atlanta, Chicago, Dallas, Houston, Los Angeles, Miami, New York City, Philadel-
+phia, San Francisco, and Washington D.C. The SafeGraph-tabulated area for each restaurant
+is multiplied by 0.5 to convert the total area of a given restaurant to the corresponding sit-
+13
+medRxiv preprint doi: https://doi.org/10.1101/2021.09.28.21263801 ; this version posted September 30, 2021. The copyright holder for this preprint (which was not certified by peer review) is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity. All rights reserved. No reuse allowed without permission.
+ting area since the dining area is estimated as 50 % of the total restaurant area (based on
+typical restaurant design guides [48]; change of this factor does not qualitatively change the
+observations). The occupancy information in these POIs between hours 12:00 - 13:00 and
+18:00 - 19:00 over seven days starting from March 1, 2020 is obtained from the data sets
+created by Chang et al. [44] who developed a mobility network based SEIR model using
+the SafeGraph data. These two time periods represent typical lunch and dinner times, and
+the SafeGraph data. These two time periods represent typical lunch and dinner times, and
+hence highest occupancy periods of any day. The pdf of the averaged number of susceptible
+individuals in restaurants (total occupancy minus one) between hours 12:00 - 13:00 and 18:00
+- 19:00 over ten US cities is shown in Fig. 4. Also, shown in the ﬁgure is an exponential ﬁt
+- 19:00 over ten US cities is shown in Fig. 4. Also, shown in the ﬁgure is an exponential ﬁt
+and the corresponding ﬁtting parameter.
+
+
+Figure 4: Pdf of number of susceptible individuals in full service restaurants at ten US cities,
+from SafeGraph data.
+14
+medRxiv preprint doi: https://doi.org/10.1101/2021.09.28.21263801 ; this version posted September 30, 2021. The copyright holder for this preprint (which was not certified by peer review) is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity. All rights reserved. No reuse allowed without permission.
+3 Results and discussion
+3 Results and discussion
+3.1 Spatial distributions of particle concentration and infection
+probability for ﬁxed conditions
+First, we present the spatial distribution of the virus concentration (RNA copies/m3 of air) with the source at x = 2.5m and y = 2.5m from the origin (at the bottom left corner) of a 10m x 10m x 3m room after 15 minutes of aerosol exhalation by speech and breath. In Fig. 5 the ﬁrst row (a-c) presents results with a constant viral load ρ = 109 copies/ml, but with increasing ACH. Note that the third column represents a case without wall reﬂections and hence can simulate outdoor conditions. The second row of Fig. 5 (d-f) represents a constant but ﬁve times higher viral load of ρ = 5 × 109 copies/ml. The results demonstrate strong inhomogeneity of virus concentration and also show that contours scale linearly with ρ for
+the same ACH due the linear nature of the governing Eqn. 3. Using the dose response model (Eqn. 12) the corresponding contours of probability of infection are shown in Fig. 6. Indeed near unity Ps+b are found near the source, and there is decay with distance from the source.
+near unity Ps+b are found near the source, and there is decay with distance from the source. The Ps+b contours do not scale linearly with ρ due to the nonlinear nature of the dose response model. Increasing ACH invariably reduces virus concentration for a given ρ. However, the
+reduction in the probability of infection may not be proportional to the reduction of the
+virus concentration due to the non-linearity involved in the dose response. Interestingly, the simulated outdoor conditions (c, f) show much smaller infection probability both near and far from the source w.r.t. the conﬁned cases. This can be attributed to the inherently higher
+ACH inside the volume of interest, but primarily due to absence of conﬁnement which allows
+the virus concentration to freely decay with space.
+15
+medRxiv preprint doi: https://doi.org/10.1101/2021.09.28.21263801 ; this version posted September 30, 2021. The copyright holder for this preprint (which was not certified by peer review) is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity. All rights reserved. No reuse allowed without permission.
+
+
+
+(a) ρ = 109 copies/ml (b) ρ = 109 copies/ml (c) ρ = 109 copies/ml ACH = 2 h−1 ACH = 5 h−1 ACH = 12 h−1, no walls
+ACH = 2 h−1 ACH = 5 h−1
+ACH = 12 h−1, no walls
+
+
+
+(d) ρ = 5 × 109 copies/ml (e) ρ = 5 × 109 copies/ml (f) ρ = 5 × 109 copies/ml ACH = 2 h−1 ACH = 5 h−1 ACH = 12 h−1, no walls
+(f) ρ = 5 × 109 copies/ml ACH = 12 h−1, no walls
+(d) ρ = 5 × 109 copies/ml (e) ρ = 5 × 109 copies/ml ACH = 2 h−1 ACH = 5 h−1
+Figure 5: Contour plots of spatially resolved virus concentration (RNA copies/m3) at time
+t = 15 minutes from start of expiration event (source located at x = 2.5m, y = 2.5m).
+16
+medRxiv preprint doi: https://doi.org/10.1101/2021.09.28.21263801 ; this version posted September 30, 2021. The copyright holder for this preprint (which was not certified by peer review) is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity. All rights reserved. No reuse allowed without permission.
+
+(a) ρ = 109 copies/ml (b) ρ = 109 copies/ml (c) ρ = 109 copies/ml ACH = 2 h−1 ACH = 5 h−1 ACH = 12 h−1, no walls
+
+
+
+(d) ρ = 5 × 109 copies/ml (e) ρ = 5 × 109 copies/ml (f) ρ = 5 × 109 copies/ml ACH = 2 h−1 ACH = 5 h−1 ACH = 12 h−1, no walls
+Figure 6: Contour plots of spatially resolved probability of infection Ps+b(x, y) at time t = 15 minutes from start of expiration event (source located at x = 2.5m, y = 2.5m).
+3.2 Statistical distributions of secondary infections generated from
+realistic input distributions
+A simulation based on the algorithm presented in Fig. 1 is run for each data point available
+from the predeﬁned SafeGraph dataset, resulting in a sample size of Ns = 103679. We place
+one infected individual at each POI, at random locations within its premises. As such, most inputs, including viral load, ACH, exposure time, speaking time, source location (x0, y0), are randomized. ACH is generated from a log-normal distribution with a median ACH= 2.16 hr−1, such that µACH = 0.7701, σACH = 0.7554 based on measurements by Bohanon et al. [49]. Room height H = 3 m, height of source (seated) z0 = 1 m, indoor conditions (T = 21.7oC, RH = 0.50, U Vindex = 0), and dose response constant rv = 1/1440 are held
+17
+medRxiv preprint doi: https://doi.org/10.1101/2021.09.28.21263801 ; this version posted September 30, 2021. The copyright holder for this preprint (which was not certified by peer review) is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity. All rights reserved. No reuse allowed without permission.
+constant. The resulting distribution of number of secondary infections - pdf of Z is presented
+constant. The resulting distribution of number of secondary infections - pdf of Z is presented in Fig. 7. An analytical solution g(Z) to be derived in sub-section 3.3 is also shown in the
+in Fig. 7. An analytical solution g(Z) to be derived in sub-section 3.3 is also shown in the ﬁgure.
+
+
+
+
+Figure 7: Pdf of the number of secondary infections: Z and negative binomial ﬁt. The analytical function g is given by Eqn. 22. g(µ = 13.84, σ = 3.63, α = 1.123×10−10, ν = 7.71).
+Figure 7: Pdf of the number of secondary infections: Z and negative binomial ﬁt. The analytical function g is given by Eqn. 22. g(µ = 13.84, σ = 3.63, α = 1.123×10−10, ν = 7.71).
+The stretched tailed nature of the simulated pdf is immediately apparent. This shows that
+there is small but ﬁnite probability of tens of secondary infections per infected individual. For
+this simulation the mean(Z)s = (cid:104)Z(cid:105)s = 0.14 indicating that over this one hour, on average
+this simulation the mean(Z)s = (cid:104)Z(cid:105)s = 0.14 indicating that over this one hour, on average less than 1 person got infected per infector. The calculated total number of infections
+is 14482, with many of the infections occurring in large superspreading events. As such,
+only 3.57 % of the infected individuals infected 80 % of the population over this time.
+This could also be the reason why it is generally diﬃcult to culture the virus from the air,
+though that was unequivocally demonstrated by Lednicky et al. [50]. High probability of
+18
+medRxiv preprint doi: https://doi.org/10.1101/2021.09.28.21263801 ; this version posted September 30, 2021. The copyright holder for this preprint (which was not certified by peer review) is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity. All rights reserved. No reuse allowed without permission.
+infection, which as shown in the paper typically occurs at high viral load, could be correlated
+with high probability of virus detection in the air. Direct virus detection from air could
+therefore necessitate sampling from a large population of infected individuals. Clearly, the
+ﬁnite probability of Z >> (cid:104)Z(cid:105) recovers the inherently overdispersed nature of SARS-CoV-2
+ﬁnite probability of Z >> (cid:104)Z(cid:105) recovers the inherently overdispersed nature of SARS-CoV-2 transmission dynamics. Fitting a negative binomial probability distribution function to the
+Z-pdf yields a good ﬁt, with a dispersion parameter k = 0.029. While the ﬁt quality worsens
+Z-pdf yields a good ﬁt, with a dispersion parameter k = 0.029. While the ﬁt quality worsens at the pdf tails, the dispersion parameter is in the same order as the corresponding values
+for SARS and measles estimated by Lloyd-Smith et al. [1]. However, it is to be noted that
+we are considering only infections over a period of about 1 hour on average, as opposed to
+the entire course of infection, hence (cid:104)Z(cid:105) should not be interpreted as R0. Similarly, the
+the entire course of infection, hence (cid:104)Z(cid:105) should not be interpreted as R0. Similarly, the qualitative k value thus obtained should be interpreted with care.
+Figure 8 shows the joint pdf of ρ and Z. The close correlation of the two random
+Figure 8: Joint pdf of viral load and number of secondary infections.
+variables across nearly six orders of magnitude is immediately apparent from this ﬁgure.
+19
+medRxiv preprint doi: https://doi.org/10.1101/2021.09.28.21263801 ; this version posted September 30, 2021. The copyright holder for this preprint (which was not certified by peer review) is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity. All rights reserved. No reuse allowed without permission.
+While correlation may not imply causality in general, it is reasonable in this case that the
+extreme variation in ρ is causing a similar variation in Z, with other parameters controlling
+the slope and strength of the correlation.
+We present the jpdf of ACH and Z in Fig. 9. It is apparent that the highest number of
+infections Z occur at lower air exchange rates, as expected; however, the majority occur at
+an intermediate air exchange rate of about 1-1.5 ACH, in part because very low and very
+high air exchange rates are simply less common. Furthermore, it is also clear that dispersion
+of Z and ACH are indeed negatively correlated. The eﬀect of universal, high ventilation
+rates, and masks will be taken up later.
+
+
+
+Figure 9: Joint pdf of ACHand Z.
+Figure 9: Joint pdf of ACHand Z.
+20
+medRxiv preprint doi: https://doi.org/10.1101/2021.09.28.21263801 ; this version posted September 30, 2021. The copyright holder for this preprint (which was not certified by peer review) is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity. All rights reserved. No reuse allowed without permission.
+3.3 Derivation of the analytical pdf of Z: g(Z)
+3.3 Derivation of the analytical pdf of Z: g(Z)
+The viral load pdf from Yang et al. [47] can be well approximated by a log-normal distribution with parameters µ and σ given by µ = 13.84 and σ = 3.63. This is shown in Yang et al. and also shown in Fig. 3. As such, we used the following pdf of viral load f (ρv) for generating inputs into the simulation
+1 −(ln(ρv)−µ)2/2σ2 e (15) f (ρv) = ρvσ√2π Due to its extremely large (over O(12)) variation, our analysis shows that viral load ρ is one of the most dominant variables in controlling overdispersion of secondary infections Z, as is
+apparent from Fig. 8. This result can also be presented in terms of secondary attack rate - a more generalized descriptor, deﬁned as ˜Z = Z/n where n is the number of susceptible individuals present at the given POI over the period of interest τ . ˜Z is the sample space variable corresponding to ˜Z. Variation of ˜Z w.r.t. ρ is shown in Fig. 10. Clearly, this plot reﬂects the dose-response function (Eqn. 12) on a macro scale given the dominant inﬂuence of ρ in controlling probability of infection and eventually secondary attack rates. Therefore, we propose a function similar to Eqn. 12 to model the response of ˜Z to ρ variation. This is
+(16)
+−αρ ˜Z = 1 − e
+shown below:
+We can also write 1 (17) α ρ = − ln(1 − ˜Z) The constant α can be estimated as the inverse of the average number of virions inhaled
+per unit volume of mucosalivary liquid ejected that is required for infection probability of 1 − e−1 = 0.63. For the average room volume (cid:104)V (cid:105) = 6.34 × 102 m3, average speaking time (cid:104)ts(cid:105) = 1469 s, average exposure time (cid:104)τ(cid:105) = 3914 s, average air change rate, (cid:104)ACH(cid:105) = 2.87 hr−1, and deposition parameter based on average room area and volume β0 = 0.002 s−1, α (cid:90) (cid:104)τ(cid:105)
+can be estimated as
+(cid:90) (cid:104)τ(cid:105) −((cid:104)ACH(cid:105)/3600+β0)tdt ψ(t)e (18) α = rv ˙Ql(cid:104)ts(cid:105) ˙Vb 0 (cid:104)V (cid:105) ψ(t) is given by Eqn. 9, and ˙Ql = 2.223 × 10−6ml/s. Note that all the (cid:104)(cid:105) quantities mention averages over the distributions used in the present simulation. Equation 18 yields
+21
+medRxiv preprint doi: https://doi.org/10.1101/2021.09.28.21263801 ; this version posted September 30, 2021. The copyright holder for this preprint (which was not certified by peer review) is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity. All rights reserved. No reuse allowed without permission.
+α = 1.123×10−10 ml/copies. The comparison of Eq. 16 and the simulation results are shown
+α = 1.123×10−10 ml/copies. The comparison of Eq. 16 and the simulation results are shown
+α = 1.123×10−10 ml/copies. The comparison of Eq. 16 and the simulation results are shown in Fig. 10.
+
+
+Figure 10: Scatter plot of viral load (ρ) vs secondary attack rate ( ˜Z). The black dot curve shows Eqn. 16 with α = 1.123 × 10−10 ml/copies.
+shows Eqn. 16 with α = 1.123 × 10−10 ml/copies.
+With the functional form of the pdf of the viral load known (given by Eqn. 15) we can
+immediately substitute Eqn. 17 into Eqn. 15 to eventually derive the pdf of ˜Z using the (cid:16) (cid:17)
+immediately substitute Eqn. 17 into Eqn. 15 to eventually derive the pdf of ˜Z using the generalized equation below.
+(cid:16) (cid:17) (cid:18) (cid:19) d 1 − 1 αln(1 − ˜Z) (19) α φ( ˜Z) = f − ln(1 − ˜Z) d ˜Z
+d ˜Z Using the log-normal form of f we derive the analytical function below which could be used
+to model the pdf of secondary attack rate ˜Z: φ( ˜Z). However, the same method should be
+to model the pdf of secondary attack rate ˜Z: φ( ˜Z). However, the same method should be applicable to other functional forms of f , like a Weibull distribution as in [10] instead of
+22
+medRxiv preprint doi: https://doi.org/10.1101/2021.09.28.21263801 ; this version posted September 30, 2021. The copyright holder for this preprint (which was not certified by peer review) is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity. All rights reserved. No reuse allowed without permission.
+log-normal.
+1 /2σ2 e (20) (cid:16) (cid:17) −{ln(− 1 α ln(1− ˜Z))−µ}2 φ( ˜Z) = σ√2π −|1 − ˜Z|ln(1 − ˜Z)
+Comparison of Eqn. 20 with the simulation results is shown in Fig. 11.
+
+
+Figure 11: Pdf of ˜Z and its comparison with the analytical result given by Eqn. 20
+It is evident that Eqn. 20 describes the simulation data to good quantitative accuracy.
+It is also remarkable that very important eﬀects of area, ACH, virus kinetics, exposure
+and speaking times could be encapsulated within one constant α. It is to be recognized that the equation is valid only for ˜Z < 1. This is an inherent feature emanating from the derivative of the functional form of the dose response model which yields the 1 − ˜Z term in the denominator. Importantly, the equation can describe the range 0 ≤ ˜Z < 1 with high degree of veracity. Now, we can write Z = N (1− e−αρ) using Eqn. 16. For a ﬁxed α, clearly
+the denominator. Importantly, the equation can describe the range 0 ≤ ˜Z < 1 with high degree of veracity. Now, we can write Z = N (1− e−αρ) using Eqn. 16. For a ﬁxed α, clearly N and 1 − e−αρ are independent random variables. Therefore, for any given pdf of N given
+degree of veracity. Now, we can write Z = N (1− e−αρ) using Eqn. 16. For a ﬁxed α, clearly N and 1 − e−αρ are independent random variables. Therefore, for any given pdf of N given
+23
+medRxiv preprint doi: https://doi.org/10.1101/2021.09.28.21263801 ; this version posted September 30, 2021. The copyright holder for this preprint (which was not certified by peer review) is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity. All rights reserved. No reuse allowed without permission.
+by h(N ), pdf of Z/N given by φ(Z/N ) and a known α, and using the general equation that describe the pdf of the product of two independent random variables, we can write the pdf (cid:90) ∞
+of Z given by (cid:90) ∞ 1 dN. (21) N h(N )φ(Z/N ) g(Z) = 0 Using the exponential distribution h(N, ν) = 1 ν e− N ν shown in Fig. 4 we derive for Z < N (cid:90) ∞
+(cid:90) ∞ ν e− N /2σ2 dN e (22) −{ln(− 1 α ln(1−Z/N ))−µ}2 g(Z) = 0 −νσ√2π(N − Z)ln(1 − Z/N )
+−νσ√2π(N − Z)ln(1 − Z/N ) It is to be noted that the constants µ, σ are properties of the viral load distribution, ν is the etc. according constant of the occupancy distribution, and α encapsulates τ, ts, ACH, A, V, t 1 2 to Eqn. 18. It is apparent that the pdf g(Z) is stretched to higher (lower) Z values when µ, σ, ν or α increases (decreases). The remarkable match between this analytical function: g - the analytical pdf of the number of secondary infections and that obtained from the
+simulation data has been shown in Fig. 7. We revisit it here for further discussion. It is
+evident that the stretched tail of the pdf of Z results from the two stretched exponential
+evident that the stretched tail of the pdf of Z results from the two stretched exponential functionals of Z and N . This can be veriﬁed by noting that when either σ → 0 or ν → 0
+functionals of Z and N . This can be veriﬁed by noting that when either σ → 0 or ν → 0 the overdispersion of Z vanishes. The ﬁrst stretched exponential arising from the lognormal
+distribution of viral load ρv and the latter from the exponential distribution of number of people at the diﬀerent POIs. Therefore, it is the joint contribution of overdispersed viral load
+and overdispersed occupancy that results in overdispersion of secondary infection numbers causing superspreading events. This is shown here with a single equation. The (cid:104)Z(cid:105) obtained from the analytical pdf, given by (cid:104)Z(cid:105) =(cid:82) ∞ 0 Zg(Z)dZ. We ﬁnd mean and standard deviation as (cid:104)Z(cid:105) = 0.13, std(Z) = 0.99, respectively, in comparison to (cid:104)Z(cid:105)s = 0.14 and std(Z)s = 0.87 from the simulations. The analytical pdf g(Z) is expected to be a generalized result and could be applied for any large number of indoor POIs, without much restriction on their
+type.
+3.4 Variants and mitigation measures
+3.4 Variants and mitigation measures
+Finally, we test whether the derived Eqn. 22 can describe overdispersed transmission associ- ated with a diﬀerent viral load distribution equally well. To this end, we generate a viral load
+24
+medRxiv preprint doi: https://doi.org/10.1101/2021.09.28.21263801 ; this version posted September 30, 2021. The copyright holder for this preprint (which was not certified by peer review) is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity. All rights reserved. No reuse allowed without permission.
+distribution with a mean which is 1000 times the mean of the original distribution presented
+in Fig. 3. Thus, while Fig. 3 represents the pdf of the original variant, the new log-normal
+distribution characterized µ = 20.67 and σ = 3.63 might represent the pdf of viral load of [51] suggest that the viral the δ−variant infected individuals. Early data from Li et al. loads of the δ−variant could be as high as “1000 times greater compared to A/B lineage infections during initial epidemic wave in China in early 2020”. The simulation results in
+terms of Z-pdf are presented in Fig. 12. The greater transmissibility of the δ−variant under
+terms of Z-pdf are presented in Fig. 12. The greater transmissibility of the δ−variant under the assumption of 1000-fold higher mean viral load is immediately apparent. In comparison to the (cid:104)Z(cid:105) = 0.13 for the original variant, the (cid:104)Z(cid:105) = 2.64 for δ. Therefore, just based on viral load, according to the calculations and model, δ−variant could be nearly 20 times
+on viral load, according to the calculations and model, δ−variant could be nearly 20 times higher transmissible on average w.r.t. the original variant, over about an hour of contact.
+Interestingly, with just increased µ, Eqn. 22 can capture the pdf of Z for the δ−variant,
+Interestingly, with just increased µ, Eqn. 22 can capture the pdf of Z for the δ−variant, remarkably well, alongside the one for the original variant. However, it is to be recognized that there is some uncertainty on the assumption that mean viral load of the δ-variant is 1000
+times higher than the original variant. Data also suggest that viral load and infectiousness potential (using a proxy of culture-positivity for example), while monotonic in nature, may not demonstrate a linear relationship [52]. Furthermore, (cid:104)Z(cid:105) (cid:54)= R0. Hence, the enhancement factor thus found is valid only within the context of the assumptions and scope of this work.
+25
+medRxiv preprint doi: https://doi.org/10.1101/2021.09.28.21263801 ; this version posted September 30, 2021. The copyright holder for this preprint (which was not certified by peer review) is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity. All rights reserved. No reuse allowed without permission.
+
+
+
+
+
+
+Figure 12: Pdf of Z and its comparison with the analytical result given by Eqn. 22
+Figure 12: Pdf of Z and its comparison with the analytical result given by Eqn. 22 for original variant (red circle symbols, red bold line) g(µ = 13.84, σ = 3.63, α = 1.123 × 10−10, ν = 7.71) and for δ−variant (blue square symbols,
+g(µ = 13.84, σ = 3.63, α = 1.123 × 10−10, ν = 7.71) and for δ−variant (blue square symbols, blue bold line) g(µ = 20.67, σ = 3.63, α = 1.123 × 10−10, ν = 7.71).
+on the distribution of secondary infections. To that end, we keep the ventilation rates constant at ACH = 5 hr−1 and assume that the entire population (including the infectors and
+g(µ = 13.84, σ = 3.63, α = 1.123 × 10−10, ν = 7.71) and for δ−variant (blue square symbols, blue bold line) g(µ = 20.67, σ = 3.63, α = 1.123 × 10−10, ν = 7.71).
+Finally, we explore the eﬀect of adopting uniformly high ventilation rates and masks,
+on the distribution of secondary infections. To that end, we keep the ventilation rates constant at ACH = 5 hr−1 and assume that the entire population (including the infectors and
+and 50% reduction in the correspondingly inhaled aerosols. The results are shown in Fig 13.
+constant at ACH = 5 hr−1 and assume that the entire population (including the infectors and
+susceptibles) are wearing masks that provide 50% reduction by volume of exhaled aerosols
+and 50% reduction in the correspondingly inhaled aerosols. The results are shown in Fig 13.
+26
+medRxiv preprint doi: https://doi.org/10.1101/2021.09.28.21263801 ; this version posted September 30, 2021. The copyright holder for this preprint (which was not certified by peer review) is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity. All rights reserved. No reuse allowed without permission.
+
+Figure 13: Eﬀect of masking, ﬁxed ventilation rates, vaccines, and reduced occupancy. Solid
+red and blue lines correspond to the analytical solutions given by Eqn. 22 for the original and δ−variant respectively, for (cid:104)ACH(cid:105) = 2.9 hr−1 and without masks, as shown in Fig. 12. For ﬁxed ACH = 5 hr−1, and with masks blocking 50 % volume of aerosols during
+inhalation and exhalation, the dashed red line shows the analytical solution for original variant g(µ = 13.84, σ = 3.63, α = 2.36 × 10−11, ν = 7.71) while the dashed blue line shows the analytical result for δ−variant g(µ = 20.67, σ = 3.63, α = 2.36 × 10−11, ν = 7.71). The solid green line: g(µ = 20.67, σ = 3.63, α = 2.81 × 10−11, νv = 4.01) shows the eﬀect of 80% vaccination coverage, with 60% vaccine eﬃcacy, with all individuals wearing masks that block 50% of the aerosols during exhalation and inhalation. The dash-dotted green line: g(µ = 20.67, σ = 3.63, α = 2.81 × 10−11, νv = 2.00) shows the eﬀect of 80% vaccination coverage, with 60% vaccine eﬃcacy, with all individuals wearing masks that block 50% of the aerosols during exhalation and inhalation along with occupancy restriction to 50% of the
+original occupancy. The top left inset shows the zoomed in view of the left side of the pdfs.
+Please refer Table 3 in the supplementary material for detailed values.
+27
+medRxiv preprint doi: https://doi.org/10.1101/2021.09.28.21263801 ; this version posted September 30, 2021. The copyright holder for this preprint (which was not certified by peer review) is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity. All rights reserved. No reuse allowed without permission.
+We observe that such interventions result in signiﬁcant reduction in transmissibility for the original variant; reducing the mean to (cid:104)Z(cid:105) = 0.04 (from (cid:104)Z(cid:105) = 0.13 obtained without any interventions) with signiﬁcant reduction in the extension of the tail. Such intervention eﬀect remains substantial, yet less pronounced for the δ-variant where the (cid:104)Z(cid:105) = 1.69 (w.r.t. (cid:104)Z(cid:105) = 2.64 obtained without any interventions) and tail remains suﬃciently stretched with some shift in the overall pdf towards lower Z. Once again, we note that these numbers are
+some shift in the overall pdf towards lower Z. Once again, we note that these numbers are obtained over nearly an hour of exposure time on average. Note that, in our model, α does
+not change between the original and the δ variant. Only the µ increases, resulting in an
+increase in the higher proportion of secondary attack rates close to unity as the virus strain
+switches from the original variant to the δ−variant. A more detailed analysis of the inﬂuence
+switches from the original variant to the δ−variant. A more detailed analysis of the inﬂuence of individual parameters: mean viral load, mean occupancy, and mean ventilation rates on the mean and standard deviation of Z could be found in the supplementary material (section 5). Within the scope of the present study - social gatherings in restaurants, we ask what kind
+of spread could be expected for the δ−variant given the period of exposure and available occupancy data, in a population where a large fraction is already vaccinated? This is shown
+in Fig. 13 by the green curves. Using the realistic ACH distribution and with masks that can reduce both emission and inhalation of aerosol volumes by 50%, respectively, we do
+a basic calculation including the eﬀect of vaccination. Assuming vaccine eﬃcacy ηvac =
+0.6 and vaccination coverage eﬃciency ηcov = 0.8 representing fraction of the population
+vaccinated, we estimate the new population of susceptible individuals at a given POI as nv = (1 − ηvacηcov)n. We do not consider any change in viral load or change in distribution of infectious cases. Fitting an exponential distribution to nv, the new constant νv = 4.01.
+Clearly, from Fig. 13 we observe a signiﬁcant drop in the number of secondary infections
+and superspreading events. The pdf of the number of secondary infections with the δ-variant
+with partially eﬀective masks and vaccines is much less stretched than the original variant
+without masks or vaccine. Still the ﬁnite risk of superspreading event sustains. However, with 80% vaccination and 50% reduced occupancy, coupled with masks, a signiﬁcant reduction
+in overdispersion is attained. This behooves the need for rapidly vaccinating the population
+alongside physical intervention measures like high-quality masks, reduced occupancy, and
+28
+medRxiv preprint doi: https://doi.org/10.1101/2021.09.28.21263801 ; this version posted September 30, 2021. The copyright holder for this preprint (which was not certified by peer review) is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity. All rights reserved. No reuse allowed without permission.
+across the board higher ventilation rates.
+4 Conclusions
+Overdispersion leading to superspreading events is a major driving force of the Covid-19 pandemic. Understanding the factors that lead to overdispersion in individual infectivity are also considered long standing scientiﬁc problems. Coupling an aerosol mixing model with real-world inputs: exhaled aerosol size distribution for speech and breath, measured viral load distribution, occupancy information from SafeGraph for full-service restaurants in major US cities, realistic ventilation rate distributions, we explore the overdispersion in the number of secondary infections per infector. The simulated results demonstrate that aerosol transmission route is consistent with the overdispersed individual infectivity with viral load variability being a dominant factor that controls secondary attack rates alongside ventilation rate, exposure time, and speaking time. We derive analytical expressions that can accurately and probably for the ﬁrst time, describe the simulated pdfs of the secondary attack rates and number of secondary infections, respectively. The function for the secondary infection number pdf elucidates quantitatively, how overdispersed distributions of viral load and occupancy, jointly control the overdispersion in the number of secondary infections per infector. Finally, given the input data, modeling assumptions and the scope of the study, it appears signiﬁcant reduction in transmissibility (both the average, as well as the dispersion) of the highly transmissible δ−variant necessitates all possible mitigation measures: eﬃcient masks, high ventilation rates, and reduced occupancy, even after a signiﬁcant fraction of the population has been vaccinated.
+5 Acknowledgements
+UofT researchers acknowledge support from the Fields Institute for Research in Mathemat- ical Sciences through their project Mathematics for Public Health and Variants of Concern sponsored by the Canadian Institutes of Health Research. SC acknowledges the Heuckroth Distinguished Faculty Award in Aerospace Engineering from UTIAS. SM acknowledges the
+29
+medRxiv preprint doi: https://doi.org/10.1101/2021.09.28.21263801 ; this version posted September 30, 2021. The copyright holder for this preprint (which was not certified by peer review) is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity. All rights reserved. No reuse allowed without permission.
+Tier 2 Canada Research Chair in Mathematical Modeling and Program Science (grant No. CRC-950-232643).
+References
+[1] J. O. Lloyd-Smith, S. J. Schreiber, P. E. Kopp, and W. M. Getz, “Superspreading and the eﬀect of individual variation on disease emergence,” Nature, vol. 438, no. 7066,
+pp. 355–359, 2005.
+[2] L. Hamner, “High sars-cov-2 attack rate following exposure at a choir practice—skagit county, washington, march 2020,” MMWR. Morbidity and mortality weekly report,
+vol. 69, 2020.
+[3] S. L. Miller, W. W. Nazaroﬀ, J. L. Jimenez, A. Boerstra, G. Buonanno, S. J. Dancer, J. Kurnitski, L. C. Marr, L. Morawska, and C. Noakes, “Transmission of sars-cov-2
+by inhalation of respiratory aerosol in the skagit valley chorale superspreading event,”
+Indoor air, vol. 31, no. 2, pp. 314–323, 2021.
+[4] J. Lu, J. Gu, K. Li, C. Xu, W. Su, Z. Lai, D. Zhou, C. Yu, B. Xu, and Z. Yang, “Covid- 19 outbreak associated with air conditioning in restaurant, guangzhou, china, 2020,” Emerging infectious diseases, vol. 26, no. 7, p. 1628, 2020.
+[5] Y. Li, H. Qian, J. Hang, X. Chen, P. Cheng, H. Ling, S. Wang, P. Liang, J. Li, S. Xiao, et al., “Probable airborne transmission of sars-cov-2 in a poorly ventilated restaurant,”
+Building and Environment, p. 107788, 2021.
+[6] S. Y. Park, Y.-M. Kim, S. Yi, S. Lee, B.-J. Na, C. B. Kim, J.-i. Kim, H. S. Kim, Y. B. Kim, Y. Park, et al., “Coronavirus disease outbreak in call center, south korea,”
+Emerging infectious diseases, vol. 26, no. 8, p. 1666, 2020.
+[7] X. Hao, S. Cheng, D. Wu, T. Wu, X. Lin, and C. Wang, “Reconstruction of the full transmission dynamics of covid-19 in wuhan,” Nature, vol. 584, no. 7821, pp. 420–424,
+2020.
+30
+medRxiv preprint doi: https://doi.org/10.1101/2021.09.28.21263801 ; this version posted September 30, 2021. The copyright holder for this preprint (which was not certified by peer review) is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity. All rights reserved. No reuse allowed without permission.
+[8] A. Endo et al., “Estimating the overdispersion in covid-19 transmission using outbreak sizes outside china,” Wellcome open research, vol. 5, 2020.
+[9] G. Großmann, M. Backenk¨ohler, and V. Wolf, “Heterogeneity matters: Contact struc- ture and individual variation shape epidemic dynamics,” Plos one, vol. 16, no. 7,
+p. e0250050, 2021.
+[10] P. Z. Chen, N. Bobrovitz, Z. Premji, M. Koopmans, D. N. Fisman, and F. X. Gu, “Heterogeneity in transmissibility and shedding sars-cov-2 via droplets and aerosols,”
+Elife, vol. 10, p. e65774, 2021.
+[11] K. Sneppen, B. F. Nielsen, R. J. Taylor, and L. Simonsen, “Overdispersion in covid-19 increases the eﬀectiveness of limiting nonrepetitive contacts for transmission control,”
+Proceedings of the National Academy of Sciences, vol. 118, no. 14, 2021.
+[12] P. Z. Chen, M. Koopmans, D. N. Fisman, and F. X. Gu, “Understanding why su- perspreading drives the covid-19 pandemic but not the h1n1 pandemic,” The Lancet
+Infectious Diseases, 2021.
+[13] L. Morawska and D. K. Milton, “It is Time to Address Airborne Transmission of COVID-19,” Clinical Infectious Diseases, 07 2020. ciaa939.
+[14] J. G. Allen and L. C. Marr, “Recognizing and controlling airborne transmission of sars- cov-2 in indoor environments,” Indoor air, vol. 30, no. 4, p. 557, 2020.
+[15] F. Gregson, J. Robinson, R. Miles, C. Royall, and J. Reid, “Drying kinetics of salt solution droplets: Water evaporation rates and crystallization,” The Journal of Physical
+Chemistry B, vol. 123, no. 1, pp. 266–276, 2018.
+[16] J. W. Tang, W. P. Bahnﬂeth, P. M. Bluyssen, G. Buonanno, J. L. Jimenez, J. Kurnitski, Y. Li, S. Miller, C. Sekhar, L. Morawska, et al., “Dismantling myths on the airborne transmission of severe acute respiratory syndrome coronavirus (sars-cov-2),” Journal of Hospital Infection, 2021.
+31
+medRxiv preprint doi: https://doi.org/10.1101/2021.09.28.21263801 ; this version posted September 30, 2021. The copyright holder for this preprint (which was not certified by peer review) is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity. All rights reserved. No reuse allowed without permission.
+[17] T. Greenhalgh, J. L. Jimenez, K. A. Prather, Z. Tufekci, D. Fisman, and R. Schooley, “Ten scientiﬁc reasons in support of airborne transmission of sars-cov-2,” The lancet, vol. 397, no. 10285, pp. 1603–1605, 2021. [18] K. A. Prather, L. C. Marr, R. T. Schooley, M. A. McDiarmid, M. E. Wilson, and D. K. Milton, “Airborne transmission of sars-cov-2,” Science, vol. 370, no. 6514, pp. 303–304, 2020. [19] S. Chaudhuri, S. Basu, and A. Saha, “Analyzing the dominant sars-cov-2 transmission routes toward an ab initio disease spread model,” Physics of Fluids, vol. 32, no. 12, p. 123306, 2020.
+[20] P. Dabisch, M. Schuit, A. Herzog, K. Beck, S. Wood, M. Krause, D. Miller, W. Weaver, D. Freeburger, I. Hooper, et al., “The inﬂuence of temperature, humidity, and simulated
+sunlight on the infectivity of sars-cov-2 in aerosols,” Aerosol Science and Technology,
+vol. 55, no. 2, pp. 142–153, 2021.
+[21] L. Bourouiba, E. Dehandschoewercker, and J. W. Bush, “Violent expiratory events: on coughing and sneezing,” Journal of Fluid Mechanics, vol. 745, pp. 537–563, 2014.
+[22] M. Abkarian, S. Mendez, N. Xue, F. Yang, and H. A. Stone, “Speech can produce jet- like transport relevant to asymptomatic spreading of virus,” Proceedings of the National
+Academy of Sciences, vol. 117, no. 41, pp. 25237–25245, 2020.
+[23] W. Chen, N. Zhang, J. Wei, H.-L. Yen, and Y. Li, “Short-range airborne route domi- nates exposure of respiratory infection during close contact,” Building and Environment,
+p. 106859, 2020.
+[24] E. Riley, G. Murphy, and R. Riley, “Airborne spread of measles in a suburban elementary school,” American journal of epidemiology, vol. 107, no. 5, pp. 421–432, 1978.
+[25] S. Rudnick and D. Milton, “Risk of indoor airborne infection transmission estimated from carbon dioxide concentration,” Indoor air, vol. 13, no. 3, pp. 237–245, 2003.
+32
+medRxiv preprint doi: https://doi.org/10.1101/2021.09.28.21263801 ; this version posted September 30, 2021. The copyright holder for this preprint (which was not certified by peer review) is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity. All rights reserved. No reuse allowed without permission.
+[26] G. Buonanno, L. Morawska, and L. Stabile, “Quantitative assessment of the risk of air- borne transmission of sars-cov-2 infection: prospective and retrospective applications,” Environment international, vol. 145, p. 106112, 2020. [27] M. Z. Bazant and J. W. Bush, “A guideline to limit indoor airborne transmission of covid-19,” Proceedings of the National Academy of Sciences, vol. 118, no. 17, 2021.
+[28] J. Schijven, L. C. Vermeulen, A. Swart, A. Meijer, E. Duizer, and A. M. de Roda Hus- man, “Quantitative microbial risk assessment for airborne transmission of sars-cov-2
+via breathing, speaking, singing, coughing, and sneezing,” Environmental health per-
+spectives, vol. 129, no. 4, p. 047002, 2021.
+[29] T. C. Bond, A. Bosco-Lauth, D. K. Farmer, P. W. Francisco, J. R. Pierce, K. M. Fedak, J. M. Ham, S. H. Jathar, and S. VandeWoude, “Quantifying proximity, conﬁnement,
+and interventions in disease outbreaks: a decision support framework for air-transported
+pathogens,” Environmental science & technology, vol. 55, no. 5, pp. 2890–2898, 2021.
+[30] C. C. Wang, K. A. Prather, J. Sznitman, J. L. Jimenez, S. S. Lakdawala, Z. Tufekci, and L. C. Marr, “Airborne transmission of respiratory viruses,” Science, vol. 373, no. 6558,
+p. eabd9149, 2021.
+[31] R. Mittal, R. Ni, and J.-H. Seo, “The ﬂow physics of covid-19,” Journal of ﬂuid Me- chanics, vol. 894, 2020.
+[32] L. Bourouiba, “The ﬂuid dynamics of disease transmission,” Annual Review of Fluid Mechanics, vol. 53, pp. 473–508, 2021.
+[33] M. L. P¨ohlker, O. O. Kr¨uger, J.-D. F¨orster, T. Berkemeier, W. Elbert, J. Fr¨ohlich- Nowoisky, U. P¨oschl, C. P¨ohlker, G. Bagheri, E. Bodenschatz, et al., “Respira-
+tory aerosols and droplets in the transmission of infectious diseases,” arXiv preprint
+arXiv:2103.01188, 2021.
+[34] S. Chaudhuri, A. Saha, and S. Basu, “An opinion on the multi-scale nature of covid-19 type disease spread,” Current Opinion in Colloid & Interface Science, p. 101462, 2021.
+33
+medRxiv preprint doi: https://doi.org/10.1101/2021.09.28.21263801 ; this version posted September 30, 2021. The copyright holder for this preprint (which was not certified by peer review) is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity. All rights reserved. No reuse allowed without permission.
+[35] S. B. Pope, Turbulent Flows. Cambridge University Press, 2006.
+[36] P. J. Drivas, P. A. Valberg, B. L. Murphy, and R. Wilson, “Modeling indoor air exposure from short-term point source releases,” Indoor Air, vol. 6, no. 4, pp. 271–277, 1996.
+[37] S. Chaudhuri, S. Basu, P. Kabi, V. R. Unni, and A. Saha, “Modeling the role of respira- tory droplets in covid-19 type pandemics,” Physics of Fluids, vol. 32, no. 6, p. 063309, 2020.
+[38] U. S. Department of Homeland Security, “Estimated airborne decay of sars-cov-2; https://www.dhs.gov/science-and-technology/sars-airborne-calculator,” tech. rep.
+[39] D. H. Morris, K. C. Yinda, A. Gamble, F. W. Rossine, Q. Huang, T. Bushmaker, R. J. Fischer, M. J. Matson, N. Van Doremalen, P. J. Vikesland, et al., “Mechanistic theory predicts the eﬀects of temperature and humidity on inactivation of sars-cov-2 and other enveloped viruses,” Elife, vol. 10, p. e65902, 2021.
+[40] L. C. Marr, J. W. Tang, J. Van Mullekom, and S. S. Lakdawala, “Mechanistic insights into the eﬀect of humidity on airborne inﬂuenza virus survival, transmission and inci- dence,” Journal of the Royal Society Interface, vol. 16, no. 150, p. 20180298, 2019.
+[41] K.-C. Cheng, V. Acevedo-Bolton, R.-T. Jiang, N. E. Klepeis, W. R. Ott, O. B. Fringer, and L. M. Hildemann, “Modeling exposure close to air pollution sources in naturally ventilated residences: Association of turbulent diﬀusion coeﬃcient with air change rate,” Environmental science & technology, vol. 45, no. 9, pp. 4016–4022, 2011.
+[42] C. N. HAAS, “Estimation of risk due to low doses of microorganisms: a comparison of alternative methodologies,” American journal of epidemiology, vol. 118, no. 4, pp. 573– 582, 1983.
+[43] C. N. Haas, “Action levels for sars-cov-2 in air: Preliminary approach,” Risk Analysis, vol. 41, no. 5, pp. 705–709, 2021.
+[44] S. Chang, E. Pierson, P. W. Koh, J. Gerardin, B. Redbird, D. Grusky, and J. Leskovec, “Mobility network models of covid-19 explain inequities and inform reopening,” Nature, vol. 589, no. 7840, pp. 82–87, 2021.
+34
+medRxiv preprint doi: https://doi.org/10.1101/2021.09.28.21263801 ; this version posted September 30, 2021. The copyright holder for this preprint (which was not certified by peer review) is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity. All rights reserved. No reuse allowed without permission.
+[45] H. Kawasuji, Y. Takegoshi, M. Kaneda, A. Ueno, Y. Miyajima, K. Kawago, Y. Fukui, Y. Yoshida, M. Kimura, H. Yamada, et al., “Transmissibility of covid-19 depends on the viral load around onset in adult and symptomatic patients,” PloS one, vol. 15, no. 12, p. e0243597, 2020.
+[46] X. He, E. H. Lau, P. Wu, X. Deng, J. Wang, X. Hao, Y. C. Lau, J. Y. Wong, Y. Guan, X. Tan, et al., “Temporal dynamics in viral shedding and transmissibility of covid-19,” Nature medicine, vol. 26, no. 5, pp. 672–675, 2020.
+[47] Q. Yang, T. K. Saldi, P. K. Gonzales, E. Lasda, C. J. Decker, K. L. Tat, M. R. Fink, C. R. Hager, J. C. Davis, C. D. Ozeroﬀ, et al., “Just 2% of sars-cov-2- positive individuals carry 90% of the virus circulating in communities,” Proceedings of the National Academy of Sciences, vol. 118, no. 21, 2021.
+[48] R. McClain, “How much room do i need for a restaurant? https://bizﬂuent.com/info- 12010139-much-room-need-restaurant.html,” 2018.
+[49] H. R. Bohanon, J.-J. Piade, M. K. Schorp, and Y. Saint-Jalm, “An international survey of indoor air quality, ventilation, and smoking activity in restaurants: a pilot study,” Journal of Exposure Science & Environmental Epidemiology, vol. 13, no. 5, pp. 378–392, 2003.
+[50] J. A. Lednicky, M. Lauzard, Z. H. Fan, A. Jutla, T. B. Tilly, M. Gangwar, M. Usmani, S. N. Shankar, K. Mohamed, A. Eiguren-Fernandez, et al., “Viable sars-cov-2 in the air of a hospital room with covid-19 patients,” International Journal of Infectious Diseases, vol. 100, pp. 476–482, 2020.
+[51] B. Li, A. Deng, K. Li, Y. Hu, Z. Li, Q. Xiong, Z. Liu, Q. Guo, L. Zou, H. Zhang, M. Zhang, F. Ouyang, J. Su, W. Su, J. Xu, H. Lin, J. Sun, J. Peng, H. Jiang, P. Zhou, T. Hu, M. Luo, Y. Zhang, H. Zheng, J. Xiao, T. Liu, R. Che, H. Zeng, Z. Zheng, Y. Huang, J. Yu, L. Yi, J. Wu, J. Chen, H. Zhong, X. Deng, M. Kang, O. G. Pybus, M. Hall, K. A. Lythgoe, Y. Li, J. Yuan, J. He, and J. Lu, “Viral infection and transmis- sion in a large, well-traced outbreak caused by the sars-cov-2 delta variant,” medRxiv, 2021.
+35
+medRxiv preprint doi: https://doi.org/10.1101/2021.09.28.21263801 ; this version posted September 30, 2021. The copyright holder for this preprint (which was not certified by peer review) is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity. All rights reserved. No reuse allowed without permission.
+[52] M. C. Shamier, A. Tostmann, S. Bogers, J. De Wilde, J. IJpelaar, W. A. van der Kleij,
+[52] M. C. Shamier, A. Tostmann, S. Bogers, J. De Wilde, J. IJpelaar, W. A. van der Kleij,
+H. De Jager, B. L. Haagmans, R. Molenkamp, B. B. O. Munnink, et al., “Virological
+characteristics of sars-cov-2 vaccine breakthrough infections in health care workers,”
+medRxiv, 2021.
+36

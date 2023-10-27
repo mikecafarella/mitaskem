@@ -1,0 +1,4 @@
+We have a variable description as follows:
+[DESC]
+
+Does the description match the variable [TARGET]? Print YES or NO on a new line, without space, after ANSWER:.

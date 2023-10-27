@@ -1,0 +1,19 @@
+E:940702306, a: constant parameters defining the behavior of the popula0on
+E:905476437, b: constant parameters defining the behavior of the popula0on
+E:578678620, foxes: number of predators (for example
+R:2016109940, d: rabbit
+E:-1598253315, c: natural dying rate of fox, when there's no rabbit d is the factor describing
+E:410856896, A: Jacobian matrix evaluated at the corresponding point
+E:1561009898, T_f1: period
+R:134153250, T_f1: value
+E:546652436, T_f1: value
+E:-1673655276, du: au buv
+R:-200477527, dt: = au buv
+R:-921289634, growth rate: 0
+R:-1201022064, X_F0: array
+E:-282827147, X_f0: ex0nc0on of both species
+R:-232886483, x0: = Array
+R:1925487553, T: = Linspace
+E:-1702475625, t: rabbits
+R:-1185826806, f1: p.figure
+E:-1579534226, Plonng: good representa0on of trajectories, without having to integrate the ODE

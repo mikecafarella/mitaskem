@@ -1,0 +1,34 @@
+I have a paper on battery research, and I want to extraction some metadata from this paper.
+I need to extract some metadata from the paper description of the model.
+
+The metadata to be extracted is as follows:
+```txt
+Anode, What is the anode?
+Cathode, What is the cathode?
+Electrolyte, What is the electrolyte?
+N/P ratio, What is the N/P ratio?
+Voltage range, What is the voltage range?
+Current density, What is the current density?
+Beginning coulombic efficiency, What is the CE at the beginning?
+End coulombic efficiency, What is CE at the end of the cycling test?
+Average coulombic efficiency, What is the average CE and the scattering (standard deviation)?
+
+```
+
+The paper textual description is as follows:
+```txt
+[PAPER]
+```
+
+
+Please help me extract the metadata from the paper textual description of the model.
+Print the result in the following format:
+```txt
+<field name>: <field value>
+<field name>: <field value>
+<field name>: <field value>
+...
+```
+Do not hallucinate metadata; only print metadata that can be extracted from the paper description.
+If the metadata cannot be extracted, please print "UNKNOWN" instead of the field value.
+

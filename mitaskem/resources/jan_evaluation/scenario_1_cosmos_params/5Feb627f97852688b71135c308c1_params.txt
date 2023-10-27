@@ -1,0 +1,94 @@
+1700 - Asia - variolation
+1886 - typhoid fever
+1896 - cholera
+1897 - plague
+1926 - Bordetella pertussis
+1927 - Bacille Calmette-Guérin (BCG)
+1998 - borreliosis
+None
+5 - single-stranded RNA virus causing life-threatening respiratory illnesses
+6 - US Center for Systems Science and Engineering (CSSE) until 12 May 2020 the virus has infected approximately 4.2 million people and caused 286,000 deaths
+7 - Immunotherapy and vaccination against infectious diseases
+8 - virus also affects pets and other animals
+9 - 199 registered trials involving malaria vaccines
+10 - subunit vaccine induces immune response against the P. falciparum circumsporozoite protein (PfCSP)
+11 - protective properties are only partial and decline over time
+12 - public health benefits, especially in children in areas with high transmission and disease activity rates
+13 - funding volume levels for vaccine research and development decreased from US $ 181 million in 2017 to US $ 156 million in 2018
+14 - inactivated pertussis toxin is used as an antigen in the production of the acellular vaccine
+15 - immunostimulatory peptides
+16, 17 - vector-based vaccines
+20 - serum therapy
+21 - immune modulators
+58 - oldest awardee
+32 - youngest awardee
+87 - oldest awardee at the time of the award ceremony
+109 times to 219 scientists
+12 women
+1901
+1902
+1905
+1907
+1908
+1919
+1926
+1927
+1928
+1939
+1945
+1948
+1951
+1952
+1954
+1958
+1960
+1965
+1966
+1969
+1972
+1975
+1976
+1980
+1984
+1996 Peter C. Doherty, Rolf M. Zinkernagel For their discoveries concerning the speciﬁcity of the cell-mediated immune defence
+1997 Stanley B. Prusiner For his discovery of prions—a new biological principle of infection
+2005 Barry J. Marshall, J. Robin Warren For their discovery of the bacterium Helicobacter pylori and its role in gastritis and peptic ulcer disease
+2008 Harald zur Hausen For his discovery of human papilloma viruses causing cervical cancer
+2008 Françoise Barré-Sinoussi, Luc Montagnier For their discovery of the human immunodeﬁciency virus [HIV]
+2011 Bruce A. Beutler, Jules A. Hoffmann For their discoveries concerning the activation of innate immunity
+2011 Ralph M. Steinman For his discovery of the dendritic cell and its role in adaptive immunity
+2015 William C. Campbell, Satoshi ¯Omura For their discoveries concerning a novel therapy against infections caused by roundworm parasites
+2015 Tu Youyou For her discoveries concerning a novel therapy against malaria
+24 - monoclonal antibodies may also be useful in eradicating the colonization of the nasopharynx with MRSA [25]
+25 - MRSA
+26 - whey from C. difﬁcile-infected cows used in the treatment of C. difﬁcile-associated diarrhea (CDI) in humans
+27 - monoclonal antibody bezlotoxumab directed against toxin B in CDI
+28 - Sanoﬁ Pasteur MSD that uses the toxoids A and B as antigen targets
+29 - recombinant fusion protein from toxins A and B (IC84/VLA84) manufactured by Valneva SE
+30 - foreign stool transplantation or fecal microbiome transfer (FMT)
+31 - FMT has also been described to have positive results in the treatment of other diseases and in the eradication of colonization with antibiotic-resistant bacteria
+32 - FDA recently warned against the transfer of multidrug-resistant germs in the context of FMT
+1928 - penicillin was discovered by the Scotsman Alexander Fleming
+1941 - penicillin was used for the first time as an antibiotic in a policeman
+1932 - sulfamidochrysoidin (Prontosil®) was developed by Gerhard Domagk
+2019 - Phase III studies were initiated for ridinilazole
+None
+1. Plotkin's Vaccines. 7th ed. Amsterdam: Elsevier; 2018
+2. U.S. National Library of Medicine. History of Medicine. 2019
+3. Nardelli et al. Human Lyme Disease Vaccines: Past and Future Concerns. Future Microbiol. 2009
+4. Feldman et al. A Promising Bioconjugate Vaccine Against Hypervirulent Klebsiella pneumoniae. Proc Natl Acad Sci. 2019
+5. Gorbalenya et al. The Species Severe Acute Respiratory Syndrome-Related Coronavirus: Classifying 2019-nCoV and Naming it SARS-CoV-2. Nat Microbiol. 2020
+6. Center for Systems Science and Engineering (CSSE) at Johns Hopkins University
+7. The World Health Organization (WHO). Draft Landscape of COVID-19 Candidate Vaccines
+8. Halfmann et al. Transmission of SARS-CoV-2 in Domestic Cats. N Engl J Med. 2020
+9. United States National Library of Medicine at the National Institutes of Health
+10. Draper et al. Malaria Vaccines: Recent Advances and New Horizons. Cell Host Microbe. 2018
+20. Plotkin SA, Plotkin SL. The development of vaccines: how thepastledto thefuture. NatRev Microbiol. 2011;9:889–93.
+21. Reisinger EC, Kern P, Dietrich M, Ernst M, Flad HD, et al. Inhibition of HIV progression by dithiocarb. Zeitschrift für Chemotherapie1/2005. ZFC. Lancet1990;335:679–82.
+22. Polonelli L, Pontón J, Elguezabal N, Moragues MD, Casoli C, Pilotti E, et al. Antibody complementarity-determining regions (CDRs) can display differential antimicrobial, an- tiviral andantitumor activities. Plos One. 2008;3:e2371.
+23. Raafat D, Otto M, Reppschläger K, Iqbal J, Holtfreter S. Fighting staphylococcus aureus bioﬁlms with monoclonal antibodies. Trends Microbiol. 2019;27:303–22.
+24. VarshneyAK,KuzmichevaGA
+38. Bassères E, Endres BT, Khaleduzzaman M, Miraftabi F, Alam MJ, Vickers RJ, et al. Impact on toxin production and cell morphology in Clostridium difﬁcile by ridinilazole (SMT19969), a novel treatment for C. difﬁcile infection. J AntimicrobChemother. 2016;71:1245–51.
+39. Henry BD, Neill DR, Becker KA, Gore S, Bricio-Moreno L, Ziobro R, et al. Engineered liposomes sequester bacterial exotoxins and protect from severe invasive infections in mice. NatBiotechnol. 2015;33:81–8.
+40. BrozyJ,SchlaepferE,MuellerCKS,RochatM-A,RampiniSK, Myburgh R, et al. Antiviral activity of HIV gp120-targeting bispeciﬁc T cell engager antibody constructs. J Virol. 2018;92:1–13.
+41. Ophinni Y, Inoue M, Kotaki T,

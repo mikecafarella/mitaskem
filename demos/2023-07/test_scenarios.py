@@ -1,5 +1,6 @@
-from gpt_key import GPT_KEY
 from server import app
+import os
+GPT_KEY = os.environ.get('OPENAI_API_KEY')
 from fastapi.testclient import TestClient
 import json 
 test_papers = [

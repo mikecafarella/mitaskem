@@ -1,0 +1,8 @@
+We have a set of variable extraction with variable ID, variable name and variable description:
+[EXTRACT]
+
+And the following is the variable extraction ground truth:
+[GROUND]
+
+Check both the extraction set and the ground truth set, and check if the extracted variable is correct or not (Please focus on the variable name and description).  Please evaluate the whole task with precision and recall based on the correctness check result on each extracted variable. Please return the values only and start with the precision value, followed by a comma then the recall value.
+Then, explain how you get both numbers in the second line.

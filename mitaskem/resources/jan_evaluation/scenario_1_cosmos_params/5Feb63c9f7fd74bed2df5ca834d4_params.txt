@@ -1,0 +1,158 @@
+10 - "natural experiment"
+11 - social distancing
+12 - case numbers
+15 - infections
+16 - equilibrium setpoint
+17 - mathematical model
+18 - lockdown efficacies
+19 - vaccination coverage
+20 - estimates
+21 - observed phenomena
+22 - longitudinal analysis
+23 - SARS-CoV-2
+24 - lockdown and vaccine efficacy
+25 - Keywords
+26 - COVID-19
+27 - epidemiology
+28 - infection dynamics
+38 - viral expansion
+39 - national vaccination
+41 - regions within nations
+42 - longitudinal modeling
+43 - SIR model
+44 - mathematical epidemiology
+45 - virus, its host
+46 - s-curve trajectory
+47 - COVID-19 dynamics
+48 - complexity
+49 non-trivial equilibrium setpoint.
+50 A key criterion of epidemic expansion
+51 basic reproductive number (Ro)
+52 active infectious individual
+53 SIR or similar models
+54 Ro≥1
+55 Ro<1
+99 - data shape
+100 - Inclusion criteria
+101 - 10-fold mean difference between PCR tests and positive confirmed cases
+102 - high GDP (PPP) per capita
+103 - approximately one log decrease in infections from peak to minimum rates during lockdowns
+104 - 45 units qualifying
+105 - 24 European nations, Australia and New Zealand, the UK and the four nations constituting the UK, 10 USA states, and four Asian nations
+106 - Lockdown interventions, mobility and vaccination coverage
+107 - Dates for national policy lockdown initiation and termination
+108 - COVID-19 stringency index
+109 - Mobility
+110 - 4 doses of vaccine
+120 - βVS
+121 - δI
+122 - pI
+123 - cV
+128 - η(t)
+129 - 1/δ
+130 - p/c
+135 - Ro=βσp/(δc)
+136 - r2+(δ+c)r+δc(1−Ro)
+137 - r=δ(Ro−1)
+148 - β'=βp/c
+155 - r='S1−, where S1 is the level of available susceptibles at t1
+156 - r can be obtained directly from the observed slope on the semi-log graph
+157 - its doubling-time is t2=ln(2)/r
+159 - Initially, infections rise exponentially
+160 - During stringent lockdown and effective cessation of viral transmission, between t0 and t1
+161 - infection decays exponentially with a half-life of t½=ln(2)/r0
+162 - where r0 is derived from the slope of the ln-transformed infection data
+174 - Ro=1+r(r++c)/c
+175 - Ro=1+r/
+180 - n
+182 - Oi and Pi are the observed and expected values, for n datapoints
+184 - ( ) t    0  , otherwise  for each intervention wave
+185 - the proportion of the population needed to be vaccinated in order to block community spread, known as "herd immunity" threshold is [47,48]:
+188 - H=1−1
+Figure 2. COVID-19 case levels for 10 nations with no or ineffective lockdowns
+Table 1. COVID-19 kinetic characteristics in countries with no effective lockdowns
+growth steady state State weeks logI ± SD rate t2 Argentina 0.2 2.8 25 2.2 ± 0.3
+Brazil 0.6 1.1 13 2.4 ± 0.2
+Chile 0.4 1.6 13 2.4 ± 0.3
+Colombia 0.3 2.4 21 2.4 ± 0.3
+Costa Rica 0.5 1.3 26 2.4 ± 0.5
+Ecuador 1.3 0.5 19 1.9 ± 0.1
+El Salvador 0.4 1.7 17 1.8 ± 0.3
+India 1.1 0.6 20 3.9 ± 0.5
+Iran 0.2 4.1 45 2.3 ± 0.4
+Figure 4. COVID-19 positive confirmed cases ten US states conforming to inclusion criteria from February 2020 to September 2021.
+Australia and New Zealand: February 2020 to September 2021
+Israel: 1.5 weeks, 1.3, 0.3, 2.2, 33, 37, 0.7, 1.0, 2.6 ± 0.3, 93, 1.8, 0.17, 0.5, 1.3, 0.3, 2.7, 0.3, 2.2, 44, 29, 2.4 ± 0.3
+Luxembourg: 1.9, 0.15, 0.6, 1.2, 0.4, 1.7, 0.4, 1.9, 47, 30, 2.5 ± 0.1
+New Zealand: 1.7, 0.33, 0.6, 1.1, 1.5, 0.5, 0.2, 3.1, 40, 2.0 ± 0.3
+Norway: 1.5, 0.19, 0.4, 1.8, 0.4, 1.8, 0.2, 3.3, 33, 22, 1.3 ± 0.2
+Slovenia: 1.4, 0.19, 0.7, 0
+281 - decay and rebound slopes among countries of similar magnitude
+282 - infection waves within countries
+285 - initial exponential growth phase
+286 - basic reproductive number (Ro)
+288 - recovery/removal rate constant
+290 -  (0.4-0.5)
+291 - r (0.2-0.3)
+293 - Herd immunity and inhibition of infection by vaccination
+305 - COVID-19 cases
+307 - prior to vaccination deployment
+313 - initial exponential phase of the pandemic
+316 - physical contact
+317 - infection rates by 10-fold
+319 - interventions to block COVID-19
+321 - statistically significant parameters
+None
+2.3 - England and Wales
+2.0 - England and Wales
+2.1 - England and Wales
+49 - EarlyCOVID-19 studies
+50 - EarlyCOVID-19 studies
+51 - Historical influenza pandemics
+52 - Seasonal influenza outbreaks
+53 - Some studies
+45 - Israel
+1.03 - Israel
+30 - Herd immunity threshold
+1.2 - Post-lockdown rebounds doubling times
+0.3 - Post-lockdown rebounds doubling times
+4.4 - First five infection waves
+10.6 - First five infection waves
+450 Estimating the generation interval and inferring the latent period of COVID-19 from the contact tracing data. 
+451 Epidemics. 2021;36: 100482.
+452 doi:10.1016/j.epidem.2021.100482
+453 Incubation Period and Other Epidemiological Characteristics of 2019 Novel Coronavirus Infections with Right Truncation: A Statistical Analysis of Publicly Available Case Data.
+454 J Clin Med. 2020;9: 538.
+455 doi:10.3390/jcm9020538
+456 The Incubation Period of Coronavirus Disease 2019 (COVID-19) From Publicly Reported Confirmed Cases: Estimation and Application.
+457 Ann Intern Med. 2020;172: 577–582.
+458 doi:10.7326/M20-0504
+459 World Dev Indic Database. 2021;International Comparison Program.
+478 SIAM J Appl Math. 2003;63: 1313–1327.
+480 Masters Thesis, Bar Ilan University. 2000.
+481 Nat Rev Immunol. 2002;2: 28–36.
+482 doi:10.1038/nri700
+483 J
+Israel 60 0.59    Reproduction number
+Italy 99 0.51    Reproduction number
+Netherlands 50 0.6    Reproduction number
+Norway 80 0.47    Reproduction number
+Slovenia 75 0.35    Reproduction number
+Switzerland 50 0.69    Reproduction number
+England 66 0.34    Reproduction number
+Wales 80 0.34    Reproduction number
+Scotland 61 0.31    Reproduction number
+N. Ireland 72 0.29    Reproduction number
+Malaysia 50 0.6    Reproduction number
+Singapore 60 0.4    Reproduction number
+Connecticut 75 0.55    Reproduction number
+Illinois 83 0.50    Reproduction number
+Massachusetts 99 0.49    Reproduction number
+N. Hampshire 91 0.51    Reproduction number
+New Jersey 44 0.80    Reproduction number
+New York 84 0.47    Reproduction number
+Pennsylvania 65 0.41    Reproduction number
+Rhode Island 98 0.61    Reproduction number
+18 0.12    Reproduction number
+69 0.51    Reproduction number
+62-75 0.46-0.56    Reproduction number

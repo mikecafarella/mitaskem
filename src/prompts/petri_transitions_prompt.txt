@@ -1,5 +1,0 @@
-Here is a text description of a model:
-
-[TEXT]
-
-Represent this model as a Petri net and print the names of the parameter variables (excluding the places) on one line.

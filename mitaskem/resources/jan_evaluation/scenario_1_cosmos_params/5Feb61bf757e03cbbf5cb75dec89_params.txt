@@ -1,0 +1,88 @@
+1 - Cost to the economy
+2 - Individuals' physical well-being
+3 - Individuals' mental well-being
+4 - Impact on COVID-19 cases
+5 - Public health measure relaxation
+6 - Keeping cases under control
+7 - Variants of concern are more transmissible
+8 - Variants of concern may evade host immunity
+9 - SARS-CoV-2 may evolve further
+10 - Vaccine uptake
+11 - Vaccination coverage
+12 - Waning immunity
+13 - Vaccine efficacy
+15 sub-populations: by age {0–9, 10–19, 20–29, . . . , 70–79, 80+} and work status {20 − 29e, 30 − 39e, . . . , 70 − 79e}
+Estimates of the reproductive number for COVID-19 in the absence of social distancing restrictions range from 2 to 4 for non-VOC SARS-CoV-2 [15]
+RNPI = 2.2 to RNPI = 2.5
+None
+2.4 to 5
+17
+18, 19
+20
+21
+22
+None
+0.2% per day in July-Aug
+0.22% per day from September onwards
+July 3rd 2021
+1/σ days
+1/γ days
+f susceptibles per unit time
+None
+90% vaccination coverage
+70% vaccination coverage
+RNPI = 2.5
+RNPI = 3.0
+RNPI = 4.0
+RNPI = 5.0
+20% of the population declines the vaccine
+10% are not eligible
+80% effective against infection
+fm = 57.6%
+R∗ 0 = 2.35
+None
+60%, with corresponding R∗ 0 of 2.5
+RNPI = 5
+RNPI = 4
+RNPI = 3.5
+1 year
+2-3 year immunity
+f is ﬁxed at 2 cases per 100K per day
+ve at 80%
+D at 2 years
+500-day period
+80% to 40%
+A. The reproduction number (RNPI) and duration of immunity (D): 3 and 1.5 years
+B. RNPI and vaccine efficacy (νe): 3 and 80%
+C. Sudden shift in vaccine efficacy: 40%
+D. Importation rate: 6 imported infections per 100K per day
+E. Vaccine efficacy (νe): 80%
+F. Duration of immunity (D): 1.5 years
+f = 3 cases per 100K per day
+ν = 0.7% per day
+D = 2 years
+ve = 80%
+RNPI = 3
+None
+33 - type A influenza viruses experience both antigenic shift and drift
+34 - Booster doses could further reduce population susceptibility
+35 - Cross immunity and/or residual immunity from vaccination or previous exposure
+36 - Reported COVID-19 cases have been hospitalized at a relatively constant rate around 9%
+37 - Early observations suggest that disease-blocking immunity wanes more slowly than infection-blocking immunity
+12 - Abdool Karim SS, de Oliveira T. New SARS-CoV-2 variants—clinical, public health, and vaccine implications. New England Journal of Medicine. 2021;384(19):1866– 1868.
+13 - Bernal JL, Andrews N, Gower C, Gallagher E, Simmons R, Thelwall S, et al. Effec- tiveness of COVID-19 vaccines against the B. 1.617. 2 variant. medRxiv. 2021.
+14 - Bubar KM, Reinholt K, Kissler SM, Lipsitch M, Cobey S, Grad YH, et al. Model- informed COVID-19 vaccine prioritization strategies by age and serostatus. Science. 2021;371(6532):916–921.
+15 - Inglesby TV. Public health measures and the reproduction number of SARS-CoV-2. Jama. 2020;323(21):2186–2187.
+16 - Tupper P, Otto SP, Colijn C. Fundamental limitations of contact tracing for COVID- 19. FACETS. 2021.
+17 - Anderson SC, Edwards AM, Yerlanov M,
+D = 2 years
+f = 3 cases per 100K per day
+ve = 80%
+RNPI = 5
+21.12.18.21268002 ; this version posted December 19, 2021
+2021-01-01 ; Simulation starts
+2021-02-15 ; The number of cases gradually decreased to 400
+2021-03-21 ; The number of cases gradually increased to 575
+2021-04-15 ; The number of cases rapidly increased to 1250
+2021-07-22 ; The number of cases rapidly decreased to 45
+2021-09-01 ; The number of cases gradually increased to 500

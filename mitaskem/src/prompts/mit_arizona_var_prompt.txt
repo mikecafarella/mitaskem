@@ -1,0 +1,11 @@
+I have some variables extracted from a paper with ID, name, and the discription of the varible:
+
+[MIT]
+
+Then I have another version of the same paper with the ID, name, and the discription of the varible:
+
+[ARIZONA]
+
+Can you find the best match from the second version of variable extraction for each variable in the first variable extraction?
+If you can, then print the ID mapping of these variables, one on each line as follows:
+within each line start with the ID from first variable extraction, then print a colon, and then follow it with the ID from the second variable extraction.

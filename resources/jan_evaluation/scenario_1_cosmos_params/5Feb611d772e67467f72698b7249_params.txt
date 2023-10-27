@@ -1,8 +1,0 @@
-False negative rate of a PCR test for asymptomatic/ 15%, 15% FNpcra, FNpcrs 
-False negative rate of a rapid test for asymptomatic/ 30%, 30% FNrapa, FNraps 
-False positive rate of a PCR test for asymptomatic/ 5%, 5% FPpcra, FPpcrs 
-False positive rate of a rapid test for asymptomatic/ 10%, 10% FPrapa, FPraps 
-Tpcr 
-Percentage of students that have access to PCR tests Deﬁned in each scenario 
-Percentage of students that have access to rapid antigen tests Deﬁned in each scenario 
-None

@@ -1,0 +1,5 @@
+Here is some text:
+
+[TEXT]
+
+This text may contain numbers. If it does, print them together with what they refer to, printing one number and its reference on each line. If it doesn't, print "None".

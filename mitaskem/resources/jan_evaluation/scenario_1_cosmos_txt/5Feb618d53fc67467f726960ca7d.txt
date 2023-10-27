@@ -1,0 +1,110 @@
+medRxiv preprint doi: https://doi.org/10.1101/2021.09.19.21263799 ; this version posted September 23, 2021. The copyright holder for this preprint (which was not certified by peer review) is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity. It is made available under a CC-BY-NC-ND 4.0 International license .
+Spatial simulation of COVID-19 new cases development
+Chen Isaac Kent School, Kent, CT USA cheni22@kent-school.edu Liu F. New Jersey Science Academy, NJ USA
+September 19, 2021
+Abstract
+The time dependent SIR model is extended to simulate infection across spatial boundaries. We used New Jersey data as an example to test the extended SIR model. Infection from neighboring counties are modelled by connectivity matrix where each pair of neighboring counties has an element in the connectivity matrix. The magnitude of this matrix element represents the degree to which the infected from one county can aﬀect the susceptible in one of its neighboring counties. Simulated result from the extended spatial SIR model is compared with observed new COVID-19 cases measured in the 21 counties in New Jersey. The extended model has to solve 84 simulated functions simultaneously and the large number of parameters involved in the spatial SIR model are auto tuned using genetic algorithm. Keywords: SIR model, COVID-19, spatial, genetic algorithm pendence only [1] [10]. Studies investigating 1 Introduction spatial transmission focus on observations [11], SIR model [1] [2] has been used extensively in [12], [13]. Few work [14] focuses on modelling modelling COVID-19 [3] [4] [5] [6] [7], [8], spatial transmissions of COVID-19. [9]. Most of the work focus on comparing the To model the spatial spread of COVID-19 measured and simulated new cases and evaluat- across area boundaries, we extend the ordinary ing the eﬀect of vaccination and quarantine ef- diﬀerential equations to partial diﬀerential equa- fect. The primitive SIR model has three groups tions to include a spatial diﬀusion term due of population that are coupled with each other: to uneven proportion of infection across spatial susceptible, infected and recovered. Work done boundaries. The SIR populations of neighbor- by [5] has expanded the SIR model to include ing spatial regions are coupled through the dif- mortality eﬀect due to the more dangerous na- fusion term. In such an approach, the SIR pop- ture of COVID-19. ulations are functions of both time and space. An aspect of COVID-19 modelling that has These functions are solved from the set of par- not been extensively studied is how it can spa- tial diﬀerential equations. tially spread from countries to countries, states to states, and cities to cities. This is due to the In this study, we present how a spatially con- formulation of the primitive and extended SIR nected SIR model is used to model the COVID- model being diﬀerential equations with time de- 19 cases observed in the 21 counties in New Jer-
+20
+25
+30
+5
+35
+10
+1
+15
+NOTE: This preprint reports new research that has not been certified by peer review and should not be used to guide clinical practice.
+medRxiv preprint doi: https://doi.org/10.1101/2021.09.19.21263799 ; this version posted September 23, 2021. The copyright holder for this preprint (which was not certified by peer review) is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity. It is made available under a CC-BY-NC-ND 4.0 International license .
+2 SIR MODEL WITH SPATIAL CONNECTION
+sey, US. We also discuss how genetic algorithm come partial diﬀerential equations. is used to guide the auto tuning process for the large number of parameters involved in the equa- tions to ﬁnd the solution of the spatially con- ∂s nected SIR model equations. = −cs∇2i − βsi − λs ∂t ∂i = βsi − γi − αi + ωs∇2i ∂t ∂r = γi + λs 2 SIR Model with spatial con- ∂t ∂m nection = αi ∂t
+(5)
+(6)
+40
+(7)
+(8)
+60
+We start with the extended SIR model [5] for a single spatial location. where c represents diﬀusion rate in between connected spatial regions and s∇2i is the cou- pled term representing rate of change in infec- ds = −βsi − λ(t)s (1) tion due to diﬀerence in infection proportion in dt population between the spatial location and its di = βsi − γi − αi (2) neighboring locations. dt dr Because of the discrete nature of spatial loca- = γi + λ(t)s (3) dt tions that have been artiﬁcially designated, e.g. dm countries, states, and counties. The spatial con- = αi (4) dt nection term cs∇2i can be represented using ma- trix approach. Each matrix element describes connectivity between spatial regions that can af- where s, i, r, m represents total population fect each other. scaled susceptible, infected, recovered, and mor- tality proportions; β is the coupling coeﬃcient To make things more concrete, we applied the between local susceptible and infected popula- extended model in New Jersey that has 21 coun- tions dependent on the infection rate of COVID- ties. The connectivity matrix therefore has 21 by 19; λ(t) is a time dependent control measure 21 elements. But not all elements has non-zero function that transfers susceptible to recovered values. In this work, only counties neighboring population; γ represents the rate at which in- each other has a non-zero element in the matrix fected population can recover; ﬁnally α repre- representation. Ignoring exchange of infected sents the mortality rate of the infection. population from outside of New Jersey, we use 84 functions to represent the s, i, r, m variables With the introduction of spatial dependence, for 21 counties in New Jersey. We discretize the the SIRM populations become both time and equations into the following form, spatial dependent, therefore the equations be-
+65
+45
+70
+75
+2
+50
+55
+medRxiv preprint doi: https://doi.org/10.1101/2021.09.19.21263799 ; this version posted September 23, 2021. The copyright holder for this preprint (which was not certified by peer review) is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity. It is made available under a CC-BY-NC-ND 4.0 International license .
+3 AUTO TUNING SIR PARAMETERS
+Parameter Default Value α 1e-6 ds(j, t) β 1.5 (9) = −βsjcjk · i(k, t) − λ(t)sj dt γ 0.1/14 di(j, t) (10) λ 0.05 = βsjcjk · i(k, t) − γij − αij dt 0.05 cj,k dr(j, t) (11) = γij + λ(t)sj shift 90 (days) dt dm(j, t) Table 1: Default parameter for the spatial SIRM (12) = αij dt solver j is the index of the county that runs from 1 to 21. cjk is the spatial connection matrix that rep- 3 Auto tuning SIR parameters resents the propagation coeﬃcient across county Due to the large number of parameters involved boundaries between the current (j-th) county in the 84 diﬀerential equations including the ele- and k-th county. ments of the connection matrix, it is not feasible The term cjk · i(k, t) should be understood as to manually adjust all the parameters involved. a vector multiplication, We adopt the same approach in [6] to use genetic algorithm to auto tune the following parameters, K(cid:88) (13) cjk · i(k, t) = cjk · i(k, t) α, β, γ, λ, shift, cj,k for each county in New Jer- k=1 sey. where K is the total number of counties, in this First we deﬁne the residual function as case, 21 for New Jersey. Note that the diagonal N(cid:88) U(cid:88) elements of the connection matrix cjj ≡ 1 when R = (newcase(k, u) − newcase(k, u)(cid:48))2 k = j. Because each diagonal element of the con- u=1 k=1 nection matrix represents the coupling between the s and i function of the county itself. The where k represents the county, u represent the summation represents the eﬀective number of in- number of days from pandemic outbreak, new- fected cases that can infect susceptible popula- case(k,u) is from observation, and newcase(k,u)’ tion in the j-th county. is from model simulation. Note that the control measure term λ(t) is a Our goal is to minimize the function such that time dependent function [5] formulated after the simulation can match the observation as close sigmoid function, as possible. To minimize the residual, we will ﬁne tune all the parameters used in SIR model e(t−shift) through genetic algorithm. λ(t) = λ · (14) e(t−shift) + 1 The models is set up to start with an initial set of parameters for all the counties shown in The step wise shape of the sigmoid function al- Table 1. lows the model to turn on control measures such as quarantine, vaccination etc at time speciﬁed During each iteration, the parameters are mu- by the ’shift’ parameter. tated (updated) randomly (Equation 15) to 125
+80
+105
+110
+85
+115
+120
+90
+15) to 125
+95
+3
+100
+medRxiv preprint doi: https://doi.org/10.1101/2021.09.19.21263799 ; this version posted September 23, 2021. The copyright holder for this preprint (which was not certified by peer review) is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity. It is made available under a CC-BY-NC-ND 4.0 International license .
+4 RESULT
+Figure 1: The residual of the SIR Model getting lower as the genetic algorithm optimizes the vari- ables to better ﬁt the collected data. Figure 2: The SIR Model created curve (red) overlaid on top of recorded new cases (blue) for form a new genetic code. The mutated genetic Hudson County, NJ code is used to conﬁgure the 84 diﬀerential equa- tions for New Jersey, simulating new cases in each county by solving the 84 equations simul- slowly but surely the residual decreases over gen- taneously. erations of genetic mutation as shown in Figure 1. The decrease in residual means better agree- ment between simulated model result compared N ) (15) x(cid:48) = x(1 ± δ0e− n with observations. where x(cid:48) is the new genetic code which could be any of the parameters used in the simulation; x is the current genetic code; δ0 is the seed of 4 Result mutation; e− n N is the decay term that reduces the magnitude of mutation over time Using the SIR model, it is possible to use diﬀer- ential equations and a genetic algorithm to sim- After each iteration of simulation for 180 days ulate the propagation of a virus. The generated after the onset of COVID-19 in New Jersey, the curves, after going through many rounds of op- simulated new cases is used in the residual func- timizations by the genetic algorithm, are able to tion. If the residual decreases (Figure 1), the closely match the data provided by Johns Hop- mutated genetic code replaces the previous ge- kins for the number of cases in each county every netic code. Otherwise, the mutated genetic code day. is discarded and the previous code is used to start a new iteration of simulation. The observed new cases tend to ﬂuctuate sig- niﬁcantly (Figure 4) which creates diﬃculty for This process allows the algorithm to har- the residual calculation. Because the residual ness the computing power of the computers and
+150
+155
+130
+160
+135
+140
+4
+145
+medRxiv preprint doi: https://doi.org/10.1101/2021.09.19.21263799 ; this version posted September 23, 2021. The copyright holder for this preprint (which was not certified by peer review) is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity. It is made available under a CC-BY-NC-ND 4.0 International license .
+5 DISCUSSION
+Parameter Value α 8.2932e-07 β 1.3910 γ 0.0068 λ 0.0417 Bergen Aﬀecting Hudson 0.0443 Passaic Aﬀecting Hudson 0.0541 Essex Aﬀecting Hudson 0.0719 shift 71 (days) Table 2: Values of genetic variables for Hudson County after solving calculation uses the diﬀerence between observed daily new cases and predicted daily new cases, the ﬂuctuation in the observed new cases can Figure 3: Graph (red) overlaid on collected data deviate from the smooth predicted curve sig- (blue) for Passaic County, NJ (Specify the ﬁnal niﬁcantly and artiﬁcially increase the residual. genetic information used for the result.) Therefore a rolling average smoothing is applied to the observed new cases data points to reduce prediction (red) after 4000 iterations. such artiﬁcial cause of residual diﬀerence. An- Counties with large observed new cases tend to 190 other beneﬁt of smoothing the observed daily show good agreement between observation and new cases helps to remove outliers, such as a day prediction such as Hudson (Figure 2) and Pas- with 0 recorded cases among days with hundreds saic (Figure 3). Table 2 and Table 3 show the pa- of them. Removing such outliers also reduces rameters generated from genetic algorithm used calculated residual. to produce the close agreement for those two 195 The genetic algorithm is able to create a simu- counties. These numbers can be compared with lated virus propagation curve for new cases each Table 1 to examine how the parameters have day and optimize it to match the number of new evolved by minimization of the residual through cases for each county as closely as possible. The genetic algorithm. degree to which they match is measured by the residual. The smaller the residual the better the agreement between the observation and the pre- 5 Discussion diction. Residual between observation and pre- diction for the ﬁrst 200 trials in Figure 1. The new case patterns in the 21 counties of New To reach good agreement between observation Jersey since the onset of the COVID-19 pan- and prediction, large number of iterations (gen- demic are modelled by solving discrete diﬀer- erations of mutation) is needed. Figure 2 shows ential equations coupled through a connectiv- how the observed (blue) matches the numerical ity matrix to simulate spatial connection. The
+Counties with large observed new cases tend to 190
+165
+to produce the close agreement for those two 195
+170
+200
+175
+180
+205
+5
+185
+medRxiv preprint doi: https://doi.org/10.1101/2021.09.19.21263799 ; this version posted September 23, 2021. The copyright holder for this preprint (which was not certified by peer review) is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity.
+It is made available under a CC-BY-NC-ND 4.0 International license .
+5 DISCUSSION
+Parameter Value α 8.2967e-07 β 1.7601 γ 0.0063 λ 0.0462 Bergen Aﬀecting Passaic 0.0379 Essex Aﬀecting Passaic 0.0410 Morris Aﬀecting Passaic 0.0407 Sussex Aﬀecting Passaic 0.0318 shift 85 (days)
+Table 3: Values of genetic variables for Passaic County after solving
+
+elements of the connectivity matrix represents the inﬂuence of infection from the neighbouring counties. Due to the large number of parameters involved, genetic algorithm is used to ﬁne tune the relevant parameters used in the modelling. One noticeable artifact of the genetic algo- rithm is that it prioritizes optimizations for counties with higher numbers of cases, since this optimization will lower the residual more dra- matically. However, this neglects optimizations on counties with fewer cases (See Figure 4). To alleviate this, we separated each county into one of three tiers, which each tier corresponding to a range of cases. By allowing the genetic algorithm to optimize counties within each tier separately, it is able to ﬁrst focus on counties with high cases and then work separately on counties with fewer cases.
+Figure 4: The genetic algorithm (red) has not optimized the residual for Hunterdon County well because it has very few cases (at max 40 per day). Also note the importance of smooth- ing the data to remove outliers with 0 cases.
+210
+The genetic algorithm is sometimes unable to 235
+with provided data. However, ideally we would 240
+215
+220
+245
+Another problem with the genetic algorithm is its inability to lower the residual past a certain point. Once it reaches this point, further gen- erations will create residuals that hover around approximately the same value. For our study with the 21 counties in NJ, this happens around 2 ∗ 107. This suggests a local stationary point
+225
+in the space spanned by the parameters used by the algorithm dominated by the high new cases numbers from certain counties such as Passaic (Figure 3). The genetic algorithm is sometimes unable to 235 change the variables enough to lower the residual drastically, requiring human intervention. We may have to manually change certain variables for certain counties to get their graphs to match with provided data. However, ideally we would 240 never have to intervene and the algorithm would process everything automatically, because hu- man intervention can disrupt the results of other counties due to the spatial connection aspect we implemented. This makes the experiment less applicable to the natural situation of the propa- gation of a virus.
+6
+230
+medRxiv preprint doi: https://doi.org/10.1101/2021.09.19.21263799 ; this version posted September 23, 2021. The copyright holder for this preprint (which was not certified by peer review) is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity. It is made available under a CC-BY-NC-ND 4.0 International license .
+REFERENCES REFERENCES
+[3] Matteo Chinazzi, et al, ”The eﬀect of travel The spatial connection aspect that was imple- 285 restrictions on the spread of the 2019 novel mented works quite well. Counties that are di- 250 coronavirus (COVID-19) outbreak”, Sci- rectly adjacent to others with large proportions ence, 24 Apr 2020, Vol 368, Issue 6489, pp. of cases tend to also have larger proportions of 395-400, DOI: 10.1126/science.aba9757 cases, simulating infected people who traveled between the counties. However, it is still not [4] Li Qun, et al, ”Early Transmission Dy- perfect, as certain counties seemed to be unaf- 290 namics in Wuhan, China, of Novel Coron- 255 fected by neighboring counties, even with dras- avirus–Infected Pneumonia”, N Engl J Med tic changes in the spatial coeﬃcient that aﬀects 2020; 382:1199-1207, DOI: 10.1056/NEJ- the number of people traveling between them. Moa2001316 This is most pronounced in counties with lower population, as the genetic algorithm tends to fa- [5] Lee, C. and Liu, F. ”Eﬀect of control mea- 260 vor counties with higher population even within 295 sure on the development of new COVID- each population tier in our tiered model. 19 cases through SIR model simulation”, With more optimizations in code and a better medRxiv 2020.10.27.20220590 understanding of initial variables, better results may be produced. This method allows for great [6] Lee, K. and Liu, F. ”Auto tuning SIR 265 ﬂexibility, such as changes in government regu- model parameters using genetic algorithm”, 300 lations, because they can be reﬂected by sim- medRxiv 2021.07.19.21260722 ply changing a variable. Now, it is important to [7] Copper I., et al (2020), ”A SIR model as- quantify the eﬀect of changes in human behavior sumption for the spread of COVID-19 in versus the change in the variables. With better diﬀerent communities”, Chaos, Solitons and 270 insight into human behavior in the virus, it be- Fractals 139 (2020) 110057 comes possible to roughly estimate the impact of a virus in the future, and plans can be made 305 [8] Giordano, G.; Blanchini, F.; Bruno, R.; accordingly. Colaneri, P.; Di Filippo, A.; Di Matteo, A.; Colaneri, M. (2020). ”Modelling the COVID-19 epidemic and implementation of References population-wide interventions in Italy”. Nat 310 Med 26, 855–860 (2020). 275 [1] Kermack, W. O.; McKendrick, A. G. (1927). ”A Contribution to the Mathe- [9] Riou J, Althaus CL. ”Pattern of early matical Theory of Epidemics”. Proceed- human-to-human transmission of Wuhan ings of the Royal Society A. 115 (772): 2019 novel coronavirus (2019-nCoV), De- 700–721. Bibcode:1927RSPSA.115..700K. cember 2019 to January 2020. Euro Surveill. 280 doi:10.1098/rspa.1927.0118. January 20, 2020 https://www.ncbi.nlm 315 .nih.gov/pmc/articles/PMC7001239/ [2] David Smith and Lang Moore, ”The SIR [10] Ashlynn R. Daughton, NicholasGenerous, Model for Spread of Disease”, Convergence Reid Priedhorsky & Alina Deshpande re- (December 2004)
+7
+medRxiv preprint doi: https://doi.org/10.1101/2021.09.19.21263799 ; this version posted September 23, 2021. The copyright holder for this preprint (which was not certified by peer review) is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity.
+It is made available under a CC-BY-NC-ND 4.0 International license .
+REFERENCES REFERENCES
+ceived: 03 October 2016 accepted: 28 320 February 2017 Published: 18 April 2017
+[11] Zheng R, Xu Y, Wang W, Ning G, Bi
+[11] Zheng R, Xu Y, Wang W, Ning G, Bi Y. Spatial transmission of COVID-19 via public and private transportation in China. Travel Med Infect Dis. 2020;34:101626. doi:10.1016/j.tmaid.2020.101626
+325
+[12] Liu, J., Zhou, Y., Ye, C. et al. The spatial
+[12] Liu, J., Zhou, Y., Ye, C. et al. The spatial transmission of SARS-CoV-2 in China un- der the prevention and control measures at the early outbreak. Arch Public Health 79, 8 (2021). https://doi.org/10.1186/s13690- 021-00529-z
+330
+[13] Rader, B., Scarpino, S.V., Nande, A. et
+[13] Rader, B., Scarpino, S.V., Nande, A. et al. Crowding and the shape of COVID-19 epidemics. Nat Med 26, 1829–1834 (2020). https://doi.org/10.1038/s41591-020-1104-0
+335
+[14] Danon, L. et al, 2021A spatial model
+[14] Danon, L. et al, 2021A spatial model of COVID-19 transmission in England and Wales: early spread, peak tim- ing and the impact of seasonalityPhil. Trans. R. Soc. B3762020027220200272 http://doi.org/10.1098/rstb.2020.0272
+340
+8
