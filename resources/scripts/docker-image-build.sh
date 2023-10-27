@@ -1,5 +1,5 @@
 COMMIT_SHA="$(git rev-parse HEAD)"
-VERSION="1.1.1"
+VERSION="1.2.0"
 echo "Building docker image with commit sha: ${COMMIT_SHA} and version: ${VERSION}"
 docker build --build-arg="COMMIT_SHA=$COMMIT_SHA" --build-arg="VERSION=$VERSION" \
   --platform linux/amd64 \

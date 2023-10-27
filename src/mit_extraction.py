@@ -26,8 +26,11 @@ def load_concise_vars(input_file, o_file):
             if 'id' not in item['payload']:
                 continue
             variable_id = item['payload']['id']['id']
-            variable_name = item['payload']['names'][0]['name']
-            value = item['payload']['descriptions'][0]['source']
+            variable_name = item['payload']['mentions'][0]['name']
+            value = ""
+            for description in item['payload']['text_descriptions']:
+                value += '  '
+                value += description['description']
             output_line = f"{variable_id}, {variable_name}: {value}\n"
 
             # Write the extracted information to the output file
@@ -54,19 +57,21 @@ def load_arizona_concise_vars(input_file, o_file):
     # Read JSON data from the file
     with open(input_file, 'r') as file:
         data = json.load(file)
-
+    # print(data)
+    if 'outputs' in data:
+        data = data['outputs'][0]['data']
     # Extract relevant information
     output = []
     for item in data['attributes']:
-        if 'id' not in item['payload'] or 'names' not in item['payload'] or 'descriptions' not in item['payload']:
+        if 'id' not in item['payload'] or 'mentions' not in item['payload'] or 'text_descriptions' not in item['payload']:
             continue
         variable_id = item['payload']['id']['id']
-        print(variable_id)
-        variable_name = item['payload']['names'][0]['name']
-        if len(item['payload']['descriptions']) == 0:
+        # print(variable_id)
+        variable_name = item['payload']['mentions'][0]['name']
+        if len(item['payload']['text_descriptions']) == 0:
             value = ""
         else:
-            value = item['payload']['descriptions'][0]['source']
+            value = item['payload']['text_descriptions'][0]['description']
         output.append(f"{variable_id}, {variable_name}: {value}\n")
 
 

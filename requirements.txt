@@ -1,5 +1,5 @@
 cryptography==39.0.0
-fastapi==0.89.1
+fastapi~=0.100.0
 openai~=0.27.8
 pandas==1.5.3
 uvicorn==0.20.0
@@ -9,5 +9,5 @@ langchain==0.0.294
 requests~=2.28.1
 python-multipart~=0.0.6
 tiktoken~=0.4.0
-askem_extractions @ git+https://github.com/ml4ai/ASKEM-TA1-DataModel.git@3664a1e
+askem_extractions @ git+https://github.com/ml4ai/ASKEM-TA1-DataModel.git@80feba4
 aiohttp~=3.8.4
