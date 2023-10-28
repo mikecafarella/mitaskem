@@ -1,3 +1,4 @@
 # dev/notebooks only
 ta1viewer @ git+https://github.com/orm011/ta1viewer.git@main
-ruff # linting/formatting
+watchfiles # for uvicorn reload
+pytest
