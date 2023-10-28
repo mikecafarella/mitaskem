@@ -13,6 +13,19 @@ The MIT team consists of (in alphabetical order):
 - [Theo Olausson](https://theoxo.xyz/)
 - [Anna Zeng](https://people.csail.mit.edu/annazeng/)
 
+## installing: 
+`pip install -e .`
+
+## developing and testing
+From within mitaskm root:
+`uvicorn --reload --reload-dir=./mitaskem/ mitaskem.api.server:app`
+
+This will hot-reload the project as you change files.
+
+## testing:
+`pytest --nbmake --overwrite  ./demos/2023-07/*ipynb`
+This will run the july scenarios
+
 
 ## Public API
 

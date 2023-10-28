@@ -41,8 +41,7 @@ RUN mv epi_2023-07-07_nodes.tsv $HOME/.cache/mitaskem/epi_nodes.tsv
 # Copy src code in and start API
 RUN mkdir /mitaskem
 COPY . /mitaskem
-WORKDIR /mitaskem
-RUN pip install -r requirements.txt
+WORKDIR /mitaskem 
 RUN pip install -e .
 
 CMD ["uvicorn", "mitaskem.api.server:app", "--reload", "--host", "0.0.0.0", "--port", "8000"]
