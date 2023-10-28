@@ -75,9 +75,10 @@ def _get_retriever():
             print('loading retriever from cache')
             start = time.time()
             _g_retriever = TFIDFRetriever.load_local(str(CACHE_BASE), g_retriever_filename)
-            print('done loading retriever from cache, time={}').format(time.time() - start)
+            print(f'done loading retriever from cache, {time.time() - start=}')
         else:
             print('building retriever from scratch')
+            start = time.time()
             ret = build_node_retriever(g_kgpath, limit=4)
             ret.save_local(str(CACHE_BASE), g_retriever_filename)
             _g_retriever = ret

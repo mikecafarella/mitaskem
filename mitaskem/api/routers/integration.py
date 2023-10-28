@@ -21,7 +21,7 @@ sys.path.append(
 router = APIRouter()
 
 
-@router.post("/get_mapping", tags=["TA1-Integration"])
+@router.post("/get_mapping", tags=["TA1-Integration"], response_model=AttributeCollection)
 async def upload_files_integration(gpt_key: str, mit_file: UploadFile = File(...), arizona_file: UploadFile = File(...)):
     """
         Upload MIT and Arizona extractions in TA1 schema, build entity mapping and align them together.
