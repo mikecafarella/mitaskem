@@ -18,6 +18,8 @@ The MIT team consists of (in alphabetical order):
 
 ## developing and testing
 From within mitaskm root:
+set up environment, specifically `OPENAI_API_KEY`, to run the notebooks.
+
 `uvicorn --reload --reload-dir=./mitaskem/ mitaskem.api.server:app`
 
 This will hot-reload the project as you change files.
