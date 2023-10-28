@@ -2,3 +2,4 @@
 ta1viewer @ git+https://github.com/orm011/ta1viewer.git@main
 watchfiles # for uvicorn reload
 pytest
+nbmake
