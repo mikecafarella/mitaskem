@@ -1,0 +1,10 @@
+I am ranking a list dkg concepts based on their relevance to a given term:
+
+Here is the term info:
+[TARGET]
+
+I have the following candidate dkg concepts with ID, name, etc:
+[SET]
+Please rank the concept based on its relevance to the given term.
+List the id only (one id for each line).
+Please skip the dkg concept if it's not relevant.

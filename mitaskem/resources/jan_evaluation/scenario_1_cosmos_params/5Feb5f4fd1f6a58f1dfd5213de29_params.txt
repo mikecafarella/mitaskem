@@ -1,0 +1,59 @@
+β 0.38 - Transmission rate
+rβ 0.50 - Reduced transmission rate from undiagnosed severe cases
+lp (days) 5.6 - Average latency period
+lpni (days) 1.1 - Latency period (non infectious)
+lpi (days) 4.5 - Latency period (infectious)
+niϵ 0.90 - Probability of transmission from exposed latent to presymptomatic infectious state
+iϵ 0.20 - Probability of transmission from presymptomatic infectious state to symptomatic state
+pS 0.01 - Probability of developing severe symptoms
+pDM 0.01 - Probability of death in mild cases
+pDS 0.04 - Probability of death in severe cases
+pDxM 0.0001 - Probability of being diagnosed/detected in mild cases
+pDxS 0.06 - Probability of being diagnosed/detected in severe cases
+μ 0.142 - Rate of transition from Symptomatics to either Recovered or Deaths
+Total 100000 - Total Population for the given model
+Fraction Susceptible / Total Susceptible Population (fs) - Relative calculated Reflects the effect of decrease in transmission as fewer
+1 & 2 (in episode of behavioral risk reached Pakistan before it): 60 days
+Reaction Times 1 & 2 (days): 3 days
+Max Behavioral Risk Reduction 1 & 2: 0.675, 4.3
+Inverse Function: 1
+Lockdown Start Time 1 & 2 (days): 60, 162
+Limited Lockdown Impacts 1 & 2: 1
+Duration of Lockdowns (4): 52, 38
+1 - Unity value
+2 - Limited Controls 1 & 2
+5 - 0.6 bed per thousand people
+6 - Mortality rate without COVID-19 treatment
+7 - Mortality rate after COVID-19 treatment
+8 - Total ITU beds available for ventilators
+None
+Total Population: 207,774,520
+Peak Season: 0
+Seasonal Cycle: 324 days
+Total Converting: ∂PI/∂t = MC_t + SC_t
+Milds Recovering: ∂MS(MR)/∂t = MS x (1-pDM)
+Milds Dying: ∂MS(MD)/∂t = MS x pDM
+Severe Recovering: ∂SS(SR)/∂t = SS x (1-pDS)
+Severes Dying: ∂SS(SD)/∂t = SS x pDS
+None
+niϵ and iϵ: 2, (Wallinga & Teunis, 2004)
+pS: 0.01
+R0: 4.4, (10–14)
+β: 0.383
+rβ: 0.5, (16)
+pDM: 0.01, (20)
+CMR: 0.67, 0.35, (6), (21)
+Total population: 207,774,520, (5)
+Figure 8. Shows the experiment 3 curves for susceptible, presymptomatic infectious, Total symptomatic, Recovered and Deaths against the simulation time period respectively.
+Figure 9. Shows the experiment 3 curve for Deaths per day against the simulation time period respectively.
+Figure 10. Shows the experiment 4 curve for Total symptomatic cases against the simulation time period.
+Figure 11. Shows the experiment 5 curve for Deaths per day against the simulation time period comparing scenarios with 4000 vs 40000 ICU bed availability in Pakistan.
+Figure 12. Shows the experiment 5 curve for Total symptomatic cases against the simulation time period comparing scenarios with 124700 vs 1 Million public health capacity units / beds availability in Pakistan.
+None
+6. Arentz M, Yim E, Klaff L, Lokhandwala S, Riedo FX, Chong M, et al. Characteristics and Outcomes of 21 Critically Ill Patients With COVID-19 in Washington State. JAMA. 2020 Mar 19;
+7. Study in ICU finds 30.9% mortality rate from COVID-19 - Futurity [Internet]. [cited 2020 Aug 22].
+8. Pakistan Plans Another COVID-19 Lockdown. Will It Work? – The Diplomat [Internet]. [cited 2020 Aug 22].
+9. COVID-19 pandemic in Pakistan - Wikipedia [Internet]. [cited 2020 Aug 22].
+10. Jee Y. WHO International Health Regulations Emergency Committee for the COVID-19 outbreak. Epidemiol Health. 2020 Mar 19;42:e2020013.
+11. Statement on the second meeting of the International Health Regulations (2005) Emergency Committee regarding the outbreak of novel coronavirus (2019-nCoV) [Internet]. [cited 2020 Aug 22].
+12. Majumder MS, Mandl KD. Early in the epidemic: impact of preprints on global discourse about COVID- 19 transmiss

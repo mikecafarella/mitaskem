@@ -1,0 +1,248 @@
+1 - Giulia Giordano 
+2 - Franco Blanchini 
+3 - Raffaele Bruno 
+4 - Raffaele Bruno 
+5 - Patrizio Colaneri 
+6 - Patrizio Colaneri 
+7 - 15,887 deaths of people 
+8 - 26 February 2020 
+9 - 8 March 2020 
+10 - Chinese data 
+11 - 2.0 to 3.5 
+12 - SARS-CoV 
+13 - MERS-CoV 
+14 - influenza viruses 
+19 - SIR model
+1. 1,133,758 total cases and 62,784 deaths worldwide4
+2. 691,461 nasal swabs as of 5 April 2020
+3. 128,948 detected cases
+4. 91,246 currently infected
+5. 28,949 hospitalized
+6. 3,977 admitted to intensive care units (ICUs)
+7. 58,320 quarantined at home
+8. 21,815 discharged due to recovery
+9. 15,887 had died7
+10. R0 for SARS-CoV-2 ranges from 2.0 to 3.511–13
+19 SIR model
+20 Lin and colleagues extended a SEIR (susceptible, exposed, infectious, removed) model
+21 Anastassopoulou and colleagues proposed a discrete-time SIR model
+22 Casella developed a control-oriented SIR model
+23 Wu and colleagues used transmission dynamics to estimate the clinical severity of COVID-19
+24 Stochastic transmission models
+25 Stochastic transmission models
+26 Gumel and colleagues for SARS
+70,000 people could die in Italy in the first year
+25,000 people overall
+20 February 2020 (day 1)
+5 April 2020 (day 46)
+9 March 2020
+2.38 (basic reproduction number)
+1.66 (result of the introduction of basic social distancing)
+1.80 (screening focused on symptomatic individuals)
+R0 = 2.38 (basic reproduction number on day 1)
+R0 = 1.66 (result of introduction of basic social distancing on day 4)
+R0 = 1.80 (screening focused on symptomatic individuals on day 12)
+R0 = 1.60 (effectiveness of partially incomplete lockdown on day 22)
+28 - day 28
+0.99 - R0 = 0.99
+38 - day 38
+0.85 - R0 = 0.85
+50 - day 50
+350 - 350 days
+0.12% - 0.12% of the population
+35% - 35%
+46 - day 46
+0.61% - 0.61% of the population
+0.45% - 0.45%
+0.06% - 0.06% of the population
+19 - day 19
+50 - day 50
+0.19% - 0.19% of the population
+56 - day 56
+0.17% - 0.17% of the population
+9.8% - actual case fatality rate (CFR)
+13% - perceived CFR
+22 - day 22
+0.52%: of the population would contract the virus (0.41% diagnosed)
+0.05%: would die
+857: Predicted epidemic evolution: actual vs diagnosed cases a b of infection 0.015 Cumulative infected Current total infected ) ) Recovered n n o o Deaths i i t t Diagnced cumulative infected a a l l Diagnced current total infected u u Diagnced recovered p p o o
+0.015: Cumulative infected
+0.010: Current total infected
+0.005: Recovered
+0.010: Deaths
+0.8: Infected ND AS
+0.6: Infected D AS
+0.4: Infected ND S
+0.2: Infected D S
+1.0: Infected D IC
+None
+Performing an insufficient number of tests underestimates the transmission rate and overestimates the CFR.
+33 - insufficient number of ICUs
+15 min - test to detect SARS-CoV-2 immunoglobulins IgM and IgG simultaneously in human blood
+30 - laboratories are moving in this direction
+858 - total number of infected individuals and ICU admissions
+None
+3. Guan, W.-J.et al. Clinical characteristics of coronavirus disease 2019 in China.
+4. WHO. Coronavirus Disease 2019 (COVID-19): Situation Report 76
+5. Remuzzi, A. & Remuzzi, G. COVID-19 and Italy: what next? Lancet Health
+6. Giuffrida, A. & Beaumont, P. Coronavirus: inquiry opens into hospitals at
+7. Ministero della Salute (Italian Ministry of Health). http://www.salute.gov.it/
+10. Wang, Y., Wang, Y., Chen, Y. & Quin, Q. Unique epidemiological and clinical features of the emerging 2019 novel coronavirus pneumonia (COVID-19) implicate special control measures. J. Med. Virol. 92, 568–576 (2020).
+11. Fisman, D., Rivers, C., Lofgren, E. & Majumder, M. S. Estimation of MERS-Coronavirus reproductive number and case fatality rate for the S
+12. Zhao, S. et al. Preliminary estimation of the basic reproduction number of novel coronavirus (2019-nCoV) in China, from 2019 to 2020: a data-driven analysis in the early phase of the outbreak.
+13. Read, J., Bridgen, J. R., Cummings, D. A. T., Ho, A. & Jewell, C. P. Novel coronavirus 2019-nCoV: early estimation of epidemiological parameters and epidemic predictions.
+14. Zou, L. et al. SARS-CoV-2 viral load in upper respiratory specimens of infected patients.
+15. Anderson, R. M. & May, R. M. Infectious Diseases of Humans
+16. Diekmann, O. & Heesterbeek, J. A. P. Mathematical Epidemiology of Infectious Diseases: Model Building, Analysis and Interpretation
+17. Hethcote, H. W. The mathematics of infectious diseases.
+18. Brauer, F. & Castillo-Chavez, C. Mathematical Models in Population Biology and Epidemiology 2nd edn
+19. Kermack, W. O. & McKendrick, A
+• µ and ν respectively denote the rate at which undetected and detected infected subjects develop life-threatening symptoms; 
+• τ denotes the mortality rate (for infected subjects with life-threatening symp- toms) 
+• λ, κ, ξ, ρ and σ denote the rate of recovery for the five classes of infected sub- jects; 
+None
+44 - China
+45 - COVID-19-positive individuals
+46 - Italy
+47 - home isolation guidelines
+48 - COVID-19 clusters
+49 - COVID-19 clusters
+50 - COVID-19 clusters
+51 - median serial interval values for COVID-19
+52 - median incubation period
+9 - (13)
+17
+18
+19
+20
+21
+22
+None
+20 February 2020 (day 1)
+5 April 2020 (day 46)
+60 million
+0
+ρD
+ϕð
+ξR
+σT
+R0
+200/60e6 - fraction of the population in each stage at day 1
+20/60e6 - fraction of the population in each stage at day 1
+1/60e6 - fraction of the population in each stage at day 1
+2/60e6 - fraction of the population in each stage at day 1
+0 - fraction of the population in each stage at day 1
+0 - fraction of the population in each stage at day 1
+0 - fraction of the population in each stage at day 1
+0.570 - α
+0.011 - β, δ
+0.456 - γ
+0.171 - ε
+0.371 - θ
+0.125 - ζ, η
+0.017 - μ
+0.027 - ν
+0.01 - τ
+0.034 - λ, ρ
+0.017 - κ, ξ, σ
+2.38 - R0
+0.422 - α
+0.0057 - β, δ
+0.285 - γ
+0.143 - ε
+1.66 - R0
+1.80 - R0
+0.360 - α
+0.005
+α = 0.422, γ = 0.285, β = δ = 0.0057, R0 = 1.66
+α = 0.252, R0 = 0.98
+α = 0.105, R0 = 0.50
+ε = 0.400, R0 = 0.59
+α = 0.420, ε = 0.600, R0 = 0.77
+CFR = 7.2%, perceived CFR = 9.0%
+73% of the population contracted the virus
+~64% diagnosed
+~5.2% of the population died
+Peak of concurrently infected individuals ~44% of the population
+Peak of concurrently diagnosed infected individuals ~39% of the population
+16.5% of the population
+107 days
+0.285 and γ = 0.171, hence R0 = 1.13
+35% of the population
+~30% have been diagnosed
+5.3% of the population
+α = 0.200 and γ = 0.086, hence R0 = 0.787
+None
+0.092% of the population; 
+0.083% of the population; 
+0.25% of the population 
+~0.22% have been diagnosed 
+~0.02% of the population have died 
+0.04% of the population 
+0.057% of the population 
+0.048% of the population 
+0.086% of the population 
+~0.074% have been diagnosed 
+~0.006% of the population have died 
+0.02% of the population
+α
+Extended Data Fig. 4
+
+β
+Extended Data Fig. 5
+
+γ
+Extended Data Fig. 6
+
+δ
+Extended Data Fig. 7
+
+ε
+Extended Data Fig. 8
+
+θ
+Extended Data Fig. 9
+
+ζ
+Extended Data Fig. 10
+
+η
+Extended Data Fig. 10
+
+μ
+Extended Data Fig. 10
+
+ν
+Extended Data Fig. 10
+
+λ
+Extended Data Fig. 10
+
+ρ
+Extended Data Fig. 10
+
+κ
+Extended Data Fig. 10
+
+ξ
+Extended Data Fig. 10
+
+σ
+Extended Data Fig. 10
+
+τ
+Extended Data Fig. 10
+Fig. 3
+Code availability
+38. Epidemiologist: ‘Too early to say’ if infected people develop immunity from the coronavirus (interview to David Heymann)
+39. Chen, D. et al. Recurrence of positive SARS-CoV-2 RNA in COVID-19: a case report.
+40. Zhou, L. et al. Cause analysis and treatment strategies of ‘recurrence’ with novel coronavirus pneumonia (covid-19) patients after discharge from hospital.
+41. Houser, K. V. et al. Enhanced inflammation in New Zealand white rabbits when MERS-CoV reinfection occurs in the absence of neutralizing antibody.
+42. Hemida, M. G. et al. Longitudinal study of middle east respiratory syndrome coronavirus infection in dromedary camel herds in Saudi Arabia, 2014–2015.
+43. Subbarao, K. et al. Prior infection and passive transfer of neutralizing antibody prevent replication of severe acute respiratory syndrome coronavirus in the respiratory tract of mice.
+44. Ji, N.-L. et al. Clinical features of pediatric patients with COVID-
+46. Fineberg, H. V. Ten weeks to crush the curve. N. Engl. J. Med. https://doi.org/10.1056/NEJMe2007263 (2020).
+47. Istituto Superiore di Sanità. Recommendations for People in Family Isolation and Their Caregivers http://www.salutfor exampleov.it/portale/nuovocoronavirus/dettaglioNotizieNuovoCoronavirus.jsp?lingua=italiano&menu=notizie&p=dalministero&id=4266 (accessed 4 April 2020).
+48. Pung, R. et al. Investigation of three clusters of COVID-19 in Singapore: implications for surveillance and response measures. Lancet 395, 1039–1046 (2020).
+49. Rothe, C. et al. Transmission of 2019-nCoV infection from an asymptomatic contact in Germany. N. Engl. J. Med. 382, 970–971 (2020).
+50. Kimball, A. et al. Asymptomatic and presymptomatic

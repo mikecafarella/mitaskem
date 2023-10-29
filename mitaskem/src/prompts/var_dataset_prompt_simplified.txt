@@ -1,0 +1,9 @@
+We have several variable names and descriptions as follows, each on a newline with variable id, name: text_annotations:
+[DESC]
+
+We also have a list of column names with dataset_name: column list seperated by comma as follows:
+[DATASET]
+
+From the dataset columns stated above, print up to two columns that match each variable.
+For each variable, start a newline printing the variable id only (without variable name): dataset 1___column x, dataset 2___column y.
+If there is no match, print "None" for that variable.

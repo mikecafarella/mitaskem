@@ -1,0 +1,235 @@
+S: Susceptible
+I: Infected
+D: Diagnosed
+A: Ailing
+R: Recognized
+T: Threatened
+H: Healed
+E: Extinct
+Susceptible: susceptible to infection
+Exposed: exposed to infection
+Infectious: infected with the virus
+Removed: recovered from the virus
+Risk Perception: the effect of risk perception on the spread of the virus
+Cumulative Cases: the total number of cases
+Dead Individuals: individuals who have died from the virus
+Clinical Severity: the clinical severity of COVID-19
+Stochastic Transmission: transmission dynamics of the virus
+Basic Reproduction Number: estimated number of transmissions
+SIR model: model for human-to-human transmission
+SEIR model: model considering risk perception and cumulative number of cases
+SIDARTHE model: model predicting the evolution of epidemics
+Lockdown: strategy to contain the spread of the infection
+Testing: important to detect undetected infected people
+R0: basic reproduction number
+S: susceptible (uninfected)
+I: infected (asymptomatic or pauci-symptomatic infected, undetected)
+D: diagnosed (asymptomatic infected, detected)
+A: ailing (symptomatic infected, undetected)
+R: recognized (symptomatic infected, detected)
+T: threatened (infected with life-threatening symptoms, detected)
+H: healed (recovered)
+E: extinct (dead)
+R0: basic reproduction number
+R1.66: social distancing, awareness of the epidemic, hygiene and behavioral recommendations
+R1.80: screening focused on symptomatic individuals
+R1.60: partially incomplete lockdown effectiveness 
+None
+R0: Reproduction number of the virus
+SOI: Severity of Infection classification
+CFR: Case Fatality Rate
+None
+Cumulative infected: Total number of infected people
+Current total infected: Number of currently infected people
+Recovered: Number of people who have recovered from the virus
+Deaths: Number of people who have died from the virus
+Diagnosed cumulative infected: Total number of people diagnosed as infected
+Diagnosed current total infected: Number of people currently diagnosed as infected
+Diagnosed recovered: Number of people who have been diagnosed as recovered
+CFR: Ratio of deaths to total number of infected people
+CFR: mortality coefficient 
+ICUs: insufficient number of ICUs 
+lockdown measures: control measures of varying strength and nature 
+transmission rate: estimated transmission rate 
+diagnosis campaigns: campaigns to detect SARS-CoV-2 immunoglobulins IgM and IgG
+Mortality rate: number of deaths in the whole population
+CFR: number of deaths in the infected population
+Social restriction: measures that reduce the spread of SARS-CoV-2
+Testing: extent of social restriction and testing
+New drugs and vaccines: ongoing innovations
+Case fatality: excess case fatality
+S: fraction of population in susceptible stage
+I: fraction of population in infected stage
+D: fraction of population in diagnosed stage
+A: fraction of population in ailing stage
+R: fraction of population in recognized stage
+T: fraction of population in threatened stage
+H: fraction of population in hospitalized stage
+E: fraction of population in expired stage
+α: transmission rate due to contacts between a susceptible subject and an infected subject
+β: transmission rate due to contacts between a susceptible subject and a diagnosed subject
+γ: transmission rate due to contacts between a susceptible subject and an ailing subject
+δ: transmission rate due to contacts between a susceptible subject and a recognized subject
+ε: probability rate of detection of asymptomatic cases
+ζ: probability rate at which an infected subject not aware of being infected develops clinically relevant symptoms
+η: probability rate at which an infected subject aware of being infected develops clinically relevant symptoms
+θ: probability rate of detection of symptomatic cases
+λ: probability rate at which an infected subject not aware of being infected is diagnosed
+ρ: probability rate at which an infected subject aware of being infected is diagnosed
+μ: probability rate at which an ailing subject is recognized
+κ: probability rate at
+μ: rate at which undetected infected subjects develop life-threatening symptoms
+ν: rate at which detected infected subjects develop life-threatening symptoms
+τ: mortality rate for infected subjects with life-threatening symptoms
+λ: rate of recovery for infected subjects
+κ: rate of recovery for infected subjects
+ξ: rate of recovery for infected subjects
+ρ: rate of recovery for infected subjects
+σ: rate of recovery for infected subjects
+H(t): cumulative variable that depends on other variables and its own initial conditions
+E(t): cumulative variable that depends on other variables and its own initial conditions
+None
+S: Susceptible individuals
+I: Infected individuals
+D: Infected individuals
+A: Infected individuals
+R: Infected individuals
+T: Infected individuals
+H: Healed individuals
+E: Deceased individuals
+u: Feedback signal
+S(t): The number of susceptible individuals at time t
+I(t): The number of infected individuals at time t
+D(t): The number of diagnosed individuals at time t
+A(t): The number of asymptomatic individuals at time t
+R(t): The number of recovered individuals at time t
+T(t): The number of deceased individuals at time t
+F: Constant
+b: Constant
+R0: Reproduction number
+f0: Constant
+M(t): Actual CFR
+P(t): Perceived CFR
+ε: Constant
+θ: Constant
+μ: Constant
+D(t): number of currently infected individuals with different SOI (asymptomatic or pauci-symptomatic, quarantined at home
+R(t): symptomatic and hospitalized
+T(t): symptomatic in life-threatening conditions, admitted to ICUs
+E(t): number of deaths
+ρD: 
+ξR: 
+σT: 
+ϕ(t): 
+I: number of diagnosed individuals who recovered
+I: fraction of the population in each stage at day 1
+D: fraction of the population in each stage at day 1
+A: fraction of the population in each stage at day 1
+R: fraction of the population in each stage at day 1
+T: fraction of the population in each stage at day 1
+H: fraction of the population in each stage at day 1
+E: fraction of the population in each stage at day 1
+S: fraction of the population in each stage at day 1
+α: parameter magnitude of relative epidemiological information
+β: parameter magnitude of relative epidemiological information
+δ: parameter magnitude of relative epidemiological information
+γ: parameter magnitude of relative epidemiological information
+ε: parameter magnitude of relative epidemiological information
+θ: parameter magnitude of relative epidemiological information
+ζ: parameter magnitude of relative epidemiological information
+η: parameter magnitude of relative epidemiological information
+μ: parameter magnitude of relative epidemiological information
+ν: parameter magnitude of relative epidemiological information
+τ: parameter magnitude of relative epidemiological information
+λ: parameter magnitude of relative epidemiological information
+ρ: parameter magnitude of relative epidemiological information
+κ: parameter magnitude of relative epidemiological information
+ξ: parameter magnitude of
+α: Infection rate 
+β: Transmission rate 
+γ: Recovery rate 
+δ: Transmission rate 
+ε: Infection rate 
+θ: Testing parameter 
+ζ: Testing parameter 
+η: Testing parameter 
+μ: Testing parameter 
+ν: Testing parameter 
+λ: Healing parameter 
+ρ: Healing parameter 
+κ: Healing parameter 
+ξ: Healing parameter 
+σ: Healing parameter 
+τ: Healing parameter
+α: Social-distancing countermeasures
+γ: Social-distancing countermeasures
+R0: Transmission rate
+CFR: Ratio between the number of deaths ascribed to the infection and the number of diagnosed cases
+α: Transmission parameters, related to lockdown measures
+β: Transmission parameters, related to lockdown measures
+γ: Transmission parameters, related to lockdown measures
+δ: Transmission parameters, related to lockdown measures
+None
+α: Increases all the curves
+β: Increases all the curves
+γ: Increases all the curves
+δ: Increases all the curves
+ε: Decreases all the curves
+θ: Decreases all the curves
+ζ: Decreases final number of infected and recovered, increases number of deaths
+η: Decreases final number of infected and recovered, increases number of deaths
+μ: Decreases final number of infected and recovered, increases number of deaths
+ν: Decreases final number of infected and recovered, increases number of deaths
+λ: Decreases all the curves, apart from the curve of recovered patients
+ρ: Decreases all the curves
+κ: Decreases all the curves
+ξ: Decreases all the curves
+σ: Decreases all the curves
+τ: Leaves all the curves almost unaffected
+α: Infection coefficient
+β: Infection coefficient
+γ: Infection coefficient
+δ: Infection coefficient
+CFR: Case fatality rate
+G.G., F.B. and P.C.: Authors who proposed the model and performed the mathematical derivations, the fitting and the simulations.
+R.B., A.D.F., A.D.M. and M.C.: Authors who provided first-hand insight into the disease evolution and provided the clinical contextualization and interpretation of the results.
+None
+ECU residents: People living in the ECU area.
+Intensive care unit: People in the intensive care unit.
+Paediatric unit: People in the paediatric unit.
+Virology staff: Staff members in the virology department.
+Virology technical staff: Technical staff in the virology department.
+Virology residents: Residents in the virology department.
+Pharmacy unit: People in the pharmacy unit.
+Hospital Leadership: Leaders of the hospital.
+Data unit: People in the data unit.
+χ: rate at which immunity is lost
+α: transmission coefficient
+β: transmission coefficient
+α: Transmission coefficient
+γ: Transmission coefficient
+δ: Transmission coefficient
+ε: Testing coefficient
+θ: Testing coefficient
+ζ: worsening coefficients leading to clinically relevant symptoms
+η: worsening coefficients leading to clinically relevant symptoms
+μ: worsening coefficients leading to life-threatening symptoms
+ν: worsening coefficients leading to life-threatening symptoms
+λ: healing coefficient
+ρ: healing coefficients
+κ: healing coefficients
+ξ: healing coefficients
+σ: healing coefficients
+τ: mortality coefficient
+None
+Cohen's d: effect size
+Pearson's r: effect size
+Matlab R2017b: software
+Italian Ministry of Health: data source
+ChIP-seq: method
+Flow cytometry: Technique for analyzing and sorting particles, such as cells, by measuring their light scattering and fluorescent characteristics.
+Palaeontology: Study of fossils and the history of life on Earth.
+MRI-based neuroimaging: Technique for imaging the structure and function of the brain using magnetic resonance imaging.
+Animals and other organisms: Living organisms studied in research.
+Human research participants: People who take part in research studies.
+Clinical data: Data collected from medical records and other sources related to patient care.

@@ -1,0 +1,9 @@
+Here is the name of a dataset column:
+
+[COLUMN]
+
+Here is some text:
+
+[TEXT]
+
+Is there a sentence in the text that could be the definition of this column? If so, print the sentence without any additional text. If not, print "None".

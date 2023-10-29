@@ -1,0 +1,53 @@
+1 Kermack and McKendrick [1]
+2 [2–11]
+12 SARS [12]
+13 COVID-19 [13]
+14 [12,14,15]
+None
+16 - SARS coronavirus
+16-18 - isolation, quarantine, social distance and community containment
+19-24 - household quarantine, wearing masks, lockdown and strict constant tracing
+25 - Jiao et al.
+26-36 - researchers have included stochastic perturbations in the process of epidemic modelling
+37 - Shangguan and Liu et al.
+2.8
+2.9
+2.11
+2.12
+2.13
+2.15
+2.16
+2.17
+2.18
+Example 2: 
+(1) = 0.9
+β(1) = 0.4
+α(1) = 0.25
+μ(1) = 0.2
+θ (1) = 0.15
+η1 = 0.2
+η2 = 0.2
+σ1(1) = 0.05
+σ2(1) = 0.05
+σ3(1) = 0.05
+(2) = 1
+β(2) = 0.6
+α(2) = 0.3
+μ(2) = 0.3
+θ (2) = 0.25
+η1 = 0.2
+η2 = 0.2
+σ1(2) = 0.1
+σ2(2) = 0.1
+σ3(2) = 0.1
+Rs = 1.0528286
+None
+17. Hellewell, J., Abbott, S., Gimma, A., et al.: Feasibility of controlling COVID-19 outbreaks by isolation of cases and contacts. Lancet Glob. Health 8, e488–e496 (2020)
+18. Feng, S., Shen, C., Xia, N., et al.: Rational use of face masks in the COVID-19 pandemic. Lancet Respir. Med. 8, 434–436 (2020)
+19. Chu, D.K., Akl, E.A., Duda, S., et al.: Physical distancing, face masks, and eye protection to prevent person-to-person transmission of SARS-CoV-2 and COVID-19: a systematic review and meta-analysis. Lancet 395, 1973–1987 (2020)
+20. Prem, K., Liu, Y., Russell, T.W., et al.: The effect of control strategies to reduce social mixing on outcomes of the COVID-19 epidemic in Wuhan, China: a modelling study. Lancet Public Health 5, e261–e270 (2020)
+21. Maier, B.F., Brockmann, D.: Effective containment explains subexponential growth
+35. Zhao, X., He, X., Feng, T., Qiu, Z.P.: A stochastic switched SIRS epidemic model with nonlinear incidence and periodic coefﬁcients. Int. J. Biomath. 13, 2050019 (2020)
+36. Shi, X.Y., Cao, Y.M.: Dynamics of a stochastic periodic SIRS model with time-delay. Int. J. Biomath. 13, 2050072 (2020)
+37. Shangguan, D.C., Liu, Z.J., Wang, L.W., Tan, R.H.: A stochastic epidemic model with infectivity in incubation period and homestead-isolation on the susceptible. J. Appl. Math. Comput. (2021). https:// doi.org/10.1007/s12190-021-01504-1
+38. Cao, Z.W., Cao, W.J., Xu, X.J., Han, Q.X., Jiang, D.Q.: The threshold behavior and periodic solution of stochastic SIR epidemic model with saturated incidence. J. Nonlinear Sci. Appl. 9, 4909–

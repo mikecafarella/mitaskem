@@ -1,0 +1,74 @@
+R:-1804348017, LV: LotkaVolterra
+R:-2020566050, LV: fractional-order
+R:-148624295, WHO: World Health Organization
+R:367700129, Jacobian of Model: 4
+R:936948208, LV: classic Lotka-Volterra
+E:-2095601948, i: 1,2
+E:200924798, c: lambdai
+E:40478726, LAS: coexistence point
+E:-1298857530, LAS: coexistence equilibrium point of system
+E:-809680413, c: 4
+E:1157885776, i: 1, 2
+E:-284188006, LAS: equilibrium point of the linearized model
+R:491821923, E2: coexistence point
+E:902194853, alpha: 0
+R:-1532542443, t: integral t 1 Dalphaepsilon
+E:2028917877, deta: sigma in Z
+E:-1744039646, deta: alpha >
+E:1785369084, deta: alpha >
+E:-963824096, y2(t): infected individual population
+E:1529004988, y2(t): infected individual population
+E:-620368458, y2(t): infected individual population
+R:-268802473, b: infected individual population is given by y2(t) at time t. Let
+E:-1238183095, infected individual population is given by y2(t) at time t. Let b: 0
+R:-195668286, E2: coexistence point
+E:-1162762139, d: 0
+E:1990505322, d: death rate
+E:-1254514574, d: 0
+E:-1558260823, E1: 0,0
+R:481730747, E1: trivial equilibrium point
+E:-1152769423, E1: 0,0
+E:1755727216, |: 0
+E:-1027923488, c: 0.0001
+E:50643796, e: 0.98
+E:1051966006, d: 0.02
+E:-983497559, b: 0.01
+E:2126323719, a: 0.012
+E:677078523, d: death rate resulting from COVID-19
+E:1926656099, approximately d: 0.02
+E:-1595308234, approximately e: 0.98
+E:1478689174, b: infection rate
+E:-1773540959, approximately b: 0.01
+E:-2028982649, c: immigration rate of healthy individuals
+R:1179217706, immigration rate of  infected individuals: 0.012
+E:-1746124807, approximately c: 0.0001
+E:1656439576, Y1: 0.01, 0.01
+E:-697408558, Y1: 99.99, 60.3
+E:-629957486, alpha: 0.5
+E:-167564096, alpha: alpha =
+E:-648033202, alpha: alpha =
+E:-1198971909, alpha: alpha =
+E:-1031206229, alpha: 0.5
+E:-1567942393, alpha: alpha
+E:-1314704871, alpha: alpha =
+E:1824037528, alpha: alpha =
+E:894929872, alpha: alpha =
+E:1483805002, alpha: alpha
+E:-1196502720, alpha: alpha
+E:702223018, alpha: alpha
+R:1523726683, D: Matouk C
+E:-1084797219, E: Matouk C
+E:1621715411, A.E: Aly B
+R:-1595362420, Jazan: Saudi Arabia C Department of Mathematics
+E:382206917, P.O: Jazan University
+E:2059588145, Ha'il: Department of Mathematics
+E:1404845783, Ealpha: 0
+R:-1393858122, P(t)>=P(0) Ealpha: suminfinity tl
+R:-428577556, P(t)>=P(0) Ealpha: suminfinity tl
+R:-13144027, P(t)>=P(0) Ealpha: suminfinity tl
+R:-2032240514, l: lalpha)
+E:1184219240, c: 0.0001
+E:273608036, d: 0.02
+E:-65821130, b: 0.01
+E:-1048384201, a: 0.012
+E:2128061770, e: 0.98

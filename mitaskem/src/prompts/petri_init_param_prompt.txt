@@ -1,0 +1,12 @@
+Here is some text related to a model:
+
+[TEXT]
+
+Here is a parameter: [PARAM]
+
+What number is this parameter equal to, based solely on information from the given text? Answer only with a number and the units separated with a space.
+
+For example, if the parameter was x and the text said "We set x=5km", you should return "5 km"
+As another example, if the parameter was y and the text said "We set y=3.2/day", you should return "3.2 /day"
+
+

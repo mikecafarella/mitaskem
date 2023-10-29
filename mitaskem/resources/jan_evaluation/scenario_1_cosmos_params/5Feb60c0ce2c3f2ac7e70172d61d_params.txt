@@ -1,0 +1,5 @@
+[4] L. Li, F. Zhu, H. Sun, Y. Hu, Y. Yang, D. Jin, Multi-source information fusion and deep-learning-based characteristics measurement for exploring the effects of peer engagement on stock price synchronicity, Inf. Fusion 69 (2021) 1–21.
+[5] G. Muhammad, M.S. Hossain, COVID-19 and non-COVID-19 classification using multi-layers fusion from lung ultrasound images, Inf. Fusion 72 (2021) 80–88.
+[6] H. Yang, Y. Luo, X. Ren, M. Wu, X. He, B. Peng, K. Deng, D. Yan, H. Tang, H. Lin, Risk prediction of diabetes: Big data mining with fusion of multifarious physical examination indicators, Inf. Fusion (2021).
+[7] S. Zhang, M. Chen, J. Chen, F. Zou, Y.-F. Li, P. Lu, Multimodal feature-wise co-attention method for visual question answering, Inf. Fusion 73 (2021) 1–10.
+[8] F. Hu, M

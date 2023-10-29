@@ -1,0 +1,405 @@
+medRxiv preprint doi: https://doi.org/10.1101/2022.05.20.22275407 ; this version posted May 23, 2022. The copyright holder for this preprint (which was not certified by peer review) is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity. It is made available under a CC-BY 4.0 International license .
+Social divisions and risk perception can drive divergent epidemic dynamics and large second and third waves
+Mallory J. Harris*1 and Erin A. Mordecai1 1 Biology Department, Stanford University, Stanford, CA 94301 *Corresponding author (mharris9@stanford.edu) May 20, 2022
+1 Abstract
+During infectious disease outbreaks, individuals may adopt protective measures like vaccination and physical distancing in response to awareness of disease burden. Prior work showed how feedback between epidemic intensity and awareness-based behavior shapes disease dynamics (e.g., producing plateaus and oscillations). These models often overlook social divisions, where population subgroups may be disproportionately impacted by a disease and more responsive to the effects of disease within their group. We hypothesize that socially divided awareness-based behavior could fundamentally alter epidemic dynamics and shift disease burden between groups.
+2 3 4 5 6 7 8 9
+We develop a compartmental model of disease transmission in a population split into two groups to explore the impacts of awareness separation (relatively greater in- versus out-group awareness of epidemic severity) and mixing separation (relatively greater in- versus out-group contact rates). Protective measures are adopted based on awareness of recent disease-linked mortality. Using simulations, we show that groups that are more separated in awareness have smaller differences in mortality. Fatigue-driven abandonment of protective behavior can drive additional infection waves that can even exceed the size of the initial wave, particularly if uniform awareness drives early protection in one group, leaving that group largely susceptible to future infection. Finally, vaccine or infection-acquired immunity that is more protective against transmission and mortality may indirectly lead to more infections by reducing perceived risk of infection, and thereby reducing vaccine uptake. The dynamics of awareness-driven protective behavior, including relatively greater awareness of epidemic conditions in one’s own group, can dramatically impact protective behavior uptake and the course of epidemics.
+10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
+NOTE: This preprint reports new research that has not been certified by peer review and should not be used to guide clinical practice.
+medRxiv preprint doi: https://doi.org/10.1101/2022.05.20.22275407 ; this version posted May 23, 2022. The copyright holder for this preprint (which was not certified by peer review) is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity. It is made available under a CC-BY 4.0 International license .
+25 Introduction
+When an infectious disease causes substantial disease burden and death, people may respond to the true or perceived risk of infection by modifying their behavior (1–5). In turn, protective behaviors like physical distancing, mask wearing, and vaccination may suppress transmission, reducing peak and total infections and disease-linked mortality (3, 6, 7). Bidirectional feedback between epidemic outcomes and awareness-based behavior may lead to unexpected and nonlinear dynamics, such as plateaus and oscillations in cases over time (8–11). Mathematical models that split the population into categories with respect to the disease (i.e., compartments) and mathematically define transition rates between different states are widely used to understand such complex epidemic dynamics. Compartmental models may incorporate the impact of awareness as a function of deaths or cases that reduces transmission evenly across the population (8, 9). The spread of epidemic-related information has also been modeled as an additional contagion process that is distinct from but potentially linked to disease transmission (11–15). However, real populations are sharply divided in physical interactions, demography, ideology, education, housing and employment structures, and information access; these social divisions can impact both the transmission of pathogens and information within and between groups, altering epidemic dynamics. The impacts of such asymmetrically spreading disease and awareness in a highly divided population are not well understood (16–18).
+26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44
+45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62
+Populations may be subdivided based on an array of factors (e.g., race, ethnicity, age, and geography), with marked differences in pathogen exposure and infection severity (17, 19–23). Risk of pathogen introduction may vary between groups: high income groups may encounter pathogens endemic to other regions through international travel, low income groups may have heightened likelihood of exposure connected to poor housing quality and insufficient occupational protections, and certain regions and occupations experience greater risks of exposure to zoonotic illnesses (19, 24–27). Once a pathogen is introduced, it may spread at different rates within groups based on factors like housing density and access to healthcare (20, 24, 28). Further, the severity of infection may vary directly with group identity due to underlying biological differences (e.g., age or sex), as a function of co-morbidities especially prevalent in one group due to underlying inequities (e.g., lung disease connected to environmental pollution or heart disease associated with factors driven by structural racism), or through heterogeneity in access to and quality of healthcare (20–22, 28–32). Physical barriers (e.g., geographic boundaries, schools, residential segregation, and incarceration) and preferential mixing with members of one’s own group may reduce contact and subsequent transmission between groups, a characteristic we describe as separated mixing (19, 33–36). Infectious disease models that account for differences in
+medRxiv preprint doi: https://doi.org/10.1101/2022.05.20.22275407 ; this version posted May 23, 2022. The copyright holder for this preprint (which was not certified by peer review) is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity. It is made available under a CC-BY 4.0 International license .
+vulnerability within subgroups of a population and separated mixing can help to illustrate the emergence of health inequities and justify structural interventions to reduce these disparities (37–40). However, such models may miss an important behavioral dimension by failing to account for variation in awareness-based behavior changes among groups.
+63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84
+Awareness and behavioral heterogeneity can significantly alter disease dynamics: for example, local awareness in a network with strong clustering can stop the pathogen from spreading altogether, while clustering in vaccine exemptions may lead to outbreaks (14, 41, 42). Although personal risk perception may be responsive to risk in other groups, and behavior may be influenced by population-level social norms and mass media, attitudes toward diseases and protective behaviors may also vary considerably between groups and correspond to actual risk and personal experiences of close social ties with the disease (43–48). While prior awareness-based models have examined outcomes given different sources of information (i.e., local or global), we aim to characterize risk perception based on group-level information in a population split into two distinct and well-defined groups (49). We define separated awareness as greater in- versus out-group awareness in a split population and predict that, by producing behavioral responses more reflective of each group’s risk, it may reduce differences between groups in disease burden (50). Understanding the impacts of separation with respect to mixing and awareness on disease dynamics may be important for characterizing differences in epidemic burden and effectively intervening to mitigate population inequities (37, 39, 40, 50, 51).
+85 Here, we investigate the impacts of intergroup divisions on epidemic dynamics using 86 an awareness-based model for transmission of an infectious disease, in which adoption 87 of protective measures (either nonpharmaceutical interventions or vaccinations) is 88 linked to recent epidemic conditions and mediated by awareness.
+89 We ask:
+1.  How do separated awareness and mixing interact to affect differences between groups in epidemic dynamics? 2.  How does fatigue interact with awareness separation to affect long-term epidemic dynamics? 3.  When vaccines are introduced, how does immunity interact with awareness separation to affect long-term epidemic dynamics?
+90 91
+1.  How do separated awareness and mixing interact to affect differences between
+2.  How does fatigue interact with awareness separation to affect long-term
+92 93
+3.  When vaccines are introduced, how does immunity interact with awareness
+94 95
+medRxiv preprint doi: https://doi.org/10.1101/2022.05.20.22275407 ; this version posted May 23, 2022. The copyright holder for this preprint (which was not certified by peer review) is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity. It is made available under a CC-BY 4.0 International license .
+96 Results
+97 1. Separated mixing and awareness
+To understand how separation in awareness and mixing interact to alter short-term epidemic dynamics in a split population, we model awareness-based adoption of nonpharmaceutical interventions (Equation 1); all model parameters are defined in Supplementary Table 1 and a compartmental diagram is provided as Supplementary Figure 1. The population is split into two groups: group a and group b, and individuals in each group can switch between unprotective behavior and protective behavior that reduces transmission but cannot change their group. We arbitrarily designate group a as having greater underlying vulnerability to infection or disease-linked mortality in all of the following scenarios. Specifically, in this section the sole initial difference between groups is caused by introducing the pathogen into group a alone at prevalence ܫ௔ሺ0ሻ ൌ 0.001; all other parameters are equivalent between groups. To simplify short-term awareness-based behavior, this scenario does not incorporate memory or fatigue (ℓ ൌ 1 and ߶ ൌ 0). First, we allow both mixing (݄; which drives the contact and contagion process) and awareness (߳; which drives protective behavior adoption) to be either uniform (functioning like a single population) (0.5) or highly separated (0.99).
+98 99 100 101 102 103 104 105 106 107 108 109 110 111 112
+The groups experience identical epidemic dynamics when mixing is uniform (Figure 1A, B), as the pathogen introduced into group a quickly spreads into group b and circulates evenly within and between groups. When groups mix separately, differences in epidemic dynamics between groups arise and depend on awareness separation (Figure 1C, D). When mixing is separated but awareness is uniform, epidemic shape differs in both timing and magnitude between groups, increasing the peak size and total infections in the more vulnerable (earlier epidemic introduction) group a and decreasing both in group b (Figure 1C). Specifically, uniform awareness reduces total infections in group b, which adopts protective behavior by observing mortality in group a at a point when infections within group b remain relatively low (Figure 1C, Supplementary Figure 3B, D, E). Meanwhile, uniform awareness causes group a to underestimate disease severity due to the lack of early mortality in group b, leading to decreased early protective behavior and a larger outbreak (Figure 1C, Supplementary Figure 3A, C, E). When awareness is separated, group b has little awareness of the emerging epidemic localized to group a, while group a responds to its relatively higher early disease burden with increased awareness, driving epidemic dynamics between the two groups to be similar in shape but delayed in time for group b (Figure 1D). Therefore, awareness separation reduces the differences between groups in epidemic shape (e.g., peak size, total infections), while mixing separation offsets them in time (Figure 1C, D).
+113 114 115 116 117 118 119 120 121 122 123 124 125 126 127 128 129 130 131 132
+medRxiv preprint doi: https://doi.org/10.1101/2022.05.20.22275407 ; this version posted May 23, 2022. The copyright holder for this preprint (which was not certified by peer review) is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity. It is made available under a CC-BY 4.0 International license .
+The finding that awareness separation reduces differences between groups in severe outcomes also holds when groups differ in their transmission coefficients, infectious periods, and infection fatality rates (Supplementary Figures 4, 5, 6).
+133
+134
+135
+
+136
+ Figure 1.  Epidemic peaks are offset in time between groups when mixing is separated (C, D), and in magnitude when awareness is uniform but mixing is separated (C). Plots show numbers of infections over time in group a (maroon) and group b (blue) under four scenarios: awareness is uniform (A, C; ߳ ൌ 0.5) or separated (B, D; ߳ ൌ 0.99); mixing is uniform (A, B; ݄ ൌ 0.5) or separated (C, D; ݄ ൌ 0.99). We assume the pathogen is introduced only in group a (maroon) at prevalence 0.001 and that all other parameters are equivalent ଵ between groups: transmission coefficient (ߚ ൌ 0.2), infectious period ( ఘ  ൌ 10), infection fatality rate (ߤ ൌ 0.01), protective measure efficacy (ߢ ൌ 0.3), responsiveness (ߠ ൌ 100), memory ( ℓ ൌ 1), and fatigue (߶ ൌ 0). Lines overlap under separated mixing (top row).
+137
+138
+139
+140
+141
+142
+143
+144
+145
+medRxiv preprint doi: https://doi.org/10.1101/2022.05.20.22275407 ; this version posted May 23, 2022. The copyright holder for this preprint (which was not certified by peer review) is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity. It is made available under a CC-BY 4.0 International license .
+146 2. Fatigue and awareness separation
+We introduce memory and fatigue to examine the long-term impacts of separated awareness when awareness-driven protective behavior is abandoned over time. Once again, the pathogen is introduced into group a alone and all other parameters are equivalent between groups. To maintain between-group differences, we assume separated mixing (h = 0.99).
+147 148 149 150 151
+In all cases, when protective behavior wanes with fatigue, three distinct peaks emerge before transmission plateaus at low levels and declines gradually (Figure 2). The initial difference between groups with uniform awareness (Figures 1C, 2A) means that group b retains a relatively larger proportion of susceptible individuals who avoided infection in the first wave by rapidly adopting protective behaviors. As a result, the second and third wave in group b exceed its first wave in peak and total infections (Figure 2A). Meanwhile, uniform awareness causes the second wave in group a to be smaller and delayed by about 400 days compared to separated awareness (Figure 2A vs. B). As shown in the case without memory and fatigue (Figure 1), when both mixing and awareness are separated, the groups differ mainly in the timing of epidemic peaks rather than in their magnitude, before converging on a long and slow decline (i.e., shoulder; Figure 2B) (9).
+152 153 154 155 156 157 158 159 160 161 162 163
+medRxiv preprint doi: https://doi.org/10.1101/2022.05.20.22275407 ; this version posted May 23, 2022. The copyright holder for this preprint (which was not certified by peer review) is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity. It is made available under a CC-BY 4.0 International license .
+
+
+
+
+
+
+164
+Figure 2. Fatigue and long-term memory produce multiple epidemic peaks, which exceed the size of the initial peak in group b when uniform awareness and separated mixing leave that group with a high proportion of susceptible people following the first wave. We initialize the model with separated mixing (݄ ൌ 0.99), long-term memory (ℓ ൌ 30), and fatigue (߶ ൌ 0.02); all other parameters are the same as in Figure 1. We consider infections in group a (maroon) and group b (blue) over a longer time period (1000 days, compared to 200 days in Figure 1). The panels correspond to (A) uniform awareness (߳ ൌ 0.5) and (B) separated  awareness (߳ ൌ 0.99).
+165
+166
+167
+168
+169
+170
+171
+172
+medRxiv preprint doi: https://doi.org/10.1101/2022.05.20.22275407 ; this version posted May 23, 2022. The copyright holder for this preprint (which was not certified by peer review) is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity. It is made available under a CC-BY 4.0 International license .
+173 3. Immunity and awareness separation
+Next, we consider the implications of awareness-based vaccine uptake in a split population given waning immune protection against infection and durable protection against mortality (Equation 3, Supplementary Figure 2). We model immunity from prior infection as equivalent to immunity from vaccination. Unlike in the previous analyses, the pathogen is now introduced at the same prevalence in both populations simultaneously to ensure that group a and b begin the post-vaccine period with similar levels of immunity. Group differences are driven by an infection fatality rate in group a that is twice that of group b. Again, we assume separated mixing (h = 0.99) to maintain distinct dynamics between the groups.
+174 175 176 177 178 179 180 181 182
+After an initial large wave, vaccination and waning immunity lead to damped cycles of infections and deaths (Figure 3). As was the case with the nonpharmaceutical intervention model (Figure 1), when awareness drives vaccination behavior, separated awareness helps to reduce differences between-group differences in mortality (Figure 3D vs. C). Group a becomes vaccinated at a higher rate in response to the greater number of deaths observed in group a, an effect that is most notable during the second epidemic peak (Figure 3D). Therefore, with separated awareness group a also has fewer infections than group b in later waves (Figure 3B), while infection dynamics remain identical (despite the larger disparity in deaths) in the uninform awareness scenario (Figure 3A), the opposite of the nonpharmaceutical intervention scenario (Figure 2).
+183 184 185 186 187 188 189 190 191 192
+Because vaccination protects against infections and deaths, and recent deaths feed back to influence awareness-driven vaccine uptake, we explored the tradeoff between immune protection and epidemic dynamics in the post-vaccine period. Assuming that vaccination and infection reduce both the transmission coefficient and infection fatality rate to an equivalent extent, we examine the total effect of variation in immune protection on epidemic dynamics and their feedbacks on vaccine uptake rate. As expected, greater immune protection reduces the number of deaths by directly reducing the infection fatality rate. However, because of awareness-driven vaccine uptake, vaccination can produce diminishing returns at the population scale where doubling immune protection from death and infection only reduces total deaths by about one eighth due to the compensatory reduction in vaccine uptake (Figure 4A), despite doubling individual protection for vaccinated people. Since a more effective immune response reduces mortality, the perceived risk associated with infection declines and fewer people become vaccinated (Figure 4B). The tradeoff between the direct impacts of immune protection on preventing infections and reduced uptake produces a nonlinear relationship between total infections and immune protection (Figure 4C). At low immune protection, infections remain approximately constant as immune protection
+193 194 195 196 197 198 199 200 201 202 203 204 205 206 207 208 209
+medRxiv preprint doi: https://doi.org/10.1101/2022.05.20.22275407 ; this version posted May 23, 2022. The copyright holder for this preprint (which was not certified by peer review) is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity. It is made available under a CC-BY 4.0 International license .
+210 improves. At higher levels of immune protection, reduced uptake with improving 211 immune protection leads to more infections (Figure 4C).
+Separated awareness drives greater differences between groups in vaccination behavior—the higher-risk group a gets vaccinated at a higher rate in response to awareness of the higher numbers of deaths in that group (Figure 4B). This in turn increases differences in infections (group a experiences lower infection rates; Figure 4C) but decreases differences in mortality between groups (death rates are lower for group a but higher for group b than in the uniform awareness scenario; Figure 4A). Since group a is at a higher inherent risk of mortality given infection, separated awareness differentially promotes vaccination and reduces infection in this group, while uniform awareness misleads group a into ignoring its higher risk of mortality (Figure 4A, B, solid versus dashed lines).
+212 213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+medRxiv preprint doi: https://doi.org/10.1101/2022.05.20.22275407 ; this version posted May 23, 2022. The copyright holder for this preprint (which was not certified by peer review) is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity. It is made available under a CC-BY 4.0 International license .
+
+
+
+
+228
+Figure 3. Waning immunity and awareness-based vaccination drive epidemic cycles; separated awareness reduces the disparity in deaths (C vs. D) as more-vulnerable group a members become vaccinated at a higher rate. We consider infections (A, B) and deaths (C, D) given awareness-based vaccination, where vaccination begins at day 200, indicated with vertical arrows. In the pre-vaccine period, regardless of awareness separation, infection dynamics are identical between groups but deaths are higher in group a (maroon) than group b (blue) due to a doubly high infection fatality rate (ߤ௔ ൌ 0.02 and ߤ௕ ൌ 0.01; C, D). In the post-vaccine period, we compare uniform awareness (߳ ൌ 0.5) (A, C) and separated awareness (߳ ൌ 0.99) (B, D). Other parameter values are: ߚ ൌ 0.2 (transmission coefficient), ߢ ൌ 0.05 (transmission- reducing immunity), ߞ ൌ 0.05 (mortality-reducing immunity), ߱ ൌ ߶ ൌ 0.01 (waning ଵ immunity), infectious period ( ఘ  ൌ 10), ߠ ൌ 20 (responsiveness), ℓ ൌ 30 (memory), ݄ ൌ 0.99 (separated mixing), ܫ଴ ൌ 0.001 (initial infection prevalence).
+229 230 231 232 233 234 235 236 237 238
+239
+240
+medRxiv preprint doi: https://doi.org/10.1101/2022.05.20.22275407 ; this version posted May 23, 2022. The copyright holder for this preprint (which was not certified by peer review) is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity. It is made available under a CC-BY 4.0 International license .
+241
+
+
+
+
+242
+Figure 4. Greater immune protection (from vaccination and infection) leads to lower death rates (A), which in turn decreases vaccination rates (B) and increases infection rates (C); separated awareness reduces disparities in death rates (A) as groups are vaccinated at different rates proportional to their risks of death (B), creating differences in infection rates (C). We vary transmission-reducing immunity and mortality- reducing immunity, assigning both parameters the same values (ߢ ൌ ߞ) and define this quantity as immune protection, which we assume is equivalent for vaccine- and infection-derived immunity. The x-axis is reversed because smaller values indicate stronger protection. We examine the impacts of stronger immune protection (lower values of ߢ and ߞ) on total deaths (A), vaccinations (B), and infections (C) in the post-vaccine period (t = 200 through t = 2000), depending on awareness separation. We compute each quantity for group a (maroon) and group b (blue) given uniform (dashed lines; ߳ ൌ 0.5) or separated (solid lines; ߳ ൌ 0.99) awareness. Other parameter values are the same as Figure 3.
+243 244 245 246 247 248 249 250 251 252 253 254 255
+256
+medRxiv preprint doi: https://doi.org/10.1101/2022.05.20.22275407 ; this version posted May 23, 2022. The copyright holder for this preprint (which was not certified by peer review) is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity. It is made available under a CC-BY 4.0 International license .
+257 Discussion
+Awareness separation and social divisions may interact to fundamentally alter disease dynamics, creating or erasing differences among groups in the timing and magnitude of epidemic peaks. Uniform awareness can exacerbate differences between population subgroups when the more vulnerable group (e.g., the group where the pathogen is introduced or the group with higher infection fatality rates) underestimates the in- group risk of disease and fails to adopt early protective measures (Figures 1, 4). At the same time, the initially less-vulnerable group receives indirect protection from observing and responding to epidemic effects in the more vulnerable group, adopting protective measures that reduce their total and peak infections (Figures 1, 4). However, when awareness-driven behavior fades with fatigue, the relative disease burden may shift between groups such that the group that initially had fewer infections has relatively more infections in subsequent waves, especially when uniform awareness protects the initially less-vulnerable group during the first wave of infection (Figure 2). Awareness separation diminishes between-group differences in severe outcomes (Figures 1, 2, 3, 4, Supplementary Figures 3, 4, 5, 6), but may do so by increasing differences in behavior and infections (Figures 3, 4, Supplementary Figure 6). For example, when the more vulnerable group has a higher rate of disease-linked mortality, awareness separation leads them to have higher vaccine uptake in response to their heightened perceived (and actual) risk, narrowing the difference in mortality (Figure 4). More broadly, awareness separation generally closes differences between groups by producing preferential uptake of preventative measures by the group with the greatest recent mortality, which is usually the group at greatest current risk.
+258 259 260 261 262 263 264 265 266 267 268 269 270 271 272 273 274 275 276 277 278 279
+In this model, greater awareness separation generally reduces differences in severe outcomes between groups because the awareness process explicitly responds to severe outcomes (deaths). But the magnitude of these impacts may vary depending on behavioral and social processes. To assess the robustness of our conclusions about the effects of awareness separation, the same scenarios could be evaluated across different models of awareness-based behavior changes, including saturation at a certain threshold for deaths (9), consideration of both lethal and non-lethal impacts of disease (e.g., hospitalizations and cases), or optimization to balance the benefits of protection against the costs of various measures (8, 10, 52). The latter approach may clarify a point that is not addressed in our analysis: although awareness separation may reduce disparities in severe disease-linked outcomes, this phenomenon is not necessarily equitable or desirable. In fact, if self-protection is associated with significant costs, already-vulnerable populations may suffer compounding costs as they balance self- protection against significant disease risk without adequate support from a broader community that does not share their risks (52–55). Further, structural inequities often
+280 281 282 283 284 285 286 287 288 289 290 291 292 293 294
+medRxiv preprint doi: https://doi.org/10.1101/2022.05.20.22275407 ; this version posted May 23, 2022. The copyright holder for this preprint (which was not certified by peer review) is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity. It is made available under a CC-BY 4.0 International license .
+leave population subgroups that are vulnerable to larger, more severe outbreaks with reduced access to protective measures like health education, treatment, vaccination, and paid leave (5, 20, 46, 48, 56–60). Resulting differences in rates of protective behavior uptake and effectiveness can compound disparities between groups and reduce the protective impact of awareness separation for more-vulnerable groups.
+295 296 297 298 299
+Epidemics are complex phenomena that typically involve heterogeneous mixing among groups of people that differ in biological and social risk factors, dynamic evolution of host behavior, pathogen infectiousness, and immune evasion, and ever-changing epidemiological and policy responses to real and perceived risk. Despite this range of potential drivers, we show here that a simple model that captures two key social processes—awareness-driven protective behavior in a split population that can be separated in mixing and awareness—can drive many of the complex dynamics observed in emerging epidemics like Covid-19. For example, when awareness is uniform and mixing is separated, the group in which the pathogen is introduced later can experience second and third waves that exceed the initial wave in size (Figure 2). This trend resembles one observed in the United States during the first year of the Covid-19 pandemic, where certain regions where the virus was introduced early (e.g., New York City metropolitan area) experienced a large early wave and relatively few infections over the rest of the year, while other regions (e.g., the southern United States) generally had small early waves and larger second and third waves. Many hypotheses have been introduced to explain this phenomenon (e.g., seasonal climate factors and population density) and several factors may have contributed to this pattern (61, 62). Yet, in our model these dramatic differences among populations in epidemic waves occur despite the groups being identical in transmission rates and disease outcomes and are entirely due to awareness-driven behavior with uniform awareness among groups (Figure 2). Although the current analysis does not examine causation, we have demonstrated how a simple behavioral process can qualitatively reproduce complex epidemic dynamics observed in real populations.
+300 301 302 303 304 305 306 307 308 309 310 311 312 313 314 315 316 317 318 319 320 321 322
+Feedback between vaccine efficacy and awareness-based vaccine uptake can also produce the counterintuitive scenario where vaccines that cause a greater reduction in transmission and mortality lead to more total infections, even as deaths are reduced (Figure 4). If, as we assume here, protective behavior is driven by awareness of severe outcomes like mortality, awareness separation may reduce differences in deaths between groups while widening differences in cases (Figures 3, 4). Accounting for awareness-based adoption of protective behavior is therefore critical for understanding complicated epidemic dynamics such as plateaus and cycles (Figures 2, 3), accurately deploying protective measures, and assessing their impact across different diseases and population subgroups (8, 9, 50).
+323 324 325 326 327 328 329 330 331 332
+medRxiv preprint doi: https://doi.org/10.1101/2022.05.20.22275407 ; this version posted May 23, 2022. The copyright holder for this preprint (which was not certified by peer review) is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity. It is made available under a CC-BY 4.0 International license .
+Here we have considered arbitrarily defined groups that can be separated in mixing and awareness but initially differ only in the timing of pathogen introduction (Figures 1, 2) or in infection fatality rate (Figures 3, 4), but real social groupings may fall along a number of social, demographic, and geographic lines. The most relevant groupings with respect to awareness and disease risk may depend on the disease, while the assumption of two distinct and identifiable groups may not fully capture relevant social dynamics. For infectious diseases that are generally more prevalent and severe in children (e.g., pertussis and measles), risk may depend on age while awareness is split between parents of young children versus adults without children or among parents with different sentiments towards childhood vaccination (63). In the context of Covid- 19, disease burden and attitudes toward preventative measures (e.g., masks and vaccines) have differed markedly across race, age, and socioeconomic status and over time, demonstrating how intersecting and imperfectly overlapping identities may interact to determine attitudes, protective behaviors, and risk (64–66). Moreover, ideological and social factors that do not correspond directly to disease risk (e.g., political affiliation) may influence decision-making and cause the level of protective behavior in certain subgroups to diverge sharply from their relative risk for severe disease, potentially overcoming the effects of awareness separation (46, 67). This process could be incorporated into our model by splitting the population into additional groups with respect to a cultural contagion or (mis)information spread process and allowing protective measures to be adopted based on awareness or contact with protective in-group members and rejected through fatigue or aversion to protective measures displayed by the opposite group (68, 69).
+333 334 335 336 337 338 339 340 341 342 343 344 345 346 347 348 349 350 351 352 353 354 355
+Although we assumed that awareness was directly proportional to recent mortality, external influences like partisanship (46, 67), media coverage (70), misinformation (71), and policy (3) may alter the perception of risk or the adoption of protective measures at both the individual and group level. Group identification and assessment of relative risk may be unclear or inaccurate based on uncertainty at the beginning of the outbreak, misinformation about risk factors, a gradient in risk (e.g., gradually increasing risk with age), lack of data stratification, or unobserved risk factors. Attitudes based on one disease may carry over to another disease even if risk factors differ. Relative risk across groups may also vary across time and space, potentially leading to inaccurate assessment based on prior conditions: for example, a mild initial epidemic wave can mislead a group into believing they are inherently more protected and thereby relaxing protective behaviors. Cognitive interventions that increase the accuracy of individual risk perception, especially in high-risk groups, may help to reduce between-group differences in disease burden (72, 73). To realistically capture actual behavioral responses to disease outbreaks and to understand the extent of awareness separation in real populations, our model could be parameterized using a combination of
+356 357 358 359 360 361 362 363 364 365 366 367 368 369 370 371
+medRxiv preprint doi: https://doi.org/10.1101/2022.05.20.22275407 ; this version posted May 23, 2022. The copyright holder for this preprint (which was not certified by peer review) is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity. It is made available under a CC-BY 4.0 International license .
+epidemiological, survey, mobility, and social media data (9, 74, 75). Considering awareness separation as a social process that may interact with mixing, fatigue, waning immunity, pathogen evolution, and pharmaceutical and non-pharmaceutical interventions may help to explain how humans are affected by and respond to infectious diseases in the presence of social divisions.
+372 373 374 375 376
+377 Methods
+378 Nonpharmaceutical intervention model
+We model disease transmission with awareness-based adoption of nonpharmaceutical interventions that reduce transmission rates. See Supplementary Figure 1 for a compartmental diagram for this model and Supplementary Table 1 for parameter definitions. We model disease transmission with a Susceptible-Infectious-Recovered- Deceased (SIRD) model, tracking the proportion of the population in each compartment through time. New infections arise through contact between susceptible and infected individuals, with transmission coefficient ߚ. Individuals exit the infectious ଵ and either recover or ఘ compartment at per capita rate ߩ, the inverse of infectious period die. The infection fatality rate, or fraction of individual exiting the infectious compartment who die, is ߤ (meaning that recovery after infection occurs with probability 1- ߤ).
+379 380 381 382 383 384 385
+386
+387 388 389
+We further categorize the population based on whether they adopt behavior that is Protective (P) or Unprotective (U). Compartment names contain two letters, the first indicating disease status and the second indicating behavior (e.g., SU denotes Susceptible people with Unprotective behaviors). We track the attitudes of Recovered and Deceased individuals (at the time of death), although they do not contribute directly to transmission. Protective measure efficacy against infection is indicated by a scaling factor ߢ (where ߢ ൌ 0 corresponds to complete protection and ߢ ൌ 1 corresponds to no protection). Protective measures affect the behavior of both susceptible and infected individuals, so transmission rate is reduced by a factor of ߢଶ in encounters where both parties have adopted protective measures. Living individuals can switch between protective and unprotective attitudes. Unprotective individuals adopt protective behaviors based on awareness (ߙሺݐሻ), which is the product of deaths over the past ℓ days (making ℓ a measure of memory) and a responsiveness constant ߠ. Protective behaviors are abandoned due to fatigue at per capita rate ߶.
+390 391 392 393 394 395 396 397 398 399 400 401 402 403
+The population is split into two groups of equal size, where group membership is fixed, and each group contains all epidemiological compartments. The groups are labelled as a and b and indicated as a subscript in compartment names (e.g., ܷܵ௔ corresponds to
+404 405 406
+medRxiv preprint doi: https://doi.org/10.1101/2022.05.20.22275407 ; this version posted May 23, 2022. The copyright holder for this preprint (which was not certified by peer review) is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity. It is made available under a CC-BY 4.0 International license .
+407 Susceptible-Unprotective individuals in group a). Parameters may vary between 408 groups, as indicated by subscripts (e.g., ߠ௔ corresponds to responsiveness in group a). If 409 parameters are equivalent for both groups, we exclude the subscript (e.g., ߠ ൌ ߠ௔ ൌ ߠ௕).
+Preferential within-group mixing is represented by homophily parameter ݄, corresponding to the proportion of contacts that are within-group. When ݄ is 0.5, mixing is uniform, meaning that individuals are equally likely to contact members of their own group as members of the opposite group. As ݄ approaches 1, mixing becomes increasingly separated, meaning that contacts are increasingly concentrated within groups. Similarly, we consider separation in awareness, ߳, or the relative weight of in- group versus out-group awareness of deaths for protective behavior.
+410 411 412 413 414 415 416
+417 The system of equations for group a is as follows (equations for group b can be derived 418 symmetrically): ܷܵ௔ሶ ൌ െߚܷܵ௔൫ሺ݄ሻሺܫܷ௔ ൅ߢܫܲ௔ሻ൅ ሺ1െ ݄ሻሺܫܷ௕ ൅ ߢܫܲ௕ሻ൯െ ߠܷܵ௔ߙ௔ሺݐሻ൅߶ܵܲ௔
+ܷܵ௔ሶ ൌ െߚܷܵ௔൫ሺ݄ሻሺܫܷ௔ ൅ߢܫܲ௔ሻ൅ ሺ1െ ݄ሻሺܫܷ௕ ൅ ߢܫܲ௕ሻ൯െ ߠܷܵ௔ߙ௔ሺݐሻ൅߶ܵܲ௔ ܵܲ௔ሶ ൌ െߚߢܵܲ௔൫ሺ݄ሻሺܫܷ௔ ൅ߢܫܲ௔ሻ൅ ሺ1െ ݄ሻሺܫܷ௕ ൅ ߢܫܲ௕ሻ൯൅ ߠܷܵ௔ߙ௔ሺݐሻെ߶ܵܲ௔ ܫܷ௔ሶ ൌ ߚܷܵ௔൫ሺ݄ሻሺܫܷ௔ ൅ߢܫܲ௔ሻ൅ ሺ1െ ݄ሻሺܫܷ௕ ൅ߢܫܲ௕ሻ൯െߠܫܷ௔ߙ௔ሺݐሻ൅ሺ߶ െߩሻܫܲ௔ ܫܲ௔ሶ ൌ ߚߢܵܲ௔൫ሺ݄ሻሺܫܷ௔ ൅ߢܫܲ௔ሻ൅ ሺ1െ ݄ሻሺܫܷ௕ ൅ߢܫܲ௕ሻ൯൅ߠܫܷ௔ߙ௔ሺݐሻെሺ߶ ൅ߩሻܫܲ௔ ܴܷ௔ሶ ൌ ሺ1 െߤሻߩܫܷ௔ԛെ ԛߠܴܷ௔ԛߙ௔ሺݐሻ൅߶ܴܲ௔ ܴܲ௔ሶ ൌ ሺ1െ ߤሻߩܫܲ௔ ൅ ߠܴܷ௔ߙ௔ሺݐሻെ߶ܴܲ௔ ܦܷ௔ሶ ൌ ߤߩܫܷ௔ ܦܲ௔ሶ ൌ ߤߩܫܲ௔
+(Equation 1)
+419
+(Equation 2)
+420 where ߙ௔ሺݐሻ is the awareness equation for group a:
+௧ Ԝ݀ݐ ߙ௔ሺݐሻ ൌ න ቀሺ߳௔ሻ൫ܦܷ௔ሶ ൅ ܦܲ௔ሶ ൯ ൅ሺ1 െ߳௔ሻ൫ܦܷ௕ሶ ൅ ܦܲ௕ሶ ൯ቁ ௧ିℓ
+421
+422 Vaccination model
+We develop an alternative model of awareness-based vaccine uptake. See Supplementary Figure 2 for a compartmental diagram for this model and Supplementary Table 1 for parameter definitions. Here, the second letter of compartment names indicates immune status: Unprotective (U), Transmission and Mortality-Reducing Immunity (T), or Mortality-Reducing Immunity (M).
+423 424 425 426 427
+As in the nonpharmaceutical intervention model, susceptible people without prior immunity (SU) may become infected and then recover or die according to baseline infection parameter values. Susceptible individuals may become vaccinated and
+428 429 430
+medRxiv preprint doi: https://doi.org/10.1101/2022.05.20.22275407 ; this version posted May 23, 2022. The copyright holder for this preprint (which was not certified by peer review) is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity. It is made available under a CC-BY 4.0 International license .
+transition directly to the recovered compartment, bypassing infection, at a rate dependent on the awareness equation (Equation 2). There may be a lag between the beginning of the epidemic and vaccine introduction at time point ݐ௩. To evaluate long- term immune effects of vaccination and infection on epidemic dynamics, we incorporate waning immunity.
+431 432 433 434 435 436 437 438 439 440 441 442 443 444 445 446 447
+After vaccination or infection, individuals temporarily have complete protection from infection (RT). At per capita rate ߱, they regain susceptibility to infection, this time with transmission and mortality-reducing immunity (i.e., ܵܶ). As in the nonpharmaceutical intervention model, transmission-reducing protection scales transmission rates for susceptible and infected individuals by a constant. Additionally, immunity from infection reduces disease-linked mortality by scaling factor ߞ. Transmission-reducing immunity is lost at per capita rate ߶, while the ortality-reducing immunity is retained over the course of the simulation, reflecting how neutralizing antibody production may decay over time while cellular immune responses are more durable (76). Susceptible individuals with mortality-reducing immunity alone (ܵܯ) may regain transmission- reducing immunity via vaccination, which occurs based on the same awareness function as vaccination of people without immune protection.
+448 The system of equations for this model in a population without groups is:
+௧ ݀ݐ ܷܵሶ ൌ െβܷܵሺܫܷ ൅κܫܶ ൅ܫܯሻെ θܷܵන ൫ܦܷሶ ൅ ܦܶሶ ൅ ܦܯሶ ൯ ௧ିℓ ܵܶሶ ൌ ωܴܶ െβκܵܶሺܫܷ ൅ κܫܶ ൅ ܫܯሻെԄܵܶ ௧ ݀ݐ ൅ Ԅܵܶ ܵܯሶ ൌ െβܵܯሺܫܷ ൅κܫܶ ൅ܫܯሻ െθܵܯන ൫ܦܷሶ ൅ܦܶሶ ൅ ܦܯሶ ൯ ௧ିℓ ܫܷሶ ൌ βܷܵሺܫܷ ൅κܫܶ ൅ܫܯሻ െρܫܷ ܫܶሶ ൌ βκܵܶሺܫܷ ൅ κܫܶ ൅ܫܯሻ െρܫܶ ܫܯሶ ൌ βܵܯሺܫܷ ൅ κܫܶ ൅ ܫܯሻെρܫܯ ௧ ݀ݐ ܴܶሶ ൌ ρ൫ሺ1െ µሻܫܷ ൅ ሺ1െ ζµሻሺܫܶ ൅ ܫܯሻ൯െωܴܶ ൅ θሺܷܵ ൅ ܵܯሻන ൫ܦܷሶ ൅ ܦܶሶ ൅ ܦܯሶ ൯ ௧ିℓ ܦܷሶ ൌ ሺµρሻܫܷ ܦܶሶ ൌ ሺζµρሻܫܲ ܦܯሶ ൌ ሺζµρሻܫܯ
+(Equation 3)
+449
+The equations for a split population with separated mixing and awareness can be derived following Equation 1.
+450 451
+medRxiv preprint doi: https://doi.org/10.1101/2022.05.20.22275407 ; this version posted May 23, 2022. The copyright holder for this preprint (which was not certified by peer review) is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity. It is made available under a CC-BY 4.0 International license .
+452 Simulations
+453 We ran simulations in R version 4.0.2, using the dede function in the deSolve package, 454 which solves systems of differential equations (77). The population begins as almost 455 fully susceptible (ܵሺ0ሻ ൎ 1), with a small initial infection prevalence (ܫሺ0ሻ) to seed the 456 outbreak and no protective behaviors.
+457
+458
+459
+460
+461
+462
+463
+464 Author contributions
+465 MJH and EAM conceived of project and designed models; MJH conducted analyses; 466 EAM and MJH interpreted simulations and wrote the manuscript.
+467 Competing interests
+468 All authors declare that there are no competing interests.
+469 Data and code availability
+470 Code used to conduct these analyses are available on Github at: 471 https://github.com/mjharris95/divided-disease
+472 Funding
+MJH was supported by the Knight-Hennessy Scholars Program. EAM was supported by the National Science Foundation (DEB-2011147), with support from the Fogarty International Center, the National Institute of General Medical Sciences (R35GM133439), the Terman Award, and seed grants from the Stanford King Center on Global Health, Woods Institute for the Environment, and Center for Innovation in Global Health.
+473 474 475 476 477 478
+medRxiv preprint doi: https://doi.org/10.1101/2022.05.20.22275407 ; this version posted May 23, 2022. The copyright holder for this preprint (which was not certified by peer review) is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity. It is made available under a CC-BY 4.0 International license .
+479 Supplementary files
+480 Supplementary Table 1. Parameter dictionary providing parameter symbols, 481 descriptions, and values for different scenarios. The parenthetical numbers in the values 482 column indicate the scenario where the parameter takes the given values (1: separated mixing 483 and awareness; 2: fatigue and awareness separation; 3: immunity and awareness separation).
+Parameter  Description Value Transmission coefficient 0.2 (1, 2, 3) ߚ Infectious period 10 (1, 2 ,3) 1/ߩ Infection fatality rate 0.01 (1,2); ߤ ߤ௔ ൌ 0.01 and ߤ௕ ൌ 0.02 (3) 0.3 (1, 2); 0.05 (3) Transmission and infection ߢ reduction with protective behavior Responsiveness 100 (1, 2); 20 (3) ߠ Memory 0 (1); 30 (2, 3) ℓ 0 (1); 0.02 (2); 0.01 (3) Fatigue (NPI model)/waning ߶ transmission-reducing immunity (vaccine model) h Homophily 0.5 (uniform) or 0.99 (separated) (1); 0.99 (separated) (2, 3) Assortative awareness level 0.5 (uniform) or 0.99 (separated) (1, 2, 3) ߳ Return to susceptibility 0.01 (3) ߱ (waning immunity) Mortality reduction 0.05 (3) ߞ Vaccination Start Time 200 (3) ݐ௩
+medRxiv preprint doi: https://doi.org/10.1101/2022.05.20.22275407 ; this version posted May 23, 2022. The copyright holder for this preprint (which was not certified by peer review) is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity. It is made available under a CC-BY 4.0 International license .
+484
+
+485
+Supplementary Figure 1. Compartmental diagram for non-pharmaceutical intervention model that tracks status with respect to infection and attitude toward protective behaviors. The first letter of each compartment name gives the state with respect to the disease transmission process (S=Susceptible, I=Infectious, R=Recovered, D=Deceased) and the second letter of each compartment name gives state with respect to awareness-driven protective behavior r (U=Unprotective, P=Protective). Squares are colored based on state with respect to disease. Potential transitions are indicated with arrows. Brown arrows indicate awareness-based
+486
+487
+488 489 490
+491
+492
+Potential transitions are indicated with arrows. Brown arrows indicate awareness-based adoption of protective measures. This diagram corresponds to the model described in Equation 1.
+493
+medRxiv preprint doi: https://doi.org/10.1101/2022.05.20.22275407 ; this version posted May 23, 2022. The copyright holder for this preprint (which was not certified by peer review) is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity. It is made available under a CC-BY 4.0 International license .
+
+494 495 496 497 498 499
+Supplementary Figure 2. Compartmental diagram for vaccination model that tracks status with respect to infection and immune status. The first letter of each compartment name gives the state with respect to the disease transmission process (S=Susceptible, I=Infectious, R=Recovered, D=Deceased) and the second letter of each compartment name gives immune status (U=Unprotective, T=Transmission and Mortality-Blocking, M=Mortality- Blocking alone). Squares are colored based on state with respect to disease. Potential transitions are indicated with arrows. Brown arrows indicate awareness-based vaccination. This diagram corresponds to the model described in Equation 3.
+500
+501
+502
+503
+medRxiv preprint doi: https://doi.org/10.1101/2022.05.20.22275407 ; this version posted May 23, 2022. The copyright holder for this preprint (which was not certified by peer review) is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity. It is made available under a CC-BY 4.0 International license .
+504 Effects of awareness separation on protective behavior and infections
+To understand the mechanism by which awareness separation reduces between-group differences in Figure 1, we consider early disease and awareness dynamics for both groups given separated mixing (߳ ൌ 0.99) and uniform or separated awareness (߳ ൌ 0.5 and ߳ ൌ 0.99 respectively).
+505
+506
+507
+508
+
+
+
+
+
+509
+Supplementary Figure 3. Separated awareness reduces between-group differences by removing group b’s awareness of the emerging epidemic and augmenting group a’s response to the introduction of the pathogen. We initialize our model using the same parameters as Figure 1 with separated mixing (݄ ൌ 0.99). We compare uniform
+510
+511
+512
+513
+medRxiv preprint doi: https://doi.org/10.1101/2022.05.20.22275407 ; this version posted May 23, 2022. The copyright holder for this preprint (which was not certified by peer review) is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity. It is made available under a CC-BY 4.0 International license .
+awareness (߳ ൌ 0.5; dashed lines) and separated awareness (߳ ൌ 0.99; solid lines). At the top, we compare early time series (through ݐ ൌ 80) of (A) protective attitude prevalence in group a; (B) protective attitude prevalence in group b; (C) infection prevalence in group a; (D) infection prevalence in group b. Panel E is a phase portrait of protective attitude prevalence against total infections in group a (maroon) and group b (blue). Points indicate values at ݐ ൌ 80, corresponding to the end of the time series in panels A- D. Arrows indicate differences in protective attitude prevalence (gray) and total infections (black) at ݐ ൌ 80 for separated versus uniform awareness, with letters corresponding to time series panel labels.
+514 515 516 517 518 519 520 521 522
+523
+524 Awareness separation reduces effects on mortality of different between- 525 group differences
+We demonstrate that the finding in Figure 1 applies across alternative scenarios where the pathogen is introduced in both groups at the same prevalence, but the groups differ ଵ ) ఘ in their transmission coefficients (ߚ), infection fatality rates (ߤ), or infectious period ( (Supplementary Figures 4, 5, 6). Note that, when transmission coefficient (ߚ) varies between groups, contacts between group a and group b will have transmission coefficient ඥߚ௔ߚ௕, the geometric mean of the transmission coefficient of both groups.
+526 527
+528
+529 530
+531
+Differences between groups that directly influence force of infection such as variation in transmission coefficient and infectious period, lead to differences in epidemic shape between the groups when mixing is separated (Supplementary Figures 4, 5). Given uniform awareness, epidemic shape is unaffected by mixing separation when group differences do not directly affect the transmission process (e.g., heterogeneity in infection fatality rates (Supplementary Figure 6). In all scenarios, separated awareness decreases differences in deaths between the two groups, although it may not eliminate differences in epidemic burden. In scenarios where groups have different forces of infections, differences in infections are also reduced with separated awareness (Supplementary Figures 4, 5). However, separated awareness increases the difference in infections when groups have different infection fatality rates, as observed in the vaccination scenario in the main text (Figures 3, 4).
+532 533 534 535 536 537 538 539 540 541 542 543
+medRxiv preprint doi: https://doi.org/10.1101/2022.05.20.22275407 ; this version posted May 23, 2022. The copyright holder for this preprint (which was not certified by peer review) is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity. It is made available under a CC-BY 4.0 International license .
+
+
+544
+Supplementary Figure 4. Separated awareness reduces differences in epidemic size between groups in epidemic size that arise from differences in transmission rates coupled with separated mixing. Plots of (A) infections and (B) deaths over time in group a (maroon) and group b (blue). We consider different levels of awareness separation [left column: uniform awareness (߳ ൌ 0.5); right column: separated awareness (߳ ൌ 0.99)] and mixing separation [top row: uniform mixing (݄ ൌ 0.5); bottom row: separated mixing (݄ ൌ 0.99)]. The groups are initialized so that group a has a greater transmission coefficient than group b (ߚ௔ ൌ 0.21 and ߚ௕ ൌ 0.19). We assume the pathogen is introduced in both groups at prevalence 0.0005. All other parameter values are the same as those used in Figure 1: infectious period ଵ ( ఘ ൌ 10), infection fatality rate (ߤ ൌ 0.01), protective measure efficacy (ߢ ൌ 0.3), responsiveness (ߠ ൌ 100), memory (ℓ ൌ 1), and fatigue (߶ ൌ 0).
+545
+546
+547
+548
+549
+550
+551
+552
+553
+554
+555
+medRxiv preprint doi: https://doi.org/10.1101/2022.05.20.22275407 ; this version posted May 23, 2022. The copyright holder for this preprint (which was not certified by peer review) is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity. It is made available under a CC-BY 4.0 International license .
+
+
+556
+Supplementary Figure 5. Separated awareness reduces differences in epidemic size between groups in epidemic size that arise from differences in infectious period coupled with separated mixing. Plots of (A) infections and (B) deaths over time in group a (maroon) and group b (blue). We consider different levels of awareness separation [left column: uniform awareness (߳ ൌ 0.5); right column: separated awareness (߳ ൌ 0.99)] and mixing separation [top row: uniform mixing (݄ ൌ 0.5); bottom row: separated mixing (݄ ൌ 0.99)]. The groups are ଵ ଵ initialized so that group a has a longer infectious period than group b ( ఘೌ ൌ 11.11 and ఘ್ ൌ 9.09). We assume the pathogen is introduced in both groups at prevalence 0.0005. All other parameter values are the same as those used in Figure 1: transmission coefficient (ߚ), infection fatality rate (ߤ ൌ 0.01), protective measure efficacy (ߢ ൌ 0.3), responsiveness (ߠ ൌ 100), memory (ℓ ൌ 1), and fatigue (߶ ൌ 0).
+557
+558
+559
+560
+561
+562
+563
+564
+565
+566
+567
+medRxiv preprint doi: https://doi.org/10.1101/2022.05.20.22275407 ; this version posted May 23, 2022. The copyright holder for this preprint (which was not certified by peer review) is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity. It is made available under a CC-BY 4.0 International license .
+
+
+568
+Supplementary Figure 6. Separated awareness reduces differences in mortality between groups arising from differences in their infection fatality rates and causes differences in infections between the groups. Plots of (A) infections and (B) deaths over time in group a (maroon) and group b (blue). We consider different levels of awareness separation [left column: uniform awareness (߳ ൌ 0.5); right column: separated awareness (߳ ൌ 0.99)] and mixing separation [top row: uniform mixing (݄ ൌ 0.5); bottom row: separated mixing (݄ ൌ 0.99)]. The groups are initialized so that group a has a higher infection fatality rate than group b (ߤ௔ ൌ 0.015 and ߤ௕ ൌ 0.0067). We assume the pathogen is introduced in both groups at prevalence 0.0005. All other parameter values are the same as those used in Figure 1: transmission ଵ coefficient (ߚ), infectious period ( ఘ ൌ 10), protective measure efficacy (ߢ ൌ 0.3), responsiveness (ߠ ൌ 100), memory (ℓ ൌ 1), and fatigue (߶ ൌ 0).
+569
+570
+571
+572
+573
+574
+575
+576
+577
+578
+579
+medRxiv preprint doi: https://doi.org/10.1101/2022.05.20.22275407 ; this version posted May 23, 2022. The copyright holder for this preprint (which was not certified by peer review) is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity. It is made available under a CC-BY 4.0 International license .
+580 Works Cited
+Works Cited 581 1. L. An, et al., Development of a coronavirus social distance attitudes scale. Patient 582 Education and Counseling (2020) https:/doi.org/10.1016/j.pec.2020.11.027.
+583 2. G. J. W. Cheok, et al., Appropriate attitude promotes mask wearing in spite of a 584 significant experience of varying discomfort. Infection, Disease & Health 26, 145–151 585 (2021).
+586 3. Y. Yan, et al., Measuring voluntary and policy-induced social distancing behavior 587 during the COVID-19 pandemic. Proceedings of the National Academy of Sciences 118, 588 e2008814118 (2021).
+589 4. C. A. Gidengil, A. M. Parker, B. J. Zikmund-Fisher, Trends in risk perceptions 590 and vaccination intentions: A longitudinal study of the first year of the H1N1 pandemic. 591 American Journal of Public Health 102, 672–679 (2012).
+592 5. B. J. Ridenhour, et al., “Effects of trust, risk perception, and health behavior on 593 COVID-19 disease burden: Evidence from a multi-state US survey” (2021) 594 https:/doi.org/10.1101/2021.11.17.21266481.
+595 6. J. Abaluck, et al., “Impact of community making on COVID-19: A cluster- 596 randomized trial in Bangladesh.” Science 375, eabi9069 (2021).
+597 7. J. Toor, et al., Lives saved with vaccination for 10 pathogens across 112 countries 598 in a pre-COVID-19 world. eLife 10, e67635 (2021).
+599 8. R. F. Arthur, J. H. Jones, M. H. Bonds, Y. Ram, M. W. Feldman, Adaptive social 600 contact rates induce complex dynamics during epidemics. PLOS Computational Biology 601 17, e1008639 (2021).
+602 9. J. S. Weitz, S. W. Park, C. Eksin, J. Dushoff, Awareness-driven behavior changes 603 can shift the shape of epidemics away from peaks and toward plateaus, shoulders, and 604 oscillations. Proceedings of the National Academy of Sciences 117, 32764–32771 (2020).
+605 10.   C. Eksin, J. S. Shamma, J. S. Weitz, Disease dynamics in a stochastic network 606 game: a little empathy goes a long way in averting outbreaks. Scientific Reports 7, 44122 607 (2017).
+608 11.   N. Perra, D. Balcan, B. Gonsalves, A. Vespignani, Towards a Characterization of 609 Behavior-Disease Models. PLOS ONE 6, e23084 (2011).
+12.   C. Granell, S. Gómez, A. Arenas, Dynamical interplay between awareness and epidemic spreading in multiplex networks. Physical Review Letters 111, 128701 (2013).
+610 611
+medRxiv preprint doi: https://doi.org/10.1101/2022.05.20.22275407 ; this version posted May 23, 2022. The copyright holder for this preprint (which was not certified by peer review) is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity. It is made available under a CC-BY 4.0 International license .
+612 13.   K. T. D. Eames, Networks of influence and infection: Parental choices and 613 childhood disease. Journal of The Royal Society Interface 6, 811–814 (2009).
+614 14. S. Funk, E. Gilad, C. Watkins, V. A. A. Jansen, The spread of awareness and its 615 impact on epidemic outbreaks. Proceedings of the National Academy of Sciences 106, 6872– 616 6877 (2009).
+617 15. L. He, L. Zhu, Modeling the COVID-19 epidemic and awareness diffusion on 618 multiplex networks. Communications in Theoretical Physics 73, 035002 (2021).
+619 16.   D. Acevedo-Garcia, Residential segregation and the epidemiology of infectious 620 diseases. Social Science & Medicine (1982) 51, 1143–1161 (2000).
+621 17. P. Farmer, Social inequalities and emerging infectious diseases. Emerging 622 Infectious Diseases 2, 259–269 (1996).
+623 18. S. N. Grief, J. P. Miller, Infectious Disease Issues in Underserved Populations. 624 Primary Care 44, 67–85 (2017).
+625 19. S. K. Greene, A. Levin-Rector, J. L. Hadler, A. D. Fine, Disparities in reportable 626 communicable disease incidence by census tract-level poverty, New York City, 627 20062013. American Journal of Public Health 105, e27–e34 (2015).
+628 20. T. Poteat, G. A. Millett, L. E. Nelson, C. Beyrer, Understanding COVID-19 risks 629 and vulnerabilities among black communities in America: The lethal force of 630 syndemics. Annals of Epidemiology 47, 1–3 (2020).
+631 21.   Z. Li, P. Wang, G. Gao, C. Xu, X. Chen, Age-period-cohort analysis of infectious 632 disease mortality in urban-rural China, 19902010. International Journal for Equity in Health 633 15, 55 (2016).
+634 22.   D. R. Williams, L. A. Cooper, COVID-19 and health equity: A new kind of “herd 635 immunity”. JAMA 323, 2478–2480 (2020).
+636 23. J. Zelner, et al., Racial disparities in coronavirus disease 2019 (COVID-19) 637 mortality are driven by unequal infection risks. Clinical Infectious Diseases 72, e88–e95 638 (2020).
+639 24. E. A. Benfer, et al., Eviction, Health Inequity, and the Spread of COVID-19: 640 Housing Policy as a Primary Pandemic Mitigation Strategy. Journal of Urban Health 98, 641 1–12 (2021).
+25.   M. Cubrich, On the frontlines: Protecting low-wage workers during COVID-19. Psychological Trauma: Theory, Research, Practice, and Policy 12, S186.
+642 643
+medRxiv preprint doi: https://doi.org/10.1101/2022.05.20.22275407 ; this version posted May 23, 2022. The copyright holder for this preprint (which was not certified by peer review) is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity. It is made available under a CC-BY 4.0 International license .
+644 26. P. W. Dhewantara, et al., Epidemiological shift and geographical heterogeneity in 645 the burden of leptospirosis in China. Infectious Diseases of Poverty 7, 57 (2018).
+646 27. S. Pramasivan, et al., Spatial distribution of Plasmodium knowlesi cases and their 647 vectors in Johor, Malaysia: In light of human malaria elimination. Malaria Journal 20, 426 648 (2021).
+649 28. S. C. Quinn, et al., Racial disparities in exposure, susceptibility, and access to 650 health care in the US H1N1 influenza pandemic. American Journal of Public Health 101, 651 285–293 (2011).
+652 29. T. Takahashi, et al., Sex differences in immune responses that underlie COVID-19 653 disease outcomes. Nature 588, 315–320 (2020).
+654 30.   X. Wu, R. C. Nethery, M. B. Sabath, D. Braun, F. Dominici, Air pollution and 655 COVID-19 mortality in the united states: Strengths and limitations of an ecological 656 regression analysis. Science Advances 6, eabd4049 (2020).
+657 31.   R. Calvin, et al., Racism and Cardiovascular Disease in African Americans. The 658 American Journal of the Medical Sciences 325, 315–331 (2003).
+659 32.   H. M. Lane, R. Morello-Frosch, J. D. Marshall, J. S. Apte, Historical redlining is 660 associated with present-day air pollution disparities in U.S. cities. Environmental Science 661 & Technology Letters 2022, 345-350 (2022).
+662 33. I. A. Doherty, V. J. Schoenbach, A. A. Adimora, Sexual mixing patterns and 663 heterosexual HIV transmission among African Americans in the southeastern United 664 States. Journal of acquired immune deficiency syndromes (1999) 52, 114–120 (2009).
+665 34.   R. Rothenberg, S. Q. Muth, S. Malone, J. J. Potterat, D. E. Woodhouse, Social and 666 geographic distance in HIV risk. Sexually Transmitted Diseases 32, 506–512 (2005).
+667 35.   C. R. K. Arnold, et al., SARS-CoV-2 Seroprevalence in a university community: A 668 longitudinal study of the impact of student return to campus on infection risk among 669 community members. medRxiv, 2021.02.17.21251942 (2021).
+670 36.   M. Harris, E. Tessier-Lavigne, E. Mordecai, The interplay of policy, behavior, and 671 socioeconomic conditions in early COVID-19 epidemiology in Georgia. Journal of the 672 Georgia Public Health Association 8 (2021).
+37. E. T. Richardson, et al., Reparations for Black American descendants of persons enslaved in the U.S. and their potential impact on SARS-CoV-2 transmission. Social Science & Medicine 276, 113741 (2021).
+673
+674
+675
+medRxiv preprint doi: https://doi.org/10.1101/2022.05.20.22275407 ; this version posted May 23, 2022. The copyright holder for this preprint (which was not certified by peer review) is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity. It is made available under a CC-BY 4.0 International license .
+676 38. J. A. Jacquez, C. P. Simon, J. Koopman, L. Sattenspiel, T. Perry, Modeling and 677 analyzing HIV transmission: tThe effect of contact patterns. Mathematical Biosciences 92, 678 119–199 (1988).
+679 39.   K. C. Ma, T. F. Menkir, S. Kissler, Y. H. Grad, M. Lipsitch, Modeling the impact of 680 racial and ethnic disparities on COVID-19 epidemic dynamics. eLife 10, e66601 (2021).
+681 40. J. Zelner, et al., There are no equal opportunity infectors: Epidemiological 682 modelers must rethink our approach to inequality in infection risk. PLOS Computational 683 Biology 18, e1009795 (2022).
+684 41. J. L. Herrera-Diestra, L. A. Meyers, Local risk perception enhances epidemic 685 control. PLOS ONE 14, e0225576 (2019).
+686 42. S. B. Omer, et al., Geographic clustering of nonmedical exemptions to school 687 immunization requirements and associations with geographic clustering of pertussis. 688 American Journal of Epidemiology 168, 1389–1396 (2008).
+689 43. J. Brug, et al., SARS risk perception, knowledge, precautions, and information 690 sources, the Netherlands. Emerging Infectious Diseases 10, 1486–1489 (2004).
+691 44. T. Oraby, V. Thampi, C. T. Bauch, The influence of social norms on the dynamics 692 of vaccinating behaviour for paediatric infectious diseases. Proceedings of the Royal 693 Society B: Biological Sciences 281, 20133172 (2014).
+694 45.   D. Holtz, et al., Interdependence and the cost of uncoordinated responses to 695 COVID-19. Proceedings of the National Academy of Sciences of the United States of America 696 117, 19837–19843 (2020).
+697 46. S. R. Christensen, et al., Political and personal reactions to COVID-19 during 698 initial weeks of social distancing in the United States. PLOS ONE 15, e0239693 (2020).
+699 47.   C. Anthonj, B. Diekkrüger, C. Borgemeister, Thomas Kistemann, Health risk 700 perceptions and local knowledge of water-related infectious disease exposure among 701 Kenyan wetland communities. International Journal of Hygiene and Environmental Health 702 222, 34–48 (2019).
+703 48. L. Simione, C. Gnagnarella, Differences between health workers and general 704 population in risk perception, behaviors, and psychological distress related to COVID- 705 19 spread in Italy. Frontiers in Psychology 11 (2020).
+49. S. Funk, M. Salathé, V. A. A. Jansen, Modelling the influence of human behaviour on the spread of infectious diseases: a review. Journal of The Royal Society Interface 7, 1247–1256 (2010).
+706 707 708
+medRxiv preprint doi: https://doi.org/10.1101/2022.05.20.22275407 ; this version posted May 23, 2022. The copyright holder for this preprint (which was not certified by peer review) is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity. It is made available under a CC-BY 4.0 International license .
+50. B. Steinegger, L. Arola-Fernández, C. Granell, J. Gómez-Gardeñes, A. Arenas, Behavioural response to heterogeneous severity of COVID-19 explains temporal variation of cases among different age groups. Philosophical Transactions of the Royal Society A: Mathematical, Physical and Engineering Sciences 380, 20210119 (2022).
+709
+710
+711
+712
+713 51.   D. Weston, K. Hauck, R. Amlôt, Infection prevention behaviour and infectious 714 disease modelling: a review of the literature and recommendations for the future. BMC 715 Public Health 18, 336 (2018).
+716 52.   C. Barrett, K. Bisset, J. Leidig, A. Marathe, M. Marathe, Economic and social 717 impact of influenza mitigation strategies by demographic class. Epidemics 3, 19–31 718 (2011).
+719 53.   A. L. Skinner-Dorkenoo, et al., Highlighting COVID-19 racial disparities can 720 reduce support for safety precautions among white U.S. residents. Social Science & 721 Medicine 301, 114951 (2022).
+722 54.   C. Atchison, et al., Early perceptions and behavioural responses during the 723 COVID-19 pandemic: a cross-sectional survey of UK adults. BMJ Open 11, e043577 724 (2021).
+725 55. J. Jay, et al., Neighbourhood income and physical distancing during the COVID- 726 19 pandemic in the United States. Nature Human Behaviour 4, 1294–1302 (2020).
+727 56. S. A. P. Clouston, J. Yukich, P. Anglewicz, Social inequalities in malaria 728 knowledge, prevention and prevalence among children under 5 years old and women 729 aged 15-49 in Madagascar. Malaria Journal 14, 499 (2015).
+730 57.   N. Williams, et al., Assessment of racial and ethnic disparities in access to 731 COVID-19 vaccination sites in Brooklyn, New York. JAMA Network Open 4, e2113937 732 (2021).
+733 58. S. Cardona, N. Felipe, K. Fischer, N. J. Sehgal, B. E. Schwartz, Vaccination 734 disparity: Quantifying racial inequity in COVID-19 vaccine administration in Maryland. 735 Journal of Urban Health: Bulletin of the New York Academy of Medicine 98, 464–468 (2021).
+736 59. J. Heymann, et al., US sick leave in global context: US eligibility rules widen 737 inequalities despite readily available solutions. Health Affairs 40, 1501–1509 (2021).
+738 60. S. Dryhurst, et al., Risk perceptions of COVID-19 around the world. Journal of Risk 739 Research 23, 994–1006 (2020).
+61.   Y. Ma, S. Pei, J. Shaman, R. Dubrow, K. Chen, Role of meteorological factors in the transmission of SARS-CoV-2 in the United States. Nature Communications 12 (2021).
+740
+741
+medRxiv preprint doi: https://doi.org/10.1101/2022.05.20.22275407 ; this version posted May 23, 2022. The copyright holder for this preprint (which was not certified by peer review) is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity. It is made available under a CC-BY 4.0 International license .
+742 62.   K. T. L. Sy, L. F. White, B. E. Nichols, Population density and basic reproductive 743 number of COVID-19 across United States counties. PLOS ONE 16, e0249271 (2021).
+744 63. S. Bhattacharyya, C. T. Bauch, A game dynamic model for delayer strategies in 745 vaccinating behaviour for pediatric infectious diseases. Journal of Theoretical Biology 267, 746 276–282 (2010).
+747 64.   A. J. Schulz, et al., Moving health education and behavior upstream: lessons from 748 COVID-19 for addressing structural drivers of health inequities. Health Education & 749 Behavior 47, 519–524 (2020).
+750 65. E. J. van Holm, C. K. Wyczalkowski, P. A. Dantzler, Neighborhood conditions 751 and the initial outbreak of COVID-19: The case of Louisiana. Journal of Public Health, 1–6 752 (2020).
+753 66.   A. R. Maroko, D. Nash, B. T. Pavilonis, COVID-19 and inequity: A comparative 754 spatial analysis of New York City and Chicago hot spots. Journal of Urban Health 97, 461 755 (2020).
+67.   G. Grossman, S. Kim, J. M. Rexer, H. Thirumurthy, Political partisanship influences behavioral responses to governors’ recommendations for COVID-19 prevention in the United States. Proceedings of the National Academy of Sciences 117, 24144–24153 (2020).
+756
+757
+758
+759
+760 68. P. E. Smaldino, J. H. Jones, Coupled dynamics of behaviour and disease 761 contagion among antagonistic groups. Evolutionary Human Sciences, 1–17.
+762 69.   R. S. Mehta, N. A. Rosenberg, Modelling anti-vaccine sentiment as a cultural 763 pathogen. Evolutionary Human Sciences 2, e21 (2020).
+764 70. S. S. Shanta, Md. H. A. Biswas, The impact of media awareness in controlling the 765 spread of infectious diseases in terms of SIR model. Mathematical Modelling of 766 Engineering Problems 7, 368–376 (2020).
+767 71. J. Lee, J. Choi, R. K. Britt, Social Media as risk-attenuation and misinformation- 768 amplification station: How social media interaction affects misperceptions about 769 COVID-19. Health Communication, 1–11 (2021).
+770 72.   A. H. Sinclair, S. Hakimi, M. L. Stanley, R. A. Adcock, G. R. Samanez-Larkin, 771 Pairing facts with imagined consequences improves pandemic-related risk perception. 772 Proceedings of the National Academy of Sciences 118 (2021).
+73.   A. H. Sinclair, et al., Imagining a personalized scenario selectively increases perceived risk of viral transmission for older adults. Nature Aging 1, 677–683 (2021).
+773
+774
+medRxiv preprint doi: https://doi.org/10.1101/2022.05.20.22275407 ; this version posted May 23, 2022. The copyright holder for this preprint (which was not certified by peer review) is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity. It is made available under a CC-BY 4.0 International license .
+775 74. L. Shen, et al., Emotional attitudes of Chinese citizens on social distancing during 776 the COVID-19 outbreak: Analysis of social media data. JMIR Medical Informatics 9, 777 e27079 (2021).
+778 75. S. Chang, et al., Mobility network models of COVID-19 explain inequities and 779 inform reopening. Nature 589, 82–87 (2020).
+780 76.   M. K. Siggins, R. S. Thwaites, P. J. M. Openshaw, Durability of immunity to 781 SARS-CoV-2 and other respiratory viruses. Trends in Microbiology 29, 648–662 (2021).
+77.   K. Soetaert, T. Petzoldt, R. W. Setzer, Solving differential equations in R: Package deSolve. Journal of Statistical Software 33, 1–25 (2010).
+782
+783

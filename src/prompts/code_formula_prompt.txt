@@ -1,7 +1,0 @@
-We have a Python file labeled with line numbers:
-[CODE]
-
-There is also a list of formula labeled with numbers as follows:
-[FORMULA]
-
-Which python code section is the best match for the formula [TARGET]?

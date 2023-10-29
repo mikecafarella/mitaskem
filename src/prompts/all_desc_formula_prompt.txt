@@ -1,4 +1,0 @@
-We have several variable names as follows, each on a newline:
-[DESC]
-
-From the variable names stated above, print up to two that match the following variable name: "[TARGET]", each one a newline.

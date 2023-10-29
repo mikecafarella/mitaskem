@@ -1,9 +1,0 @@
-Here is some text:
-
-[TEXT]
-
-This text may describe a model, in which case it may contain terms that are variables. 
-
-If it does, print the names of these variables, one on each line. To the right of each variable name, print a colon, followed by phrase that best describes the variable from the given text excerpt.
-
-If it doesn't, print "None".

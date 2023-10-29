@@ -1,0 +1,43 @@
+S_{i j}: Proportion of individuals who are susceptible to the virus 
+E_{i j}: Proportion of individuals who have been exposed to the virus 
+I_{i, j}^{\text {hosp }}: Proportion of individuals that are exhibiting severe disease symptoms and are in need of hospitalization 
+I_{i, j}^{\text {mild }}: Proportion of individuals that are exhibiting mild disease symptoms 
+I_{i, j}^{\text {asym }}: Proportion of individuals who are infected but asymptomatic 
+R_{i, j}: Proportion of individuals who have recovered from the virus and are no longer capable of infecting other individuals 
+R_{i, j}^{\text {hosp }}: Proportion of individuals who have recovered from the virus after a period of time in a hospital 
+D_{i, j}: Proportion of individuals who have succumbed as a direct result of the virus 
+β_{i, j}: Force of infection on a member of age group i in location j 
+σ: Viral latent period 
+α: Rate of infections that are asymptomatic 
+ν_{i}: Fraction
+index $i$: Index for individuals
+index $j$: Index for geographic regions
+I^{\text {asym }}: Asymptomatic infected state
+I^{\text {mild }}: Mild infected state
+I^{\text {hosp }}: Severe infected state
+$\gamma$: Rate of recovery from virus
+$1 / \tau_{i}$: Rate of recovery after period of illness
+$\phi_{i} \gamma$: Rate of expiration from virus
+$R_{0}$: Basic reproductive number
+asym_frac: Fraction of infections that are asymptomatic
+rel_inf_asym: Relative infectiousness of asymptomatic individuals
+frac_trans_before_s: Percentage of transmission prior to symptom onset
+F: Case fatality ratio
+H: Case hospitalization ratio
+I_TO_H_TIME: Time from symptom onset to hospitalization
+H_TIME: Duration of hospitalization
+D_REPORT_TIME: Time between death and reporting
+Tg: Mean generation interval (in days)
+CHR: Case hospitalization-severity ratio
+I_to_H_time: Time it takes from symptom onset to hospitalization (in days)
+H_TIME: Number of days an individual will be hospitalized
+D_REPORT_TIME: Number of days between death and reporting
+None
+None.
+R0_frac: Factor that is multiplied with the baseline mobility value to model the effect of NPIs.
+Contact-Matrix Based NPIs: NPIs that effect certain age groups within the total population.
+Mobility Based NPI: NPIs that lead to changes in mobility/movement between administrative districts.
+Reproduction Number Based NPI: NPIs that have an effect on the overall scaling of transmissibility.
+None
+$R_{0}$: Reproduction number-based reduction in overall community transmission
+None.

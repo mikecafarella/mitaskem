@@ -1,0 +1,56 @@
+1 Faculty of Information Technology and Bionics, Pázmány Péter Catholic University, Budapest, Hungary 
+2 Cytocast Kft., Vecsés, Hungary 
+3 Institute of Medical Microbiology, Faculty of Medicine, Semmelweis University, Budapest, Hungary 
+4 Bolyai Institute, University of Szeged, Szeged, Hungary 
+5 Randall Centre for Cell and Molecular Biophysics, King’s College London, London, United Kingdom 
+None
+1, non-pharmaceutical interventions such as social distancing, testing and quarantining
+2, to vaccination
+3, hospitalisation, and
+4–7 - Typically, control measures are differentially applied to various groups (compartments) of the society and decision-makers often need to refocus their intervention strategies as new infection hotspots or new virus variants emerge
+8,9 - Mathematical modelling is now increasingly used to inform decision-makers
+10,11 - In these models, disease progression is often described by variants of the now classical SEIR approach
+12 - A key element is the probability of person-to-person disease transmission upon adequate contact, which defines the likelihood of a person’s transition from the susceptible to the exposed compartment
+13–15 - This is often based on predefined values, but it can also be calculated from environmental data, using formulas of varying complexity
+16–20 - Traditionally, the resulting models are then run with ordinary differential equations, which are deterministic and can provide crude estimates on how interventions may affect the outcome of the epidemic
+19,20 - Differential equation driven analysis of vaccination strategies or other intervention policies is feasible and widely used
+21–24 - Another strategy is provided by stochastic, agent-based models (ABMs), where agents, corresponding to individuals, move and transmit the infection among each other
+25 - complex, stochastic system
+26 - controlling dynamical systems
+27 - B.1.1.7
+28 - late 2020
+29 - 1·5 to 1·9
+30 - 1·5 to 1·9
+31 - 12- and 28-days post-vaccination
+11th November 2020
+1st January 2021
+20 simulations
+CC-BY 4.0 International license
+None
+A - percentage of hospitalised COVID-19 patients in the population
+B - accumulated number of death events due to COVID-19 scaled to the whole population
+C - daily ratio of positive tests
+D - percentage of hospitalised COVID-19 patients in the population each day (hospital burden)
+None
+34 Hungary
+9,12
+35
+1 Peak CM, Kahn R, Grad YH,  et al. Individual quarantine versus active monitoring of contacts for the mitigation of COVID-19: a modelling study. Lancet Infect Dis 2020; 20: 1025–33.
+2 Wells  CR,  Townsend  JP,  Pandey  A,  et  al.  Optimal  COVID-19  quarantine  and  testing  strategies.  Nat Commun 2021; 12: 1–9.
+3 Forni G, Mantovani A, Forni G, et al. COVID-19 vaccines: where we stand and challenges ahead. Cell Death Differ. 2021; 28: 626–39.
+4 Ferguson NM, Cummings DAT, Fraser C, Cajka JC, Cooley PC, Burke DS. Strategies for mitigating an influenza pandemic. Nature 2006; 442: 448–52.
+5 Chang SL, Harding N, Zachreson C, Cliff OM, Prokopenko M. Modelling transmission and control of the COVID-19 pandemic in Australia. Nat Commun 2020; 11: 1–13.
+6 Nadanovsky P, dos Santos APP. Strategies to deal with the COVID-19 pandemic.
+19 Matrajt L, Eaton J, Leung T, Brown ER. Vaccine optimisation for COVID-19: Who to vaccinate first? Sci Adv 2020; 7: eabf1374.
+20 Bubar KM, Reinholt K, Kissler SM, et al. Model-informed COVID-19 vaccine prioritisation strategies by age and serostatus. Science (80- ) 2021; : eabe6959.
+21 Chang S, Pierson E, Koh PW, et al. Mobility network models of COVID-19 explain inequities and inform reopening. Nature 2021; 589: 82–7.
+22 Chinazzi M, Davis JT, Ajelli M, et al. The effect of travel restrictions on the spread of the 2019 novel coronavirus (COVID-19) outbreak. Science (80- ) 2020; 368: 395–400.
+23 Hoertel N, Blachier M, Blanco C, et al. A stochastic agent-based model of the SARS-CoV-2 epidemic in France. Nat Med 2020; 26: 1417–21.
+24 Rockett RJ, Arnott A, Lam C,  et
+2 - lineage B.1.1.7 in England
+29 - Brookman S, Cook J, Zucherman M, Broughton S, Harman K, Gupta A. Effect of the new SARS-CoV-2
+30 - medRxiv preprint doi: https://doi.org/10.1101/2021.06.20.21259214
+31 - Polack FP, Thomas SJ, Kitchin N, et al. Safety and Efficacy of the BNT162b2 mRNA Covid-19 Vaccine. N Engl J Med 2020; 383: 2603–15.
+32 - Arafkas M, Khosrawipour T, Kocbach P, et al. Current meta-analysis does not support the possibility of COVID-19 reinfections. J Med Virol 2021; 93: 1599–604.
+33 - Cylus J, Panteli D, van Ginneken E. Who should be vaccinated first? Comparing vaccine prioritisation strategies in Israel and European countries using the Covid-19 Health System Response Monitor. Isr. J. Health Policy Res. 2021; 10: 16.
+34 - Arroy

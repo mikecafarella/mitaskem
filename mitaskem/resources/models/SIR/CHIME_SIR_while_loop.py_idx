@@ -1,0 +1,108 @@
+0	def get_beta(intrinsic_growth_rate, gamma,           
+1	             susceptible, relative_contact_rate):    
+2	    inv_contact_rate = 1.0 - relative_contact_rate  
+3	    updated_growth_rate = intrinsic_growth_rate + gamma  
+4	    beta = updated_growth_rate / susceptible * inv_contact_rate 
+5	 
+6	    return beta  
+7	
+8	def get_growth_rate(doubling_time): 
+9	    if doubling_time == 0:  
+10	        growth_rate = 0  
+11	    else:
+12	        growth_rate = 2.0 ** (1.0 / doubling_time) - 1.0 
+13	    return growth_rate 
+14	
+15	def sir(s, i, r, beta, gamma, n): 
+16	    s_n = (-beta * s * i) + s  
+17	    i_n = (beta * s * i - gamma * i) + i 
+18	    r_n = gamma * i + r  
+19	
+20	    scale = n / (s_n + i_n + r_n) 
+21	
+22	    s = s_n * scale 
+23	    i = i_n * scale 
+24	    r = r_n * scale 
+25	    return s, i, r  
+26	
+27	def sim_sir(s, i, r, gamma, i_day, 
+28	            N_p, betas, days, 
+29	            d_a, s_a, i_a, r_a, e_a  
+30	            ):
+31	    n = s + i + r 
+32	    d = i_day 
+33	    index = 0  
+34	    p_idx = 0 
+35	
+36	    while p_idx < N_p:  
+37	        beta = betas[p_idx]  
+38	        n_days = days[p_idx]  
+39	        
+40	        d_idx = 0 
+41	        while d_idx < n_days:  
+42	            d_a[index] = d  
+43	            s_a[index] = s  
+44	            i_a[index] = i  
+45	            r_a[index] = r  
+46	            e_a[index] = i + r 
+47	            index = index + 1  
+48	
+49	            s, i, r = sir(s, i, r, beta, gamma, n) 
+50	            d = d + 1  
+51	            d_idx = d_idx + 1 
+52	        p_idx = p_idx +  1 
+53	    
+54	    d_a[index] = d 
+55	    s_a[index] = s 
+56	    i_a[index] = i 
+57	    r_a[index] = r 
+58	    e_a[index] = i + r 
+59	
+60	    return s, i, r, d_a, s_a, i_a, r_a, e_a 
+61	
+62	def main(): 
+63	    i_day = 17.0  
+64	    n_days = 20   
+65	    N_p = 3       
+66	    N_t = 121     
+67	    infections_days = 14.0  
+68	    relative_contact_rate = 0.05  
+69	    gamma = 1.0 / infections_days  
+70	
+71	    policys_betas = [0.0] * N_p  
+72	    policy_days = [0] * N_p      
+73	    d_a = [0.0] * N_t  
+74	    s_a = [0.0] * N_t  
+75	    i_a = [0.0] * N_t  
+76	    r_a = [0.0] * N_t  
+77	    e_a = [0.0] * N_t  
+78	
+79	    
+80	    s_n = 1000 
+81	    i_n = 1  
+82	    r_n = 1  
+83	
+84	    p_idx = 0 
+85	    while p_idx < N_p:  
+86	        doubling_time = (p_idx - 1.0) * 5.0  
+87	
+88	        growth_rate = get_growth_rate(doubling_time) 
+89	        beta = get_beta(growth_rate, gamma, s_n,     
+90	                        relative_contact_rate)
+91	        policys_betas[p_idx] = beta  
+92	        policy_days[p_idx] = n_days * p_idx  
+93	        p_idx = p_idx + 1
+94	
+95	    s_n, i_n, r_n, d_a, s_a, i_a, r_a, e_a \
+96	        = sim_sir(s_n, i_n, r_n, gamma, i_day,  
+97	                  N_p, policys_betas, policy_days,
+98	                  d_a, s_a, i_a, r_a, e_a) 
+99	                                           
+100	    #print("s_n: " + str(s_n))            
+101	    #print("i_n: " + str(i_n))            
+102	    #print("r_n: " + str(r_n))            
+103	    #print("E: " + str(e_a))              
+104	
+105	    return d_a, s_a, i_a, r_a, e_a  
+106	
+107	# main() 
