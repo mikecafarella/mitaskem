@@ -1,11 +1,10 @@
-from connect import dataset_header_dkg
+from mitaskem.src.connect import dataset_header_dkg
 import os
 import csv
 import os
 import csv
 import json
 
-GPT_KEY = os.environ.get('OPENAI_API_KEY')
 
 def process_csv_files(input_file, output_json_file):
     annotations = []
