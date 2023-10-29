@@ -5,7 +5,6 @@ import argparse
 from mitaskem.src.mira_dkg_interface import *
 
 
-GPT_KEY = os.environ.get('OPENAI_API_KEY')
 MAX_TEXT_MATCHES = 2
 MAX_DKG_MATCHES = 2
 
@@ -139,6 +138,7 @@ async def avars_to_json(var_dict: dict) -> str:
     return s_out
 
 def main(args):
+    GPT_KEY = None 
 
     out_filename_params = args.out_dir + "/" + args.in_path.split("/")[-1].split(".")[0] + "_params.txt"
     out_filename_vars = args.out_dir + "/" + args.in_path.split("/")[-1].split(".")[0] + "_vars.txt"

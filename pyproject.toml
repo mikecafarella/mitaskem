@@ -29,3 +29,6 @@ dependencies = [
     "pytest", # for testing 
     "nbmake", # for testing notebooks
 ]
+
+[tool.setuptools]
+packages = ["mitaskem"]
