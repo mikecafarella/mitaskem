@@ -1,5 +1,4 @@
 import pandas as pd 
-import numpy as np
 from langchain.retrievers import TFIDFRetriever
 from langchain.schema import Document
 from pathlib import Path
@@ -32,10 +31,16 @@ def make_desc_doc(tup):
     else:
         return ''
 
-def build_node_retriever(kg_node_tsv_path, limit):
-    print(f'building index for epi KG from {kg_node_tsv_path}')
-    df = pd.read_csv(kg_node_tsv_path, delimiter='\t')
-    df = df.rename({'name:string':'name', 'synonyms:string[]':'synonyms', 'id:ID':'id', 'description:string':'description', 'type:string':'type'}, axis=1)
+
+import os
+from mitaskem.globals import CACHE_BASE
+import requests
+import pandas as pd
+
+def build_node_retriever(df, limit) -> TFIDFRetriever:
+    print(f'building index for KG ')
+    df = df.rename({'name:string':'name', 'synonyms:string[]':'synonyms', 'id:ID':'id', 
+                    'description:string':'description', 'type:string':'type'}, axis=1)
     df = df.assign(**(df[['name', 'synonyms', 'description']].fillna('')))
 
     df = df.assign(name_doc = df[['name', 'synonyms']].apply(tuple, axis=1).map(make_name_doc))
@@ -49,52 +54,66 @@ def build_node_retriever(kg_node_tsv_path, limit):
     print('done building index')
     return retriever
 
-## curl -o epi_2023-07-07_nodes.tsv.gz 
-# https://askem-mira.s3.amazonaws.com/dkg/epi/build/2023-07-07/nodes.tsv.gz
-## unzip epi_2023-07-07_nodes.tsv
-import os
-from mitaskem.globals import CACHE_BASE
+KG_BASE= f'{str(CACHE_BASE)}/kgs/'
 
-g_kgpath = CACHE_BASE/'epi_nodes.tsv'
-g_retriever_filename = 'epi_nodes_retriever'
-_g_retriever = None
+def _get_kg(kg_name) -> pd.DataFrame:
+    assert kg_name in ['epi']
 
-def _get_retriever():
+    base = f'{KG_BASE}/{kg_name}'
+    if not os.path.exists(base):
+        os.makedirs(base, exist_ok=True)
+
+    if not os.path.exists(os.path.expanduser(f'{base}/nodes.tsv.gz')):
+        url = 'https://askem-mira.s3.amazonaws.com/dkg/epi/build/2023-07-07/nodes.tsv.gz'
+        print(f'downloading kg graph {url=}')
+
+        response = requests.get(url)
+        with open(os.path.expanduser(f'{base}/nodes.tsv.gz'), 'wb') as f:
+            f.write(response.content)
+
+        print('done downloading kg graph')
+
+    tab = pd.read_csv(os.path.expanduser(f'{base}/nodes.tsv.gz'), sep='\t', compression='gzip')
+    return tab
+
+_g_retriever_cache : dict[str,TFIDFRetriever] = {
+    'epi': None
+}
+
+def _get_retriever(kg_name) -> TFIDFRetriever:
     ''' initializes and caches retriever from kg nodes file
         use this instead of the global variable directly
     '''
-    global _g_retriever
-    if not os.path.exists(g_kgpath):
-        raise Exception(f'KG file {g_kgpath} does not exist')
+    global _g_retriever_cache
+    base =  f'{KG_BASE}/{kg_name}/'
+    retriever_filename = 'retriever'
 
-
-    if _g_retriever is None:
-        cache_file = (CACHE_BASE/g_retriever_filename).with_suffix('.joblib')
+    if _g_retriever_cache.get(kg_name) is None:
+        cache_file = Path(f'{base}/{retriever_filename}.joblib')
 
         if cache_file.exists():
-            print('loading retriever from cache')
+            print('loading retriever from disk cache')
             start = time.time()
-            _g_retriever = TFIDFRetriever.load_local(str(CACHE_BASE), g_retriever_filename)
-            print(f'done loading retriever from cache, {time.time() - start=}')
+            _g_retriever_cache[kg_name] = TFIDFRetriever.load_local(base, retriever_filename)
+            print(f'done loading retriever from disk cache, {time.time() - start=}')
         else:
             print('building retriever from scratch')
             start = time.time()
-            ret = build_node_retriever(g_kgpath, limit=4)
-            ret.save_local(str(CACHE_BASE), g_retriever_filename)
-            _g_retriever = ret
+            df = _get_kg(kg_name=kg_name)
+            ret = build_node_retriever(df, limit=4)
+            ret.save_local(base, retriever_filename)
+            _g_retriever_cache[kg_name] = ret
             print('done building retriever')
 
         assert cache_file.exists()
 
-
-    assert _g_retriever is not None
-    return _g_retriever
-
+    assert _g_retriever_cache.get(kg_name) is not None
+    return _g_retriever_cache.get(kg_name)
 
 from typing import List
 def local_batch_get_mira_dkg_term(term_list : List[str]) -> List[dict]:
     batch_ans = []
-    retriever = _get_retriever()
+    retriever : TFIDFRetriever = _get_retriever(kg_name='epi')
     for term in term_list:
         docs = retriever.get_relevant_documents(term)
         ansdocs = []
