@@ -18,11 +18,6 @@ from mitaskem.src.util import *
 from mitaskem.src.gpt_interaction import *
 from mitaskem.src.mira_dkg_interface import *
 
-GPT_KEY = os.environ.get('OPENAI_API_KEY')
-
-# from automates.program_analysis.JSON2GroMEt.json2gromet import json_to_gromet
-# from automates.gromet.query import query
-
 locale.setlocale(locale.LC_ALL, 'en_US.UTF-8')
 
 def index_text_path(text_path: str) -> str:
@@ -958,6 +953,7 @@ def get_dataset_type(first_row: List[Any]) -> str:
 
 if __name__ == "__main__":
 
+
     dkg_str = """{
       "col_name": "dates",
       "concept": "Time",
@@ -1016,8 +1012,8 @@ if __name__ == "__main__":
     target = copy.deepcopy(json_obj)
     del target["dkg_groundings"]
 
-
-    print(rank_dkg_terms(target, json_obj["dkg_groundings"], GPT_KEY))
+    key = None
+    print(rank_dkg_terms(target, json_obj["dkg_groundings"],key))
 
     # code_dkg_connection("population", "") # GPT key
     # vars = read_text_from_file('../demos/2023-03-19/mar_demo_intermediate.json')

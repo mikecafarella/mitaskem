@@ -79,7 +79,7 @@ async def upload_files_integration(gpt_key: str, mit_file: UploadFile = File(...
 
 
 if __name__ == "__main__":
-    GPT_KEY = os.environ.get('OPENAI_API_KEY')
+    GPT_KEY = None 
     key = GPT_KEY
     cache_dir = "/Users/chunwei/research/mitaskem/resources/xDD/"
 

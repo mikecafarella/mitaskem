@@ -9,7 +9,7 @@ from mitaskem.src.dataset_id import modify_dataset
 from mitaskem.src.ensemble.ensemble import load_paper_info, extract_variables, extract_vars
 from mitaskem.src.text_search import text_var_search, vars_dedup, vars_to_json, avars_to_json
 
-GPT_KEY = os.environ.get('OPENAI_API_KEY')
+GPT_KEY = None 
 
 PARAM = "/Users/chunwei/research/mitaskem/resources/xDD/params/"
 API_ROOT = "http://0.0.0.0:8000/"

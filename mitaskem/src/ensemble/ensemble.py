@@ -5,8 +5,7 @@ import os
 from langchain.document_loaders import PyPDFLoader
 from mitaskem.src.text_search import text_param_search, text_var_search
 
-GPT_KEY = os.environ.get('OPENAI_API_KEY')
-
+GPT_KEY = None 
 
 def extract_paper_info(input_json_file, output_json_file):
     with open(input_json_file, 'r') as file:
