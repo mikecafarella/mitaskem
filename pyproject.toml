@@ -22,6 +22,8 @@ dependencies = [
     "aiohttp~=3.8.4",
     "jmespath",
     "pydantic",
+    "scikit-learn",
+    "Jinja2",
 
     # dev / notebooks stuff
     "ta1viewer @ git+https://github.com/orm011/ta1viewer.git@main", # debug
