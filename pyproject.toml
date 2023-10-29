@@ -28,7 +28,15 @@ dependencies = [
     "watchfiles", # for uvicorn hot-reload
     "pytest", # for testing 
     "nbmake", # for testing notebooks
+    "pre-commit", # for pre-commit hooks
 ]
 
 [tool.setuptools]
 packages = ["mitaskem"]
+
+
+[tool.pytest.ini_options]
+# for now only run these tests by default
+addopts = '--nbmake'
+python_files = ["*.ipynb"]
+testpaths = ["demos/2023-07"]
