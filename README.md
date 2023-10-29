@@ -14,19 +14,31 @@ The MIT team consists of (in alphabetical order):
 - [Anna Zeng](https://people.csail.mit.edu/annazeng/)
 
 ## installing: 
+
 `pip install -e .`
 
 ## developing and testing
+
+For clients: (eg notebooks)
+Set up environment, specifically `OPENAI_API_KEY`, for client scripts/notebooks.
+
+
+For server (no key needed on server side)
 From within mitaskm root:
-set up environment, specifically `OPENAI_API_KEY`, to run the notebooks.
 
 `uvicorn --reload --reload-dir=./mitaskem/ mitaskem.api.server:app`
 
-This will hot-reload the project as you change files.
+The above will hot-reload the project as you change files.
 
-## testing:
+### testing:
+Ensure a server is running on a different tab.
+The will run the july scenarios as a client.
+
 `pytest --nbmake --overwrite  ./demos/2023-07/*ipynb`
-This will run the july scenarios
+
+
+## docker image (for deploying)
+`docker compose up --build`
 
 
 ## Public API
