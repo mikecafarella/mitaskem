@@ -17,9 +17,10 @@ from mitaskem.src.response_types import TabularProfile, MatrixProfile
 
 router = APIRouter()
 
+from mitaskem.src.response_types import KGDomain
 
 @router.post("/find_text_vars", tags=["Paper-2-annotated-vars"])
-async def find_variables_from_text(gpt_key: str, file: UploadFile = File(...)) -> JSONResponse:
+async def find_variables_from_text(gpt_key: str, file: UploadFile = File(...), kg_domain : KGDomain = 'epi') -> JSONResponse:
 
     contents = await file.read()
     json_str = await afind_vars_from_text(contents.decode(), gpt_key)
@@ -76,7 +77,7 @@ async def profile_matrix_data(gpt_key: str, csv_file: UploadFile = File(...), do
 
 @router.post("/link_dataset_col_to_dkg", tags=["Paper-2-annotated-vars"], response_model=Dict[str, TabularProfile])
 async def link_dataset_columns_to_dkg_info(gpt_key: str, csv_file: UploadFile = File(...),
-                                           doc_file: UploadFile = File(...), smart: Optional[bool] = False) -> JSONResponse:
+                                           doc_file: UploadFile = File(...), smart: Optional[bool] = False, kg_domain : KGDomain = 'epi') -> JSONResponse:
     """
            Smart run provides better results but may result in slow response times as a consequence of extra GPT calls.
     """
@@ -97,7 +98,7 @@ async def link_dataset_columns_to_dkg_info(gpt_key: str, csv_file: UploadFile = 
     data = [header]
     data.extend(csv_reader)  # make sure header is included in data
     data = process_data(data)
-    s, success = await dataset_header_document_dkg(data=data, doc=doc, dataset_name=csv_file.filename, doc_name=doc_file.filename, gpt_key=gpt_key, smart=smart)
+    s, success = await dataset_header_document_dkg(data=data, doc=doc, dataset_name=csv_file.filename, doc_name=doc_file.filename, gpt_key=gpt_key, kg_domain=kg_domain.value, smart=smart)
 
     if not success:
         return JSONResponse(status_code=status.HTTP_401_UNAUTHORIZED, content=s)
@@ -113,9 +114,8 @@ async def link_dataset_columns_to_dkg_info(gpt_key: str, csv_file: UploadFile = 
 #
 #     return ast.literal_eval(s)
 
-
 @router.post("/upload_file_extract/", tags=["Paper-2-annotated-vars"])
-async def upload_file_annotate(gpt_key: str, file: UploadFile = File(...)) -> JSONResponse:
+async def upload_file_annotate(gpt_key: str, file: UploadFile = File(...), kg_domain : KGDomain = 'epi') -> JSONResponse:
     """
         User Warning: Calling APIs may result in slow response times as a consequence of GPT-4.
     """
@@ -125,4 +125,4 @@ async def upload_file_annotate(gpt_key: str, file: UploadFile = File(...)) -> JS
     print(contents.decode())
     res_file = save_file_to_cache(file.filename, contents, "/tmp/askem")
     print("file exist: ", os.path.isfile("/tmp/askem/"+res_file))
-    return await async_mit_extraction_restAPI(res_file, key, "/tmp/askem")
+    return await async_mit_extraction_restAPI(res_file, key, "/tmp/askem", kg_domain.value)
