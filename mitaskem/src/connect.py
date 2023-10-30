@@ -444,10 +444,9 @@ def dataset_header_dkg(cols, gpt_key=''):
         col_ant[col] = results
     return json.dumps(col_ant), True
 
-
 from mitaskem.src.kgmatching import local_batch_get_mira_dkg_term
 
-async def dataset_header_document_dkg(data, doc, dataset_name, doc_name, gpt_key='', smart=False):
+async def dataset_header_document_dkg(data, doc, dataset_name, doc_name, gpt_key : str, kg_domain : str = 'epi', smart : bool =False):
     """
     Grounding a dataset to a DKG
     :param data: Dataset as a list of lists, including header and optionally a few rows
@@ -496,7 +495,7 @@ async def dataset_header_document_dkg(data, doc, dataset_name, doc_name, gpt_key
     col_descriptions = [col_ant[col]["description"] for col in col_ant]
 
     terms = [ f'{col_name}: {col_concept} {col_description}' for (col_name, col_concept, col_description) in zip(col_names, col_concepts, col_descriptions) ]
-    matches0 = local_batch_get_mira_dkg_term(terms)
+    matches0 = local_batch_get_mira_dkg_term(terms, kg_domain)
     matches = [[[res['id'], res['name'], res['type']] for res in batch] for batch in matches0]
     # # line up coroutines
     # ops = [abatch_get_mira_dkg_term(col_names, ['id', 'name', 'type'], True),

@@ -162,7 +162,7 @@ async def _extract_text_vars(text, var_prompt, api_key=None):
 import time
 
 #@profile
-async def afind_vars_from_text(text: str, api_key: str):
+async def afind_vars_from_text(text: str, api_key: str, kg_domain : str):
     with open(os.path.join(os.path.dirname(__file__), 'prompts/text_var_val_prompt.txt'), "r") as f:
         var_prompt = f.read()
     
@@ -171,30 +171,25 @@ async def afind_vars_from_text(text: str, api_key: str):
     openai_done = time.time()
     print(f'{openai_done - start = }')
     
-    tmp2 = await avars_to_json(res)
+    tmp2 = await avars_to_json(res, kg_domain)
     mira_done = time.time()
     print(f'{mira_done - openai_done = }')
     return ast.literal_eval(tmp2)
 import time
 
 #@profile
-async def async_mit_extraction_restAPI(file_name, gpt_key, cache_dir="/tmp/askem"):
+async def async_mit_extraction_restAPI(file_name, gpt_key, cache_dir, kg_domain : str):
     start = time.time()
     paper_name = file_name.split(".txt")[0]
     org_file = os.path.join(cache_dir, file_name)
     print("is file existing", os.path.exists(org_file))
-    # extract_vars(org_file, cache_dir) # this calls open ai api.
-    # file_path = os.path.join(cache_dir, paper_name+"_vars.txt")
-    # print(file_path)
 
-
-#    file_path = file_name
     file_path = org_file 
     t2 = time.time()
     print(f'{t2 - start=}')
     with open(file_path, "r") as f:
         text = f.read()
-        json_str = await afind_vars_from_text(text, gpt_key)
+        json_str = await afind_vars_from_text(text, gpt_key, kg_domain)
         # print(type(json_str))
     # dkg_json = json.loads(json.dumps(json_str))
     print('after variable extraction', json_str)

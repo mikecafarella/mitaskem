@@ -1,5 +1,10 @@
 from typing import Any, Dict, List, Union
 from pydantic import BaseModel
+from enum import Enum
+
+class KGDomain(str, Enum):
+    epi = 'epi'
+    climate = 'climate'
 
 class Stats(BaseModel):
     num_null_entries: int

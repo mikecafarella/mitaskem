@@ -88,7 +88,7 @@ def vars_to_json(var_dict: dict) -> str:
 from mitaskem.src.kgmatching import local_batch_get_mira_dkg_term
 import json
 
-async def avars_to_json(var_dict: dict) -> str:
+async def avars_to_json(var_dict: dict, kg_domain: str) -> str:
 
     s_out = "["
     is_first = True
@@ -102,7 +102,7 @@ async def avars_to_json(var_dict: dict) -> str:
         meta_list.append({'llm_output_name':term_name,
                          'llm_output_desc':gpt_desc})
     
-    batch_var_ground0 = local_batch_get_mira_dkg_term(term_list)
+    batch_var_ground0 = local_batch_get_mira_dkg_term(term_list, kg_domain)
     pretty_var0 = json.dumps(batch_var_ground0, indent=2)
     print(f'batch_var_ground\n{pretty_var0}')
 

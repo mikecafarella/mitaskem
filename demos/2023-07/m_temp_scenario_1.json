@@ -1,13 +1,13 @@
 {
     "attributes": [
         {
-            "type": "anchored_extraction",
+            "type": "anchored_entity",
             "amr_element_id": null,
             "payload": {
                 "id": {
                     "id": "mit0"
                 },
-                "names": [
+                "mentions": [
                     {
                         "id": {
                             "id": "mit0"
@@ -16,37 +16,55 @@
                         "extraction_source": null,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
-                "descriptions": [
+                "text_descriptions": [
                     {
                         "id": {
                             "id": "mit0"
                         },
-                        "source": "description",
+                        "description": "description",
                         "grounding": null,
                         "extraction_source": null,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     },
                     {
                         "id": {
                             "id": "mit0"
                         },
-                        "source": "description",
+                        "description": "description",
                         "grounding": null,
                         "extraction_source": null,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
-                "value_specs": null,
+                "value_descriptions": [
+                    {
+                        "id": {
+                            "id": "mit0-value"
+                        },
+                        "value": {
+                            "amount": "numerical value",
+                            "grounding": null,
+                            "extraction_source": null
+                        },
+                        "units": null,
+                        "type": null,
+                        "bounds": null,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-30T15:47:03.738151"
+                        }
+                    }
+                ],
                 "groundings": [
                     {
                         "grounding_text": "description",
@@ -55,7 +73,7 @@
                         "score": 1.0,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     },
                     {
@@ -65,7 +83,7 @@
                         "score": 1.0,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
@@ -73,13 +91,13 @@
             }
         },
         {
-            "type": "anchored_extraction",
+            "type": "anchored_entity",
             "amr_element_id": null,
             "payload": {
                 "id": {
                     "id": "mit1"
                 },
-                "names": [
+                "mentions": [
                     {
                         "id": {
                             "id": "mit1"
@@ -88,25 +106,43 @@
                         "extraction_source": null,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
-                "descriptions": [
+                "text_descriptions": [
                     {
                         "id": {
                             "id": "mit1"
                         },
-                        "source": "---",
+                        "description": "---",
                         "grounding": null,
                         "extraction_source": null,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
-                "value_specs": null,
+                "value_descriptions": [
+                    {
+                        "id": {
+                            "id": "mit1-value"
+                        },
+                        "value": {
+                            "amount": "---",
+                            "grounding": null,
+                            "extraction_source": null
+                        },
+                        "units": null,
+                        "type": null,
+                        "bounds": null,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-30T15:47:03.738151"
+                        }
+                    }
+                ],
                 "groundings": [
                     {
                         "grounding_text": "metre_of_mercury",
@@ -115,7 +151,7 @@
                         "score": 1.0,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     },
                     {
@@ -125,7 +161,7 @@
                         "score": 1.0,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
@@ -133,13 +169,13 @@
             }
         },
         {
-            "type": "anchored_extraction",
+            "type": "anchored_entity",
             "amr_element_id": null,
             "payload": {
                 "id": {
                     "id": "mit2"
                 },
-                "names": [
+                "mentions": [
                     {
                         "id": {
                             "id": "mit2"
@@ -148,25 +184,25 @@
                         "extraction_source": null,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
-                "descriptions": [
+                "text_descriptions": [
                     {
                         "id": {
                             "id": "mit2"
                         },
-                        "source": "expected number of people an infected person infects per day",
+                        "description": "expected number of people an infected person infects per day",
                         "grounding": null,
                         "extraction_source": null,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
-                "value_specs": null,
+                "value_descriptions": null,
                 "groundings": [
                     {
                         "grounding_text": "reciprocal_day",
@@ -175,7 +211,7 @@
                         "score": 1.0,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     },
                     {
@@ -185,7 +221,7 @@
                         "score": 1.0,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
@@ -193,13 +229,13 @@
             }
         },
         {
-            "type": "anchored_extraction",
+            "type": "anchored_entity",
             "amr_element_id": null,
             "payload": {
                 "id": {
                     "id": "mit3"
                 },
-                "names": [
+                "mentions": [
                     {
                         "id": {
                             "id": "mit3"
@@ -208,25 +244,43 @@
                         "extraction_source": null,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
-                "descriptions": [
+                "text_descriptions": [
                     {
                         "id": {
                             "id": "mit3"
                         },
-                        "source": "proportion of recovery per day",
+                        "description": "proportion of recovery per day",
                         "grounding": null,
                         "extraction_source": null,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
-                "value_specs": null,
+                "value_descriptions": [
+                    {
+                        "id": {
+                            "id": "mit3-value"
+                        },
+                        "value": {
+                            "amount": "1/11",
+                            "grounding": null,
+                            "extraction_source": null
+                        },
+                        "units": null,
+                        "type": null,
+                        "bounds": null,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-30T15:47:03.738151"
+                        }
+                    }
+                ],
                 "groundings": [
                     {
                         "grounding_text": "incomplete AE recovery",
@@ -235,7 +289,7 @@
                         "score": 1.0,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     },
                     {
@@ -245,7 +299,7 @@
                         "score": 1.0,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
@@ -253,13 +307,13 @@
             }
         },
         {
-            "type": "anchored_extraction",
+            "type": "anchored_entity",
             "amr_element_id": null,
             "payload": {
                 "id": {
                     "id": "mit4"
                 },
-                "names": [
+                "mentions": [
                     {
                         "id": {
                             "id": "mit4"
@@ -268,25 +322,43 @@
                         "extraction_source": null,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
-                "descriptions": [
+                "text_descriptions": [
                     {
                         "id": {
                             "id": "mit4"
                         },
-                        "source": "incubation period",
+                        "description": "incubation period",
                         "grounding": null,
                         "extraction_source": null,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
-                "value_specs": null,
+                "value_descriptions": [
+                    {
+                        "id": {
+                            "id": "mit4-value"
+                        },
+                        "value": {
+                            "amount": "1/5",
+                            "grounding": null,
+                            "extraction_source": null
+                        },
+                        "units": null,
+                        "type": null,
+                        "bounds": null,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-30T15:47:03.738151"
+                        }
+                    }
+                ],
                 "groundings": [
                     {
                         "grounding_text": "incubation time",
@@ -295,7 +367,7 @@
                         "score": 1.0,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     },
                     {
@@ -305,7 +377,7 @@
                         "score": 1.0,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
@@ -313,13 +385,13 @@
             }
         },
         {
-            "type": "anchored_extraction",
+            "type": "anchored_entity",
             "amr_element_id": null,
             "payload": {
                 "id": {
                     "id": "mit5"
                 },
-                "names": [
+                "mentions": [
                     {
                         "id": {
                             "id": "mit5"
@@ -328,25 +400,43 @@
                         "extraction_source": null,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
-                "descriptions": [
+                "text_descriptions": [
                     {
                         "id": {
                             "id": "mit5"
                         },
-                        "source": "fatality rate due to the infection",
+                        "description": "fatality rate due to the infection",
                         "grounding": null,
                         "extraction_source": null,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
-                "value_specs": null,
+                "value_descriptions": [
+                    {
+                        "id": {
+                            "id": "mit5-value"
+                        },
+                        "value": {
+                            "amount": "0.000064",
+                            "grounding": null,
+                            "extraction_source": null
+                        },
+                        "units": null,
+                        "type": null,
+                        "bounds": null,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-30T15:47:03.738151"
+                        }
+                    }
+                ],
                 "groundings": [
                     {
                         "grounding_text": "infection fatality rate",
@@ -355,7 +445,7 @@
                         "score": 1.0,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     },
                     {
@@ -365,7 +455,7 @@
                         "score": 1.0,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
@@ -373,13 +463,13 @@
             }
         },
         {
-            "type": "anchored_extraction",
+            "type": "anchored_entity",
             "amr_element_id": null,
             "payload": {
                 "id": {
                     "id": "mit6"
                 },
-                "names": [
+                "mentions": [
                     {
                         "id": {
                             "id": "mit6"
@@ -388,25 +478,43 @@
                         "extraction_source": null,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
-                "descriptions": [
+                "text_descriptions": [
                     {
                         "id": {
                             "id": "mit6"
                         },
-                        "source": "inverse of the average number of days for an infected person to die if he does not recover",
+                        "description": "inverse of the average number of days for an infected person to die if he does not recover",
                         "grounding": null,
                         "extraction_source": null,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
-                "value_specs": null,
+                "value_descriptions": [
+                    {
+                        "id": {
+                            "id": "mit6-value"
+                        },
+                        "value": {
+                            "amount": "1/9",
+                            "grounding": null,
+                            "extraction_source": null
+                        },
+                        "units": null,
+                        "type": null,
+                        "bounds": null,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-30T15:47:03.738151"
+                        }
+                    }
+                ],
                 "groundings": [
                     {
                         "grounding_text": "intensity of infection",
@@ -415,7 +523,7 @@
                         "score": 1.0,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     },
                     {
@@ -425,7 +533,7 @@
                         "score": 1.0,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
@@ -433,13 +541,13 @@
             }
         },
         {
-            "type": "anchored_extraction",
+            "type": "anchored_entity",
             "amr_element_id": null,
             "payload": {
                 "id": {
                     "id": "mit7"
                 },
-                "names": [
+                "mentions": [
                     {
                         "id": {
                             "id": "mit7"
@@ -448,37 +556,55 @@
                         "extraction_source": null,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
-                "descriptions": [
+                "text_descriptions": [
                     {
                         "id": {
                             "id": "mit7"
                         },
-                        "source": "-------------",
+                        "description": "-------------",
                         "grounding": null,
                         "extraction_source": null,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     },
                     {
                         "id": {
                             "id": "mit7"
                         },
-                        "source": "-------------",
+                        "description": "-------------",
                         "grounding": null,
                         "extraction_source": null,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
-                "value_specs": null,
+                "value_descriptions": [
+                    {
+                        "id": {
+                            "id": "mit7-value"
+                        },
+                        "value": {
+                            "amount": "----------------",
+                            "grounding": null,
+                            "extraction_source": null
+                        },
+                        "units": null,
+                        "type": null,
+                        "bounds": null,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-30T15:47:03.738151"
+                        }
+                    }
+                ],
                 "groundings": [
                     {
                         "grounding_text": "metre_of_mercury",
@@ -487,7 +613,7 @@
                         "score": 1.0,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     },
                     {
@@ -497,7 +623,7 @@
                         "score": 1.0,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
@@ -505,13 +631,13 @@
             }
         },
         {
-            "type": "anchored_extraction",
+            "type": "anchored_entity",
             "amr_element_id": null,
             "payload": {
                 "id": {
                     "id": "mit8"
                 },
-                "names": [
+                "mentions": [
                     {
                         "id": {
                             "id": "mit8"
@@ -520,25 +646,43 @@
                         "extraction_source": null,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
-                "descriptions": [
+                "text_descriptions": [
                     {
                         "id": {
                             "id": "mit8"
                         },
-                        "source": "The highest percentage of the population that becomes infected with the virus",
+                        "description": "The highest percentage of the population that becomes infected with the virus",
                         "grounding": null,
                         "extraction_source": null,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
-                "value_specs": null,
+                "value_descriptions": [
+                    {
+                        "id": {
+                            "id": "mit8-value"
+                        },
+                        "value": {
+                            "amount": "10.453%, 10.479%, 27.474%, 31.422%",
+                            "grounding": null,
+                            "extraction_source": null
+                        },
+                        "units": null,
+                        "type": null,
+                        "bounds": null,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-30T15:47:03.738151"
+                        }
+                    }
+                ],
                 "groundings": [
                     {
                         "grounding_text": "infected population",
@@ -547,7 +691,7 @@
                         "score": 1.0,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     },
                     {
@@ -557,7 +701,7 @@
                         "score": 1.0,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
@@ -565,13 +709,13 @@
             }
         },
         {
-            "type": "anchored_extraction",
+            "type": "anchored_entity",
             "amr_element_id": null,
             "payload": {
                 "id": {
                     "id": "mit9"
                 },
-                "names": [
+                "mentions": [
                     {
                         "id": {
                             "id": "mit9"
@@ -580,25 +724,43 @@
                         "extraction_source": null,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
-                "descriptions": [
+                "text_descriptions": [
                     {
                         "id": {
                             "id": "mit9"
                         },
-                        "source": "The number of days between the first case being detected and the enforcement of mask-wearing",
+                        "description": "The number of days between the first case being detected and the enforcement of mask-wearing",
                         "grounding": null,
                         "extraction_source": null,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
-                "value_specs": null,
+                "value_descriptions": [
+                    {
+                        "id": {
+                            "id": "mit9-value"
+                        },
+                        "value": {
+                            "amount": "0 days, 50 days, 100 days",
+                            "grounding": null,
+                            "extraction_source": null
+                        },
+                        "units": null,
+                        "type": null,
+                        "bounds": null,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-30T15:47:03.738151"
+                        }
+                    }
+                ],
                 "groundings": [
                     {
                         "grounding_text": "masking",
@@ -607,7 +769,7 @@
                         "score": 1.0,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     },
                     {
@@ -617,7 +779,7 @@
                         "score": 1.0,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
@@ -625,13 +787,13 @@
             }
         },
         {
-            "type": "anchored_extraction",
+            "type": "anchored_entity",
             "amr_element_id": null,
             "payload": {
                 "id": {
                     "id": "mit10"
                 },
-                "names": [
+                "mentions": [
                     {
                         "id": {
                             "id": "mit10"
@@ -640,25 +802,43 @@
                         "extraction_source": null,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
-                "descriptions": [
+                "text_descriptions": [
                     {
                         "id": {
                             "id": "mit10"
                         },
-                        "source": "The day on which the maximum number of infections occurs",
+                        "description": "The day on which the maximum number of infections occurs",
                         "grounding": null,
                         "extraction_source": null,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
-                "value_specs": null,
+                "value_descriptions": [
+                    {
+                        "id": {
+                            "id": "mit10-value"
+                        },
+                        "value": {
+                            "amount": "Day 291, Day 195, Day 103, Day 106",
+                            "grounding": null,
+                            "extraction_source": null
+                        },
+                        "units": null,
+                        "type": null,
+                        "bounds": null,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-30T15:47:03.738151"
+                        }
+                    }
+                ],
                 "groundings": [
                     {
                         "grounding_text": "maximum",
@@ -667,7 +847,7 @@
                         "score": 1.0,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     },
                     {
@@ -677,7 +857,7 @@
                         "score": 1.0,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
@@ -685,13 +865,13 @@
             }
         },
         {
-            "type": "anchored_extraction",
+            "type": "anchored_entity",
             "amr_element_id": null,
             "payload": {
                 "id": {
                     "id": "mit11"
                 },
-                "names": [
+                "mentions": [
                     {
                         "id": {
                             "id": "mit11"
@@ -700,25 +880,25 @@
                         "extraction_source": null,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
-                "descriptions": [
+                "text_descriptions": [
                     {
                         "id": {
                             "id": "mit11"
                         },
-                        "source": "A compartmental model used to simulate the spread of infectious diseases, consisting of susceptible (S), exposed (E), infected (I), and recovered (R) compartments",
+                        "description": "A compartmental model used to simulate the spread of infectious diseases, consisting of susceptible (S), exposed (E), infected (I), and recovered (R) compartments",
                         "grounding": null,
                         "extraction_source": null,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
-                "value_specs": null,
+                "value_descriptions": null,
                 "groundings": [
                     {
                         "grounding_text": "Susceptible-Exposed-Infectious-Recovered model",
@@ -727,7 +907,7 @@
                         "score": 1.0,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     },
                     {
@@ -737,7 +917,7 @@
                         "score": 1.0,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
@@ -745,13 +925,13 @@
             }
         },
         {
-            "type": "anchored_extraction",
+            "type": "anchored_entity",
             "amr_element_id": null,
             "payload": {
                 "id": {
                     "id": "mit12"
                 },
-                "names": [
+                "mentions": [
                     {
                         "id": {
                             "id": "mit12"
@@ -760,25 +940,25 @@
                         "extraction_source": null,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
-                "descriptions": [
+                "text_descriptions": [
                     {
                         "id": {
                             "id": "mit12"
                         },
-                        "source": "A modified version of the SEIR model that includes a temporary immunity period for recovered individuals",
+                        "description": "A modified version of the SEIR model that includes a temporary immunity period for recovered individuals",
                         "grounding": null,
                         "extraction_source": null,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
-                "value_specs": null,
+                "value_descriptions": null,
                 "groundings": [
                     {
                         "grounding_text": "Susceptible-Infected-Resistant model",
@@ -787,7 +967,7 @@
                         "score": 1.0,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     },
                     {
@@ -797,7 +977,7 @@
                         "score": 1.0,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
@@ -805,13 +985,13 @@
             }
         },
         {
-            "type": "anchored_extraction",
+            "type": "anchored_entity",
             "amr_element_id": null,
             "payload": {
                 "id": {
                     "id": "mit13"
                 },
-                "names": [
+                "mentions": [
                     {
                         "id": {
                             "id": "mit13"
@@ -820,25 +1000,25 @@
                         "extraction_source": null,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
-                "descriptions": [
+                "text_descriptions": [
                     {
                         "id": {
                             "id": "mit13"
                         },
-                        "source": "The basic reproduction number, representing the average number of secondary infections caused by a single infected individual in a susceptible population",
+                        "description": "The basic reproduction number, representing the average number of secondary infections caused by a single infected individual in a susceptible population",
                         "grounding": null,
                         "extraction_source": null,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
-                "value_specs": null,
+                "value_descriptions": null,
                 "groundings": [
                     {
                         "grounding_text": "effective reproduction number",
@@ -847,7 +1027,7 @@
                         "score": 1.0,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     },
                     {
@@ -857,7 +1037,7 @@
                         "score": 1.0,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
@@ -865,13 +1045,13 @@
             }
         },
         {
-            "type": "anchored_extraction",
+            "type": "anchored_entity",
             "amr_element_id": null,
             "payload": {
                 "id": {
                     "id": "mit14"
                 },
-                "names": [
+                "mentions": [
                     {
                         "id": {
                             "id": "mit14"
@@ -880,25 +1060,25 @@
                         "extraction_source": null,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
-                "descriptions": [
+                "text_descriptions": [
                     {
                         "id": {
                             "id": "mit14"
                         },
-                        "source": "A more infectious strain of the COVID-19 virus that has acquired the D614G spike protein mutation",
+                        "description": "A more infectious strain of the COVID-19 virus that has acquired the D614G spike protein mutation",
                         "grounding": null,
                         "extraction_source": null,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
-                "value_specs": null,
+                "value_descriptions": null,
                 "groundings": [
                     {
                         "grounding_text": "SARS-CoV-2 clade G virus",
@@ -907,7 +1087,7 @@
                         "score": 1.0,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     },
                     {
@@ -917,7 +1097,7 @@
                         "score": 1.0,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
@@ -925,13 +1105,13 @@
             }
         },
         {
-            "type": "anchored_extraction",
+            "type": "anchored_entity",
             "amr_element_id": null,
             "payload": {
                 "id": {
                     "id": "mit15"
                 },
-                "names": [
+                "mentions": [
                     {
                         "id": {
                             "id": "mit15"
@@ -940,25 +1120,43 @@
                         "extraction_source": null,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
-                "descriptions": [
+                "text_descriptions": [
                     {
                         "id": {
                             "id": "mit15"
                         },
-                        "source": "date of access to the online source",
+                        "description": "date of access to the online source",
                         "grounding": null,
                         "extraction_source": null,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
-                "value_specs": null,
+                "value_descriptions": [
+                    {
+                        "id": {
+                            "id": "mit15-value"
+                        },
+                        "value": {
+                            "amount": "23 August 2021",
+                            "grounding": null,
+                            "extraction_source": null
+                        },
+                        "units": null,
+                        "type": null,
+                        "bounds": null,
+                        "provenance": {
+                            "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
+                            "timestamp": "2023-10-30T15:47:03.738151"
+                        }
+                    }
+                ],
                 "groundings": [
                     {
                         "grounding_text": "date",
@@ -967,7 +1165,7 @@
                         "score": 1.0,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     },
                     {
@@ -977,7 +1175,7 @@
                         "score": 1.0,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
@@ -985,13 +1183,13 @@
             }
         },
         {
-            "type": "anchored_extraction",
+            "type": "anchored_entity",
             "amr_element_id": null,
             "payload": {
                 "id": {
                     "id": "mit16"
                 },
-                "names": [
+                "mentions": [
                     {
                         "id": {
                             "id": "mit16"
@@ -1000,25 +1198,25 @@
                         "extraction_source": null,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
-                "descriptions": [
+                "text_descriptions": [
                     {
                         "id": {
                             "id": "mit16"
                         },
-                        "source": "a repository for scientific papers in the fields of mathematics, physics, computer science, and more",
+                        "description": "a repository for scientific papers in the fields of mathematics, physics, computer science, and more",
                         "grounding": null,
                         "extraction_source": null,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
-                "value_specs": null,
+                "value_descriptions": null,
                 "groundings": [
                     {
                         "grounding_text": "American Association for the Advancement of Science",
@@ -1027,7 +1225,7 @@
                         "score": 1.0,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     },
                     {
@@ -1037,7 +1235,7 @@
                         "score": 1.0,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
@@ -1045,13 +1243,13 @@
             }
         },
         {
-            "type": "anchored_extraction",
+            "type": "anchored_entity",
             "amr_element_id": null,
             "payload": {
                 "id": {
                     "id": "mit17"
                 },
-                "names": [
+                "mentions": [
                     {
                         "id": {
                             "id": "mit17"
@@ -1060,25 +1258,25 @@
                         "extraction_source": null,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
-                "descriptions": [
+                "text_descriptions": [
                     {
                         "id": {
                             "id": "mit17"
                         },
-                        "source": "a digital object identifier (DOI) registration agency for scholarly and professional publications",
+                        "description": "a digital object identifier (DOI) registration agency for scholarly and professional publications",
                         "grounding": null,
                         "extraction_source": null,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
-                "value_specs": null,
+                "value_descriptions": null,
                 "groundings": [
                     {
                         "grounding_text": "digital object identifier",
@@ -1087,7 +1285,7 @@
                         "score": 1.0,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     },
                     {
@@ -1097,7 +1295,7 @@
                         "score": 1.0,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
@@ -1105,13 +1303,13 @@
             }
         },
         {
-            "type": "anchored_extraction",
+            "type": "anchored_entity",
             "amr_element_id": null,
             "payload": {
                 "id": {
                     "id": "mit18"
                 },
-                "names": [
+                "mentions": [
                     {
                         "id": {
                             "id": "mit18"
@@ -1120,25 +1318,25 @@
                         "extraction_source": null,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
-                "descriptions": [
+                "text_descriptions": [
                     {
                         "id": {
                             "id": "mit18"
                         },
-                        "source": "a mathematical model used in epidemiology to study the spread of infectious diseases",
+                        "description": "a mathematical model used in epidemiology to study the spread of infectious diseases",
                         "grounding": null,
                         "extraction_source": null,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
-                "value_specs": null,
+                "value_descriptions": null,
                 "groundings": [
                     {
                         "grounding_text": "Infectious Diseases [Disease/Finding]",
@@ -1147,7 +1345,7 @@
                         "score": 1.0,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     },
                     {
@@ -1157,7 +1355,7 @@
                         "score": 1.0,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
@@ -1165,13 +1363,13 @@
             }
         },
         {
-            "type": "anchored_extraction",
+            "type": "anchored_entity",
             "amr_element_id": null,
             "payload": {
                 "id": {
                     "id": "mit19"
                 },
-                "names": [
+                "mentions": [
                     {
                         "id": {
                             "id": "mit19"
@@ -1180,25 +1378,25 @@
                         "extraction_source": null,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
-                "descriptions": [
+                "text_descriptions": [
                     {
                         "id": {
                             "id": "mit19"
                         },
-                        "source": "a respiratory illness caused by the SARS-CoV-2 virus",
+                        "description": "a respiratory illness caused by the SARS-CoV-2 virus",
                         "grounding": null,
                         "extraction_source": null,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
-                "value_specs": null,
+                "value_descriptions": null,
                 "groundings": [
                     {
                         "grounding_text": "COVID-19 vaccine",
@@ -1207,7 +1405,7 @@
                         "score": 1.0,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     },
                     {
@@ -1217,7 +1415,7 @@
                         "score": 1.0,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
@@ -1225,13 +1423,13 @@
             }
         },
         {
-            "type": "anchored_extraction",
+            "type": "anchored_entity",
             "amr_element_id": null,
             "payload": {
                 "id": {
                     "id": "mit20"
                 },
-                "names": [
+                "mentions": [
                     {
                         "id": {
                             "id": "mit20"
@@ -1240,25 +1438,25 @@
                         "extraction_source": null,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
-                "descriptions": [
+                "text_descriptions": [
                     {
                         "id": {
                             "id": "mit20"
                         },
-                        "source": "a country in Europe",
+                        "description": "a country in Europe",
                         "grounding": null,
                         "extraction_source": null,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
-                "value_specs": null,
+                "value_descriptions": null,
                 "groundings": [
                     {
                         "grounding_text": "country",
@@ -1267,7 +1465,7 @@
                         "score": 1.0,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     },
                     {
@@ -1277,7 +1475,7 @@
                         "score": 1.0,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
@@ -1285,13 +1483,13 @@
             }
         },
         {
-            "type": "anchored_extraction",
+            "type": "anchored_entity",
             "amr_element_id": null,
             "payload": {
                 "id": {
                     "id": "mit21"
                 },
-                "names": [
+                "mentions": [
                     {
                         "id": {
                             "id": "mit21"
@@ -1300,25 +1498,25 @@
                         "extraction_source": null,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
-                "descriptions": [
+                "text_descriptions": [
                     {
                         "id": {
                             "id": "mit21"
                         },
-                        "source": "a country in Southeast Asia",
+                        "description": "a country in Southeast Asia",
                         "grounding": null,
                         "extraction_source": null,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
-                "value_specs": null,
+                "value_descriptions": null,
                 "groundings": [
                     {
                         "grounding_text": "country",
@@ -1327,7 +1525,7 @@
                         "score": 1.0,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     },
                     {
@@ -1337,7 +1535,7 @@
                         "score": 1.0,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
@@ -1345,13 +1543,13 @@
             }
         },
         {
-            "type": "anchored_extraction",
+            "type": "anchored_entity",
             "amr_element_id": null,
             "payload": {
                 "id": {
                     "id": "mit22"
                 },
-                "names": [
+                "mentions": [
                     {
                         "id": {
                             "id": "mit22"
@@ -1360,25 +1558,25 @@
                         "extraction_source": null,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
-                "descriptions": [
+                "text_descriptions": [
                     {
                         "id": {
                             "id": "mit22"
                         },
-                        "source": "a variant of the SARS-CoV-2 virus first identified in the United Kingdom",
+                        "description": "a variant of the SARS-CoV-2 virus first identified in the United Kingdom",
                         "grounding": null,
                         "extraction_source": null,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
-                "value_specs": null,
+                "value_descriptions": null,
                 "groundings": [
                     {
                         "grounding_text": "United Kingdom",
@@ -1387,7 +1585,7 @@
                         "score": 1.0,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     },
                     {
@@ -1397,7 +1595,7 @@
                         "score": 1.0,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
@@ -1405,13 +1603,13 @@
             }
         },
         {
-            "type": "anchored_extraction",
+            "type": "anchored_entity",
             "amr_element_id": null,
             "payload": {
                 "id": {
                     "id": "mit23"
                 },
-                "names": [
+                "mentions": [
                     {
                         "id": {
                             "id": "mit23"
@@ -1420,25 +1618,25 @@
                         "extraction_source": null,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
-                "descriptions": [
+                "text_descriptions": [
                     {
                         "id": {
                             "id": "mit23"
                         },
-                        "source": "the virus that causes COVID-19",
+                        "description": "the virus that causes COVID-19",
                         "grounding": null,
                         "extraction_source": null,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
-                "value_specs": null,
+                "value_descriptions": null,
                 "groundings": [
                     {
                         "grounding_text": "COVID-19 vaccine",
@@ -1447,7 +1645,7 @@
                         "score": 1.0,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     },
                     {
@@ -1457,7 +1655,7 @@
                         "score": 1.0,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
@@ -1465,13 +1663,13 @@
             }
         },
         {
-            "type": "anchored_extraction",
+            "type": "anchored_entity",
             "amr_element_id": null,
             "payload": {
                 "id": {
                     "id": "mit24"
                 },
-                "names": [
+                "mentions": [
                     {
                         "id": {
                             "id": "mit24"
@@ -1480,25 +1678,25 @@
                         "extraction_source": null,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
-                "descriptions": [
+                "text_descriptions": [
                     {
                         "id": {
                             "id": "mit24"
                         },
-                        "source": "a mutation in the spike protein of the SARS-CoV-2 virus",
+                        "description": "a mutation in the spike protein of the SARS-CoV-2 virus",
                         "grounding": null,
                         "extraction_source": null,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
-                "value_specs": null,
+                "value_descriptions": null,
                 "groundings": [
                     {
                         "grounding_text": "SARS-CoV-2 clade G virus",
@@ -1507,7 +1705,7 @@
                         "score": 1.0,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     },
                     {
@@ -1517,7 +1715,7 @@
                         "score": 1.0,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
@@ -1525,13 +1723,13 @@
             }
         },
         {
-            "type": "anchored_extraction",
+            "type": "anchored_entity",
             "amr_element_id": null,
             "payload": {
                 "id": {
                     "id": "mit25"
                 },
-                "names": [
+                "mentions": [
                     {
                         "id": {
                             "id": "mit25"
@@ -1540,25 +1738,25 @@
                         "extraction_source": null,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
-                "descriptions": [
+                "text_descriptions": [
                     {
                         "id": {
                             "id": "mit25"
                         },
-                        "source": "a variant of the SARS-CoV-2 virus first identified in the United Kingdom",
+                        "description": "a variant of the SARS-CoV-2 virus first identified in the United Kingdom",
                         "grounding": null,
                         "extraction_source": null,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
-                "value_specs": null,
+                "value_descriptions": null,
                 "groundings": [
                     {
                         "grounding_text": "United Kingdom",
@@ -1567,7 +1765,7 @@
                         "score": 1.0,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     },
                     {
@@ -1577,7 +1775,7 @@
                         "score": 1.0,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
@@ -1585,13 +1783,13 @@
             }
         },
         {
-            "type": "anchored_extraction",
+            "type": "anchored_entity",
             "amr_element_id": null,
             "payload": {
                 "id": {
                     "id": "mit26"
                 },
-                "names": [
+                "mentions": [
                     {
                         "id": {
                             "id": "mit26"
@@ -1600,25 +1798,25 @@
                         "extraction_source": null,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
-                "descriptions": [
+                "text_descriptions": [
                     {
                         "id": {
                             "id": "mit26"
                         },
-                        "source": "a computational model that simulates the actions and interactions of autonomous agents",
+                        "description": "a computational model that simulates the actions and interactions of autonomous agents",
                         "grounding": null,
                         "extraction_source": null,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
-                "value_specs": null,
+                "value_descriptions": null,
                 "groundings": [
                     {
                         "grounding_text": "agent-based disease transmission model",
@@ -1627,7 +1825,7 @@
                         "score": 1.0,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     },
                     {
@@ -1637,7 +1835,7 @@
                         "score": 1.0,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
@@ -1645,13 +1843,13 @@
             }
         },
         {
-            "type": "anchored_extraction",
+            "type": "anchored_entity",
             "amr_element_id": null,
             "payload": {
                 "id": {
                     "id": "mit27"
                 },
-                "names": [
+                "mentions": [
                     {
                         "id": {
                             "id": "mit27"
@@ -1660,25 +1858,25 @@
                         "extraction_source": null,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
-                "descriptions": [
+                "text_descriptions": [
                     {
                         "id": {
                             "id": "mit27"
                         },
-                        "source": "United States",
+                        "description": "United States",
                         "grounding": null,
                         "extraction_source": null,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
-                "value_specs": null,
+                "value_descriptions": null,
                 "groundings": [
                     {
                         "grounding_text": "United States",
@@ -1687,7 +1885,7 @@
                         "score": 1.0,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     },
                     {
@@ -1697,7 +1895,7 @@
                         "score": 1.0,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
@@ -1705,13 +1903,13 @@
             }
         },
         {
-            "type": "anchored_extraction",
+            "type": "anchored_entity",
             "amr_element_id": null,
             "payload": {
                 "id": {
                     "id": "mit28"
                 },
-                "names": [
+                "mentions": [
                     {
                         "id": {
                             "id": "mit28"
@@ -1720,25 +1918,25 @@
                         "extraction_source": null,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
-                "descriptions": [
+                "text_descriptions": [
                     {
                         "id": {
                             "id": "mit28"
                         },
-                        "source": "the science and practice of protecting and improving the health of communities",
+                        "description": "the science and practice of protecting and improving the health of communities",
                         "grounding": null,
                         "extraction_source": null,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
-                "value_specs": null,
+                "value_descriptions": null,
                 "groundings": [
                     {
                         "grounding_text": "American Association for the Advancement of Science",
@@ -1747,7 +1945,7 @@
                         "score": 1.0,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     },
                     {
@@ -1757,7 +1955,7 @@
                         "score": 1.0,
                         "provenance": {
                             "method": "MIT extractor V1.0 - text, dataset, formula annotation (chunwei@mit.edu)",
-                            "timestamp": "2023-10-27T22:11:41.999053"
+                            "timestamp": "2023-10-30T15:47:03.738151"
                         }
                     }
                 ],
