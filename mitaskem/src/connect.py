@@ -444,7 +444,6 @@ def dataset_header_dkg(cols, gpt_key=''):
         col_ant[col] = results
     return json.dumps(col_ant), True
 
-from mitaskem.src.response_types import KGDomain
 from mitaskem.src.kgmatching import local_batch_get_mira_dkg_term
 
 async def dataset_header_document_dkg(data, doc, dataset_name, doc_name, gpt_key : str, kg_domain : str = 'epi', smart : bool =False):
