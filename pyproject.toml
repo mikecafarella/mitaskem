@@ -41,4 +41,4 @@ packages = ["mitaskem"]
 # for now only run these tests by default
 addopts = '--nbmake'
 python_files = ["*.ipynb"]
-testpaths = ["demos/2023-07"]
+testpaths = ["demos/2023-10", "demos/2023-07"]
