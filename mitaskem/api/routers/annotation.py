@@ -77,7 +77,7 @@ async def profile_matrix_data(gpt_key: str, csv_file: UploadFile = File(...), do
 
 @router.post("/link_dataset_col_to_dkg", tags=["Paper-2-annotated-vars"], response_model=Dict[str, TabularProfile])
 async def link_dataset_columns_to_dkg_info(gpt_key: str, csv_file: UploadFile = File(...),
-                                           doc_file: UploadFile = File(...), smart: Optional[bool] = False, kg_domain : KGDomain = 'epi') -> JSONResponse:
+                                           doc_file: UploadFile = File(...), smart: Optional[bool] = False, kg_domain : KGDomain = KGDomain.epi) -> JSONResponse:
     """
            Smart run provides better results but may result in slow response times as a consequence of extra GPT calls.
     """
@@ -115,7 +115,7 @@ async def link_dataset_columns_to_dkg_info(gpt_key: str, csv_file: UploadFile = 
 #     return ast.literal_eval(s)
 
 @router.post("/upload_file_extract/", tags=["Paper-2-annotated-vars"])
-async def upload_file_annotate(gpt_key: str, file: UploadFile = File(...), kg_domain : KGDomain = 'epi') -> JSONResponse:
+async def upload_file_annotate(gpt_key: str, file: UploadFile = File(...), kg_domain : KGDomain = KGDomain.epi) -> JSONResponse:
     """
         User Warning: Calling APIs may result in slow response times as a consequence of GPT-4.
     """
