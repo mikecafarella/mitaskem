@@ -17,7 +17,7 @@ from mitaskem.src.response_types import MatrixDataCard, TabularDataCard, ModelCa
 router = APIRouter()
 
 @router.post("/get_data_card", tags=["Data-and-model-cards"], response_model=Union[MatrixDataCard, TabularDataCard])
-async def get_data_card(gpt_key: str, csv_file: UploadFile = File(...), doc_file: UploadFile = File(...), smart: Optional[bool] = False) -> JSONResponse:
+async def get_data_card(gpt_key: str, csv_file: UploadFile = File(...), doc_file: UploadFile = File(...), smart: Optional[bool] = False):
     """
            Smart run provides better results but may result in slow response times as a consequence of extra GPT calls.
     """
@@ -120,7 +120,7 @@ async def get_data_card(gpt_key: str, csv_file: UploadFile = File(...), doc_file
     return data_card
 
 @router.post("/get_model_card", tags=["Data-and-model-cards"], response_model=ModelCard)
-async def get_model_card(gpt_key: str, text_file: UploadFile = File(...), code_file: UploadFile = File(...)) -> JSONResponse:
+async def get_model_card(gpt_key: str, text_file: UploadFile = File(...), code_file: UploadFile = File(...)):
 
     files = [text_file.read(), code_file.read()]
     text, code = await asyncio.gather(*files)

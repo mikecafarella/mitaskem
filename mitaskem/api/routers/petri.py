@@ -14,7 +14,7 @@ from mitaskem.src.pyacset_gen.convert_to_pyacset import *
 router = APIRouter()
 
 
-@router.post("/get_places", tags=["Code-2-Petri-net"])
+@router.post("/get_places", tags=["Code-2-Petri-net"], deprecated=True)
 def get_petri_net_places(code: str, gpt_key: str):
     s, success = get_places(text=code, gpt_key=gpt_key)
 
@@ -23,7 +23,7 @@ def get_petri_net_places(code: str, gpt_key: str):
 
     return s
 
-@router.post("/get_transitions", tags=["Code-2-Petri-net"])
+@router.post("/get_transitions", tags=["Code-2-Petri-net"], deprecated=True)
 def get_petri_net_transitions(code: str, gpt_key: str):
     s, success = get_transitions(text=code, gpt_key=gpt_key)
 
@@ -32,7 +32,7 @@ def get_petri_net_transitions(code: str, gpt_key: str):
 
     return s
 
-@router.post("/get_arcs", tags=["Code-2-Petri-net"])
+@router.post("/get_arcs", tags=["Code-2-Petri-net"], deprecated=True)
 def get_petri_net_arcs(code: str, gpt_key: str):
     s, success = get_arcs(text=code, gpt_key=gpt_key)
 
@@ -41,7 +41,7 @@ def get_petri_net_arcs(code: str, gpt_key: str):
 
     return s
 
-@router.post("/get_pyacset", tags=["Code-2-Petri-net"])
+@router.post("/get_pyacset", tags=["Code-2-Petri-net"], deprecated=True)
 def get_pyacset_from_components(places_str:str, transitions_str: str, arcs_str: str):
     s = convert_to_pyacset(places_s = places_str, transitions_s = transitions_str, arcs_s = arcs_str)
 

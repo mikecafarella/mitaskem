@@ -19,14 +19,14 @@ router = APIRouter()
 
 from mitaskem.src.response_types import KGDomain
 
-@router.post("/find_text_vars", tags=["Paper-2-annotated-vars"])
+@router.post("/find_text_vars", tags=["Paper-2-annotated-vars"], deprecated=True)
 async def find_variables_from_text(gpt_key: str, file: UploadFile = File(...), kg_domain : KGDomain = 'epi') -> JSONResponse:
 
     contents = await file.read()
     json_str = await afind_vars_from_text(contents.decode(), gpt_key)
     return json_str
 
-@router.post("/link_datasets_to_vars", tags=["Paper-2-annotated-vars"])
+@router.post("/link_datasets_to_vars", tags=["Paper-2-annotated-vars"], deprecated=True)
 def link_dataset_columns_to_extracted_variables(json_str: str, dataset_str: str, gpt_key: str) -> JSONResponse:
     s, success = vars_dataset_connection_simplified(json_str=json_str, dataset_str=dataset_str, gpt_key=gpt_key)
     
@@ -35,7 +35,7 @@ def link_dataset_columns_to_extracted_variables(json_str: str, dataset_str: str,
 
     return ast.literal_eval(s)
 
-@router.post("/link_latex_to_vars", tags=["Paper-2-annotated-vars"])
+@router.post("/link_latex_to_vars", tags=["Paper-2-annotated-vars"], deprecated=True)
 def link_latex_formulas_to_extracted_variables(json_str: str, formula: str, gpt_key: str) -> JSONResponse:
     s, success = vars_formula_connection(json_str=json_str, formula=formula, gpt_key=gpt_key)
 
@@ -44,14 +44,14 @@ def link_latex_formulas_to_extracted_variables(json_str: str, formula: str, gpt_
 
     return ast.literal_eval(s)
 
-@router.post("/link_annos_to_pyacset", tags=["Paper-2-annotated-vars"])
+@router.post("/link_annos_to_pyacset", tags=["Paper-2-annotated-vars"], deprecated=True)
 def link_annotation_to_pyacset_and_paper_info(pyacset_str: str, annotations_str: str, info_str: str = "") -> JSONResponse:
     s = link_annos_to_pyacset(pyacset_s = pyacset_str, annos_s = annotations_str, info_s = info_str)
 
     return ast.literal_eval(s)
 
 
-@router.post("/profile_matrix_data", tags=["Paper-2-annotated-vars"], response_model=MatrixProfile)
+@router.post("/profile_matrix_data", tags=["Paper-2-annotated-vars"], response_model=MatrixProfile, deprecated=True)
 async def profile_matrix_data(gpt_key: str, csv_file: UploadFile = File(...), doc_file: UploadFile = File(...)) -> JSONResponse:
 
     csv_string = await csv_file.read()
@@ -75,7 +75,7 @@ async def profile_matrix_data(gpt_key: str, csv_file: UploadFile = File(...), do
 
     return ast.literal_eval(s)
 
-@router.post("/link_dataset_col_to_dkg", tags=["Paper-2-annotated-vars"], response_model=Dict[str, TabularProfile])
+@router.post("/link_dataset_col_to_dkg", tags=["Paper-2-annotated-vars"], response_model=Dict[str, TabularProfile], deprecated=True)
 async def link_dataset_columns_to_dkg_info(gpt_key: str, csv_file: UploadFile = File(...),
                                            doc_file: UploadFile = File(...), smart: Optional[bool] = False, kg_domain : KGDomain = KGDomain.epi) -> JSONResponse:
     """
@@ -105,16 +105,9 @@ async def link_dataset_columns_to_dkg_info(gpt_key: str, csv_file: UploadFile = 
 
     return ast.literal_eval(s)
 
-# @router.post("/link_dataset_col_to_dkg", tags=["Paper-2-annotated-vars"])
-# def link_dataset_columns_to_dkg_info(csv_str: str, gpt_key: str) -> JSONResponse:
-#     s, success = dataset_header_dkg(header=csv_str, gpt_key=gpt_key)
-#
-#     if not success:
-#         return JSONResponse(status_code=status.HTTP_401_UNAUTHORIZED, content=s)
-#
-#     return ast.literal_eval(s)
+from askem_extractions.data_model import AttributeCollection
 
-@router.post("/upload_file_extract/", tags=["Paper-2-annotated-vars"])
+@router.post("/upload_file_extract/", tags=["Paper-2-annotated-vars"], response_model=AttributeCollection)
 async def upload_file_annotate(gpt_key: str, file: UploadFile = File(...), 
                                kg_domain : KGDomain = KGDomain.epi) -> JSONResponse:
     """
