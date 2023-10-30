@@ -11,7 +11,13 @@ sys.path.append(
 
 router = APIRouter()
 
-@router.get("/get_sha", tags=["Debugging"])
+from pydantic import BaseModel
+
+class ShaResponse(BaseModel):
+    mitaskem_commit_sha: str
+    mitaskem_image_version: str
+
+@router.get("/get_sha", tags=["Debugging"], response_model=ShaResponse)
 async def get_sha():
     commit_sha = os.getenv('GIT_COMMIT_SHA', 'unknown')
     version = os.getenv('APP_VERSION', 'unknown')
