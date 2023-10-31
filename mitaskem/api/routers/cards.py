@@ -32,6 +32,16 @@ async def get_data_card(gpt_key: str, csv_file: UploadFile = File(...), doc_file
     if len(doc) == 0:
         return JSONResponse(status_code=status.HTTP_400_BAD_REQUEST, content="Empty document file")
 
+    lines = _csv.splitlines()
+    print('csv_file head (first 10 lines):')
+    for l in lines[:10]:
+        print(l)
+
+    doc_lines = doc.splitlines()
+    print('doc_file head (first 5 lines):')
+    for l in doc_lines[:5]:
+        print(l)
+
     csv_reader = csv.reader(io.StringIO(_csv), dialect=csv.Sniffer().sniff(_csv.splitlines()[-1]))
 
     header = next(csv_reader)  # can determine type from the header row
