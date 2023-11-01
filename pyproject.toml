@@ -31,6 +31,7 @@ dependencies = [
     "pytest", # for testing 
     "nbmake", # for testing notebooks
     "pre-commit", # for pre-commit hooks
+    git+https://github.com/0xabu/pdfannots.git, # extract annotations from pdfs (testing)
 ]
 
 [tool.setuptools]
