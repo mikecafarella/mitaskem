@@ -32,10 +32,12 @@ The above will hot-reload the project as you change files.
 
 ### testing:
 Ensure a server is running on a different tab.
-The will run the july scenarios as a client.
+The will run the different notebooks as a client, ensuring things are not totally broken.
 
+`pytest` 
+
+to re-generate the notebooks with the latest output:
 `pytest --nbmake --overwrite  ./demos/2023-07/*ipynb`
-
 
 ## docker image (for deploying)
 `docker compose up --build`
