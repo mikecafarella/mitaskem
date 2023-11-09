@@ -1,3 +1,5 @@
+import os
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import fastapi
@@ -57,7 +59,7 @@ def build_api(*args) -> FastAPI:
         title="Annotation API",
         description="MIT annotation API",
         docs_url="/",
-        version="0.0.15",
+        version=os.getenv('GIT_COMMIT_SHA', 'unknown'),
         openapi_tags=tags_metadata
     )
     origins = [
