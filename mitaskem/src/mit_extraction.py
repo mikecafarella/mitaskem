@@ -356,7 +356,7 @@ def mit_extraction(paper):
 
 
 if __name__ == "__main__":
-    papers = load_paper_info("/../resources/xDD/xdd_paper.json")
+    papers = load_paper_info("../../resources/xDD/xdd_paper.json")
     paper = papers[0]  # 0 1 4 6
     print(paper)
 

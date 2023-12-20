@@ -55,12 +55,14 @@ g_context_lengths = {
     'gpt-3.5-turbo':4097,
     'gpt-4':8192,
     'gpt-3.5-turbo-instruct':4097, # recommended replacement for davinci
+    'gpt-4-1106-preview': 128000,
 }
 
 g_use_completion_api = set(['gpt-3.5-turbo-16k', 
                             'gpt-3.5-turbo', 
                             'gpt-4', 
-                            'gpt-3.5-turbo-instruct'])
+                            'gpt-3.5-turbo-instruct',
+                            'gpt-4-1106-preview'])
 
 def split_latex_into_chunks(document : str,  # latex
                                  prompt_template : str, 
