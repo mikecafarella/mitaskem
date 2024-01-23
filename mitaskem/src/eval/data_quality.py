@@ -2,9 +2,9 @@ import json
 import os
 import requests
 
-from gpt_key import GPT_KEY
 from mitaskem.src.connect import get_gpt4_match
 from mitaskem.src.eval.load_concise import extract_text_by_color
+from mitaskem.src.gpt_key import GPT_KEY
 from mitaskem.src.mit_extraction import load_arizona_concise_vars
 
 
