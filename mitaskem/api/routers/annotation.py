@@ -2,7 +2,7 @@ import ast, io, random, sys, os, csv
 
 from fastapi import APIRouter, status, UploadFile, File, HTTPException
 from fastapi.responses import JSONResponse
-
+from mitaskem.src.enhanced_text_extraction import async_mit_extraction_enhanced_restAPI
 from mitaskem.src.file_cache import save_file_to_cache
 from mitaskem.src.mit_extraction import async_mit_extraction_restAPI, afind_vars_from_text
 from typing import Dict, Optional
@@ -120,3 +120,18 @@ async def upload_file_annotate(gpt_key: str, file: UploadFile = File(...),
     res_file = save_file_to_cache(file.filename, contents, "/tmp/askem")
     print("file exist: ", os.path.isfile("/tmp/askem/"+res_file))
     return await async_mit_extraction_restAPI(res_file, key, "/tmp/askem", kg_domain.value)
+
+
+@router.post("/upload_file_extract_enhanced/", tags=["Paper-2-annotated-vars"], response_model=AttributeCollection)
+async def upload_file_annotate_enhanced(gpt_key: str, file: UploadFile = File(...),
+                               kg_domain : KGDomain = KGDomain.epi) -> JSONResponse:
+    """
+        Enhanced variable extraction with SKEMA tool support.
+    """
+    contents = await file.read()
+    key = gpt_key
+    # Assuming the file contains text, you can print it out
+    print(contents.decode())
+    res_file = save_file_to_cache(file.filename, contents, "/tmp/askem")
+    print("file exist: ", os.path.isfile("/tmp/askem/"+res_file))
+    return await async_mit_extraction_enhanced_restAPI(res_file, key, "/tmp/askem", kg_domain.value)

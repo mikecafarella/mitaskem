@@ -73,3 +73,9 @@ class ModelCard(BaseModel):
     COMPLEXITY: str
     USAGE: str
     LICENSE: str
+
+
+class VarEval(BaseModel):
+    PRECISION: float
+    RECALL: float
+    F1_SCORE: float

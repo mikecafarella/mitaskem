@@ -1,7 +1,7 @@
 import json
 import os
 
-from mitaskem.src.mit_extraction import load_concise_vars, load_arizona_concise_vars
+from mitaskem.src.mit_extraction import load_concise_vars
 
 
 def extract_text_by_color(input_file, output_file, color="#ffd100"):

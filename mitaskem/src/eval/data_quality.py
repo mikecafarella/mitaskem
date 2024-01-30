@@ -244,7 +244,7 @@ def process_papers():
 
             tool_response_json = json.loads(json_str)
             # create a dummy json file for tool extraction
-            tool_json_file = '/tmp/mit.json'
+            tool_json_file = '/tmp/mit-skema.json'
             with open(tool_json_file, 'w') as outfile:
                 json.dump(tool_response_json, outfile)
             tool_concise = tool_json_file.replace(".json", "-concise.txt")
@@ -275,7 +275,7 @@ def process_papers():
             grd_clean = get_var_cleaning_extraction(grd_text, GPT_KEY)
             print(grd_clean)
             count_grd_clean = count_variable_extraction(grd_clean)
-            print("number of variable in cleaning ground truth: ", count_grd_clean)
+            print("number of variable in cleaned ground truth: ", count_grd_clean)
 
             # Evaluate the MIT extraction with clean ground truth
             pure_match = evaluate_variable_grd_extraction(pure_gpt, grd_clean, GPT_KEY)
