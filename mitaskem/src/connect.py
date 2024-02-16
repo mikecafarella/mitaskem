@@ -48,7 +48,8 @@ def get_gpt_match(prompt, key, model="gpt-3.5-turbo"):
     completion = llm.invoke(input=[HumanMessage(content=prompt)])
     return completion.content.strip()
 
-def get_gpt4_match(prompt, key, model="gpt-4"):    
+def get_gpt4_match(prompt, key, model="gpt-4-1106-preview"):
+    print("Using GPT model: ",model)
     llm = ChatOpenAI(model_name=model, openai_api_key=key, temperature=0)
     completion = llm.invoke(input=[HumanMessage(content=prompt)])
     return completion.content
@@ -468,7 +469,7 @@ async def dataset_header_document_dkg(data, doc, dataset_name, doc_name, gpt_key
     col_ant = OrderedDict()
 
     prompt = get_csv_doc_prompt(schema, stats, doc, dataset_name, doc_name)
-    match = get_gpt4_match(prompt, gpt_key, model="gpt-4")
+    match = get_gpt4_match(prompt, gpt_key, model="gpt-4-1106-preview")
     print("Got match")
     print(match)
     match = match.split('```')
@@ -584,7 +585,7 @@ async def _compute_tabular_statistics(data: List[List[Any]], header):
     return res
 
 
-async def construct_data_card(data_doc, dataset_name, doc_name, dataset_type, gpt_key='', model="gpt-3.5-turbo-16k"):
+async def construct_data_card(data_doc, dataset_name, doc_name, dataset_type, gpt_key='', model="gpt-4-1106-preview"):
     """
     Constructing a data card for a given dataset and its description.
     :param data: Small dataset, including header and optionally a few rows
@@ -630,7 +631,7 @@ async def construct_data_card(data_doc, dataset_name, doc_name, dataset_type, gp
 
     return json.dumps(results), True
 
-async def construct_model_card(text, code,  gpt_key='', model="gpt-3.5-turbo-16k"):
+async def construct_model_card(text, code,  gpt_key='', model="gpt-4-1106-preview"):
     """
     Constructing a data card for a given dataset and its description.
     :param text: Model description (either model documentation or related paper)
@@ -647,6 +648,9 @@ async def construct_model_card(text, code,  gpt_key='', model="gpt-3.5-turbo-16k
               ("DATE",         "Date of publication of this model."),
               ("SCHEMA",       "Short description of the schema of inputs and outputs of the model (1 sentence)."),
               ("PROVENANCE",   "Short description (1 sentence) of how the model was trained."),
+              ("ASSUMPTIONS",  "Short description (1 sentence) of the assumptions made by the model."),
+              ("STRENGTHS",    "Short description (1 sentence) of the strengths of the model."),
+              ("LIMITATIONS", "Short description (1 sentence) of the limitations of the model."),
               ("DATASET",      "Short description (1 sentence) of what dataset was used to train the model."),
               ("COMPLEXITY",  "The complexity of the model"),
               ("USAGE",        "Short description (1 sentence) of the context in which the model should be used"),

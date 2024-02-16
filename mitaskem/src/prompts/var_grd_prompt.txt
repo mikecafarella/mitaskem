@@ -1,0 +1,10 @@
+I have some variables and their description extracted from a literature in form of "name | description | numerical value":
+
+[EXTRACT]
+
+I also have the second version of extraction as ground truth:
+
+[GROUND]
+
+Please return the entries that have a match in the ground truth. A match means the variabe name are the same (e.g. name alpha and α are identical) and descriptions are similar meaning. Please focus on the variable name and description. You can ignore the value.
+Please print the variable name and description only. One for each line.

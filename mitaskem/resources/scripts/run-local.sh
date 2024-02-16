@@ -1,1 +1,1 @@
-COMMIT_SHA=$(git rev-parse HEAD) VERSION="1.2.0" docker-compose up --build
+COMMIT_SHA=$(git rev-parse HEAD) VERSION="1.5.0" docker-compose up --build

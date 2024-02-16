@@ -1,0 +1,6 @@
+Here are some variables and their description extracted from a literature:
+
+[TEXT]
+
+Please only keep the extraction of the variable and its description. Remove the false positives and duplication from the extraction. Use one variable and description for each line, and DO NOT concatenate multiple variables into a single line.
+

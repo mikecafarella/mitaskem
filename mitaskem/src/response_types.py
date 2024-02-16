@@ -66,7 +66,16 @@ class ModelCard(BaseModel):
     DATE: str
     SCHEMA: str
     PROVENANCE: str
+    ASSUMPTIONS: str
+    STRENGTHS: str
+    LIMITATIONS: str
     DATASET: str
     COMPLEXITY: str
     USAGE: str
     LICENSE: str
+
+
+class VarEval(BaseModel):
+    PRECISION: float
+    RECALL: float
+    F1_SCORE: float
