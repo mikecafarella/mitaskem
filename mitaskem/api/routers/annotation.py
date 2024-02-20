@@ -29,7 +29,7 @@ async def find_variables_from_text(gpt_key: str, file: UploadFile = File(...), k
 @router.post("/link_datasets_to_vars", tags=["Paper-2-annotated-vars"], deprecated=True)
 def link_dataset_columns_to_extracted_variables(json_str: str, dataset_str: str, gpt_key: str) -> JSONResponse:
     s, success = vars_dataset_connection_simplified(json_str=json_str, dataset_str=dataset_str, gpt_key=gpt_key)
-    
+
     if not success:
         return JSONResponse(status_code=status.HTTP_401_UNAUTHORIZED, content=s)
 
@@ -108,7 +108,7 @@ async def link_dataset_columns_to_dkg_info(gpt_key: str, csv_file: UploadFile = 
 from askem_extractions.data_model import AttributeCollection
 
 @router.post("/upload_file_extract/", tags=["Paper-2-annotated-vars"], response_model=AttributeCollection)
-async def upload_file_annotate(gpt_key: str, file: UploadFile = File(...), 
+async def upload_file_annotate(gpt_key: str, file: UploadFile = File(...),
                                kg_domain : KGDomain = KGDomain.epi) -> JSONResponse:
     """
         User Warning: Calling APIs may result in slow response times as a consequence of GPT-4.
@@ -135,3 +135,60 @@ async def upload_file_annotate_enhanced(gpt_key: str, file: UploadFile = File(..
     res_file = save_file_to_cache(file.filename, contents, "/tmp/askem")
     print("file exist: ", os.path.isfile("/tmp/askem/"+res_file))
     return await async_mit_extraction_enhanced_restAPI(res_file, key, "/tmp/askem", kg_domain.value)
+
+from typing import List
+from pydantic import BaseModel
+
+class EntityEntry(BaseModel):
+    id : str
+    names : Optional[List[str]]
+    values : Optional[List[str]]
+
+class ScenarioEntry(BaseModel):
+    location: str
+    entities: List[EntityEntry]
+
+import jmespath as jp
+import pandas as pd
+from functools import reduce
+import json
+
+def list_scenarios_local(gpt_key : str, extractions : dict):
+    var_extractor_expr = """
+        outputs[0].data.attributes[? type == 'anchored_entity'][].payload
+            .{ id:id.id,
+                names:mentions[].name,
+                values:value_descriptions[].value.amount
+        }
+    """
+    df_entities = pd.DataFrame(jp.search(var_extractor_expr.replace('\n', ' '), extractions))
+
+    ## extracts key fields from all the scenario context entries
+    location_expr = """
+        outputs[0].data.attributes[? type == 'scenario_context'][][].payload
+            .{  references:extractions[].id,
+                location:location.location }
+    """
+    loc_refs = jp.search(location_expr.replace('\n', ' '), extractions)
+
+    tmp1 = map(lambda rec : [{'references':ref, 'location':rec['location']} for ref in rec['references'] ], loc_refs)
+    tmp2 = reduce(lambda x,y : x+y, tmp1, [])
+    df_scenarios = pd.DataFrame(tmp2)
+    df_scenarios = df_scenarios.dropna() # remove any null references
+    df_ans = df_scenarios.merge(df_entities, left_on='references', right_on='id', how='inner')
+    df_ans = df_ans.drop(columns=['references'])
+
+    ans = []
+    for k,gp in df_ans.groupby('location'):
+        ans.append({'location':k, 'entities':gp.drop(columns=['location']).to_dict(orient='records')})
+    return ans
+
+@router.post("/list_scenarios/", tags=["Paper-2-annotated-vars"], response_model=List[ScenarioEntry])
+async def list_scenarios(gpt_key: str, extractions_file: UploadFile = File(...)) -> List[ScenarioEntry]:
+    """
+        Produce scenario summary from SKEMA integrated-pdf-extractions.
+        Currently only supporting locations.
+        Pass in the response.json() of the /upload_file_extract_enhanced/ endpoint as a file upload.
+    """
+    extractions = json.loads((await extractions_file.read()).decode())
+    return list_scenarios_local(gpt_key, extractions)
