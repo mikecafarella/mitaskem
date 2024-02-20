@@ -1,3 +1,4 @@
+Please extract variables from the following text. You may refer to the provided tool extractions for your reference.
 Here is some text:
 
 [TEXT]
@@ -8,10 +9,12 @@ If it does, list each of the variables on a separate line with the following att
 
 name | description | numerical value
 
-If there is no description for the variable, please infer a short description for that variable. If the value of the variable uses other variables or if there is no value for the variable, output "None" for that variable; do not hallucinate a variable value that does not exist in the text. Be sure to remove references enclosed in square brackets like "[" and "]" and footnotes written as superscript symbols.
+If there is no description for the variable, please infer a short description for that variable.
+If the value of the variable uses other variables or if there is no value for the variable, output "None" for that variable; do not hallucinate a variable value that does not exist in the text. Be sure to remove references enclosed in square brackets like "[" and "]" and footnotes written as superscript symbols.
 
-Meanwhile, we get some variable extractions from another tool for your reference. These extractions may contrain false positive or duplication cases. Please pay more attention to the true positive variables:
+Meanwhile, we get some variable extractions from another tool for your reference. These extractions may contain false positive or duplication cases. Please pay more attention to the true positive variables:
 
 [TOOL]
 
-Please make sure you do not miss variables. If you are not sure, please check the original paper.
+Please try to extract variables on the original paper text first, then refer to the results from the tool extractions and see if you miss any variables.
+If you are not sure, please always check the original paper.

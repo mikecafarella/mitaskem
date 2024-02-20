@@ -6,5 +6,12 @@ I also have the second version of extraction as ground truth:
 
 [GROUND]
 
-Please return the entries that have a match in the ground truth. A match means the variabe name are the same (e.g. name alpha and α are identical) and descriptions are similar meaning. Please focus on the variable name and description. You can ignore the value.
+Please return the entries that have a match in the ground truth.
+A match means the two entries refer to the same variable. This is, the variable name are the similar (e.g. name alpha and α are identical) and descriptions are similar meaning. Please focus on the variable name and description. You can ignore the value.
 Please print the variable name and description only. One for each line.
+The output should be in the following format:
+
+name1 | description1
+name2 | description2
+...
+

@@ -4,10 +4,9 @@ import requests
 
 from mitaskem.src.connect import get_gpt4_match
 from mitaskem.src.eval.load_concise import extract_text_by_color
-from mitaskem.src.gpt_key import GPT_KEY
 from mitaskem.src.mit_extraction import load_arizona_concise_vars
 
-
+GPT_KEY = os.environ.get('OPENAI_API_KEY')
 def extract_content_to_txt(json_input, output_file):
     # Load the JSON data
     with open(json_input, 'r') as file:
@@ -125,9 +124,25 @@ def get_var_cleaning_prompt(text):
     # print(prompt)
     return prompt
 
+def get_deduplicate_prompt(text):
+    text_file = open(os.path.join(os.path.dirname(__file__), '../prompts/var_dedup_prompt.txt'), "r")
+    prompt = text_file.read()
+    # print(prompt)
+    text_file.close()
+
+    prompt = prompt.replace("[TEXT]", text)
+    # print(prompt)
+    return prompt
+
 
 def get_var_cleaning_extraction(text, gpt_key):
     prompt = get_var_cleaning_prompt(text)
+    ans = get_gpt4_match(prompt, gpt_key, model="gpt-4-1106-preview")
+    # print(ans)
+    return ans
+
+def get_deduplicate_extraction(text, gpt_key):
+    prompt = get_deduplicate_prompt(text)
     ans = get_gpt4_match(prompt, gpt_key, model="gpt-4-1106-preview")
     # print(ans)
     return ans
@@ -143,9 +158,26 @@ def get_var_whole_tool_prompt(text, tool):
     # print(prompt)
     return prompt
 
+def get_var_extract_tool_prompt(extract, tool):
+    text_file = open(os.path.join(os.path.dirname(__file__), '../prompts/text_var_extract_tool_prompt.txt'), "r")
+    prompt = text_file.read()
+    # print(prompt)
+    text_file.close()
+
+    prompt = prompt.replace("[EXTRACT]", extract)
+    prompt = prompt.replace("[TOOL]", tool)
+    # print(prompt)
+    return prompt
+
 
 def get_var_whole_tool_extraction(text, tool, gpt_key):
     prompt = get_var_whole_tool_prompt(text, tool)
+    ans = get_gpt4_match(prompt, gpt_key, model="gpt-4-1106-preview")
+    # print(ans)
+    return ans
+
+def get_var_extract_tool_extraction(extraction, tool, gpt_key):
+    prompt = get_var_extract_tool_prompt(extraction, tool)
     ans = get_gpt4_match(prompt, gpt_key, model="gpt-4-1106-preview")
     # print(ans)
     return ans
@@ -176,6 +208,8 @@ def count_variable_extraction(text):
     # intialize a set
     var_set = set()
     for line in text.splitlines():
+        if line.strip() == "":
+            continue
         count += 1
         var_set.add(line)
 

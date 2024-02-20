@@ -24,6 +24,8 @@ dependencies = [
     "pydantic",
     "scikit-learn",
     "Jinja2",
+    "pyarrow",
+    "fastparquet",
 
     # dev / notebooks stuff
     "ta1viewer @ git+https://github.com/orm011/ta1viewer.git@main", # debug

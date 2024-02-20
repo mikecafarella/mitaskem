@@ -1,11 +1,9 @@
-# Client code for SKEMA TR
+import hashlib
 import os
-import argparse
 import io
 import json
 import time
 from typing import List, Union, BinaryIO, Callable
-from typing import Optional, Dict, Any
 from zipfile import ZipFile
 
 import pandas as pd
@@ -13,28 +11,14 @@ import requests
 from fastapi import APIRouter, FastAPI, UploadFile, Response, status
 
 COSMOS_ADDRESS = "https://xdd.wisc.edu/cosmos_service"
-router = APIRouter()
 
-def annotate_with_skema(
-        endpoint: str,
-        input_: Union[str, List[str], List[Dict], List[List[Dict]]]) -> List[Dict[str, Any]]:
-    """ Blueprint for calling the SKEMA-TR API """
+def get_md5(file_bytes: bytes) -> str:
+    return hashlib.md5(file_bytes).hexdigest()
 
-    if isinstance(input_, (str, dict)):
-        payload = [
-            input_
-        ]
-    else:
-        payload = input_
-    response = requests.post(endpoint, json=payload, timeout=600)
-    if response.status_code == 200:
-        return response.json()
-    else:
-        raise RuntimeError(
-            f"Calling {endpoint} failed with HTTP code {response.status_code}"
-        )
-
-def parquet_to_json(path):
+##
+# Function to extract a Cosmos parquet file to Cosmos JSON
+##
+def cosmos_parquet_to_json(path):
     parquet_df = pd.read_parquet(path)
     parquet_json = parquet_df.to_json()
     parquet_data = json.loads(parquet_json)
@@ -112,20 +96,36 @@ def parquet_to_json(path):
 
         return next(iter(name2results.items()))[1]
 
-def cosmos_client(name: str, data: BinaryIO, output_dir: str):
+##
+# Function to extract the text 'content' attribute from the Cosmos JSON data
+##
+def cosmos_json_txt(cosmos_json):
+
+        # Initialize an empty list to store the content texts
+        content_texts = []
+
+        # Iterate over each item in the JSON data
+        for item in cosmos_json:
+            # Extract the 'content' attribute and add it to the list
+            content_texts.append(item.get('content', ''))
+
+        return content_texts
+def cosmos_client(name: str, data: BinaryIO, output_dir: str, delay=10 ):
     files = [
         ("pdf", (name, data, 'application/pdf')),
     ]
     print(f"Sending {name} to COSMOS")
     response = requests.post(f"{COSMOS_ADDRESS}/process/", files=files)
     print(f"Received response of  {response.json()['status_endpoint']} from COSMOS: {response.status_code}")
+    # get md5 of the data
+    md5 = get_md5(data)
 
     if response.status_code == status.HTTP_202_ACCEPTED:
 
         callback_endpoints = response.json()
 
         for retry_num in range(400):
-            time.sleep(3)
+            time.sleep(delay)
             poll = requests.get(f"{callback_endpoints['status_endpoint']}")
             print(f"Polling COSMOS on retry num {retry_num + 1}")
             if poll.status_code == status.HTTP_200_OK:
@@ -135,7 +135,7 @@ def cosmos_client(name: str, data: BinaryIO, output_dir: str):
                     if cosmos_response.status_code == status.HTTP_200_OK:
                         data = cosmos_response.content
                         with ZipFile(io.BytesIO(data)) as z:
-                            output_subdir = os.path.join(output_dir, name.split('.')[0].replace(' ', '_'))
+                            output_subdir = os.path.join(output_dir, f"COSMOS_{os.path.splitext(name)[0].replace(' ', '_')}_{md5}")
                             os.makedirs(output_subdir, exist_ok=True)
                             z.extractall(path=output_subdir)
                             for file in os.listdir(output_subdir):
@@ -148,10 +148,12 @@ def cosmos_client(name: str, data: BinaryIO, output_dir: str):
                                     print(f"Converting {file} to JSON")
                                     # if error while converting parquet to json, skip this file
                                     try:
-                                        json_data = parquet_to_json(os.path.join(output_subdir, file))
+                                        json_data = cosmos_parquet_to_json(os.path.join(output_subdir, file))
                                         with open(os.path.join(output_subdir, f"{os.path.splitext(file)[0]}.json"), 'w') as json_file:
                                             json.dump(json_data, json_file)
-                                        print(f"{file} : {json_data}")
+                                        with open(os.path.join(output_subdir, f"{os.path.splitext(file)[0]}.txt"), 'w') as text_file:
+                                            text_file.write('\n'.join(cosmos_json_txt(json_data)))
+                                        # print(f"{file} : {json_data}")
 
                                     except Exception as e:
                                         print(f"Error while converting {file} to JSON: {e}")
@@ -172,19 +174,54 @@ def cosmos_client(name: str, data: BinaryIO, output_dir: str):
     else:
         raise RuntimeError(f"COSMOS Error - STATUS CODE: {response.status_code} - {COSMOS_ADDRESS}")
 
-def main(file_path, output_dir):
-    # Open the file in binary mode
-    with open(file_path, "rb") as file:
-        # Extract the file name from the file path
-        file_name = os.path.basename(file_path)
-        # Call the cosmos_client function
-        cosmos_client(file_name, file, output_dir)
+##
+# Function to extract the text from a PDF file:
+# 1. Check if the text file already exists in the cache, if so, read from the cache
+# 2. If not, call the cosmos_client function to process the PDF file and cache the text file
+##
+def get_text_from_pdf(filename, pdf_bytes, enable_file_cache = True, cache_dir = "/tmp/askem"):
+    pdf_filename = filename
+    file_name = os.path.basename(pdf_filename)
+    file_name_without_extension = os.path.splitext(file_name)[0]
+    text_file_name = f"{file_name_without_extension}.txt"
 
-if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description='Process a PDF file.')
-    parser.add_argument('--file', type=str, default="/Users/chunwei/Downloads/s41591-020-0883-7.pdf",
-                        help='The path to the PDF file to process.')
-    parser.add_argument('--output_dir', type=str, default="/Users/chunwei/Downloads/",
-                        help='The directory to save the extraction results.')
-    args = parser.parse_args()
-    main(args.file, args.output_dir)
+    # Get md5 of the pdf_bytes
+    md5 = get_md5(pdf_bytes)
+    cached_extraction_folder = f"COSMOS_{os.path.splitext(file_name)[0].replace(' ', '_')}_{md5}"
+
+    pz_file_cache_dir = os.path.join(cache_dir, cached_extraction_folder)
+    # Check if pz_file_cache_dir exists in the file system
+    if enable_file_cache and os.path.exists(pz_file_cache_dir):
+        print(f"Text file {text_file_name} already exists in system tmp folder {pz_file_cache_dir}, reading from cache")
+        text_file_path = os.path.join(pz_file_cache_dir, text_file_name)
+        with open(text_file_path, 'r') as file:
+            text_content = file.read()
+            return text_content
+
+    #
+    # CHUNWEI: This code has a bug
+    # It checks to see if the text file name is in the registry, but there are two things wrong here.
+    # 1) The registry is for 'official' datasets that have been inserted by the user, not cached objects.
+    # 2) The filename isn't enough to check for cached results. Maybe the file moved directories, or maybe there are
+    # multiple different files with the same name. You need the checksum of the original file to ensure the cached object is valid.
+    #
+#    if DataDirectory().exists(text_file_name):
+#        print(f"Text file {text_file_name} already exists, reading from cache")
+#        text_file_path = DataDirectory().getPath(text_file_name)
+#        with open(text_file_path, 'r') as file:
+#            text_content = file.read()
+#            return text_content
+    cosmos_file_dir = file_name_without_extension.replace(' ', '_')
+    # get a tmp of the system temp directory
+
+    output_dir = cache_dir
+    print(f"Processing {file_name} through COSMOS")
+    # Call the cosmos_client function
+    cosmos_client(file_name, pdf_bytes, output_dir)
+    text_file_path = os.path.join(pz_file_cache_dir, text_file_name)
+    if not os.path.exists(text_file_path):
+        raise FileNotFoundError(f"Text file {text_file_name} not found in {pz_file_cache_dir}/{text_file_name}")
+    # DataDirectory().registerLocalFile(text_file_path, text_file_name)
+    with open(text_file_path, 'r') as file:
+        text_content = file.read()
+        return text_content
