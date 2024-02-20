@@ -15,6 +15,8 @@ def extract_text_by_color(input_file, output_file, color="#ffd100"):
         # Check if the color matches
         if item.get('color') == color:
             # Extract the text
+            if "text" not in item:
+                continue
             text = item.get('text')
             # Append the text to the output list
             output.append(text + "\n")
