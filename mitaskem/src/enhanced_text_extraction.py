@@ -38,7 +38,7 @@ async def find_vars_from_text_enhanced(text: str, api_key: str, kg_domain : str)
 
     skema_res = get_skema_var_extraction(text)
     # generate uuid based on text
-    md5 = hashlib.md5(text).hexdigest()
+    md5 = hashlib.md5(text.encode('utf-8')).hexdigest()
     tool_response_json = json.loads(skema_res)
     tool_json_file = f'/tmp/{md5}-mit-skema-tmp.json'
     with open(tool_json_file, 'w') as outfile:
