@@ -153,13 +153,25 @@ import pandas as pd
 from functools import reduce
 import json
 
-def list_scenarios_local(gpt_key : str, extractions : dict):
+def is_float(s):
+    try:
+        float(s)
+        return True
+    except ValueError:
+        return False
+
+from langchain.chat_models import ChatOpenAI
+from langchain.schema.messages import HumanMessage, SystemMessage
+
+def list_scenarios_local(gpt_key : str, extractions : dict, return_early : bool = False) -> pd.DataFrame:
     var_extractor_expr = """
         outputs[0].data.attributes[? type == 'anchored_entity'][].payload
-            .{ id:id.id,
-                names:mentions[].name,
-                values:value_descriptions[].value.amount
-        }
+            .{
+               id:id.id,
+               name:mentions[0].name
+               value:value_descriptions[0].value.amount
+               passage:mentions[0].extraction_source.surrounding_passage
+            }
     """
     df_entities = pd.DataFrame(jp.search(var_extractor_expr.replace('\n', ' '), extractions))
 
@@ -177,18 +189,74 @@ def list_scenarios_local(gpt_key : str, extractions : dict):
     df_scenarios = df_scenarios.dropna() # remove any null references
     df_ans = df_scenarios.merge(df_entities, left_on='references', right_on='id', how='inner')
     df_ans = df_ans.drop(columns=['references'])
+    df2 = df_ans
+    df3 = df2[~df2.value.isna()]
+    df4 = df3[df3.value.map(lambda x : is_float(x.strip()))]
+    df4 = df4.assign(value=df4.value.map(lambda x : float(x.strip())))
+    df4 = df4[df4.name.map(lambda x : ' ' not in x.strip())]
 
-    ans = []
-    for k,gp in df_ans.groupby('location'):
-        ans.append({'location':k, 'entities':gp.drop(columns=['location']).to_dict(orient='records')})
-    return ans
+    if return_early:
+        return df4
+
+    context = df4.passage.unique()
+
+    model = 'gpt-3.5-turbo'
+    model = 'gpt-4'
+    key = os.environ['OPENAI_API_KEY']
+    llm = ChatOpenAI(model_name=model, openai_api_key=key, temperature=0)
+        # prompt = """
+        #     Here is a section of text that describes certain variables, their values, and geographic contexts in which the variable holds a certain value.
+        #     Please extract a table of three columns: VARNAME, VALUE, and GEO.
+        #     Please just report the variable names as they appear in the text. In some cases a variable might have multiple observed values for a particular geography.
+        #     A row in this table should reflect the claims made in the below text.
+        #     Here is the text: {excerpt}
+        # """.format(excerpt=c)
+        # prompt = f"""
+        #             Here is a section of text that describes certain variables, their values, and geographic contexts in which the variable holds a certain value.  Please extract a table of three columns: VARNAME, VALUE, and GEO.  Please just report the variable names as they appear in the text. In some cases a variable might have multiple observed values for a particular geography.
+        #             A row in this table should reflect the claims made in the below text.
+        #             The text starts after the dashed line:
+        #             --------------
+        #             {c}
+        #         """
+
+    results = []
+    for c in context:
+        prompt = """
+            Here is a section of text.
+            The text may describe certain numerical parameters and their values for mathematical models.
+            We want to extract these variables with their geographic contexts when they are available.
+            When there are variables in the text, please extract a json list of records with fields with the following structure
+            {{
+                varname: variable name as it appears in the text,
+                value: a single observed numerical value for this variable,
+                geo: a single geographic location in which the variable holds this value
+            }}
+
+            If there are multiple values for the same location, include multiple records for that location.
+
+            If there are no meaningful variables, or the text does not seem  to refer to variables of a mathematical model,
+            please just return an empty list.
+
+            Here is the text: {excerpt}
+        """.format(excerpt=c)
+
+        completion = llm.invoke(input=[HumanMessage(content=prompt)])
+
+        results.append(completion.content)
+
+
+    acc = []
+    for r in results:
+        ret = json.loads(r)
+        acc += ret
+    return pd.DataFrame(acc)
 
 @router.post("/list_scenarios/", tags=["Paper-2-annotated-vars"], response_model=List[ScenarioEntry])
 async def list_scenarios(gpt_key: str, extractions_file: UploadFile = File(...)) -> List[ScenarioEntry]:
     """
         Produce scenario summary from SKEMA integrated-pdf-extractions.
         Currently only supporting locations.
-        Pass in the response.json() of the /upload_file_extract_enhanced/ endpoint as a file upload.
+        Pass in the response.json()  endpoint as a file upload.
     """
     extractions = json.loads((await extractions_file.read()).decode())
     return list_scenarios_local(gpt_key, extractions)
