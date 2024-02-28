@@ -6,6 +6,12 @@ import fastapi
 from mitaskem.src.file_cache import init_cache_directory
 from mitaskem.api.routers import code_dataset, code_formula, code_text, avail_check, petri, evaluation, annotation, integration, cards, debugging
 
+
+import logging
+## configure logging to include timestamp as of EST time, as well as file and line number
+logging.basicConfig(format='%(levelname)s: %(asctime)s %(pathname)s.%(funcName)s():%(lineno)d - %(message)s', level=logging.INFO)
+
+
 tags_metadata = [
     # {
     #     "name": "Debugging",
@@ -18,7 +24,7 @@ tags_metadata = [
     {
         "name": "Code-2-Petri-net",
         "description": "Requests related to extracting Petri net elements from code."
-    }, 
+    },
     {
         "name": "Paper-2-annotated-vars",
         "description": "Requests related to annotating LaTeX formulas with paper text and grounding them to the DKG/to dataset columns."

@@ -18,6 +18,8 @@ from mitaskem.src.response_types import TabularProfile, MatrixProfile
 router = APIRouter()
 
 from mitaskem.src.response_types import KGDomain
+import logging
+
 
 @router.post("/find_text_vars", tags=["Paper-2-annotated-vars"], deprecated=True)
 async def find_variables_from_text(gpt_key: str, file: UploadFile = File(...), kg_domain : KGDomain = 'epi') -> JSONResponse:
@@ -116,9 +118,9 @@ async def upload_file_annotate(gpt_key: str, file: UploadFile = File(...),
     contents = await file.read()
     key = gpt_key
     # Assuming the file contains text, you can print it out
-    print(contents.decode())
+    logging.info(contents.decode())
     res_file = save_file_to_cache(file.filename, contents, "/tmp/askem")
-    print("file exist: ", os.path.isfile("/tmp/askem/"+res_file))
+    logging.info("file exist: %s", os.path.isfile("/tmp/askem/"+res_file))
     return await async_mit_extraction_restAPI(res_file, key, "/tmp/askem", kg_domain.value)
 
 
@@ -131,9 +133,9 @@ async def upload_file_annotate_enhanced(gpt_key: str, file: UploadFile = File(..
     contents = await file.read()
     key = gpt_key
     # Assuming the file contains text, you can print it out
-    print(contents.decode())
+    logging.info(contents.decode())
     res_file = save_file_to_cache(file.filename, contents, "/tmp/askem")
-    print("file exist: ", os.path.isfile("/tmp/askem/"+res_file))
+    logging.info("file exist: %s", os.path.isfile("/tmp/askem/"+res_file))
     return await async_mit_extraction_enhanced_restAPI(res_file, key, "/tmp/askem", kg_domain.value)
 
 from typing import List
@@ -249,14 +251,16 @@ def list_scenarios_local(gpt_key : str, extractions : dict, return_early : bool 
     for r in results:
         ret = json.loads(r)
         acc += ret
-    return pd.DataFrame(acc)
+    return pd.DataFrame(acc).drop_duplicates()
 
-@router.post("/list_scenarios/", tags=["Paper-2-annotated-vars"], response_model=List[ScenarioEntry])
-async def list_scenarios(gpt_key: str, extractions_file: UploadFile = File(...)) -> List[ScenarioEntry]:
+@router.post("/list_scenarios/", tags=["Paper-2-annotated-vars"])
+async def list_scenarios(gpt_key: str, extractions_file: UploadFile = File(...)):
     """
         Produce scenario summary from SKEMA integrated-pdf-extractions.
         Currently only supporting locations.
         Pass in the response.json()  endpoint as a file upload.
     """
     extractions = json.loads((await extractions_file.read()).decode())
-    return list_scenarios_local(gpt_key, extractions)
+    logging.info('scenario_api')
+    df = list_scenarios_local(gpt_key, extractions)
+    return JSONResponse(content=df.to_dict(orient='records'))
