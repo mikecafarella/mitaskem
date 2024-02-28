@@ -18,6 +18,8 @@ from mitaskem.src.response_types import TabularProfile, MatrixProfile
 router = APIRouter()
 
 from mitaskem.src.response_types import KGDomain
+import logging
+
 
 @router.post("/find_text_vars", tags=["Paper-2-annotated-vars"], deprecated=True)
 async def find_variables_from_text(gpt_key: str, file: UploadFile = File(...), kg_domain : KGDomain = 'epi') -> JSONResponse:
@@ -116,9 +118,9 @@ async def upload_file_annotate(gpt_key: str, file: UploadFile = File(...),
     contents = await file.read()
     key = gpt_key
     # Assuming the file contains text, you can print it out
-    print(contents.decode())
+    logging.log(contents.decode())
     res_file = save_file_to_cache(file.filename, contents, "/tmp/askem")
-    print("file exist: ", os.path.isfile("/tmp/askem/"+res_file))
+    logging.log("file exist: ", os.path.isfile("/tmp/askem/"+res_file))
     return await async_mit_extraction_restAPI(res_file, key, "/tmp/askem", kg_domain.value)
 
 
@@ -131,9 +133,9 @@ async def upload_file_annotate_enhanced(gpt_key: str, file: UploadFile = File(..
     contents = await file.read()
     key = gpt_key
     # Assuming the file contains text, you can print it out
-    print(contents.decode())
+    logging.log(contents.decode())
     res_file = save_file_to_cache(file.filename, contents, "/tmp/askem")
-    print("file exist: ", os.path.isfile("/tmp/askem/"+res_file))
+    logging.log("file exist: ", os.path.isfile("/tmp/askem/"+res_file))
     return await async_mit_extraction_enhanced_restAPI(res_file, key, "/tmp/askem", kg_domain.value)
 
 from typing import List
@@ -258,6 +260,7 @@ async def list_scenarios(gpt_key: str, extractions_file: UploadFile = File(...))
         Currently only supporting locations.
         Pass in the response.json()  endpoint as a file upload.
     """
+    logging.info('hello')
     extractions = json.loads((await extractions_file.read()).decode())
     df = list_scenarios_local(gpt_key, extractions)
     return JSONResponse(content=df.to_dict(orient='records'))
