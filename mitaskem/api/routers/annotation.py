@@ -118,9 +118,9 @@ async def upload_file_annotate(gpt_key: str, file: UploadFile = File(...),
     contents = await file.read()
     key = gpt_key
     # Assuming the file contains text, you can print it out
-    logging.log(contents.decode())
+    logging.info(contents.decode())
     res_file = save_file_to_cache(file.filename, contents, "/tmp/askem")
-    logging.log("file exist: ", os.path.isfile("/tmp/askem/"+res_file))
+    logging.info("file exist: %s", os.path.isfile("/tmp/askem/"+res_file))
     return await async_mit_extraction_restAPI(res_file, key, "/tmp/askem", kg_domain.value)
 
 
@@ -133,9 +133,9 @@ async def upload_file_annotate_enhanced(gpt_key: str, file: UploadFile = File(..
     contents = await file.read()
     key = gpt_key
     # Assuming the file contains text, you can print it out
-    logging.log(contents.decode())
+    logging.info(contents.decode())
     res_file = save_file_to_cache(file.filename, contents, "/tmp/askem")
-    logging.log("file exist: ", os.path.isfile("/tmp/askem/"+res_file))
+    logging.info("file exist: %s", os.path.isfile("/tmp/askem/"+res_file))
     return await async_mit_extraction_enhanced_restAPI(res_file, key, "/tmp/askem", kg_domain.value)
 
 from typing import List
@@ -260,7 +260,7 @@ async def list_scenarios(gpt_key: str, extractions_file: UploadFile = File(...))
         Currently only supporting locations.
         Pass in the response.json()  endpoint as a file upload.
     """
-    logging.info('hello')
     extractions = json.loads((await extractions_file.read()).decode())
+    logging.info('scenario_api')
     df = list_scenarios_local(gpt_key, extractions)
     return JSONResponse(content=df.to_dict(orient='records'))
