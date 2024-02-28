@@ -249,14 +249,15 @@ def list_scenarios_local(gpt_key : str, extractions : dict, return_early : bool 
     for r in results:
         ret = json.loads(r)
         acc += ret
-    return pd.DataFrame(acc)
+    return pd.DataFrame(acc).drop_duplicates()
 
-@router.post("/list_scenarios/", tags=["Paper-2-annotated-vars"], response_model=List[ScenarioEntry])
-async def list_scenarios(gpt_key: str, extractions_file: UploadFile = File(...)) -> List[ScenarioEntry]:
+@router.post("/list_scenarios/", tags=["Paper-2-annotated-vars"])
+async def list_scenarios(gpt_key: str, extractions_file: UploadFile = File(...)):
     """
         Produce scenario summary from SKEMA integrated-pdf-extractions.
         Currently only supporting locations.
         Pass in the response.json()  endpoint as a file upload.
     """
     extractions = json.loads((await extractions_file.read()).decode())
-    return list_scenarios_local(gpt_key, extractions)
+    df = list_scenarios_local(gpt_key, extractions)
+    return JSONResponse(content=df.to_dict(orient='records'))
