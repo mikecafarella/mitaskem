@@ -204,8 +204,7 @@ def list_scenarios_local(gpt_key : str, extractions : dict, return_early : bool 
 
     model = 'gpt-3.5-turbo'
     model = 'gpt-4'
-    key = os.environ['OPENAI_API_KEY']
-    llm = ChatOpenAI(model_name=model, openai_api_key=key, temperature=0)
+    llm = ChatOpenAI(model_name=model, openai_api_key=gpt_key, temperature=0)
         # prompt = """
         #     Here is a section of text that describes certain variables, their values, and geographic contexts in which the variable holds a certain value.
         #     Please extract a table of three columns: VARNAME, VALUE, and GEO.
