@@ -147,8 +147,9 @@ class EntityEntry(BaseModel):
     values : Optional[List[str]]
 
 class ScenarioEntry(BaseModel):
-    location: str
-    entities: List[EntityEntry]
+    varname : str
+    value : str
+    geo : str
 
 import jmespath as jp
 import pandas as pd
@@ -204,7 +205,12 @@ def list_scenarios_local(gpt_key : str, extractions : dict, return_early : bool 
 
     model = 'gpt-3.5-turbo'
     model = 'gpt-4'
-    llm = ChatOpenAI(model_name=model, openai_api_key=gpt_key, temperature=0)
+    if 'OPENAI_API_KEY_MIT' in os.environ :
+        key = os.environ['OPENAI_API_KEY_MIT']
+    else:
+        key = gpt_key
+
+    llm = ChatOpenAI(model_name=model, openai_api_key=key, temperature=0)
         # prompt = """
         #     Here is a section of text that describes certain variables, their values, and geographic contexts in which the variable holds a certain value.
         #     Please extract a table of three columns: VARNAME, VALUE, and GEO.
@@ -252,12 +258,15 @@ def list_scenarios_local(gpt_key : str, extractions : dict, return_early : bool 
         acc += ret
     return pd.DataFrame(acc).drop_duplicates()
 
-@router.post("/list_scenarios/", tags=["Paper-2-annotated-vars"])
+@router.post("/list_scenarios/", tags=["Paper-2-annotated-vars"], response_model=List[ScenarioEntry])
 async def list_scenarios(gpt_key: str, extractions_file: UploadFile = File(...)):
     """
         Produce scenario summary from SKEMA integrated-pdf-extractions.
         Currently only supporting locations.
-        Pass in the response.json()  endpoint as a file upload.
+        Pass in the response.json() from
+        https://api.askem.lum.ai/text-reading/integrated-pdf-extractions
+        call as input
+        (see example in mitaskem/demos/2024-02/scenario_api.ipynb)
     """
     extractions = json.loads((await extractions_file.read()).decode())
     logging.info('scenario_api')
